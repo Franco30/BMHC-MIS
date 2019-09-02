@@ -3363,14 +3363,14 @@ td.dataTables_empty {
    
 }
 .widget.widget-primary {
-  background: #565249;
-  background: -moz-linear-gradient(top, #565249 0%, #48453d 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #565249), color-stop(100%, #48453d));
-  background: -webkit-linear-gradient(top, #565249 0%, #48453d 100%);
-  background: -o-linear-gradient(top, #565249 0%, #48453d 100%);
-  background: -ms-linear-gradient(top, #565249 0%, #48453d 100%);
-  background: linear-gradient(to bottom, #565249 0%, #48453d 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#565249, endColorstr=#48453d, GradientType=0);
+  background: #E91E63;
+  background: -moz-linear-gradient(top, #E91E63 0%, rgb(197, 44, 95) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #E91E63), color-stop(100%, #E91E63));
+  background: -webkit-linear-gradient(top, #E91E63 0%, #E91E63 100%);
+  background: -o-linear-gradient(top, #E91E63 0%, #E91E63 100%);
+  background: -ms-linear-gradient(top, #E91E63 0%, #E91E63 100%);
+  background: linear-gradient(to bottom, #E91E63 0%, #E91E63 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#E91E63, endColorstr=#E91E63, GradientType=0);
 }
 .widget.widget-success {
   background: #95b75d;

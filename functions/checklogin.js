@@ -27,55 +27,45 @@ $(document).ready(function () {
         }
     });
 
-    	/* handling form validation */
-	$("#login-form").validate({
-		rules: {
-			password: {
-				required: true,
-			},
-			username: {
-				required: true,
-			},
-		},
-		messages: {
-			password: {
-				required: "please enter your password"
-			},
-			username: "please enter your username",
-		},
-		submitHandler: submitForm
-	});
-	/* Handling login functionality */
-	function submitForm() {
-		var data = $("#login-form").serialize();
-		$.ajax({
-			type: 'POST',
-			url: 'action/logins.php',
-			data: data,
-			beforeSend: function () {
-				$("#error").fadeOut();
-                $("#login").html('<span class="glyphicon glyphicon-transfer"></span> &nbsp; sending ...');
-			},
-			success: function (response) {
-				if (response == "ok") {
-                    $("#error").fadeOut();
-					$("#login").html('<img src="action/ajax-loader.gif" /> &nbsp; Signing In ...');
-                    setTimeout(' window.location.href = "admindashboard"; ', 1000);
-                } 
-                if(response == "ok2") {
-                    $("#error").fadeOut();
-                    $("#login").html('<img src="action/ajax-loader.gif" /> &nbsp; Signing In ...');
-                    setTimeout(' window.location.href = "dashboard"; ', 1000);
+    $("#password").keyup(function () {
+        if (password != '') {
+            $("#uname_response").show();
+
+        var password = $("#password").val().trim();
+            $.ajax({
+                url: 'action/checkpassword.php',
+                type: 'post',
+                data: {
+                    password: password
+                },
+                success: function (response) {
+                    if (response > 0) {
+                        $("#login").attr("disabled", false);
+
+                    } else {
+                        $('#loginlabel').slideDown();
+                        $('#checkfield').html('<span class="fa fa-exclamation-circle"></span> Invalid account. <br> Please check your username and password.');
+                        setTimeout(function () {
+                            $('#loginlabel').fadeOut('slow');
+                        }, 1500);
+                        $("#login").attr("disabled", true);
+                    }
                 }
-                else {
-					$("#error").fadeIn(1000, function () {
-                        $("#error").html('<div class="alert alert-danger"> <span class="glyphicon glyphicon-info-sign"></span> &nbsp; ' + response + ' !</div>');
-						$("#login").html('<span class="glyphicon glyphicon-log-in"></span> &nbsp; Sign me in');
-                    });
-				}
-			}
-		});
-		return false;
-	}
+            });
+        } else {
+            $("#loginlabel").hide();
+        }
+    });
+
+    $(document).on('click', '#login', function () {
+        if ($('#username').val() == "" || $('#password').val() == "") {
+            $('#loginlabel').slideDown();
+            $('#checkfield').html('<span class="fa fa-exclamation-circle"></span> All fields are required!');
+            setTimeout(function () {
+                $('#loginlabel').fadeOut('slow');
+            }, 3500);
+        }
+
+    });
 
 });
