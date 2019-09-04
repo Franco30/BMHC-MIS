@@ -41,14 +41,14 @@
                             </div>
                             <div class="form-group">
                                 <label>Height</label>
-                                <input type="text" class="form-control" id="height" placeholder="Enter Height in cms." required />
+                                <input type="number" class="form-control" id="height" placeholder="Enter Height in cms." required />
                             </div>
                             
                             </div>
                             <div class="col-md-6">
                             <div class="form-group">
                                 <label>Contact Number</label>
-                                <input type="text" class="form-control" id="contact_no" placeholder="Enter Contact" required />
+                                <input type="number" class="form-control" id="contact_no" placeholder="Enter Contact" required />
                             </div>
                             <div class="form-group">
                                 <label>Region/Province</label>
@@ -60,7 +60,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Philhealth Number</label>
-                                <input type="text" class="form-control" id="philhealth_no" placeholder="Enter Philhealth Number" required />
+                                <input type="number" class="form-control" id="philhealth_no" placeholder="Enter Philhealth Number" required />
                             </div>
                             <div class="form-group">
                                 <label>Contact Person</label>
@@ -68,7 +68,7 @@
                             </div>    
                             <div class="form-group">
                                 <label>Emergency Number</label>
-                                <input type="text" class="form-control" id="emergency_no" placeholder="Enter Emergency Number" required />
+                                <input type="number" class="form-control" id="emergency_no" placeholder="Enter Emergency Number" required />
                             </div>
                             </div>
                         </div>

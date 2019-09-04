@@ -187,7 +187,7 @@
 	<li class="xn-icon-button pull-right">
         <?php
 		date_default_timezone_set('Asia/Manila');
-		$date_today = date('F j, Y');
+		$date_today = date('F j, Y - g:i a');
 		$conn = new mysqli("localhost", "root", "", "bmhc") or die(mysqli_error());
 		$query = $conn->query("SELECT * FROM `medication_dispensation` ORDER BY `dispensation_id` DESC") or die(mysqli_error());
 		$fetch = $query->fetch_array();
@@ -238,6 +238,7 @@
             </div>
         </div>
     </li>
+
 </ul>
 <!-- END X-NAVIGATION VERTICAL -->
 <!-- MESSAGE BOX-->
