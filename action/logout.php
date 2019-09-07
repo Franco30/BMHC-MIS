@@ -12,6 +12,7 @@ echo '<meta http-equiv="refresh" content="2;url=../index">';
 
 <head>
     <title>BMHC-MIS</title>
+    <link rel="icon" href="../assets/images/bmhc.png" type="image/x-icon" />
     <style>
         @-webkit-keyframes spin {
             0% {

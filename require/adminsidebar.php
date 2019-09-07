@@ -4,7 +4,7 @@
         $find = $query->fetch_array();
         ?>
 			<!-- START PAGE SIDEBAR -->
-			<div class="page-sidebar page-navigation-top-fixed">
+			<div class="page-sidebar">
 				<!-- START X-NAVIGATION -->
 				<ul class="x-navigation">
 					<li class="xn-logo">
@@ -13,11 +13,11 @@
 					</li>
 					<li class="xn-profile">
 						<a href="#" class="profile-mini">
-							<img src="assets/images/users/no-image.jpg" alt="John Doe" />
+							<img src="assets/images/bmhc2.png" alt="BMHC" />
 						</a>
 						<div class="profile">
 							<div class="profile-image">
-								<img src="assets/images/users/no-image.jpg" alt="John Doe" />
+								<img src="assets/images/bmhc2.png" alt="BMHC" />
 							</div>
 							<div class="profile-data">
 								<div class="profile-data-name"><?php echo $find['fullname']?></div>

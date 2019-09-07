@@ -7,6 +7,7 @@
 <head>
 	<meta charset="utf-8" />
 	<title>BMHC-MIS</title>
+	<link rel="icon" href="assets/images/bmhc.png" type="image/x-icon" />
 	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
 	<meta content="" name="description" />
 	<meta content="" name="author" />
@@ -52,19 +53,22 @@
 		<div class="login login-with-news-feed">
 			<!-- begin news-feed -->
 			<div class="news-feed">
-				<div class="news-image" style="background-image: url(assets2/img/login-bg/login-bg-11.jpg)"></div>
-				<div class="news-caption">
+				<div class="news-image">
+				<img src="assets/images/bmhc.png" data-id="login-cover-image" alt="bmhcpicture" />
+			</div>
+				<!-- <div class="news-caption">
 					<h4 class="caption-title">Barangay Mansilingan Health Center - MIS</h4>
 					<p>
-						Management Information System of Barangay Mansilingan to help and protect the human lives.
+					&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Mansilingan, Bacolod City
 					</p>
-				</div>
+				</div> -->
 			</div>
 			<!-- end news-feed -->
 			<!-- begin right-content -->
 			<div class="right-content">
 				<!-- begin login-header -->
 				<div class="login-header">
+				<!-- <img src="assets/images/bmhc.png" style="width:100px;height:90px; padding: -10px; margin:-30px 0px 0px -10px;"alt="bmhcpicture" /> -->
 					<div class="brand">
 						BMHC-MIS
 						<small>Brgy. Mansilingan Health Center</small>

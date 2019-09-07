@@ -11,7 +11,7 @@ require 'require/logincheck.php';
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <link rel="icon" href="html/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="assets/images/bmhc.png" type="image/x-icon" />
     <!-- END META SECTION -->
 
     <!-- CSS INCLUDE -->
@@ -79,7 +79,7 @@ require 'require/logincheck.php';
                     <div class="col-md-3">
 
                         <!-- START WIDGET REGISTRED -->
-                        <div class="widget widget-primary widget-item-icon" onclick="location.href='visitors.php';">
+                        <div class="widget widget-primary widget-item-icon" onclick="location.href='master_file_patient';">
                             <div class="widget-item-left">
                                 <span class="fa fa-male"></span>
                             </div>
@@ -113,7 +113,7 @@ require 'require/logincheck.php';
                     <div class="col-md-3">
 
                         <!-- START WIDGET REGISTRED -->
-                        <div class="widget widget-primary widget-item-icon" onclick="location.href='admin.php';">
+                        <div class="widget widget-primary widget-item-icon" onclick="location.href='usermanagement';">
                             <div class="widget-item-left">
                                 <span class="fa fa-user-md"></span>
                             </div>
@@ -259,7 +259,7 @@ require 'require/logincheck.php';
                         <div class="col-md-4">
                             <div class="panel panel-primary">
                                 <div class="panel-heading">
-                                    <h3 class="panel-title"><strong>Patient Classification - Type of Treatment</strong></h3>
+                                    <h3 class="panel-title" style="font-size: 15px;"><strong>Patient Classification - Type of Treatment</strong></h3>
                                 </div>
                                 <div class="panel-body">
                                     <ul class='list-group border-bottom'>
