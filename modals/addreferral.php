@@ -52,6 +52,10 @@
                                 <input type="text" class="form-control" id="address2" placeholder="Enter Address" required />
                             </div>
                             <div class="form-group">
+                                <label>Age:</label>
+                                <input type="number" class="form-control" id="patient_age" required />
+                            </div>
+                            <div class="form-group">
                                 <label>Weight:</label>
                                 <input type="text" class="form-control" id="patient_weight" required />
                             </div>

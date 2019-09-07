@@ -12,11 +12,11 @@ if(isset($_POST['add'])){
     $time=date("g:i a");
     $date=date("F j, Y");
     $month=date("F");
-    $date_time=date("F j, Y - g:i a");
+    $date_time=date("F j, Y g:i a");
     $remarks = "dispensed $quantity $medicine_name to $received";
     require '../require/config.php';
 
-    $conn->query("INSERT INTO `medication_dispensation` VALUES('', '$received', '$medicine_name', '$date_time', '$month', '$year', '$quantity')") or die(mysqli_error());
+    $conn->query("INSERT INTO `medication_dispensation` VALUES('', '$received', '$medicine_name', '$date', '$time', '$month', '$year', '$quantity','$date_time')") or die(mysqli_error());
     $conn->query("INSERT INTO `users_activity_log` VALUES('', '$user_id', '$remarks','$date_time')") or die(mysqli_error());
     $conn->close();
 }

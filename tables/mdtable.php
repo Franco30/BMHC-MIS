@@ -9,10 +9,10 @@ if(isset($_POST['show'])){
                 <center>Medicine Name</center>
             </th>
             <th>
-                <center>Date and Time</center>
+                <center>Date and TIme</center>
             </th>
             <th>
-                <center>Number of Kits</center>
+                <center>Quantity</center>
             </th>
             <th>
                 <center>Received By</center>
@@ -30,10 +30,10 @@ if(isset($_POST['show'])){
                 <center><?php echo $fetch['medicine_name']?></center>
             </td>
             <td>
-                <center><?php echo $fetch['date_given']?></center>
+                <center><?php echo $fetch['date_given'].' - '.$fetch['time_given']?></center>
             </td>
             <td>
-                <center><?php echo $fetch['quantity']?> kits</center>
+                <center><?php echo $fetch['quantity']?></center>
             </td>
             <td>
                 <center><?php echo $fetch['patient_name']?></center>

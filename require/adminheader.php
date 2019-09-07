@@ -19,7 +19,7 @@
     } else if ($minutes <= 60){
         if ($minutes == 1){
 
-            return "one minute ago";
+            return "1 minute ago";
 
         } else {
             return "$minutes minutes ago";
@@ -68,7 +68,7 @@
 
         if ($years == 1){
 
-            return "one year ago";
+            return "1 year ago";
 
         } else {
 
@@ -185,9 +185,9 @@
 	</li>
 	<!-- END TASKS -->
 	<li class="xn-icon-button pull-right">
-        <?php
+		<?php
 		date_default_timezone_set('Asia/Manila');
-		$date_today = date('F j, Y - g:i a');
+		$date_today = date('F j, Y');
 		$conn = new mysqli("localhost", "root", "", "bmhc") or die(mysqli_error());
 		$query = $conn->query("SELECT * FROM `medication_dispensation` ORDER BY `dispensation_id` DESC") or die(mysqli_error());
 		$fetch = $query->fetch_array();
@@ -195,49 +195,48 @@
 		$f = $q->fetch_array();
 		$check = $q->num_rows;
 		?>
-        <a href="#"><span class="fa fa-medkit"></span></a>
-        <?php if ($f['total']>0)echo "<div class='informer informer-info'>".$f['total']."</div>";?>
-        <div class="panel panel-primary animated zoomIn xn-drop-left xn-panel-dragging">
-            <div class="panel-heading">
-                <h3 class="panel-title"><?php echo $f['total']. " Medicine Dispensation Today  " ?></h3>
-                <div class="pull-right">
-                    <span class="label label-info"><?php echo $f['total']?></span>
-                </div>
-            </div>
-            <div class="panel-body list-group list-group-contacts scroll" style="height: 400px;">
-                <?php 
-	               $conn = new mysqli("localhost", "root", "", "bmhc") or die(mysqli_error());
-					$q = $conn->query("SELECT * FROM `medication_dispensation` WHERE `date_given` = '$date_today' order by `date_given` DESC limit 10") or die(mysqli_error());
+		<a href="#"><span class="fa fa-medkit"></span></a>
+		<?php if ($f['total']>0)echo "<div class='informer informer-info'>".$f['total']."</div>";?>
+		<div class="panel panel-primary animated zoomIn xn-drop-left xn-panel-dragging">
+			<div class="panel-heading">
+				<h3 class="panel-title"><?php echo $f['total']. " Medicine Dispensation Today " ?></h3>
+				<div class="pull-right">
+					<span class="label label-info"><?php echo $f['total']?></span>
+				</div>
+			</div>
+			<div class="panel-body list-group list-group-contacts scroll" style="height: 400px;">
+				<?php 
+					$date_today = date('F j, Y');
+					$conn = new mysqli("localhost", "root", "", "bmhc") or die(mysqli_error());
+					$q = $conn->query("SELECT * FROM `patient`,`medication_dispensation` WHERE patient.patient_id = medication_dispensation.patient_id && medication_dispensation.date_given = '$date_today' order by `dispensation_id` DESC limit 10") or die(mysqli_error());
 					while($f = $q->fetch_array())
 					{
 						$id = $f['dispensation_id'];
-						$q2 = $conn->query("SELECT * FROM `medication_dispensation` WHERE `dispensation_id` = '$id'") or die(mysqli_error());
+						$q2 = $conn->query("SELECT * FROM `medication_dispensation` WHERE `dispensation_id` = '$id' order by `dispensation_id` DESC limit 7") or die(mysqli_error());
 						$f2 = $q2->fetch_array();
-                        
-                    $date_time_call = $f2['date_given'];
-                    $date_created = "$date_time_call";
-                    $timestamp = strtotime($date_created);
-                    $new_date_format = date('F j, Y g:i a', $timestamp);
+                        $date_time_call = $f2['date_time_call'];
+                    	$date_created = "$date_time_call";
+                    	$timestamp = strtotime($date_created);
+                    	$new_date_formats = date('F j, Y g:i a', $timestamp);
 				?>
-                <a href="tourguide_reservation.php?id=<?php echo $id?>" class="list-group-item">
-				<img src="assets/images/med.png" class="pull-left" alt="Patient" />
-                    <span class="contacts-title"><?php echo $f2['received_by']?></span>
-
-                    <center><?php
-                   
-                    echo time_ago_in_php($new_date_format);
-                    ?></center>
-                </a>
-                <?php
+				<a href="#" class="list-group-item">
+					<img src="assets/images/med.png" class="pull-left" alt="Medicine" />
+					<span class="contacts-title"><?php echo $f['patient_name']?></span>
+					<p><?php echo $f2['medicine_name']?> - <?php echo $f2['quantity']?> pcs.</p>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+					<?php echo time_ago_in_php($new_date_formats);?>
+				</a>
+				<?php
 					}
 					$conn->close();
 				?>
-            </div>
-            <div class="panel-footer text-center">
-                <a href="tourguide_reservation.php">Show all Tour Reservation Pending</a>
-            </div>
-        </div>
-    </li>
+			</div>
+			<div class="panel-footer text-center">
+				<a href="medication_dispensation">Show all Medicine Dispensation</a>
+			</div>
+		</div>
+	</li>
 
 </ul>
 <!-- END X-NAVIGATION VERTICAL -->
