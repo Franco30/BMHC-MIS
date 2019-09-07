@@ -138,6 +138,14 @@
                 <script type="text/javascript" src="js/plugins.js"></script>
                 <script type="text/javascript" src="js/actions.js"></script>
                 <!-- END TEMPLATE -->
+                <script>
+                    var date = new Date();
+                    date.setDate(date.getDate());
+
+                    $('#follow_up_date').datepicker({
+                        startDate: date
+                    });
+                </script>
                 <!-- END SCRIPTS -->
 </body>
 

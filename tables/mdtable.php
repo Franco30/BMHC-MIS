@@ -22,7 +22,7 @@ if(isset($_POST['show'])){
     <tbody>
         <?php
                 require '../require/config.php';
-                $query = $conn->query("SELECT * FROM `medication_dispensation` ORDER BY `dispensation_id` DESC") or die(mysqli_error());
+                $query = $conn->query("SELECT * FROM `patient`, `medication_dispensation` WHERE patient.patient_id = medication_dispensation.patient_id ORDER BY `dispensation_id` DESC") or die(mysqli_error());
                 while($fetch = $query->fetch_array()){
 		?>
         <tr>
@@ -36,7 +36,7 @@ if(isset($_POST['show'])){
                 <center><?php echo $fetch['quantity']?> kits</center>
             </td>
             <td>
-                <center><?php echo $fetch['received_by']?></center>
+                <center><?php echo $fetch['patient_name']?></center>
             </td>
         </tr>
         <?php

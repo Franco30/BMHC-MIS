@@ -36,8 +36,9 @@ if(isset($_POST['show'])){
                 <center><?php echo $fetch['follow_up_date']?></center>
             </td>
             <td>
-                <center><button type="button" class="btn btn-default">Follow-up Visit</button></center>
+                <center><button class="btn btn-default" data-toggle="modal" data-target="#follow_up<?php echo $fetch['patient_id'];?>">Follow-up Visit</button></center>
             </td>
+            <?php require('../modals/add_follow_up.php'); ?>
         </tr>
         <?php
 		  }

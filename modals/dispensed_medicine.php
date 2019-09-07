@@ -47,7 +47,7 @@
 
 					while($fetch = $query->fetch_array()){
 									?>
-									<option value="<?php echo $fetch['patient_name'];?>"><?php echo $fetch['patient_name']?></option>
+									<option value="<?php echo $fetch['patient_id'];?>"><?php echo $fetch['patient_name']?></option>
 									<?php
 					}
 									?> 
@@ -58,7 +58,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" id="addnew" class="btn btn-success">Save</button>
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>

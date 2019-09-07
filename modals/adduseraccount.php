@@ -30,7 +30,7 @@
                                     <option>Please Select</option>
                                     <option value="Nurse">Nurse</option>
                                     <option value="Midwife">Midwife</option>
-                                    <option value="Contractual Employee - BHW">Contractual Employee - BHW</option>
+                                    <option value="BHW">BHW</option>
                                 </select>
                         </div>
                         <div class="form-group">

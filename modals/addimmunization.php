@@ -63,7 +63,7 @@
                                     <div class="form-group">
                                     <label>Time of Birth</label>
                                     <div class="input-group bootstrap-timepicker">
-                                        <input type="text" id="birthtime" class="form-control timepicker" required/>
+                                        <input type="text" class="form-control timepicker" id="birthtime" required/>
                                         <span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
                                     </div>
                                     </div>

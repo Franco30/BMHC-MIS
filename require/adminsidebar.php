@@ -34,7 +34,7 @@
 							<li> <a href="registration_table"><span class="fa fa-location-arrow"></span> <span class="xn-text">Registration</span></a> </li>
 							<li> <a href="registration_table"><span class="fa fa-users"></span> <span class="xn-text">Family Planning</span></a> </li>
 							<li> <a href="medication_dispensation.php"><span class="fa fa-wheelchair"></span> <span class="xn-text">Pre-natal</span></a> </li>
-							<li> <a href="laboratory_request_table.php"><span class="fa fa-plus"></span> <span class="xn-text">Tuberculosis</span></a> </li>
+							<li> <a href="tb_registration_table"><span class="fa fa-plus"></span> <span class="xn-text">Tuberculosis</span></a> </li>
 							<li> <a href="patient_treatment_table.php"><span class="fa fa-heartbeat"></span> <span class="xn-text">Consultations</span></a> </li>
 							<li> <a href="immunization_table.php"><span class="fa fa-medkit"></span> <span class="xn-text">Immunization</span></a> </li>
 							<li> <a href="referral"><span class="fa fa-hospital-o"></span> <span class="xn-text">Referral</span></a> </li>

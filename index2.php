@@ -26,12 +26,6 @@
 	<!-- ================== BEGIN BASE JS ================== -->
 	<script src="assets2/plugins/pace/pace.min.js"></script>
 	<!-- ================== END BASE JS ================== -->
-	<style>
-		.error{
-			font-size: 10pt;
-			color:darkred
-		}
-		</style>
 </head>
 
 <body class="pace-top bg-white">
@@ -76,26 +70,25 @@
 				<!-- end login-header -->
 				<!-- begin login-content -->
 				<div class="login-content">
-				<div id="error"></div>
-					<form method="POST" id="login-form" class="margin-bottom-0">
+					<form action="action/login" method="POST" class="margin-bottom-0">
 						<div class="form-group m-b-15">
 							<div id="uname_response"></div>
 							<input type="text" class="form-control form-control-lg" placeholder="Username" id="username" name="username" required />
 						</div>
 						<div class="form-group m-b-15">
-							<input type="password" class="form-control form-control-lg" placeholder="Password" name="password" id="password" required />
+							<input type="password" class="form-control form-control-lg" placeholder="Password" name="password" required />
 						</div>
-						<!-- <div class="checkbox checkbox-css m-b-30">
+						<div class="checkbox checkbox-css m-b-30">
 							<input type="checkbox" id="remember_me_checkbox" value="" />
 							<label for="remember_me_checkbox">
 								Remember Me
 							</label>
-						</div> -->
+						</div>
 						<div class="login-buttons">
 							<button type="submit" class="btn btn-pink btn-block btn-lg" id="login" name="login">Sign me in</button>
 						</div>
 						<div class="m-t-20 m-b-40 p-b-40 text-inverse">
-						<!--Not a member yet? Click <a href="signup" class="text-pink">here</a> to register.-->
+<!--							Not a member yet? Click <a href="signup" class="text-pink">here</a> to register.-->
 						</div>
 						<hr />
 						<p class="text-center text-grey-darker">
@@ -115,7 +108,6 @@
 	<script src="assets2/plugins/jquery/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="functions/checklogin.js"></script>
 	<script src="assets2/plugins/jquery-ui/jquery-ui.min.js"></script>
-	<script src="js/validation.min.js"></script>
 	<script src="assets2/plugins/bootstrap/4.1.0/js/bootstrap.bundle.min.js"></script>
 	<script src="assets2/plugins/slimscroll/jquery.slimscroll.min.js"></script>
 	<script src="assets2/plugins/js-cookie/js.cookie.js"></script>

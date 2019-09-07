@@ -30,7 +30,7 @@
             <!-- START BREADCRUMB -->
             <ul class="breadcrumb">
                 <li>Transactions</li>
-                <li><mark><strong>Referral Slip</strong></mark></li>
+                <li><mark><strong>Referral Record</strong></mark></li>
             </ul>
             <!-- END BREADCRUMB -->
             <!-- PAGE CONTENT WRAPPER -->
@@ -43,7 +43,7 @@
                         </div>
                         <div class="panel panel-primary">
                             <div class="panel-heading">
-                                <h3 class="panel-title"><strong>Referral Slip</strong></h3>
+                                <h3 class="panel-title"><strong>Referral Record</strong></h3>
                                 <div class="btn-group pull-right">
                                     <div class="pull-left">
                                         <button class="btn btn-primary btn-md" data-toggle="modal"

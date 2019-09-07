@@ -146,13 +146,9 @@ require 'require/logincheck.php';
 
                         <!-- START WIDGET CLOCK -->
                         <div class="widget widget-primary widget-padding-sm">
-                            <div class="widget-big-int">
-                                <?php
-                                    date_default_timezone_set("Asia/Manila");
-                                    echo date("h:i A");
-                                    ?>
+                            <div class="widget-big-int" id="currentTime" style="font-size: 37px">
                             </div>
-                            <div class="widget-subtitle plugin-date">Loading...</div>
+                            <div class="widget-subtitle plugin-date" id="day">Loading...</div>
                             <div class="widget-controls">
                                 <a href="#" class="widget-control-right widget-remove" data-toggle="tooltip"
                                     data-placement="left" title="Remove Widget"><span class="fa fa-times"></span></a>
@@ -263,7 +259,8 @@ require 'require/logincheck.php';
                         <div class="col-md-4">
                             <div class="panel panel-primary">
                                 <div class="panel-heading">
-                                    <h3 class="panel-title"><strong>Patient Classification - Type of Treatment</strong></h3>
+                                    <h3 class="panel-title"><strong>Patient Classification - Type of Treatment</strong>
+                                    </h3>
                                 </div>
                                 <div class="panel-body">
                                     <ul class='list-group border-bottom'>
@@ -297,6 +294,7 @@ require 'require/logincheck.php';
             <!-- END PLUGINS -->
 
             <!-- START THIS PAGE PLUGINS-->
+            <script src="js/timedate.js"></script>
             <script type='text/javascript' src='js/plugins/icheck/icheck.min.js'></script>
             <script type="text/javascript" src="js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
             <script type="text/javascript" src="js/plugins/scrolltotop/scrolltopcontrol.js"></script>

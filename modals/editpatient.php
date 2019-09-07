@@ -26,7 +26,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Gender</label>
-                                <select class="form-control select" style="display: none;" id="gender<?php echo $fetch['patient_id']; ?>">
+                                <select class="form-control select" id="gender<?php echo $fetch['patient_id']; ?>">
                                     <option><?php echo $fetch['gender']; ?></option>
                                     <option>Male</option>
                                     <option>Female</option>
@@ -77,7 +77,7 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" id="addnew" class="btn btn-success">Save</button>
+                <button type="button" class="updatepatient btn btn-success" value="<?php echo $fetch['patient_id']; ?>">Save</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
         </div>

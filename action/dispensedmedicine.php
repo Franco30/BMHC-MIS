@@ -16,7 +16,7 @@ if(isset($_POST['add'])){
     $remarks = "dispensed $quantity $medicine_name to $received";
     require '../require/config.php';
 
-    $conn->query("INSERT INTO `medication_dispensation` VALUES('', '$medicine_name', '$date_time', '$month', '$year', '$quantity', '$received')") or die(mysqli_error());
+    $conn->query("INSERT INTO `medication_dispensation` VALUES('', '$received', '$medicine_name', '$date_time', '$month', '$year', '$quantity')") or die(mysqli_error());
     $conn->query("INSERT INTO `users_activity_log` VALUES('', '$user_id', '$remarks','$date_time')") or die(mysqli_error());
     $conn->close();
 }
