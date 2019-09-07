@@ -38,7 +38,7 @@
 							<li> <a href="patient_treatment_table.php"><span class="fa fa-heartbeat"></span> <span class="xn-text">Consultations</span></a> </li>
 							<li> <a href="immunization_table.php"><span class="fa fa-medkit"></span> <span class="xn-text">Immunization</span></a> </li>
 							<li> <a href="referral"><span class="fa fa-hospital-o"></span> <span class="xn-text">Referral</span></a> </li>
-							<li> <a href="follow_up_table.php"><span class="fa fa-calendar"></span> <span class="xn-text">Follow-up Visit</span></a> </li>
+							<li> <a href="follow_up_table"><span class="fa fa-calendar"></span> <span class="xn-text">Follow-up Visit</span></a> </li>
 							<li> <a href="medication_dispensation"><span class="fa fa-medkit"></span> <span class="xn-text">Medicine Dispensation</span></a> </li>
 						</ul>
 					</li>

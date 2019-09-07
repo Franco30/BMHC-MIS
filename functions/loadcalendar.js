@@ -7,7 +7,8 @@ $(document).ready(function() {
             left:'month,agendaWeek,agendaDay'
         },
         events: 'load.php',
-        eventColor: '#348fe2',
+        eventColor: '#E91E63',
+        // '#348fe2',
     });
 });
 

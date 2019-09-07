@@ -59,12 +59,12 @@ $(document).ready(function () {
 			success: function (response) {
 				if (response == "ok") {
                     $("#error").fadeOut();
-					$("#login").html('<img src="action/ajax-loader.gif" /> &nbsp; Signing In ...');
+					$("#login").html('<img src="action/ajax-loader3.gif" /> &nbsp; Signing In ...');
                     setTimeout(' window.location.href = "admindashboard"; ', 1000);
                 } 
                 if(response == "ok2") {
                     $("#error").fadeOut();
-                    $("#login").html('<img src="action/ajax-loader.gif" /> &nbsp; Signing In ...');
+                    $("#login").html('<img src="action/ajax-loader3.gif" /> &nbsp; Signing In ...');
                     setTimeout(' window.location.href = "dashboard"; ', 1000);
                 }
                 else {
