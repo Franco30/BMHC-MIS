@@ -17,7 +17,7 @@ if(isset($_POST['show'])){
     while($fetch = $query->fetch_array()){
         ?>
         <tr>
-            <td><center>2019<?php echo "080".$fetch['patient_id']?></center></td>
+            <td><center><?php echo $fetch['year']?><?php echo "0".$fetch['patient_id']?></center></td>
             <td><center><?php echo $fetch['patient_name']?></center></td>
             <td><center><?php echo $fetch['year']?></center></td>
             <td><center>

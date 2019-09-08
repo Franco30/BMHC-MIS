@@ -12,7 +12,7 @@
 		<link rel="stylesheet" href="assets3/css/main.css">
 		<link rel="stylesheet" href="assets3/css/demo.css">
 		<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
-		<link rel="icon" type="image/png" sizes="96x96" href="assets/images/project_logo.png">
+		<link rel="icon" href="assets/images/bmhc.png" type="image/x-icon" />
 	</head>
 
 	<body>
