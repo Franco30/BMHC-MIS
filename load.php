@@ -6,7 +6,7 @@ $connect = new PDO('mysql:host=localhost;dbname=bmhc', 'root', '');
 
 $data = array();
 
-$query = "SELECT * FROM patient,follow_up WHERE patient.patient_id = follow_up.patient_id";
+$query = "SELECT * FROM patient,tb_follow_up WHERE patient.patient_id = tb_follow_up.patient_id";
 
 $statement = $connect->prepare($query);
 
@@ -18,7 +18,7 @@ foreach($result as $row)
 {
     $data[] = array(
         'id'   => $row["follow_up_id"],
-        'title'   => $row["patient_name"]." ".$row["patient_service"],
+        'title'   => $row["patient_name"]." ".$row["remarks"],
         'start'   => $row["follow_up_date"]
     );
 }

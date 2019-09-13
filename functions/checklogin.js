@@ -54,7 +54,7 @@ $(document).ready(function () {
 			data: data,
 			beforeSend: function () {
 				$("#error").fadeOut();
-                $("#login").html('<span class="glyphicon glyphicon-transfer"></span> &nbsp; Signing In ...');
+                $("#login").html('<img src="action/ajax-loader3.gif" /> &nbsp; Signing In ...');
 			},
 			success: function (response) {
 				if (response == "ok") {
