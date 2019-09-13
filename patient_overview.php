@@ -121,68 +121,6 @@
 												</div>
 											</div>
 											<hr>
-											<div class="col-md-6">
-												<div class="panel panel-default">
-													<div class="panel-heading">
-														<div class="btn-group pull-left">
-															<div class="pull-left">
-																<a href="#new_member" data-target="#new_member" data-toggle="modal" class="btn btn-info btn-md"><span class="fa fa-user-plus"></span> New Family Member</a>
-															</div>
-														</div>
-													</div>
-													<div class="panel-body">
-														<table class="table table-hover">
-															<thead>
-																<tr>
-																	<th><center>Name</center></th>
-																	<th><center>Age</center></th>
-																	<th><center>Date Screened</center></th>
-																	<th><center>Action</center></th>
-																</tr>
-															</thead>
-															<tbody>
-																<tr>
-																	<td><center>Ma. Jesselva Monique Latosa</center></td>
-																	<td><center>22</center></td>
-																	<td><center>June 30, 2019</center></td>
-																	<td><center>
-																		<a href="#updatemember" data-target="#updatemember" data-toggle="modal" class="btn btn-info btn-sm"><span class="fa fa-pencil-square-o"></span> </a>
-																		</center></td>
-																</tr>
-															</tbody>
-														</table>
-													</div>
-												</div>
-											</div>
-											<div class="col-md-6">
-												<div class="panel panel-default">
-													<div class="panel-heading">
-														<h3 class="panel-title">Treatment Partner</h3>
-													</div>
-													<div class="panel-body">
-														<table id="laboratory_request" class="table table-hover">
-
-															<thead>
-																<tr>
-																	<th><center>Treatment Partner Name</center></th>
-																	<th><center>Designation</center></th>
-																	<th><center>Action</center></th>
-																</tr>
-															</thead>
-															<tbody>
-																<tr>
-																	<td><center></center></td>
-																	<td><center></center></td>
-																	<td><center>
-																		<a href="#updatepartner" data-target="#updatepartner" data-toggle="modal" class="btn btn-info btn-sm"><span class="fa fa-pencil-square-o"></span> </a>
-																		</center></td>
-																</tr>
-															</tbody>
-														</table>
-													</div>
-												</div>
-											</div>
-
 										</div>
 
                         </div>

@@ -53,7 +53,7 @@
                                                 <div class="panel-body list-group list-group-contacts scroll"
                                                     style="height: 430px;">
                                                     <div class="panel-body">
-                                                        <div id="followupTable"></div>
+                                                        <div id="tbfollowupTable"></div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -81,7 +81,7 @@
                                                 <div class="panel-body list-group list-group-contacts scroll"
                                                     style="height: 430px;">
                                                     <div class="panel-body">
-                                                        <div id="patientTable"></div>
+                                                        <div id="fpfollowupTable"></div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -110,7 +110,6 @@
                     <!-- END PAGE CONTENT -->
                 </div>
                 <!-- END PAGE CONTAINER -->
-                <?php require 'modals/addreferral.php'?>
                 <!-- START PRELOADS -->
                 <audio id="audio-alert" src="audio/alert.mp3" preload="auto"></audio>
                 <audio id="audio-fail" src="audio/fail.mp3" preload="auto"></audio>

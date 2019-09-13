@@ -34,14 +34,14 @@ $(document).ready(function () {
 
 function showfollow_up_tb() {
     $.ajax({
-        url: 'tables/followuptable.php',
+        url: 'tables/tbfollowuptable.php',
         type: 'POST',
         async: false,
         data: {
             show: 1
         },
         success: function (response) {
-            $('#followupTable').html(response);
+            $('#tbfollowupTable').html(response);
         }
     });
 }
@@ -62,14 +62,14 @@ function showfollow_up_prenatal() {
 
 function showfollow_up_familyplanning() {
     $.ajax({
-        url: 'tables/patienttable.php',
+        url: 'tables/fp_follow_up_table.php',
         type: 'POST',
         async: false,
         data: {
             show: 1
         },
         success: function (response) {
-            $('#patientTable').html(response);
+            $('#fpfollowupTable').html(response);
         }
     });
 }
