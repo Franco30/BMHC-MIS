@@ -30,7 +30,7 @@ if(isset($_POST['show'])){
                 <center><?php echo $fetch1['patient_name']?></center>
             </td>
             <td>
-                <center><button class="btn btn-default" data-toggle="modal" data-target="#fp_follow_up<?php echo $fetch['patient_id']; ?>">Follow-up Visit</button></center>
+                <center><button class="btn btn-default" data-toggle="modal" data-target="#fp_follow_up<?php echo $fetch1['patient_id']; ?>">Follow-up Visit</button></center>
             </td>
             <?php require('../modals/fp_follow_up.php'); ?>
         </tr>

@@ -1,4 +1,4 @@
-<div class="modal fade" id="fp_follow_up<?php echo $fetch['patient_id']; ?>" tabindex="-1" role="dialog" aria-labelledby="defModalHead" aria-hidden="true">
+<div class="modal fade" id="fp_follow_up<?php echo $fetch1['patient_id']; ?>" tabindex="-1" role="dialog" aria-labelledby="defModalHead" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <center>
