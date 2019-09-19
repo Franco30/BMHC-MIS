@@ -23,14 +23,14 @@ if(ISSET($_POST['login']))
 	$user_id = $fetch['user_id'];	
 		
     if($valid > 0){	
-        if ($position == 'Medical Officer' || $position == 'Nurse') 
+        if ($position == 'Midwife' || $position == 'Nurse') 
 			{
                 echo "ok";
 				$_SESSION['user_id'] = $fetch['user_id'];
 				$conn->query ("UPDATE `users` SET `login` = '$date' WHERE `user_id` = '$user_id'") or die(mysqli_error());
 			}
 		
-		if ($position != 'Medical Officer' && $position != 'Nurse') 
+		if ($position != 'Midwife' && $position != 'Nurse') 
 			{
                 echo "ok2";
 				$_SESSION['user_id'] = $fetch['user_id'];

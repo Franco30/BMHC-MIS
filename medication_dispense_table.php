@@ -57,11 +57,11 @@
                                         <tbody>
                                             <?php
 												require 'require/config.php';
-												$query = $conn->query("SELECT * FROM `medication_dispensation` group by received_by") or die(mysqli_error());
+												$query = $conn->query("SELECT * FROM `patient`, `medication_dispensation` WHERE patient.patient_id = medication_dispensation.patient_id ORDER BY `dispensation_id` DESC") or die(mysqli_error());
 												while($fetch = $query->fetch_array()){
 												?>
                                             <tr>
-                                                <td><?php echo $fetch['received_by']?></td>
+                                                <td><?php echo $fetch['patient_name']?></td>
                                                 <td>
                                                     <a href="view_drug_dispensation.php?health_center=<?php echo $fetch['health_center']?>"
                                                         class="btn btn-sm btn-default">View</a>

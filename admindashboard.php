@@ -37,8 +37,7 @@ require 'require/logincheck.php';
             <?php require 'require/adminheader.php'?>
             <!-- START BREADCRUMB -->
             <ul class="breadcrumb">
-                <li><a href="#">Home</a></li>
-                <li class="active">Dashboard</li>
+                <li class="active"><mark><strong>Dashboard</strong></mark></li>
             </ul>
             <!-- END BREADCRUMB -->
 
@@ -52,7 +51,7 @@ require 'require/logincheck.php';
                         <!-- START WIDGET SLIDER -->
                         <div class="widget widget-primary widget-carousel">
                             <div class="owl-carousel" id="owl-example">
-                                <div>
+                                <div>  
                                     <div class="widget-title">Total Patients</div>
                                     <div class="widget-subtitle">27/08/2014 15:23</div>
                                     <div class="widget-int">3,548</div>

@@ -185,25 +185,38 @@
                                 <label>Date</label>
                                 <input type="text" class="form-control datepicker" id="present_illness_date" placeholder="Enter Date" required />
                             </div>
-                            <div class="form-group">
+                         <div class="form-row">
+                             <div class="col-md-6">
+                                <div class="form-group">
                                 <label>Temperature</label>
-                                <input type="text" class="form-control datepicker" id="temp" placeholder="Enter Temperature" required />
+                                <input type="text" class="form-control" id="temp" placeholder="Enter Temperature" required />
+                                </div>
                             </div>
-                            <div class="form-group">
+                            <div class="col-md-6">
+                                <div class="form-group">
                                 <label>Respiratory Rate</label>
-                                <input type="text" class="form-control datepicker" id="rr" placeholder="Enter Respiratory Rate" required />
+                                <input type="text" class="form-control" id="rr" placeholder="Enter Respiratory Rate" required />
+                                </div>
                             </div>
-                            <div class="form-group">
+                        </div>
+                        <div class="form-row">
+                             <div class="col-md-6">
+                             <div class="form-group">
                                 <label>Blood Pressure</label>
-                                <input type="text" class="form-control datepicker" id="bp" placeholder="Enter Blood Pressure" required />
+                                <input type="text" class="form-control" id="bp" placeholder="Enter Blood Pressure" required />
                             </div>
                             </div>
-                            &nbsp;&nbsp;&nbsp;
                             <div class="col-md-6">
                             <div class="form-group">
                                 <label>Weight</label>
-                                <input type="text" class="form-control datepicker" id="weight" placeholder="Enter Weight" required />
+                                <input type="text" class="form-control" id="weight" placeholder="Enter Weight" required />
                             </div>
+                            </div>
+                        </div>
+
+                            </div>
+                            <!-- &nbsp;&nbsp;&nbsp; -->
+                            <div class="col-md-6">
                             <div class="form-group">
                                 <label>Complaints</label>
                                 <textarea class="form-control" spellcheck="false" id="complaints"></textarea>

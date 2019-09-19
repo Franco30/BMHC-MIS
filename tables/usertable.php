@@ -16,7 +16,7 @@ if(isset($_POST['show'])){
     </thead>
     <tbody>
         <?php
-    $query = $conn->query("SELECT * FROM `users` WHERE position != 'Medical Officer' && position != 'Nurse' order by `user_id` DESC") or die(mysqli_error());
+    $query = $conn->query("SELECT * FROM `users`") or die(mysqli_error());
     while($fetch = $query->fetch_array()){
         ?>                                      
         <tr>
