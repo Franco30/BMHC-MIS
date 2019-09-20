@@ -43,11 +43,11 @@
                         </div>
                         <div class="panel panel-primary">
                             <div class="panel-heading">
-                                <h3 class="panel-title"><strong>Medication Dispensation Log</strong></h3>
+                                <h3 class="panel-title"><strong>Medicine Dispensation Log</strong></h3>
                                 <div class="btn-group pull-right">
                                     <div class="pull-left">
                                         <button class="btn btn-primary btn-md" data-toggle="modal"
-                                            data-target="#dispensed">Dispense Stocks </button>
+                                            data-target="#dispensed">Dispense Medicine </button>
                                     </div>
                                 </div>
                             </div>

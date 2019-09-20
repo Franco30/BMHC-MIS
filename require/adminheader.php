@@ -212,6 +212,7 @@
 					while($f = $q->fetch_array())
 					{
 						$id = $f['dispensation_id'];
+						$pid = $f['patient_id'];
 						$q2 = $conn->query("SELECT * FROM `medication_dispensation` WHERE `dispensation_id` = '$id' order by `dispensation_id` DESC limit 7") or die(mysqli_error());
 						$f2 = $q2->fetch_array();
                         $date_time_call = $f2['date_time_call'];
@@ -219,7 +220,7 @@
                     	$timestamp = strtotime($date_created);
                     	$new_date_formats = date('F j, Y g:i a', $timestamp);
 				?>
-				<a href="#" class="list-group-item">
+				<a href="medication_dispensation?id=<?php echo $pid?>" class="list-group-item">
 					<img src="assets/images/med.png" class="pull-left" alt="Medicine" />
 					<span class="contacts-title"><?php echo $f['patient_name']?></span>
 					<p><?php echo $f2['medicine_name']?> - <?php echo $f2['quantity']?> pcs.</p>

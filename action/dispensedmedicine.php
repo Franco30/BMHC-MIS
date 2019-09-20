@@ -13,8 +13,12 @@ if(isset($_POST['add'])){
     $date=date("F j, Y");
     $month=date("F");
     $date_time=date("F j, Y g:i a");
-    $remarks = "dispensed $quantity $medicine_name to $received";
+
     require '../require/config.php';
+    $query = $conn->query("SELECT * FROM `patient` WHERE `patient_id` = '$received'") or die(mysqli_error());
+    $fetch = $query->fetch_array();
+    $patient_name =  $fetch['patient_name'];
+    $remarks = "dispensed $quantity $medicine_name to $patient_name";
 
     $conn->query("INSERT INTO `medication_dispensation` VALUES('', '$received', '$medicine_name', '$date', '$time', '$month', '$year', '$quantity','$date_time')") or die(mysqli_error());
     $conn->query("INSERT INTO `users_activity_log` VALUES('', '$user_id', '$remarks','$date_time')") or die(mysqli_error());

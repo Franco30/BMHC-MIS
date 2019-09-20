@@ -50,14 +50,14 @@
                         </div>
 						<div class="panel panel-default tabs">
 								<ul class="nav nav-tabs" role="tablist">
-									<li><a href="#tab-first" role="tab" data-toggle="tab">Patient</a></li>
-									<li  class="active"><a href="#tab-second" role="tab" data-toggle="tab">Treatment</a></li>
-									<li><a href="#tab-fourth" role="tab" data-toggle="tab">DSSM</a></li>
-									<li><a href="#tab-fifth" role="tab" data-toggle="tab">Xpert MTB</a></li>
-									<li><a href="#tab-sixth" role="tab" data-toggle="tab">TB Culture</a></li>
-									<li><a href="#tab-seventh" role="tab" data-toggle="tab">DST</a></li>
-									<li><a href="#tab-eigth" role="tab" data-toggle="tab">TST</a></li>
-									<li><a href="#tab-ninth" role="tab" data-toggle="tab">CXR</a></li>
+									<li><a href="#tab-first" role="tab" data-toggle="tab">Patient Info</a></li>
+									<li  class="active"><a href="#tab-second" role="tab" data-toggle="tab">Prenatal</a></li>
+									<li><a href="#tab-fourth" role="tab" data-toggle="tab">Family Planning</a></li>
+									<li><a href="#tab-fifth" role="tab" data-toggle="tab">Immunization</a></li>
+									<li><a href="#tab-sixth" role="tab" data-toggle="tab">TB</a></li>
+									<li><a href="#tab-seventh" role="tab" data-toggle="tab">Consultation</a></li>
+									<!-- <li><a href="#tab-eigth" role="tab" data-toggle="tab">TST</a></li>
+									<li><a href="#tab-ninth" role="tab" data-toggle="tab">CXR</a></li> -->
 								</ul>
 								<div class="panel-body tab-content">
 									<div class="tab-pane" id="tab-first">
@@ -103,7 +103,7 @@
 													<hr style="margin:0px 0 5px 0;">
 												</div>
 												<div class="col-md-4">   <br>                     
-													<h5><strong>Source of Patient: </strong></h5>
+													<h5><strong>Region/Provice: </strong><?php echo $fetch['region_province']?></h5>
 													<hr style="margin:0px 0 5px 0;">
 													<h5><strong>Registration Group: </strong></h5>
 													<hr style="margin:0px 0 5px 0;">
