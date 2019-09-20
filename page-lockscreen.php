@@ -53,7 +53,7 @@
 												<span>System Analyst</span>
 											</div>
 										</div>
-										<span class="input-group-btn"><a href="index" class="btn btn-primary">BACK TO LOGIN <i class="fa fa-arrow-right"></i></a></span>
+										<span class="input-group-btn"><a href="index" class="btn btn-primary" style="background-color: #E91E63;">BACK TO LOGIN <i class="fa fa-arrow-right"></i></a></span>
 										<hr><h5 class="heading">University of Negros Occidental Recoletos</h5>
 										<h5 class="heading">Department of Information Technology © 2020</h5>
 									</center>

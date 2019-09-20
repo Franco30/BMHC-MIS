@@ -373,7 +373,7 @@
                                                         <div class="form-group">
                                                             <label>Type of last delivery</label>
                                                             <input type="text" class="form-control" id="type"
-                                                                placeholder="Enter Occupation" required />
+                                                                placeholder="Enter Type of last delivery" required />
                                                         </div>
                                                     </div>
                                                 </div>
