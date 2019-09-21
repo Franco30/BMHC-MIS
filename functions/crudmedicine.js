@@ -58,6 +58,8 @@ $(document).ready(function () {
         $.ajax({
             type: "POST",
             url: "action/editmedicine.php",
+            cache: false,
+            async: false,
             data: {
                 medicine_id: $medicine_id,
                 medicine_name: $medicine_name,

@@ -40,36 +40,38 @@
                             </div>
                             <div class="form-row">
                                 <div class="col-md-6">
-                                    <div class="form-group">
+                                    <div class="form-group" style="margin-left:-10px;">
                                         <label>Menstrual Hx</label>
                                         <input type="text" class="form-control" id="menstrualhx"
                                             placeholder="Enter Menstrual Hx" required />
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="form-group">
+                                    <div class="form-group" style="margin-right:-10px;">
                                         <label>Menarch</label>
                                         <input type="text" class="form-control" id="menarch" placeholder="Enter Menarch"
                                             required />
                                     </div>
                                 </div>
                             </div>
+                            &nbsp;
                             <div class="form-row">
                                 <div class="col-md-6">
-                                    <div class="form-group">
+                                    <div class="form-group" style="margin-left:-10px;">
                                         <label>Flow</label>
                                         <input type="text" class="form-control" id="flow" placeholder="Enter Flow"
                                             required />
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="form-group">
+                                    <div class="form-group" style="margin-right:-10px;">
                                         <label>Dysmenorrhea</label>
                                         <input type="text" class="form-control" id="dysmenorrhea"
                                             placeholder="Enter Dysmenorrhea" required />
                                     </div>
                                 </div>
                             </div>
+                            &nbsp;
                             <div class="form-group">
                                 <label>OB-Gyne Hx</label>
                                 <textarea class="form-control" spellcheck="false" id="obgynehx"></textarea>
@@ -97,52 +99,55 @@
                             </div>
                             <div class="form-row">
                                 <div class="col-md-6">
-                                    <div class="form-group">
+                                    <div class="form-group" style="margin-left:-10px;">
                                         <label>Duration</label>
                                         <input type="text" class="form-control" id="cycle" placeholder="Enter Duration"
                                             required />
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="form-group">
+                                    <div class="form-group" style="margin-right:-10px;">
                                         <label>Blood Type</label>
                                         <input type="text" class="form-control" id="bloodtype"
                                             placeholder="Enter Blood Type" required />
                                     </div>
                                 </div>
                             </div>
+                            &nbsp;
                             <div class="form-row">
                                 <div class="col-md-6">
-                                    <div class="form-group">
+                                    <div class="form-group" style="margin-left:-10px;">
                                         <label>TT1</label>
                                         <input type="text" class="form-control" id="tt1" placeholder="Enter TT1"
                                             required />
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="form-group">
+                                    <div class="form-group" style="margin-right:-10px;">
                                         <label>TT2</label>
                                         <input type="text" class="form-control" id="tt2" placeholder="Enter TT2"
                                             required />
                                     </div>
                                 </div>
                             </div>
+                            &nbsp;
                             <div class="form-row">
                                 <div class="col-md-6">
-                                    <div class="form-group">
+                                    <div class="form-group" style="margin-left:-10px;">
                                         <label>TT3</label>
                                         <input type="text" class="form-control" id="tt3" placeholder="Enter TT3"
                                             required />
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="form-group">
+                                    <div class="form-group" style="margin-right:-10px;">
                                         <label>TT4</label>
                                         <input type="text" class="form-control" id="tt4" placeholder="Enter TT4"
                                             required />
                                     </div>
                                 </div>
                             </div>
+                            &nbsp;
                             <div class="form-group">
                                 <label>TT5</label>
                                 <input type="text" class="form-control" id="tt5" placeholder="Enter TT5" required />

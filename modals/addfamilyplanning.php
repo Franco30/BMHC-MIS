@@ -13,7 +13,7 @@
                 <h4 class="modal-title" id="defModalHead">New Family Planning</h4>
             </div>
             <div class="modal-body">
-                <form id="patientform">
+                <form id="familyplanningform">
                     <div class="row">
 
                     </div>
@@ -195,8 +195,6 @@
                                                     <option>Sympto-thermal</option>
                                                 </select>
                                             </div>
-
-
                                         </div>
                                     </div>
                                 </div>

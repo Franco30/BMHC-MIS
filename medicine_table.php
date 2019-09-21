@@ -48,7 +48,8 @@
                                     <div class="pull-left">
                                         <button class="btn btn-primary btn-md" data-toggle="modal"
                                             data-target="#new_medicine">New Medicine</button>
-                                        <a href="medication_dispensation" class="btn btn-md btn-default">Go to Medical Dispense</a>
+                                        <a href="medication_dispensation" class="btn btn-md btn-default">Go to Medical
+                                            Dispense</a>
                                     </div>
                                 </div>
                             </div>
@@ -80,7 +81,7 @@
 
     <!-- START THIS PAGE PLUGINS-->
     <script type="text/javascript" src="functions/crudmedicine.js"></script>
-    <script type='text/javascript' src='js/plugins/bootstrap/bootstrap-select.js'></script>  
+    <script type='text/javascript' src='js/plugins/bootstrap/bootstrap-select.js'></script>
     <script type="text/javascript" src="js/plugins/datatables/jquery.dataTables.min.js"></script>
     <script type='text/javascript' src='js/plugins/icheck/icheck.min.js'></script>
     <script type="text/javascript" src="js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>

@@ -54,13 +54,13 @@
                             </div>
                             <div class="form-row">
                                 <div class="col-md-6">
-                                    <div class="form-group">
+                                <div class="form-group" style="margin-left:-10px;">
                                     <label>Birthdate</label>
                                     <input type="text" class="form-control datepicker" id="birthdate" placeholder="Enter Birthdate" required />
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="form-group">
+                                <div class="form-group" style="margin-right:-10px;">
                                     <label>Time of Birth</label>
                                     <div class="input-group bootstrap-timepicker">
                                         <input type="text" class="form-control timepicker" id="birthtime" required/>
@@ -77,7 +77,7 @@
                             
                             <div class="form-row">
                                 <div class="col-md-6">
-                                    <div class="form-group">
+                                <div class="form-group" style="margin-left:-10px;">
                                     <label>Gender</label>
                                     <select class="form-control select" style="display: none;" id="gender">
                                         <option>Male</option>
@@ -86,7 +86,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="form-group">
+                                <div class="form-group" style="margin-right:-10px;">
                                     <label>Civil Status</label>
                                     <select class="form-control select" style="display: none;" id="civil_status">
                                         <option>Single</option>
@@ -107,13 +107,13 @@
 
                             <div class="form-row">
                                 <div class="col-md-6">
-                                    <div class="form-group">
+                                <div class="form-group" style="margin-left:-10px;">
                                         <label>Mother's Age</label>
                                         <input type="number" class="form-control" id="mothers_age" placeholder="Enter Mother's Age" required />
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="form-group">
+                                <div class="form-group" style="margin-right:-10px;">
                                         <label>Mother's Occupation</label>
                                         <input type="text" class="form-control" id="mothers_occupation" placeholder="Enter Mother's Occupation" required />
                                     </div>
@@ -127,13 +127,13 @@
 
                             <div class="form-row">
                                 <div class="col-md-6">
-                                    <div class="form-group">
+                                <div class="form-group" style="margin-left:-10px;">
                                         <label>Father's Age</label>
                                         <input type="number" class="form-control" id="fathers_age" placeholder="Enter Father's Age" required />
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="form-group">
+                                <div class="form-group" style="margin-right:-10px;">
                                         <label>Father's Occupation</label>
                                         <input type="text" class="form-control" id="fathers_occupation" placeholder="Enter Father's Occupation" required />
                                     </div>
@@ -145,7 +145,7 @@
                                     &nbsp;
                                     <div class="col-md-12">
                                     <div class="col-md-4">
-                                <div class="form-group">
+                                    <div class="form-group" style="margin-left:-10px;">
                                     <label>Place of Prenatal</label>
                                     <input type="text" class="form-control" id="place_prenatal" placeholder="Enter Place of Prenatal" required />
                                 </div>
@@ -157,7 +157,7 @@
                                 </div>
                             </div>
                             <div class="col-md-4">
-                                <div class="form-group">
+                            <div class="form-group" style="margin-right:-10px;">
                                     <label>Type of Delivery</label>
                                     <input type="text" class="form-control" id="type_delivery" placeholder="Enter Type of Delivery" required />
                                 </div>
@@ -185,29 +185,31 @@
                                 <label>Date</label>
                                 <input type="text" class="form-control datepicker" id="present_illness_date" placeholder="Enter Date" required />
                             </div>
+                            &nbsp;
                          <div class="form-row">
                              <div class="col-md-6">
-                                <div class="form-group">
+                             <div class="form-group" style="margin-left:-10px;">
                                 <label>Temperature</label>
                                 <input type="text" class="form-control" id="temp" placeholder="Enter Temperature" required />
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                <div class="form-group">
+                            <div class="form-group" style="margin-right:-10px;">
                                 <label>Respiratory Rate</label>
                                 <input type="text" class="form-control" id="rr" placeholder="Enter Respiratory Rate" required />
                                 </div>
                             </div>
                         </div>
+                        &nbsp;
                         <div class="form-row">
                              <div class="col-md-6">
-                             <div class="form-group">
+                             <div class="form-group" style="margin-left:-10px;">
                                 <label>Blood Pressure</label>
                                 <input type="text" class="form-control" id="bp" placeholder="Enter Blood Pressure" required />
                             </div>
                             </div>
                             <div class="col-md-6">
-                            <div class="form-group">
+                            <div class="form-group" style="margin-right:-10px;">
                                 <label>Weight</label>
                                 <input type="text" class="form-control" id="weight" placeholder="Enter Weight" required />
                             </div>

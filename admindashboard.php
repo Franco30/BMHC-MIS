@@ -23,6 +23,14 @@ require 'require/logincheck.php';
     <script src="js/moment.min.js"></script>
     <script src="js/fullcalendar.min.js"></script>
     <script src="js/jquery.canvasjs.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#pyear").on('change', function () {
+                var year = $(this).val();
+                window.location = 'admindashboard?year=' + year;
+            });
+        });
+    </script>
     <?php require 'js/loadcharts/dashboard/dashboardgraphs.php'?>
     <script src="functions/loadcalendar.js"></script>
 </head>
@@ -51,7 +59,7 @@ require 'require/logincheck.php';
                         <!-- START WIDGET SLIDER -->
                         <div class="widget widget-primary widget-carousel">
                             <div class="owl-carousel" id="owl-example">
-                                <div>  
+                                <div>
                                     <div class="widget-title">Total Patients</div>
                                     <div class="widget-subtitle">27/08/2014 15:23</div>
                                     <div class="widget-int">3,548</div>
@@ -78,7 +86,8 @@ require 'require/logincheck.php';
                     <div class="col-md-3">
 
                         <!-- START WIDGET REGISTRED -->
-                        <div class="widget widget-primary widget-item-icon" onclick="location.href='master_file_patient';">
+                        <div class="widget widget-primary widget-item-icon"
+                            onclick="location.href='master_file_patient';">
                             <div class="widget-item-left">
                                 <span class="fa fa-male"></span>
                             </div>
@@ -178,65 +187,111 @@ require 'require/logincheck.php';
                     ?>
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="panel panel-default">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    <div class="form-group">
+                                        <div class="col-md-2">
+                                            <select class="form-control select" data-style="btn-primary" id="pyear">
+                                                <option selected disabled>Select Year</option>
+                                                <option value="<?php 
+                                                                    if(isset($_GET['year']))
+                                                                    {
+                                                                        $value=$_GET['year']; 
+                                                                        echo $value;
+                                                                     }
+                                                                    else
+                                                                    {
+                                                                        echo date('Y');
+                                                                    }
+                                                                ?>">
+                                                                     <?php 
+                                                                            if(isset($_GET['year']))
+                                                                            {
+                                                                                $value=$_GET['year']; 
+                                                                                echo $value;
+                                                                             }
+                                                                            else
+                                                                            {
+                                                                                echo date('Y');
+                                                                            }
+                                                                    ?>
+                                                </option>
+
+                                                <?php
+                                                    $conn = new mysqli("localhost", "root", "", "bmhc") or die(mysqli_error());
+                                                    $query = $conn->query("SELECT * FROM `patient` group by year") or die(mysqli_error());
+
+                                                    while($fetch = $query->fetch_array())
+                                                 {
+                                                        ?>
+                                                            <option value="<?php echo $fetch['year'];?>">
+                                                             <?php echo $fetch['year']?>
+                                                             </option>
+                                                  <?php
+                                                }
+                                                 ?>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <br>
+                                </div>
                                 <div class="panel-body">
                                     <div id="chartContainer1" style="width: 100%; height: 300px"></div>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="panel panel-primary">
-                                <div class="panel-heading">
-                                    <h3 class="panel-title"><strong>Follow Up Schedule Calendar</strong></h3>
-                                    <div class="btn-group pull-right">
-                                        <div class="pull-left">
-                                            <a href="follow_up_table" class="btn btn-primary pull-right">See
-                                                Detailed</a>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title"><strong>Follow Up Schedule Calendar</strong></h3>
+                                        <div class="btn-group pull-right">
+                                            <div class="pull-left">
+                                                <a href="follow_up_table" class="btn btn-primary pull-right">See
+                                                    Detailed</a>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="panel-body">
-                                    <div id="calendar" class="vertical-box-column p-15 calendar"></div>
+                                    <div class="panel-body">
+                                        <div id="calendar" class="vertical-box-column p-15 calendar"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="panel panel-primary">
-                                <div class="panel-heading">
-                                    <h3 class="panel-title"><strong>Patient Classification - Gender</strong></h3>
-                                </div>
-                                <div class="panel-body">
-                                    <?php
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title"><strong>Patient Classification - Gender</strong></h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        <?php
 										require 'require/config.php';	
 												$query1 = $conn->query("SELECT count(*) as total from `patient` where patient_id && gender = 'Male' && year = '$year'") or die(mysqli_error());
 												$fetch1 = $query1->fetch_array();
 												$query2 = $conn->query("SELECT count(*) as total from `patient` where patient_id && gender = 'Female' && year = '$year'") or die(mysqli_error());
 												$fetch2 = $query2->fetch_array();
 										?>
-                                    <ul class='list-group border-bottom'>
-                                        <li class='list-group-item'><span class='fa fa-male'></span>Male<span
-                                                class='badge badge-info'><?php echo $fetch1['total']?></span></li>
-                                        <li class='list-group-item'><span class='fa fa-female'></span>Female<span
-                                                class='badge badge-info'><?php echo $fetch2['total']?></span></li>
+                                        <ul class='list-group border-bottom'>
+                                            <li class='list-group-item'><span class='fa fa-male'></span>Male<span
+                                                    class='badge badge-info'><?php echo $fetch1['total']?></span></li>
+                                            <li class='list-group-item'><span class='fa fa-female'></span>Female<span
+                                                    class='badge badge-info'><?php echo $fetch2['total']?></span></li>
 
-                                    </ul>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="col-md-4">
-                            <div class="panel panel-primary">
-                                <div class="panel-heading">
-                                    <h3 class="panel-title"><strong>Patient Classification - Type</strong></h3>
-                                </div>
-                                <div class="panel-body">
-                                    <?php
+                            <div class="col-md-4">
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title"><strong>Patient Classification - Type</strong></h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        <?php
 												require 'require/config.php';	
 												$query1 = $conn->query("SELECT count(*) as total from `patient` where patient_id && `age` <= 15 && year = '$year'") or die(mysqli_error());
 												$fetch1 = $query1->fetch_array();
@@ -244,91 +299,96 @@ require 'require/logincheck.php';
 												$query2 = $conn->query("SELECT count(*) as total from `patient` where patient_id && `age` >= 16 && year = '$year'") or die(mysqli_error());
 												$fetch2 = $query2->fetch_array();
 											?>
-                                    <ul class='list-group border-bottom'>
-                                        <li class='list-group-item'><span class='fa fa-child'></span>Children<span
-                                                class='badge badge-info'><?php echo $fetch1['total']?></span></li>
-                                        <li class='list-group-item'><span class='fa fa-user'></span>Adult<span
-                                                class='badge badge-info'><?php echo $fetch2['total']?></span></li>
+                                        <ul class='list-group border-bottom'>
+                                            <li class='list-group-item'><span class='fa fa-child'></span>Children<span
+                                                    class='badge badge-info'><?php echo $fetch1['total']?></span></li>
+                                            <li class='list-group-item'><span class='fa fa-user'></span>Adult<span
+                                                    class='badge badge-info'><?php echo $fetch2['total']?></span></li>
 
-                                    </ul>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title" style="font-size: 15px;"><strong>Patient Classification
+                                                - Type of Treatment</strong></h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        <ul class='list-group border-bottom'>
+                                            <li class='list-group-item'><span
+                                                    class='fa fa-user'></span>Tuberculosis<span
+                                                    class='badge badge-info'>0</span></li>
+                                            <li class='list-group-item'><span class='fa fa-user'></span>Family
+                                                Planning<span class='badge badge-info'>1</span></li>
+                                            <li class='list-group-item'><span
+                                                    class='fa fa-user'></span>Immunization<span
+                                                    class='badge badge-info'>0</span></li>
+                                            <li class='list-group-item'><span class='fa fa-user'></span>Prenatal<span
+                                                    class='badge badge-info'>0</span></li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-
-                        <div class="col-md-4">
-                            <div class="panel panel-primary">
-                                <div class="panel-heading">
-                                    <h3 class="panel-title" style="font-size: 15px;"><strong>Patient Classification - Type of Treatment</strong></h3>
-                                </div>
-                                <div class="panel-body">
-                                    <ul class='list-group border-bottom'>
-                                        <li class='list-group-item'><span class='fa fa-user'></span>Tuberculosis<span
-                                                class='badge badge-info'>0</span></li>
-                                        <li class='list-group-item'><span class='fa fa-user'></span>Family Planning<span
-                                                class='badge badge-info'>1</span></li>
-                                        <li class='list-group-item'><span class='fa fa-user'></span>Immunization<span
-                                                class='badge badge-info'>0</span></li>
-                                        <li class='list-group-item'><span class='fa fa-user'></span>Prenatal<span
-                                                class='badge badge-info'>0</span></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                        <!-- END PAGE CONTENT WRAPPER -->
                     </div>
-                    <!-- END PAGE CONTENT WRAPPER -->
+                    <!-- END PAGE CONTENT -->
                 </div>
-                <!-- END PAGE CONTENT -->
-            </div>
-            <!-- END PAGE CONTAINER -->
+                <!-- END PAGE CONTAINER -->
 
-            <!-- START PRELOADS -->
-            <audio id="audio-alert" src="audio/alert.mp3" preload="auto"></audio>
-            <audio id="audio-fail" src="audio/fail.mp3" preload="auto"></audio>
-            <!-- END PRELOADS -->
+                <!-- START PRELOADS -->
+                <audio id="audio-alert" src="audio/alert.mp3" preload="auto"></audio>
+                <audio id="audio-fail" src="audio/fail.mp3" preload="auto"></audio>
+                <!-- END PRELOADS -->
 
-            <!-- START SCRIPTS -->
-            <!-- START PLUGINS -->
-            <script type="text/javascript" src="js/plugins/bootstrap/bootstrap.min.js"></script>
-            <!-- END PLUGINS -->
+                <!-- START SCRIPTS -->
+                <!-- START PLUGINS -->
+                <script type="text/javascript" src="js/plugins/bootstrap/bootstrap.min.js"></script>
+                <!-- END PLUGINS -->
 
-            <!-- START THIS PAGE PLUGINS-->
-            <script src="js/timedate.js"></script>
-            <script type='text/javascript' src='js/plugins/icheck/icheck.min.js'></script>
-            <script type="text/javascript" src="js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
-            <script type="text/javascript" src="js/plugins/scrolltotop/scrolltopcontrol.js"></script>
-            <script type="text/javascript" src="js/plugins/owl/owl.carousel.min.js"></script>
-            <!-- END THIS PAGE PLUGINS-->
+                <!-- START THIS PAGE PLUGINS-->
+                <script src="js/timedate.js"></script>
+                <script type='text/javascript' src='js/plugins/icheck/icheck.min.js'></script>
+                <script type="text/javascript" src="js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js">
+                </script>
+                <script type="text/javascript" src="js/plugins/scrolltotop/scrolltopcontrol.js"></script>
+                <script type='text/javascript' src='js/plugins/bootstrap/bootstrap-select.js'></script>
+                <script type="text/javascript" src="js/plugins/owl/owl.carousel.min.js"></script>
+                <!-- END THIS PAGE PLUGINS-->
 
-            <!-- START TEMPLATE -->
-            <script type="text/javascript" src="js/settings.js"></script>
+                <!-- START TEMPLATE -->
+                <script type="text/javascript" src="js/settings.js"></script>
 
-            <script type="text/javascript" src="js/plugins.js"></script>
-            <script type="text/javascript" src="js/actions.js"></script>
+                <script type="text/javascript" src="js/plugins.js"></script>
+                <script type="text/javascript" src="js/actions.js"></script>
 
-            <script type="text/javascript" src="js/demo_dashboard.js"></script>
-            <!-- END TEMPLATE -->
-            <script>
-                $('.counter').each(function () {
-                    var $this = $(this),
-                        countTo = $this.attr('data-count');
-                    $({
-                        countNum: $this.text()
-                    }).animate({
-                        countNum: countTo
-                    }, {
-                        duration: 2000,
-                        easing: 'linear',
-                        step: function () {
-                            $this.text(Math.floor(this.countNum));
-                        },
-                        complete: function () {
-                            $this.text(this.countNum);
-                            //alert('finished');
-                        }
+                <script type="text/javascript" src="js/demo_dashboard.js"></script>
+                <!-- END TEMPLATE -->
+                <script>
+                    $('.counter').each(function () {
+                        var $this = $(this),
+                            countTo = $this.attr('data-count');
+                        $({
+                            countNum: $this.text()
+                        }).animate({
+                            countNum: countTo
+                        }, {
+                            duration: 2000,
+                            easing: 'linear',
+                            step: function () {
+                                $this.text(Math.floor(this.countNum));
+                            },
+                            complete: function () {
+                                $this.text(this.countNum);
+                                //alert('finished');
+                            }
+                        });
                     });
-                });
-            </script>
-            <!-- END SCRIPTS -->
+                </script>
+                <!-- END SCRIPTS -->
 </body>
 
 </html>

@@ -23,7 +23,7 @@ if(ISSET($_POST['login']))
 	$user_id = $fetch['user_id'];	
 		
     if($valid > 0){	
-        if ($position == 'Midwife' || $position == 'Nurse') 
+        if ($position == 'Midwife' || $position == 'Medical Officer' || $position == 'Nurse') 
 			{
                 echo "ok";
 				$_SESSION['user_id'] = $fetch['user_id'];

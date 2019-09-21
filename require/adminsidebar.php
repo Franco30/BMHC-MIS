@@ -35,7 +35,7 @@
 							<li> <a href="familyplanning"><span class="fa fa-users"></span> <span class="xn-text">Family Planning</span></a> </li>
 							<li> <a href="prenatal"><span class="fa fa-wheelchair"></span> <span class="xn-text">Pre-natal</span></a> </li>
 							<li> <a href="tb_registration_table"><span class="fa fa-plus"></span> <span class="xn-text">Tuberculosis</span></a> </li>
-							<li> <a href="patient_treatment_table.php"><span class="fa fa-heartbeat"></span> <span class="xn-text">Consultations</span></a> </li>
+							<li> <a href="consultation"><span class="fa fa-heartbeat"></span> <span class="xn-text">Consultations</span></a> </li>
 							<li> <a href="immunization_table.php"><span class="fa fa-medkit"></span> <span class="xn-text">Immunization</span></a> </li>
 							<li> <a href="referral"><span class="fa fa-hospital-o"></span> <span class="xn-text">Referral</span></a> </li>
 							<li> <a href="follow_up_table"><span class="fa fa-calendar"></span> <span class="xn-text">Follow-up Visit</span></a> </li>
