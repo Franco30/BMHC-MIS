@@ -16,6 +16,10 @@
                 
                         <div class="row">
                             <div class="col-md-6">
+                                <div class="form-group">
+                            <label>Date:</label>
+                            <input type="text" class="form-control datepicker" id="date" required />
+                            </div>
                             <div class="form-group">
                             <label>FROM:</label>
                             <input type="text" class="form-control" id="from" value="Mansilingan Health Center" required />

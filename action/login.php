@@ -30,7 +30,7 @@ if(ISSET($_POST['login']))
 				$conn->query ("UPDATE `users` SET `login` = '$date' WHERE `user_id` = '$user_id'") or die(mysqli_error());
 			}
 		
-		if ($position != 'Midwife' && $position != 'Nurse') 
+		if ($position != 'Midwife' && $position != 'Nurse' && $position != 'Medical Officer') 
 			{
                 echo "ok2";
 				$_SESSION['user_id'] = $fetch['user_id'];

@@ -22,7 +22,7 @@ if(isset($_POST['show'])){
     <tbody>
         <?php
                 require '../require/config.php';
-                $query = $conn->query("SELECT * FROM `patient`, `medication_dispensation` WHERE patient.patient_id = medication_dispensation.patient_id ORDER BY `dispensation_id` DESC") or die(mysqli_error());
+                $query = $conn->query("SELECT * FROM `patient`, `medication_dispensation`, `medicine` WHERE patient.patient_id = medication_dispensation.patient_id && medicine.medicine_id = medication_dispensation.medicine_id ORDER BY `dispensation_id` DESC") or die(mysqli_error());
                 while($fetch = $query->fetch_array()){
 		?>
         <tr>

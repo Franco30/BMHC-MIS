@@ -59,8 +59,7 @@
                                                     <li>
                                                         <a href="#step-1">
                                                             <span class="stepNumber">1</span>
-                                                            <span
-                                                                class="stepDesc">Patient<br /><small>Consultation</small></span>
+                                                            <span class="stepDesc">Patient<br /><small>Consultation</small></span>
                                                         </a>
                                                     </li>
                                                     <li>
@@ -80,8 +79,7 @@
                                                     <li>
                                                         <a href="#step-4">
                                                             <span class="stepNumber">4</span>
-                                                            <span
-                                                                class="stepDesc">Patient<br /><small>Treatment</small></span>
+                                                            <span class="stepDesc">Patient<br /><small>Treatment</small></span>
                                                         </a>
                                                     </li>
                                                 </ul>
@@ -91,24 +89,20 @@
                                                             <div class="col-md-6">
                                                                 <div class="form-group" style="margin-left:-10px;">
                                                                     <label>Date</label>
-                                                                    <input type="text" class="form-control datepicker"
-                                                                        id="date" placeholder="Enter Date Today"
-                                                                        required />
+                                                                    <input type="text" class="form-control datepicker" id="date" placeholder="Enter Date Today" required />
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-6">
                                                                 <div class="form-group" style="margin-right:-10px;">
                                                                     <label>Time</label>
-                                                                    <input type="text" class="form-control timepicker"
-                                                                        id="time" required />
+                                                                    <input type="text" class="form-control timepicker" id="time" required />
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         &nbsp;
                                                         <div class="form-group">
                                                             <label>PhilHealth #</label>
-                                                            <input type="text" class="form-control" id="phnum"
-                                                                placeholder="Enter Philhealth #" required />
+                                                            <input type="text" class="form-control" id="phnum" placeholder="Enter Philhealth #" required />
                                                         </div>
 
                                                     </div>
@@ -117,15 +111,13 @@
                                                             <div class="col-md-6">
                                                                 <div class="form-group" style="margin-left:-10px;">
                                                                     <label>FCN #</label>
-                                                                    <input type="text" class="form-control" id="ornum"
-                                                                        placeholder="Enter FCN #" required />
+                                                                    <input type="text" class="form-control" id="ornum" placeholder="Enter FCN #" required />
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-6">
                                                                 <div class="form-group" style="margin-right:-10px;">
                                                                     <label>4 p's #</label>
-                                                                    <input type="text" class="form-control" id="ornum"
-                                                                        placeholder="Enter 4 p's #" required />
+                                                                    <input type="text" class="form-control" id="ornum" placeholder="Enter 4 p's #" required />
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -138,8 +130,7 @@
                                                             <div class="col-md-6">
                                                                 <div class="form-group" style="margin-left:-10px;">
                                                                     <label>Patient Name</label>
-                                                                    <select class="form-control select"
-                                                                        data-live-search="true" id="provider">
+                                                                    <select class="form-control select" data-live-search="true" id="provider">
                                                                         <option value="#">Select</option>
                                                                         <?php
 	                                                                $conn = new mysqli("localhost", "root", "", "bmhc") or die(mysqli_error());
@@ -148,8 +139,7 @@
                                                                          while($fetch = $query->fetch_array())
                                                                      {
 									                                     ?>
-                                                                        <option
-                                                                            value="<?php echo $fetch['patient_id'];?>">
+                                                                        <option value="<?php echo $fetch['patient_id'];?>">
                                                                             <?php echo $fetch['patient_name']?></option>
                                                                         <?php
 					                                                }
@@ -160,40 +150,34 @@
                                                             <div class="col-md-6">
                                                                 <div class="form-group" style="margin-right:-10px;">
                                                                     <label>Birth Date</label>
-                                                                    <input type="text" class="form-control datepicker"
-                                                                        id="birthdate" placeholder="Enter Date of Birth"
-                                                                        required />
+                                                                    <input type="text" class="form-control datepicker" id="birthdate" placeholder="Enter Date of Birth" required />
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         &nbsp;
                                                         <div class="form-group">
                                                             <label>Address</label>
-                                                            <input type="text" class="form-control" id="address"
-                                                                placeholder="Enter Barangay and Purok/St" required />
+                                                            <input type="text" class="form-control" id="address" placeholder="Enter Barangay and Purok/St" required />
                                                         </div>
 
                                                         <div class="form-row">
                                                             <div class="col-md-4">
                                                                 <div class="form-group" style="margin-left:-10px;">
                                                                     <label>Weight</label>
-                                                                    <input type="number" class="form-control"
-                                                                        id="weight" placeholder="kgs." required />
+                                                                    <input type="number" class="form-control" id="weight" placeholder="kgs." required />
                                                                 </div>
 
                                                             </div>
                                                             <div class="col-md-4">
                                                                 <div class="form-group">
                                                                     <label>Blood Pressure - BP</label>
-                                                                    <input type="text" class="form-control" id="bp"
-                                                                        placeholder="mmHg" required />
+                                                                    <input type="text" class="form-control" id="bp" placeholder="mmHg" required />
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-4">
                                                                 <div class="form-group" style="margin-right:-10px;">
                                                                     <label>Temperature</label>
-                                                                    <input type="number" class="form-control" id="temp"
-                                                                        placeholder="C" required />
+                                                                    <input type="number" class="form-control" id="temp" placeholder="C" required />
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -205,9 +189,7 @@
                                                             <div class="col-md-6">
                                                                 <div class="form-group" style="margin-left:-10px;">
                                                                     <label>Gender</label>
-                                                                    <select class="form-control select"
-                                                                        data-live-search="true" style="display: none;"
-                                                                        id="gender">
+                                                                    <select class="form-control select" data-live-search="true" style="display: none;" id="gender">
                                                                         <option>Select</option>
                                                                         <option>Male</option>
                                                                         <option>Female</option>
@@ -218,31 +200,27 @@
                                                             <div class="col-md-6">
                                                                 <div class="form-group" style="margin-right:-10px;">
                                                                     <label>Age</label>
-                                                                    <input type="text" class="form-control" id="age"
-                                                                        placeholder="Enter Age" required />
+                                                                    <input type="text" class="form-control" id="age" placeholder="Enter Age" required />
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         &nbsp;
                                                         <div class="form-group">
                                                             <label>Head of the Family</label>
-                                                            <input type="text" class="form-control" id="headoffam"
-                                                                placeholder="Enter Head of the Family" required />
+                                                            <input type="text" class="form-control" id="headoffam" placeholder="Enter Head of the Family" required />
                                                         </div>
                                                         <div class="form-row">
                                                             <div class="col-md-6">
                                                                 <div class="form-group" style="margin-left:-10px;">
                                                                     <label>Respiratory Rate - RR</label>
-                                                                    <input type="number" class="form-control"
-                                                                        id="weight" required />
+                                                                    <input type="number" class="form-control" id="weight" required />
                                                                 </div>
 
                                                             </div>
                                                             <div class="col-md-6">
                                                                 <div class="form-group" style="margin-right:-10px;">
                                                                     <label>Pulse Rate - PR</label>
-                                                                    <input type="number" class="form-control" id="bp"
-                                                                        required />
+                                                                    <input type="number" class="form-control" id="bp" required />
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -255,15 +233,13 @@
                                                         <h5 style="font-size: 12px;font-weight: bold;">S</h5>
                                                         <div class="form-group">
                                                             <label>Complaints:</label>
-                                                            <textarea class="form-control" spellcheck="false"
-                                                                id="complaints"></textarea>
+                                                            <textarea class="form-control" spellcheck="false" id="complaints"></textarea>
                                                         </div>
 
                                                         <h5 style="font-size: 12px;font-weight: bold;">O:</h5>
                                                         <div class="form-group">
                                                             <label>Pertinent P.E Findings:</label>
-                                                            <textarea class="form-control" spellcheck="false"
-                                                                id="pefindings"></textarea>
+                                                            <textarea class="form-control" spellcheck="false" id="pefindings"></textarea>
                                                         </div>
 
 
@@ -276,16 +252,14 @@
                                                         <h5 style="font-size: 12px;font-weight: bold;">A</h5>
                                                         <div class="form-group">
                                                             <label>Diagnosis:</label>
-                                                            <textarea class="form-control" spellcheck="false"
-                                                                id="complaints"></textarea>
+                                                            <textarea class="form-control" spellcheck="false" id="complaints"></textarea>
                                                         </div>
 
                                                         <h5 style="font-size: 12px;font-weight: bold;">P - Plan of
                                                             Actions:</h5>
                                                         <div class="form-group">
                                                             <label>Laboratory Request:</label>
-                                                            <textarea class="form-control" spellcheck="false"
-                                                                id="labrequest"></textarea>
+                                                            <textarea class="form-control" spellcheck="false" id="labrequest"></textarea>
                                                         </div>
 
                                                     </div>
@@ -296,41 +270,35 @@
 
                                                         <div class="form-group">
                                                             <label>Antibiotic</label>
-                                                            <textarea class="form-control" spellcheck="false"
-                                                                id="antibiotic"></textarea>
+                                                            <textarea class="form-control" spellcheck="false" id="antibiotic"></textarea>
                                                         </div>
 
                                                         <div class="form-group">
                                                             <label>Analgesic</label>
-                                                            <textarea class="form-control" spellcheck="false"
-                                                                id="analgesic"></textarea>
+                                                            <textarea class="form-control" spellcheck="false" id="analgesic"></textarea>
                                                         </div>
 
                                                         <div class="form-group">
                                                             <label>Cough Preparation</label>
-                                                            <textarea class="form-control" spellcheck="false"
-                                                                id="coughpreparation"></textarea>
+                                                            <textarea class="form-control" spellcheck="false" id="coughpreparation"></textarea>
                                                         </div>
 
                                                     </div>
                                                     <div class="col-md-6">
 
                                                         <div class="form-group">
-                                                            <label>Antipynetic</label>
-                                                            <textarea class="form-control" spellcheck="false"
-                                                                id="antipynetic"></textarea>
+                                                            <label>Antipyretic</label>
+                                                            <textarea class="form-control" spellcheck="false" id="antipyretic"></textarea>
                                                         </div>
 
                                                         <div class="form-group">
                                                             <label>Vitamins</label>
-                                                            <textarea class="form-control" spellcheck="false"
-                                                                id="antibiotic"></textarea>
+                                                            <textarea class="form-control" spellcheck="false" id="antibiotic"></textarea>
                                                         </div>
 
                                                         <div class="form-group">
                                                             <label>Recommendations</label>
-                                                            <textarea class="form-control" spellcheck="false"
-                                                                id="recommendation"></textarea>
+                                                            <textarea class="form-control" spellcheck="false" id="recommendation"></textarea>
                                                         </div>
 
                                                     </div>
@@ -350,7 +318,6 @@
     </div>
     <!-- END PAGE CONTENT -->
     </div>
-    <?php require 'modals/addfamilyplanning.php'?>
     <audio id="audio-alert" src="audio/alert.mp3" preload="auto"></audio>
     <audio id="audio-fail" src="audio/fail.mp3" preload="auto"></audio>
     <script type="text/javascript" src="js/plugins/jquery/jquery.min.js"></script>

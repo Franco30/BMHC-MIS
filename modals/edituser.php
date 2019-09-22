@@ -37,7 +37,7 @@
                         </div>
                         <div class="form-group">
                             <label>New Password</label>
-                            <input type="text" name="password" id="password" class="form-control" required />
+                            <input type="text" name="password" id="password<?php echo $fetch['user_id']; ?>" class="form-control" required />
                         </div>
                         <div class="form-group">
                             <label>Confirm Password</label>
@@ -65,7 +65,7 @@
 					'confirmpassword': {
 						minlength: 5,
 						maxlength: 10,
-						equalTo: "#password"
+						equalTo: "#password<?php echo $fetch['user_id']; ?>"
 					}
 				}
 			});

@@ -10,10 +10,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <link rel="icon" href="assets/images/bmhc.png" type="image/x-icon" />
- 
+
     <link rel="stylesheet" type="text/css" id="theme" href="css/theme-brown.css" />
     <link rel="stylesheet" type="text/css" href="assets3/vendor/font-awesome/css/font-awesome.min.css" />
- 
+
 </head>
 
 <body>
@@ -44,8 +44,7 @@
                                 <h3 class="panel-title"><strong>Immunization Registration</strong></h3>
                                 <div class="btn-group pull-right">
                                     <div class="pull-left">
-                                        <button class="btn btn-primary" data-toggle="modal"
-                                            data-target="#new_immunization">New Immunization</button>
+                                        <button class="btn btn-primary" data-toggle="modal" data-target="#new_immunization">New Immunization</button>
                                     </div>
                                 </div>
                             </div>
@@ -69,8 +68,8 @@
     <script type="text/javascript" src="functions/crudpatient.js"></script>
     <script type="text/javascript" src="js/plugins/jquery/jquery-ui.min.js"></script>
     <script type="text/javascript" src="js/plugins/bootstrap/bootstrap.min.js"></script>
- 
-   
+
+
     <script type='text/javascript' src='js/plugins/icheck/icheck.min.js'></script>
     <script type="text/javascript" src="js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
     <script type="text/javascript" src="js/plugins/scrolltotop/scrolltopcontrol.js"></script>
@@ -83,8 +82,8 @@
     <script type="text/javascript" src="js/plugins.js"></script>
     <script type="text/javascript" src="js/actions.js"></script>
 
-        <!-- END THIS PAGE PLUGINS -->       
-        
+    <!-- END THIS PAGE PLUGINS -->
+
 
 
 </body>

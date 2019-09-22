@@ -44,7 +44,7 @@
                                 <h3 class="panel-title"><strong>Consultation Record</strong></h3>
                                 <div class="btn-group pull-right">
                                     <div class="pull-left">
-                                        <a class="btn btn-primary" href="add_consultation" >New Consultation</a>
+                                        <a class="btn btn-primary" href="add_consultation">New Consultation</a>
                                     </div>
                                 </div>
                             </div>
@@ -60,7 +60,6 @@
     </div>
     <!-- END PAGE CONTENT -->
     </div>
-    <?php require 'modals/addfamilyplanning.php'?>
     <audio id="audio-alert" src="audio/alert.mp3" preload="auto"></audio>
     <audio id="audio-fail" src="audio/fail.mp3" preload="auto"></audio>
     <script type="text/javascript" src="js/plugins/jquery/jquery.min.js"></script>

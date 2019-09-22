@@ -21,11 +21,11 @@ if(isset($_POST['edit'])){
     else {
         $pass1 = sha1($password);
         $salt = "STG3Wim4UAAAAAIX3525VGdasGfWty2w2N67dagj";
-        $pass1 = $salt.$pass1;
+        $pass2 = $salt.$pass1;
         
 
         require ('../require/config.php');
-        $conn->query("UPDATE `users` SET `fullname` = '$fullname', `license` = '$license', `position` = '$position', `username` = '$username',  `password` = '$pass1' WHERE `user_id` = '$user_id'") or die(mysqli_error());
+        $conn->query("UPDATE `users` SET `fullname` = '$fullname', `license` = '$license', `position` = '$position', `username` = '$username',  `password` = '$pass2' WHERE `user_id` = '$user_id'") or die(mysqli_error());
         $conn->query("INSERT INTO `users_activity_log` VALUES('', '$userid', 'Updated account of $fullname','$date_time')") or die(mysqli_error());
 
     }
