@@ -42,14 +42,14 @@
                         <div class="panel panel-primary">
                             <div class="panel-heading">
                                 <h3 class="panel-title"><strong>Family Planning Service Record</strong></h3>
-                                <div class="btn-group pull-right">
+                                <!-- <div class="btn-group pull-right">
                                     <div class="pull-left">
                                         <a class="btn btn-primary" href="add_familyplanning" >New Family Planning</a>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                             <div class="panel-body">
-                                <div id="patientTable"></div>
+                                <div id="fppatientTable"></div>
                             </div>
                         </div>
                     </div>
@@ -62,7 +62,7 @@
     <audio id="audio-alert" src="audio/alert.mp3" preload="auto"></audio>
     <audio id="audio-fail" src="audio/fail.mp3" preload="auto"></audio>
     <script type="text/javascript" src="js/plugins/jquery/jquery.min.js"></script>
-    <script type="text/javascript" src="functions/crudpatient.js"></script>
+    <script type="text/javascript" src="functions/crudfamilyplanning.js"></script>
     <script type="text/javascript" src="js/plugins/jquery/jquery-ui.min.js"></script>
     <script type="text/javascript" src="js/plugins/bootstrap/bootstrap.min.js"></script>
     <script type='text/javascript' src='js/plugins/icheck/icheck.min.js'></script>

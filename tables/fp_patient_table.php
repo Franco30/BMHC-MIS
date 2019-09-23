@@ -2,7 +2,7 @@
 require '../require/config.php';
 if(isset($_POST['show'])){
 ?>
-<table id="patienttable" class="table datatable">
+<table id="fppatienttable" class="table datatable">
     <thead>
         <tr>
             <th><center>Patient Name</center></th>
@@ -10,7 +10,7 @@ if(isset($_POST['show'])){
             <th><center>Gender</center></th>
             <th><center>Birthdate</center></th>
             <th><center>Address</center></th>
-            <th><center>Contact Number</center></th>
+            <th><center>Action</center></th>
         </tr>
     </thead>
     <tbody>
@@ -24,7 +24,7 @@ if(isset($_POST['show'])){
             <td><center><?php echo $fetch['gender']?></center></td>
             <td><center><?php echo $fetch['birthdate']?></center></td>
             <td><center><?php echo $fetch['address']?></center></td>
-            <td><center><?php echo $fetch['contact_no']?></center></td>
+            <td><center><a href="add_familyplanning?id=<?php echo $fetch['patient_id'];?>" class="btn btn-sm btn-info">Register</a></center></td>
         </tr>
         <?php
     }
