@@ -108,7 +108,7 @@ require 'require/logincheck.php';
                                 <div class="widget-int num-count counter" data-count="<?php echo $fetch['total']?>">0
                                 </div>
                                 <div class="widget-title">Total Patients</div>
-                                <div class="widget-subtitle">Registered - Year 2019</div>
+                                <div class="widget-subtitle">Registered - Year <?php echo $year;?></div>
                             </div>
                             <div class="widget-controls">
                                 <a href="#" class="widget-control-right widget-remove" data-toggle="tooltip"
@@ -154,7 +154,7 @@ require 'require/logincheck.php';
 
                         <!-- START WIDGET CLOCK -->
                         <div class="widget widget-primary widget-padding-sm">
-                            <div class="widget-big-int" id="currentTime" style="font-size: 37px">
+                            <div class="widget-big-int" id="currentTime" style="font-size: 36px">
                             </div>
                             <div class="widget-subtitle plugin-date" id="day">Loading...</div>
                             <div class="widget-controls">
@@ -246,12 +246,14 @@ require 'require/logincheck.php';
                                 <div class="panel panel-primary">
                                     <div class="panel-heading">
                                         <h3 class="panel-title"><strong>Follow Up Schedule Calendar</strong></h3>
+<!--
                                         <div class="btn-group pull-right">
                                             <div class="pull-left">
                                                 <a href="follow_up_table" class="btn btn-primary pull-right">See
                                                     Detailed</a>
                                             </div>
                                         </div>
+-->
                                     </div>
                                     <div class="panel-body">
                                         <div id="calendar" class="vertical-box-column p-15 calendar"></div>
@@ -268,6 +270,11 @@ require 'require/logincheck.php';
                                     </div>
                                     <div class="panel-body">
                                         <?php
+                                 $year = date('Y');
+			                 if(isset($_GET['year']))
+			                     {
+				                $year=$_GET['year'];
+			                         }
 										require 'require/config.php';	
 												$query1 = $conn->query("SELECT count(*) as total from `patient` where patient_id && gender = 'Male' && year = '$year'") or die(mysqli_error());
 												$fetch1 = $query1->fetch_array();
@@ -292,6 +299,11 @@ require 'require/logincheck.php';
                                     </div>
                                     <div class="panel-body">
                                         <?php
+                                $year = date('Y');
+			                 if(isset($_GET['year']))
+			                     {
+				                $year=$_GET['year'];
+			                         }
 												require 'require/config.php';	
 												$query1 = $conn->query("SELECT count(*) as total from `patient` where patient_id && `age` <= 15 && year = '$year'") or die(mysqli_error());
 												$fetch1 = $query1->fetch_array();

@@ -38,23 +38,46 @@
 
                 <div class="row">
                     <div class="col-md-12">
-                        <div id="alert" class="alert alert-info" style="display:none;">
-                            <center><span id="alerttext"></span></center>
-                        </div>
-                        <div class="panel panel-primary">
-                            <div class="panel-heading">
-                                <h3 class="panel-title"><strong>Patient Master File</strong></h3>
-                                <div class="btn-group pull-right">
-                                    <div class="pull-left">
+                        <div class="panel panel-default tabs">
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li class="active"><a href="#tab-first" role="tab" data-toggle="tab">Patient Record</a></li>
+                                <li><a href="#tab-second" role="tab" data-toggle="tab">Child Patient Record</a></li>
+                            </ul>
+                            <div class="panel-body tab-content">
+                                <div class="tab-pane active" id="tab-first">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="panel panel-default">
+                                                <div class="panel-body list-group list-group-contacts scroll" style="height: 470px;">
+                                                    <div class="panel-body">
+                                                        <div id="alert" class="alert alert-info" style="display:none;">
+                                                            <center><span id="alerttext"></span></center>
+                                                        </div>
+                                                        <div id="patientmasterfileTable"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane" id="tab-second">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="panel panel-default">
+                                                <div class="panel-body list-group list-group-contacts scroll" style="height: 470px;">
+                                                    <div class="panel-body">
+                                                        <div id="alert" class="alert alert-info" style="display:none;">
+                                                            <center><span id="alerttext"></span></center>
+                                                        </div>
+                                                        <div id="childpatientmasterfileTable"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="panel-body">
-                                <div id="patientmasterfileTable"></div>
-                            </div>
-
                         </div>
-
                     </div>
                 </div>
 
@@ -78,6 +101,7 @@
 
     <!-- START THIS PAGE PLUGINS-->
     <script type="text/javascript" src="functions/patientmasterfile.js"></script>
+    <script type="text/javascript" src="functions/childpatientmasterfile.js"></script>
     <script type="text/javascript" src="js/plugins/bootstrap/bootstrap-datepicker.js"></script>
     <script type='text/javascript' src='js/plugins/bootstrap/bootstrap-select.js'></script>
     <script type='text/javascript' src='js/plugins/icheck/icheck.min.js'></script>

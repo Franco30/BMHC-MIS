@@ -1,4 +1,4 @@
-<div class="modal fade" id="new_referral" tabindex="-1" role="dialog" aria-labelledby="largeModalHead" aria-hidden="true">
+<div class="modal fade" id="addreferral<?php echo $fetch['patient_id']; ?>" tabindex="-1" role="dialog" aria-labelledby="largeModalHead" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <center>
@@ -30,7 +30,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Name of Patient:</label>
-                                <input type="text" class="form-control" id="patient_name" placeholder="Enter Patient Name" required />
+                                <input type="text" class="form-control" id="patient_name" style="color:#444444;" value="<?php echo $fetch['patient_name']?>" readonly required />
                             </div>
                             <div class="form-group">
                                 <label>Blood Pressure:</label>

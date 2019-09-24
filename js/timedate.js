@@ -28,7 +28,7 @@ function clock() {
         mid = 'AM';
     }
 
-    document.getElementById('currentTime').innerHTML = hour + ':' + min + ':' + sec + mid ;
+    document.getElementById('currentTime').innerHTML = hour + ':' + min + ':' + sec + ':' + mid ;
     setTimeout(clock, 1000);
 
 }

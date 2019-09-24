@@ -44,15 +44,17 @@
                         <div class="panel panel-primary">
                             <div class="panel-heading">
                                 <h3 class="panel-title"><strong>Referral Record</strong></h3>
+<!--
                                 <div class="btn-group pull-right">
                                     <div class="pull-left">
                                         <button class="btn btn-primary btn-md" data-toggle="modal"
                                             data-target="#new_referral">New Referral</button>
                                     </div>
                                 </div>
+-->
                             </div>
                             <div class="panel-body">
-                                <div id="patientmasterfileTable"></div>
+                                <div id="referralpatientTable"></div>
                             </div>
 
                         </div>
@@ -80,7 +82,7 @@
     <!-- END PLUGINS -->
 
     <!-- START THIS PAGE PLUGINS-->
-    <script type="text/javascript" src="functions/patientmasterfile.js"></script>
+    <script type="text/javascript" src="functions/referral.js"></script>
     <script type="text/javascript" src="js/plugins/bootstrap/bootstrap-datepicker.js"></script>
     <script type='text/javascript' src='js/plugins/bootstrap/bootstrap-select.js'></script>
     <script type='text/javascript' src='js/plugins/icheck/icheck.min.js'></script>

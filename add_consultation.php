@@ -52,6 +52,13 @@
                             <div class="panel-body list-group list-group-contacts scroll" style="height: 470px;">
                                 <div class="panel-body">
                                     <!-- START WIZARD WITH SUBMIT BUTTON -->
+                                    <?php
+	                            require 'require/config.php';
+			                    $query = $conn->query("SELECT * FROM `patient` WHERE `patient_id` = '$_GET[id]'") or die(mysqli_error());
+                                $fetch = $query->fetch_array();
+                                date_default_timezone_set('Asia/Manila');
+                                $date=date("F j, Y");
+									?>
                                     <div class="block">
                                         <form id="familyplanningform">
                                             <div class="wizard">
@@ -59,32 +66,27 @@
                                                     <li>
                                                         <a href="#step-1">
                                                             <span class="stepNumber">1</span>
-                                                            <span class="stepDesc">Patient<br /><small>Consultation</small></span>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#step-2">
-                                                            <span class="stepNumber">2</span>
                                                             <span class="stepDesc">Patient<br /><small>Patient
                                                                     Information</small></span>
                                                         </a>
                                                     </li>
                                                     <li>
-                                                        <a href="#step-3">
-                                                            <span class="stepNumber">3</span>
+                                                        <a href="#step-2">
+                                                            <span class="stepNumber">2</span>
                                                             <span class="stepDesc">Patient<br /><small>Complaints,
                                                                     Diagnosis, etc.</small></span>
                                                         </a>
                                                     </li>
                                                     <li>
-                                                        <a href="#step-4">
-                                                            <span class="stepNumber">4</span>
+                                                        <a href="#step-3">
+                                                            <span class="stepNumber">3</span>
                                                             <span class="stepDesc">Patient<br /><small>Treatment</small></span>
                                                         </a>
                                                     </li>
                                                 </ul>
+
                                                 <div id="step-1">
-                                                    <div class="col-lg-6">
+                                                    <div class="col-md-6">
                                                         <div class="form-row">
                                                             <div class="col-md-6">
                                                                 <div class="form-group" style="margin-left:-10px;">
@@ -93,71 +95,31 @@
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-6">
-                                                                <div class="form-group" style="margin-right:-10px;">
-                                                                    <label>Time</label>
-                                                                    <input type="text" class="form-control timepicker" id="time" required />
+                                                                <div class="form-group">
+                                                                    <label>PhilHealth #</label>
+                                                                    <input type="text" class="form-control" id="philhealth" value="<?php echo $fetch['philhealth_no']?>" placeholder="Enter Philhealth #" style="color:#444444;" readonly required />
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         &nbsp;
-                                                        <div class="form-group">
-                                                            <label>PhilHealth #</label>
-                                                            <input type="text" class="form-control" id="phnum" placeholder="Enter Philhealth #" required />
-                                                        </div>
-
-                                                    </div>
-                                                    <div class="col-lg-6">
-                                                        <div class="form-row">
-                                                            <div class="col-md-6">
-                                                                <div class="form-group" style="margin-left:-10px;">
-                                                                    <label>FCN #</label>
-                                                                    <input type="text" class="form-control" id="ornum" placeholder="Enter FCN #" required />
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-6">
-                                                                <div class="form-group" style="margin-right:-10px;">
-                                                                    <label>4 p's #</label>
-                                                                    <input type="text" class="form-control" id="ornum" placeholder="Enter 4 p's #" required />
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- END OF STEP 1 -->
-                                                <div id="step-2">
-                                                    <div class="col-md-6">
                                                         <div class="form-row">
                                                             <div class="col-md-6">
                                                                 <div class="form-group" style="margin-left:-10px;">
                                                                     <label>Patient Name</label>
-                                                                    <select class="form-control select" data-live-search="true" id="provider">
-                                                                        <option value="#">Select</option>
-                                                                        <?php
-	                                                                $conn = new mysqli("localhost", "root", "", "bmhc") or die(mysqli_error());
-					                                                    $query = $conn->query("SELECT * FROM `patient` where `status` = 'Registered'") or die(mysqli_error());
-
-                                                                         while($fetch = $query->fetch_array())
-                                                                     {
-									                                     ?>
-                                                                        <option value="<?php echo $fetch['patient_id'];?>">
-                                                                            <?php echo $fetch['patient_name']?></option>
-                                                                        <?php
-					                                                }
-									                                ?>
-                                                                    </select>
+                                                                    <input type="text" class="form-control" id="philhealth" value="<?php echo $fetch['patient_name']?>" style="color:#444444;" readonly required />
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-6">
                                                                 <div class="form-group" style="margin-right:-10px;">
                                                                     <label>Birth Date</label>
-                                                                    <input type="text" class="form-control datepicker" id="birthdate" placeholder="Enter Date of Birth" required />
+                                                                    <input type="text" class="form-control" id="birthdate" value="<?php echo $fetch['birthdate'];?>" style="color:#444444;" readonly required />
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         &nbsp;
                                                         <div class="form-group">
                                                             <label>Address</label>
-                                                            <input type="text" class="form-control" id="address" placeholder="Enter Barangay and Purok/St" required />
+                                                            <input type="text" class="form-control" id="address" value="<?php echo $fetch['address'];?>" placeholder="Enter Barangay and Purok/St" style="color:#444444;" readonly required />
                                                         </div>
 
                                                         <div class="form-row">
@@ -189,18 +151,14 @@
                                                             <div class="col-md-6">
                                                                 <div class="form-group" style="margin-left:-10px;">
                                                                     <label>Gender</label>
-                                                                    <select class="form-control select" data-live-search="true" style="display: none;" id="gender">
-                                                                        <option>Select</option>
-                                                                        <option>Male</option>
-                                                                        <option>Female</option>
-                                                                    </select>
+                                                                    <input type="text" class="form-control" id="gender" value="<?php echo $fetch['gender'];?>" style="color:#444444;" readonly required />
                                                                 </div>
 
                                                             </div>
                                                             <div class="col-md-6">
                                                                 <div class="form-group" style="margin-right:-10px;">
                                                                     <label>Age</label>
-                                                                    <input type="text" class="form-control" id="age" placeholder="Enter Age" required />
+                                                                    <input type="text" class="form-control" id="age" value="<?php echo $fetch['age'];?>" style="color:#444444;" readonly required />
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -227,7 +185,7 @@
                                                     </div>
                                                 </div>
                                                 <!-- END OF STEP 2 -->
-                                                <div id="step-3">
+                                                <div id="step-2">
                                                     <div class="col-md-6">
 
                                                         <h5 style="font-size: 12px;font-weight: bold;">S</h5>
@@ -265,7 +223,7 @@
                                                     </div>
                                                 </div>
                                                 <!-- END OF STEP 3 -->
-                                                <div id="step-4">
+                                                <div id="step-3">
                                                     <div class="col-md-6">
 
                                                         <div class="form-group">
@@ -317,7 +275,6 @@
         <!-- END PAGE CONTENT WRAPPER -->
     </div>
     <!-- END PAGE CONTENT -->
-    </div>
     <audio id="audio-alert" src="audio/alert.mp3" preload="auto"></audio>
     <audio id="audio-fail" src="audio/fail.mp3" preload="auto"></audio>
     <script type="text/javascript" src="js/plugins/jquery/jquery.min.js"></script>

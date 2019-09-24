@@ -2,7 +2,7 @@
 require '../require/config.php';
 if(isset($_POST['show'])){
 ?>
-<table id="fppatienttable" class="table datatable">
+<table id="referralpatienttable" class="table datatable">
     <thead>
         <tr>
             <th><center>Patient Name</center></th>
@@ -15,7 +15,7 @@ if(isset($_POST['show'])){
     </thead>
     <tbody>
         <?php
-    $query = $conn->query("select * from `patient` WHERE `gender` = 'Female' order by `patient_id` DESC") or die(mysqli_error());
+    $query = $conn->query("select * from `patient` order by `patient_id` DESC") or die(mysqli_error());
     while($fetch = $query->fetch_array()){
         ?>
         <tr>
@@ -24,7 +24,11 @@ if(isset($_POST['show'])){
             <td><center><?php echo $fetch['gender']?></center></td>
             <td><center><?php echo $fetch['birthdate']?></center></td>
             <td><center><?php echo $fetch['address']?></center></td>
-            <td><center><a href="add_familyplanning?id=<?php echo $fetch['patient_id'];?>" class="btn btn-sm btn-info">Register</a></center></td>
+            <td><center>
+                <button data-target="#addreferral<?php echo $fetch['patient_id']; ?>" data-toggle="modal" class="btn btn-sm btn-info">Referral</button>
+                </center>
+                <?php require('../modals/addreferral.php'); ?>
+            </td>
         </tr>
         <?php
     }

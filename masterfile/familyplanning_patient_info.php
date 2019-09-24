@@ -1,52 +1,54 @@
+				<?php
+	require 'require/config.php';
+			$query = $conn->query("SELECT * FROM `patient`, `family_planning` WHERE patient.patient_id = family_planning.patient_id && patient.patient_id = '$_GET[id]'") or die(mysqli_error());
+			$fetch = $query->fetch_array();
+			$id = $fetch['patient_id'];
+			?>
 <div class="row">
 	<div class="col-md-9">
 		<div class="panel-body">
 			<div class="tocify-content">
-			<h2> <strong><mark>Family Planning No: <?php echo $fetch['year']. "0" .$fetch['patient_id']?></mark></strong></h2><hr>
+			<h2> <strong><mark>Family Planning No: <?php echo $fetch['year']. "0" .$fetch['family_planning_id']?></mark></strong></h2><hr>
 				<h4>Overview</h4>
 				<div class="panel-body">
 					<div class="row">
 						<div class="col-md-5">                                                
-							<h6><strong>Name: </strong><?php echo $fetch['patient_name']?></h6>
+							<h6><strong>Type of Acceptor: </strong><?php echo $fetch['type_of_acceptor']?></h6>
 							<hr style="margin:0px 0 5px 0;">
-							<h6><strong>Age: </strong><?php echo $fetch['age']?></h6>
+							<h6><strong>Previously Used Method: </strong><?php echo $fetch['prev_used_method']?></h6>
 							<hr style="margin:0px 0 5px 0;">
-							<h6><strong>Gender: </strong><?php echo $fetch['gender']?></h6>
+							<h6><strong>Patient Name: </strong><?php echo $fetch['patient_name']?></h6>
 							<hr style="margin:0px 0 5px 0;">
-							<h6><strong>Contact Number: </strong><?php echo $fetch['contact_no']?></h6>
+							<h6><strong>Date of Birth: </strong><?php echo $fetch['patient_birthdate']?></h6>
 							<hr style="margin:0px 0 5px 0;">
-							<h6><strong>Home Address: </strong><?php echo $fetch['address']?></h6>
+							<h6><strong>Highest Education: </strong><?php echo $fetch['patient_highest_education']?></h6>
 							<hr style="margin:0px 0 5px 0;">
-							<h6><strong>Birthdate: </strong><?php echo $fetch['address']?></h6>
+							<h6><strong>Occupation: </strong><?php echo $fetch['patient_occupation']?></h6>
 							<hr style="margin:0px 0 5px 0;">
-							<h6><strong>Occupation: </strong><?php echo $fetch['occupation']?></h6>
+							<h6><strong>Name of Spouse: </strong><?php echo $fetch['spouse_name']?></h6>
 							<hr style="margin:0px 0 5px 0;">
-							<h6><strong>Contact Person: </strong><?php echo $fetch['contact_person']?></h6>
+							<h6><strong>Date of Birth: </strong><?php echo $fetch['spouse_birthdate']?></h6>
 							<hr style="margin:0px 0 5px 0;">
-							<h6><strong>Emergency No: </strong><?php echo $fetch['emergency_no']?></h6>
+							<h6><strong>Highest Education: </strong><?php echo $fetch['spouse_highest_education']?></h6>
 							<hr style="margin:0px 0 5px 0;">
-							<h6><strong>Philhealth No: </strong><?php echo $fetch['philhealth_no']?></h6>
+							<h6><strong>Occupation: </strong><?php echo $fetch['spouse_occupation']?></h6>
+							<hr style="margin:0px 0 5px 0;">
+							<h6><strong>Average Monthly Income: </strong><?php echo $fetch['average_monthly_income']?></h6>
 						</div>
-						<div class="col-md-5">                        
-							<h6><strong>Registration Date: </strong></h6>
+						<div class="col-md-6">    
 							<hr style="margin:0px 0 5px 0;">
-							<h6><strong>DOTS Facility: </strong></h6>
+							<h6><strong>Address: </strong><?php echo $fetch['address']?></h6>
 							<hr style="margin:0px 0 5px 0;">
-							<h6><strong>Source of Patient: </strong></h6>
+							<h6><strong>Province: </strong><?php echo $fetch['address']?></h6>
+							<h6><strong>Registration Date: </strong><?php echo $fetch['date']?></h6>
 							<hr style="margin:0px 0 5px 0;">
-							<h6><strong>Registration Group: </strong></h6>
+							<h6><strong>No. of Living Children: </strong><?php echo $fetch['no_of_living_children']?></h6>
 							<hr style="margin:0px 0 5px 0;">
-							<h6><strong>Diagnosis: </strong></h6>
+							<h6><strong>Plan More Children: </strong><?php echo $fetch['plan_more_children']?></h6>
 							<hr style="margin:0px 0 5px 0;">
-							<h6><strong>Bacteriological Status: </strong></h6>
+							<h6><strong>Reason for Practicing FP: </strong><?php echo $fetch['reason_for_practicing_fp']?></h6>
 							<hr style="margin:0px 0 5px 0;">
-							<h6><strong>Classification of TB: </strong></h6>
-							<hr style="margin:0px 0 5px 0;">
-							<h6><strong>BCG Scar: </strong></h6>
-							<hr style="margin:0px 0 5px 0;">
-							<h6><strong>History of TB: </strong></h6>
-							<hr style="margin:0px 0 5px 0;">
-							<h6><strong>Duration: </strong></h6>
+							<h6><strong>Method Accepted: </strong><?php echo $fetch['method_accepted']?></h6>
 						</div>
 					</div>
 				</div>&nbsp;<hr>
@@ -122,9 +124,6 @@
 						<tbody>
 							
 							<tr>
-								<td><center></center></td>
-								<td><center></center></td>
-								<td><center></center></td>
 								<td><center></center></td>
 								<td><center></center></td>
 								<td><center></center></td>
@@ -209,6 +208,37 @@
 
 						</tbody>
 					</table>
+				</div>
+				&nbsp;
+				<hr>
+				<h2> <strong>Follow Up Schedule</strong></h2><hr>
+				<h4>Overview</h4>    
+				<div class="panel-body panel-body-table">
+					<table  class="table table-bordered">
+						<thead>
+							<tr class="warning"> 
+								<th><center>Date Service Given</center></th>
+								<th><center>Method/Brand</center></th>
+								<th><center>No. of Units</center></th>
+								<th><center>Remarks</center></th>
+								<th><center>Name of Provider</center></th>
+								<th><center>Next Service Date</center></th>
+							</tr>
+						</thead>
+						<tbody>
+							
+							<tr>
+								<td><center></center></td>
+								<td><center></center></td>
+								<td><center></center></td>
+								<td><center></center></td>
+								<td><center></center></td>
+								<td><center></center></td>
+							</tr>
+
+						</tbody>
+					</table>
+				</div>
 <!--
 					<table  class="table table-bordered">
 
@@ -244,7 +274,6 @@
 						</tbody>
 					</table>
 -->
-				</div>&nbsp;
 <!--
 				<h2> <strong>Medicines and Dosages Taken</strong></h2><hr>
 				<h4>Graphical</h4>    

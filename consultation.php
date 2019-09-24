@@ -49,7 +49,7 @@
                                 </div>
                             </div>
                             <div class="panel-body">
-                                <div id="patientTable"></div>
+                                <div id="consultationpatientTable"></div>
                             </div>
                         </div>
                     </div>
@@ -63,7 +63,7 @@
     <audio id="audio-alert" src="audio/alert.mp3" preload="auto"></audio>
     <audio id="audio-fail" src="audio/fail.mp3" preload="auto"></audio>
     <script type="text/javascript" src="js/plugins/jquery/jquery.min.js"></script>
-    <script type="text/javascript" src="functions/crudpatient.js"></script>
+    <script type="text/javascript" src="functions/crudconsultation.js"></script>
     <script type="text/javascript" src="js/plugins/jquery/jquery-ui.min.js"></script>
     <script type="text/javascript" src="js/plugins/bootstrap/bootstrap.min.js"></script>
     <script type='text/javascript' src='js/plugins/icheck/icheck.min.js'></script>
