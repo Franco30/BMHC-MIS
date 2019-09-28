@@ -30,7 +30,7 @@
             <!-- START BREADCRUMB -->
             <ul class="breadcrumb">
                 <li>Transactions</li>
-                <li><mark><strong>Prenatal Record</strong></mark></li>
+                <li><mark><strong>Prenatal Registration</strong></mark></li>
             </ul>
             <!-- END BREADCRUMB -->
             <!-- PAGE CONTENT WRAPPER -->
@@ -43,15 +43,13 @@
                         </div>
                         <div class="panel panel-primary">
                             <div class="panel-heading">
-                                <h3 class="panel-title"><strong>Prenatal Record</strong></h3>
-<!--
+                                <h3 class="panel-title"><strong>Prenatal Registration</strong></h3>
                                 <div class="btn-group pull-right">
                                     <div class="pull-left">
                                         <button class="btn btn-primary btn-md" data-toggle="modal"
-                                            data-target="#new_prenatal">New Prenatal</button>
+                                            data-target="#new_prenatal">Add New Patient</button>
                                     </div>
                                 </div>
--->
                             </div>
                             <div class="panel-body">
                                 <div id="prenatalpatientTable"></div>

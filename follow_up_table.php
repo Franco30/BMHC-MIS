@@ -50,8 +50,7 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="panel panel-default">
-                                                <div class="panel-body list-group list-group-contacts scroll"
-                                                    style="height: 430px;">
+                                                <div class="panel-body list-group list-group-contacts scroll" style="height: 430px;">
                                                     <div class="panel-body">
                                                         <div id="tbfollowupTable"></div>
                                                     </div>
@@ -64,8 +63,7 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="panel panel-default">
-                                                <div class="panel-body list-group list-group-contacts scroll"
-                                                    style="height: 430px;">
+                                                <div class="panel-body list-group list-group-contacts scroll" style="height: 430px;">
                                                     <div class="panel-body">
                                                         <div id="MDTable"></div>
                                                     </div>
@@ -78,8 +76,7 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="panel panel-default">
-                                                <div class="panel-body list-group list-group-contacts scroll"
-                                                    style="height: 430px;">
+                                                <div class="panel-body list-group list-group-contacts scroll" style="height: 430px;">
                                                     <div class="panel-body">
                                                         <div id="fpfollowupTable"></div>
                                                     </div>
@@ -92,8 +89,7 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="panel panel-default">
-                                                <div class="panel-body list-group list-group-contacts scroll"
-                                                    style="height: 430px;">
+                                                <div class="panel-body list-group list-group-contacts scroll" style="height: 430px;">
                                                     <div class="panel-body">
                                                         <div id="patientTables"></div>
                                                     </div>
@@ -103,49 +99,46 @@
                                     </div>
                                 </div>
                             </div>
-
                         </div>
-                        <!-- END PAGE CONTENT WRAPPER -->
                     </div>
-                    <!-- END PAGE CONTENT -->
                 </div>
-                <!-- END PAGE CONTAINER -->
-                <!-- START PRELOADS -->
-                <audio id="audio-alert" src="audio/alert.mp3" preload="auto"></audio>
-                <audio id="audio-fail" src="audio/fail.mp3" preload="auto"></audio>
-                <!-- END PRELOADS -->
+            </div>
+            <!-- END PAGE CONTENT WRAPPER -->
+        </div>
+        <!-- END PAGE CONTENT -->
+    </div>
+    <!-- END PAGE CONTAINER -->
+    <!-- START PRELOADS -->
+    <audio id="audio-alert" src="audio/alert.mp3" preload="auto"></audio>
+    <audio id="audio-fail" src="audio/fail.mp3" preload="auto"></audio>
+    <!-- END PRELOADS -->
 
-                <!-- START SCRIPTS -->
-                <!-- START PLUGINS -->
-                <script type="text/javascript" src="js/plugins/jquery/jquery.min.js"></script>
-                <script type="text/javascript" src="js/plugins/jquery/jquery-ui.min.js"></script>
-                <script type="text/javascript" src="js/plugins/bootstrap/bootstrap.min.js"></script>
-                <!-- END PLUGINS -->
+    <!-- START SCRIPTS -->
+    <!-- START PLUGINS -->
+    <script type="text/javascript" src="js/plugins/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="js/plugins/jquery/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/plugins/bootstrap/bootstrap.min.js"></script>
+    <!-- END PLUGINS -->
 
-                <!-- START THIS PAGE PLUGINS-->
-                <script type="text/javascript" src="functions/followup.js"></script>
-                <script type="text/javascript" src="js/plugins/bootstrap/bootstrap-datepicker.js"></script>
-                <script type='text/javascript' src='js/plugins/bootstrap/bootstrap-select.js'></script>
-                <script type='text/javascript' src='js/plugins/icheck/icheck.min.js'></script>
-                <script type="text/javascript" src="js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js">
-                </script>
-                <script type="text/javascript" src="js/plugins/scrolltotop/scrolltopcontrol.js"></script>
-                <!-- END THIS PAGE PLUGINS-->
-                <script type="text/javascript" src="js/plugins/datatables/jquery.dataTables.min.js"></script>
-                <!-- START TEMPLATE -->
-                <script type="text/javascript" src="js/settings.js"></script>
-                <script type="text/javascript" src="js/plugins.js"></script>
-                <script type="text/javascript" src="js/actions.js"></script>
-                <!-- END TEMPLATE -->
-                <script>
-                    var date = new Date();
-                    date.setDate(date.getDate());
+    <!-- START THIS PAGE PLUGINS-->
+    <script type="text/javascript" src="functions/followup.js"></script>
+    <script type="text/javascript" src="js/plugins/bootstrap/bootstrap-datepicker.js"></script>
+    <script type="text/javascript" src="js/plugins/bootstrap/bootstrap-timepicker.min.js"></script>
+    <script type='text/javascript' src='js/plugins/bootstrap/bootstrap-select.js'></script>
+    <script type='text/javascript' src='js/plugins/icheck/icheck.min.js'></script>
+    <script type="text/javascript" src="js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js">
+    </script>
+    <script type="text/javascript" src="js/plugins/scrolltotop/scrolltopcontrol.js"></script>
+    <!-- END THIS PAGE PLUGINS-->
+    <script type="text/javascript" src="js/plugins/datatables/jquery.dataTables.min.js"></script>
+    <!-- START TEMPLATE -->
+    <script type="text/javascript" src="js/settings.js"></script>
+    <script type="text/javascript" src="js/plugins.js"></script>
+    <script type="text/javascript" src="js/actions.js"></script>
+    <!-- END TEMPLATE -->
+ 
 
-                    $('#follow_up_date').datepicker({
-                        startDate: date
-                    });
-                </script>
-                <!-- END SCRIPTS -->
+    <!-- END SCRIPTS -->
 </body>
 
 </html>

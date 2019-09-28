@@ -24,8 +24,8 @@ require 'require/logincheck.php';
     <script src="js/fullcalendar.min.js"></script>
     <script src="js/jquery.canvasjs.min.js"></script>
     <script>
-        $(document).ready(function () {
-            $("#pyear").on('change', function () {
+        $(document).ready(function() {
+            $("#pyear").on('change', function() {
                 var year = $(this).val();
                 window.location = 'admindashboard?year=' + year;
             });
@@ -76,8 +76,7 @@ require 'require/logincheck.php';
                                 </div>
                             </div>
                             <div class="widget-controls">
-                                <a href="#" class="widget-control-right widget-remove" data-toggle="tooltip"
-                                    data-placement="top" title="Remove Widget"><span class="fa fa-times"></span></a>
+                                <a href="#" class="widget-control-right widget-remove" data-toggle="tooltip" data-placement="top" title="Remove Widget"><span class="fa fa-times"></span></a>
                             </div>
                         </div>
                         <!-- END WIDGET SLIDER -->
@@ -86,8 +85,7 @@ require 'require/logincheck.php';
                     <div class="col-md-3">
 
                         <!-- START WIDGET REGISTRED -->
-                        <div class="widget widget-primary widget-item-icon"
-                            onclick="location.href='master_file_patient';">
+                        <div class="widget widget-primary widget-item-icon" onclick="location.href='master_file_patient';">
                             <div class="widget-item-left">
                                 <span class="fa fa-male"></span>
                             </div>
@@ -111,8 +109,7 @@ require 'require/logincheck.php';
                                 <div class="widget-subtitle">Registered - Year <?php echo $year;?></div>
                             </div>
                             <div class="widget-controls">
-                                <a href="#" class="widget-control-right widget-remove" data-toggle="tooltip"
-                                    data-placement="top" title="Remove Widget"><span class="fa fa-times"></span></a>
+                                <a href="#" class="widget-control-right widget-remove" data-toggle="tooltip" data-placement="top" title="Remove Widget"><span class="fa fa-times"></span></a>
                             </div>
                         </div>
                         <!-- END WIDGET REGISTRED -->
@@ -143,8 +140,7 @@ require 'require/logincheck.php';
                                 <div class="widget-subtitle">in the system</div>
                             </div>
                             <div class="widget-controls">
-                                <a href="#" class="widget-control-right widget-remove" data-toggle="tooltip"
-                                    data-placement="top" title="Remove Widget"><span class="fa fa-times"></span></a>
+                                <a href="#" class="widget-control-right widget-remove" data-toggle="tooltip" data-placement="top" title="Remove Widget"><span class="fa fa-times"></span></a>
                             </div>
                         </div>
                         <!-- END WIDGET REGISTRED -->
@@ -158,8 +154,7 @@ require 'require/logincheck.php';
                             </div>
                             <div class="widget-subtitle plugin-date" id="day">Loading...</div>
                             <div class="widget-controls">
-                                <a href="#" class="widget-control-right widget-remove" data-toggle="tooltip"
-                                    data-placement="left" title="Remove Widget"><span class="fa fa-times"></span></a>
+                                <a href="#" class="widget-control-right widget-remove" data-toggle="tooltip" data-placement="left" title="Remove Widget"><span class="fa fa-times"></span></a>
                             </div>
                             <div class="widget-buttons widget-c3">
                                 <div class="col">
@@ -204,7 +199,7 @@ require 'require/logincheck.php';
                                                                         echo date('Y');
                                                                     }
                                                                 ?>">
-                                                                     <?php 
+                                                    <?php 
                                                                             if(isset($_GET['year']))
                                                                             {
                                                                                 $value=$_GET['year']; 
@@ -224,10 +219,10 @@ require 'require/logincheck.php';
                                                     while($fetch = $query->fetch_array())
                                                  {
                                                         ?>
-                                                            <option value="<?php echo $fetch['year'];?>">
-                                                             <?php echo $fetch['year']?>
-                                                             </option>
-                                                  <?php
+                                                <option value="<?php echo $fetch['year'];?>">
+                                                    <?php echo $fetch['year']?>
+                                                </option>
+                                                <?php
                                                 }
                                                  ?>
                                             </select>
@@ -246,7 +241,7 @@ require 'require/logincheck.php';
                                 <div class="panel panel-primary">
                                     <div class="panel-heading">
                                         <h3 class="panel-title"><strong>Follow Up Schedule Calendar</strong></h3>
-<!--
+                                        <!--
                                         <div class="btn-group pull-right">
                                             <div class="pull-left">
                                                 <a href="follow_up_table" class="btn btn-primary pull-right">See
@@ -282,10 +277,8 @@ require 'require/logincheck.php';
 												$fetch2 = $query2->fetch_array();
 										?>
                                         <ul class='list-group border-bottom'>
-                                            <li class='list-group-item'><span class='fa fa-male'></span>Male<span
-                                                    class='badge badge-info'><?php echo $fetch1['total']?></span></li>
-                                            <li class='list-group-item'><span class='fa fa-female'></span>Female<span
-                                                    class='badge badge-info'><?php echo $fetch2['total']?></span></li>
+                                            <li class='list-group-item'><span class='fa fa-male'></span>Male<span class='badge badge-info'><?php echo $fetch1['total']?></span></li>
+                                            <li class='list-group-item'><span class='fa fa-female'></span>Female<span class='badge badge-info'><?php echo $fetch2['total']?></span></li>
 
                                         </ul>
                                     </div>
@@ -312,10 +305,8 @@ require 'require/logincheck.php';
 												$fetch2 = $query2->fetch_array();
 											?>
                                         <ul class='list-group border-bottom'>
-                                            <li class='list-group-item'><span class='fa fa-child'></span>Children<span
-                                                    class='badge badge-info'><?php echo $fetch1['total']?></span></li>
-                                            <li class='list-group-item'><span class='fa fa-user'></span>Adult<span
-                                                    class='badge badge-info'><?php echo $fetch2['total']?></span></li>
+                                            <li class='list-group-item'><span class='fa fa-child'></span>Children<span class='badge badge-info'><?php echo $fetch1['total']?></span></li>
+                                            <li class='list-group-item'><span class='fa fa-user'></span>Adult<span class='badge badge-info'><?php echo $fetch2['total']?></span></li>
 
                                         </ul>
                                     </div>
@@ -330,77 +321,75 @@ require 'require/logincheck.php';
                                     </div>
                                     <div class="panel-body">
                                         <ul class='list-group border-bottom'>
-                                            <li class='list-group-item'><span
-                                                    class='fa fa-user'></span>Tuberculosis<span
-                                                    class='badge badge-info'>0</span></li>
+                                            <li class='list-group-item'><span class='fa fa-user'></span>Tuberculosis<span class='badge badge-info'>0</span></li>
                                             <li class='list-group-item'><span class='fa fa-user'></span>Family
                                                 Planning<span class='badge badge-info'>1</span></li>
-                                            <li class='list-group-item'><span
-                                                    class='fa fa-user'></span>Immunization<span
-                                                    class='badge badge-info'>0</span></li>
-                                            <li class='list-group-item'><span class='fa fa-user'></span>Prenatal<span
-                                                    class='badge badge-info'>0</span></li>
+                                            <li class='list-group-item'><span class='fa fa-user'></span>Immunization<span class='badge badge-info'>0</span></li>
+                                            <li class='list-group-item'><span class='fa fa-user'></span>Prenatal<span class='badge badge-info'>0</span></li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <!-- END PAGE CONTENT WRAPPER -->
                     </div>
-                    <!-- END PAGE CONTENT -->
                 </div>
-                <!-- END PAGE CONTAINER -->
+            </div>
+            <!-- END PAGE CONTENT WRAPPER -->
+        </div>
+        <!-- END PAGE CONTENT -->
+    </div>
+    <!-- END PAGE CONTAINER -->
 
-                <!-- START PRELOADS -->
-                <audio id="audio-alert" src="audio/alert.mp3" preload="auto"></audio>
-                <audio id="audio-fail" src="audio/fail.mp3" preload="auto"></audio>
-                <!-- END PRELOADS -->
+    <!-- START PRELOADS -->
+    <audio id="audio-alert" src="audio/alert.mp3" preload="auto"></audio>
+    <audio id="audio-fail" src="audio/fail.mp3" preload="auto"></audio>
+    <!-- END PRELOADS -->
 
-                <!-- START SCRIPTS -->
-                <!-- START PLUGINS -->
-                <script type="text/javascript" src="js/plugins/bootstrap/bootstrap.min.js"></script>
-                <!-- END PLUGINS -->
+    <!-- START SCRIPTS -->
+    <!-- START PLUGINS -->
+    <script type="text/javascript" src="js/plugins/bootstrap/bootstrap.min.js"></script>
+    <!-- END PLUGINS -->
 
-                <!-- START THIS PAGE PLUGINS-->
-                <script src="js/timedate.js"></script>
-                <script type='text/javascript' src='js/plugins/icheck/icheck.min.js'></script>
-                <script type="text/javascript" src="js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js">
-                </script>
-                <script type="text/javascript" src="js/plugins/scrolltotop/scrolltopcontrol.js"></script>
-                <script type='text/javascript' src='js/plugins/bootstrap/bootstrap-select.js'></script>
-                <script type="text/javascript" src="js/plugins/owl/owl.carousel.min.js"></script>
-                <!-- END THIS PAGE PLUGINS-->
+    <!-- START THIS PAGE PLUGINS-->
+    <script src="js/timedate.js"></script>
+    <script type='text/javascript' src='js/plugins/icheck/icheck.min.js'></script>
+    <script type="text/javascript" src="js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js">
+    </script>
+    <script type="text/javascript" src="js/plugins/scrolltotop/scrolltopcontrol.js"></script>
+    <script type='text/javascript' src='js/plugins/bootstrap/bootstrap-select.js'></script>
+    <script type="text/javascript" src="js/plugins/owl/owl.carousel.min.js"></script>
+    <!-- END THIS PAGE PLUGINS-->
 
-                <!-- START TEMPLATE -->
-                <script type="text/javascript" src="js/settings.js"></script>
+    <!-- START TEMPLATE -->
+    <script type="text/javascript" src="js/settings.js"></script>
 
-                <script type="text/javascript" src="js/plugins.js"></script>
-                <script type="text/javascript" src="js/actions.js"></script>
+    <script type="text/javascript" src="js/plugins.js"></script>
+    <script type="text/javascript" src="js/actions.js"></script>
 
-                <script type="text/javascript" src="js/demo_dashboard.js"></script>
-                <!-- END TEMPLATE -->
-                <script>
-                    $('.counter').each(function () {
-                        var $this = $(this),
-                            countTo = $this.attr('data-count');
-                        $({
-                            countNum: $this.text()
-                        }).animate({
-                            countNum: countTo
-                        }, {
-                            duration: 2000,
-                            easing: 'linear',
-                            step: function () {
-                                $this.text(Math.floor(this.countNum));
-                            },
-                            complete: function () {
-                                $this.text(this.countNum);
-                                //alert('finished');
-                            }
-                        });
-                    });
-                </script>
-                <!-- END SCRIPTS -->
+    <script type="text/javascript" src="js/demo_dashboard.js"></script>
+    <!-- END TEMPLATE -->
+    <script>
+        $('.counter').each(function() {
+            var $this = $(this),
+                countTo = $this.attr('data-count');
+            $({
+                countNum: $this.text()
+            }).animate({
+                countNum: countTo
+            }, {
+                duration: 2000,
+                easing: 'linear',
+                step: function() {
+                    $this.text(Math.floor(this.countNum));
+                },
+                complete: function() {
+                    $this.text(this.countNum);
+                    //alert('finished');
+                }
+            });
+        });
+    </script>
+    <!-- END SCRIPTS -->
 </body>
 
 </html>

@@ -27,8 +27,8 @@
             <?php require 'require/adminheader.php' ?>
             <!-- START BREADCRUMB -->
             <ul class="breadcrumb">
-                <li>Data Entry</li>
-                <li><mark><strong>Prenatal Record</strong></mark></li>
+                <li>Transactions</li>
+                <li><mark><strong>Prenatal Registration</strong></mark></li>
             </ul>
             <!-- END BREADCRUMB -->
             <!-- PAGE CONTENT WRAPPER -->
@@ -37,7 +37,7 @@
                     <div class="col-md-12">
                         <div class="panel panel-primary">
                             <div class="panel-heading">
-                                <h3 class="panel-title">Prenatal Record</h3>
+                                <h3 class="panel-title">Prenatal Registration</h3>
                             </div>
                             <div class="panel-body">
                                 <div class="panel panel-default tabs">

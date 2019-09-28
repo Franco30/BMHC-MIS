@@ -6,11 +6,11 @@ if(isset($_GET['year']))
 }
 
 $conn = new mysqli("localhost", "root", "", "bmhc") or die(mysqli_error());
-$res = $conn->query("SELECT * FROM `medication_dispensation` GROUP BY medicine_name") or die(mysqli_error());
+$res = $conn->query("SELECT * FROM `medicine` GROUP BY medicine_name") or die(mysqli_error());
 $data_points = array();
 while($result = $res->fetch_array()){
 	$R = $result['medicine_name'];
-	$q1 = $conn->query("SELECT *, sum(quantity) as total FROM `medication_dispensation` WHERE `medicine_name` = '$R' && `year` = '$year'") or die(mysqli_error());
+	$q1 = $conn->query("SELECT *, sum(quantity) as total FROM `medicine`, `medication_dispensation` WHERE medicine.medicine_id = medication_dispensation.medicine_id && medicine.medicine_name = '$R' && `year` = '$year'") or die(mysqli_error());
 	$f1 = $q1->fetch_array();
 	$FR = intval($f1['total']);
 	$point = array('label' => $R, 'y' => $FR);
@@ -82,8 +82,8 @@ json_encode($data_points);
 				{ 
 					type: "bar", 
 					//showInLegend: true, 
-					toolTipContent: "{label} <br/> {y}", 
-					indexLabel: "{y}", 
+					toolTipContent: "{label} <br/> {y} pcs.", 
+					indexLabel: "{y}pcs.", 
 					//legendText: "<?php echo $f1['medicine_name']?>",
 					//name: "Total Patients this year",
 					dataPoints: <?php echo json_encode($data_points); ?>

@@ -53,7 +53,6 @@
 								<li class="active"><a href="#tab-first" role="tab" data-toggle="tab">Patient Info</a></li>
 								<li><a href="#tab-second" role="tab" data-toggle="tab">Prenatal</a></li>
 								<li><a href="#tab-third" role="tab" data-toggle="tab">Family Planning</a></li>
-								<li><a href="#tab-fourth" role="tab" data-toggle="tab">TB</a></li>
 								<li><a href="#tab-fifth" role="tab" data-toggle="tab">Consultation</a></li>
 								<!-- <li><a href="#tab-eigth" role="tab" data-toggle="tab">TST</a></li>
 									<li><a href="#tab-ninth" role="tab" data-toggle="tab">CXR</a></li> -->

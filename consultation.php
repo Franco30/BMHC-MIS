@@ -28,7 +28,7 @@
             <!-- START BREADCRUMB -->
             <ul class="breadcrumb">
                 <li>Transactions</li>
-                <li><mark><strong>Consultation Record</strong></mark></li>
+                <li><mark><strong>Consultation</strong></mark></li>
             </ul>
             <!-- END BREADCRUMB -->
             <!-- PAGE CONTENT WRAPPER -->
@@ -41,12 +41,14 @@
                         </div>
                         <div class="panel panel-primary">
                             <div class="panel-heading">
-                                <h3 class="panel-title"><strong>Consultation Record</strong></h3>
+                                <h3 class="panel-title"><strong>Consultation</strong></h3>
+<!--
                                 <div class="btn-group pull-right">
                                     <div class="pull-left">
                                         <a class="btn btn-primary" href="add_consultation">New Consultation</a>
                                     </div>
                                 </div>
+-->
                             </div>
                             <div class="panel-body">
                                 <div id="consultationpatientTable"></div>
@@ -59,7 +61,6 @@
         <!-- END PAGE CONTENT WRAPPER -->
     </div>
     <!-- END PAGE CONTENT -->
-    </div>
     <audio id="audio-alert" src="audio/alert.mp3" preload="auto"></audio>
     <audio id="audio-fail" src="audio/fail.mp3" preload="auto"></audio>
     <script type="text/javascript" src="js/plugins/jquery/jquery.min.js"></script>

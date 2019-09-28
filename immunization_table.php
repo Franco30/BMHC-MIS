@@ -28,7 +28,7 @@
             <!-- START BREADCRUMB -->
             <ul class="breadcrumb">
                 <li>Data Entry</li>
-                <li><mark><strong>Patient Registration</strong></mark></li>
+                <li><mark><strong>Immunization Registration</strong></mark></li>
             </ul>
             <!-- END BREADCRUMB -->
             <!-- PAGE CONTENT WRAPPER -->
@@ -49,7 +49,7 @@
                                 </div>
                             </div>
                             <div class="panel-body">
-                                <div id="patientTable"></div>
+                                <div id="immunizationpatientTable"></div>
                             </div>
 
                         </div>
@@ -65,7 +65,7 @@
     <audio id="audio-alert" src="audio/alert.mp3" preload="auto"></audio>
     <audio id="audio-fail" src="audio/fail.mp3" preload="auto"></audio>
     <script type="text/javascript" src="js/plugins/jquery/jquery.min.js"></script>
-    <script type="text/javascript" src="functions/crudpatient.js"></script>
+    <script type="text/javascript" src="functions/crudimmunization.js"></script>
     <script type="text/javascript" src="js/plugins/jquery/jquery-ui.min.js"></script>
     <script type="text/javascript" src="js/plugins/bootstrap/bootstrap.min.js"></script>
 

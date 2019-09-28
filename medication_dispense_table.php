@@ -57,14 +57,13 @@
                                         <tbody>
                                             <?php
 												require 'require/config.php';
-												$query = $conn->query("SELECT * FROM `patient`, `medication_dispensation` WHERE patient.patient_id = medication_dispensation.patient_id ORDER BY `dispensation_id` DESC") or die(mysqli_error());
+												$query = $conn->query("SELECT * FROM `patient` ORDER BY `patient_id` DESC") or die(mysqli_error());
 												while($fetch = $query->fetch_array()){
 												?>
                                             <tr>
                                                 <td><?php echo $fetch['patient_name']?></td>
                                                 <td>
-                                                    <a href="view_drug_dispensation.php?health_center=<?php echo $fetch['health_center']?>"
-                                                        class="btn btn-sm btn-default">View</a>
+                                                    <a href="dispensation_reports?id=<?php echo $fetch['patient_id']?>&patient_name=<?php echo $fetch['patient_name']?>" class="btn btn-sm btn-default">View</a>
                                                 </td>
                                             </tr>
                                             <?php
@@ -72,7 +71,6 @@
 													$conn->close();
 												?>
                                         </tbody>
-
                                     </table>
                                 </div>
                             </div>
@@ -94,8 +92,8 @@
             </div>
             <!-- END PAGE CONTENT -->
         </div>
+    </div>
         <!-- END PAGE CONTAINER -->
-        <?php require 'modals/addreferral.php'?>
         <script>
 			$(document).ready(function(){
 				$("#pyear").on('change', function(){

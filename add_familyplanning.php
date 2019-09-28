@@ -27,8 +27,8 @@
             <?php require 'require/adminheader.php' ?>
             <!-- START BREADCRUMB -->
             <ul class="breadcrumb">
-                <li>Data Entry</li>
-                <li><mark><strong>Family Planning Service Record</strong></mark></li>
+                <li>Transaction</li>
+                <li><mark><strong>Family Planning Service Registration</strong></mark></li>
             </ul>
             <!-- END BREADCRUMB -->
             <!-- PAGE CONTENT WRAPPER -->
@@ -72,7 +72,7 @@
                                                             <div class="col-md-6">
                                                                 <div class="form-group">
                                                                     <label>Patient Name</label>
-                                                                    <input type="text" id="provider<?php echo $fetch['patient_id'];?>" class="form-control" value="<?php echo $fetch['patient_name'];?>" required />
+                                                                    <input type="text" id="provider<?php echo $fetch['patient_id'];?>" class="form-control" value="<?php echo $fetch['patient_name'];?>" style="color:#444444;" readonly required />
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label>Type of Acceptor</label>
@@ -84,7 +84,7 @@
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label>Date of Birth</label>
-                                                                    <input type="text" class="form-control datepicker" id="birthdate<?php echo $fetch['patient_id'];?>" value="<?php echo $fetch['birthdate'];?>" placeholder="Enter Date of Birth" required />
+                                                                    <input type="text" class="form-control" id="birthdate<?php echo $fetch['patient_id'];?>" value="<?php echo $fetch['birthdate'];?>" placeholder="Enter Date of Birth" style="color:#444444;" readonly required />
                                                                 </div>
                                                                 <div class="form-row">
                                                                     <div class="col-md-6">
@@ -100,6 +100,7 @@
                                                                         </div>
                                                                     </div>
                                                                 </div>
+                                                                &nbsp;
                                                                 <div class="form-group">
                                                                     <label>Spouse Name</label>
                                                                     <input type="text" class="form-control" id="spouse" placeholder="Enter Complete Spouse Name" required />
@@ -153,7 +154,7 @@
                                                                 &nbsp;
                                                                 <div class="form-group">
                                                                     <label>Address</label>
-                                                                    <textarea class="form-control" spellcheck="false" id="address<?php echo $fetch['patient_id'];?>" value="<?php echo $fetch['patient_id'];?>"><?php echo $fetch['address'];?></textarea>
+                                                                    <textarea class="form-control" spellcheck="false" id="address<?php echo $fetch['patient_id'];?>" value="<?php echo $fetch['patient_id'];?>" style="color:#444444;" readonly><?php echo $fetch['address'];?></textarea>
                                                                 </div>
 
                                                                 <div class="form-row">

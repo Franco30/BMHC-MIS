@@ -28,7 +28,7 @@
             <!-- START BREADCRUMB -->
             <ul class="breadcrumb">
                 <li>Transactions</li>
-                <li><mark><strong>Family Planning Service Record</strong></mark></li>
+                <li><mark><strong>Family Planning Service Registration</strong></mark></li>
             </ul>
             <!-- END BREADCRUMB -->
             <!-- PAGE CONTENT WRAPPER -->
@@ -41,7 +41,7 @@
                         </div>
                         <div class="panel panel-primary">
                             <div class="panel-heading">
-                                <h3 class="panel-title"><strong>Family Planning Service Record</strong></h3>
+                                <h3 class="panel-title"><strong>Family Planning Service Registration</strong></h3>
                                 <!-- <div class="btn-group pull-right">
                                     <div class="pull-left">
                                         <a class="btn btn-primary" href="add_familyplanning" >New Family Planning</a>
@@ -49,7 +49,47 @@
                                 </div> -->
                             </div>
                             <div class="panel-body">
-                                <div id="fppatientTable"></div>
+                                <div class="panel panel-default tabs">
+                                    <ul class="nav nav-tabs" role="tablist">
+                                        <li class="active"><a href="#tab-first" role="tab" data-toggle="tab">Registration</a>
+                                        </li>
+                                        <li><a href="#tab-second" role="tab" data-toggle="tab">Registered Patients</a>
+                                        </li>
+                                    </ul>
+                                    <div class="panel-body list-group list-group-contacts scroll" style="height: 470px;">
+                                        <div class="panel-body tab-content">
+                                            <div class="tab-pane active" id="tab-first">
+                                                <div id="fppatientTable"></div>
+                                            </div>
+                                            
+                                            <div class="tab-pane" id="tab-second">
+                                                <table id="fppatienttable" class="table datatable">
+    <thead>
+        <tr>
+            <th><center>Patient Name</center></th>
+            <th><center>Age</center></th>
+            <th><center>Gender</center></th>
+            <th><center>Birthdate</center></th>
+            <th><center>Address</center></th>
+            <th><center>Action</center></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><center>Maria Dela Cruz</center></td>
+            <td><center>23</center></td>
+            <td><center>Female</center></td>
+            <td><center>August 30, 1996</center></td>
+            <td><center>Mansilingan, Bacolod City</center></td>
+            <td><center><a href="add_familyplanning?id=<?php echo $fetch['patient_id'];?>" class="btn btn-sm btn-info">New Counsel</a></center></td>
+        </tr>
+
+    </tbody>
+</table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

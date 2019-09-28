@@ -15,7 +15,7 @@ if(isset($_POST['show'])){
     </thead>
     <tbody>
         <?php
-    $query = $conn->query("select * from `patient` WHERE `gender` = 'Female' order by `patient_id` DESC") or die(mysqli_error());
+    $query = $conn->query("SELECT * FROM `patient` WHERE `age` >= '18' && `gender` = 'Female' ORDER BY `patient_id` DESC") or die(mysqli_error());
     while($fetch = $query->fetch_array()){
         ?>
         <tr>

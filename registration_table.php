@@ -90,6 +90,15 @@
 				$('#age').val(age);
 			});
 		</script>
+        <script>
+			var date=new Date();
+			$('#birthdate').datepicker({
+				format: 'MM dd, yyyy',
+				language: 'en',
+				startDate : new Date('1900-01-01'),
+				endDate : date
+			});
+		</script>
 </body>
 
 </html>

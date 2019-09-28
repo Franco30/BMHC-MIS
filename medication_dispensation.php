@@ -81,6 +81,7 @@
     <script type="text/javascript" src="functions/medicinedispensed.js"></script>
     <!-- START THIS PAGE PLUGINS-->
     <script type='text/javascript' src='js/plugins/icheck/icheck.min.js'></script>
+    <script type="text/javascript" src="js/plugins/bootstrap/bootstrap-datepicker.js"></script>
     <script type="text/javascript" src="js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
     <script type="text/javascript" src="js/plugins/scrolltotop/scrolltopcontrol.js"></script>
     <script type="text/javascript" src="js/plugins/datatables/jquery.dataTables.min.js"></script>
@@ -92,6 +93,15 @@
     <script type="text/javascript" src="js/plugins.js"></script>
     <script type="text/javascript" src="js/actions.js"></script>
     <!-- END TEMPLATE -->
+        <script>
+        var date = new Date();
+        date.setDate(date.getDate());
+
+        $('#date').datepicker({
+            startDate: date
+        });
+
+    </script>
     <!-- END SCRIPTS -->
 </body>
 

@@ -15,7 +15,7 @@ if(isset($_POST['show'])){
                 <center>Quantity</center>
             </th>
             <th>
-                <center>Received By</center>
+                <center>Patient Name</center>
             </th>
         </tr>
     </thead>

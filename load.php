@@ -18,7 +18,7 @@ foreach($result as $row)
 {
     $data[] = array(
         'id'   => $row["follow_up_id"],
-        'title'   => $row["patient_name"]." ".$row["remarks"],
+        'title'   => $row["patient_name"]." - ".$row["remarks"],
         'start'   => $row["follow_up_date"]
     );
 }

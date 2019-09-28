@@ -28,7 +28,7 @@
             <!-- START BREADCRUMB -->
             <ul class="breadcrumb">
                 <li>Transactions</li>
-                <li><mark><strong>Consultation Record</strong></mark></li>
+                <li><mark><strong>Consultation</strong></mark></li>
             </ul>
             <!-- END BREADCRUMB -->
             <!-- PAGE CONTENT WRAPPER -->
@@ -41,7 +41,7 @@
                         </div>
                         <div class="panel panel-primary">
                             <div class="panel-heading">
-                                <h3 class="panel-title"><strong>Consultation Record</strong></h3>
+                                <h3 class="panel-title"><strong>Consultation</strong></h3>
                                 <div class="btn-group pull-right">
                                     <div class="pull-left">
                                         <a class="btn btn-default" href="consultation">Back</a>

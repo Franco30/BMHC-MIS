@@ -105,6 +105,7 @@ echo '<meta http-equiv="refresh" content="2;url=../index">';
         <div class="blob blob-3"></div>
         <div class="blob blob-4"></div>
         <div class="blob blob-5"></div>
+        
     </div>
 </body>
 
