@@ -6,8 +6,8 @@ if(isset($_POST['show'])){
     <thead>
         <tr>
             <th><center>Patient Name</center></th>
-            <th><center>Age</center></th>
-            <th><center>Gender</center></th>
+            <th><center>Type of Acceptor</center></th>
+            <th><center>Previously used Method</center></th>
             <th><center>Birthdate</center></th>
             <th><center>Address</center></th>
             <th><center>Action</center></th>
@@ -15,16 +15,16 @@ if(isset($_POST['show'])){
     </thead>
     <tbody>
         <?php
-    $query = $conn->query("SELECT * FROM `patient` WHERE `age` >= '18' && `gender` = 'Female' ORDER BY `patient_id` DESC") or die(mysqli_error());
+    $query = $conn->query("SELECT * FROM `patient`, `family_planning` WHERE patient.patient_id = family_planning.patient_id ORDER BY family_planning_id DESC") or die(mysqli_error());
     while($fetch = $query->fetch_array()){
         ?>
         <tr>
             <td><center><?php echo $fetch['patient_name']?></center></td>
-            <td><center><?php echo $fetch['age']?> years old</center></td>
-            <td><center><?php echo $fetch['gender']?></center></td>
+            <td><center><?php echo $fetch['type_of_acceptor']?></center></td>
+            <td><center><?php echo $fetch['prev_used_method']?></center></td>
             <td><center><?php echo $fetch['birthdate']?></center></td>
             <td><center><?php echo $fetch['address']?></center></td>
-            <td><center><a href="add_familyplanning?id=<?php echo $fetch['patient_id'];?>" class="btn btn-sm btn-info">Register</a></center></td>
+            <td><center><a href="childpatientmasterfiletable.php" class="btn btn-info">View</a></center></td>
         </tr>
         <?php
     }

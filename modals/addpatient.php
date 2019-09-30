@@ -19,31 +19,85 @@
                                 <label>Patient Name</label>
                                 <input type="text" class="form-control" id="patient_name" placeholder="Enter Patient Name" required />
                             </div>
-                            <div class="form-group">
-                                <label>Birthdate</label>
-                                <input id="birthdate" type="text" class="form-control datepicker" required />
+                            <div class="form-row">
+                                <div class="col-md-6">
+                                    <div class="form-group" style="margin-left:-10px;">
+                                        <label>Birthdate</label>
+                                        <input id="birthdate" type="text" class="form-control datepicker" required />
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group" style="margin-right:-10px;">
+                                        <label>Age</label>
+                                        <input id="age" type="number" class="form-control" style="font-size:11px;font-weight:bold;color:black" readonly />
+                                    </div>
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <label>Age</label>
-                                <input id="age" type="number" class="form-control" style="font-size:11px;font-weight:bold;color:black" readonly />
+                            &nbsp;
+                            <div class="form-row">
+                                <div class="col-md-6">
+                                    <div class="form-group" style="margin-left:-10px;">
+                                        <label>Gender</label>
+                                        <select class="form-control select" style="display: none;" id="gender">
+                                            <option>Select</option>
+                                            <option>Male</option>
+                                            <option>Female</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group" style="margin-right:-10px;">
+                                        <label>Civil Status</label>
+                                        <select class="form-control select" style="display: none;" id="civilstatus">
+                                            <option>Select</option>
+                                            <option>Single</option>
+                                            <option>Married</option>
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
+                            &nbsp;
                             <div class="form-group">
-                                <label>Gender</label>
-                                <select class="form-control select" style="display: none;" id="gender">
-                                    <option>Male</option>
-                                    <option>Female</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label>Address</label>
+                                <label>Street Address</label>
                                 <textarea class="form-control" spellcheck="false" id="address"></textarea>
                             </div>
+                            <div class="form-group">
+                                <label>Purok</label>
+                                <select class="form-control select" style="display: none;" id="purok">
+                                    <option>Select</option>
+                                    <option value="Prk. Gauzon">Prk. Gauzon</option>
+                                    <option value="Prk. Himaya">Prk. Himaya</option>
+                                    <option value="Prk. Kabugwason">Prk. Kabugwason</option>
+                                    <option value="Prk. Kasilingan">Prk. Kasilingan</option>
+                                    <option value="Prk. Katilingban">Prk. Katilingban</option>
+                                    <option value="Prk. Mabinuligon">Prk. Mabinuligon</option>
+                                    <option value="Prk. Matahum">Prk. Matahum</option>
+                                    <option value="Prk. Paghidaet">Prk. Paghidaet</option>
+                                    <option value="Prk. Paglaum">Prk. Paglaum</option>
+                                </select>
+                            </div>
+                            <!--
                             <div class="form-group">
                                 <label>Height</label>
                                 <input type="number" class="form-control" id="height" placeholder="Enter Height in cms." required />
                             </div>
-
+-->
+                            <div class="form-row">
+                                <div class="col-md-6">
+                                    <div class="form-group" style="margin-left:-10px;">
+                                        <label>height</label>
+                                        <input type="number" id="height" class="form-control" placeholder="Enter Height in cms." required />
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group" style="margin-right:-10px;">
+                                        <label>Weight</label>
+                                        <input type="number" id="weight" class="form-control" placeholder="Enter Weight in kg" required />
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>Contact Number</label>
