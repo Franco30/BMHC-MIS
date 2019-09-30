@@ -49,8 +49,8 @@
                                     </ul>
                                     <div class="panel-body list-group list-group-contacts scroll" style="height: 470px;">
                                         <?php
-	                            require 'require/config.php';
-			                    $query = $conn->query("SELECT * FROM `patient` WHERE `patient_id` = '$_GET[id]'") or die(mysqli_error());
+                                require 'require/config.php';
+			                    $query = $conn->query("SELECT * FROM `patient` WHERE `patient_id` = '$_GET[patient_id]'") or die(mysqli_error());
                                 $fetch = $query->fetch_array();
                                 date_default_timezone_set('Asia/Manila');
                                 $date=date("F j, Y");

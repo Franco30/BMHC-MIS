@@ -10,14 +10,14 @@
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                 <h4 class="modal-title" id="defModalHead">Register New Patient</h4>
             </div>
+            <form id="patientform" method="POST">
             <div class="modal-body">
-                <form id="patientform">
-
+               
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label>Patient Name</label>
-                                <select class="form-control select" data-live-search="true" id="provider">
+                                <select name="patient_id" class="form-control select" data-live-search="true" id="provider">
                                     <option value="#">Select</option>
                                     <?php
 	                $conn = new mysqli("localhost", "root", "", "bmhc") or die(mysqli_error());
@@ -30,18 +30,26 @@
                                         <?php echo $fetch['patient_name']?></option>
                                     <?php
 					}
-                                    $id = $fetch['patient_id'];
+                                    $patient_id = $fetch['patient_id'];
 									?>
                                 </select>
                             </div>
                         </div>
                     </div>
-                </form>
+                <?php
+                    if(isset($_POST['submit'])) {
+                        $patient_id = $_POST['patient_id'];
+
+                        echo "<script>document.location='add_prenatal?patient_id=$patient_id'</script>";
+
+                    }
+                ?>
             </div>
             <div class="modal-footer">
-                <a href="add_prenatal?id=<?php echo $id;?>" class="btn btn btn-info">Proceed</a>
+            <input class="btn btn-info" type="submit" name="submit" value="Get Patient" />
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
             </div>
+            </form>
         </div>
     </div>
 </div>

@@ -1,4 +1,3 @@
-DROP TABLE chicks;
 
 CREATE TABLE `chicks` (
   `chicks_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -18,7 +17,6 @@ INSERT INTO chicks VALUES("60","Kate Tejare","https://www.facebook.com/kristine.
 
 
 
-DROP TABLE db_backup;
 
 CREATE TABLE `db_backup` (
   `back_up_id` int(10) NOT NULL AUTO_INCREMENT,
@@ -35,7 +33,6 @@ INSERT INTO db_backup VALUES("4","26","Export","September 24, 2019","4:23 am","S
 
 
 
-DROP TABLE dssm_examination;
 
 CREATE TABLE `dssm_examination` (
   `dssm_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -194,7 +191,6 @@ INSERT INTO dssm_examination VALUES("162","August 06, 2018","100","Salivary","Sa
 
 
 
-DROP TABLE dst_examination;
 
 CREATE TABLE `dst_examination` (
   `dst_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -234,7 +230,6 @@ INSERT INTO dst_examination VALUES("9","100","100","March 12, 2018","March 12, 2
 
 
 
-DROP TABLE family_planning;
 
 CREATE TABLE `family_planning` (
   `family_planning_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -264,7 +259,6 @@ INSERT INTO family_planning VALUES("1","23","New to the Program","Pills","2019-2
 
 
 
-DROP TABLE immunization;
 
 CREATE TABLE `immunization` (
   `immunization_id` int(30) NOT NULL AUTO_INCREMENT,
@@ -298,7 +292,6 @@ INSERT INTO immunization VALUES("2","3","3343","3434","343455","Female","Single"
 
 
 
-DROP TABLE medication_dispensation;
 
 CREATE TABLE `medication_dispensation` (
   `dispensation_id` int(10) NOT NULL AUTO_INCREMENT,
@@ -321,7 +314,6 @@ INSERT INTO medication_dispensation VALUES("51","16","4","September 25, 2019","5
 
 
 
-DROP TABLE medicine;
 
 CREATE TABLE `medicine` (
   `medicine_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -340,7 +332,6 @@ INSERT INTO medicine VALUES("5","Isoniazid","Tablet","TB medicine","September 23
 
 
 
-DROP TABLE patient;
 
 CREATE TABLE `patient` (
   `patient_id` int(10) NOT NULL AUTO_INCREMENT,
@@ -376,7 +367,6 @@ INSERT INTO patient VALUES("23","Lolita Villarosa Gerose","","73","Female","Mans
 
 
 
-DROP TABLE patient_child;
 
 CREATE TABLE `patient_child` (
   `child_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -403,7 +393,6 @@ INSERT INTO patient_child VALUES("3","Hilary Ahmor Sipat","Female","Mary Ann Sip
 
 
 
-DROP TABLE tb_culture_examination;
 
 CREATE TABLE `tb_culture_examination` (
   `tb_culture_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -434,7 +423,6 @@ INSERT INTO tb_culture_examination VALUES("8","Method 1","100","100","0000-00-00
 
 
 
-DROP TABLE tb_follow_up;
 
 CREATE TABLE `tb_follow_up` (
   `follow_up_id` int(10) NOT NULL AUTO_INCREMENT,
@@ -450,7 +438,6 @@ INSERT INTO tb_follow_up VALUES("2","22","23","2019-08-31","Family Planning");
 
 
 
-DROP TABLE users;
 
 CREATE TABLE `users` (
   `user_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -476,7 +463,6 @@ INSERT INTO users VALUES("30","Arian M. Garcia","3487y98u9","Midwife","midwife",
 
 
 
-DROP TABLE users_activity_log;
 
 CREATE TABLE `users_activity_log` (
   `log_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -527,7 +513,6 @@ INSERT INTO users_activity_log VALUES("242","27","dispensed 3 4 to John Phillip 
 
 
 
-DROP TABLE xpert_mtb_examination;
 
 CREATE TABLE `xpert_mtb_examination` (
   `xpert_id` int(11) NOT NULL AUTO_INCREMENT,
