@@ -10,10 +10,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <link rel="icon" href="assets/images/bmhc.png" type="image/x-icon" />
- 
+
     <link rel="stylesheet" type="text/css" id="theme" href="css/theme-brown.css" />
     <link rel="stylesheet" type="text/css" href="assets3/vendor/font-awesome/css/font-awesome.min.css" />
- 
+
 </head>
 
 <body>
@@ -45,8 +45,7 @@
                                 <h3 class="panel-title"><strong>Patient Registration</strong></h3>
                                 <div class="btn-group pull-right">
                                     <div class="pull-left">
-                                        <button class="btn btn-primary btn-md" data-toggle="modal"
-                                            data-target="#new_patient">New Patient</button>
+                                        <button class="btn btn-primary btn-md" data-toggle="modal" data-target="#new_patient">New Patient</button>
                                     </div>
                                 </div>
                             </div>
@@ -71,32 +70,75 @@
     <script type="text/javascript" src="functions/crudpatient.js"></script>
     <script type="text/javascript" src="js/plugins/jquery/jquery-ui.min.js"></script>
     <script type="text/javascript" src="js/plugins/bootstrap/bootstrap.min.js"></script>
- 
-   
+
+
     <script type="text/javascript" src="js/plugins/bootstrap/bootstrap-datepicker.js"></script>
     <script type='text/javascript' src='js/plugins/icheck/icheck.min.js'></script>
     <script type="text/javascript" src="js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
     <script type="text/javascript" src="js/plugins/scrolltotop/scrolltopcontrol.js"></script>
     <script type="text/javascript" src="js/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script type='text/javascript' src='js/plugins/jquery-validation/jquery.validate.js'></script>  
     <script type="text/javascript" src="js/plugins/bootstrap/bootstrap-select.js"></script>
     <script type="text/javascript" src="js/settings.js"></script>
     <script type="text/javascript" src="js/plugins.js"></script>
     <script type="text/javascript" src="js/actions.js"></script>
     <script>
-			$("#birthdate").change(function(){
-				var birthdate = new Date($(this).val());
-				var today = new Date();
-				var age = Math.floor((today-birthdate) / (365.25 * 24 * 60 * 60 * 1000));
-				$('#age').val(age);
-			});
-		</script>
-        <script>
-			var date=new Date();
-			$('#birthdate').datepicker({
-				format: 'MM dd, yyyy',
-				language: 'en',
-				startDate : new Date('1900-01-01'),
-				endDate : date
+        $("#birthdate").change(function() {
+            var birthdate = new Date($(this).val());
+            var today = new Date();
+            var age = Math.floor((today - birthdate) / (365.25 * 24 * 60 * 60 * 1000));
+            $('#age').val(age);
+        });
+
+    </script>
+    <script>
+        var date = new Date();
+        $('#birthdate').datepicker({
+            format: 'MM dd, yyyy',
+            language: 'en',
+            startDate: new Date('1900-01-01'),
+            endDate: date
+        });
+
+    </script>
+    <script>
+        function myFunction(textboxid) {
+
+            var input = document.getElementById(textboxid);
+            var word = input.value.split(" ");
+            for (var i = 0; i < word.length; i++) {
+                word[i] = word[i].charAt(0).toUpperCase() + word[i].slice(1).toLowerCase();
+            }
+            input.value = word.join(" ");
+        }
+
+    </script>
+    <script type="text/javascript">
+			$("#patientform").validate({
+				ignore: [],
+				rules: {
+					heights: {
+						number: true,
+						maxlength: 3
+					},
+                    weights: {
+						number: true,
+						maxlength: 3
+					},
+					contact_nos: {
+						number: true,
+                        minlength: 11
+					},
+					philhealth_nos: {
+						number: true,
+						maxlength: 12
+					},
+					emergency_nos: {
+						number: true,
+                        minlength: 11
+					}
+
+				}
 			});
 		</script>
 </body>

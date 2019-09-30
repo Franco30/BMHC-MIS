@@ -1,4 +1,4 @@
-<div class="modal fade" id="addreferral" tabindex="-1" role="dialog" aria-labelledby="largeModalHead" aria-hidden="true">
+<div class="modal fade" id="addreferral<?php echo $fetch['patient_id']; ?>" tabindex="-1" role="dialog" aria-labelledby="largeModalHead" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <center>

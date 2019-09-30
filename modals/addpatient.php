@@ -17,7 +17,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>Patient Name</label>
-                                <input type="text" class="form-control" id="patient_name" placeholder="Enter Patient Name" required />
+                                <input type="text" class="form-control" id="patient_name" onkeyup="myFunction(this.id);" placeholder="Enter Patient Name" required />
                             </div>
                             <div class="form-row">
                                 <div class="col-md-6">
@@ -58,41 +58,37 @@
                             </div>
                             &nbsp;
                             <div class="form-group">
-                                <label>Street Address</label>
-                                <textarea class="form-control" spellcheck="false" id="address"></textarea>
-                            </div>
-                            <div class="form-group">
                                 <label>Purok</label>
-                                <select class="form-control select" style="display: none;" id="purok">
+                                <select class="form-control select"  data-live-search="true" style="display: none;" id="purok">
                                     <option>Select</option>
-                                    <option value="Prk. Gauzon">Prk. Gauzon</option>
-                                    <option value="Prk. Himaya">Prk. Himaya</option>
-                                    <option value="Prk. Kabugwason">Prk. Kabugwason</option>
-                                    <option value="Prk. Kasilingan">Prk. Kasilingan</option>
-                                    <option value="Prk. Katilingban">Prk. Katilingban</option>
-                                    <option value="Prk. Mabinuligon">Prk. Mabinuligon</option>
-                                    <option value="Prk. Matahum">Prk. Matahum</option>
-                                    <option value="Prk. Paghidaet">Prk. Paghidaet</option>
-                                    <option value="Prk. Paglaum">Prk. Paglaum</option>
+                                    <option value="Gauzon">Prk. Gauzon</option>
+                                    <option value="Himaya">Prk. Himaya</option>
+                                    <option value="Kabugwason">Prk. Kabugwason</option>
+                                    <option value="Kahirup A">Prk. Kahirup A</option>
+                                    <option value="Kahirup B">Prk. Kahirup B</option>
+                                    <option value="Kasilingan">Prk. Kasilingan</option>
+                                    <option value="Katilingban">Prk. Katilingban</option>
+                                    <option value="Mabinuligon">Prk. Mabinuligon</option>
+                                    <option value="Matahum">Prk. Matahum</option>
+                                    <option value="Paghidaet">Prk. Paghidaet</option>
+                                    <option value="Paglaum">Prk. Paglaum</option>
                                 </select>
                             </div>
-                            <!--
                             <div class="form-group">
-                                <label>Height</label>
-                                <input type="number" class="form-control" id="height" placeholder="Enter Height in cms." required />
+                                <label>Street Address</label>
+                                <textarea class="form-control" spellcheck="false" id="streetaddress"></textarea>
                             </div>
--->
                             <div class="form-row">
                                 <div class="col-md-6">
                                     <div class="form-group" style="margin-left:-10px;">
                                         <label>height</label>
-                                        <input type="number" id="height" class="form-control" placeholder="Enter Height in cms." required />
+                                        <input type="number" id="height" name="heights" class="form-control" placeholder="Enter Height in cms." required />
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group" style="margin-right:-10px;">
                                         <label>Weight</label>
-                                        <input type="number" id="weight" class="form-control" placeholder="Enter Weight in kg" required />
+                                        <input type="number" id="weight" name="weights" class="form-control" placeholder="Enter Weight in kg" required />
                                     </div>
                                 </div>
                             </div>
@@ -101,11 +97,11 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>Contact Number</label>
-                                <input type="number" class="form-control" id="contact_no" placeholder="Enter Contact" required />
+                                <input type="number" class="form-control" id="contact_no" name="contact_nos" placeholder="Enter Contact" required />
                             </div>
                             <div class="form-group">
                                 <label>Region/Province</label>
-                                <input type="text" class="form-control" id="region_province" placeholder="Enter Region or Province" required />
+                                <input type="text" class="form-control" id="region_province" onkeyup="myFunction(this.id);" placeholder="Enter Region or Province" required />
                             </div>
                             <div class="form-group">
                                 <label>Occupation</label>
@@ -113,15 +109,15 @@
                             </div>
                             <div class="form-group">
                                 <label>Philhealth Number</label>
-                                <input type="number" class="form-control" id="philhealth_no" placeholder="Enter Philhealth Number" required />
+                                <input type="number" class="form-control" id="philhealth_no" name="philhealth_nos" placeholder="Enter Philhealth Number" required />
                             </div>
                             <div class="form-group">
                                 <label>Contact Person</label>
-                                <input type="text" class="form-control" id="contact_person" placeholder="Enter Contact Person" required />
+                                <input type="text" class="form-control" id="contact_person" placeholder="Enter Contact Person" onkeyup="myFunction(this.id);" required />
                             </div>
                             <div class="form-group">
                                 <label>Emergency Number</label>
-                                <input type="number" class="form-control" id="emergency_no" placeholder="Enter Emergency Number" required />
+                                <input type="number" class="form-control" id="emergency_no" name="emergency_nos" placeholder="Enter Emergency Number" required />
                             </div>
                         </div>
                     </div>

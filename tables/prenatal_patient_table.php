@@ -23,7 +23,7 @@ if(isset($_POST['show'])){
             <td><center><?php echo $fetch['age']?> years old</center></td>
             <td><center><?php echo $fetch['gender']?></center></td>
             <td><center><?php echo $fetch['birthdate']?></center></td>
-            <td><center><?php echo $fetch['address']?></center></td>
+            <td><center>Purok <?php echo $fetch['purok']." ".$fetch['street_address']?></center></td>
             <td><center><a href="add_prenatal?id=<?php echo $fetch['patient_id'];?>" class="btn btn-sm btn-info">View</a></center></td>
         </tr>
         <?php

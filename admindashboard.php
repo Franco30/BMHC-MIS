@@ -240,7 +240,7 @@ require 'require/logincheck.php';
                             <div class="col-md-12">
                                 <div class="panel panel-primary">
                                     <div class="panel-heading">
-                                        <h3 class="panel-title"><strong>Follow Up Schedule Calendar</strong></h3>
+                                        <h3 class="panel-title"><strong>Prenatal Follow Up Schedule Calendar</strong></h3>
                                         <!--
                                         <div class="btn-group pull-right">
                                             <div class="pull-left">

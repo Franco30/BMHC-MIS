@@ -59,7 +59,7 @@
                                     <div class="panel-body list-group list-group-contacts scroll" style="height: 470px;">
                                         <?php
 	                            require 'require/config.php';
-			                    $query = $conn->query("SELECT * FROM `patient` WHERE `patient_id` = '$_GET[id]'") or die(mysqli_error());
+			                    $query = $conn->query("SELECT * FROM `patient` WHERE `patient_id` = '$_GET[patient_id]'") or die(mysqli_error());
                                 $fetch = $query->fetch_array();
                                 date_default_timezone_set('Asia/Manila');
                                 $date=date("F j, Y");
@@ -96,7 +96,7 @@
                                                                     <div class="col-md-6">
                                                                         <div class="form-group" style="margin-right:-10px;">
                                                                             <label>Occupation</label>
-                                                                            <input type="text" class="form-control" id="occupation" placeholder="Enter Occupation" required />
+                                                                            <input type="text" class="form-control" id="occupation<?php echo $fetch['patient_id'];?>" placeholder="Enter Occupation" value="<?php echo $fetch['occupation'];?>" style="color:#444444;" readonly required />
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -153,8 +153,12 @@
                                                                 </div>
                                                                 &nbsp;
                                                                 <div class="form-group">
-                                                                    <label>Address</label>
-                                                                    <textarea class="form-control" spellcheck="false" id="address<?php echo $fetch['patient_id'];?>" value="<?php echo $fetch['patient_id'];?>" style="color:#444444;" readonly><?php echo $fetch['address'];?></textarea>
+                                                                    <label>Purok</label>
+                                                                    <input type="text" class="form-control" id="purok<?php echo $fetch['patient_id'];?>" value="<?php echo $fetch['purok'];?>" style="color:#444444;" readonly required />
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Street Address</label>
+                                                                    <textarea style="color:#444444;" class="form-control" spellcheck="false" id="streetaddress<?php echo $fetch['patient_id'];?>" value="<?php echo $fetch['patient_id'];?>"  readonly><?php echo $fetch['street_address'];?></textarea>
                                                                 </div>
 
                                                                 <div class="form-row">

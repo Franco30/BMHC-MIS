@@ -108,11 +108,11 @@
                                                                 &nbsp;
                                                                 <div class="form-group">
                                                                     <label>OB-Gyne Hx</label>
-                                                                    <textarea class="form-control" spellcheck="false" id="address<?php echo $fetch['patient_id']?>"></textarea>
+                                                                    <textarea class="form-control" spellcheck="false" id="obgynehx<?php echo $fetch['patient_id']?>"></textarea>
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <label>OB-Gyne Hx</label>
-                                                                    <textarea class="form-control" spellcheck="false" id="address<?php echo $fetch['patient_id']?>"></textarea>
+                                                                    <label>Past Medical Hx</label>
+                                                                    <textarea class="form-control" spellcheck="false" id="pmhx<?php echo $fetch['patient_id']?>"></textarea>
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-6">
@@ -141,9 +141,13 @@
                                                                     <label>Name of Husband</label>
                                                                     <input type="text" class="form-control" id="prevmethod" placeholder="Enter Name of Husband" required />
                                                                 </div>
+                                                               <div class="form-group">
+                                                                    <label>Purok</label>
+                                                                    <input type="text" class="form-control" id="purok<?php echo $fetch['patient_id'];?>" value="<?php echo $fetch['purok'];?>" style="color:#444444;" readonly required />
+                                                                </div>
                                                                 <div class="form-group">
-                                                                    <label>Address</label>
-                                                                    <textarea class="form-control" style="color:#444444;" readonly spellcheck="false" id="address<?php echo $fetch['patient_id']?>" value="<?php echo $fetch['address']?>"><?php echo $fetch['address'];?></textarea>
+                                                                    <label>Street Address</label>
+                                                                    <textarea style="color:#444444;" class="form-control" spellcheck="false" id="streetaddress<?php echo $fetch['patient_id'];?>" value="<?php echo $fetch['patient_id'];?>"  readonly><?php echo $fetch['street_address'];?></textarea>
                                                                 </div>
                                                                 <div class="form-row">
                                                                     <div class="col-md-4">

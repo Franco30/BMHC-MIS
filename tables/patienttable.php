@@ -10,7 +10,8 @@ if(isset($_POST['show'])){
             <th><center>Age</center></th>
             <th><center>Gender</center></th>
             <th><center>Birthdate</center></th>
-            <th><center>Address</center></th>
+            <th><center>Purok</center></th>
+            <th><center>Street Address</center></th>
             <th><center>Contact Number</center></th>
         </tr>
     </thead>
@@ -25,7 +26,8 @@ if(isset($_POST['show'])){
             <td><center><?php echo $fetch['age']?> years old</center></td>
             <td><center><?php echo $fetch['gender']?></center></td>
             <td><center><?php echo $fetch['birthdate']?></center></td>
-            <td><center><?php echo $fetch['address']?></center></td>
+            <td><center><?php echo $fetch['purok']?></center></td>
+            <td><center><?php echo $fetch['street_address']?></center></td>
             <td><center><?php echo $fetch['contact_no']?></center></td>
         </tr>
         <?php

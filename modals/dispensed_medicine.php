@@ -17,6 +17,10 @@
                 <form id="dispensedform">
                     <fieldset>
                         <div class="form-group">
+                            <label>Purpose</label>
+                            <input type="purpose" class="form-control" id="purpose" required />
+                        </div>
+                        <div class="form-group">
                             <label>Medicine Name</label>
                             <select class="form-control select" data-live-search="true" id="medicine_name">
                                 <option value="#">Select</option>

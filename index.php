@@ -68,10 +68,14 @@
 			<div class="right-content">
 				<!-- begin login-header -->
 				<div class="login-header">
-				<!-- <img src="assets/images/bmhc.png" style="width:100px;height:90px; padding: -10px; margin:-30px 0px 0px -10px;"alt="bmhcpicture" /> -->
+<!--
+					<center>
+                        <img src="assets/images/bmhclogo.png" style="width:131px;height:100px; padding: -10px; margin:-30px 0px 0px -10px;"alt="bmhclogo" />
+						</center>
+-->
 					<div class="brand">
-						BMHC-MIS
-						<small>Brgy. Mansilingan Health Center</small>
+						<h4 style="font-size: 20px;">Barangay Mansilingan Health Center</h4>
+						<small>Management Information System</small>
 					</div>
 					<div class="icon">
 						<i class="fa fa-sign-in"></i>

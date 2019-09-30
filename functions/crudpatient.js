@@ -2,10 +2,10 @@ $(document).ready(function () {
     showPatient();
 
     //check availability of patient name
-    
+
     //add patient ajax
     $(document).on('click', '#addnew', function () {
-        if ($('#patient_name').val() == "" || $('#age').val() == "" || $('#gender').val() == "" || $('#address').val() == "" || $('#birthdate').val() == "" || $('#height').val() == "" || $('#contact_no').val() == "" || $('#region_province').val() == "" || $('#occupation').val() == "" || $('#philhealth_no').val() == "" || $('#contact_person').val() == "" || $('#emergency_no').val() == "" ) {
+        if ($('#patient_name').val() == "" || $('#age').val() == "" || $('#gender').val() == "" || $('#civilstatus').val() == "" || $('#birthdate').val() == "" || $('#purok').val() == "" || $('#height').val() == "" || $('#weight').val() == "" || $('#contact_no').val() == "" || $('#region_province').val() == "" || $('#streetaddress').val() == "" || $('#occupation').val() == "" || $('#philhealth_no').val() == "" || $('#contact_person').val() == "" || $('#emergency_no').val() == "") {
             $('#modallabel').slideDown();
             $('#checkfield').html('<span class="fa fa-exclamation-circle"></span> All fields are required!');
             setTimeout(function () {
@@ -13,11 +13,14 @@ $(document).ready(function () {
             }, 3500);
         } else {
             $patient_name = $('#patient_name').val();
+            $birthdate = $('#birthdate').val();
             $age = $('#age').val();
             $gender = $('#gender').val();
-            $address = $('#address').val();
-            $birthdate = $('#birthdate').val();
+            $civilstatus = $('#civilstatus').val();
+            $streetaddress = $('#streetaddress').val();
+            $purok = $('#purok').val();
             $height = $('#height').val();
+            $weight = $('#height').val();
             $contact_no = $('#contact_no').val();
             $region_province = $('#region_province').val();
             $occupation = $('#occupation').val();
@@ -33,11 +36,14 @@ $(document).ready(function () {
                     async: false,
                     data: {
                         patient_name: $patient_name,
+                        birthdate: $birthdate,
                         age: $age,
                         gender: $gender,
-                        address: $address,
-                        birthdate: $birthdate,
+                        civilstatus: $civilstatus,
+                        streetaddress: $streetaddress,
+                        purok: $purok,
                         height: $height,
+                        weight: $weight,
                         contact_no: $contact_no,
                         region_province: $region_province,
                         occupation: $occupation,
@@ -47,14 +53,14 @@ $(document).ready(function () {
                         add: 1,
                     },
                     success: function () {
-                        
+
                         $('#alert').slideDown();
                         $('#alerttext').text('Patient Added Successfully!');
-                        setTimeout(function() {
+                        setTimeout(function () {
                             $('#alert').fadeOut('slow');
                         }, 1500);
                         $('#new_patient').modal('hide');
-                        showPatient();   
+                        showPatient();
                     }
                 });
             }
@@ -78,5 +84,3 @@ function showPatient() {
         }
     });
 }
-
-

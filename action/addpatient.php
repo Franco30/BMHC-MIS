@@ -3,11 +3,14 @@ require '../require/logincheck.php';
 
 if(isset($_POST['add'])){
     $patient_name = $_POST['patient_name'];
+    $birthdate = $_POST['birthdate'];
     $age = $_POST['age'];
     $gender = $_POST['gender'];
-    $address = $_POST['address'];
-    $birthdate = $_POST['birthdate'];
+    $civilstatus = $_POST['civilstatus'];
+    $streetaddress = $_POST['streetaddress'];
+    $purok = $_POST['purok'];
     $height = $_POST['height'];
+    $weight = $_POST['weight'];
     $contact_no = $_POST['contact_no'];
     $region_province = $_POST['region_province'];
     $occupation = $_POST['occupation'];
@@ -23,7 +26,7 @@ if(isset($_POST['add'])){
     $remarks = "Registered $patient_name as new Patient";
 
     require '../require/config.php';
-    $conn->query("INSERT INTO `patient` VALUES('', '$patient_name', '$age', '$gender', '$address', '$birthdate', '$height', '$contact_no', '$region_province', '$occupation', '$philhealth_no', '$contact_person', '$emergency_no', 'Registered', '$month', '$year')") or die(mysqli_error());
+    $conn->query("INSERT INTO `patient` VALUES('', '$patient_name', '$civilstatus', '$age', '$gender', '$streetaddress, Mansilingan', '$purok', '$birthdate', '$height', '$weight', '$contact_no', '$region_province', '$occupation', '$philhealth_no', '$contact_person', '$emergency_no', 'Registered', '$month', '$year')") or die(mysqli_error());
     $conn->query("INSERT INTO `users_activity_log` VALUES('', '$user_id', '$remarks','$date_time')") or die(mysqli_error());
 }
 ?>

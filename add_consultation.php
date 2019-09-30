@@ -54,7 +54,7 @@
                                     <!-- START WIZARD WITH SUBMIT BUTTON -->
                                     <?php
 	                            require 'require/config.php';
-			                    $query = $conn->query("SELECT * FROM `patient` WHERE `patient_id` = '$_GET[id]'") or die(mysqli_error());
+			                    $query = $conn->query("SELECT * FROM `patient` WHERE `patient_id` = '$_GET[patient_id]'") or die(mysqli_error());
                                 $fetch = $query->fetch_array();
                                 date_default_timezone_set('Asia/Manila');
                                 $date=date("F j, Y");
@@ -66,21 +66,25 @@
                                                     <li>
                                                         <a href="#step-1">
                                                             <span class="stepNumber">1</span>
-                                                            <span class="stepDesc">Patient<br /><small>Patient
-                                                                    Information</small></span>
+                                                            <span class="stepDesc">Patient
+                                                                    Information<br /></span>
+<!--
+                                                            <small>Patient
+                                                                    Information</small>
+-->
                                                         </a>
                                                     </li>
                                                     <li>
                                                         <a href="#step-2">
                                                             <span class="stepNumber">2</span>
-                                                            <span class="stepDesc">Patient<br /><small>Complaints,
-                                                                    Diagnosis, etc.</small></span>
+                                                            <span class="stepDesc">Complaints,
+                                                                    Diagnosis, etc.<br /></span>
                                                         </a>
                                                     </li>
                                                     <li>
                                                         <a href="#step-3">
                                                             <span class="stepNumber">3</span>
-                                                            <span class="stepDesc">Patient<br /><small>Treatment</small></span>
+                                                            <span class="stepDesc">Treatment<br /></span>
                                                         </a>
                                                     </li>
                                                 </ul>
@@ -117,11 +121,6 @@
                                                             </div>
                                                         </div>
                                                         &nbsp;
-                                                        <div class="form-group">
-                                                            <label>Address</label>
-                                                            <input type="text" class="form-control" id="address" value="<?php echo $fetch['address'];?>" placeholder="Enter Barangay and Purok/St" style="color:#444444;" readonly required />
-                                                        </div>
-
                                                         <div class="form-row">
                                                             <div class="col-md-4">
                                                                 <div class="form-group" style="margin-left:-10px;">
@@ -147,6 +146,21 @@
                                                     </div>
                                                     <!-- &nbsp;&nbsp;&nbsp; -->
                                                     <div class="col-md-6">
+                                                        <div class="form-row">
+                                                            <div class="col-md-6">
+                                                                <div class="form-group" style="margin-left:-10px;">
+                                                                    <label>Purok</label>
+                                                                    <input type="text" class="form-control" id="purok<?php echo $fetch['patient_id'];?>" value="<?php echo $fetch['purok'];?>" style="color:#444444;" readonly required />
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <div class="form-group" style="margin-right:-10px;">
+                                                                    <label>Street Address</label>
+                                                                    <input type="text" class="form-control" id="streetaddress<?php echo $fetch['patient_id'];?>" value="<?php echo $fetch['street_address'];?>" style="color:#444444;" readonly required />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        &nbsp;
                                                         <div class="form-row">
                                                             <div class="col-md-6">
                                                                 <div class="form-group" style="margin-left:-10px;">

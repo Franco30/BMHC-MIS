@@ -42,13 +42,12 @@
                         <div class="panel panel-primary">
                             <div class="panel-heading">
                                 <h3 class="panel-title"><strong>Consultation</strong></h3>
-<!--
                                 <div class="btn-group pull-right">
                                     <div class="pull-left">
-                                        <a class="btn btn-primary" href="add_consultation">New Consultation</a>
+                                         <button class="btn btn-primary btn-md" data-toggle="modal"
+                                            data-target="#new_consultation">Add New Patient</button>
                                     </div>
                                 </div>
--->
                             </div>
                             <div class="panel-body">
                                 <div id="consultationpatientTable"></div>
@@ -61,6 +60,7 @@
         <!-- END PAGE CONTENT WRAPPER -->
     </div>
     <!-- END PAGE CONTENT -->
+    <?php require 'modals/add_consultation.php'?>
     <audio id="audio-alert" src="audio/alert.mp3" preload="auto"></audio>
     <audio id="audio-fail" src="audio/fail.mp3" preload="auto"></audio>
     <script type="text/javascript" src="js/plugins/jquery/jquery.min.js"></script>

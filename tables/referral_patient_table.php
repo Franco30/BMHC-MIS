@@ -9,7 +9,8 @@ if(isset($_POST['show'])){
             <th><center>Age</center></th>
             <th><center>Gender</center></th>
             <th><center>Birthdate</center></th>
-            <th><center>Address</center></th>
+            <th><center>Purok</center></th>
+            <th><center>Street Address</center></th>
             <th><center>Action</center></th>
         </tr>
     </thead>
@@ -23,9 +24,10 @@ if(isset($_POST['show'])){
             <td><center><?php echo $fetch['age']?> years old</center></td>
             <td><center><?php echo $fetch['gender']?></center></td>
             <td><center><?php echo $fetch['birthdate']?></center></td>
-            <td><center><?php echo $fetch['address']?></center></td>
+            <td><center><?php echo $fetch['purok']?></center></td>
+            <td><center><?php echo $fetch['street_address']?></center></td>
             <td><center>
-                <button data-target="#addreferral<?php echo $fetch['patient_id']; ?>" data-toggle="modal" class="btn btn-sm btn-info">Referral</button>
+                <button data-target="#addreferral<?php echo $fetch['patient_id']; ?>" data-toggle="modal" class="btn btn-sm btn-info">Add existing Patient</button>
                 </center>
                 <?php require('../modals/addreferral.php'); ?>
             </td>
