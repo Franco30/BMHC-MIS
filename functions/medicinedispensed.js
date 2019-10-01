@@ -1,13 +1,14 @@
 $(document).ready(function () {
     showDispensedMedicine();
     $(document).on('click', '#addnew', function () {
-        if ($('#medicine_name').val() == "" || $('#quantity').val() == "" || $('#received').val() == "") {
+        if ($('#purpose').val() == "" || $('#medicine_name').val() == "" || $('#quantity').val() == "" || $('#received').val() == "") {
             $('#modallabel').slideDown();
             $('#checkfield').html('<span class="fa fa-exclamation-circle"></span> All fields are required!');
             setTimeout(function () {
                 $('#modallabel').fadeOut('slow');
             }, 3500);
         } else {
+            $purpose = $('#purpose').val();
             $medicine_name = $('#medicine_name').val();
             $quantity = $('#quantity').val();
             $received = $('#received').val();
@@ -19,20 +20,21 @@ $(document).ready(function () {
                     cache: false,
                     async: false,
                     data: {
+                        purpose: $purpose,
                         medicine_name: $medicine_name,
                         quantity: $quantity,
                         received: $received,
                         add: 1,
                     },
                     success: function () {
-                            $('#dispensed').modal('hide');
-                            $('#alert').slideDown();
-                            $('#alerttext').html('<span class="fa fa-check"></span> Successfully dispensed medicine!');
-                            setTimeout(function () {
-                                $('#alert').fadeOut('slow');
-                            }, 1500);
-                            showDispensedMedicine();
-                        
+                        $('#dispensed').modal('hide');
+                        $('#alert').slideDown();
+                        $('#alerttext').html('<span class="fa fa-check"></span> Successfully dispensed medicine!');
+                        setTimeout(function () {
+                            $('#alert').fadeOut('slow');
+                        }, 1500);
+                        showDispensedMedicine();
+
                     }
 
                 });

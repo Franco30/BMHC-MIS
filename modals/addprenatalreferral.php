@@ -1,4 +1,4 @@
-<div class="modal fade" id="addreferral" tabindex="-1" role="dialog" aria-labelledby="largeModalHead" aria-hidden="true">
+<div class="modal fade" id="prenatalreferral" tabindex="-1" role="dialog" aria-labelledby="largeModalHead" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <center>
@@ -85,6 +85,34 @@
                                     <div class="form-group" style="margin-right:-10px;">
                                         <label>Destination Address:</label>
                                         <input type="text" class="form-control" id="address2" placeholder="Enter Destination Address" required />
+                                    </div>
+                                </div>
+                            </div>
+                            &nbsp;
+                            <h6>weeks AOG via UTZ:</h6>
+                            <div class="form-row">
+                                <div class="col-md-3">
+                                    <div class="form-group" style="margin-left:-10px;">
+                                        <label>Gravida:</label>
+                                        <input type="text" class="form-control" id="gravida" required />
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group" style="margin-left:-10px;">
+                                        <label>Para:</label>
+                                        <input type="text" class="form-control" id="para" required />
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group" style="margin-left:-10px;">
+                                        <label>Fetal Heart:</label>
+                                        <input type="text" class="form-control" id="fetalheart" required />
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group" style="margin-right:-10px;margin-left:-10px;">
+                                        <label style="font-size: 11.5px;">Fetal Heart Beat:</label>
+                                        <input type="text" class="form-control" id="fetalheartbeat" required />
                                     </div>
                                 </div>
                             </div>

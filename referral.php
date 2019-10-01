@@ -41,22 +41,51 @@
                         <div id="alert" class="alert alert-info" style="display:none;">
                             <center><span id="alerttext"></span></center>
                         </div>
-                        <div class="panel panel-primary">
-                            <div class="panel-heading">
-                                <h3 class="panel-title"><strong>Referral Record</strong></h3>
-                                <div class="btn-group pull-right">
-                                    <div class="pull-left">
-                                        <button class="btn btn-primary btn-md" data-toggle="modal"
-                                            data-target="#addreferral">New Referral</button>
+                        <div class="panel panel-default tabs">
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li class="active"><a href="#tab-first" role="tab" data-toggle="tab">Referral Record</a></li>
+                                <li><a href="#tab-second" role="tab" data-toggle="tab">Prenatal Referral Record</a></li>
+                            </ul>
+                            <div class="panel-body tab-content">
+                                <div class="tab-pane active" id="tab-first">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading">
+                                                    <div class="btn-group pull-right">
+                                                        <div class="pull-left">
+                                                            <button class="btn btn-primary btn-md" data-toggle="modal" data-target="#addreferral">Add Referral</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="panel-body">
+                                                    <div id="referralpatientTable"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="tab-pane" id="tab-second">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading">
+                                                    <div class="btn-group pull-right">
+                                                        <div class="pull-left">
+                                                            <button class="btn btn-primary btn-md" data-toggle="modal" data-target="#prenatalreferral">Add Referral</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="panel-body">
+                                                    <div id="prenatalreferralpatientTable"></div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="panel-body">
-                                <div id="referralpatientTable"></div>
-                            </div>
-
                         </div>
-
                     </div>
                 </div>
 
@@ -67,6 +96,7 @@
     </div>
     <!-- END PAGE CONTAINER -->
     <?php require 'modals/addreferral.php'?>
+     <?php require 'modals/addprenatalreferral.php'?>
     <!-- START PRELOADS -->
     <audio id="audio-alert" src="audio/alert.mp3" preload="auto"></audio>
     <audio id="audio-fail" src="audio/fail.mp3" preload="auto"></audio>
@@ -81,6 +111,7 @@
 
     <!-- START THIS PAGE PLUGINS-->
     <script type="text/javascript" src="functions/referral.js"></script>
+    <script type="text/javascript" src="functions/prenatalreferral.js"></script>
     <script type="text/javascript" src="js/plugins/bootstrap/bootstrap-datepicker.js"></script>
     <script type='text/javascript' src='js/plugins/bootstrap/bootstrap-select.js'></script>
     <script type='text/javascript' src='js/plugins/icheck/icheck.min.js'></script>

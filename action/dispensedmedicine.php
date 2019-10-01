@@ -2,6 +2,7 @@
 require '../require/logincheck.php';
 
 if(isset($_POST['add'])){
+    $purpose = $_POST['purpose'];
     $medicine_name = $_POST['medicine_name'];
     $quantity = $_POST['quantity'];
     $received = $_POST['received'];
@@ -24,7 +25,7 @@ if(isset($_POST['add'])){
     
     $remarks = "dispensed $quantity $md_name to $patient_name";
 
-    $conn->query("INSERT INTO `medication_dispensation` VALUES('', '$received', '$md_name', '$date', '$time', '$month', '$year', '$quantity','$date_time')") or die(mysqli_error());
+    $conn->query("INSERT INTO `medication_dispensation` VALUES('', '$received', '$medicine_name', '$purpose', '$date', '$time', '$month', '$year', '$quantity','$date_time')") or die(mysqli_error());
     $conn->query("INSERT INTO `users_activity_log` VALUES('', '$user_id', '$remarks','$date_time')") or die(mysqli_error());
     $conn->close();
 }

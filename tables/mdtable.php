@@ -5,6 +5,9 @@ if(isset($_POST['show'])){
 <table id="mdtable" class="table datatable hover">
     <thead>
         <tr class="warning">
+             <th>
+                <center>Purpose</center>
+            </th>
             <th>
                 <center>Medicine Name</center>
             </th>
@@ -26,6 +29,9 @@ if(isset($_POST['show'])){
                 while($fetch = $query->fetch_array()){
 		?>
         <tr>
+            <td>
+                <center><?php echo $fetch['purpose']?></center>
+            </td>
             <td>
                 <center><?php echo $fetch['medicine_name']?></center>
             </td>

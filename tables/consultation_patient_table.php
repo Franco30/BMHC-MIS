@@ -20,7 +20,7 @@ if(isset($_POST['show'])){
             <td><center>Female</center></td>
             <td><center>Headachce</center></td>
             <td><center></center></td>
-            <td><center><a href="#" class="btn btn-sm btn-info">View</a></center></td>
+            <td><center><a href="#" class="btn btn-md btn-default">View <span class = "badge">4</span></a></center></td>
         </tr>
     </tbody>
 </table>

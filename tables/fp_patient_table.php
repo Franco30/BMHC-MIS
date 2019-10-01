@@ -15,7 +15,7 @@ if(isset($_POST['show'])){
     </thead>
     <tbody>
         <?php
-    $query = $conn->query("SELECT * FROM `patient`, `family_planning` WHERE patient.patient_id = family_planning.patient_id ORDER BY family_planning_id DESC") or die(mysqli_error());
+    $query = $conn->query("SELECT *, COUNT(family_planning.patient_id) AS total FROM `patient`, `family_planning` WHERE patient.patient_id = family_planning.patient_id ORDER BY family_planning_id DESC") or die(mysqli_error());
     while($fetch = $query->fetch_array()){
         ?>
         <tr>
@@ -24,7 +24,7 @@ if(isset($_POST['show'])){
             <td><center><?php echo $fetch['prev_used_method']?></center></td>
             <td><center><?php echo $fetch['birthdate']?></center></td>
             <td><center><?php echo $fetch['address']?></center></td>
-            <td><center><a href="childpatientmasterfiletable.php" class="btn btn-info">View</a></center></td>
+            <td><center><a href="childpatientmasterfiletable.php" class="btn btn-md btn-default">View <span class = "badge"><?php echo $fetch['total']?></span></a></center></td>
         </tr>
         <?php
     }

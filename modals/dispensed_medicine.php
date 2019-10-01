@@ -18,7 +18,14 @@
                     <fieldset>
                         <div class="form-group">
                             <label>Purpose</label>
-                            <input type="purpose" class="form-control" id="purpose" required />
+                            <select class="form-control select" data-live-search="true" id="purpose" required>
+                                <option>Select</option>
+                                <option>Consultation</option>
+                                <option>TB Medicine</option>
+                                <option>Family Planning</option>
+                                <option>Immunization</option>
+                                <option>Prenatal</option>
+                            </select>
                         </div>
                         <div class="form-group">
                             <label>Medicine Name</label>
