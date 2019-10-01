@@ -60,19 +60,19 @@ require 'require/logincheck.php';
                         <div class="widget widget-primary widget-carousel">
                             <div class="owl-carousel" id="owl-example">
                                 <div>
-                                    <div class="widget-title">Total Patients</div>
-                                    <div class="widget-subtitle">27/08/2014 15:23</div>
-                                    <div class="widget-int">3,548</div>
+                                    <div class="widget-title">Family Planning</div>
+                                    <div class="widget-subtitle">Patients</div>
+                                    <div class="widget-int">3</div>
                                 </div>
                                 <div>
-                                    <div class="widget-title">Returned</div>
-                                    <div class="widget-subtitle">Visitors</div>
-                                    <div class="widget-int">1,695</div>
+                                    <div class="widget-title">Prenatal</div>
+                                    <div class="widget-subtitle">Patients</div>
+                                    <div class="widget-int">2</div>
                                 </div>
                                 <div>
-                                    <div class="widget-title">New</div>
-                                    <div class="widget-subtitle">Visitors</div>
-                                    <div class="widget-int">1,977</div>
+                                    <div class="widget-title">Immunization</div>
+                                    <div class="widget-subtitle">Patients</div>
+                                    <div class="widget-int">5</div>
                                 </div>
                             </div>
                             <div class="widget-controls">

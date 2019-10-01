@@ -28,7 +28,7 @@
             <!-- START BREADCRUMB -->
             <ul class="breadcrumb">
                 <li>Data Entry</li>
-                <li><mark><strong>Immunization Registration</strong></mark></li>
+                <li><mark><strong>Immunization Service Registration</strong></mark></li>
             </ul>
             <!-- END BREADCRUMB -->
             <!-- PAGE CONTENT WRAPPER -->
@@ -44,7 +44,7 @@
                                 <h3 class="panel-title"><strong>Immunization Registration</strong></h3>
                                 <div class="btn-group pull-right">
                                     <div class="pull-left">
-                                        <button class="btn btn-primary" data-toggle="modal" data-target="#new_immunization">New Immunization</button>
+                                        <button class="btn btn-primary" data-toggle="modal" data-target="#add_immunization">New Immunization</button>
                                     </div>
                                 </div>
                             </div>
@@ -62,6 +62,7 @@
         <!-- END PAGE CONTENT -->
     </div>
     <?php require 'modals/addimmunization.php'?>
+    <?php require 'modals/add_immunization.php'?>
     <audio id="audio-alert" src="audio/alert.mp3" preload="auto"></audio>
     <audio id="audio-fail" src="audio/fail.mp3" preload="auto"></audio>
     <script type="text/javascript" src="js/plugins/jquery/jquery.min.js"></script>

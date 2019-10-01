@@ -1,4 +1,4 @@
-<div class="modal fade" id="add_familyplanning" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal fade" id="add_immunization" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <center>
@@ -17,20 +17,20 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label>Patient Name</label>
-                                <select name="patient_id" class="form-control select" data-live-search="true" id="provider">
+                                <select name="child_id" class="form-control select" data-live-search="true" id="provider">
                                     <option value="#">Select</option>
                                     <?php
 	                $conn = new mysqli("localhost", "root", "", "bmhc") or die(mysqli_error());
-					$query = $conn->query("SELECT * FROM `patient` where `status` = 'Registered' && `gender` = 'Female'") or die(mysqli_error());
+					$query = $conn->query("SELECT * FROM `patient_child` where `status` = 'Registered'") or die(mysqli_error());
                                     
 					while($fetch = $query->fetch_array()){
                         
 									?>
-                                    <option value="<?php echo $fetch['patient_id'];?>">
-                                        <?php echo $fetch['patient_name']?></option>
+                                    <option value="<?php echo $fetch['child_id'];?>">
+                                        <?php echo $fetch['child_name']?></option>
                                     <?php
 					}
-                                    $patient_id = $fetch['patient_id'];
+                                    $child_id = $fetch['child_id'];
 									?>
                                 </select>
                             </div>
@@ -38,9 +38,9 @@
                     </div>
                 <?php
                     if(isset($_POST['submit'])) {
-                        $patient_id = $_POST['patient_id'];
+                        $child_id = $_POST['child_id'];
 
-                        echo "<script>document.location='add_familyplanning?patient_id=$patient_id'</script>";
+                        echo "<script>document.location='add_immunization?child_id=$child_id'</script>";
 
                     }
                 ?>

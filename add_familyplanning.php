@@ -44,16 +44,11 @@
                                     <ul class="nav nav-tabs" role="tablist">
                                         <li class="active"><a href="#tab-first" role="tab" data-toggle="tab">Patient</a>
                                         </li>
-                                        <li><a href="#tab-shit" role="tab" data-toggle="tab">Medical History</a>
+                                        <li><a href="#tab-second" role="tab" data-toggle="tab">Medical, Obsterical History and STI Risks </a>
                                         </li>
-                                        <li><a href="#tab-second" role="tab" data-toggle="tab">Obsterical History</a>
+                                        <li><a href="#tab-third" role="tab" data-toggle="tab">Physical and Pelvic Examination</a>
                                         </li>
-                                        <li><a href="#tab-third" role="tab" data-toggle="tab">STI Risks</a></li>
-                                        <li><a href="#tab-fourth" role="tab" data-toggle="tab">Physical Examination</a>
-                                        </li>
-                                        <li><a href="#tab-fifth" role="tab" data-toggle="tab">Pelvic Examination</a>
-                                        </li>
-                                        <li><a href="#tab-sixth" role="tab" data-toggle="tab">Risks for Violence </a>
+                                        <li><a href="#tab-fourth" role="tab" data-toggle="tab">Risks for Violence </a>
                                         </li>
                                     </ul>
                                     <div class="panel-body list-group list-group-contacts scroll" style="height: 470px;">
@@ -158,7 +153,7 @@
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label>Street Address</label>
-                                                                    <textarea style="color:#444444;" class="form-control" spellcheck="false" id="streetaddress<?php echo $fetch['patient_id'];?>" value="<?php echo $fetch['patient_id'];?>"  readonly><?php echo $fetch['street_address'];?></textarea>
+                                                                    <textarea style="color:#444444;" class="form-control" spellcheck="false" id="streetaddress<?php echo $fetch['patient_id'];?>" value="<?php echo $fetch['patient_id'];?>" readonly><?php echo $fetch['street_address'];?></textarea>
                                                                 </div>
 
                                                                 <div class="form-row">
@@ -211,83 +206,99 @@
                                                     <button type="submit" class="btn btn-info" name="add_laboratory_request"><span class="fa fa-check"></span>Save</button>
                                                     <a href="familyplanning" class="btn btn-danger"><span class="fa fa-times"></span>Cancel</a>
                                                 </div>
-                                                <div class="tab-pane" id="tab-shit">
+                                                <div class="tab-pane" id="tab-second">
                                                     <div class="row">
                                                         <div class="col-md-12">
                                                             <div class="col-md-6">
-                                                                <div class="form-group">
-                                                                    <label>Heent</label>
-                                                                    <select multiple class="form-control select" data-live-search="true" style="display: none;" id="heent">
-                                                                        <option>Epilepsy/Convulsion/Seizure</option>
-                                                                        <option>Severe Headache/dizziness</option>
-                                                                        <option>Visual disturbance/blurring of vision
-                                                                        </option>
-                                                                        <option>Yellowish conjunctiva</option>
-                                                                        <option>Enlarged thyroid</option>
-                                                                    </select>
+                                                                <h5><strong>Medical History</strong></h5>
+                                                                <div class="form-row">
+                                                                    <div class="col-md-6">
+                                                                        <div class="form-group" style="margin-left:-10px;">
+                                                                            <label>Heent</label>
+                                                                            <select multiple class="form-control select" data-live-search="true" style="display: none;" id="heent">
+                                                                                <option>Epilepsy/Convulsion/Seizure</option>
+                                                                                <option>Severe Headache/dizziness</option>
+                                                                                <option>Visual disturbance/blurring of vision
+                                                                                </option>
+                                                                                <option>Yellowish conjunctiva</option>
+                                                                                <option>Enlarged thyroid</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        <div class="form-group" style="margin-right:-10px;">
+                                                                            <label>Chest/Heart</label>
+                                                                            <select multiple class="form-control select" data-live-search="true" style="display: none;" id="chestheart">
+                                                                                <option>Severe chest pain</option>
+                                                                                <option>Shortness of breath and easy fatigability
+                                                                                </option>
+                                                                                <option>Breast/axillary masses</option>
+                                                                                <option>Nipple discharges (specify if blood or pus)
+                                                                                </option>
+                                                                                <option>Systolic of 140 & above</option>
+                                                                                <option>Diastolic of 90 & above</option>
+                                                                                <option>Family history of CVA (strokes),
+                                                                                    hypertension asthma,
+                                                                                    rheumatic heart disease</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
                                                                 </div>
-
-                                                                <div class="form-group">
-                                                                    <label>Abdomen</label>
-                                                                    <select multiple class="form-control select" data-live-search="true" style="display: none;" id="abdomen">
-                                                                        <option>Mass in the abdomen</option>
-                                                                        <option>History of gallbladder disease</option>
-                                                                        <option>History of liver disease</option>
-                                                                    </select>
+                                                                &nbsp;
+                                                                <div class="form-row">
+                                                                    <div class="col-md-6">
+                                                                        <div class="form-group" style="margin-left:-10px;">
+                                                                            <label>Extremities</label>
+                                                                            <select multiple class="form-control select" data-live-search="true" style="display: none;" id="extremities">
+                                                                                <option>Severe varicosities</option>
+                                                                                <option>Swelling or severe pain in the legs not
+                                                                                    related to
+                                                                                    injuries</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        <div class="form-group" style="margin-right:-10px;">
+                                                                            <label>History of any of the following</label>
+                                                                            <select multiple class="form-control select" data-live-search="true" style="display: none;" id="history">
+                                                                                <option>Smoking</option>
+                                                                                <option>Allergies</option>
+                                                                                <option>Drug Intake (anti-tuberculosis,
+                                                                                    anti-diabetic,
+                                                                                    anticonvulsant)</option>
+                                                                                <option>Bleeding tendencies (nose, gums, etc.)
+                                                                                </option>
+                                                                                <option>Anemia</option>
+                                                                                <option>Diabetes</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
                                                                 </div>
-
-                                                                <div class="form-group">
-                                                                    <label>Extremities</label>
-                                                                    <select multiple class="form-control select" data-live-search="true" style="display: none;" id="extremities">
-                                                                        <option>Severe varicosities</option>
-                                                                        <option>Swelling or severe pain in the legs not
-                                                                            related to
-                                                                            injuries</option>
-                                                                    </select>
+                                                                &nbsp;
+                                                                <div class="form-row">
+                                                                    <div class="col-md-6">
+                                                                        <div class="form-group" style="margin-left:-10px;">
+                                                                            <label>Abdomen</label>
+                                                                            <select multiple class="form-control select" data-live-search="true" style="display: none;" id="abdomen">
+                                                                                <option>Mass in the abdomen</option>
+                                                                                <option>History of gallbladder disease</option>
+                                                                                <option>History of liver disease</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        <div class="form-group" style="margin-right:-10px;">
+                                                                            <label>Genital</label>
+                                                                            <select multiple class="form-control select" data-live-search="true" style="display: none;" id="genital">
+                                                                                <option>Mass in the uterus</option>
+                                                                                <option>Vaginal discharge</option>
+                                                                                <option>Intermenstrual bleeding</option>
+                                                                                <option>Postcoital bleeding</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
                                                                 </div>
-
-                                                                <div class="form-group">
-                                                                    <label>History of any of the following</label>
-                                                                    <select multiple class="form-control select" data-live-search="true" style="display: none;" id="history">
-                                                                        <option>Smoking</option>
-                                                                        <option>Allergies</option>
-                                                                        <option>Drug Intake (anti-tuberculosis,
-                                                                            anti-diabetic,
-                                                                            anticonvulsant)</option>
-                                                                        <option>Bleeding tendencies (nose, gums, etc.)
-                                                                        </option>
-                                                                        <option>Anemia</option>
-                                                                        <option>Diabetes</option>
-                                                                    </select>
-                                                                </div>
-                                                            </div>
-                                                            <!-- &nbsp;&nbsp;&nbsp; -->
-                                                            <div class="col-md-6">
-                                                                <div class="form-group">
-                                                                    <label>Chest/Heart</label>
-                                                                    <select multiple class="form-control select" data-live-search="true" style="display: none;" id="chestheart">
-                                                                        <option>Severe chest pain</option>
-                                                                        <option>Shortness of breath and easy fatigability
-                                                                        </option>
-                                                                        <option>Breast/axillary masses</option>
-                                                                        <option>Nipple discharges (specify if blood or pus)
-                                                                        </option>
-                                                                        <option>Systolic of 140 & above</option>
-                                                                        <option>Diastolic of 90 & above</option>
-                                                                        <option>Family history of CVA (strokes),
-                                                                            hypertension asthma,
-                                                                            rheumatic heart disease</option>
-                                                                    </select>
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label>Genital</label>
-                                                                    <select multiple class="form-control select" data-live-search="true" style="display: none;" id="genital">
-                                                                        <option>Mass in the uterus</option>
-                                                                        <option>Vaginal discharge</option>
-                                                                        <option>Intermenstrual bleeding</option>
-                                                                        <option>Postcoital bleeding</option>
-                                                                    </select>
-                                                                </div>
+                                                                &nbsp;
                                                                 <div class="form-group">
                                                                     <label>Skin</label>
                                                                     <select class="form-control select" style="display: none;" id="skin">
@@ -295,28 +306,60 @@
                                                                         <option>Yellowish Skin</option>
                                                                     </select>
                                                                 </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <hr>
-                                                    <button type="submit" class="btn btn-info" name="add_laboratory_request"><span class="fa fa-check"></span>Save</button>
-                                                    <a href="laboratory_request.php?id=<?php echo $_GET['id']?>" class="btn btn-danger"><span class="fa fa-times"></span>Cancel</a>
-                                                </div>
-                                                <div class="tab-pane" id="tab-second">
-                                                    <div class="row">
-                                                        <div class="col-md-12">
-                                                            <div class="col-md-6">
-                                                                <h5 style="font-size: 12px;font-weight: bold;">Number of
-                                                                    Pregnancies:
-                                                                </h5>
+                                                                <h5><strong>STI Risks</strong></h5>
+                                                                <div class="form-group">
+                                                                    <select class="form-control select" style="display: none;" id="stirisk">
+                                                                        <option>None</option>
+                                                                        <option>With history of multiple partners</option>
+                                                                    </select>
+                                                                </div>
                                                                 <div class="form-row">
                                                                     <div class="col-md-6">
                                                                         <div class="form-group" style="margin-left:-10px;">
+                                                                            <label>For Women</label>
+                                                                            <select multiple class="form-control select" data-live-search="true" style="display: none;" id="forwomen">
+                                                                                <option>Unusual discharge from vagina
+                                                                                </option>
+                                                                                <option>Itching or sores in or around vagina
+                                                                                </option>
+                                                                                <option>Pain or burning sensation</option>
+                                                                                <option>Treated for STIs in the past
+                                                                                </option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        <div class="form-group" style="margin-right:-10px;">
+                                                                            <label>For Men</label>
+                                                                            <select multiple class="form-control select" data-live-search="true" style="display: none;" id="formen">
+                                                                                <option>Pain or burning sensation</option>
+                                                                                <option>Open sores anywhere in genital area
+                                                                                </option>
+                                                                                <option>Pus corning from penis</option>
+                                                                                <option>Swollen testicles or penis</option>
+                                                                                <option>Treated for STIs in the past
+                                                                                </option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <h5><strong>Obsterical History</strong></h5>
+                                                                <div class="form-row">
+                                                                    <div class="col-md-4">
+                                                                        <div class="form-group" style="margin-left:-10px;">
+                                                                            <label>No. of Pregnancies</label>
+                                                                            <input type="number" class="form-control" id="pregnancies" required />
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-4">
+                                                                        <div class="form-group" style="margin-left:-10px;margin-right:-10px;">
                                                                             <label>Full Term</label>
                                                                             <input type="number" class="form-control" id="fullterm" required />
                                                                         </div>
                                                                     </div>
-                                                                    <div class="col-md-6">
+                                                                    <div class="col-md-4">
                                                                         <div class="form-group" style="margin-right:-10px;">
                                                                             <label>Premature</label>
                                                                             <input type="number" class="form-control" id="premature" required />
@@ -326,7 +369,7 @@
                                                                 &nbsp;
                                                                 <div class="form-row">
                                                                     <div class="col-md-6">
-                                                                        <div class="form-group" style="margin-left:-10px;">
+                                                                        <div class="form-group" style="margin-left:-10px;margin-right:-10px;">
                                                                             <label>Abortions</label>
                                                                             <input type="number" class="form-control" id="abortions" required />
                                                                         </div>
@@ -342,24 +385,7 @@
                                                                 &nbsp;
                                                                 <div class="form-row">
                                                                     <div class="col-md-6">
-                                                                        <div class="form-group" style="margin-left:-10px;">
-                                                                            <label>Past menstrual period</label>
-                                                                            <input type="text" class="form-control" id="pastmenstrualperiod" required />
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-md-6">
-                                                                        <div class="form-group" style="margin-right:-10px;">
-                                                                            <label>Last menstrual period</label>
-                                                                            <input type="text" class="form-control" id="lastmenstrualperiod" required />
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            &nbsp;
-                                                            <div class="col-md-6">
-                                                                <div class="form-row">
-                                                                    <div class="col-md-6">
-                                                                        <div class="form-group" style="margin-left:-10px;">
+                                                                        <div class="form-group" style="margin-left:-10px;margin-right:-10px;">
                                                                             <label>Date of last delivery</label>
                                                                             <input type="text" class="form-control datepicker" id="dateoflastdelivery" placeholder="Enter Date of last delivery" required />
                                                                         </div>
@@ -372,6 +398,21 @@
                                                                     </div>
                                                                 </div>
                                                                 &nbsp;
+                                                                <div class="form-row">
+                                                                    <div class="col-md-6">
+                                                                        <div class="form-group" style="margin-left:-10px;margin-right:-10px;">
+                                                                            <label>Past menstrual period</label>
+                                                                            <input type="text" class="form-control" id="pastmenstrualperiod" required />
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        <div class="form-group" style="margin-right:-10px;">
+                                                                            <label>Last menstrual period</label>
+                                                                            <input type="text" class="form-control" id="lastmenstrualperiod" required />
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                &nbsp;
                                                                 <div class="form-group">
                                                                     <label>History of any of the following</label>
                                                                     <select multiple class="form-control select" data-live-search="true" style="display: none;" id="history2">
@@ -380,14 +421,11 @@
                                                                         <option>Ectopetic pregnancy</option>
                                                                     </select>
                                                                 </div>
-
                                                                 <div class="form-group">
                                                                     <label>Duration and character of Menstrual
                                                                         bleeding</label>
                                                                     <textarea class="form-control" spellcheck="false" id="dcmenstrualbleeding"></textarea>
                                                                 </div>
-
-
                                                             </div>
                                                         </div>
                                                     </div>
@@ -395,249 +433,210 @@
                                                     <button type="submit" class="btn btn-info" name="add_laboratory_request"><span class="fa fa-check"></span>Save</button>
                                                     <a href="laboratory_request.php?id=<?php echo $_GET['id']?>" class="btn btn-danger"><span class="fa fa-times"></span>Cancel</a>
                                                 </div>
+
                                                 <div class="tab-pane" id="tab-third">
                                                     <div class="row">
                                                         <div class="col-md-12">
-                                                            <div class="col-md-4">
-                                                                <div class="form-group">
-                                                                    <label>STI Risks</label>
-                                                                    <select class="form-control select" style="display: none;" id="stirisks">
-                                                                        <option>None</option>
-                                                                        <option>With history of multiple partners</option>
-                                                                    </select>
+                                                            <div class="col-md-6">
+                                                                <h5><strong>Physical Examination</strong></h5>
+                                                                <div class="form-row">
+                                                                    <div class="col-md-3">
+                                                                        <div class="form-group" style="margin-left:-10px;">
+                                                                            <label>Blood Pressure</label>
+                                                                            <input type="text" class="form-control" id="bp" placeholder="Enter mmhg" required />
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-3">
+                                                                        <div class="form-group" style="margin-left:-10px;margin-right:-10px;">
+                                                                            <label>Weight</label>
+                                                                            <input type="text" class="form-control" id="weight" placeholder="Enter kg." required />
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-3">
+                                                                        <div class="form-group" style="margin-right:-10px;">
+                                                                            <label>Height</label>
+                                                                            <input type="text" class="form-control" id="height" placeholder="Enter cm." required />
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-3">
+                                                                        <div class="form-group" style="margin-right:-10px;">
+                                                                            <label>Pulse Rate</label>
+                                                                            <input type="text" class="form-control" id="pulserate" placeholder="Enter mins." required />
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                &nbsp;
+                                                                <div class="form-row">
+                                                                    <div class="col-md-6">
+                                                                        <div class="form-group" style="margin-left:-10px;">
+                                                                            <label>Conjunctiva</label>
+                                                                            <select multiple class="form-control select" data-live-search="true" style="display: none;" id="conjuntiva" required>
+                                                                                <option>Pale</option>
+                                                                                <option>Yellowish</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        <div class="form-group" style="margin-right:-10px;">
+                                                                            <label>Neck</label>
+                                                                            <select multiple class="form-control select" data-live-search="true" style="display: none;" id="neck">
+                                                                                <option>Enlarged thyroid</option>
+                                                                                <option>Enlarged lymph nodes</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                &nbsp;
+                                                                <div class="form-row">
+                                                                    <div class="col-md-6">
+                                                                        <div class="form-group" style="margin-left:-10px;">
+                                                                            <label>Breast</label>
+                                                                            <select multiple class="form-control select" data-live-search="true" style="display: none;" id="breast" required>
+                                                                                <option>Mass</option>
+                                                                                <option>Nipple discharge</option>
+                                                                                <option>Skin - orange peel or dimpling</option>
+                                                                                <option>Enlarged axillary lymph nodes</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        <div class="form-group" style="margin-right:-10px;">
+                                                                            <label>Thorax</label>
+                                                                            <select multiple class="form-control select" data-live-search="true" style="display: none;" id="thorax">
+                                                                                <option>Abnormal heart sounds/cardiac rate</option>
+                                                                                <option>Abnormal breath sounds/respiratory rate</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                &nbsp;
+                                                                <div class="form-row">
+                                                                    <div class="col-md-6">
+                                                                        <div class="form-group" style="margin-left:-10px;">
+                                                                            <label>Abdomen</label>
+                                                                            <select multiple class="form-control select" data-live-search="true" style="display: none;" id="abdomen" required>
+                                                                                <option>Enlarged liver</option>
+                                                                                <option>Mass</option>
+                                                                                <option>Tenderness</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        <div class="form-group" style="margin-right:-10px;">
+                                                                            <label>Extremities</label>
+                                                                            <select multiple class="form-control select" data-live-search="true" style="display: none;" id="extremities">
+                                                                                <option>Edema</option>
+                                                                                <option>Varicosities</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
                                                                 </div>
                                                             </div>
-                                                            <div class="col-md-4">
+
+                                                            <div class="col-md-6">
+                                                                <h5><strong>Pelvic Examination</strong></h5>
+                                                                <div class="form-row">
+                                                                    <div class="col-md-6">
+                                                                        <div class="form-group" style="margin-left:-10px;">
+                                                                            <label>Perineum</label>
+                                                                            <select multiple class="form-control select" data-live-search="true" style="display: none;" id="perineum" required>
+                                                                                <option>Scars</option>
+                                                                                <option>Warts</option>
+                                                                                <option>Laceration</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        <div class="form-group" style="margin-right:-10px;">
+                                                                            <label>Vagina</label>
+                                                                            <select multiple class="form-control select" data-live-search="true" style="display: none;" id="vagina">
+                                                                                <option>Congested</option>
+                                                                                <option>Bartholin's cyst</option>
+                                                                                <option>Warts</option>
+                                                                                <option>Skene's Gland Discharge</option>
+                                                                                <option>Rectocoele</option>
+                                                                                <option>Cystocoele</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                &nbsp;
+                                                                <div class="form-row">
+                                                                    <div class="col-md-6">
+                                                                        <div class="form-group" style="margin-left:-10px;">
+                                                                            <label>Cervix</label>
+                                                                            <select multiple class="form-control select" data-live-search="true" style="display: none;" id="cervix" required>
+                                                                                <option>Congested</option>
+                                                                                <option>Erosion</option>
+                                                                                <option>Discharge</option>
+                                                                                <option>Polyps/cysts</option>
+                                                                                <option>Laceration</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        <div class="form-group" style="margin-right:-10px;">
+                                                                            <label>Consistency</label>
+                                                                            <select multiple class="form-control select" data-live-search="true" style="display: none;" id="consistency">
+                                                                                <option>Firm</option>
+                                                                                <option>Soft</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                &nbsp;
                                                                 <div class="form-group">
-                                                                    <label>For Women</label>
-                                                                    <select multiple class="form-control select" data-live-search="true" style="display: none;" id="forwomen">
-                                                                        <option>Unusual discharge from vagina
-                                                                        </option>
-                                                                        <option>Itching or sores in or around vagina
-                                                                        </option>
-                                                                        <option>Pain or burning sensation</option>
-                                                                        <option>Treated for STIs in the past
-                                                                        </option>
+                                                                    <label>Adnexa</label>
+                                                                    <select multiple class="form-control select" data-live-search="true" style="display: none;" id="adnexa">
+                                                                        <option>Mass</option>
+                                                                        <option>Tenderness</option>
                                                                     </select>
                                                                 </div>
-                                                            </div>
-                                                            <div class="col-md-4">
-                                                                <div class="form-group">
-                                                                    <label>For Men</label>
-                                                                    <select multiple class="form-control select" data-live-search="true" style="display: none;" id="formen">
-                                                                        <option>Pain or burning sensation</option>
-                                                                        <option>Open sores anywhere in genital area
-                                                                        </option>
-                                                                        <option>Pus corning from penis</option>
-                                                                        <option>Swollen testicles or penis</option>
-                                                                        <option>Treated for STIs in the past
-                                                                        </option>
+                                                                <h6><strong>Uterus</strong></h6>
+                                                                <div class="form-row">
+                                                                    <div class="col-md-6">
+                                                                        <div class="form-group" style="margin-left:-10px;">
+                                                                            <label>Position</label>
+                                                                            <select multiple class="form-control select" data-live-search="true" style="display: none;" id="position" required>
+                                                                                <option>Mid</option>
+                                                                                <option>Anteflexed</option>
+                                                                                <option>Retroflexed</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        <div class="form-group" style="margin-right:-10px;">
+                                                                            <label>Size</label>
+                                                                            <select multiple class="form-control select" data-live-search="true" style="display: none;" id="size">
+                                                                                <option>Normal</option>
+                                                                                <option>Small</option>
+                                                                                <option>Large</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                &nbsp;
+                                                                <div class="form-group" style="margin-right:-10px;">
+                                                                    <label>Mass</label>
+                                                                    <select multiple class="form-control select" data-live-search="true" style="display: none;" id="size">
+                                                                        <option>none</option>
+                                                                        <option>Yes</option>
                                                                     </select>
                                                                 </div>
+                                                                <div class="form-group">
+                                                                    <label>Uterine Depth (for intendted IUD users)</label>
+                                                                    <input type="text" class="form-control" id="uterinedepth" placeholder="Enter Uterine Depth in cms." required />
+                                                                </div>
                                                             </div>
+
                                                         </div>
                                                     </div>
                                                     <hr>
                                                     <button type="submit" class="btn btn-info" name="add_laboratory_request"><span class="fa fa-check"></span>Save</button>
                                                     <a href="laboratory_request.php?id=<?php echo $_GET['id']?>" class="btn btn-danger"><span class="fa fa-times"></span>Cancel</a>
                                                 </div>
+
                                                 <div class="tab-pane" id="tab-fourth">
-                                                    <div class="row">
-                                                        <div class="col-md-12">
-                                                            <div class="col-md-4">
-                                                                <div class="form-group">
-                                                                    <label>Blood Pressure</label>
-                                                                    <input type="text" class="form-control" id="bp" placeholder="Enter Blood pressure" required />
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-4">
-                                                                <div class="form-group">
-                                                                    <label>Weight</label>
-                                                                    <input type="text" class="form-control" id="weight" placeholder="Enter Weight" required />
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-4">
-                                                                <div class="form-group">
-                                                                    <label>Pulse Rate</label>
-                                                                    <input type="text" class="form-control" id="pulserate" placeholder="Enter Pulse Rate" required />
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        &nbsp;
-                                                        <div class="col-md-12">
-                                                            <div class="col-md-3">
-                                                                <label>Breast</label>
-                                                                <div class="form-group">
-                                                                    <label class="check"><input type="checkbox" class="icheckbox" name="q6[]" value="Pale" />
-                                                                        Mass</label><br>
-                                                                    <label class="check"><input type="checkbox" class="icheckbox" name="q6[]" value="Yellowish" />
-                                                                        Nipple discharge</label>
-                                                                    <label class="check"><input type="checkbox" class="icheckbox" name="q6[]" value="Yellowish" />
-                                                                        Skin -- orange peel or dimpling</label>
-                                                                    <label class="check"><input type="checkbox" class="icheckbox" name="q6[]" value="Yellowish" />
-                                                                        Enlarged axillary lymph nodes</label>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-2">
-                                                                <label>Abdomen</label>
-                                                                <div class="form-group">
-                                                                    <label class="check"><input type="checkbox" class="icheckbox" name="q6[]" value="Pale" />
-                                                                        Enlarged Liver</label><br>
-                                                                    <label class="check"><input type="checkbox" class="icheckbox" name="q6[]" value="Yellowish" />
-                                                                        Mass</label>
-                                                                    <label class="check"><input type="checkbox" class="icheckbox" name="q6[]" value="Yellowish" />
-                                                                        Tenderness</label>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-2">
-                                                                <label>Extremities</label>
-                                                                <div class="form-group">
-                                                                    <label class="check"><input type="checkbox" class="icheckbox" name="q6[]" value="Pale" />
-                                                                        Edema</label><br>
-                                                                    <label class="check"><input type="checkbox" class="icheckbox" name="q6[]" value="Yellowish" />
-                                                                        Mass</label>
-                                                                    <label class="check"><input type="checkbox" class="icheckbox" name="q6[]" value="Yellowish" />
-                                                                        Varicosities</label>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-2">
-                                                                <label>Conjunctive</label>
-                                                                <div class="form-group">
-                                                                    <label class="check"><input type="checkbox" class="icheckbox" name="q6[]" value="Pale" />
-                                                                        Pale</label><br>
-                                                                    <label class="check"><input type="checkbox" class="icheckbox" name="q6[]" value="Yellowish" />
-                                                                        Yellowish</label>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-3">
-                                                                <label>Neck</label>
-                                                                <div class="form-group">
-                                                                    <label class="check"><input type="checkbox" class="icheckbox" name="q6[]" value="Pale" />
-                                                                        Enlarged Thyroid</label><br>
-                                                                    <label class="check"><input type="checkbox" class="icheckbox" name="q6[]" value="Yellowish" />
-                                                                        Enlarged lymph nodes</label>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-12">
-                                                            <div class="col-md-4">
-                                                                <label>Thorax</label>
-                                                                <div class="form-group">
-                                                                    <label class="check"><input type="checkbox" class="icheckbox" name="q6[]" value="Pale" />
-                                                                        Abnormal heart sounds/cardiac rate</label><br>
-                                                                    <label class="check"><input type="checkbox" class="icheckbox" name="q6[]" value="Yellowish" />
-                                                                        Abnormal breath sounds/respiratory rate</label>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <hr>
-                                                    <button type="submit" class="btn btn-info" name="add_laboratory_request"><span class="fa fa-check"></span>Save</button>
-                                                    <a href="laboratory_request.php?id=<?php echo $_GET['id']?>" class="btn btn-danger"><span class="fa fa-times"></span>Cancel</a>
-                                                </div>
-                                                <div class="tab-pane" id="tab-fifth">
-                                                    <div class="row">
-                                                        <div class="col-md-12">
-                                                            <div class="col-md-3">
-                                                                <label>Vagina</label>
-                                                                <div class="form-group">
-                                                                    <label class="check"><input type="checkbox" class="icheckbox" name="q6[]" value="Pale" />
-                                                                        Congested</label><br>
-                                                                    <label class="check"><input type="checkbox" class="icheckbox" name="q6[]" value="Yellowish" />
-                                                                        Bartholin's cyst</label> <br>
-                                                                    <label class="check"><input type="checkbox" class="icheckbox" name="q6[]" value="Yellowish" />
-                                                                        Warts</label><br>
-                                                                    <label class="check"><input type="checkbox" class="icheckbox" name="q6[]" value="Yellowish" />
-                                                                        Skene's Gland Discharge</label><br>
-                                                                    <label class="check"><input type="checkbox" class="icheckbox" name="q6[]" value="Yellowish" />
-                                                                        Rectocoele</label><br>
-                                                                    <label class="check"><input type="checkbox" class="icheckbox" name="q6[]" value="Yellowish" />
-                                                                        Cystocoele</label>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-2">
-                                                                <label>Vagina Size</label>
-                                                                <div class="form-group">
-                                                                    <label class="check"><input type="checkbox" class="icheckbox" name="q6[]" value="Pale" />
-                                                                        Normal</label><br>
-                                                                    <label class="check"><input type="checkbox" class="icheckbox" name="q6[]" value="Yellowish" />
-                                                                        Small</label> <br>
-                                                                    <label class="check"><input type="checkbox" class="icheckbox" name="q6[]" value="Yellowish" />
-                                                                        Large</label>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-2">
-                                                                <label>Perineum</label>
-                                                                <div class="form-group">
-                                                                    <label class="check"><input type="checkbox" class="icheckbox" name="q6[]" value="Pale" />
-                                                                        Scars</label><br>
-                                                                    <label class="check"><input type="checkbox" class="icheckbox" name="q6[]" value="Yellowish" />
-                                                                        Warts</label> <br>
-                                                                    <label class="check"><input type="checkbox" class="icheckbox" name="q6[]" value="Yellowish" />
-                                                                        Reddish</label><br>
-                                                                    <label class="check"><input type="checkbox" class="icheckbox" name="q6[]" value="Yellowish" />
-                                                                        Laceration</label>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-2">
-                                                                <label>Uterus Position</label>
-                                                                <div class="form-group">
-                                                                    <label class="check"><input type="checkbox" class="icheckbox" name="q6[]" value="Pale" />
-                                                                        Mid</label><br>
-                                                                    <label class="check"><input type="checkbox" class="icheckbox" name="q6[]" value="Yellowish" />
-                                                                        Anteflexed</label> <br>
-                                                                    <label class="check"><input type="checkbox" class="icheckbox" name="q6[]" value="Yellowish" />
-                                                                        Retroflexed</label>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-2">
-                                                                <label>Cervix</label>
-                                                                <div class="form-group">
-                                                                    <label class="check"><input type="checkbox" class="icheckbox" name="q6[]" value="Pale" />
-                                                                        Congested</label><br>
-                                                                    <label class="check"><input type="checkbox" class="icheckbox" name="q6[]" value="Yellowish" />
-                                                                        Erosion</label> <br>
-                                                                    <label class="check"><input type="checkbox" class="icheckbox" name="q6[]" value="Yellowish" />
-                                                                        Discharge</label><br>
-                                                                    <label class="check"><input type="checkbox" class="icheckbox" name="q6[]" value="Yellowish" />
-                                                                        Polyps/cysts</label><br>
-                                                                    <label class="check"><input type="checkbox" class="icheckbox" name="q6[]" value="Yellowish" />
-                                                                        Laceration</label>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-12">
-                                                            <div class="col-md-2">
-                                                                <label>Adnexa</label>
-                                                                <div class="form-group">
-                                                                    <label class="check"><input type="checkbox" class="icheckbox" name="q6[]" value="Pale" />
-                                                                        Mass</label><br>
-                                                                    <label class="check"><input type="checkbox" class="icheckbox" name="q6[]" value="Yellowish" />
-                                                                        Tenderness</label>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-2">
-                                                                <label>Consistency</label>
-                                                                <div class="form-group">
-                                                                    <label class="check"><input type="checkbox" class="icheckbox" name="q6[]" value="Pale" />
-                                                                        Firm</label><br>
-                                                                    <label class="check"><input type="checkbox" class="icheckbox" name="q6[]" value="Yellowish" />
-                                                                        Soft</label>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-3">
-                                                                <div class="form-group">
-                                                                    <label>Uterine Depth</label>
-                                                                    <input type="text" class="form-control" id="bp" placeholder="Enter Uterine Depth in cms." required />
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <hr>
-                                                    <button type="submit" class="btn btn-info" name="add_laboratory_request"><span class="fa fa-check"></span>Save</button>
-                                                    <a href="laboratory_request.php?id=<?php echo $_GET['id']?>" class="btn btn-danger"><span class="fa fa-times"></span>Cancel</a>
-                                                </div>
-                                                <div class="tab-pane" id="tab-sixth">
                                                     <div class="row">
                                                         <div class="col-md-12">
                                                             <div class="col-md-4">

@@ -9,7 +9,6 @@ if(isset($_POST['show'])){
             <th><center>Patient Name</center></th>
             <th><center>Age</center></th>
             <th><center>Gender</center></th>
-            <th><center>Birthdate</center></th>
             <th><center>Address</center></th>
             <th><center>Contact Number</center></th>
             <th><center>Action</center></th>
@@ -25,7 +24,6 @@ if(isset($_POST['show'])){
             <td><center><?php echo $fetch['patient_name']?></center></td>
             <td><center><?php echo $fetch['age']?> years old</center></td>
             <td><center><?php echo $fetch['gender']?></center></td>
-            <td><center><?php echo $fetch['birthdate']?></center></td>
             <td><center>Prk. <?php echo $fetch['purok']." ".$fetch['street_address'];?></center></td>
             <td><center><?php echo $fetch['contact_no']?></center></td>
             <td><center>
