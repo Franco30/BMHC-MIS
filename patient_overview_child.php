@@ -42,7 +42,6 @@
 			<!-- END BREADCRUMB -->
 			<!-- PAGE CONTENT WRAPPER -->
 			<div class="page-content-wrap">
-
 				<div class="row">
 					<div class="col-md-12">
 						<div id="alert" class="alert alert-info" style="display:none;">
@@ -52,8 +51,6 @@
 							<ul class="nav nav-tabs" role="tablist">
 								<li><a href="#tab-first" role="tab" data-toggle="tab">Patient Info</a></li>
 								<li class="active"><a href="#tab-second" role="tab" data-toggle="tab">Immunization</a></li>
-								<!-- <li><a href="#tab-eigth" role="tab" data-toggle="tab">TST</a></li>
-									<li><a href="#tab-ninth" role="tab" data-toggle="tab">CXR</a></li> -->
 							</ul>
 							<div class="panel-body tab-content">
 								<div class="tab-pane" id="tab-first">
@@ -147,19 +144,10 @@
 								</div>
 
 								<div class="tab-pane active" id="tab-second">
-										<div class="row">
-											<div class="col-md-12">
-												<div class="panel panel-default">
-													<div class="panel-body">
-														<?php require 'masterfile/overview_immunization.php'?>
-													</div>
-												</div>
-											</div>
-										</div>
-										<hr>
+									<div class="row">
+										<?php require 'masterfile/overview_immunization.php'?>
+									</div>
 								</div>
-
-
 							</div>
 						</div>
 					</div>
@@ -197,6 +185,7 @@
 				selectors: "h2, h3, h4"
 			});
 		});
+
 	</script>
 	<!-- END THIS PAGE PLUGINS-->
 	<script type="text/javascript" src="js/plugins/datatables/jquery.dataTables.min.js"></script>

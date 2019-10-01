@@ -1,6 +1,6 @@
 				<?php
 	require 'require/config.php';
-			$query = $conn->query("SELECT * FROM `patient`, `family_planning` WHERE patient.patient_id = family_planning.patient_id && patient.patient_id = '$_GET[id]'") or die(mysqli_error());
+			$query = $conn->query("SELECT * FROM `family_planning` NATURAL JOIN `patient` WHERE `patient_id` = '$_GET[id]' &&  `family_planning_id` = '$_GET[fp_id]'") or die(mysqli_error());
 			$fetch = $query->fetch_array();
 			$id = $fetch['patient_id'];
 			?>

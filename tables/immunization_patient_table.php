@@ -8,7 +8,7 @@ if(isset($_POST['show'])){
             <th><center>Child Name</center></th>
             <th><center>Gender</center></th>
             <th><center>Birthdate</center></th>
-            <th><center>Address</center></th>
+            <th><center>Complete Address</center></th>
             <th><center>Action</center></th>
         </tr>
     </thead>
@@ -21,7 +21,7 @@ if(isset($_POST['show'])){
             <td><center><?php echo $fetch['child_name']?></center></td>
             <td><center><?php echo $fetch['gender']?></center></td>
             <td><center><?php echo $fetch['birthdate']?></center></td>
-            <td><center><?php echo $fetch['address']?></center></td>
+            <td><center>Prk. <?php echo $fetch['purok']." ".$fetch['street_address']?></center></td>
             <td><center><a href="add_prenatal?id=<?php echo $fetch['child_id'];?>" class="btn btn-sm btn-info">View</a></center></td>
         </tr>
         <?php

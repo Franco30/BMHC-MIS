@@ -12,7 +12,6 @@
             </div>
             <div class="modal-body">
                 <form id="patientform">
-
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">

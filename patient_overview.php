@@ -51,8 +51,10 @@
 						<div class="panel panel-default tabs">
 							<ul class="nav nav-tabs" role="tablist">
 								<li class="active"><a href="#tab-first" role="tab" data-toggle="tab">Patient Info</a></li>
+								<?php if($fetch['gender'] == 'Female') { ?>
 								<li><a href="#tab-second" role="tab" data-toggle="tab">Prenatal</a></li>
 								<li><a href="#tab-third" role="tab" data-toggle="tab">Family Planning</a></li>
+								<?php } ?>
 								<li><a href="#tab-fifth" role="tab" data-toggle="tab">Consultation</a></li>
 								<!-- <li><a href="#tab-eigth" role="tab" data-toggle="tab">TST</a></li>
 									<li><a href="#tab-ninth" role="tab" data-toggle="tab">CXR</a></li> -->
@@ -84,7 +86,7 @@
 																	Number</small><br /><?php echo $fetch['contact_no']?>
 															</p>
 															<p><small style="font-size:13px;">Current
-																	Address</small><br /><?php echo $fetch['address']?>
+																	Address</small><br />Prk. <?php echo $fetch['purok']." ".$fetch['street_address'];?>
 															</p>
 														</div>
 													</div>
@@ -118,25 +120,25 @@
 											</div>
 											<div class="col-md-4"> <br>
 
-												<!--
-												<h5><strong>Registration Group: </strong></h5>
-												<hr style="margin:0px 0 5px 0;">
-												<h5><strong>Diagnosis: </strong></h5>
-												<hr style="margin:0px 0 5px 0;">
-												<h5><strong>Bacteriological Status: </strong></h5>
-												<hr style="margin:0px 0 5px 0;">
-												<h5><strong>Family Planning: </strong></h5>
-												<hr style="margin:0px 0 5px 0;">
-												<h5><strong>Pre-natal: </strong></h5>
-												<hr style="margin:0px 0 5px 0;">
-												<h5><strong>Immunization: </strong></h5>
-												<hr style="margin:0px 0 5px 0;">
-												<h5><strong>Duration: </strong></h5>
--->
+
 											</div>
 										</div>
 										<hr>
 									</div>
+								</div>
+
+								<div class="tab-pane" id="tab-second">
+									<div class="row">
+										<div class="col-md-12">
+											<div class="panel panel-default">
+												<div class="panel-body">
+
+												</div>
+											</div>
+											<!-- END CONTACT ITEM -->
+										</div>
+									</div>
+									<hr>
 								</div>
 
 								<div class="tab-pane" id="tab-third">
@@ -144,7 +146,51 @@
 										<div class="col-md-12">
 											<div class="panel panel-default">
 												<div class="panel-body">
-													<?php require 'masterfile/familyplanning_patient_info.php'?>
+													<table id="familyplanning" class="table datatable">
+													<thead>
+														<tr>
+															<th><center>Date & Time</center></th>
+															<th><center>Type of Acceptor</center></th>
+															<th><center>Previously Used Method</center></th>
+															<th><center>Birthdate</center></th>
+															<th><center>Highest Education</center></th>
+															<th><center>Action</center></th>
+														</tr>
+													</thead>
+											<tbody>
+									<?php
+								$query = $conn->query("SELECT * FROM `patient` NATURAL JOIN `family_planning` WHERE `patient_id` = '$_GET[id]' ORDER BY family_planning_id DESC") or die(mysqli_error());
+								while($fetch = $query->fetch_array()){
+									?>
+									<tr>
+										<td><center><?php echo $fetch['date']." ".$fetch['time'];?></center></td>
+										<td><center><?php echo $fetch['type_of_acceptor']?></center></td>
+										<td><center><?php echo $fetch['prev_used_method']?></center></td>
+										<td><center><?php echo $fetch['patient_birthdate']?></center></td>
+										<td><center><?php echo $fetch['patient_highest_education']?></center></td>
+										<td><center><a class="btn btn-info" href="familyplanninginfo.php?id=<?php echo $fetch['patient_id'];?>&&patient_name=<?php echo $fetch['patient_name'];?>&&fp_id=<?php echo $fetch['family_planning_id'];?>">View Detail</a></center></td>
+									</tr>
+													<?php
+												}
+												$conn->close();
+													?>
+										</tbody>
+								</table>
+													
+												</div>
+											</div>
+											<!-- END CONTACT ITEM -->
+										</div>
+									</div>
+									<hr>
+								</div>
+
+								<div class="tab-pane" id="tab-fourth">
+									<div class="row">
+										<div class="col-md-12">
+											<div class="panel panel-default">
+												<div class="panel-body">
+
 												</div>
 											</div>
 											<!-- END CONTACT ITEM -->
@@ -181,18 +227,6 @@
 	<script type='text/javascript' src='js/plugins/icheck/icheck.min.js'></script>
 	<script type="text/javascript" src="js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
 	<script type="text/javascript" src="js/plugins/scrolltotop/scrolltopcontrol.js"></script>
-	<script type="text/javascript" src="js/plugins/tocify/jquery.tocify.min.js"></script>
-	<script>
-		$(function() {
-			var toc = $("#tocify").tocify({
-				context: ".tocify-content",
-				showEffect: "fadeIn",
-				extendPage: false,
-				selectors: "h2, h3, h4"
-			});
-		});
-
-	</script>
 	<!-- END THIS PAGE PLUGINS-->
 	<script type="text/javascript" src="js/plugins/datatables/jquery.dataTables.min.js"></script>
 	<!-- START TEMPLATE -->
