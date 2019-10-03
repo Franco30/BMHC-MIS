@@ -53,8 +53,8 @@
 								<li class="active"><a href="#tab-first" role="tab" data-toggle="tab">Patient Info</a></li>
 								<?php if($fetch['gender'] == 'Female') { ?>
 								<li><a href="#tab-second" role="tab" data-toggle="tab">Prenatal</a></li>
-								<?php } ?>
 								<li><a href="#tab-third" role="tab" data-toggle="tab">Family Planning</a></li>
+								<?php } ?>
 								<li><a href="#tab-fifth" role="tab" data-toggle="tab">Consultation</a></li>
 								<!-- <li><a href="#tab-eigth" role="tab" data-toggle="tab">TST</a></li>
 									<li><a href="#tab-ninth" role="tab" data-toggle="tab">CXR</a></li> -->
@@ -80,13 +80,12 @@
 													</div>
 													<div class="panel-body">
 														<div class="contact-info">
+															<p><small style="font-size:13px;">Philhealth No.</small><br /><?php echo $fetch['philhealth_no']?>
+															</p>
 															<p><small style="font-size:13px;">Age</small><br /><?php echo $fetch['age']?>
 																years old</p>
 															<p><small style="font-size:13px;">Contact
 																	Number</small><br /><?php echo $fetch['contact_no']?>
-															</p>
-															<p><small style="font-size:13px;">Current
-																	Address</small><br />Prk. <?php echo $fetch['purok']." ".$fetch['street_address'];?>
 															</p>
 														</div>
 													</div>
@@ -94,8 +93,12 @@
 
 											</div>
 											<div class="col-md-5"> <br>
-												<h5><strong>Height: </strong><?php echo $fetch['height'], " cms." ?>
-												</h5>
+												<h5><strong>Civil Status:
+													</strong><?php echo $fetch['civil_status']?></h5>
+												<hr style="margin:0px 0 5px 0;">
+												<h5><strong>Height: </strong><?php echo $fetch['height'], " cms." ?></h5>
+												<hr style="margin:0px 0 5px 0;">
+												<h5><strong>Weight: </strong><?php echo $fetch['weight'], " kgs." ?></h5>
 												<hr style="margin:0px 0 5px 0;">
 												<h5><strong>Gender: </strong><?php echo $fetch['gender']?></h5>
 												<hr style="margin:0px 0 5px 0;">
@@ -103,24 +106,22 @@
 												<hr style="margin:0px 0 5px 0;">
 												<h5><strong>Occupation: </strong><?php echo $fetch['occupation']?></h5>
 												<hr style="margin:0px 0 5px 0;">
+												<h5><strong>Registration Date: </strong><?php echo $fetch['month']." ".$fetch['year']?></h5>
+												<hr style="margin:0px 0 5px 0;">
+												<h5><strong>Region/Provice:
+													</strong><?php echo $fetch['region_province']?></h5>
+												<hr style="margin:0px 0 5px 0;">
+												<h5><strong>Address:
+													</strong><?php echo $fetch['purok']." ".$fetch['street_address']?></h5>
+												<hr style="margin:0px 0 5px 0;">
+											</div>
+											<div class="col-md-4"> <br>
 												<h5><strong>Contact Person:
 													</strong><?php echo $fetch['contact_person']?></h5>
 												<hr style="margin:0px 0 5px 0;">
 												<h5><strong>Emergency No: </strong><?php echo $fetch['emergency_no']?>
 												</h5>
 												<hr style="margin:0px 0 5px 0;">
-												<h5><strong>Philhealth No: </strong><?php echo $fetch['philhealth_no']?>
-												</h5>
-												<hr style="margin:0px 0 5px 0;">
-												<h5><strong>Registration Date: </strong><?php echo $fetch['year']?></h5>
-												<hr style="margin:0px 0 5px 0;">
-												<h5><strong>Region/Provice:
-													</strong><?php echo $fetch['region_province']?></h5>
-												<hr style="margin:0px 0 5px 0;">
-											</div>
-											<div class="col-md-4"> <br>
-
-
 											</div>
 										</div>
 										<hr>
@@ -147,36 +148,60 @@
 											<div class="panel panel-default">
 												<div class="panel-body">
 													<table id="familyplanning" class="table datatable">
-													<thead>
-														<tr>
-															<th><center>Date & Time</center></th>
-															<th><center>Type of Acceptor</center></th>
-															<th><center>Previously Used Method</center></th>
-															<th><center>Birthdate</center></th>
-															<th><center>Highest Education</center></th>
-															<th><center>Action</center></th>
-														</tr>
-													</thead>
-											<tbody>
-									<?php
+														<thead>
+															<tr>
+																<th>
+																	<center>Date & Time</center>
+																</th>
+																<th>
+																	<center>Type of Acceptor</center>
+																</th>
+																<th>
+																	<center>Previously Used Method</center>
+																</th>
+																<th>
+																	<center>Birthdate</center>
+																</th>
+																<th>
+																	<center>Highest Education</center>
+																</th>
+																<th>
+																	<center>Action</center>
+																</th>
+															</tr>
+														</thead>
+														<tbody>
+															<?php
 								$query = $conn->query("SELECT * FROM `patient` NATURAL JOIN `family_planning` WHERE `patient_id` = '$_GET[id]' ORDER BY family_planning_id DESC") or die(mysqli_error());
 								while($fetch = $query->fetch_array()){
 									?>
-									<tr>
-										<td><center><?php echo $fetch['date']." ".$fetch['time'];?></center></td>
-										<td><center><?php echo $fetch['type_of_acceptor']?></center></td>
-										<td><center><?php echo $fetch['prev_used_method']?></center></td>
-										<td><center><?php echo $fetch['patient_birthdate']?></center></td>
-										<td><center><?php echo $fetch['patient_highest_education']?></center></td>
-										<td><center><a class="btn btn-info" href="familyplanninginfo.php?id=<?php echo $fetch['patient_id'];?>&&patient_name=<?php echo $fetch['patient_name'];?>&&fp_id=<?php echo $fetch['family_planning_id'];?>">View Detail</a></center></td>
-									</tr>
-													<?php
+															<tr>
+																<td>
+																	<center><?php echo $fetch['date']." ".$fetch['time'];?></center>
+																</td>
+																<td>
+																	<center><?php echo $fetch['type_of_acceptor']?></center>
+																</td>
+																<td>
+																	<center><?php echo $fetch['prev_used_method']?></center>
+																</td>
+																<td>
+																	<center><?php echo $fetch['patient_birthdate']?></center>
+																</td>
+																<td>
+																	<center><?php echo $fetch['patient_highest_education']?></center>
+																</td>
+																<td>
+																	<center><a class="btn btn-info" href="familyplanninginfo.php?id=<?php echo $fetch['patient_id'];?>&&patient_name=<?php echo $fetch['patient_name'];?>&&fp_id=<?php echo $fetch['family_planning_id'];?>">View Detail</a></center>
+																</td>
+															</tr>
+															<?php
 												}
 												$conn->close();
 													?>
-										</tbody>
-								</table>
-													
+														</tbody>
+													</table>
+
 												</div>
 											</div>
 											<!-- END CONTACT ITEM -->
@@ -190,7 +215,52 @@
 										<div class="col-md-12">
 											<div class="panel panel-default">
 												<div class="panel-body">
-
+													<table id="consultation" class="table datatable">
+														<thead>
+															<tr>
+																<th>
+																	<center>Patient Name</center>
+																</th>
+																<th>
+																	<center>Complaints</center>
+																</th>
+																<th>
+																	<center>Previously Used Method</center>
+																</th>
+																<th>
+																	<center>Birthdate</center>
+																</th>
+																<th>
+																	<center>Highest Education</center>
+																</th>
+																<th>
+																	<center>Action</center>
+																</th>
+															</tr>
+														</thead>
+														<tbody>
+															<tr>
+																<td>
+																	<center></center>
+																</td>
+																<td>
+																	<center></center>
+																</td>
+																<td>
+																	<center></center>
+																</td>
+																<td>
+																	<center></center>
+																</td>
+																<td>
+																	<center></center>
+																</td>
+																<td>
+																	<center><a class="btn btn-info" href="">View Detail</a></center>
+																</td>
+															</tr>
+														</tbody>
+													</table>
 												</div>
 											</div>
 											<!-- END CONTACT ITEM -->

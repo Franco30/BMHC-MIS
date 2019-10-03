@@ -19,7 +19,7 @@ if(isset($_POST['show'])){
     <tbody>
         <?php
                 require '../require/config.php';
-                $query = $conn->query("SELECT * FROM patient ORDER BY `patient_id` DESC") or die(mysqli_error());
+                $query = $conn->query("SELECT * FROM patient WHERE `gender` = 'Female' ORDER BY `patient_id` DESC") or die(mysqli_error());
                 while($fetch = $query->fetch_array()){
 		?>
         <tr>

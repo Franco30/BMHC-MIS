@@ -28,8 +28,8 @@
 									<center>
 										<div class="col-md-4 col-sm-6">
 											<div class="award-item">
-												<div class="hexagon">
-													<span class="lnr lnr-user award-icon"></span>
+												<div class="hexagon" style="margin-left: 14px">
+													<span class="lnr lnr-user award-icon"  style="margin-left: 5px;"></span>
 												</div>
 												<span>Daniel Andrew Go</span><br>
 												<span>Document Specialist</span>
@@ -37,8 +37,8 @@
 										</div>
 										<div class="col-md-4 col-sm-6">
 											<div class="award-item">
-												<div class="hexagon">
-													<span class="lnr lnr-user award-icon"></span>
+												<div class="hexagon" style="margin-left: 14px">
+													<span class="lnr lnr-user award-icon" style="margin-left: 5px;"></span>
 												</div>
 												<span>Jesse Franco Latosa</span><br>
 												<span>Head Programmer</span>
@@ -46,8 +46,8 @@
 										</div>
 										<div class="col-md-4 col-sm-6">
 											<div class="award-item">
-												<div class="hexagon">
-													<span class="lnr lnr-user award-icon"></span>
+												<div class="hexagon" style="margin-left: 14px">
+													<span class="lnr lnr-user award-icon" style="margin-left: 5px;"></span>
 												</div>
 												<span>John Phillip Dela Cruz</span><br>
 												<span>System Analyst</span>

@@ -44,7 +44,7 @@
                                 <h3 class="panel-title"><strong>Immunization Registration</strong></h3>
                                 <div class="btn-group pull-right">
                                     <div class="pull-left">
-                                        <button class="btn btn-primary" data-toggle="modal" data-target="#add_immunization">New Immunization</button>
+                                        <button class="btn btn-primary" data-toggle="modal" data-target="#add_immunization">Add Patient</button>
                                     </div>
                                 </div>
                             </div>

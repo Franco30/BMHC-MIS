@@ -42,47 +42,69 @@
             <div class="page-content-wrap">
                 <div class="row">
                     <div class="col-md-8">
-                            <div class="panel panel-primary">
-                                <div class="panel-heading">
-                                    <h3 class="panel-title"><strong>Medication Dispensation Log</strong></h3>
-                                </div>
-                                <div class="panel-body list-group list-group-contacts scroll" style="height: 470px;">
-                                    <div class="panel-body">
-                                        <table class="table datatable">
-                                            <thead>
-                                                <tr class="warning">
-                                                    <th><center>Number</center></th>
-                                                    <th><center>Drug Name</center></th>
-                                                    <th><center>Date Given</center></th>
-                                                    <th><center>Quantity</center></th>
-                                                    <th><center>Received By</center></th>
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h3 class="panel-title"><strong>Medication Dispensation Log</strong></h3>
+                            </div>
+                            <div class="panel-body list-group list-group-contacts scroll" style="height: 470px;">
+                                <div class="panel-body">
+                                    <table class="table datatable">
+                                        <thead>
+                                            <tr class="warning">
+                                                <th>
+                                                    <center>Number</center>
+                                                </th>
+                                                <th>
+                                                    <center>Drug Name</center>
+                                                </th>
+                                                <th>
+                                                    <center>Date Given</center>
+                                                </th>
+                                                <th>
+                                                    <center>Quantity</center>
+                                                </th>
+                                                <th>
+                                                    <center>Received By</center>
+                                                </th>
 
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <?php
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php
 
     $conn = new mysqli("localhost", "root", "", "bmhc") or die(mysqli_error());
             $query = $conn->query("SELECT * FROM `patient`,`medicine`,`medication_dispensation` WHERE medicine.medicine_id = medication_dispensation.medicine_id && patient.patient_id = medication_dispensation.patient_id && patient.patient_id = '$_GET[id]'") or die(mysqli_error());
             while($fetch = $query->fetch_array()){
                                                 ?>
-                                                <tr>
-                                                    <td><center><?php echo $fetch['dispensation_id']?></center></td>
-                                                    <td><center><?php echo $fetch['medicine_name']?></center> </td>
-                                                    <td><center><?php echo $fetch['date_given']?></center> </td>
-                                                    <td><center><?php echo $fetch['quantity']?> boxes</center> </td>
-                                                    <td><center><?php echo $fetch['patient_name']?></center> </td>
-                                                </tr>
-                                                <?php
+                                            <tr>
+                                                <td>
+                                                    <center><?php echo $fetch['dispensation_id']?></center>
+                                                </td>
+                                                <td>
+                                                    <center><?php echo $fetch['medicine_name']?></center>
+                                                </td>
+                                                <td>
+                                                    <center><?php echo $fetch['date_given']?></center>
+                                                </td>
+                                                <td>
+                                                    <center><?php echo $fetch['quantity']?>
+                                                        <?php if($fetch['quantity'] > 1){ ?> pcs. <?php }
+                                                        else { ?> pc. <?php } ?> </center>
+                                                </td>
+                                                <td>
+                                                    <center><?php echo $fetch['patient_name']?></center>
+                                                </td>
+                                            </tr>
+                                            <?php
             }
             $conn->close();
                                                 ?>
 
-                                            </tbody>
-                                        </table>
-                                    </div>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
+                        </div>
                     </div>
                 </div>
             </div>

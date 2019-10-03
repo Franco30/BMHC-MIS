@@ -18,8 +18,8 @@
                 </div>
                 <div class="modal-footer">
                     <div id="please" style="float:left;"></div>
-                    <button type="submit" class = "btn btn-sm btn-primary" name="import">Import Database</button>
-                    <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
+                    <button type="submit" class = "btn btn-md btn-success" name="import">Import Database</button>
+                    <button type="button" class="btn btn-md btn-danger" data-dismiss="modal">Cancel</button>
                 </div>
             </form>
         </div>

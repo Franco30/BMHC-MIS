@@ -57,16 +57,16 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                
-                                                    <div class="panel-body">
-                                                        <div id="patientTable"></div>
-                                                    </div>
-    
+
+                                                <div class="panel-body">
+                                                    <div id="patientTable"></div>
+                                                </div>
+
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <div class="tab-pane" id="tab-second">
                                     <div class="row">
                                         <div class="col-md-12">
@@ -74,14 +74,14 @@
                                                 <div class="panel-heading">
                                                     <div class="btn-group pull-right">
                                                         <div class="pull-left">
-                                                            <button class="btn btn-primary btn-md" data-toggle="modal" data-target="#new_patient">New Patient</button>
+                                                            <button class="btn btn-primary btn-md" data-toggle="modal" data-target="#new_child_patient">New Patient</button>
                                                         </div>
                                                     </div>
                                                 </div>
-<!-- <div class="panel-body list-group list-group-contacts scroll" style="height: 380px;">-->
-                                                    <div class="panel-body">
-                                                        <div id="childpatientTable"></div>
-                                                    </div>
+                                                <!-- <div class="panel-body list-group list-group-contacts scroll" style="height: 380px;">-->
+                                                <div class="panel-body">
+                                                    <div id="childpatientTable"></div>
+                                                </div>                  
                                             </div>
                                         </div>
                                     </div>
@@ -97,6 +97,7 @@
         <!-- END PAGE CONTENT -->
     </div>
     <?php require 'modals/addpatient.php'?>
+    <?php require 'modals/addchildpatient.php'?>
     <audio id="audio-alert" src="audio/alert.mp3" preload="auto"></audio>
     <audio id="audio-fail" src="audio/fail.mp3" preload="auto"></audio>
     <script type="text/javascript" src="js/plugins/jquery/jquery.min.js"></script>

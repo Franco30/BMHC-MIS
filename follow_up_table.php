@@ -40,10 +40,9 @@
                     <div class="col-md-12">
                         <div class="panel panel-default tabs">
                             <ul class="nav nav-tabs" role="tablist">
-                                <li class="active"><a href="#tab-first" role="tab" data-toggle="tab">TB Case</a></li>
-                                <li><a href="#tab-second" role="tab" data-toggle="tab">Prenatal</a></li>
-                                <li><a href="#tab-third" role="tab" data-toggle="tab">Family Planning</a></li>
-                                <li><a href="#tab-fourth" role="tab" data-toggle="tab">Immunization</a></li>
+                                <li class="active"><a href="#tab-first" role="tab" data-toggle="tab">Prenatal</a></li>
+                                <li><a href="#tab-second" role="tab" data-toggle="tab">Family Planning</a></li>
+                                <li><a href="#tab-third" role="tab" data-toggle="tab">Immunization</a></li>
                             </ul>
                             <div class="panel-body tab-content">
                                 <div class="tab-pane active" id="tab-first">
@@ -65,19 +64,6 @@
                                             <div class="panel panel-default">
                                                 <div class="panel-body list-group list-group-contacts scroll" style="height: 430px;">
                                                     <div class="panel-body">
-                                                        <div id="MDTable"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="tab-pane" id="tab-third">
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="panel panel-default">
-                                                <div class="panel-body list-group list-group-contacts scroll" style="height: 430px;">
-                                                    <div class="panel-body">
                                                         <div id="fpfollowupTable"></div>
                                                     </div>
                                                 </div>
@@ -85,7 +71,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="tab-pane" id="tab-fourth">
+                                <div class="tab-pane" id="tab-third">
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="panel panel-default">
