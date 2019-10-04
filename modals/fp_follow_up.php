@@ -38,11 +38,11 @@
 									<option value="#">Select</option>
 									<?php
 	                $conn = new mysqli("localhost", "root", "", "bmhc") or die(mysqli_error());
-					$query = $conn->query("SELECT * FROM `patient` where `status` = 'Registered'") or die(mysqli_error());
+					$query = $conn->query("SELECT * FROM `users`") or die(mysqli_error());
 
 					while($fetch = $query->fetch_array()){
 									?>
-									<option value="<?php echo $fetch['patient_id'];?>"><?php echo $fetch['patient_name']?></option>
+									<option value="<?php echo $fetch['user_id'];?>"><?php echo $fetch['fullname']?></option>
 									<?php
 					}
 									?> 

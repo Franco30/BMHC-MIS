@@ -44,7 +44,7 @@
                                     <ul class="nav nav-tabs" role="tablist">
                                         <li class="active"><a href="#tab-first" role="tab" data-toggle="tab">Patient</a>
                                         </li>
-                                        <li><a href="#tab-second" role="tab" data-toggle="tab">Medical, Obsterical History and STI Risks </a>
+                                        <li><a href="#tab-second" role="tab" data-toggle="tab">Medical, Obstetrical History and STI Risks </a>
                                         </li>
                                         <li><a href="#tab-third" role="tab" data-toggle="tab">Physical and Pelvic Examination</a>
                                         </li>

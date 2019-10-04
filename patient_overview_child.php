@@ -104,6 +104,7 @@
 													</strong><?php echo $fetch['father_occupation']?></h5>
 												<hr style="margin:0px 0 5px 0;">
 											</div>
+<!--
 											<div class="col-md-8" style="width:800px">
 												<h5><strong>Brothers and Sisters</strong></h5>
 												<hr style="margin:0px 0 5px 0;">
@@ -137,6 +138,7 @@
 													</tbody>
 												</table>
 											</div>
+-->
 
 										</div>
 										<hr>
