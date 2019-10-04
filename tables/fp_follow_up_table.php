@@ -19,7 +19,7 @@ if(isset($_POST['show'])){
     <tbody>
         <?php
                 require '../require/config.php';
-                $query1 = $conn->query("SELECT * FROM patient WHERE `gender` = 'Female' ORDER BY `patient_id` DESC") or die(mysqli_error());
+                $query1 = $conn->query("SELECT *, COUNT(family_planning.patient_id) AS total FROM `patient`, `family_planning` WHERE patient.patient_id = family_planning.patient_id ORDER BY family_planning_id DESC") or die(mysqli_error());
                 while($fetch1 = $query1->fetch_array()){
 		?>
         <tr>

@@ -321,7 +321,6 @@ require 'require/logincheck.php';
                                     </div>
                                     <div class="panel-body">
                                         <ul class='list-group border-bottom'>
-                                            <li class='list-group-item'><span class='fa fa-user'></span>Tuberculosis<span class='badge badge-info'>0</span></li>
                                             <li class='list-group-item'><span class='fa fa-user'></span>Family
                                                 Planning<span class='badge badge-info'>1</span></li>
                                             <li class='list-group-item'><span class='fa fa-user'></span>Immunization<span class='badge badge-info'>0</span></li>
