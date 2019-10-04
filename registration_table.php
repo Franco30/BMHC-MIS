@@ -78,10 +78,11 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <!-- <div class="panel-body list-group list-group-contacts scroll" style="height: 380px;">-->
-                                                <div class="panel-body">
-                                                    <div id="childpatientTable"></div>
-                                                </div>                  
+                                                <div class="panel-body list-group list-group-contacts scroll" style="height: 380px;">
+                                                    <div class="panel-body">
+                                                        <div id="childpatientTable"></div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

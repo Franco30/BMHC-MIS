@@ -36,7 +36,7 @@ if(isset($_POST['show'])){
                 <ul class="dropdown-menu" role="menu">
                 <li role="presentation" class="dropdown-header">Select Services</li>
                     <?php if($fetch['gender'] == 'Female') { ?>
-                <li><a href="add-prenatal?patient_id=<?php echo $fetch['patient_id']?>">Prenatal</a></li>
+                <li><a href="add_prenatal?patient_id=<?php echo $fetch['patient_id']?>">Prenatal</a></li>
                 <li><a href="add_familyplanning?patient_id=<?php echo $fetch['patient_id']?>">Family Planning</a></li>
                     <?php } ?>
                 <li><a href="add_consultation?patient_id=<?php echo $fetch['patient_id']?>">Consultation</a></li>                                                    
