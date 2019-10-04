@@ -68,11 +68,10 @@
 			<div class="right-content">
 				<!-- begin login-header -->
 				<div class="login-header">
-<!--
 					<center>
-                        <img src="assets/images/bmhclogo.png" style="width:131px;height:100px; padding: -10px; margin:-30px 0px 0px -10px;"alt="bmhclogo" />
+                        <img src="assets/images/bmhclogo.png" style="width:131px;height:100px; padding: -10px; margin: -30px 0px 0px -3px"alt="bmhclogo" />
 						</center>
--->
+					&nbsp;
 					<div class="brand">
 						<h4 style="font-size: 20px;">Barangay Mansilingan Health Center</h4>
 						<small>Management Information System</small>

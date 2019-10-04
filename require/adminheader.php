@@ -91,6 +91,7 @@
 	</li>
 	<!-- END SIGN OUT -->
 	<!-- MESSAGES -->
+<!--
 	<li class="xn-icon-button pull-right">
 		<a href="#"><span class="fa fa-comments"></span></a>
 		<div class="informer informer-danger">4</div>
@@ -132,8 +133,10 @@
 			</div>
 		</div>
 	</li>
+-->
 	<!-- END MESSAGES -->
 	<!-- TASKS -->
+<!--
 	<li class="xn-icon-button pull-right">
 		<a href="#"><span class="fa fa-tasks"></span></a>
 		<div class="informer informer-warning">3</div>
@@ -183,6 +186,7 @@
 			</div>
 		</div>
 	</li>
+-->
 	<!-- END TASKS -->
 	<li class="xn-icon-button pull-right">
 		<?php

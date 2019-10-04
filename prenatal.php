@@ -47,7 +47,7 @@
                                 <div class="btn-group pull-right">
                                     <div class="pull-left">
                                         <button class="btn btn-primary btn-md" data-toggle="modal"
-                                            data-target="#new_prenatal">Add New Patient</button>
+                                            data-target="#new_prenatal">Add Patient</button>
                                     </div>
                                 </div>
                             </div>

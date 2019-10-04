@@ -42,7 +42,7 @@
                             <ul class="nav nav-tabs" role="tablist">
                                 <li class="active"><a href="#tab-first" role="tab" data-toggle="tab">Prenatal</a></li>
                                 <li><a href="#tab-second" role="tab" data-toggle="tab">Family Planning</a></li>
-                                <li><a href="#tab-third" role="tab" data-toggle="tab">Immunization</a></li>
+<!--                                <li><a href="#tab-third" role="tab" data-toggle="tab">Immunization</a></li>-->
                             </ul>
                             <div class="panel-body tab-content">
                                 <div class="tab-pane active" id="tab-first">
