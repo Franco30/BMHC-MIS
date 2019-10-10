@@ -67,8 +67,8 @@
                                                         <a href="#step-1">
                                                             <span class="stepNumber">1</span>
                                                             <span class="stepDesc">Patient
-                                                                    Information<br /></span>
-<!--
+                                                                Information<br /></span>
+                                                            <!--
                                                             <small>Patient
                                                                     Information</small>
 -->
@@ -78,7 +78,7 @@
                                                         <a href="#step-2">
                                                             <span class="stepNumber">2</span>
                                                             <span class="stepDesc">Complaints,
-                                                                    Diagnosis, etc.<br /></span>
+                                                                Diagnosis, etc.<br /></span>
                                                         </a>
                                                     </li>
                                                     <li>
@@ -239,10 +239,32 @@
                                                 <!-- END OF STEP 3 -->
                                                 <div id="step-3">
                                                     <div class="col-md-6">
+                                                        <div class="form-row">
+                                                            <div class="col-md-6">
+                                                                <div class="form-group" style="margin-left:-10px;">
+                                                                    <label>Antibiotic</label>
+                                                                   <select multiple class="form-control select" data-live-search="true" id="antibiotic">
+                                                                <option value="#">Select</option>
+                                                                <?php
+                                                            $conn = new mysqli("localhost", "root", "", "bmhc") or die(mysqli_error());
+                                                            $query = $conn->query("SELECT * FROM `medicine`") or die(mysqli_error());
 
-                                                        <div class="form-group">
-                                                            <label>Antibiotic</label>
-                                                            <textarea class="form-control" spellcheck="false" id="antibiotic"></textarea>
+                                                            while($fetch = $query->fetch_array()){
+									                           ?>
+                                                                <option value="<?php echo $fetch['medicine_id'];?>"><?php echo $fetch['medicine_name']?></option>
+                                                                <?php
+					                                               }
+									                               ?>
+                                                            </select>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <div class="form-group" style="margin-right:-10px;">
+                                                                    <label>Quantity</label>
+                                                                    <input type="text" class="form-control" id="quantity" required />
+                                                                </div>
+                                                            </div>
                                                         </div>
 
                                                         <div class="form-group">
