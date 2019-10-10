@@ -19,7 +19,7 @@ if(isset($_POST['add'])){
     $fetch1 = $query1->fetch_array();
     $patient_name =  $fetch['patient_name'];
     $md_name =  $fetch1['medicine_name'];
-    $remarks = "added $quantity pieces of $medicine_name to stocks";
+    $remarks = "added $quantity pieces of $md_name to stocks";
 
    	$conn->query("INSERT INTO `medicine_stocks` VALUES('', '$medicine_name', '$quantity', '$date_time')") or die(mysqli_error());
 	
