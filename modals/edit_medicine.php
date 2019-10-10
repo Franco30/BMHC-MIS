@@ -23,6 +23,7 @@
                             <select class="form-control select" id="medicine_type<?php echo $fetch['medicine_id']; ?>" required>
                                     <option value="<?php echo $fetch['medicine_type']; ?>"><?php echo $fetch['medicine_type']; ?></option>
                                     <option value="Tablet">Tablet</option>
+                                    <option value="Capsule">Capsule</option>
                                     <option value="Syrup">Syrup</option>
                                 </select>
                         </div>

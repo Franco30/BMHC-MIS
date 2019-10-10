@@ -15,6 +15,12 @@ if(isset($_POST['show'])){
                 <center>Description</center>
             </th>
             <th>
+                <center>Medicine Stock</center>
+            </th>
+            <th>
+                <center>Status</center>
+            </th>
+            <th>
                 <center>Action</center>
             </th>
         </tr>
@@ -36,8 +42,18 @@ if(isset($_POST['show'])){
                 <center><?php echo $fetch['medicine_description']?></center>
             </td>
             <td>
+                <center><?php if ($fetch['running_balance']<=15) 
+												echo "<span style='color:red'>".$fetch['running_balance']."</span>"; if ($fetch['running_balance']>=16) 
+												echo "<span>".$fetch['running_balance']."</span>"; ?></center>
+            </td>
+            <td>
+                <center><?php if ($fetch['running_balance']<=15)echo "<span class='badge badge-danger'>Reorder</span>";
+				if ($fetch['running_balance']>=16)echo "<span class='badge badge-info'>Average</span>"
+													?></center>
+            </td>
+            <td>
                 <center>
-                        <button data-target="#editmedicine<?php echo $fetch['medicine_id']; ?>" data-toggle="modal" class="btn btn-sm btn-info"> Edit</button>
+                    <button data-target="#editmedicine<?php echo $fetch['medicine_id']; ?>" data-toggle="modal" class="btn btn-sm btn-info"> Edit</button>
                 </center>
                 <?php require('../modals/edit_medicine.php'); ?>
             </td>

@@ -26,15 +26,22 @@ $(document).ready(function () {
                         received: $received,
                         add: 1,
                     },
-                    success: function () {
-                        $('#dispensed').modal('hide');
-                        $('#alert').slideDown();
-                        $('#alerttext').html('<span class="fa fa-check"></span> Successfully dispensed medicine!');
-                        setTimeout(function () {
-                            $('#alert').fadeOut('slow');
-                        }, 1500);
-                        showDispensedMedicine();
-
+                    success: function (quantity) {
+                        if (quantity == 'not ok') {
+                            $('#modallabel').slideDown();
+                            $('#checkfield').html('<span class="fa fa-exclamation-circle"></span> Not enough medicine to dispense');
+                            setTimeout(function () {
+                                $('#modallabel').fadeOut('slow');
+                            }, 3500);
+                        } else {
+                            $('#dispensed').modal('hide');
+                            $('#alert').slideDown();
+                            $('#alerttext').html('<span class="fa fa-check"></span> Successfully dispensed medicine!');
+                            setTimeout(function () {
+                                $('#alert').fadeOut('slow');
+                            }, 1500);
+                            showDispensedMedicine();
+                        }
                     }
 
                 });
@@ -44,32 +51,6 @@ $(document).ready(function () {
 
     });
 
-
-    $(document).on('click', '.updatemedicine', function () {
-        $medicine_id = $(this).val();
-        $medicine_name = $('#medicine_name' + $medicine_id).val();
-        $quantity = $('#quantity' + $medicine_id).val();
-        $received = $('#received' + $medicine_id).val();
-        $.ajax({
-            type: "POST",
-            url: "action/editmedicine.php",
-            data: {
-                medicine_id: $medicine_id,
-                medicine_name: $medicine_name,
-                quantity: $quantity,
-                received: $received,
-                edit: 1,
-            },
-            success: function () {
-                $('#alert').slideDown();
-                $('#alerttext').text('Successfully updated medicine!');
-                setTimeout(function () {
-                    $('#alert').fadeOut('slow');
-                }, 1500);
-                showDispensedMedicine();
-            }
-        });
-    });
 });
 
 function showDispensedMedicine() {

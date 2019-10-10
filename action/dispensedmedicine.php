@@ -25,8 +25,19 @@ if(isset($_POST['add'])){
     
     $remarks = "dispensed $quantity $md_name to $patient_name";
 
+    require '../require/config.php';
+    $q1 = $conn->query("SELECT * FROM `medicine` WHERE BINARY `medicine_id` = '$medicine_name'") or die(mysqli_error());
+    $f1 = $q1->fetch_array();
+	$running_balance = $f1['running_balance'];
+    if($quantity > $running_balance){
+        echo "not ok"; 
+	}else{
     $conn->query("INSERT INTO `medication_dispensation` VALUES('', '$received', '$medicine_name', '$purpose', '$date', '$time', '$month', '$year', '$quantity','$date_time')") or die(mysqli_error());
+    
+    $conn->query("UPDATE `medicine` SET `running_balance` = `running_balance` - '$quantity' WHERE `medicine_id` = '$medicine_name'") or die(mysqli_error());
+    
     $conn->query("INSERT INTO `users_activity_log` VALUES('', '$user_id', '$remarks','$date_time')") or die(mysqli_error());
     $conn->close();
+    }   
 }
 ?>

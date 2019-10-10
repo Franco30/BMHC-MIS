@@ -30,7 +30,7 @@
             <!-- START BREADCRUMB -->
             <ul class="breadcrumb">
                 <li>Transaction</li>
-                <li class="active"><strong><mark>Medication Dispensation</mark></strong></li>
+                <li class="active"><strong><mark>Medication Dispensation and Add Stocks</mark></strong></li>
             </ul>
             <!-- END BREADCRUMB -->
             <!-- PAGE CONTENT WRAPPER -->
@@ -41,22 +41,37 @@
                         <div id="alert" class="alert alert-info" style="display:none;">
                             <center><span id="alerttext"></span></center>
                         </div>
-                        <div class="panel panel-primary">
-                            <div class="panel-heading">
-                                <h3 class="panel-title"><strong>Medicine Dispensation Log</strong></h3>
+                        <div id="alert2" class="alert alert-info" style="display:none;">
+                            <center><span id="alerttext2"></span></center>
+                        </div>
+                        <div class="panel panel-default tabs">
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li class="active"><a href="#tab-first" role="tab" data-toggle="tab">Medication Dispensation Log</a></li>
+                                <li><a href="#tab-second" role="tab" data-toggle="tab">Medicine Stockin List</a></li>
                                 <div class="btn-group pull-right">
                                     <div class="pull-left">
-                                        <button class="btn btn-primary btn-md" data-toggle="modal"
-                                            data-target="#dispensed">Dispense Medicine </button>
+                                        <button class="btn btn-primary btn-md" data-toggle="modal" data-target="#dispensed">Dispense Medicine </button>
+                                        <button class="btn btn-info btn-md" data-toggle="modal" data-target="#add_stock">Add Stocks</button>
+                                    </div>
+                                </div>
+                            </ul>
+                            <div class="panel-body list-group list-group-contacts scroll" style="height: 485px;">
+                                <div class="panel-body tab-content">
+                                    <div class="tab-pane active" id="tab-first">
+                                        <div class="row">
+                                            <div class="panel panel-default">
+                                                <div class="panel-body">
+                                                    <div id="mdTable"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" id="tab-second">
+                                        <div id="mStocks"></div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="panel-body">
-                            <div id="mdTable"></div>
-                            </div>
-
                         </div>
-
                     </div>
                 </div>
 
@@ -67,6 +82,7 @@
     </div>
     <!-- END PAGE CONTAINER -->
     <?php require 'modals/dispensed_medicine.php'?>
+    <?php require 'modals/add_stocks.php'?>
     <!-- START PRELOADS -->
     <audio id="audio-alert" src="audio/alert.mp3" preload="auto"></audio>
     <audio id="audio-fail" src="audio/fail.mp3" preload="auto"></audio>
@@ -79,6 +95,7 @@
     <script type="text/javascript" src="js/plugins/bootstrap/bootstrap.min.js"></script>
     <!-- END PLUGINS -->
     <script type="text/javascript" src="functions/medicinedispensed.js"></script>
+    <script type="text/javascript" src="functions/medicinestocks.js"></script>
     <!-- START THIS PAGE PLUGINS-->
     <script type='text/javascript' src='js/plugins/icheck/icheck.min.js'></script>
     <script type="text/javascript" src="js/plugins/bootstrap/bootstrap-datepicker.js"></script>
@@ -93,7 +110,7 @@
     <script type="text/javascript" src="js/plugins.js"></script>
     <script type="text/javascript" src="js/actions.js"></script>
     <!-- END TEMPLATE -->
-        <script>
+    <script>
         var date = new Date();
         date.setDate(date.getDate());
 

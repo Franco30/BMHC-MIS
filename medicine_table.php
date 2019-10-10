@@ -46,9 +46,8 @@
                                 <h3 class="panel-title"><strong>Medicine's List</strong></h3>
                                 <div class="btn-group pull-right">
                                     <div class="pull-left">
-                                        <button class="btn btn-primary btn-md" data-toggle="modal"
-                                            data-target="#new_medicine">New Medicine</button>
-                                        <a href="medication_dispensation" class="btn btn-md btn-default">Go to Medical
+                                        <button class="btn btn-primary btn-md" data-toggle="modal" data-target="#new_medicine">New Medicine</button>
+                                        <a href="medication_dispensation" class="btn btn-md btn-default">Go to Medicine
                                             Dispense</a>
                                     </div>
                                 </div>

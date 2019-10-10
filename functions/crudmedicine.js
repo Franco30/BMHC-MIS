@@ -55,27 +55,29 @@ $(document).ready(function () {
         $medicine_name = $('#medicine_name' + $medicine_id).val();
         $medicine_type = $('#medicine_type' + $medicine_id).val();
         $medicine_description = $('#medicine_description' + $medicine_id).val();
-        $.ajax({
-            type: "POST",
-            url: "action/editmedicine.php",
-            cache: false,
-            async: false,
-            data: {
-                medicine_id: $medicine_id,
-                medicine_name: $medicine_name,
-                medicine_type: $medicine_type,
-                medicine_description: $medicine_description,
-                edit: 1,
-            },
-            success: function () {
-                $('#alert').slideDown();
-                $('#alerttext').text('Successfully updated medicine!');
-                setTimeout(function () {
-                    $('#alert').fadeOut('slow');
-                }, 1500);
-                showMedicine();
-            }
-        });
+        if (confirm('Are you sure you want to edit this medicine?')) {
+            $.ajax({
+                type: "POST",
+                url: "action/editmedicine.php",
+                cache: false,
+                async: false,
+                data: {
+                    medicine_id: $medicine_id,
+                    medicine_name: $medicine_name,
+                    medicine_type: $medicine_type,
+                    medicine_description: $medicine_description,
+                    edit: 1,
+                },
+                success: function () {
+                    $('#alert').slideDown();
+                    $('#alerttext').text('Successfully updated medicine!');
+                    setTimeout(function () {
+                        $('#alert').fadeOut('slow');
+                    }, 1500);
+                    showMedicine();
+                }
+            });
+        }
     });
 });
 
