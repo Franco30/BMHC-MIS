@@ -113,7 +113,7 @@
         <!-- END PAGE CONTENT -->
     </div>
     <!-- END PAGE CONTAINER -->
-    <?php require 'modals/new_medicine.php'?>
+    <?php require 'require/pressp.php'?>
     <!-- START PRELOADS -->
     <audio id="audio-alert" src="audio/alert.mp3" preload="auto"></audio>
     <audio id="audio-fail" src="audio/fail.mp3" preload="auto"></audio>
@@ -152,7 +152,6 @@
     <script type="text/javascript" src="js/actions.js"></script>
     <!-- END TEMPLATE -->
     <!-- END SCRIPTS -->
-    <?php require 'require/pressp.php'?>
 </body>
 
 </html>

@@ -183,48 +183,48 @@
     </li>
     <!-- END TASKS -->
 
-   <li class="xn-icon-button pull-right">
-		<?php
+    <li class="xn-icon-button pull-right">
+        <?php
 		$conn = new mysqli("localhost", "root", "", "bmhc") or die(mysqli_error());
 		$q = $conn->query("SELECT COUNT(*) as count from `medicine` WHERE `running_balance` <= 15") or die(mysqli_error());
 		$f = $q->fetch_array();
 		?>
-		<a href="#"><span class="fa fa-warning"></span></a>
-		<?php if ($f['count']>0)echo "<div class='informer informer-danger'>".$f['count']."</div>";
+        <a href="#"><span class="fa fa-warning"></span></a>
+        <?php if ($f['count']>0)echo "<div class='informer informer-danger'>".$f['count']."</div>";
 		?>
 
-		<div class="panel panel-primary animated zoomIn xn-drop-left xn-panel-dragging">
-			<div class="panel-heading">
-				<h3 class="panel-title">
-					You have <?php echo $f['count']. " medicines that runs out of balance " ?></h3>
-				<div class="pull-right">
-					<span class="label label-danger"><?php echo $f['count']?></span>
-				</div>
-			</div>
-			<div class="panel-body list-group list-group-contacts scroll" style="height: 400px;">
-				<?php 
+        <div class="panel panel-primary animated zoomIn xn-drop-left xn-panel-dragging">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    You have <?php echo $f['count']. " medicines that runs out of balance " ?></h3>
+                <div class="pull-right">
+                    <span class="label label-danger"><?php echo $f['count']?></span>
+                </div>
+            </div>
+            <div class="panel-body list-group list-group-contacts scroll" style="height: 400px;">
+                <?php 
 					$conn = new mysqli("localhost", "root", "", "bmhc") or die(mysqli_error());
 					$q = $conn->query("SELECT * FROM `medicine` WHERE `running_balance` <= 15") or die(mysqli_error());
 					while($f = $q->fetch_array()){
 				?>
-				<a href="#" class="list-group-item">
-					<img src="assets/images/med.png" class="pull-left" alt="Patient" />
-					<span class="contacts-title"><?php echo $f['medicine_name']. "-" . $f['medicine_type']?></span>
-					<p>
-						<i>Running Balance: <span style="color:#fc5454"><?php echo $f['running_balance']. " pcs."?></span></i>
-					</p>
-				</a>
-				<?php
+                <a href="#" class="list-group-item">
+                    <img src="assets/images/med.png" class="pull-left" alt="Patient" />
+                    <span class="contacts-title"><?php echo $f['medicine_name']. "-" . $f['medicine_type']?></span>
+                    <p>
+                        <i>Running Balance: <span style="color:#fc5454"><?php echo $f['running_balance']. " pcs."?></span></i>
+                    </p>
+                </a>
+                <?php
 					}
 					$conn->close();
 				?>
-			</div>
-			<div class="panel-footer text-center">
-				<a href="medicine_table" class="text-left">Show all medicines</a> &nbsp;
-				<a href="medication_dispensation" class="text-right">Add Stocks Now</a>
-			</div>
-		</div>
-	</li>
+            </div>
+            <div class="panel-footer text-center">
+                <a href="medicine_table" class="text-left">Show all medicines</a> &nbsp;
+                <a href="medication_dispensation" class="text-right">Add Stocks Now</a>
+            </div>
+        </div>
+    </li>
 
     <li class="xn-icon-button pull-right">
         <?php
