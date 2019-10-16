@@ -198,7 +198,7 @@
                 <h3 class="panel-title">
                     You have <?php echo $f['count']. " medicines that runs out of balance " ?></h3>
                 <div class="pull-right">
-                    <span class="label label-danger"><?php echo $f['count']?></span>
+                    <span class="label label-danger animated infinite pulse" style="animation-duration:.8s;"><?php echo $f['count']?></span>
                 </div>
             </div>
             <div class="panel-body list-group list-group-contacts scroll" style="height: 400px;">

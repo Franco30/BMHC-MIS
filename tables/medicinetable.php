@@ -44,10 +44,11 @@ if(isset($_POST['show'])){
             <td>
                 <center><?php if ($fetch['running_balance']<=15) 
 												echo "<span style='color:red'>".$fetch['running_balance']."</span>"; if ($fetch['running_balance']>=16) 
-												echo "<span>".$fetch['running_balance']."</span>"; ?></center>
+												echo "<span>".$fetch['running_balance']."</span>"; ?> <?php if($fetch['running_balance'] > 1){ ?> pcs.<?php } else { ?> 
+                                                <span style="color:red">pc.</span> <?php } ?></center>
             </td>
             <td>
-                <center><?php if ($fetch['running_balance']<=15)echo "<span class='badge badge-danger'>Reorder</span>";
+                <center><?php if ($fetch['running_balance']<=15)echo "<span class='badge badge-danger animated infinite pulse' style='animation-duration:.8s;'>Reorder</span>";
 				if ($fetch['running_balance']>=16)echo "<span class='badge badge-info'>Average</span>"
 													?></center>
             </td>
