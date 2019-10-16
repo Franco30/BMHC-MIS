@@ -29,7 +29,7 @@
                         </div>
                         <div class="form-group">
                             <label>Medicine Name</label>
-                            <select class="form-control select" data-live-search="true" id="medicine_name">
+                            <select class="form-control select" data-live-search="true" id="medicine_name" required>
                                 <option value="#">Select</option>
                                 <?php
 	                $conn = new mysqli("localhost", "root", "", "bmhc") or die(mysqli_error());
@@ -45,6 +45,7 @@
                         </div>
                         <div class="form-group">
                             <label>Quantity</label>
+                            <div id="quantity_response"></div>
                             <input type="number" class="form-control" id="quantity" placeholder="Enter Quantity" required />
                         </div>
                         <div class="form-group">
@@ -67,7 +68,7 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" id="addnew" class="btn btn-success">Save</button>
+                <button type="button" id="addnew" class="btn btn-success dispense">Save</button>
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
             </div>
         </div>

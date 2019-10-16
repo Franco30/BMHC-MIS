@@ -49,6 +49,7 @@
 							<h6><strong>Reason for Practicing FP: </strong><?php echo $fetch['reason_for_practicing_fp']?></h6>
 							<hr style="margin:0px 0 5px 0;">
 							<h6><strong>Method Accepted: </strong><?php echo $fetch['method_accepted']?></h6>
+							<hr style="margin:0px 0 5px 0;">
 						</div>
 					</div>
 				</div>&nbsp;<hr>
@@ -154,6 +155,13 @@
 							<tr>
 								<td><center></center></td>
 								<td><center></center></td>
+								<td><center></center></td>
+								<td><center></center></td>
+								<td><center></center></td>
+								<td><center></center></td>
+								<td><center></center></td>
+								<td><center></center></td>
+								<td><center></center></td>
 							</tr>
 							
 						</tbody>
@@ -180,6 +188,12 @@
 						<tbody>
 							
 							<tr>
+								<td><center></center></td>
+								<td><center></center></td>
+								<td><center></center></td>
+								<td><center></center></td>
+								<td><center></center></td>
+								<td><center></center></td>
 								<td><center></center></td>
 								<td><center></center></td>
 								<td><center></center></td>
@@ -282,7 +296,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="col-md-3" style="position: relative;">
+	<div class="col-md-3 print" style="position: relative;">
 		<div id="tocify"></div>
 	</div>
 </div>

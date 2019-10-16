@@ -4,7 +4,7 @@
         $find = $query->fetch_array();
         ?>
 			<!-- START PAGE SIDEBAR -->
-			<div class="page-sidebar">
+			<div class="page-sidebar print">
 				<!-- START X-NAVIGATION -->
 				<ul class="x-navigation">
 					<li class="xn-logo">
@@ -34,7 +34,6 @@
 							<li> <a href="registration_table"><span class="fa fa-location-arrow"></span> <span class="xn-text">Registration</span></a> </li>
 							<li> <a href="familyplanning"><span class="fa fa-users"></span> <span class="xn-text">Family Planning</span></a> </li>
 							<li> <a href="prenatal"><span class="fa fa-wheelchair"></span> <span class="xn-text">Prenatal</span></a> </li>
-<!--							<li> <a href="tb_registration_table"><span class="fa fa-plus"></span> <span class="xn-text">TB Treatment</span></a> </li>-->
 							<li> <a href="consultation"><span class="fa fa-heartbeat"></span> <span class="xn-text">Consultations</span></a> </li>
 							<li> <a href="immunization_table.php"><span class="fa fa-medkit"></span> <span class="xn-text">Immunization</span></a> </li>
 							<li> <a href="referral"><span class="fa fa-hospital-o"></span> <span class="xn-text">Referral</span></a> </li>
@@ -65,4 +64,5 @@
 							<li><a href="usersactivity"><span class="fa fa-exclamation-triangle"></span><span class="xn-text">Users Activity Log</span></a></li>
 						</ul>
 					</li>
-			</div>
+				</ul>
+</div>

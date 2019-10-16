@@ -1,5 +1,35 @@
 $(document).ready(function () {
     showDispensedMedicine();
+
+    $("#quantity").keyup(function () {
+        var medicine_name = $('#medicine_name').val();
+        var quantity = $('#quantity').val().trim();
+        if (quantity != '') {
+            $("#quantity_response").show();
+            $.ajax({
+                url: 'action/checkquantity.php',
+                type: 'POST',
+                data: {
+                    quantity: quantity,
+                    medicine_name: medicine_name
+                },
+                success: function (response) {
+                    if (response > 0) {
+                        $("#quantity_response").html("<span class='label label-danger'>Quantity cannot be more than or equal to the running balance</span>");
+                        $(".dispense").attr("disabled", true);
+
+                    } else {
+                        $("#quantity_response").html("");
+                        $(".dispense").attr("disabled", false);
+                    }
+                }
+            });
+        } else {
+            $("#quantity_response").hide();
+        }
+    });
+
+
     $(document).on('click', '#addnew', function () {
         if ($('#purpose').val() == "" || $('#medicine_name').val() == "" || $('#quantity').val() == "" || $('#received').val() == "") {
             $('#modallabel').slideDown();

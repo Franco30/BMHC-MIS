@@ -27,7 +27,7 @@
             <?php require 'require/adminheader.php' ?>
             <!-- START BREADCRUMB -->
             <ul class="breadcrumb">
-                <li>Data Entry</li>
+                <li>Transactions</li>
                 <li><mark><strong>Immunization Service Registration</strong></mark></li>
             </ul>
             <!-- END BREADCRUMB -->

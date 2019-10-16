@@ -33,7 +33,7 @@
             <!-- START BREADCRUMB -->
             <ul class="breadcrumb">
                 <li>Reports</li>
-                <li class="active"><strong><mark>Medicines Dispensed</mark></strong></li>
+                <li class="active"><strong><mark>Medicines Dispensed Report</mark></strong></li>
             </ul>
             <!-- END BREADCRUMB -->
             <!-- PAGE CONTENT WRAPPER -->

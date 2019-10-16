@@ -79,7 +79,7 @@
 }
 ?>
 <!-- START X-NAVIGATION VERTICAL -->
-<ul class="x-navigation x-navigation-horizontal x-navigation-panel">
+<ul class="x-navigation x-navigation-horizontal x-navigation-panel print">
     <!-- TOGGLE NAVIGATION -->
     <li class="xn-icon-button">
         <a href="#" class="x-navigation-minimize"><span class="fa fa-dedent"></span></a>
@@ -220,8 +220,8 @@
 				?>
 			</div>
 			<div class="panel-footer text-center">
-				<a href="medicine_table.php" class="text-left">Show all medicines</a> &nbsp;
-				<a href="medication_dispensation.php" class="text-right">Add Stocks Now</a>
+				<a href="medicine_table" class="text-left">Show all medicines</a> &nbsp;
+				<a href="medication_dispensation" class="text-right">Add Stocks Now</a>
 			</div>
 		</div>
 	</li>

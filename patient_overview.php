@@ -173,7 +173,7 @@
 																	<center><?php echo $fetch['complaints']?></center>
 																</td>
 																<td>
-																	<center><a class="btn btn-default" href="familyplanninginfo.php?id=<?php echo $fetch['patient_id'];?>&&patient_name=<?php echo $fetch['patient_name'];?>&&c_id=<?php echo $fetch['consultation_id'];?>">View Detail</a></center>
+																	<center><a class="btn btn-default" href="familyplanninginfo?id=<?php echo $fetch['patient_id'];?>&&patient_name=<?php echo $fetch['patient_name'];?>&&c_id=<?php echo $fetch['consultation_id'];?>">View Detail</a></center>
 																</td>
 															</tr>
 															<?php
@@ -241,7 +241,7 @@
 																	<center><?php echo $fetch['patient_highest_education']?></center>
 																</td>
 																<td>
-																	<center><a class="btn btn-default" href="familyplanninginfo.php?id=<?php echo $fetch['patient_id'];?>&&patient_name=<?php echo $fetch['patient_name'];?>&&fp_id=<?php echo $fetch['family_planning_id'];?>">View Detail</a></center>
+																	<center><a class="btn btn-default" href="familyplanninginfo?id=<?php echo $fetch['patient_id'];?>&&patient_name=<?php echo $fetch['patient_name'];?>&&fp_id=<?php echo $fetch['family_planning_id'];?>">View Detail</a></center>
 																</td>
 															</tr>
 															<?php
@@ -298,7 +298,7 @@
 																	<center><?php echo $fetch['diagnosis']?></center>
 																</td>
 																<td>
-																	<center><a class="btn btn-default" href="familyplanninginfo.php?id=<?php echo $fetch['patient_id'];?>&&patient_name=<?php echo $fetch['patient_name'];?>&&c_id=<?php echo $fetch['consultation_id'];?>">View Detail</a></center>
+																	<center><a class="btn btn-default" href="familyplanninginfo?id=<?php echo $fetch['patient_id'];?>&&patient_name=<?php echo $fetch['patient_name'];?>&&c_id=<?php echo $fetch['consultation_id'];?>">View Detail</a></center>
 																</td>
 															</tr>
 															<?php
