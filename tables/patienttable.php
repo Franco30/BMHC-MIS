@@ -2,7 +2,8 @@
 require '../require/config.php';
 if(isset($_POST['show'])){
 ?>
-<table id="patienttable" class="table datatable">
+<div class="table-responsive">
+<table id="patienttable" class="table datatable" width="100%">
     <thead>
         <tr>
             <th><center>Patient ID</center></th>
@@ -13,7 +14,7 @@ if(isset($_POST['show'])){
             <th><center>Civil Status</center></th>
             <th><center>Address</center></th>
             <th><center>Contact Number</center></th>
-            <th><center>Action</center></th>
+            <th class="print"><center>Action</center></th>
         </tr>
     </thead>
     <tbody>
@@ -28,9 +29,9 @@ if(isset($_POST['show'])){
             <td><center><?php echo $fetch['age']?></center></td>
             <td><center><?php echo $fetch['gender']?></center></td>
              <td><center><?php echo $fetch['civil_status']?></center></td>
-            <td><center>Prk. <?php echo $fetch['purok']." ".$fetch['street_address'];?></center></td>
+            <td><center>Prk. <?php echo $fetch['purok']." <br/> ".$fetch['street_address'];?></center></td>
             <td><center><?php echo $fetch['contact_no']?></center></td>
-            <td><center>
+            <td class="print"><center>
                 <div class="btn-group">
                 <a href="#" data-toggle="dropdown" class="btn btn-info dropdown-toggle">Services <span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu">
@@ -50,6 +51,7 @@ if(isset($_POST['show'])){
         ?>
     </tbody>
 </table>
+    </div>
 <?php
 }
 ?>

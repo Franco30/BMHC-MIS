@@ -2,6 +2,7 @@
 require '../require/config.php';
 if(isset($_POST['show'])){
 ?>
+<div class="table-responsive">
 <table id="childpatienttable" class="table datatable">
     <thead>
         <tr>
@@ -36,6 +37,7 @@ if(isset($_POST['show'])){
         ?>
     </tbody>
 </table>
+</div>
 <?php
 }
 ?>

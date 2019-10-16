@@ -15,6 +15,25 @@
     <!-- CSS INCLUDE -->
     <link rel="stylesheet" type="text/css" id="theme" href="css/theme-brown.css" />
     <link rel="stylesheet" type="text/css" href="assets3/vendor/font-awesome/css/font-awesome.min.css" />
+    <link href="assets3/css/invoice-print.min.css" rel="stylesheet" />
+    <style type="text/css">
+        @media print {
+            @page {
+                margin: -40px 10px 10px 50px;
+                size: letter;
+            }
+
+            .print {
+                display: none !important;
+            }
+
+            .hidden-header {
+                display: inline !important;
+                margin: 0px 0px 0px 200px;
+            }
+        }
+
+    </style>
     <!-- EOF CSS INCLUDE -->
 </head>
 
@@ -28,7 +47,7 @@
         <div class="page-content">
             <?php require 'require/adminheader.php' ?>
             <!-- START BREADCRUMB -->
-            <ul class="breadcrumb">
+            <ul class="breadcrumb print">
                 <li>Data Entry</li>
                 <li><mark><strong>Patient Master File</strong></mark></li>
             </ul>
@@ -37,9 +56,27 @@
             <div class="page-content-wrap">
 
                 <div class="row">
+                    <label class="hidden-header" style="display:none;">
+                        <br>
+                        <center><img src="assets/images/bmhclogo.png" style="width:131px;height:100px; padding: 10px; margin:0px 0px 0px -10px;" alt="drrmopicture" /></center>
+                        <!--                        <img src="assets/images/bmhc.png" style="width:131px;height:100px; padding: -10px; margin:0px 0px 0px -10px;" alt="drrmopicture" />-->
+                        <h3 style="margin: 0px 0px 0px 10px">
+                            <center>Barangay Mansilingan Health Center</center>
+                        </h3>
+                        <h4 style="margin: 0px 0px 0px 10px">
+                            <center>2nd Floor, Old City Hall, Luzuriaga St., Bacolod City 6100, Negros Occidental</center>
+                        </h4>
+                        <h4 style="margin: 0px 0px 0px 10px">
+                            <center>432-3879</center>
+                        </h4>
+                        <br>
+                    </label>
+                </div>
+
+                <div class="row">
                     <div class="col-md-12">
                         <div class="panel panel-default tabs">
-                            <ul class="nav nav-tabs" role="tablist">
+                            <ul class="nav nav-tabs print" role="tablist">
                                 <li class="active"><a href="#tab-first" role="tab" data-toggle="tab">Patient Record</a></li>
                                 <li><a href="#tab-second" role="tab" data-toggle="tab">Child Patient Record</a></li>
                             </ul>
@@ -48,7 +85,8 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="panel panel-default">
-                                                <div class="panel-body list-group list-group-contacts scroll" style="height: 470px;">
+                                                    <!-- style="height: 470px;"-->
+                                                <div class="panel-body list-group list-group-contacts scroll">
                                                     <div class="panel-body">
                                                         <div id="alert" class="alert alert-info" style="display:none;">
                                                             <center><span id="alerttext"></span></center>

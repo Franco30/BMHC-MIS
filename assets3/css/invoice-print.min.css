@@ -21,7 +21,7 @@ Website: http://www.seantheme.com/color-admin-v2.1/admin/html/
 
     .invoice-company {
         border-bottom: 1px solid #e2e7eb !important;
-        margin-bottom: 20px !important
+        margin-bottom: 20px !important;
     }
 
     .invoice .invoice-from,
@@ -50,7 +50,7 @@ Website: http://www.seantheme.com/color-admin-v2.1/admin/html/
         display: block !important;
         float: left !important;
         width: 100% !important;
-        margin-top: 10px !important
+        margin-top: 10px !important;
     }
 
     .invoice-price {

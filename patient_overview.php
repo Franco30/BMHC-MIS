@@ -15,6 +15,25 @@
 	<!-- CSS INCLUDE -->
 	<link rel="stylesheet" type="text/css" id="theme" href="css/theme-brown.css" />
 	<link rel="stylesheet" type="text/css" href="assets3/vendor/font-awesome/css/font-awesome.min.css" />
+	<link href="assets3/css/invoice-print.min.css" rel="stylesheet" />
+	<style type="text/css">
+		@media print {
+			@page {
+				margin: -40px 10px 10px 50px;
+				size: letter;
+			}
+
+			.print {
+				display: none !important;
+			}
+
+			.hidden-header {
+				display: inline !important;
+				margin: 0px 0px 0px 200px;
+			}
+		}
+
+	</style>
 	<!-- EOF CSS INCLUDE -->
 </head>
 
@@ -28,7 +47,7 @@
 		<div class="page-content">
 			<?php require 'require/adminheader.php' ?>
 			<!-- START BREADCRUMB -->
-			<ul class="breadcrumb">
+			<ul class="breadcrumb print">
 				<?php
 	require 'require/config.php';
 			$query = $conn->query("SELECT * FROM `patient` WHERE `patient_id` = '$_GET[id]' && `patient_name` = '$_GET[patient_name]'") or die(mysqli_error());
@@ -49,7 +68,7 @@
 							<center><span id="alerttext"></span></center>
 						</div>
 						<div class="panel panel-default tabs">
-							<ul class="nav nav-tabs" role="tablist">
+							<ul class="nav nav-tabs print" role="tablist">
 								<li class="active"><a href="#tab-first" role="tab" data-toggle="tab">Patient Info</a></li>
 								<?php if($fetch['gender'] == 'Female') { ?>
 								<li><a href="#tab-second" role="tab" data-toggle="tab">Prenatal</a></li>
@@ -61,7 +80,8 @@
 							</ul>
 							<div class="panel-body tab-content">
 								<div class="tab-pane active" id="tab-first">
-									<div class="panel-body list-group list-group-contacts scroll" style="height: 460px;">
+									<div class="panel-body list-group list-group-contacts scroll">
+										<!--style="height: 460px;"-->
 										<div class="row">
 											<div class="col-md-3">
 												<div class="panel panel-default">
@@ -331,7 +351,7 @@
 	<!-- END PRELOADS -->
 
 	<!-- START SCRIPTS -->
-	<!-- START PLUGINS -->z
+	<!-- START PLUGINS -->
 	<script type="text/javascript" src="js/plugins/jquery/jquery.min.js"></script>
 	<script type="text/javascript" src="js/plugins/jquery/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="js/plugins/bootstrap/bootstrap.min.js"></script>
