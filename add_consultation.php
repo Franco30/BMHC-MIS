@@ -95,7 +95,7 @@
                                                             <div class="col-md-6">
                                                                 <div class="form-group" style="margin-left:-10px;">
                                                                     <label>Date</label>
-                                                                    <input type="text" class="form-control datepicker" id="date" placeholder="Enter Date Today" required />
+                                                                    <input type="text" class="form-control datepicker" id="date_today" placeholder="Enter Date Today" required />
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-6">
@@ -243,19 +243,19 @@
                                                             <div class="col-md-6">
                                                                 <div class="form-group" style="margin-left:-10px;">
                                                                     <label>Antibiotic</label>
-                                                                   <select multiple class="form-control select" data-live-search="true" id="antibiotic">
-                                                                <option value="#">Select</option>
-                                                                <?php
+                                                                    <select multiple class="form-control select" data-live-search="true" id="antibiotic">
+                                                                        <option value="#">Select</option>
+                                                                        <?php
                                                             $conn = new mysqli("localhost", "root", "", "bmhc") or die(mysqli_error());
                                                             $query = $conn->query("SELECT * FROM `medicine`") or die(mysqli_error());
 
                                                             while($fetch = $query->fetch_array()){
 									                           ?>
-                                                                <option value="<?php echo $fetch['medicine_id'];?>"><?php echo $fetch['medicine_name']?></option>
-                                                                <?php
+                                                                        <option value="<?php echo $fetch['medicine_id'];?>"><?php echo $fetch['medicine_name']?></option>
+                                                                        <?php
 					                                               }
 									                               ?>
-                                                            </select>
+                                                                    </select>
                                                                 </div>
 
                                                             </div>

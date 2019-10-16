@@ -6,13 +6,13 @@ if(isset($_POST['show'])){
 <table id="usertable" class="table datatable" width="100%">
 <thead>
         <tr class="info">
-            <th>Complete Name</th>
-            <th>License</th>
-            <th>Position</th>
-            <th>Username</th>
-            <th>Password</th>
-            <th>Date and Time Created</th>
-            <th>Status</th>
+            <th><center>Complete Name</center></th>
+            <th><center>License</center></th>
+            <th><center>Position</center></th>
+            <th><center>Username</center></th>
+            <th><center>Password</center></th>
+            <th><center>Date and Time Created</center></th>
+            <th><center>Status</center></th>
         </tr>
     </thead>
     <tbody>
@@ -21,15 +21,15 @@ if(isset($_POST['show'])){
     while($fetch = $query->fetch_array()){
         ?>                                      
         <tr>
-            <td><?php echo $fetch['fullname']?></td>
-            <td><?php echo $fetch['license']?></td>
-            <td><?php echo $fetch['position']?></td>
-            <td><?php echo $fetch['username']?></td>
-            <td>********</td>
-            <td><?php echo $fetch['date_created']. ' ' .$fetch['time_created']?></td>
-            <td><?php  if ($fetch['status'] == '1') echo "<span class='badge badge-info'>Active</span>";
+            <td><center><?php echo $fetch['fullname']?></center></td>
+            <td><center><?php echo $fetch['license']?></center></td>
+            <td><center><?php echo $fetch['position']?></center></td>
+            <td><center><?php echo $fetch['username']?></center></td>
+            <td><center>********</center></td>
+            <td><center><?php echo $fetch['date_created']. ' ' .$fetch['time_created']?></center></td>
+            <td><center><?php  if ($fetch['status'] == '1') echo "<span class='badge badge-info'>Active</span>";
         if ($fetch['status'] == '0') echo "<span class='badge badge-danger'>Not Active</span>";
-                ?></td>
+                ?></center></td>
         </tr>
         <?php
     }

@@ -29,6 +29,11 @@
                 display: inline !important;
                 margin: 0px 0px 0px 200px;
             }
+
+            .colorshit {
+                background-color: aqua;
+                color: white;
+            }
         }
 
     </style>
@@ -51,7 +56,7 @@
             <!-- END BREADCRUMB -->
             <!-- PAGE CONTENT WRAPPER -->
             <div class="page-content-wrap">
-                
+
                 <div class="row">
                     <label class="hidden-header" style="display:none;">
                         <br>
@@ -67,9 +72,12 @@
                             <center>432-3879</center>
                         </h4>
                         <br>
+                        <h3 style="margin: 0px 0px 0px 10px">
+                            <center>Patient Registration</center>
+                        </h3>
                     </label>
                 </div>
-                
+
                 <div class="row">
                     <div class="col-md-12">
                         <div id="alert" class="alert alert-info" style="display:none;">

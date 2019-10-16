@@ -6,7 +6,7 @@ if(isset($_POST['show'])){
 <table id="patienttable" class="table datatable" width="100%">
     <thead>
         <tr>
-            <th><center>Patient ID</center></th>
+            <th class="colorshit"><center>Patient ID</center></th>
             <th><center>Patient Name</center></th>
             <th><center>Birth Date</center></th>
             <th><center>Age</center></th>
