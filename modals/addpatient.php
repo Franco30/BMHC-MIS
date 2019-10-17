@@ -96,7 +96,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>Contact Number</label>
-                                <input type="number" class="form-control" id="contact_no" name="contact_nos" placeholder="Enter Contact" required />
+                                <input type="text" class="mask_cpnumber form-control" id="contact_no" name="contact_nos" placeholder="Enter Contact" required />
                             </div>
                             <div class="form-group">
                                 <label>Region/Province</label>
@@ -108,7 +108,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Philhealth Number</label>
-                                <input type="number" class="form-control" id="philhealth_no" name="philhealth_nos" placeholder="Enter Philhealth Number" required />
+                                <input type="text" class="mask_philhealth form-control" id="philhealth_no" name="philhealth_nos" placeholder="Enter Philhealth Number" required />
                             </div>
                             <div class="form-group">
                                 <label>Contact Person</label>
@@ -116,7 +116,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Emergency Number</label>
-                                <input type="number" class="form-control" id="emergency_no" name="emergency_nos" placeholder="Enter Emergency Number" required />
+                                <input type="text" class="mask_cpnumber form-control" id="emergency_no" name="emergency_nos" placeholder="Enter Emergency Number" required />
                             </div>
                         </div>
                     </div>

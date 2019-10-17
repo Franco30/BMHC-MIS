@@ -158,6 +158,7 @@
     <script type="text/javascript" src="js/plugins/datatables/jquery.dataTables.min.js"></script>
     <script type='text/javascript' src='js/plugins/jquery-validation/jquery.validate.js'></script>
     <script type="text/javascript" src="js/plugins/bootstrap/bootstrap-select.js"></script>
+    <script type='text/javascript' src='js/plugins/maskedinput/jquery.maskedinput.min.js'></script>
     <script type="text/javascript" src="js/settings.js"></script>
     <script type="text/javascript" src="js/plugins.js"></script>
     <script type="text/javascript" src="js/actions.js"></script>
@@ -204,19 +205,6 @@
                     number: true,
                     maxlength: 3
                 },
-                contact_nos: {
-                    number: true,
-                    minlength: 11
-                },
-                philhealth_nos: {
-                    number: true,
-                    maxlength: 12
-                },
-                emergency_nos: {
-                    number: true,
-                    minlength: 11
-                }
-
             }
         });
 

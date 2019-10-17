@@ -190,7 +190,7 @@
 		$f = $q->fetch_array();
 		?>
         <a href="#"><span class="fa fa-warning"></span></a>
-        <?php if ($f['count']>0)echo "<div class='informer informer-danger'>".$f['count']."</div>";
+        <?php if ($f['count']>0)echo "<div class='informer informer-danger animated infinite pulse' style='animation-duration:.6s;'>".$f['count']."</div>";
 		?>
 
         <div class="panel panel-primary animated zoomIn xn-drop-left xn-panel-dragging">
@@ -198,7 +198,7 @@
                 <h3 class="panel-title">
                     You have <?php echo $f['count']. " medicines that runs out of balance " ?></h3>
                 <div class="pull-right">
-                    <span class="label label-danger animated infinite pulse" style="animation-duration:.8s;"><?php echo $f['count']?></span>
+                    <span class="label label-danger"><?php echo $f['count']?></span>
                 </div>
             </div>
             <div class="panel-body list-group list-group-contacts scroll" style="height: 400px;">
@@ -238,7 +238,7 @@
 		$check = $q->num_rows;
 		?>
         <a href="#"><span class="fa fa-medkit"></span></a>
-        <?php if ($f['total']>0)echo "<div class='informer informer-info'>".$f['total']."</div>";?>
+        <?php if ($f['total']>0)echo "<div class='informer informer-info animated infinite pulse' style='animation-duration:.8s;'>".$f['total']."</div>";?>
         <div class="panel panel-primary animated zoomIn xn-drop-left xn-panel-dragging">
             <div class="panel-heading">
                 <h3 class="panel-title"><?php echo $f['total']. " Medicine Dispensation Today " ?></h3>
@@ -250,7 +250,7 @@
                 <?php 
 					$date_today = date('F j, Y');
 					$conn = new mysqli("localhost", "root", "", "bmhc") or die(mysqli_error());
-					$q = $conn->query("SELECT * FROM `patient`,`medication_dispensation` WHERE patient.patient_id = medication_dispensation.patient_id && medication_dispensation.date_given = '$date_today' order by `dispensation_id` DESC limit 10") or die(mysqli_error());
+					$q = $conn->query("SELECT * FROM `patient`,`medication_dispensation` WHERE patient.patient_id = medication_dispensation.patient_id  order by `dispensation_id` DESC limit 10") or die(mysqli_error());
 					while($f = $q->fetch_array())
 					{
 						$id = $f['dispensation_id'];

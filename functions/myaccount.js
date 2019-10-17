@@ -24,7 +24,7 @@ $(document).ready(function(){
                       $('#alert').fadeOut('slow');
                   }, 1500);
                   setTimeout(function() {
-                      window.location.href = 'admindashboard.php'; 
+                      window.location.href = 'admindashboard'; 
                   }, 1500);
               }
           });

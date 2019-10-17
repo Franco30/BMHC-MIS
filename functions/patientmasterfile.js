@@ -17,43 +17,46 @@ $(document).ready(function () {
         $philhealth_no = $('#philhealth_no' + $patient_id).val();
         $contact_person = $('#contact_person' + $patient_id).val();
         $emergency_no = $('#emergency_no' + $patient_id).val();
-        
-        if (confirm('Are you sure you want to update this patient?')) {
-            $.ajax({
-                type: "POST",
-                url: "action/editpatient.php",
-                cache: false,
-                async: false,
-                data: {
-                    patient_id: $patient_id,
-                    patient_name: $patient_name,
-                    birthdate: $birthdate,
-                    age: $age,
-                    gender: $gender,
-                    civilstatus: $civilstatus,
-                    streetaddress: $streetaddress,
-                    purok: $purok,
-                    height: $height,
-                    weight: $weight,
-                    contact_no: $contact_no,
-                    region_province: $region_province,
-                    occupation: $occupation,
-                    philhealth_no: $philhealth_no,
-                    contact_person: $contact_person,
-                    emergency_no: $emergency_no,
-                    edit: 1,
-                },
-                success: function () {
-                    $('#alert').slideDown();
-                    $('#alerttext').text('Successfully updated Patient');
-                    setTimeout(function () {
-                        $('#alert').fadeOut('slow');
-                    }, 1500);
-                    showPMF();
-                }
-            });
-        }
-        $('form').trigger('reset');
+
+        $.ajax({
+            type: "POST",
+            url: "action/editpatient.php",
+            cache: false,
+            async: false,
+            data: {
+                patient_id: $patient_id,
+                patient_name: $patient_name,
+                birthdate: $birthdate,
+                age: $age,
+                gender: $gender,
+                civilstatus: $civilstatus,
+                streetaddress: $streetaddress,
+                purok: $purok,
+                height: $height,
+                weight: $weight,
+                contact_no: $contact_no,
+                region_province: $region_province,
+                occupation: $occupation,
+                philhealth_no: $philhealth_no,
+                contact_person: $contact_person,
+                emergency_no: $emergency_no,
+                edit: 1,
+            },
+            success: function () {
+                $('#alert').slideDown();
+                $('#alerttext').text('Successfully updated Patient');
+                setTimeout(function () {
+                    $('#alert').fadeOut('slow');
+                }, 1000);
+                setTimeout(function () {
+                    $('#edit_patient').modal('hide');
+                }, 2000);
+                setTimeout(function () {
+                    window.location.href = 'master_file_patient';
+                }, 2500);
+            }
+        });
+        //        $('form').trigger('reset');
     });
 });
 
@@ -71,3 +74,7 @@ function showPMF() {
         }
     });
 }
+
+//beforeSend: function () {
+//    return confirm("Are you sure?");
+//},

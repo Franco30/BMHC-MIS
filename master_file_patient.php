@@ -75,6 +75,9 @@
 
                 <div class="row">
                     <div class="col-md-12">
+                        <div id="alert" class="alert alert-info" style="display:none;">
+                            <center><span id="alerttext"></span></center>
+                        </div>
                         <div class="panel panel-default tabs">
                             <ul class="nav nav-tabs print" role="tablist">
                                 <li class="active"><a href="#tab-first" role="tab" data-toggle="tab">Patient Record</a></li>
@@ -85,12 +88,9 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="panel panel-default">
-                                                    <!-- style="height: 470px;"-->
+                                                <!-- style="height: 470px;"-->
                                                 <div class="panel-body list-group list-group-contacts scroll">
                                                     <div class="panel-body">
-                                                        <div id="alert" class="alert alert-info" style="display:none;">
-                                                            <center><span id="alerttext"></span></center>
-                                                        </div>
                                                         <div id="patientmasterfileTable"></div>
                                                     </div>
                                                 </div>
@@ -104,9 +104,6 @@
                                             <div class="panel panel-default">
                                                 <div class="panel-body list-group list-group-contacts scroll" style="height: 470px;">
                                                     <div class="panel-body">
-                                                        <div id="alert" class="alert alert-info" style="display:none;">
-                                                            <center><span id="alerttext"></span></center>
-                                                        </div>
                                                         <div id="childpatientmasterfileTable"></div>
                                                     </div>
                                                 </div>
@@ -145,8 +142,9 @@
     <script type='text/javascript' src='js/plugins/icheck/icheck.min.js'></script>
     <script type="text/javascript" src="js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
     <script type="text/javascript" src="js/plugins/scrolltotop/scrolltopcontrol.js"></script>
-    <!-- END THIS PAGE PLUGINS-->
     <script type="text/javascript" src="js/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script type='text/javascript' src='js/plugins/maskedinput/jquery.maskedinput.min.js'></script>
+    <!-- END THIS PAGE PLUGINS-->
     <!-- START TEMPLATE -->
     <script type="text/javascript" src="js/settings.js"></script>
     <script type="text/javascript" src="js/plugins.js"></script>

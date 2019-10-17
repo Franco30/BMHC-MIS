@@ -132,9 +132,10 @@
                                                             <div class="col-md-4">
                                                                 <div class="form-group">
                                                                     <label>Blood Pressure - BP</label>
-                                                                    <input type="text" class="form-control" id="bp" placeholder="mmHg" required />
+                                                                    <input type="text" class="mask_bp form-control" id="bp" name="bp" placeholder="mmHg" required />
                                                                 </div>
                                                             </div>
+
                                                             <div class="col-md-4">
                                                                 <div class="form-group" style="margin-right:-10px;">
                                                                     <label>Temperature</label>
@@ -324,6 +325,7 @@
     <script type="text/javascript" src="js/plugins/bootstrap/bootstrap-datepicker.js"></script>
     <script type="text/javascript" src="js/plugins/bootstrap/bootstrap-timepicker.min.js"></script>
     <script type="text/javascript" src="js/plugins/bootstrap/bootstrap-select.js"></script>
+    <script type='text/javascript' src='js/plugins/maskedinput/jquery.maskedinput.min.js'></script>
     <script type="text/javascript" src="js/plugins/smartwizard/jquery.smartWizard-2.0.min.js"></script>
 
     <script type="text/javascript" src="js/settings.js"></script>
