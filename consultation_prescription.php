@@ -13,6 +13,7 @@
 
     <link rel="stylesheet" type="text/css" id="theme" href="css/theme-brown.css" />
     <link rel="stylesheet" type="text/css" href="assets3/vendor/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="assets2/plugins/bootstrap-eonasdan-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
     <link type="text/css" rel="stylesheet" href="css/jsgrid.min.css" />
     <link type="text/css" rel="stylesheet" href="css/jsgrid-theme.css" />
     <style>
@@ -51,9 +52,9 @@
                             <div class="panel-heading">
                                 <h3 class="panel-title"><strong>Consultation Prescription</strong></h3>
                             </div>
-                                <div class="panel-body">
-                                    <div id="grid_table"></div>
-                                </div>
+                            <div class="panel-body">
+                                <div id="grid_table"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -66,6 +67,8 @@
     <audio id="audio-fail" src="audio/fail.mp3" preload="auto"></audio>
     <script type="text/javascript" src="js/plugins/jquery/jquery.min.js"></script>
     <script type="text/javascript" src="js/jsgrid.min.js"></script>
+    <script type="text/javascript" src="js/moment.min.js"></script>
+    <script type="text/javascript" src="assets2/plugins/bootstrap-eonasdan-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
     <script type="text/javascript" src="functions/crudprescription.js"></script>
     <script type="text/javascript" src="js/plugins/jquery/jquery-ui.min.js"></script>
     <script type="text/javascript" src="js/plugins/bootstrap/bootstrap.min.js"></script>
@@ -73,8 +76,10 @@
     <script type="text/javascript" src="js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
     <script type="text/javascript" src="js/plugins/scrolltotop/scrolltopcontrol.js"></script>
     <script type="text/javascript" src="js/plugins/datatables/jquery.dataTables.min.js"></script>
+    <!--
     <script type="text/javascript" src="js/plugins/bootstrap/bootstrap-datepicker.js"></script>
     <script type="text/javascript" src="js/plugins/bootstrap/bootstrap-timepicker.min.js"></script>
+-->
     <script type="text/javascript" src="js/plugins/bootstrap/bootstrap-select.js"></script>
     <script type="text/javascript" src="js/plugins/smartwizard/jquery.smartWizard-2.0.min.js"></script>
 

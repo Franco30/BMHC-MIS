@@ -61,7 +61,7 @@
         </div>
         <!-- END PAGE CONTENT -->
     </div>
-    <?php require 'modals/addimmunization.php'?>
+
     <?php require 'modals/add_immunization.php'?>
     <audio id="audio-alert" src="audio/alert.mp3" preload="auto"></audio>
     <audio id="audio-fail" src="audio/fail.mp3" preload="auto"></audio>

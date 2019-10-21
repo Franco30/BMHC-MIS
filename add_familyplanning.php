@@ -12,8 +12,9 @@
     <link rel="icon" href="assets/images/bmhc.png" type="image/x-icon" />
 
     <link rel="stylesheet" type="text/css" id="theme" href="css/theme-brown.css" />
+    
     <link rel="stylesheet" type="text/css" href="assets3/vendor/font-awesome/css/font-awesome.min.css" />
-
+    <link rel="stylesheet" type="text/css" href="assets2/plugins/bootstrap-eonasdan-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
 </head>
 
 <body>
@@ -129,6 +130,11 @@
                                                                     <label>Previosly Used Method</label>
                                                                     <input type="text" class="form-control" id="prevmethod" placeholder="Enter Previosly Used Method" required />
                                                                 </div>
+                                                                <div class="form-group">
+                                                                    <label>Date and Time</label>
+                                                                    <input type="text" class="form-control datetimepicker" id="date<?php echo $fetch['patient_id'];?>" placeholder="Enter Date and Time Today" required />
+                                                                </div>
+<!--
                                                                 <div class="form-row">
                                                                     <div class="col-md-6">
                                                                         <div class="form-group" style="margin-left:-10px;">
@@ -147,6 +153,7 @@
                                                                     </div>
                                                                 </div>
                                                                 &nbsp;
+-->
                                                                 <div class="form-group">
                                                                     <label>Purok</label>
                                                                     <input type="text" class="form-control" id="purok<?php echo $fetch['patient_id'];?>" value="<?php echo $fetch['purok'];?>" style="color:#444444;" readonly required />
@@ -692,6 +699,8 @@
     <script type='text/javascript' src='js/plugins/icheck/icheck.min.js'></script>
     <script type="text/javascript" src="js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
     <script type="text/javascript" src="js/plugins/scrolltotop/scrolltopcontrol.js"></script>
+    <script type="text/javascript" src="js/moment.min.js"></script>
+    <script type="text/javascript" src="assets2/plugins/bootstrap-eonasdan-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
     <script type="text/javascript" src="js/plugins/datatables/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="js/plugins/bootstrap/bootstrap-datepicker.js"></script>
     <script type="text/javascript" src="js/plugins/bootstrap/bootstrap-timepicker.min.js"></script>

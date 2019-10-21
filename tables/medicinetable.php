@@ -12,7 +12,7 @@ if(isset($_POST['show'])){
                 <center>Type</center>
             </th>
             <th>
-                <center>Description</center>
+                <center>Category</center>
             </th>
             <th>
                 <center>Medicine Stock</center>
@@ -39,7 +39,7 @@ if(isset($_POST['show'])){
                 <center><?php echo $fetch['medicine_type']?></center>
             </td>
             <td>
-                <center><?php echo $fetch['medicine_description']?></center>
+                <center><?php echo $fetch['medicine_category']?></center>
             </td>
             <td>
                 <center><?php if ($fetch['running_balance']<=15) 

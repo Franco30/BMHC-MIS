@@ -27,8 +27,14 @@
             <?php require 'require/adminheader.php' ?>
             <!-- START BREADCRUMB -->
             <ul class="breadcrumb">
+            <?php
+	       require 'require/config.php';
+            $query2 = $conn->query("SELECT * FROM `patient` WHERE `patient_id` = '$_GET[patient_id]'") or die(mysqli_error());
+			$fetch2 = $query2->fetch_array();
+					?>
                 <li>Transactions</li>
-                <li><mark><strong>Consultation</strong></mark></li>
+                <li>Consultation</li>
+                <li><mark><strong><?php echo $fetch2['patient_name']?></strong></mark></li>
             </ul>
             <!-- END BREADCRUMB -->
             <!-- PAGE CONTENT WRAPPER -->
@@ -44,13 +50,48 @@
                                 <h3 class="panel-title"><strong>Consultation</strong></h3>
                                 <div class="btn-group pull-right">
                                     <div class="pull-left">
-                                         <button class="btn btn-primary btn-md" data-toggle="modal"
-                                            data-target="#new_consultation">New Consultation</button>
+
                                     </div>
                                 </div>
                             </div>
                             <div class="panel-body">
-                                <div id="consultationpatientTable"></div>
+                                <div class="table-responsive">
+                                    <table id="patientmasterfiletable" class="table datatable" width="100%">
+                                    <thead>
+                                        <tr class="warning">
+                                        <th><center>Consultation No</center></th>
+                                        <th><center>Patient No</center></th>
+                                        <th><center>Patient Name</center></th>
+                                        <th><center>Complaints</center></th>
+                                        <th class="print"><center>Action</center></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php
+	                            require 'require/config.php';
+			                    $query = $conn->query("SELECT * FROM `consultation` WHERE `consultation`.`patient_id` =  '$_GET[patient_id]'") or die(mysqli_error());
+                                    while($fetch = $query->fetch_array()){
+                                        $q = $conn->query("SELECT * FROM `patient` WHERE `patient_id` = '$_GET[patient_id]'") or die(mysqli_error());
+                                        $f = $q->fetch_array();
+                                        ?>
+                                        <tr>
+                                            <td><center><?php echo $fetch['year']?><?php echo "0".$fetch['consultation_id']?></center></td>
+                                            <td><center><?php echo $f['year']?><?php echo "0".$fetch['patient_id']?></center></td>
+                                            <td><center><?php echo $f['patient_name']?></center></td>
+                                            <td><center><?php echo $fetch['complaints']?></center></td>
+                                            <td class="print"><center>
+                                            <a href="#" class="btn btn-md btn-info" data-toggle="tooltip" data-placement="top" title="Prescription"><span class="fa fa-medkit"></span> Prescription</a>
+
+                                                </center>
+                                            </td>
+                                        </tr>
+                                        <?php
+                                    }
+                                    $conn->close();
+                                        ?>
+                                    </tbody>
+                                </table>
+                                </div>
                             </div>
                         </div>
                     </div>

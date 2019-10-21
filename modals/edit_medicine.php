@@ -7,12 +7,11 @@
                 </div>
             </center>
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
-                        class="sr-only">Close</span></button>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                 <h4 class="modal-title" id="defModalHead"><strong>Edit Medicine</strong></h4>
             </div>
             <div class="modal-body">
-            <form id="medicines">
+                <form id="medicines">
                     <fieldset>
                         <div class="form-group">
                             <label>Medicine Name</label>
@@ -21,15 +20,23 @@
                         <div class="form-group">
                             <label>Medicine Type</label>
                             <select class="form-control select" id="medicine_type<?php echo $fetch['medicine_id']; ?>" required>
-                                    <option value="<?php echo $fetch['medicine_type']; ?>"><?php echo $fetch['medicine_type']; ?></option>
-                                    <option value="Tablet">Tablet</option>
-                                    <option value="Capsule">Capsule</option>
-                                    <option value="Syrup">Syrup</option>
-                                </select>
+                                <option value="<?php echo $fetch['medicine_type']; ?>"><?php echo $fetch['medicine_type']; ?></option>
+                                <option value="Tablet">Tablet</option>
+                                <option value="Capsule">Capsule</option>
+                                <option value="Syrup">Syrup</option>
+                            </select>
                         </div>
                         <div class="form-group">
-                            <label>Medicine Description</label>
-                            <textarea type="text" class="form-control" id="medicine_description<?php echo $fetch['medicine_id']; ?>" required ><?php echo $fetch['medicine_description']; ?></textarea>
+                            <label>Medicine Category</label>
+                            <select class="form-control select" data-live-search="true" id="medicine_category<?php echo $fetch['medicine_id']; ?>" required>
+                                <option value="<?php echo $fetch['medicine_category']; ?>"><?php echo $fetch['medicine_category']; ?></option>
+                                <option value="Antibiotic">Antibiotic</option>
+                                <option value="Analgesic">Analgesic</option>
+                                <option value="Vitamins">Vitamins</option>
+                                <option value="Cough Preparation">Cough Preparation</option>
+                                <option value="Antihistamines">Antihistamines</option>
+                                <option value="Anti-TB Drugs">Anti-TB Drugs</option>
+                            </select>
                         </div>
                     </fieldset>
                 </form>

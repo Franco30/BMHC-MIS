@@ -16,6 +16,7 @@
     <link rel="stylesheet" type="text/css" id="theme" href="css/theme-brown.css" />
     <link rel="stylesheet" type="text/css" href="assets3/vendor/font-awesome/css/font-awesome.min.css" />
     <!-- EOF CSS INCLUDE -->
+    <link rel="stylesheet" type="text/css" href="assets2/plugins/bootstrap-eonasdan-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
 </head>
 
 <body>
@@ -42,7 +43,7 @@
                             <ul class="nav nav-tabs" role="tablist">
                                 <li class="active"><a href="#tab-first" role="tab" data-toggle="tab">Prenatal</a></li>
                                 <li><a href="#tab-second" role="tab" data-toggle="tab">Family Planning</a></li>
-<!--                                <li><a href="#tab-third" role="tab" data-toggle="tab">Immunization</a></li>-->
+                                <!--                                <li><a href="#tab-third" role="tab" data-toggle="tab">Immunization</a></li>-->
                             </ul>
                             <div class="panel-body tab-content">
                                 <div class="tab-pane active" id="tab-first">
@@ -108,6 +109,8 @@
 
     <!-- START THIS PAGE PLUGINS-->
     <script type="text/javascript" src="functions/followup.js"></script>
+    <script type="text/javascript" src="js/moment.min.js"></script>
+    <script type="text/javascript" src="assets2/plugins/bootstrap-eonasdan-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
     <script type="text/javascript" src="js/plugins/bootstrap/bootstrap-datepicker.js"></script>
     <script type="text/javascript" src="js/plugins/bootstrap/bootstrap-timepicker.min.js"></script>
     <script type='text/javascript' src='js/plugins/bootstrap/bootstrap-select.js'></script>
@@ -122,7 +125,7 @@
     <script type="text/javascript" src="js/plugins.js"></script>
     <script type="text/javascript" src="js/actions.js"></script>
     <!-- END TEMPLATE -->
- 
+
 
     <!-- END SCRIPTS -->
 </body>

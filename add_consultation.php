@@ -139,7 +139,7 @@
                                                             <div class="col-md-4">
                                                                 <div class="form-group" style="margin-right:-10px;">
                                                                     <label>Temperature</label>
-                                                                    <input type="number" class="form-control" id="temp" placeholder="C" required />
+                                                                    <input type="text" class="mask_temp form-control" id="temp" placeholder="°C" required />
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -186,14 +186,14 @@
                                                             <div class="col-md-6">
                                                                 <div class="form-group" style="margin-left:-10px;">
                                                                     <label>Respiratory Rate - RR</label>
-                                                                    <input type="number" class="form-control" id="weight" required />
+                                                                    <input type="text" class="mask_rr form-control" id="rr" placeholder="bpm" required />
                                                                 </div>
 
                                                             </div>
                                                             <div class="col-md-6">
                                                                 <div class="form-group" style="margin-right:-10px;">
                                                                     <label>Pulse Rate - PR</label>
-                                                                    <input type="number" class="form-control" id="bp" required />
+                                                                    <input type="text" class="mask_pr form-control" id="pr" placeholder="cpm" required />
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -325,9 +325,9 @@
     <script type="text/javascript" src="js/plugins/bootstrap/bootstrap-datepicker.js"></script>
     <script type="text/javascript" src="js/plugins/bootstrap/bootstrap-timepicker.min.js"></script>
     <script type="text/javascript" src="js/plugins/bootstrap/bootstrap-select.js"></script>
-    <script type='text/javascript' src='js/plugins/maskedinput/jquery.maskedinput.min.js'></script>
     <script type="text/javascript" src="js/plugins/smartwizard/jquery.smartWizard-2.0.min.js"></script>
-
+    <script type='text/javascript' src='js/plugins/maskedinput/jquery.maskedinput.min.js'></script>
+    
     <script type="text/javascript" src="js/settings.js"></script>
     <script type="text/javascript" src="js/plugins.js"></script>
     <script type="text/javascript" src="js/actions.js"></script>

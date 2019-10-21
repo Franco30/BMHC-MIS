@@ -120,7 +120,7 @@
                                                                     <div class="col-md-4">
                                                                         <div class="form-group" style="margin-left:-10px;">
                                                                             <label>Phone No.</label>
-                                                                            <input type="number" class="form-control" id="phonenumber<?php echo $fetch['patient_id']?>" placeholder="Enter Phone No." value="<?php echo $fetch['contact_no']?>" style="color:#444444;" readonly required />
+                                                                            <input type="text" class="form-control mask_cpnumber" id="phonenumber<?php echo $fetch['patient_id']?>" placeholder="Enter Phone No." value="<?php echo $fetch['contact_no']?>" style="color:#444444;" readonly required />
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-md-4">
@@ -165,7 +165,7 @@
                                                                     <div class="col-md-4">
                                                                         <div class="form-group" style="margin-right:-10px;">
                                                                             <label>Blood Type</label>
-                                                                            <input type="text" class="form-control" id="bloodtype" placeholder="Enter Blood Type" required />
+                                                                            <input type="text" class="mask_bp form-control" id="bloodtype" placeholder="Enter Blood Type" required />
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -327,7 +327,7 @@
                                                                     <div class="col-md-4">
                                                                         <div class="form-group" style="margin-left:-10px;">
                                                                             <label>Blood Pressure</label>
-                                                                            <input type="text" class="form-control" id="blood_pressure" required />
+                                                                            <input type="text" class="form-control mask_bp" id="blood_pressure" required />
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-md-4">
@@ -378,7 +378,8 @@
     <script type="text/javascript" src="js/plugins/bootstrap/bootstrap-timepicker.min.js"></script>
     <script type="text/javascript" src="js/plugins/bootstrap/bootstrap-select.js"></script>
     <script type="text/javascript" src="js/plugins/smartwizard/jquery.smartWizard-2.0.min.js"></script>
-
+    <script type='text/javascript' src='js/plugins/maskedinput/jquery.maskedinput.min.js'></script>
+    
     <script type="text/javascript" src="js/settings.js"></script>
     <script type="text/javascript" src="js/plugins.js"></script>
     <script type="text/javascript" src="js/actions.js"></script>

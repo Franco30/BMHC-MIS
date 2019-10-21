@@ -1,7 +1,7 @@
 $(document).ready(function () {
     showMedicine();
     $(document).on('click', '#addnew', function () {
-        if ($('#medicine_name').val() == "" || $('#medicine_type').val() == "" || $('#medicine_description').val() == "") {
+        if ($('#medicine_name').val() == "" || $('#medicine_type').val() == "" || $('#medicine_category').val() == "") {
             $('#modallabel').slideDown();
             $('#checkfield').html('<span class="fa fa-exclamation-circle"></span> All fields are required!');
             setTimeout(function () {
@@ -10,7 +10,7 @@ $(document).ready(function () {
         } else {
             $medicine_name = $('#medicine_name').val();
             $medicine_type = $('#medicine_type').val();
-            $medicine_description = $('#medicine_description').val();
+            $medicine_category = $('#medicine_category').val();
 
             if (confirm('Are you sure you want to add this new medicine?')) {
                 $.ajax({
@@ -21,7 +21,7 @@ $(document).ready(function () {
                     data: {
                         medicine_name: $medicine_name,
                         medicine_type: $medicine_type,
-                        medicine_description: $medicine_description,
+                        medicine_category: $medicine_category,
                         add: 1,
                     },
                     success: function (medicine_name, medicine_type) {
@@ -49,12 +49,11 @@ $(document).ready(function () {
 
     });
 
-
     $(document).on('click', '.updatemedicine', function () {
         $medicine_id = $(this).val();
         $medicine_name = $('#medicine_name' + $medicine_id).val();
         $medicine_type = $('#medicine_type' + $medicine_id).val();
-        $medicine_description = $('#medicine_description' + $medicine_id).val();
+        $medicine_category = $('#medicine_category' + $medicine_id).val();
         if (confirm('Are you sure you want to edit this medicine?')) {
             $.ajax({
                 type: "POST",
@@ -65,7 +64,7 @@ $(document).ready(function () {
                     medicine_id: $medicine_id,
                     medicine_name: $medicine_name,
                     medicine_type: $medicine_type,
-                    medicine_description: $medicine_description,
+                    medicine_category: $medicine_category,
                     edit: 1,
                 },
                 success: function () {
@@ -74,6 +73,10 @@ $(document).ready(function () {
                     setTimeout(function () {
                         $('#alert').fadeOut('slow');
                     }, 1500);
+                    
+                    $(document).ajaxComplete(function () {
+                        $(document).find('.select').selectpicker();
+                    });
                     showMedicine();
                 }
             });

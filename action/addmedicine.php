@@ -4,7 +4,7 @@ require '../require/logincheck.php';
 if(isset($_POST['add'])){
     $medicine_name = $_POST['medicine_name'];
     $medicine_type = $_POST['medicine_type'];
-    $medicine_description = $_POST['medicine_description'];
+    $medicine_category = $_POST['medicine_category'];
 
     $user_id=$_SESSION['user_id'];
     $year = date("Y", strtotime("+8 HOURS"));
@@ -25,7 +25,7 @@ if(isset($_POST['add'])){
     if($check > 0 && $check2 > 0){
         echo "Medicine already exist!";
     }else{
-    $conn->query("INSERT INTO `medicine` VALUES('', '$medicine_name', '$medicine_type', '$medicine_description', '', '$date_time')") or die(mysqli_error());
+    $conn->query("INSERT INTO `medicine` VALUES('', '$medicine_name', '$medicine_type', '$medicine_category', '', '$date_time')") or die(mysqli_error());
     $conn->query("INSERT INTO `users_activity_log` VALUES('', '$user_id', '$remarks','$date_time')") or die(mysqli_error());
     $conn->close();
 }
