@@ -46,8 +46,7 @@
                                 <h3 class="panel-title"><strong>Prenatal Registration</strong></h3>
                                 <div class="btn-group pull-right">
                                     <div class="pull-left">
-                                        <button class="btn btn-primary btn-md" data-toggle="modal"
-                                            data-target="#new_prenatal">Add Patient</button>
+                                        <button class="btn btn-primary btn-md" data-toggle="modal" data-target="#new_prenatal">Add Patient</button>
                                     </div>
                                 </div>
                             </div>
@@ -94,6 +93,12 @@
     <script type="text/javascript" src="js/actions.js"></script>
     <!-- END TEMPLATE -->
     <!-- END SCRIPTS -->
+    <script>
+        $.ajaxPrefilter(function(options, originalOptions, jqXHR) {
+            options.async = true;
+        });
+
+    </script>
 </body>
 
 </html>

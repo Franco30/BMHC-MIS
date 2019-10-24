@@ -1,60 +1,57 @@
 $(document).ready(function () {
     showPatient();
-
-    //check availability of patient name
-    
-    //add patient ajax
     $(document).on('click', '#addnew', function () {
-        if ($('#patient_name').val() == "" || $('#age').val() == "" || $('#gender').val() == "" || $('#address').val() == "" || $('#birthdate').val() == "" || $('#height').val() == "" || $('#contact_no').val() == "" || $('#region_province').val() == "" || $('#occupation').val() == "" || $('#philhealth_no').val() == "" || $('#contact_person').val() == "" || $('#emergency_no').val() == "" ) {
-            $('#modallabel').slideDown();
-            $('#checkfield').html('<span class="fa fa-exclamation-circle"></span> All fields are required!');
+        if ($('#date_today').val() == "" || $('#weight').val() == "" || $('#bp').val() == "" || $('#temp').val() == "" || $('#headfamily').val() == "" || $('#rr').val() == "" || $('#pr').val() == "" || $('#complaints').val() == "" || $('#pefindings').val() == "" || $('#diagnosis').val() == "" || $('#labrequest').val() == "") {
+            $('#alert2').slideDown();
+            $('#alerttext2').html('<span class="fa fa-exclamation-circle"></span> All fields are required!');
             setTimeout(function () {
-                $('#modallabel').fadeOut('slow');
+                $('#alert2').fadeOut('slow');
             }, 3500);
         } else {
-            $patient_name = $('#patient_name').val();
-            $age = $('#age').val();
-            $gender = $('#gender').val();
-            $address = $('#address').val();
-            $birthdate = $('#birthdate').val();
-            $height = $('#height').val();
-            $contact_no = $('#contact_no').val();
-            $region_province = $('#region_province').val();
-            $occupation = $('#occupation').val();
-            $philhealth_no = $('#philhealth_no').val();
-            $contact_person = $('#contact_person').val();
-            $emergency_no = $('#emergency_no').val();
+            $patient_id = $('#patient_id').val();
+            $date_today = $('#date_today').val();
+            $weight = $('#weight').val();
+            $bp = $('#bp').val();
+            $temp = $('#temp').val();
+            $headfamily = $('#headfamily').val();
+            $rr = $('#rr').val();
+            $pr = $('#pr').val();
+            $complaints = $('#complaints').val();
+            $pefindings = $('#pefindings').val();
+            $diagnosis = $('#diagnosis').val();
+            $labrequest = $('#labrequest').val();
 
-            if (confirm('Are you sure you want to add this new patient?')) {
+            if (confirm('Are you sure you want to add this patient?')) {
                 $.ajax({
                     type: "POST",
-                    url: "action/addpatient.php",
+                    url: "action/addconsultation.php",
                     cache: false,
                     async: false,
                     data: {
-                        patient_name: $patient_name,
-                        age: $age,
-                        gender: $gender,
-                        address: $address,
-                        birthdate: $birthdate,
-                        height: $height,
-                        contact_no: $contact_no,
-                        region_province: $region_province,
-                        occupation: $occupation,
-                        philhealth_no: $philhealth_no,
-                        contact_person: $contact_person,
-                        emergency_no: $emergency_no,
+                        patient_id: $patient_id,
+                        date_today: $date_today,
+                        weight: $weight,
+                        bp: $bp,
+                        temp: $temp,
+                        headfamily: $headfamily,
+                        rr: $rr,
+                        pr: $pr,
+                        complaints: $complaints,
+                        pefindings: $pefindings,
+                        diagnosis: $diagnosis,
+                        labrequest: $labrequest,
                         add: 1,
                     },
                     success: function () {
-                        
+
                         $('#alert').slideDown();
-                        $('#alerttext').text('Patient Added Successfully!');
-                        setTimeout(function() {
+                        $('#alerttext').text('Patient Consultation Added Successfully!');
+                        setTimeout(function () {
                             $('#alert').fadeOut('slow');
                         }, 1500);
-                        $('#new_patient').modal('hide');
-                        showPatient();   
+                        setTimeout(function () {
+                            window.location.href = 'consultation';
+                        }, 2500);
                     }
                 });
             }
@@ -78,5 +75,3 @@ function showPatient() {
         }
     });
 }
-
-

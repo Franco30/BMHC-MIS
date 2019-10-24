@@ -20,9 +20,15 @@
                 }
                 ?></option>
             <?php
-            for($y=2013; $y<=2025; $y++){
+            $conn = new mysqli("localhost", "root", "", "bmhc") or die(mysqli_error());
+            $query = $conn->query("SELECT * FROM `patient` group by year") or die(mysqli_error());
+
+            while($fetch = $query->fetch_array())
+            {
             ?>
-            <option value="<?php echo $y ?>"><?php echo $y; ?></option>
+    <option value="<?php echo $fetch['year'];?>">
+        <?php echo $fetch['year']?>
+    </option>
             <?php
             }
             ?>

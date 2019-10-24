@@ -42,15 +42,14 @@
                         <div class="panel panel-primary">
                             <div class="panel-heading">
                                 <h3 class="panel-title"><strong>Family Planning Service Registration</strong></h3>
-                                 <div class="btn-group pull-right">
+                                <div class="btn-group pull-right">
                                     <div class="pull-left">
-                                         <button class="btn btn-primary btn-md" data-toggle="modal"
-                                            data-target="#add_familyplanning">Add Patient</button>
+                                        <button class="btn btn-primary btn-md" data-toggle="modal" data-target="#add_familyplanning">Add Patient</button>
                                     </div>
-                                </div> 
+                                </div>
                             </div>
                             <div class="panel-body">
-                                 <div id="fppatientTable"></div>
+                                <div id="fppatientTable"></div>
                             </div>
                         </div>
                     </div>
@@ -81,7 +80,12 @@
     <script type="text/javascript" src="js/actions.js"></script>
 
     <!-- END THIS PAGE PLUGINS -->
+    <script>
+        $.ajaxPrefilter(function(options, originalOptions, jqXHR) {
+            options.async = true;
+        });
 
+    </script>
 
 
 </body>

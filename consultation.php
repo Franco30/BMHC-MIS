@@ -44,8 +44,7 @@
                                 <h3 class="panel-title"><strong>Consultation</strong></h3>
                                 <div class="btn-group pull-right">
                                     <div class="pull-left">
-                                         <button class="btn btn-primary btn-md" data-toggle="modal"
-                                            data-target="#new_consultation">New Consultation</button>
+                                        <button class="btn btn-primary btn-md" data-toggle="modal" data-target="#new_consultation">New Consultation</button>
                                     </div>
                                 </div>
                             </div>
@@ -81,7 +80,12 @@
     <script type="text/javascript" src="js/actions.js"></script>
 
     <!-- END THIS PAGE PLUGINS -->
+    <script>
+        $.ajaxPrefilter(function(options, originalOptions, jqXHR) {
+            options.async = true;
+        });
 
+    </script>
 
 
 </body>

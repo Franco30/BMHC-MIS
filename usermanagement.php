@@ -47,7 +47,7 @@
                                 <h3 class="panel-title"><strong>User Management</strong></h3>
                                 <div class="btn-group pull-right">
                                     <div class="pull-left">
-<!--                                        <button id="btn_delete" name="btn_delete" class="btn btn-primary">Delete</button>-->
+                                        <!--                                        <button id="btn_delete" name="btn_delete" class="btn btn-primary">Delete</button>-->
                                         <button id="btn_activate" name="btn_activate" class="btn btn-info">Activate</button>
                                         <button id="btn_deactivate" name="btn_deactivate" class="btn btn-danger">Deactivate</button>
                                     </div>
@@ -97,6 +97,12 @@
     <script type="text/javascript" src="js/actions.js"></script>
     <!-- END TEMPLATE -->
     <!-- END SCRIPTS -->
+    <script>
+        $.ajaxPrefilter(function(options, originalOptions, jqXHR) {
+            options.async = true;
+        });
+
+    </script>
 </body>
 
 </html>

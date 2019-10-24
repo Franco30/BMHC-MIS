@@ -48,8 +48,7 @@
                                     <div class="pull-left">
                                         <button type="button" id="export" class="btn btn-sm btn-info">Export
                                             Database</button>
-                                        <button class="btn btn-primary btn-sm" data-toggle="modal"
-                                            data-target="#import">Import Database</button>
+                                        <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#import">Import Database</button>
                                     </div>
                                 </div>
                             </div>
@@ -97,6 +96,12 @@
     <script type="text/javascript" src="js/actions.js"></script>
     <!-- END TEMPLATE -->
     <!-- END SCRIPTS -->
+    <script>
+        $.ajaxPrefilter(function(options, originalOptions, jqXHR) {
+            options.async = true;
+        });
+
+    </script>
 </body>
 
 </html>

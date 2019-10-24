@@ -6,7 +6,7 @@
                 var feDateTimepicker = function () {
                     if ($(".datetimepicker").length > 0) {
                         $(".datetimepicker").datetimepicker({
-                            format: 'MMMM DD, YYYY - LT'
+                            format: 'MMMM DD, YYYY LT'
                         });
 
                         $("#dp-2,#dp-3,#dp-4").datetimepicker(); // Sample
@@ -120,8 +120,8 @@
                 var feMasked = function () {
                     if ($("input[class^='mask_']").length > 0) {
                         $("input.mask_temp").mask('99.9');
-                        $("input.mask_pr").mask('999');
-                        $("input.mask_rr").mask('999');
+//                        $("input.mask_pr").mask('999');
+//                        $("input.mask_rr").mask('999');
                         $("input.mask_philhealth").mask('99-999999999-9');
                         $("input.mask_cpnumber").mask('(99) 999999999');
                         $("input.mask_bp").mask('999/99');

@@ -16,7 +16,7 @@ if(isset($_POST['show'])){
     </thead>
     <tbody>
     <?php
-    $query = $conn->query("SELECT * FROM `patient` WHERE `status` = 'Registered'") or die(mysqli_error());
+    $query = $conn->query("SELECT * FROM `consultation`, `patient` WHERE `consultation`.`patient_id` = `patient`.`patient_id` GROUP BY `consultation`.`patient_id` ORDER BY `consultation`.`consultation_id` DESC") or die(mysqli_error());
     while($fetch = $query->fetch_array()){
             $id = $fetch['patient_id'];
             date_default_timezone_set('Asia/Manila');	
@@ -33,13 +33,13 @@ if(isset($_POST['show'])){
             <td><center><?php echo $fetch['gender']?></center></td>
             <td><center><?php echo $fetch['contact_no']?></center></td>
             <td><center><?php echo $fetch['purok']." ".$fetch['street_address'];?></center></td>
-            <td><center><a href="patient_consultation?patient_id=<?php echo $fetch['patient_id'];?>" class="btn btn-md btn-default">View
+            <td><center>
             <?php    
             if($f2['status'] == 'No Prescription')
-                echo "<span class='badge animated infinite pulse' style='animation-duration:.6s;background-color: #E04B4A;'>".$f['total']."</span>";
-            else echo "<span class='badge'>".$f['total']."</span>";
+                echo "<a href='patient_consultation?patient_id=".$fetch['patient_id']."' class='btn btn-md btn-default' data-toggle='tooltip' data-placement='top' title='Prescription Required'>All Records <span class='badge animated infinite pulse' style='animation-duration:.6s;background-color: #E04B4A;'>".$f['total']."</span></a>";
+            else echo "<a href='patient_consultation?patient_id=".$fetch['patient_id']."' class='btn btn-md btn-default'>All Records <span class='badge'>".$f['total']."</span></a>";
             ?>    
-                </a></center></td>
+                </center></td>
         </tr>
         <?php
     }

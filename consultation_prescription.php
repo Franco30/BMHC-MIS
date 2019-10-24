@@ -36,8 +36,14 @@
             <?php require 'require/adminheader.php' ?>
             <!-- START BREADCRUMB -->
             <ul class="breadcrumb">
+            <?php
+            require 'require/config.php';
+            $query = $conn->query("SELECT * FROM `patient` WHERE `patient_id` = '$_GET[patient_id]'") or die(mysqli_error());
+            $fetch = $query->fetch_array();
+            ?>
                 <li>Transactions</li>
-                <li><mark><strong>Consultation</strong></mark></li>
+                <li>Consultation Prescription</li>
+                <li><mark><strong><?php echo $fetch['patient_name'];?></strong></mark></li>
             </ul>
             <!-- END BREADCRUMB -->
             <!-- PAGE CONTENT WRAPPER -->
@@ -50,7 +56,7 @@
                         </div>
                         <div class="panel panel-primary">
                             <div class="panel-heading">
-                                <h3 class="panel-title"><strong>Consultation Prescription</strong></h3>
+                                <h3 class="panel-title"><strong>Consultation Treatment</strong></h3>
                             </div>
                             <div class="panel-body">
                                 <div id="grid_table"></div>

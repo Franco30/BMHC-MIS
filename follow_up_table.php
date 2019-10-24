@@ -126,7 +126,12 @@
     <script type="text/javascript" src="js/actions.js"></script>
     <!-- END TEMPLATE -->
 
+    <script>
+        $.ajaxPrefilter(function(options, originalOptions, jqXHR) {
+            options.async = true;
+        });
 
+    </script>
     <!-- END SCRIPTS -->
 </body>
 

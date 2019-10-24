@@ -27,8 +27,16 @@
             <?php require 'require/adminheader.php' ?>
             <!-- START BREADCRUMB -->
             <ul class="breadcrumb">
+                <?php
+                require 'require/config.php';
+                $query = $conn->query("SELECT * FROM `patient` WHERE `patient_id` = '$_GET[patient_id]'") or die(mysqli_error());
+                $fetch = $query->fetch_array();
+                date_default_timezone_set('Asia/Manila');
+                $date=date("F j, Y");
+                    ?>
                 <li>Transactions</li>
-                <li><mark><strong>Consultation</strong></mark></li>
+                <li>Add Consultation</li>
+                <li><mark><strong><?php echo $fetch['patient_name']; ?></strong></mark></li>
             </ul>
             <!-- END BREADCRUMB -->
             <!-- PAGE CONTENT WRAPPER -->
@@ -36,6 +44,10 @@
 
                 <div class="row">
                     <div class="col-md-12">
+                        <div id="alert2" class="alert alert-danger" style="display:none;">
+                            <center><span id="alerttext2"></span></center>
+                        </div>
+
                         <div id="alert" class="alert alert-info" style="display:none;">
                             <center><span id="alerttext"></span></center>
                         </div>
@@ -44,7 +56,7 @@
                                 <h3 class="panel-title"><strong>Consultation</strong></h3>
                                 <div class="btn-group pull-right">
                                     <div class="pull-left">
-                                        <a class="btn btn-default" href="consultation">Back</a>
+                                        <a class="btn btn-danger" href="consultation">Cancel</a>
                                         <button type="button" id="addnew" class="btn btn-success">Save</button>
                                     </div>
                                 </div>
@@ -52,15 +64,9 @@
                             <div class="panel-body list-group list-group-contacts scroll" style="height: 470px;">
                                 <div class="panel-body">
                                     <!-- START WIZARD WITH SUBMIT BUTTON -->
-                                    <?php
-	                            require 'require/config.php';
-			                    $query = $conn->query("SELECT * FROM `patient` WHERE `patient_id` = '$_GET[patient_id]'") or die(mysqli_error());
-                                $fetch = $query->fetch_array();
-                                date_default_timezone_set('Asia/Manila');
-                                $date=date("F j, Y");
-									?>
+
                                     <div class="block">
-                                        <form id="familyplanningform">
+                                        <form id="consultationform">
                                             <div class="wizard">
                                                 <ul>
                                                     <li>
@@ -81,12 +87,14 @@
                                                                 Diagnosis, etc.<br /></span>
                                                         </a>
                                                     </li>
+                                                    <!--
                                                     <li>
                                                         <a href="#step-3">
                                                             <span class="stepNumber">3</span>
                                                             <span class="stepDesc">Treatment<br /></span>
                                                         </a>
                                                     </li>
+-->
                                                 </ul>
 
                                                 <div id="step-1">
@@ -110,7 +118,8 @@
                                                             <div class="col-md-6">
                                                                 <div class="form-group" style="margin-left:-10px;">
                                                                     <label>Patient Name</label>
-                                                                    <input type="text" class="form-control" id="philhealth" value="<?php echo $fetch['patient_name']?>" style="color:#444444;" readonly required />
+                                                                    <input type="hidden" class="form-control" id="patient_id" value="<?php echo $fetch['patient_id']?>" required />
+                                                                    <input type="text" class="form-control" value="<?php echo $fetch['patient_name']?>" style="color:#444444;" readonly required />
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-6">
@@ -151,13 +160,13 @@
                                                             <div class="col-md-6">
                                                                 <div class="form-group" style="margin-left:-10px;">
                                                                     <label>Purok</label>
-                                                                    <input type="text" class="form-control" id="purok<?php echo $fetch['patient_id'];?>" value="<?php echo $fetch['purok'];?>" style="color:#444444;" readonly required />
+                                                                    <input type="text" class="form-control" id="purok" value="<?php echo $fetch['purok'];?>" style="color:#444444;" readonly required />
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-6">
                                                                 <div class="form-group" style="margin-right:-10px;">
                                                                     <label>Street Address</label>
-                                                                    <input type="text" class="form-control" id="streetaddress<?php echo $fetch['patient_id'];?>" value="<?php echo $fetch['street_address'];?>" style="color:#444444;" readonly required />
+                                                                    <input type="text" class="form-control" id="streetaddress" value="<?php echo $fetch['street_address'];?>" style="color:#444444;" readonly required />
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -180,20 +189,20 @@
                                                         &nbsp;
                                                         <div class="form-group">
                                                             <label>Head of the Family</label>
-                                                            <input type="text" class="form-control" id="headoffam" placeholder="Enter Head of the Family" required />
+                                                            <input type="text" class="form-control" id="headfamily" placeholder="Enter Head of the Family" required />
                                                         </div>
                                                         <div class="form-row">
                                                             <div class="col-md-6">
                                                                 <div class="form-group" style="margin-left:-10px;">
                                                                     <label>Respiratory Rate - RR</label>
-                                                                    <input type="text" class="mask_rr form-control" id="rr" placeholder="bpm" required />
+                                                                    <input type="number" class="form-control" id="rr" placeholder="bpm" required />
                                                                 </div>
 
                                                             </div>
                                                             <div class="col-md-6">
                                                                 <div class="form-group" style="margin-right:-10px;">
                                                                     <label>Pulse Rate - PR</label>
-                                                                    <input type="text" class="mask_pr form-control" id="pr" placeholder="cpm" required />
+                                                                    <input type="number" class="form-control" id="pr" placeholder="cpm" required />
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -225,7 +234,7 @@
                                                         <h5 style="font-size: 12px;font-weight: bold;">A</h5>
                                                         <div class="form-group">
                                                             <label>Diagnosis:</label>
-                                                            <textarea class="form-control" spellcheck="false" id="complaints"></textarea>
+                                                            <textarea class="form-control" spellcheck="false" id="diagnosis"></textarea>
                                                         </div>
 
                                                         <h5 style="font-size: 12px;font-weight: bold;">P - Plan of
@@ -238,6 +247,7 @@
                                                     </div>
                                                 </div>
                                                 <!-- END OF STEP 3 -->
+                                                <!--
                                                 <div id="step-3">
                                                     <div class="col-md-6">
                                                         <div class="form-row">
@@ -247,14 +257,14 @@
                                                                     <select multiple class="form-control select" data-live-search="true" id="antibiotic">
                                                                         <option value="#">Select</option>
                                                                         <?php
-                                                            $conn = new mysqli("localhost", "root", "", "bmhc") or die(mysqli_error());
-                                                            $query = $conn->query("SELECT * FROM `medicine`") or die(mysqli_error());
+                                                            //$conn = new mysqli("localhost", "root", "", "bmhc") or die(mysqli_error());
+                                                           // $query = $conn->query("SELECT * FROM `medicine`") or die(mysqli_error());
 
-                                                            while($fetch = $query->fetch_array()){
+                                                           // while($fetch = $query->fetch_array())//{
 									                           ?>
-                                                                        <option value="<?php echo $fetch['medicine_id'];?>"><?php echo $fetch['medicine_name']?></option>
+                                                                        <option value="<?php //echo $fetch['medicine_id'];?>"><?php //echo $fetch['medicine_name']?></option>
                                                                         <?php
-					                                               }
+					                                               //}
 									                               ?>
                                                                     </select>
                                                                 </div>
@@ -298,6 +308,7 @@
 
                                                     </div>
                                                 </div>
+-->
                                             </div>
                                         </form>
                                     </div>
@@ -315,7 +326,7 @@
     <audio id="audio-alert" src="audio/alert.mp3" preload="auto"></audio>
     <audio id="audio-fail" src="audio/fail.mp3" preload="auto"></audio>
     <script type="text/javascript" src="js/plugins/jquery/jquery.min.js"></script>
-    <script type="text/javascript" src="functions/crudpatient.js"></script>
+    <script type="text/javascript" src="functions/crudconsultation.js"></script>
     <script type="text/javascript" src="js/plugins/jquery/jquery-ui.min.js"></script>
     <script type="text/javascript" src="js/plugins/bootstrap/bootstrap.min.js"></script>
     <script type='text/javascript' src='js/plugins/icheck/icheck.min.js'></script>
@@ -327,15 +338,18 @@
     <script type="text/javascript" src="js/plugins/bootstrap/bootstrap-select.js"></script>
     <script type="text/javascript" src="js/plugins/smartwizard/jquery.smartWizard-2.0.min.js"></script>
     <script type='text/javascript' src='js/plugins/maskedinput/jquery.maskedinput.min.js'></script>
-    
+
     <script type="text/javascript" src="js/settings.js"></script>
     <script type="text/javascript" src="js/plugins.js"></script>
     <script type="text/javascript" src="js/actions.js"></script>
 
     <!-- END THIS PAGE PLUGINS -->
+    <script>
+        $.ajaxPrefilter(function(options, originalOptions, jqXHR) {
+            options.async = true;
+        });
 
-
-
+    </script>
 </body>
 
 </html>

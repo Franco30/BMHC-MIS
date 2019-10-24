@@ -24,6 +24,7 @@ if($method == 'GET')
  {
   $output[] = array(
    'consultation_id'    => $row['consultation_id'],   
+   'patient_id'    => $row['patient_id'],   
    'date_time'  => $row['date_time'],
    'medicine'  => $row['medicine'],
    'breakfast'   => $row['breakfast'],
@@ -37,15 +38,20 @@ if($method == 'GET')
 
 if($method == "POST")
 {
+date_default_timezone_set('Asia/Manila');	
+$date_time=date("F j, Y - g:i a");
+$date=date("F j, Y");
+ 
  $data = array(
-  ':date_time'  => $_POST['date_time'],
+  ':patient_id'  => $_POST['patient_id'],
+  ':date_time'  => $date_time,
   ':medicine'  => $_POST['medicine'],
   ':breakfast'  => $_POST["breakfast"],
   ':lunch'    => $_POST["lunch"],
   ':dinner'   => $_POST["dinner"]
  );
-
- $query = "INSERT INTO consultation (date_time, medicine, breakfast, lunch, dinner) VALUES (:date_time, :medicine, :breakfast, :lunch, :dinner)";
+ 
+ $query = "INSERT INTO consultation (patient_id, date_time, medicine, breakfast, lunch, dinner) VALUES (:patient_id, :date_time, :medicine, :breakfast, :lunch, :dinner)";
  $statement = $connect->prepare($query);
  $statement->execute($data);
 }
@@ -53,14 +59,20 @@ if($method == "POST")
 if($method == 'PUT')
 {
  parse_str(file_get_contents("php://input"), $_PUT);
+ 
+date_default_timezone_set('Asia/Manila');	
+$date_time=date("F j, Y - g:i a");
+$date=date("F j, Y");
+ 
  $data = array(
   ':consultation_id'   => $_PUT['consultation_id'],
-  ':date_time'  => $_PUT['date_time'],
+  ':date_time'  => $date_time,
   ':medicine' => $_PUT['medicine'],
   ':breakfast' => $_PUT['breakfast'],
   ':lunch'   => $_PUT['lunch'],
   ':dinner'  => $_PUT['dinner']
  );
+ 
  $query = "UPDATE consultation 
  SET  date_time = :date_time, 
  medicine = :medicine, 

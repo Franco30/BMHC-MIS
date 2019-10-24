@@ -30,6 +30,7 @@ require 'require/logincheck.php';
                 window.location = 'admindashboard?year=' + year;
             });
         });
+
     </script>
     <?php require 'js/loadcharts/dashboard/dashboardgraphs.php'?>
     <script src="functions/loadcalendar.js"></script>
@@ -386,6 +387,13 @@ require 'require/logincheck.php';
                 }
             });
         });
+
+    </script>
+    <script>
+        $.ajaxPrefilter(function(options, originalOptions, jqXHR) {
+            options.async = true;
+        });
+
     </script>
     <!-- END SCRIPTS -->
 </body>

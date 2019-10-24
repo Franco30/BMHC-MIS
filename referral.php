@@ -65,7 +65,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <div class="tab-pane" id="tab-second">
                                     <div class="row">
                                         <div class="col-md-12">
@@ -96,7 +96,7 @@
     </div>
     <!-- END PAGE CONTAINER -->
     <?php require 'modals/addreferral.php'?>
-     <?php require 'modals/addprenatalreferral.php'?>
+    <?php require 'modals/addprenatalreferral.php'?>
     <!-- START PRELOADS -->
     <audio id="audio-alert" src="audio/alert.mp3" preload="auto"></audio>
     <audio id="audio-fail" src="audio/fail.mp3" preload="auto"></audio>
@@ -125,6 +125,12 @@
     <script type="text/javascript" src="js/actions.js"></script>
     <!-- END TEMPLATE -->
     <!-- END SCRIPTS -->
+    <script>
+        $.ajaxPrefilter(function(options, originalOptions, jqXHR) {
+            options.async = true;
+        });
+
+    </script>
 </body>
 
 </html>
