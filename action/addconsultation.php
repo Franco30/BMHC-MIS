@@ -29,8 +29,8 @@ if(isset($_POST['add'])){
     
     $remarks = "Added $patient_name to Consultation";
 
-require '../require/config.php';
-$conn->query("INSERT INTO `consultation` VALUES('', '$patient_id', '$date_today', '$headfamily', '$weight', '$bp', '$temp', '$rr', '$pr', '$complaints', '$pefindings', '$diagnosis', '$labrequest', '$month', '$year', 'No Prescription')") or die(mysqli_error());
-$conn->query("INSERT INTO `users_activity_log` VALUES('', '$user_id', '$remarks','$date_time')") or die(mysqli_error());
-}
+    require '../require/config.php';
+    $conn->query("INSERT INTO `consultation` VALUES('', '$patient_id', '$date_today', '$headfamily', '$weight', '$bp', '$temp', '$rr', '$pr', '$complaints', '$pefindings', '$diagnosis', '$labrequest', '$month', '$year', 'No Prescription', '$date_time')") or die(mysqli_error());
+    $conn->query("INSERT INTO `users_activity_log` VALUES('', '$user_id', '$remarks','$date_time')") or die(mysqli_error());
+    }
 ?>

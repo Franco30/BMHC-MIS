@@ -47,7 +47,7 @@
                         </div>
                         <div class="panel panel-primary">
                             <div class="panel-heading">
-                                <h3 class="panel-title"><strong>Consultation</strong></h3>
+                                <h3 class="panel-title"><strong>Consultation / <?php echo $fetch2['patient_name']?></strong></h3>
                                 <div class="btn-group pull-right">
                                     <div class="pull-left">
 
@@ -84,6 +84,7 @@
                                             <td class="print"><center>
                                             <?php if($fetch['status'] == 'No Prescription') { ?>
                                             <a href="consultation_prescription?patient_id=<?php echo $fetch['patient_id']?>" class="btn btn-md btn-danger"><span class="fa fa-medkit animated infinite pulse"></span> Prescription</a>
+                                            <a href="consultation_treatment?patient_id=<?php echo $fetch['patient_id']?>" class="btn btn-md btn-danger"><span class="fa fa-medkit animated infinite pulse"></span> Prescription</a>
                                             <?php } else { ?>
                                             <a href="#" class="btn btn-md btn-default"><span class="fa fa-medkit"></span> Prescription</a>  <?php } ?>
                                                 </center>
