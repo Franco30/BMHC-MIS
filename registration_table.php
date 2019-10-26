@@ -100,11 +100,11 @@
                                                         </div>
                                                     </div>
                                                 </div>
-
-                                                <div class="panel-body">
-                                                    <div id="patientTable"></div>
+                                                <div class="panel-body list-group list-group-contacts scroll" style="height: 670px;">
+                                                    <div class="panel-body">
+                                                        <div id="patientTable"></div>
+                                                    </div>
                                                 </div>
-
                                             </div>
                                         </div>
                                     </div>
@@ -121,7 +121,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="panel-body list-group list-group-contacts scroll" style="height: 380px;">
+                                                <div class="panel-body list-group list-group-contacts scroll" style="height: 670px;">
                                                     <div class="panel-body">
                                                         <div id="childpatientTable"></div>
                                                     </div>

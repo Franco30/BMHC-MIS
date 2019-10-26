@@ -36,7 +36,11 @@
             <!-- END BREADCRUMB -->
             <!-- PAGE CONTENT WRAPPER -->
             <div class="page-content-wrap">
-
+                
+                <div id="alert" class="alert alert-info" style="display:none;">
+                    <center><span id="alerttext"></span></center>
+                </div>
+                
                 <div class="row">
                     <div class="col-md-12">
                         <div class="panel panel-default tabs">
@@ -52,7 +56,7 @@
                                             <div class="panel panel-default">
                                                 <div class="panel-body list-group list-group-contacts scroll" style="height: 430px;">
                                                     <div class="panel-body">
-                                                        <div id="tbfollowupTable"></div>
+                                                        <div id="prenatalfollowupTable"></div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -126,12 +130,14 @@
     <script type="text/javascript" src="js/actions.js"></script>
     <!-- END TEMPLATE -->
 
+    <!--
     <script>
         $.ajaxPrefilter(function(options, originalOptions, jqXHR) {
             options.async = true;
         });
 
     </script>
+-->
     <!-- END SCRIPTS -->
 </body>
 

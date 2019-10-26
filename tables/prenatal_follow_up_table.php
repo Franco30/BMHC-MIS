@@ -12,6 +12,12 @@ if(isset($_POST['show'])){
                 <center>Patient Name</center>
             </th>
             <th>
+                <center>Address</center>
+            </th>
+             <th>
+                <center>Contact No.</center>
+            </th>
+            <th>
                 <center>Actions</center>
             </th>
         </tr>
@@ -24,16 +30,22 @@ if(isset($_POST['show'])){
 		?>
         <tr>
             <td>
-                <center><?php echo $fetch['year']?><?php echo "0".$fetch['patient_id']?></center>
+                <center><strong><?php echo $fetch['year']?><?php echo "0".$fetch['patient_id']?></strong></center>
             </td>
             <td>
-                <center><?php echo $fetch['patient_name']?></center>
+                <center><strong><?php echo $fetch['patient_name']?></strong></center>
             </td>
             <td>
-                <center><button class="btn btn-default" data-toggle="modal"
+                <center><?php echo $fetch['purok']." ".$fetch['street_address']?></center>
+            </td>
+            <td>
+                <center><?php echo $fetch['purok']." ".$fetch['contact_no']?></center>
+            </td>
+            <td>
+                <center><button class="btn btn-sm btn-default" data-toggle="modal"
                         data-target="#follow_up<?php echo $fetch['patient_id'];?>">Follow-up Visit</button></center>
             </td>
-            <?php require('../modals/tb_follow_up.php'); ?>
+            <?php require('../modals/prenatal_follow_up.php'); ?>
         </tr>
         <?php
 		  }

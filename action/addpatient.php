@@ -26,7 +26,7 @@ if(isset($_POST['add'])){
     $remarks = "Registered $patient_name as new Patient";
 
     require '../require/config.php';
-    $conn->query("INSERT INTO `patient` VALUES('', '$patient_name', '$civilstatus', '$age', '$gender', '$streetaddress, Mansilingan', '$purok', '$birthdate', '$height', '$weight', '$contact_no', '$region_province', '$occupation', '$philhealth_no', '$contact_person', '$emergency_no', 'Registered', '$month', '$year')") or die(mysqli_error());
+    $conn->query("INSERT INTO `patient` VALUES('', '$patient_name', '$civilstatus', '$age', '$gender', '$streetaddress', 'Mansilingan', '$purok', '$birthdate', '$height', '$weight', '$contact_no', '$region_province', '$occupation', '$philhealth_no', '$contact_person', '$emergency_no', 'Registered', '$month', '$year')") or die(mysqli_error());
     $conn->query("INSERT INTO `users_activity_log` VALUES('', '$user_id', '$remarks','$date_time')") or die(mysqli_error());
 }
 ?>

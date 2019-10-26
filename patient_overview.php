@@ -487,6 +487,9 @@
 															<thead>
 																<tr>
 																	<th>
+																		<center>Date</center>
+																	</th>
+																	<th>
 																		<center>Complaints</center>
 																	</th>
 																	<th>
@@ -496,28 +499,39 @@
 																		<center>Diagnosis</center>
 																	</th>
 																	<th>
+																		<center>Laboratory Request</center>
+																	</th>
+																	<th>
 																		<center>Action</center>
 																	</th>
 																</tr>
 															</thead>
 															<tbody>
-																<?php
-															$conn = new mysqli('localhost','root','','bmhc')or die(mysqli_error());
-								$query = $conn->query("SELECT * FROM `patient` NATURAL JOIN `consultation` WHERE `patient_id` = '$_GET[id]' ORDER BY consultation_id DESC") or die(mysqli_error());
-								while($fetch = $query->fetch_array()){
-									?>
+<?php
+$conn = new mysqli('localhost','root','','bmhc')or die(mysqli_error());
+$query = $conn->query("SELECT * FROM `consultation` WHERE `consultation`.`patient_id` =  '$_GET[id]'") or die(mysqli_error());
+while($fetch = $query->fetch_array()){
+$q = $conn->query("SELECT * FROM `patient` WHERE `patient_id` = '$_GET[id]'") or die(mysqli_error());
+$f = $q->fetch_array();
+?>
 																<tr>
+																	<td>
+																		<center><?php echo $fetch['date']?></center>
+																	</td>
 																	<td>
 																		<center><?php echo $fetch['complaints']?></center>
 																	</td>
 																	<td>
-																		<center><?php echo $fetch['findings']?></center>
+																		<center><?php echo $fetch['pe_findings']?></center>
 																	</td>
 																	<td>
 																		<center><?php echo $fetch['diagnosis']?></center>
 																	</td>
 																	<td>
-																		<center><a class="btn btn-default" href="familyplanninginfo?id=<?php echo $fetch['patient_id'];?>&&patient_name=<?php echo $fetch['patient_name'];?>&&c_id=<?php echo $fetch['consultation_id'];?>">View Detail</a></center>
+																		<center><?php echo $fetch['lab_request']?></center>
+																	</td>
+																	<td>
+																		<center><a class="btn btn-default" href="familyplanninginfo?id=<?php echo $f['patient_id'];?>&&patient_name=<?php echo $f['patient_name'];?>&&c_id=<?php echo $fetch['consultation_id'];?>">View Detail</a></center>
 																	</td>
 																</tr>
 																<?php

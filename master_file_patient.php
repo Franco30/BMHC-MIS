@@ -89,7 +89,7 @@
                                         <div class="col-md-12">
                                             <div class="panel panel-default">
                                                 <!-- style="height: 470px;"-->
-                                                <div class="panel-body list-group list-group-contacts scroll">
+                                                <div class="panel-body list-group list-group-contacts scroll" style="height: 570px;">
                                                     <div class="panel-body">
                                                         <div id="patientmasterfileTable"></div>
                                                     </div>
@@ -102,7 +102,7 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="panel panel-default">
-                                                <div class="panel-body list-group list-group-contacts scroll" style="height: 470px;">
+                                                <div class="panel-body list-group list-group-contacts scroll" style="height: 570px;">
                                                     <div class="panel-body">
                                                         <div id="childpatientmasterfileTable"></div>
                                                     </div>
@@ -150,12 +150,14 @@
     <script type="text/javascript" src="js/plugins.js"></script>
     <script type="text/javascript" src="js/actions.js"></script>
     <!-- END TEMPLATE -->
+<!--
     <script>
         $.ajaxPrefilter(function(options, originalOptions, jqXHR) {
             options.async = true;
         });
 
     </script>
+-->
     <!-- END SCRIPTS -->
 </body>
 

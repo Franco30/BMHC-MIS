@@ -54,6 +54,9 @@ $(document).ready(function () {
                 setTimeout(function () {
                     window.location.href = 'master_file_patient';
                 }, 2500);
+                $(document).ajaxComplete(function () {
+                    $(document).find('.select').selectpicker();
+                });
             }
         });
         //        $('form').trigger('reset');

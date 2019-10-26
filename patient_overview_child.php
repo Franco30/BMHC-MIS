@@ -20,7 +20,7 @@
 
 <body>
 	<!-- START PAGE CONTAINER -->
-	<div class="page-container page-navigation-top-fixed">
+	<div class="page-container">
 		<!-- START PAGE SIDEBAR -->
 		<?php require 'require/adminsidebar.php' ?>
 		<!-- END PAGE SIDEBAR -->
