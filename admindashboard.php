@@ -299,14 +299,19 @@ require 'require/logincheck.php';
 				                $year=$_GET['year'];
 			                         }
 												require 'require/config.php';	
-												$query1 = $conn->query("SELECT count(*) as total from `patient` where patient_id && `age` <= 15 && year = '$year'") or die(mysqli_error());
+												$query1 = $conn->query("SELECT count(*) as total from `patient` where `age` <= 15 && year = '$year'") or die(mysqli_error());
 												$fetch1 = $query1->fetch_array();
 
-												$query2 = $conn->query("SELECT count(*) as total from `patient` where patient_id && `age` >= 16 && year = '$year'") or die(mysqli_error());
+												$query2 = $conn->query("SELECT count(*) as total from `patient` where `age` >= 16 && year = '$year'") or die(mysqli_error());
 												$fetch2 = $query2->fetch_array();
+                                                
+                                                $query3 = $conn->query("SELECT count(*) as total from `patient_child` where year = '$year'") or die(mysqli_error());
+												$fetch3 = $query3->fetch_array();
+                                                
+                                                $sum = $fetch1['total'] + $fetch3['total'];
 											?>
                                         <ul class='list-group border-bottom'>
-                                            <li class='list-group-item'><span class='fa fa-child'></span>Children<span class='badge badge-info'><?php echo $fetch1['total']?></span></li>
+                                            <li class='list-group-item'><span class='fa fa-child'></span>Children<span class='badge badge-info'><?php echo $sum?></span></li>
                                             <li class='list-group-item'><span class='fa fa-user'></span>Adult<span class='badge badge-info'><?php echo $fetch2['total']?></span></li>
 
                                         </ul>
