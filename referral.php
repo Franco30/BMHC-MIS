@@ -58,8 +58,10 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="panel-body">
-                                                    <div id="referralpatientTable"></div>
+                                                <div class="panel-body list-group list-group-contacts scroll" style="height: 400px;">
+                                                    <div class="panel-body">
+                                                        <div id="referralpatientTable"></div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -77,8 +79,10 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="panel-body">
-                                                    <div id="prenatalreferralpatientTable"></div>
+                                                <div class="panel-body list-group list-group-contacts scroll" style="height: 400px;">
+                                                    <div class="panel-body">
+                                                        <div id="prenatalreferralpatientTable"></div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -119,6 +123,7 @@
     <script type="text/javascript" src="js/plugins/scrolltotop/scrolltopcontrol.js"></script>
     <!-- END THIS PAGE PLUGINS-->
     <script type="text/javascript" src="js/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script type='text/javascript' src='js/plugins/maskedinput/jquery.maskedinput.min.js'></script>
     <!-- START TEMPLATE -->
     <script type="text/javascript" src="js/settings.js"></script>
     <script type="text/javascript" src="js/plugins.js"></script>

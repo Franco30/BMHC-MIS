@@ -57,7 +57,7 @@
                                                 <div class="panel-heading">
                                                     <div class="btn-group pull-right">
                                                         <div class="pull-left">
-                                                            <button class="btn btn-primary" data-toggle="modal" data-target="#p_follow_up">Prenatal Follow-up Visit</button>
+                                                            <button class="btn btn-primary" data-toggle="modal" data-target="#p_follow_up">Add Follow-up Visit</button>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -77,8 +77,7 @@
                                                 <div class="panel-heading">
                                                     <div class="btn-group pull-right">
                                                         <div class="pull-left">
-                                                            <button class="btn btn-primary btn-md" data-toggle="modal" data-target="#fp_follow_up">
-                                                                Family Planning Follow-up Visit</button>
+                                                            <button class="btn btn-primary btn-md" data-toggle="modal" data-target="#fp_follow_up">Add Follow-up Visit</button>
                                                         </div>
                                                     </div>
                                                 </div>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 26, 2019 at 06:45 AM
+-- Generation Time: Oct 26, 2019 at 05:30 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.2
 
@@ -120,7 +120,11 @@ INSERT INTO `db_backup` (`back_up_id`, `user_id`, `activity`, `date`, `time`, `a
 (13, '28', 'Export', 'October 11, 2019', '3:17 am', 'Successfully Exported Database'),
 (14, '27', 'Import', 'October 24, 2019', '6:13 pm', 'Successfully Imported Database'),
 (15, '27', 'Export', 'October 26, 2019', '11:43 am', 'Successfully Exported Database'),
-(16, '27', 'Export', 'October 26, 2019', '12:44 pm', 'Successfully Exported Database');
+(16, '27', 'Export', 'October 26, 2019', '12:44 pm', 'Successfully Exported Database'),
+(17, '27', 'Export', 'October 26, 2019', '3:02 pm', 'Successfully Exported Database'),
+(18, '27', 'Export', 'October 26, 2019', '4:54 pm', 'Successfully Exported Database'),
+(19, '27', 'Export', 'October 26, 2019', '8:36 pm', 'Successfully Exported Database'),
+(20, '27', 'Export', 'October 26, 2019', '11:29 pm', 'Successfully Exported Database');
 
 -- --------------------------------------------------------
 
@@ -157,7 +161,8 @@ CREATE TABLE `family_planning` (
 
 INSERT INTO `family_planning` (`family_planning_id`, `patient_id`, `type_of_acceptor`, `prev_used_method`, `date`, `time`, `patient_birthdate`, `patient_highest_education`, `patient_occupation`, `address`, `province`, `spouse_name`, `spouse_birthdate`, `spouse_highest_education`, `spouse_occupation`, `average_monthly_income`, `no_of_living_children`, `plan_more_children`, `reason_for_practicing_fp`, `method_accepted`) VALUES
 (1, 4, 'New to the Program', 'Pills', '2019-24-09', '3:57 AM', '1986-07-20', 'High School', 'BHW', 'Mansilingan, Bacolod City', 'Negros Occidental', 'Michael Gerose', '1986-03-29', 'College Graduate', 'Business Administrator', '10000', '3', 'Yes', 'Limiting and Spacing', 'SDM, Billings/Cervical Mucus/Ovulation Method'),
-(2, 4, 'Continuing User', 'Pills', '2019-01-10', '12:57 PM', '1986-07-20', 'High School', 'BHW', 'Mansilingan, Bacolod City', 'Negros Occidental', 'Michael Gerose', '1986-03-29', 'College Graduate', 'Business Administrator', '10000', '4', 'Yes', 'Limiting and Spacing', 'SDM, Billings/Cervical Mucus');
+(2, 4, 'Continuing User', 'Pills', '2019-01-10', '12:57 PM', '1986-07-20', 'High School', 'BHW', 'Mansilingan, Bacolod City', 'Negros Occidental', 'Michael Gerose', '1986-03-29', 'College Graduate', 'Business Administrator', '10000', '4', 'Yes', 'Limiting and Spacing', 'SDM, Billings/Cervical Mucus'),
+(3, 10, 'Continuing User', 'Pills', '2019-01-10', '12:57 PM', '1986-07-20', 'High School', 'BHW', 'Mansilingan, Bacolod City', 'Negros Occidental', 'Michael Gerose', '1986-03-29', 'College Graduate', 'Business Administrator', '10000', '4', 'Yes', 'Limiting and Spacing', 'SDM, Billings/Cervical Mucus');
 
 -- --------------------------------------------------------
 
@@ -173,8 +178,18 @@ CREATE TABLE `fp_follow_up` (
   `no_of_units` varchar(50) NOT NULL,
   `remarks` varchar(100) NOT NULL,
   `name_of_provider` varchar(50) NOT NULL,
-  `next_service_date` varchar(50) NOT NULL
+  `next_service_date` varchar(50) NOT NULL,
+  `follow_up_status` char(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `fp_follow_up`
+--
+
+INSERT INTO `fp_follow_up` (`fp_follow_up_id`, `patient_id`, `date_service_given`, `method_brand`, `no_of_units`, `remarks`, `name_of_provider`, `next_service_date`, `follow_up_status`) VALUES
+(28, 10, 'October 21, 2019', 'Pills', '1Pack', 'Successful', 'Manilyn V. Jimera', 'October 30, 2019', 'Cancelled'),
+(29, 4, 'October 21, 2019', 'DILDO KAG KALAPTAN SANG HUSAY', '1', 'aww ahh abi ko ', 'John Phillip Dela Cruz', 'October 29, 2019', 'Done'),
+(30, 10, 'October 28, 2019', 'Hair Brush Handle', '1', 'NA GWAAN', 'Jesse Franco Latosa', 'November 19, 2019', 'Pending');
 
 -- --------------------------------------------------------
 
@@ -354,7 +369,7 @@ CREATE TABLE `patient` (
 --
 
 INSERT INTO `patient` (`patient_id`, `patient_name`, `civil_status`, `age`, `gender`, `street_address`, `purok`, `birthdate`, `height`, `weight`, `contact_no`, `region_province`, `occupation`, `philhealth_no`, `contact_person`, `emergency_no`, `status`, `month`, `year`) VALUES
-(4, 'Lolita Villarosa Gerose', 'Married', 53, 'Female', '#60 Area 51, Mansilingan', 'Paghidaet', 'July 20, 1966', 165, 68, '(09) 051312999', 'Negros Occidental', 'BHW', '88-334939733-4', 'Marvin Gerose', '(09) 073773443', 'Registered', 'Sep', 2019),
+(4, 'Lolita Villarosa Gerose', 'Married', 53, 'Female', '#60 Area 51, Mansilingan, Mansilingan', 'Paghidaet', 'July 20, 1966', 165, 68, '(09) 051312999', 'Negros Occidental', 'BHW', '88-334939733-4', 'Marvin Gerose', '(09) 073773443', 'Registered', 'Sep', 2019),
 (5, 'Daniel Andrew Go', 'Single', 21, 'Male', '#1 Area 51', 'Katilingban', 'April 14, 1998', 176, 58, '(09) 061613101', 'Negros Occidental', 'Student', '34-343435343-3', 'Charles Go', '(09) 061613101', 'Registered', 'Oct', 2019),
 (6, 'Bernard Bermo', 'Married', 49, 'Male', '#1n Sebastian, Mansilingan', 'Gauzon', 'March 10, 1970', 174, 174, '(88) 888888888', 'Negros Occidental', 'Farmer', '34-343434343-4', 'Erika Bermo', '(30) 303030454', 'Registered', 'Oct', 2019),
 (7, 'John Matthew Lorizo', 'Single', 21, 'Male', '#51 Area 52, Mansilingan', 'Gauzon', 'April 07, 1998', 165, 165, '09061613101', 'Negros Occidental', 'Student', '343434564546', 'John Michael Lorizo', '93939343433', 'Registered', 'Oct', 2019),
@@ -431,22 +446,112 @@ INSERT INTO `prenatal` (`prenatal_id`, `patient_id`, `doctors_advice`, `date`, `
 --
 
 CREATE TABLE `prenatal_follow_up` (
-  `follow_up_id` int(10) NOT NULL,
+  `follow_up_id` int(11) NOT NULL,
   `user_id` int(10) NOT NULL,
   `patient_id` int(10) NOT NULL,
   `follow_up_date_time` varchar(50) NOT NULL,
-  `remarks` varchar(50) NOT NULL
+  `remarks` varchar(50) NOT NULL,
+  `follow_up_status` char(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
 
 --
 -- Dumping data for table `prenatal_follow_up`
 --
 
-INSERT INTO `prenatal_follow_up` (`follow_up_id`, `user_id`, `patient_id`, `follow_up_date_time`, `remarks`) VALUES
-(3, 27, 4, 'October 20, 2019 9:00 AM', 'Prenatal Consultation'),
-(4, 27, 10, 'October 25, 2019 10:00 AM', 'Prenatal Consultation'),
-(5, 27, 9, 'October 20, 2019 9:30 AM', 'Prenatal Consultation'),
-(6, 27, 10, 'October 26, 2019 9:28 AM', 'Prenatal Consultation');
+INSERT INTO `prenatal_follow_up` (`follow_up_id`, `user_id`, `patient_id`, `follow_up_date_time`, `remarks`, `follow_up_status`) VALUES
+(17, 27, 10, 'October 28, 2019 9:50 AM', 'For Verification ang bilat', 'Cancelled'),
+(18, 27, 10, 'October 22, 2019 8:25 AM', 'Sample 2', 'Done'),
+(19, 27, 4, 'October 28, 2019 8:45 AM', 'sample 2', 'Done'),
+(20, 27, 10, 'October 26, 2019 8:41 PM', 'dfd', 'Pending'),
+(21, 27, 10, 'October 07, 2019 8:41 PM', 'dfdf', 'Pending'),
+(22, 27, 4, 'October 01, 2019 8:41 PM', 'dfdfd', 'Done'),
+(23, 27, 10, 'October 08, 2019 8:41 PM', 'dfdf', 'Pending');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `referral`
+--
+
+CREATE TABLE `referral` (
+  `referral_id` int(11) NOT NULL,
+  `referral_date` varchar(50) NOT NULL,
+  `from_clinic` varchar(100) NOT NULL,
+  `to_hospital` varchar(100) NOT NULL,
+  `origin_address` varchar(100) NOT NULL,
+  `destination_address` varchar(100) NOT NULL,
+  `patient_name` varchar(50) NOT NULL,
+  `weight` varchar(30) NOT NULL,
+  `bp` varchar(30) NOT NULL,
+  `temp` varchar(30) NOT NULL,
+  `age` varchar(30) NOT NULL,
+  `complaints` varchar(100) NOT NULL,
+  `referred_by` varchar(50) NOT NULL,
+  `designation` varchar(50) NOT NULL,
+  `month` varchar(50) NOT NULL,
+  `year` varchar(30) NOT NULL,
+  `date_time` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `referral`
+--
+
+INSERT INTO `referral` (`referral_id`, `referral_date`, `from_clinic`, `to_hospital`, `origin_address`, `destination_address`, `patient_name`, `weight`, `bp`, `temp`, `age`, `complaints`, `referred_by`, `designation`, `month`, `year`, `date_time`) VALUES
+(1, 'October 21, 2019', 'Mansilingan Health Center', 'CLMH', 'Mansilingan, Bacolod City', 'Lacson St, Bacolod, 6100 Negros Occidental', 'LeBron James', '98', '180/90', '37.5', '37', 'Sakit tiyan, kagat ka ayam, bilatan man', 'Kawhi Leonard', 'Sa Tangkal ka Baboy', 'Oct', '2019', 'October 26, 2019 9:00 AM'),
+(2, 'October 21, 2019', 'Mansilingan Health Center', 'CLMH', 'Mansilingan, Bacolod City', 'Lacson St, Bacolod, 6100 Negros Occidental', 'Anthony Davis', '98', '180/90', '37.5', '37', 'Sakit tiyan, kagat ka ayam, bilatan man', 'Kawhi Leonard', 'Sa Tangkal ka Baboy', 'Oct', '2019', 'October 26, 2019 9:00 AM'),
+(3, 'October 16, 2019', 'Mansilingan Health Center', '3', 'Mansilingan, Bacolod City', '3', '33sdfdfd', '333', '333/33', '33.3', '33', '333', 'Jesse Franco Latosa', '33', 'Oct', '2019', 'October 26, 2019 10:09 pm'),
+(4, 'October 26, 2019', 'Mansilingan Health Center', 'Riverside Hospital', 'Mansilingan, Bacolod City', 'Lacson St.', 'Johnny Sins', '90', '130/50', '36.4', '38', 'Sakit itlog kag naga katol ang itlog horny ba', 'Manilyn V. Jimera', 'Super Emergency Room', 'Oct', '2019', 'October 26, 2019 10:10 pm'),
+(5, 'October 23, 2019', 'Mansilingan Health Center', 'CLMH', 'Mansilingan, Bacolod City', 'Lacson St.', 'James Reid', '90', '140/40', '33.3', '33', 'High Fever', 'Jesse Franco Latosa', 'ER', 'Oct', '2019', 'October 26, 2019 10:12 pm'),
+(6, 'October 23, 2019', 'Mansilingan Health Center', 'a;d', 'Mansilingan, Bacolod City', 'df;dfk', 'Bianca Umali', '44', '303/03', '40.4', '44', 'sfgdf', 'Jesse Franco Latosa', 'dfdfdf', 'Oct', '2019', 'October 26, 2019 10:14 pm'),
+(7, 'October 24, 2019', 'Mansilingan Health Center', 'dd', 'Mansilingan, Bacolod City', 'dfdf', 'dfdf', '33', '333/33', '33.3', '333', 'dfdf', 'John Phillip Dela Cruz', 'dfdfd', 'Oct', '2019', 'October 26, 2019 10:14 pm'),
+(8, 'October 22, 2019', 'Mansilingan Health Center', 'sdfgsf', 'Mansilingan, Bacolod City', 'sgsf', 'Dennzel Cuachon', '44', '444/44', '44.4', '44', 'fgsfg', 'John Phillip Dela Cruz', '444', 'Oct', '2019', 'October 26, 2019 11:04 pm');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `referral_prenatal`
+--
+
+CREATE TABLE `referral_prenatal` (
+  `referral_id` int(11) NOT NULL,
+  `referral_date` varchar(50) NOT NULL,
+  `from_clinic` varchar(100) NOT NULL,
+  `to_hospital` varchar(100) NOT NULL,
+  `origin_address` varchar(100) NOT NULL,
+  `destination_address` varchar(100) NOT NULL,
+  `patient_name` varchar(50) NOT NULL,
+  `weight` varchar(30) NOT NULL,
+  `bp` varchar(30) NOT NULL,
+  `temp` varchar(30) NOT NULL,
+  `age` varchar(30) NOT NULL,
+  `complaints` varchar(100) NOT NULL,
+  `gravida` varchar(50) NOT NULL,
+  `para` varchar(50) NOT NULL,
+  `fh` varchar(50) NOT NULL,
+  `fhb` varchar(50) NOT NULL,
+  `tt` varchar(50) NOT NULL,
+  `given` varchar(50) NOT NULL,
+  `referred_by` varchar(50) NOT NULL,
+  `designation` varchar(50) NOT NULL,
+  `month` varchar(50) NOT NULL,
+  `year` varchar(30) NOT NULL,
+  `date_time` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `referral_prenatal`
+--
+
+INSERT INTO `referral_prenatal` (`referral_id`, `referral_date`, `from_clinic`, `to_hospital`, `origin_address`, `destination_address`, `patient_name`, `weight`, `bp`, `temp`, `age`, `complaints`, `gravida`, `para`, `fh`, `fhb`, `tt`, `given`, `referred_by`, `designation`, `month`, `year`, `date_time`) VALUES
+(8, 'October 21, 2019', 'Mansilingan Health Center', 'CLMH', 'Mansilingan, Bacolod City', 'Lacson st.', 'Kherrie Tejare', '50', '130/40', '37.5', '18', 'Fever', '1', '1', '2', '2', 'TT3', 'October 22, 2019', 'Jesse Franco Latosa', 'Hospital ehh syempre', 'Oct', '2019', 'October 26, 2019 9:00 AM'),
+(9, 'October 21, 2019', 'Mansilingan Health Center', 'CLMH', 'Mansilingan, Bacolod City', 'Lacson st.', 'Kherrie Tejare', '50', '130/40', '37.5', '18', 'Fever', '1', '1', '2', '2', 'TT3', 'October 22, 2019', 'Jesse Franco Latosa', 'Hospital ehh syempre', 'Oct', '2019', 'October 26, 2019 9:00 AM'),
+(10, 'October 23, 2019', 'Mansilingan Health Center', 'CLMH', 'Mansilingan, Bacolod City', 'Lacson St.', 'Franze Beatriz Caballero', '78', '150/55', '37.6', '17', 'Fever', '1', '1', '1', '1', 'TT1', 'October 22, 2019', 'Jesse Franco Latosa', 'E.R.', 'Oct', '2019', 'October 26, 2019 11:19 pm'),
+(11, 'October 15, 2019', 'Mansilingan Health Center', '3', 'Mansilingan, Bacolod City', '3', 'dfdf', '33', '333/33', '33.3', '33', '3', '3', '3', '3', '3', '3', 'October 07, 2019', 'John Phillip Dela Cruz', '3', 'Oct', '2019', 'October 26, 2019 11:21 pm'),
+(12, 'October 16, 2019', 'Mansilingan Health Center', '3', 'Mansilingan, Bacolod City', '3', 'dfd', '3', '333/33', '33.3', '33', '3', '3', '3', '3', '3', '3', 'October 23, 2019', 'Jesse Franco Latosa', '33', 'Oct', '2019', 'October 26, 2019 11:21 pm'),
+(13, 'October 17, 2019', 'Mansilingan Health Center', '3', 'Mansilingan, Bacolod City', '3', 'AFASDFASDF', '3', '333/33', '33.3', '33', '3', '3', '3', '3', '3', '33', 'October 14, 2019', 'John Phillip Dela Cruz', '33', 'Oct', '2019', 'October 26, 2019 11:22 pm'),
+(14, 'October 09, 2019', 'Mansilingan Health Center', '3', 'Mansilingan, Bacolod City', '3', 'asdfsadfasdf', '33', '333/33', '33.3', '3', '3', '3', '3', '3', '3', '3', 'October 15, 2019', 'John Phillip Dela Cruz', '3', 'Oct', '2019', 'October 26, 2019 11:23 pm'),
+(15, 'October 24, 2019', 'Mansilingan Health Center', 'CLMH', 'Mansilingan, Bacolod City', 'Lacson St.', 'Franze Beatriz Caballero', '66', '150/55', '36.6', '17', 'Fever', '0', '1', '1', '1', 'TT3', 'October 23, 2019', 'Jesse Franco Latosa', 'S.R.', 'Oct', '2019', 'October 26, 2019 11:27 pm');
 
 -- --------------------------------------------------------
 
@@ -559,7 +664,127 @@ INSERT INTO `users_activity_log` (`log_id`, `user_id`, `action`, `date_time`) VA
 (397, 27, 'Added a Family Planning follow-up date for Lolita Villarosa Gerose', 'October 26, 2019 - 11:54 am'),
 (398, 27, 'Added a Family Planning follow-up date for Lolita Villarosa Gerose', 'October 26, 2019 - 11:55 am'),
 (399, 27, 'Added a Family Planning follow-up date for Lolita Villarosa Gerose', 'October 26, 2019 - 11:57 am'),
-(400, 27, 'Successfully Backup the database', 'October 26, 2019, 12:44 pm');
+(400, 27, 'Successfully Backup the database', 'October 26, 2019, 12:44 pm'),
+(401, 27, 'Added a Family Planning follow-up date for Mercy Buenafuente', 'October 26, 2019 - 1:07 pm'),
+(402, 27, 'Added a Family Planning follow-up date for Mercy Buenafuente', 'October 26, 2019 - 1:16 pm'),
+(403, 27, 'Added a Family Planning follow-up date for Mercy Buenafuente', 'October 26, 2019 - 1:16 pm'),
+(404, 27, 'Added a Family Planning follow-up date for ', 'October 26, 2019 - 1:54 pm'),
+(405, 27, 'Added a Family Planning follow-up date for ', 'October 26, 2019 - 1:54 pm'),
+(406, 27, 'Added a Family Planning follow-up date for ', 'October 26, 2019 - 1:55 pm'),
+(407, 27, 'Added a Family Planning follow-up date for ', 'October 26, 2019 - 1:57 pm'),
+(408, 27, 'Added a Family Planning follow-up date for ', 'October 26, 2019 - 1:58 pm'),
+(409, 27, 'Added a Family Planning follow-up date for ', 'October 26, 2019 - 2:00 pm'),
+(410, 27, 'Added a Family Planning follow-up date for ', 'October 26, 2019 - 2:03 pm'),
+(411, 27, 'Added a Family Planning follow-up date for ', 'October 26, 2019 - 2:05 pm'),
+(412, 27, 'Added a Family Planning follow-up date for Lolita Villarosa Gerose', 'October 26, 2019 - 2:06 pm'),
+(413, 27, 'Added a Prenatal follow-up date for ', 'October 26, 2019 - 2:16 pm'),
+(414, 27, 'Added a Prenatal follow-up date for ', 'October 26, 2019 - 2:18 pm'),
+(415, 27, 'Added a Prenatal follow-up date for Lolita Villarosa Gerose', 'October 26, 2019 - 2:20 pm'),
+(416, 27, 'Added a Prenatal follow-up date for Mercy Buenafuente', 'October 26, 2019 - 2:22 pm'),
+(417, 27, 'Added a Prenatal follow-up date for Lolita Villarosa Gerose', 'October 26, 2019 - 2:23 pm'),
+(418, 27, 'Added a Prenatal follow-up date for Lolita Villarosa Gerose', 'October 26, 2019 - 2:57 pm'),
+(419, 27, 'Added a Prenatal follow-up date for Mercy Buenafuente', 'October 26, 2019 - 2:57 pm'),
+(420, 27, 'Successfully Backup the database', 'October 26, 2019, 3:02 pm'),
+(421, 27, 'Added a Family Planning follow-up date for Mercy Buenafuente', 'October 26, 2019 - 3:59 pm'),
+(422, 27, 'Added a Family Planning follow-up date for Lolita Villarosa Gerose', 'October 26, 2019 - 4:31 pm'),
+(423, 27, 'Added a Family Planning follow-up date for Mercy Buenafuente', 'October 26, 2019 - 4:31 pm'),
+(424, 27, 'Added a Family Planning follow-up date for Lolita Villarosa Gerose', 'October 26, 2019 - 4:37 pm'),
+(425, 27, 'Added a Prenatal follow-up date for Mercy Buenafuente', 'October 26, 2019 - 4:43 pm'),
+(426, 27, 'Added a Prenatal follow-up date for Lolita Villarosa Gerose', 'October 26, 2019 - 4:44 pm'),
+(427, 27, 'Successfully Backup the database', 'October 26, 2019, 4:54 pm'),
+(428, 27, 'Added a Prenatal follow-up date for Mercy Buenafuente', 'October 26, 2019 - 6:14 pm'),
+(429, 27, 'Added a Prenatal follow-up date for Lolita Villarosa Gerose', 'October 26, 2019 - 6:14 pm'),
+(430, 27, 'Added a Prenatal follow-up date for Mercy Buenafuente', 'October 26, 2019 - 6:15 pm'),
+(431, 27, 'Added a Prenatal follow-up date for Mercy Buenafuente', 'October 26, 2019 - 6:16 pm'),
+(432, 27, 'Added a Prenatal follow-up date for Lolita Villarosa Gerose', 'October 26, 2019 - 6:18 pm'),
+(433, 27, 'Added a Prenatal follow-up date for Mercy Buenafuente', 'October 26, 2019 - 6:19 pm'),
+(434, 27, 'Added a Prenatal follow-up date for Lolita Villarosa Gerose', 'October 26, 2019 - 6:21 pm'),
+(435, 27, 'Added a Prenatal follow-up date for Lolita Villarosa Gerose', 'October 26, 2019 - 6:22 pm'),
+(436, 27, 'Added a Prenatal follow-up date for Mercy Buenafuente', 'October 26, 2019 - 6:22 pm'),
+(437, 27, 'Added a Prenatal follow-up date for Mercy Buenafuente', 'October 26, 2019 - 6:23 pm'),
+(438, 27, 'Added a Prenatal follow-up date for Lolita Villarosa Gerose', 'October 26, 2019 - 6:24 pm'),
+(439, 27, 'Added a Prenatal follow-up date for Mercy Buenafuente', 'October 26, 2019 - 6:26 pm'),
+(440, 27, 'Added a Prenatal follow-up date for Mercy Buenafuente', 'October 26, 2019 - 6:44 pm'),
+(441, 27, 'Added a Prenatal follow-up date for Lolita Villarosa Gerose', 'October 26, 2019 - 6:51 pm'),
+(442, 27, 'Updated the Prenatal follow-up date for Lolita Villarosa Gerose', 'October 26, 2019 - 6:58 pm'),
+(443, 27, 'Updated the Prenatal follow-up date for Lolita Villarosa Gerose', 'October 26, 2019 - 6:58 pm'),
+(444, 27, 'Updated the Prenatal follow-up date for Lolita Villarosa Gerose', 'October 26, 2019 - 7:00 pm'),
+(445, 27, 'Added a Prenatal follow-up date for Mercy Buenafuente', 'October 26, 2019 - 7:02 pm'),
+(446, 27, 'Updated the Prenatal follow-up date for Mercy Buenafuente', 'October 26, 2019 - 7:02 pm'),
+(447, 27, 'Updated the Prenatal follow-up date for Mercy Buenafuente', 'October 26, 2019 - 7:02 pm'),
+(448, 27, 'Updated the Prenatal follow-up date for Mercy Buenafuente', 'October 26, 2019 - 7:03 pm'),
+(449, 27, 'Updated the Prenatal follow-up date for Mercy Buenafuente', 'October 26, 2019 - 7:06 pm'),
+(450, 27, 'Updated the Prenatal follow-up date for Mercy Buenafuente', 'October 26, 2019 - 7:07 pm'),
+(451, 27, 'Updated the Prenatal follow-up date for Mercy Buenafuente', 'October 26, 2019 - 7:07 pm'),
+(452, 27, 'Updated the Prenatal follow-up date for Lolita Villarosa Gerose', 'October 26, 2019 - 7:08 pm'),
+(453, 27, 'Updated the Prenatal follow-up date for Mercy Buenafuente', 'October 26, 2019 - 7:08 pm'),
+(454, 27, 'Updated the Prenatal follow-up date for Lolita Villarosa Gerose', 'October 26, 2019 - 7:08 pm'),
+(455, 27, 'Updated the Prenatal follow-up date for Mercy Buenafuente', 'October 26, 2019 - 7:08 pm'),
+(456, 27, 'Updated the Prenatal follow-up date for Mercy Buenafuente', 'October 26, 2019 - 7:09 pm'),
+(457, 27, 'Updated the Prenatal follow-up date for Lolita Villarosa Gerose', 'October 26, 2019 - 7:09 pm'),
+(458, 27, 'Updated the Prenatal follow-up date for Mercy Buenafuente', 'October 26, 2019 - 7:09 pm'),
+(459, 27, 'Updated the Prenatal follow-up date for Mercy Buenafuente', 'October 26, 2019 - 7:10 pm'),
+(460, 27, 'Updated the Prenatal follow-up date for Mercy Buenafuente', 'October 26, 2019 - 7:10 pm'),
+(461, 27, 'Updated the Prenatal follow-up date for Lolita Villarosa Gerose', 'October 26, 2019 - 7:13 pm'),
+(462, 27, 'Added a Prenatal follow-up date for Mercy Buenafuente', 'October 26, 2019 - 7:16 pm'),
+(463, 27, 'Edited Lolita Villarosa Gerose Patient Profile', 'October 26, 2019 - 7:17 pm'),
+(464, 27, 'Updated the Prenatal follow-up date for Mercy Buenafuente', 'October 26, 2019 - 7:20 pm'),
+(465, 27, 'Updated the Prenatal follow-up date for Lolita Villarosa Gerose', 'October 26, 2019 - 7:30 pm'),
+(466, 27, 'Updated the Prenatal follow-up date for Lolita Villarosa Gerose', 'October 26, 2019 - 7:31 pm'),
+(467, 27, 'Updated the Prenatal follow-up date for Lolita Villarosa Gerose', 'October 26, 2019 - 7:31 pm'),
+(468, 27, 'Updated the Prenatal follow-up date for Lolita Villarosa Gerose', 'October 26, 2019 - 7:32 pm'),
+(469, 27, 'Updated the Prenatal follow-up date for Lolita Villarosa Gerose', 'October 26, 2019 - 7:32 pm'),
+(470, 27, 'Updated the Prenatal follow-up date for Lolita Villarosa Gerose', 'October 26, 2019 - 7:33 pm'),
+(471, 27, 'Updated the Prenatal follow-up date for Lolita Villarosa Gerose', 'October 26, 2019 - 7:33 pm'),
+(472, 27, 'Added a Prenatal follow-up date for Mercy Buenafuente', 'October 26, 2019 - 7:37 pm'),
+(473, 27, 'Added a Prenatal follow-up date for Mercy Buenafuente', 'October 26, 2019 - 7:38 pm'),
+(474, 27, 'Added a Prenatal follow-up date for Mercy Buenafuente', 'October 26, 2019 - 7:39 pm'),
+(475, 27, 'Added a Prenatal follow-up date for Lolita Villarosa Gerose', 'October 26, 2019 - 7:40 pm'),
+(476, 27, 'Updated the Prenatal follow-up date for Lolita Villarosa Gerose', 'October 26, 2019 - 7:40 pm'),
+(477, 27, 'Updated the Prenatal follow-up date for Mercy Buenafuente', 'October 26, 2019 - 7:40 pm'),
+(478, 27, 'Updated the Prenatal follow-up date for Mercy Buenafuente', 'October 26, 2019 - 7:41 pm'),
+(479, 27, 'Updated the Prenatal follow-up date for Mercy Buenafuente', 'October 26, 2019 - 7:41 pm'),
+(480, 27, 'Updated the Prenatal follow-up date for Lolita Villarosa Gerose', 'October 26, 2019 - 7:42 pm'),
+(481, 27, 'Updated the Prenatal follow-up date for Mercy Buenafuente', 'October 26, 2019 - 7:42 pm'),
+(482, 27, 'Added a Prenatal follow-up date for Mercy Buenafuente', 'October 26, 2019 - 7:43 pm'),
+(483, 27, 'Updated the Prenatal follow-up date for Mercy Buenafuente', 'October 26, 2019 - 7:45 pm'),
+(484, 27, 'Updated the Prenatal follow-up date for Mercy Buenafuente', 'October 26, 2019 - 7:48 pm'),
+(485, 27, 'Added a Prenatal follow-up date for Mercy Buenafuente', 'October 26, 2019 - 7:49 pm'),
+(486, 27, 'Added a Prenatal follow-up date for Lolita Villarosa Gerose', 'October 26, 2019 - 7:49 pm'),
+(487, 27, 'Updated the Prenatal follow-up date for Mercy Buenafuente', 'October 26, 2019 - 7:50 pm'),
+(488, 27, 'Updated the Prenatal follow-up date for Mercy Buenafuente', 'October 26, 2019 - 7:50 pm'),
+(489, 27, 'Updated the Prenatal follow-up date for Mercy Buenafuente', 'October 26, 2019 - 7:51 pm'),
+(490, 27, 'Updated the Prenatal follow-up date for Mercy Buenafuente', 'October 26, 2019 - 7:51 pm'),
+(491, 27, 'Added a Family Planning follow-up date for Mercy Buenafuente', 'October 26, 2019 - 7:52 pm'),
+(492, 27, 'Added a Family Planning follow-up date for Lolita Villarosa Gerose', 'October 26, 2019 - 7:53 pm'),
+(493, 27, 'Added a Family Planning follow-up date for Mercy Buenafuente', 'October 26, 2019 - 8:15 pm'),
+(494, 27, 'Added a Family Planning follow-up date for Lolita Villarosa Gerose', 'October 26, 2019 - 8:20 pm'),
+(495, 27, 'Added a Family Planning follow-up date for Mercy Buenafuente', 'October 26, 2019 - 8:23 pm'),
+(496, 27, 'Updated the Family Planning follow-up date for Lolita Villarosa Gerose', 'October 26, 2019 - 8:31 pm'),
+(497, 27, 'Updated the Family Planning follow-up date for Lolita Villarosa Gerose', 'October 26, 2019 - 8:32 pm'),
+(498, 27, 'Updated the Family Planning follow-up date for Lolita Villarosa Gerose', 'October 26, 2019 - 8:34 pm'),
+(499, 27, 'Updated the Family Planning follow-up date for Mercy Buenafuente', 'October 26, 2019 - 8:35 pm'),
+(500, 27, 'Updated the Family Planning follow-up date for Mercy Buenafuente', 'October 26, 2019 - 8:35 pm'),
+(501, 27, 'Successfully Backup the database', 'October 26, 2019, 8:36 pm'),
+(502, 27, 'Added a Prenatal follow-up date for Mercy Buenafuente', 'October 26, 2019 - 8:41 pm'),
+(503, 27, 'Updated the Prenatal follow-up date for Lolita Villarosa Gerose', 'October 26, 2019 - 8:41 pm'),
+(504, 27, 'Added a Prenatal follow-up date for Mercy Buenafuente', 'October 26, 2019 - 8:41 pm'),
+(505, 27, 'Added a Prenatal follow-up date for Lolita Villarosa Gerose', 'October 26, 2019 - 8:42 pm'),
+(506, 27, 'Added a Prenatal follow-up date for Mercy Buenafuente', 'October 26, 2019 - 8:42 pm'),
+(507, 27, 'Updated the Prenatal follow-up date for Lolita Villarosa Gerose', 'October 26, 2019 - 8:42 pm'),
+(508, 27, 'Added a New Referral', 'October 26, 2019 10:09 pm'),
+(509, 27, 'Added a New Referral', 'October 26, 2019 10:10 pm'),
+(510, 27, 'Added a New Referral', 'October 26, 2019 10:12 pm'),
+(511, 27, 'Added a New Referral', 'October 26, 2019 10:14 pm'),
+(512, 27, 'Added a New Referral', 'October 26, 2019 10:14 pm'),
+(513, 27, 'Added a New Referral', 'October 26, 2019 11:04 pm'),
+(514, 27, 'Added a New Referral', 'October 26, 2019 11:19 pm'),
+(515, 27, 'Added a New Prenatal Referral Record', 'October 26, 2019 11:21 pm'),
+(516, 27, 'Added a New Prenatal Referral Record', 'October 26, 2019 11:21 pm'),
+(517, 27, 'Added a New Prenatal Referral Record', 'October 26, 2019 11:22 pm'),
+(518, 27, 'Added a New Prenatal Referral Record', 'October 26, 2019 11:23 pm'),
+(519, 27, 'Added a New Prenatal Referral Record', 'October 26, 2019 11:27 pm'),
+(520, 27, 'Successfully Backup the database', 'October 26, 2019, 11:29 pm');
 
 --
 -- Indexes for dumped tables
@@ -646,6 +871,18 @@ ALTER TABLE `prenatal_follow_up`
   ADD PRIMARY KEY (`follow_up_id`);
 
 --
+-- Indexes for table `referral`
+--
+ALTER TABLE `referral`
+  ADD PRIMARY KEY (`referral_id`);
+
+--
+-- Indexes for table `referral_prenatal`
+--
+ALTER TABLE `referral_prenatal`
+  ADD PRIMARY KEY (`referral_id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -677,19 +914,19 @@ ALTER TABLE `consultation`
 -- AUTO_INCREMENT for table `db_backup`
 --
 ALTER TABLE `db_backup`
-  MODIFY `back_up_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `back_up_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `family_planning`
 --
 ALTER TABLE `family_planning`
-  MODIFY `family_planning_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `family_planning_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `fp_follow_up`
 --
 ALTER TABLE `fp_follow_up`
-  MODIFY `fp_follow_up_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `fp_follow_up_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `immunization`
@@ -737,7 +974,19 @@ ALTER TABLE `prenatal`
 -- AUTO_INCREMENT for table `prenatal_follow_up`
 --
 ALTER TABLE `prenatal_follow_up`
-  MODIFY `follow_up_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `follow_up_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+
+--
+-- AUTO_INCREMENT for table `referral`
+--
+ALTER TABLE `referral`
+  MODIFY `referral_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `referral_prenatal`
+--
+ALTER TABLE `referral_prenatal`
+  MODIFY `referral_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `users`
@@ -749,7 +998,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `users_activity_log`
 --
 ALTER TABLE `users_activity_log`
-  MODIFY `log_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=401;
+  MODIFY `log_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=521;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

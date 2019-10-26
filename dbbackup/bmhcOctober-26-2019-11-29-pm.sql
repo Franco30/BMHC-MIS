@@ -61,7 +61,7 @@ CREATE TABLE `db_backup` (
   `time` varchar(12) NOT NULL,
   `activity_status` varchar(100) NOT NULL,
   PRIMARY KEY (`back_up_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
 
 INSERT INTO db_backup VALUES("3","27","Export","September 22, 2019","11:17 pm","Successfully Exported Database"); 
 INSERT INTO db_backup VALUES("4","26","Export","September 24, 2019","4:23 am","Successfully Exported Database"); 
@@ -79,6 +79,7 @@ INSERT INTO db_backup VALUES("15","27","Export","October 26, 2019","11:43 am","S
 INSERT INTO db_backup VALUES("16","27","Export","October 26, 2019","12:44 pm","Successfully Exported Database"); 
 INSERT INTO db_backup VALUES("17","27","Export","October 26, 2019","3:02 pm","Successfully Exported Database"); 
 INSERT INTO db_backup VALUES("18","27","Export","October 26, 2019","4:54 pm","Successfully Exported Database"); 
+INSERT INTO db_backup VALUES("19","27","Export","October 26, 2019","8:36 pm","Successfully Exported Database"); 
 
 
 
@@ -353,11 +354,89 @@ CREATE TABLE `prenatal_follow_up` (
   `remarks` varchar(50) NOT NULL,
   `follow_up_status` char(20) NOT NULL,
   PRIMARY KEY (`follow_up_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
 
 INSERT INTO prenatal_follow_up VALUES("17","27","10","October 28, 2019 9:50 AM","For Verification ang bilat","Cancelled"); 
 INSERT INTO prenatal_follow_up VALUES("18","27","10","October 22, 2019 8:25 AM","Sample 2","Done"); 
-INSERT INTO prenatal_follow_up VALUES("19","27","4","October 28, 2019 8:45 AM","sample 2","Pending"); 
+INSERT INTO prenatal_follow_up VALUES("19","27","4","October 28, 2019 8:45 AM","sample 2","Done"); 
+INSERT INTO prenatal_follow_up VALUES("20","27","10","October 26, 2019 8:41 PM","dfd","Pending"); 
+INSERT INTO prenatal_follow_up VALUES("21","27","10","October 07, 2019 8:41 PM","dfdf","Pending"); 
+INSERT INTO prenatal_follow_up VALUES("22","27","4","October 01, 2019 8:41 PM","dfdfd","Done"); 
+INSERT INTO prenatal_follow_up VALUES("23","27","10","October 08, 2019 8:41 PM","dfdf","Pending"); 
+
+
+
+DROP TABLE referral;
+
+CREATE TABLE `referral` (
+  `referral_id` int(11) NOT NULL AUTO_INCREMENT,
+  `referral_date` varchar(50) NOT NULL,
+  `from_clinic` varchar(100) NOT NULL,
+  `to_hospital` varchar(100) NOT NULL,
+  `origin_address` varchar(100) NOT NULL,
+  `destination_address` varchar(100) NOT NULL,
+  `patient_name` varchar(50) NOT NULL,
+  `weight` varchar(30) NOT NULL,
+  `bp` varchar(30) NOT NULL,
+  `temp` varchar(30) NOT NULL,
+  `age` varchar(30) NOT NULL,
+  `complaints` varchar(100) NOT NULL,
+  `referred_by` varchar(50) NOT NULL,
+  `designation` varchar(50) NOT NULL,
+  `month` varchar(50) NOT NULL,
+  `year` varchar(30) NOT NULL,
+  `date_time` varchar(50) NOT NULL,
+  PRIMARY KEY (`referral_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+
+INSERT INTO referral VALUES("1","October 21, 2019","Mansilingan Health Center","CLMH","Mansilingan, Bacolod City","Lacson St, Bacolod, 6100 Negros Occidental","LeBron James","98","180/90","37.5","37","Sakit tiyan, kagat ka ayam, bilatan man","Kawhi Leonard","Sa Tangkal ka Baboy","Oct","2019","October 26, 2019 9:00 AM"); 
+INSERT INTO referral VALUES("2","October 21, 2019","Mansilingan Health Center","CLMH","Mansilingan, Bacolod City","Lacson St, Bacolod, 6100 Negros Occidental","Anthony Davis","98","180/90","37.5","37","Sakit tiyan, kagat ka ayam, bilatan man","Kawhi Leonard","Sa Tangkal ka Baboy","Oct","2019","October 26, 2019 9:00 AM"); 
+INSERT INTO referral VALUES("3","October 16, 2019","Mansilingan Health Center","3","Mansilingan, Bacolod City","3","33sdfdfd","333","333/33","33.3","33","333","Jesse Franco Latosa","33","Oct","2019","October 26, 2019 10:09 pm"); 
+INSERT INTO referral VALUES("4","October 26, 2019","Mansilingan Health Center","Riverside Hospital","Mansilingan, Bacolod City","Lacson St.","Johnny Sins","90","130/50","36.4","38","Sakit itlog kag naga katol ang itlog horny ba","Manilyn V. Jimera","Super Emergency Room","Oct","2019","October 26, 2019 10:10 pm"); 
+INSERT INTO referral VALUES("5","October 23, 2019","Mansilingan Health Center","CLMH","Mansilingan, Bacolod City","Lacson St.","James Reid","90","140/40","33.3","33","High Fever","Jesse Franco Latosa","ER","Oct","2019","October 26, 2019 10:12 pm"); 
+INSERT INTO referral VALUES("6","October 23, 2019","Mansilingan Health Center","a;d","Mansilingan, Bacolod City","df;dfk","Bianca Umali","44","303/03","40.4","44","sfgdf","Jesse Franco Latosa","dfdfdf","Oct","2019","October 26, 2019 10:14 pm"); 
+INSERT INTO referral VALUES("7","October 24, 2019","Mansilingan Health Center","dd","Mansilingan, Bacolod City","dfdf","dfdf","33","333/33","33.3","333","dfdf","John Phillip Dela Cruz","dfdfd","Oct","2019","October 26, 2019 10:14 pm"); 
+INSERT INTO referral VALUES("8","October 22, 2019","Mansilingan Health Center","sdfgsf","Mansilingan, Bacolod City","sgsf","Dennzel Cuachon","44","444/44","44.4","44","fgsfg","John Phillip Dela Cruz","444","Oct","2019","October 26, 2019 11:04 pm"); 
+
+
+
+DROP TABLE referral_prenatal;
+
+CREATE TABLE `referral_prenatal` (
+  `referral_id` int(11) NOT NULL AUTO_INCREMENT,
+  `referral_date` varchar(50) NOT NULL,
+  `from_clinic` varchar(100) NOT NULL,
+  `to_hospital` varchar(100) NOT NULL,
+  `origin_address` varchar(100) NOT NULL,
+  `destination_address` varchar(100) NOT NULL,
+  `patient_name` varchar(50) NOT NULL,
+  `weight` varchar(30) NOT NULL,
+  `bp` varchar(30) NOT NULL,
+  `temp` varchar(30) NOT NULL,
+  `age` varchar(30) NOT NULL,
+  `complaints` varchar(100) NOT NULL,
+  `gravida` varchar(50) NOT NULL,
+  `para` varchar(50) NOT NULL,
+  `fh` varchar(50) NOT NULL,
+  `fhb` varchar(50) NOT NULL,
+  `tt` varchar(50) NOT NULL,
+  `given` varchar(50) NOT NULL,
+  `referred_by` varchar(50) NOT NULL,
+  `designation` varchar(50) NOT NULL,
+  `month` varchar(50) NOT NULL,
+  `year` varchar(30) NOT NULL,
+  `date_time` varchar(50) NOT NULL,
+  PRIMARY KEY (`referral_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
+
+INSERT INTO referral_prenatal VALUES("8","October 21, 2019","Mansilingan Health Center","CLMH","Mansilingan, Bacolod City","Lacson st.","Kherrie Tejare","50","130/40","37.5","18","Fever","1","1","2","2","TT3","October 22, 2019","Jesse Franco Latosa","Hospital ehh syempre","Oct","2019","October 26, 2019 9:00 AM"); 
+INSERT INTO referral_prenatal VALUES("9","October 21, 2019","Mansilingan Health Center","CLMH","Mansilingan, Bacolod City","Lacson st.","Kherrie Tejare","50","130/40","37.5","18","Fever","1","1","2","2","TT3","October 22, 2019","Jesse Franco Latosa","Hospital ehh syempre","Oct","2019","October 26, 2019 9:00 AM"); 
+INSERT INTO referral_prenatal VALUES("10","October 23, 2019","Mansilingan Health Center","CLMH","Mansilingan, Bacolod City","Lacson St.","Franze Beatriz Caballero","78","150/55","37.6","17","Fever","1","1","1","1","TT1","October 22, 2019","Jesse Franco Latosa","E.R.","Oct","2019","October 26, 2019 11:19 pm"); 
+INSERT INTO referral_prenatal VALUES("11","October 15, 2019","Mansilingan Health Center","3","Mansilingan, Bacolod City","3","dfdf","33","333/33","33.3","33","3","3","3","3","3","3","October 07, 2019","John Phillip Dela Cruz","3","Oct","2019","October 26, 2019 11:21 pm"); 
+INSERT INTO referral_prenatal VALUES("12","October 16, 2019","Mansilingan Health Center","3","Mansilingan, Bacolod City","3","dfd","3","333/33","33.3","33","3","3","3","3","3","3","October 23, 2019","Jesse Franco Latosa","33","Oct","2019","October 26, 2019 11:21 pm"); 
+INSERT INTO referral_prenatal VALUES("13","October 17, 2019","Mansilingan Health Center","3","Mansilingan, Bacolod City","3","AFASDFASDF","3","333/33","33.3","33","3","3","3","3","3","33","October 14, 2019","John Phillip Dela Cruz","33","Oct","2019","October 26, 2019 11:22 pm"); 
+INSERT INTO referral_prenatal VALUES("14","October 09, 2019","Mansilingan Health Center","3","Mansilingan, Bacolod City","3","asdfsadfasdf","33","333/33","33.3","3","3","3","3","3","3","3","October 15, 2019","John Phillip Dela Cruz","3","Oct","2019","October 26, 2019 11:23 pm"); 
+INSERT INTO referral_prenatal VALUES("15","October 24, 2019","Mansilingan Health Center","CLMH","Mansilingan, Bacolod City","Lacson St.","Franze Beatriz Caballero","66","150/55","36.6","17","Fever","0","1","1","1","TT3","October 23, 2019","Jesse Franco Latosa","S.R.","Oct","2019","October 26, 2019 11:27 pm"); 
 
 
 
@@ -395,7 +474,7 @@ CREATE TABLE `users_activity_log` (
   `action` varchar(100) NOT NULL,
   `date_time` varchar(70) NOT NULL,
   PRIMARY KEY (`log_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=501 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=520 DEFAULT CHARSET=latin1;
 
 INSERT INTO users_activity_log VALUES("339","27","added 20 pieces of 1 to stocks","October 11, 2019 1:47 am"); 
 INSERT INTO users_activity_log VALUES("340","27","dispensed 100 Cefalexin 250  to Janeil Alcano","October 11, 2019 1:49 am"); 
@@ -559,6 +638,25 @@ INSERT INTO users_activity_log VALUES("497","27","Updated the Family Planning fo
 INSERT INTO users_activity_log VALUES("498","27","Updated the Family Planning follow-up date for Lolita Villarosa Gerose","October 26, 2019 - 8:34 pm"); 
 INSERT INTO users_activity_log VALUES("499","27","Updated the Family Planning follow-up date for Mercy Buenafuente","October 26, 2019 - 8:35 pm"); 
 INSERT INTO users_activity_log VALUES("500","27","Updated the Family Planning follow-up date for Mercy Buenafuente","October 26, 2019 - 8:35 pm"); 
+INSERT INTO users_activity_log VALUES("501","27","Successfully Backup the database","October 26, 2019, 8:36 pm"); 
+INSERT INTO users_activity_log VALUES("502","27","Added a Prenatal follow-up date for Mercy Buenafuente","October 26, 2019 - 8:41 pm"); 
+INSERT INTO users_activity_log VALUES("503","27","Updated the Prenatal follow-up date for Lolita Villarosa Gerose","October 26, 2019 - 8:41 pm"); 
+INSERT INTO users_activity_log VALUES("504","27","Added a Prenatal follow-up date for Mercy Buenafuente","October 26, 2019 - 8:41 pm"); 
+INSERT INTO users_activity_log VALUES("505","27","Added a Prenatal follow-up date for Lolita Villarosa Gerose","October 26, 2019 - 8:42 pm"); 
+INSERT INTO users_activity_log VALUES("506","27","Added a Prenatal follow-up date for Mercy Buenafuente","October 26, 2019 - 8:42 pm"); 
+INSERT INTO users_activity_log VALUES("507","27","Updated the Prenatal follow-up date for Lolita Villarosa Gerose","October 26, 2019 - 8:42 pm"); 
+INSERT INTO users_activity_log VALUES("508","27","Added a New Referral","October 26, 2019 10:09 pm"); 
+INSERT INTO users_activity_log VALUES("509","27","Added a New Referral","October 26, 2019 10:10 pm"); 
+INSERT INTO users_activity_log VALUES("510","27","Added a New Referral","October 26, 2019 10:12 pm"); 
+INSERT INTO users_activity_log VALUES("511","27","Added a New Referral","October 26, 2019 10:14 pm"); 
+INSERT INTO users_activity_log VALUES("512","27","Added a New Referral","October 26, 2019 10:14 pm"); 
+INSERT INTO users_activity_log VALUES("513","27","Added a New Referral","October 26, 2019 11:04 pm"); 
+INSERT INTO users_activity_log VALUES("514","27","Added a New Referral","October 26, 2019 11:19 pm"); 
+INSERT INTO users_activity_log VALUES("515","27","Added a New Prenatal Referral Record","October 26, 2019 11:21 pm"); 
+INSERT INTO users_activity_log VALUES("516","27","Added a New Prenatal Referral Record","October 26, 2019 11:21 pm"); 
+INSERT INTO users_activity_log VALUES("517","27","Added a New Prenatal Referral Record","October 26, 2019 11:22 pm"); 
+INSERT INTO users_activity_log VALUES("518","27","Added a New Prenatal Referral Record","October 26, 2019 11:23 pm"); 
+INSERT INTO users_activity_log VALUES("519","27","Added a New Prenatal Referral Record","October 26, 2019 11:27 pm"); 
 
 
 

@@ -4,28 +4,33 @@ if(isset($_POST['show'])){
 ?>
 <table id="prenatalreferralpatienttable" class="table datatable">
     <thead>
-        <tr>
-            <th><center>From</center></th>
-            <th><center>To</center></th>
+        <tr class="warning">
             <th><center>Patient Name</center></th>
-            <th><center>Tetanus Toxoid</center></th>
+            <th><center>Hospital</center></th>
             <th><center>Complaints</center></th>
             <th><center>Referred by</center></th>
-            <th><center>Date</center></th>
+            <th><center>Referral Date</center></th>
             <th><center>Action</center></th>
         </tr>
     </thead>
     <tbody>
+        <?php
+	$conn = new mysqli("localhost", "root", "", "bmhc") or die(mysqli_error());
+			$query = $conn->query("SELECT * FROM `referral_prenatal` ORDER BY `referral_id` DESC") or die(mysqli_error());
+			while($fetch = $query->fetch_array()){
+											?>
         <tr>
-            <td><center>Mansilingan Health Center</center></td>
-            <td><center>City Health Office</center></td>
-            <td><center>Ricardo Dalisay</center></td>
-            <td><center>TT3</center></td>
-            <td><center>High Fever</center></td>
-            <td><center>Emily Huelanda</center></td>
-            <td><center>September 1, 2019</center></td>
-            <td><center><button class="btn btn-sm btn-info" type="button">View More</button></center></td>
+            <td><center><?php echo $fetch['patient_name'] ?></center></td>
+            <td><center><?php echo $fetch['to_hospital'] ?></center></td>
+            <td><center><?php echo $fetch['complaints'] ?></center></td>
+            <td><center><?php echo $fetch['referred_by'] ?></center></td>
+            <td><center><?php echo $fetch['referral_date'] ?></center></td>
+            <td><center><button class="btn btn-sm btn-info" type="button">Overview</button></center></td>
         </tr>
+                <?php
+			}
+			$conn->close();
+		?>
     </tbody>
 </table>
 <?php

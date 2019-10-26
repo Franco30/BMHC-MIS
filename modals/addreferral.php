@@ -29,19 +29,19 @@
                                 <div class="col-md-3">
                                     <div class="form-group" style="margin-left:-10px;">
                                         <label>Weight:</label>
-                                        <input type="text" class="form-control" id="weight" required />
+                                        <input type="number" class="form-control" id="weight" required />
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group" style="margin-left:-10px;">
                                         <label>Blood Pressure:</label>
-                                        <input type="text" class="form-control" id="bloodpressure" required />
+                                        <input type="text" class="mask_bp form-control" id="bp" required />
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group" style="margin-left:-10px;">
                                         <label>Temperature:</label>
-                                        <input type="text" class="form-control" id="address2" required />
+                                        <input type="text" class="mask_temp form-control" id="temp" required />
                                     </div>
                                 </div>
                                 <div class="col-md-3">
@@ -54,7 +54,7 @@
                             &nbsp;
                             <div class="form-group">
                                 <label>Complaints</label>
-                                <textarea class="form-control" spellcheck="false" id="patient_complaints"></textarea>
+                                <textarea class="form-control" spellcheck="false" id="complaints"></textarea>
                             </div>
                         </div>
 
@@ -67,7 +67,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="form-group" style="margin-right:-10px;">
+                                    <div class="form-group" style="margin-right:-10px;margin-left:-10px">
                                         <label>To:</label>
                                         <input type="text" class="form-control" id="to" placeholder="Enter Hospital" required />
                                     </div>
@@ -78,24 +78,24 @@
                                 <div class="col-md-6">
                                     <div class="form-group" style="margin-left:-10px;">
                                         <label>Origin Address:</label>
-                                        <input type="text" class="form-control" id="address1" value="Mansilingan, Bacolod City" style="color:#444444;" readonly required />
+                                        <input type="text" class="form-control" id="origin" value="Mansilingan, Bacolod City" style="color:#444444;" readonly required />
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="form-group" style="margin-right:-10px;">
+                                    <div class="form-group" style="margin-right:-10px;margin-left:-10px">
                                         <label>Destination Address:</label>
-                                        <input type="text" class="form-control" id="address2" placeholder="Enter Destination Address" required />
+                                        <input type="text" class="form-control" id="destination" placeholder="Enter Destination Address" required />
                                     </div>
                                 </div>
                             </div>
                             &nbsp;
                             <div class="form-group">
                                 <label>Referred By:</label>
-                                <select class="form-control select" data-live-search="true" id="user">
+                                <select class="form-control select" data-live-search="true" id="referred_by">
                                     <option value="#">Select</option>
                                     <?php
 	                $conn = new mysqli("localhost", "root", "", "bmhc") or die(mysqli_error());
-					$query = $conn->query("SELECT * FROM `users` where `status` = '1'") or die(mysqli_error());
+					$query = $conn->query("SELECT * FROM `users` where `position` = 'Nurse'") or die(mysqli_error());
                                     
 					while($fetch = $query->fetch_array()){
                         
