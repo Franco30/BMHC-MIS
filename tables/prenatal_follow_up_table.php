@@ -29,33 +29,34 @@ if(isset($_POST['show'])){
         <tbody>
             <?php
                 require '../require/config.php';
-                $query = $conn->query("SELECT * FROM `prenatal_follow_up` NATURAL JOIN `patient` WHERE `prenatal_follow_up`.`patient_id` = `patient`.`patient_id` ORDER BY `follow_up_id` DESC") or die(mysqli_error());
-                while($fetch = $query->fetch_array()){
+                $query1 = $conn->query("SELECT * FROM `prenatal_follow_up` NATURAL JOIN `patient` WHERE `prenatal_follow_up`.`patient_id` = `patient`.`patient_id` ORDER BY `follow_up_id` DESC") or die(mysqli_error());
+                while($fetch1 = $query1->fetch_array()){
 		?>
             <tr>
                 <td>
-                    <center><strong><?php echo $fetch['year']?><?php echo "0".$fetch['patient_id']?></strong></center>
+                    <center><strong><?php echo $fetch1['year']?><?php echo "0".$fetch1['patient_id']?></strong></center>
                 </td>
                 <td>
-                    <center><strong><?php echo $fetch['patient_name']?></strong></center>
+                    <center><strong><?php echo $fetch1['patient_name']?></strong></center>
                 </td>
                 <td>
-                    <center><?php echo $fetch['follow_up_date_time']?></center>
+                    <center><?php echo $fetch1['follow_up_date_time']?></center>
                 </td>
                 <td>
-                    <center><?php echo $fetch['remarks']?></center>
+                    <center><?php echo $fetch1['remarks']?></center>
                 </td>
                 <td>
                     <center>
-                        <?php if ($fetch['follow_up_status'] == 'Pending')echo "<span class='badge badge-danger animated infinite pulse' style='animation-duration:.8s;'>Pending</span>";
-				if ($fetch['follow_up_status'] == 'Done')
-                echo "<span class='badge badge-info'>Done</span>"
+                        <?php 
+                    if ($fetch1['follow_up_status'] == 'Pending')echo "<span class='badge badge-danger animated infinite pulse' style='animation-duration:.8s;'>Pending</span>";
+                    if ($fetch1['follow_up_status'] == 'Done')echo "<span class='badge badge-info'>Done</span>";
+                    if ($fetch1['follow_up_status'] == 'Cancelled')echo "<span class='badge badge-warning'>Cancelled</span>";
 				?></center>
                 </td>
                 <td>
-                    <center><button class="btn btn-sm btn-info" data-toggle="modal" data-target="#edit_follow_up<?php echo $fetch['patient_id'];?>">UPDATE</button></center>
+                    <center><button class="btn btn-sm btn-info" data-toggle="modal" data-target="#edit_follow_up<?php echo $fetch1['follow_up_id'];?>">UPDATE</button></center>
+                    <?php require('../modals/edit_prenatal_follow_up.php'); ?>
                 </td>
-                <?php //require('../modals/edit_prenatal_follow_up.php'); ?>
             </tr>
             <?php
 		  }

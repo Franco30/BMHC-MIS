@@ -47,15 +47,16 @@ if(isset($_POST['show'])){
                 </td>
                 <td>
                     <center>
-                        <?php if ($fetch1['follow_up_status'] == 'Pending')echo "<span class='badge badge-danger animated infinite pulse' style='animation-duration:.8s;'>Pending</span>";
-				if ($fetch1['follow_up_status'] == 'Done')
-                echo "<span class='badge badge-info'>Done</span>"
+                <?php 
+                if ($fetch1['follow_up_status'] == 'Pending')echo "<span class='badge badge-danger animated infinite pulse' style='animation-duration:.8s;'>Pending</span>";
+				if ($fetch1['follow_up_status'] == 'Done')echo "<span class='badge badge-info'>Done</span>";
+                if ($fetch1['follow_up_status'] == 'Cancelled')echo "<span class='badge badge-warning'>Cancelled</span>";
 				?></center>
                 </td>
                 <td>
-                    <center><button class="btn btn-sm btn-info" data-toggle="modal" data-target="#fp_follow_up<?php echo $fetch1['patient_id']; ?>">UPDATE</button></center>
+                    <center><button class="btn btn-sm btn-info" data-toggle="modal" data-target="#edit_fp_follow_up<?php echo $fetch1['fp_follow_up_id']; ?>">UPDATE</button></center>
                 </td>
-                <?php //require('../modals/edit_fp_follow_up.php'); ?>
+                <?php require('../modals/edit_fp_follow_up.php'); ?>
             </tr>
             <?php
 		  }

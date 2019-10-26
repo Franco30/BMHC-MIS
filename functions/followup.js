@@ -45,7 +45,10 @@ $(document).ready(function () {
                             $(document).find('.select').selectpicker();
                         });
                         $(document).ajaxComplete(function () {
-                            $(document).find('.datepicker').datepicker();
+                            $(document).find('.datepicker').datepicker({
+                                format: 'MM dd, yyyy',
+                                language: 'en'
+                            });
                         });
                         show_follow_up_familyplanning();
                     }
@@ -55,6 +58,56 @@ $(document).ready(function () {
             $('form').trigger('reset');
         }
 
+    });
+
+    $(document).on('click', '.edit_fp_follow_up', function () {
+        $fp_follow_up_id = $(this).val();
+        $patient = $('#patient' + $fp_follow_up_id).val();
+        $date_given = $('#date_given' + $fp_follow_up_id).val();
+        $method = $('#method' + $fp_follow_up_id).val();
+        $units = $('#units' + $fp_follow_up_id).val();
+        $remarks2 = $('#remarks2' + $fp_follow_up_id).val();
+        $provider = $('#provider' + $fp_follow_up_id).val();
+        $next_service_date = $('#next_service_date' + $fp_follow_up_id).val();
+        $status = $('#status' + $fp_follow_up_id).val();
+        if (confirm('Are you sure you want to edit this follow-up?')) {
+            $.ajax({
+                type: "POST",
+                url: "action/editfpfollowup.php",
+                cache: false,
+                async: false,
+                data: {
+                    fp_follow_up_id: $fp_follow_up_id,
+                    patient: $patient,
+                    date_given: $date_given,
+                    method: $method,
+                    units: $units,
+                    remarks2: $remarks2,
+                    provider: $provider,
+                    next_service_date: $next_service_date,
+                    status: $status,
+                    edit: 1,
+                },
+                success: function () {
+                    $('#alert').slideDown();
+                    $('#alerttext').text('Successfully updated Follow-up Schedule!');
+                    setTimeout(function () {
+                        $('#alert').fadeOut('slow');
+                    }, 1500);
+
+                    $(document).ajaxComplete(function () {
+                        $(document).find('.select').selectpicker();
+                    });
+                    $(document).ajaxComplete(function () {
+                        $(document).find('.datepicker').datepicker({
+                            format: 'MM dd, yyyy',
+                            language: 'en'
+                        });
+                    });
+                    show_follow_up_familyplanning();
+                }
+            });
+        }
     });
 
     $(document).on('click', '#add_prenatal_follow_up', function () {
@@ -92,7 +145,9 @@ $(document).ready(function () {
                             $(document).find('.select').selectpicker();
                         });
                         $(document).ajaxComplete(function () {
-                            $(document).find('.datetimepicker').datetimepicker();
+                            $(document).find('.datetimepicker').datetimepicker({
+                                format: 'MMMM DD, YYYY LT'
+                            });
                         });
                         show_follow_up_prenatal();
                     }
@@ -102,6 +157,47 @@ $(document).ready(function () {
             $('form').trigger('reset');
         }
 
+    });
+
+    $(document).on('click', '.edit_prenatal_follow_up', function () {
+        $follow_up_id = $(this).val();
+        $patient2 = $('#patient2' + $follow_up_id).val();
+        $follow_up_date_time2 = $('#follow_up_date_time2' + $follow_up_id).val();
+        $remarks = $('#remarks' + $follow_up_id).val();
+        $status2 = $('#status2' + $follow_up_id).val();
+        if (confirm('Are you sure you want to edit this follow-up?')) {
+            $.ajax({
+                type: "POST",
+                url: "action/editprenatalfollowup.php",
+                cache: false,
+                async: false,
+                data: {
+                    follow_up_id: $follow_up_id,
+                    patient2: $patient2,
+                    follow_up_date_time2: $follow_up_date_time2,
+                    remarks: $remarks,
+                    status2: $status2,
+                    edit: 1,
+                },
+                success: function () {
+                    $('#alert').slideDown();
+                    $('#alerttext').text('Successfully updated Follow-up Schedule!');
+                    setTimeout(function () {
+                        $('#alert').fadeOut('slow');
+                    }, 1500);
+
+                    $(document).ajaxComplete(function () {
+                        $(document).find('.select').selectpicker();
+                    });
+                    $(document).ajaxComplete(function () {
+                        $(document).find('.datetimepicker').datetimepicker({
+                            format: 'MMMM DD, YYYY LT',
+                        });
+                    });
+                    show_follow_up_prenatal();
+                }
+            });
+        }
     });
 });
 

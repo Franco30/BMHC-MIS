@@ -61,7 +61,7 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="panel panel-default">
-                                                <div class="panel-body list-group list-group-contacts scroll" style="height: 430px;">
+                                                <div class="panel-body list-group list-group-contacts scroll" style="height: 480px;">
                                                     <div class="panel-body">
                                                         <div id="prenatalfollowupTable"></div>
                                                     </div>
@@ -74,7 +74,7 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="panel panel-default">
-                                                <div class="panel-body list-group list-group-contacts scroll" style="height: 430px;">
+                                                <div class="panel-body list-group list-group-contacts scroll" style="height: 480px;">
                                                     <div class="panel-body">
                                                         <div id="fpfollowupTable"></div>
                                                     </div>
