@@ -36,11 +36,11 @@
             <!-- END BREADCRUMB -->
             <!-- PAGE CONTENT WRAPPER -->
             <div class="page-content-wrap">
-                
+
                 <div id="alert" class="alert alert-info" style="display:none;">
                     <center><span id="alerttext"></span></center>
                 </div>
-                
+
                 <div class="row">
                     <div class="col-md-12">
                         <div class="panel panel-default tabs">
@@ -48,6 +48,15 @@
                                 <li class="active"><a href="#tab-first" role="tab" data-toggle="tab">Prenatal</a></li>
                                 <li><a href="#tab-second" role="tab" data-toggle="tab">Family Planning</a></li>
                                 <!--                                <li><a href="#tab-third" role="tab" data-toggle="tab">Immunization</a></li>-->
+                                <div class="btn-group pull-right">
+                                    <div class="pull-left">
+                                        <button class="btn btn-primary" data-toggle="modal" data-target="#p_follow_up">Prenatal Follow-up Visit</button>
+                                        <button class="btn btn-primary btn-md" data-toggle="modal" data-target="#fp_follow_up">
+                                            Family Planning Follow-up Visit</button>
+                                        <?php require 'modals/fp_follow_up.php'; ?>
+                                        <?php require 'modals/prenatal_follow_up.php'; ?>
+                                    </div>
+                                </div>
                             </ul>
                             <div class="panel-body tab-content">
                                 <div class="tab-pane active" id="tab-first">

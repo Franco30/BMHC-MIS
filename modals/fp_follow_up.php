@@ -1,4 +1,4 @@
-<div class="modal fade" id="fp_follow_up<?php echo $fetch1['patient_id']; ?>" tabindex="-1" role="dialog" aria-labelledby="defModalHead" aria-hidden="true">
+<div class="modal fade" id="fp_follow_up" tabindex="-1" role="dialog" aria-labelledby="defModalHead" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <center>
@@ -15,9 +15,23 @@
             <form id="fpfollowup">
                     <fieldset>
                         <div class="form-group">
+                            <label>Patient Name</label>
+                            <select class="form-control select" data-live-search="true" id="patient">
+									<option value="#">Select</option>
+									<?php
+	                $conn = new mysqli("localhost", "root", "", "bmhc") or die(mysqli_error());
+					$query = $conn->query("SELECT * FROM `family_planning` NATURAL JOIN `patient` GROUP BY `patient_id` ORDER BY `family_planning_id` DESC") or die(mysqli_error());
+
+					while($fetch = $query->fetch_array()){
+									?>
+									<option value="<?php echo $fetch['patient_id'];?>"><?php echo $fetch['patient_name']?></option>
+									<?php
+					}
+									?> 
+								</select>
+                        </div>
+                        <div class="form-group">
                             <label>Date Service Given</label>
-                            <input type="hidden" class="form-control" id="patient_id" value="<?php echo $fetch1['patient_id'];?>" required>
-							<input type="hidden" class="form-control" id="patient_name" value="<?php echo $fetch1['patient_name'];?>" required>
                             <input type="text" class="form-control datepicker" id="date_given" required/>
                         </div>
                         <div class="form-group">
@@ -38,11 +52,11 @@
 									<option value="#">Select</option>
 									<?php
 	                $conn = new mysqli("localhost", "root", "", "bmhc") or die(mysqli_error());
-					$query2 = $conn->query("SELECT * FROM `users`") or die(mysqli_error());
+					$query = $conn->query("SELECT * FROM `users`") or die(mysqli_error());
 
-					while($fetch2 = $query2->fetch_array()){
+					while($fetch = $query->fetch_array()){
 									?>
-									<option value="<?php echo $fetch2['user_id'];?>"><?php echo $fetch2['fullname']?></option>
+									<option value="<?php echo $fetch['user_id'];?>"><?php echo $fetch['fullname']?></option>
 									<?php
 					}
 									?> 

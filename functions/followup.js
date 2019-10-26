@@ -3,15 +3,14 @@ $(document).ready(function () {
     show_follow_up_familyplanning();
 
     $(document).on('click', '#add_fp_follow_up', function () {
-        if ($('#date_given').val() == "" || $('#method').val() == "" || $('#units').val() == "" || $('#remarks2').val() == "" || $('#provider').val() == "" || $('#next_service_date').val() == "") {
+        if ($('#patient').val() == "" || $('#date_given').val() == "" || $('#method').val() == "" || $('#units').val() == "" || $('#remarks2').val() == "" || $('#provider').val() == "" || $('#next_service_date').val() == "") {
             $('#modallabel2').slideDown();
             $('#checkfield2').html('<span class="fa fa-exclamation-circle"></span> All fields are required!');
             setTimeout(function () {
                 $('#modallabel2').fadeOut('slow');
             }, 3500);
         } else {
-            $patient_id = $('#patient_id').val();
-            $patient_name = $('#patient_name').val();
+            $patient = $('#patient').val();
             $date_given = $('#date_given').val();
             $method = $('#method').val();
             $units = $('#units').val();
@@ -26,8 +25,7 @@ $(document).ready(function () {
                     cache: false,
                     async: false,
                     data: {
-                        patient_id: $patient_id,
-                        patient_name: $patient_name,
+                        patient: $patient,
                         date_given: $date_given,
                         method: $method,
                         units: $units,
@@ -37,7 +35,7 @@ $(document).ready(function () {
                         add: 1,
                     },
                     success: function () {
-                        $('#fp_follow_up' + $patient_id).modal('hide');
+                        $('#fp_follow_up').modal('hide');
                         $('#alert').slideDown();
                         $('#alerttext').html('<span class="fa fa-check"></span> Successfully added new Follow-up date!');
                         setTimeout(function () {
@@ -60,33 +58,31 @@ $(document).ready(function () {
     });
 
     $(document).on('click', '#add_prenatal_follow_up', function () {
-        if ($('#follow_up_date_time').val() == "" || $('#remarks3').val() == "") {
+        if ($('#patient2').val() == "" || $('#follow_up_date_time').val() == "" || $('#remarks3').val() == "") {
             $('#modallabel').slideDown();
             $('#checkfield').html('<span class="fa fa-exclamation-circle"></span> All fields are required!');
             setTimeout(function () {
                 $('#modallabel').fadeOut('slow');
             }, 3500);
         } else {
-            $patient_id = $('#patient_id').val();
-            $patient_name = $('#patient_name').val();
+            $patient2 = $('#patient2').val();
             $follow_up_date_time = $('#follow_up_date_time').val();
             $remarks3 = $('#remarks3').val();
 
             if (confirm('Are you sure you want to add this new follow-up date?')) {
                 $.ajax({
                     type: "POST",
-                    url: "action/add_fp_follow_up.php",
+                    url: "action/add_p_follow_up.php",
                     cache: false,
                     async: false,
                     data: {
-                        patient_id: $patient_id,
-                        patient_name: $patient_name,
-                        date_given: $date_given,
-                        remarks2: $remarks3,
+                        patient2: $patient2,
+                        follow_up_date_time: $follow_up_date_time,
+                        remarks3: $remarks3,
                         add: 1,
                     },
                     success: function () {
-                        $('#follow_up' + $patient_id).modal('hide');
+                        $('#p_follow_up').modal('hide');
                         $('#alert').slideDown();
                         $('#alerttext').html('<span class="fa fa-check"></span> Successfully added new Follow-up date!');
                         setTimeout(function () {
@@ -119,6 +115,7 @@ function show_follow_up_prenatal() {
         },
         success: function (response) {
             $('#prenatalfollowupTable').html(response);
+            var table = $('#followuptable').DataTable();
         }
     });
 }
