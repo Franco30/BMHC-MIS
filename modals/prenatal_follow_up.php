@@ -13,34 +13,43 @@
             <div class="modal-body">
                 <form id="followup">
                     <fieldset>
-                        <div class="form-group">
-                            <label>Patient Name</label>
-                            <select class="form-control select" data-live-search="true" id="patient2">
-                                <option value="#">Select</option>
-                                <?php
+                        <div class="form-row">
+                            <div class="col-md-6">
+                                <div class="form-group" style="margin-right:-10px;">
+                                    <label>Patient Name</label>
+                                    <select class="form-control select" data-live-search="true" id="patient2">
+                                        <option value="#">Select</option>
+                                        <?php
 	                $conn = new mysqli("localhost", "root", "", "bmhc") or die(mysqli_error());
 					$query = $conn->query("SELECT * FROM `prenatal` NATURAL JOIN `patient` GROUP BY `patient_id` ORDER BY `prenatal_id` DESC") or die(mysqli_error());
 
 					while($fetch = $query->fetch_array()){
 									?>
-                                <option value="<?php echo $fetch['patient_id'];?>"><?php echo $fetch['patient_name']?></option>
-                                <?php
+                                        <option value="<?php echo $fetch['patient_id'];?>"><?php echo $fetch['patient_name']?></option>
+                                        <?php
 					}
 									?>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>Date and Time</label>
-                            <div class="input-group date">
-                                <input type="text" class="form-control datetimepicker" id="follow_up_date_time" />
-                                <div class="input-group-addon">
-                                    <i class="fa fa-calendar"></i>
+                                    </select>
                                 </div>
                             </div>
+                            <div class="col-md-6" style="margin-right:-10px;">
+                                <div class="form-group">
+                                    <label>Date and Time</label>
+                                    <div class="input-group date">
+                                        <input type="text" class="form-control datetimepicker" id="follow_up_date_time" />
+                                        <div class="input-group-addon">
+                                            <i class="fa fa-calendar"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                &nbsp;
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label>Remarks</label>
-                            <textarea type="text" class="form-control" id="remarks3" required></textarea>
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <label>Remarks</label>
+                                <textarea type="text" class="form-control" id="remarks3" required></textarea>
+                            </div>
                         </div>
                     </fieldset>
                 </form>

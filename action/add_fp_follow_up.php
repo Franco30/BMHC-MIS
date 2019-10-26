@@ -25,7 +25,7 @@ if(isset($_POST['add'])){
     $remarks = "Added a Family Planning follow-up date for $patient_name";
     
     require '../require/config.php';
-    $conn->query("INSERT INTO `fp_follow_up` VALUES('', '$patient', '$date_given', '$method', '$units', '$remarks2', '$provider', '$next_service_date')") or die(mysqli_error());
+    $conn->query("INSERT INTO `fp_follow_up` VALUES('', '$patient', '$date_given', '$method', '$units', '$remarks2', '$provider', '$next_service_date', 'Pending')") or die(mysqli_error());
     $conn->query("INSERT INTO `users_activity_log` VALUES('', '$user_id', '$remarks','$date_time')") or die(mysqli_error());
     }
 ?>
