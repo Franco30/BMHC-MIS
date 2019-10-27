@@ -208,8 +208,6 @@
                                                                     <td>
                                                                         <center><?php echo $fetch['gravida']?></center>
                                                                     </td>
-                                                                </tr>
-                                                                <tr>
                                                                     <td class="warning">
                                                                         <center><strong>Para</strong></center>
                                                                     </td>
@@ -224,8 +222,6 @@
                                                                     <td>
                                                                         <center><?php echo $fetch['fh']?></center>
                                                                     </td>
-                                                                </tr>
-                                                                <tr>
                                                                     <td class="warning">
                                                                         <center><strong>Fetal Heartbeat</strong></center>
                                                                     </td>
@@ -234,6 +230,12 @@
                                                                     </td>
                                                                 </tr>
                                                                 <tr>
+                                                                    <td class="warning">
+                                                                        <center><strong>Tetanus Toxoid</strong></center>
+                                                                    </td>
+                                                                    <td>
+                                                                        <center><?php echo $fetch['tt']?></center>
+                                                                    </td>
                                                                     <td class="warning">
                                                                         <center><strong>Given</strong></center>
                                                                     </td>

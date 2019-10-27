@@ -23,7 +23,7 @@
 
 		#print {
 			width: 850px;
-			height: 750px;
+			height: 830px;
 			overflow: hidden;
 			margin: auto;
 			border: 2px solid #000;
@@ -78,8 +78,11 @@ $fetch = $query->fetch_array();
 							<p style="font-size: 15px;margin-left: 20px;" class="text-justify"><strong>WT:</strong>&nbsp;&nbsp;<?php echo $fetch['weight']?> kg.&nbsp;&nbsp;&nbsp;&nbsp; <strong>BP:</strong>&nbsp;&nbsp;<?php echo $fetch['bp']?> mmHg&nbsp;&nbsp;&nbsp;&nbsp;
 								<strong>TEMP:</strong>&nbsp;&nbsp;<?php echo $fetch['temp']?> °C&nbsp;&nbsp;&nbsp;&nbsp; <strong>AGE:</strong>&nbsp;&nbsp;<?php echo $fetch['age']?> yrs. old</p>
 
-							<p style="font-size: 15px;margin-left: 20px;" class="text-justify"><strong>G:</strong>&nbsp;&nbsp;<?php echo $fetch['gravida']?>;&nbsp;&nbsp;&nbsp;&nbsp; <strong>P:</strong>&nbsp;&nbsp;<?php echo $fetch['para']?>;&nbsp;&nbsp;&nbsp;&nbsp;
-								<strong>FH:</strong>&nbsp;&nbsp;<?php echo $fetch['fh']?>;&nbsp;&nbsp;&nbsp;&nbsp; <strong>FHB:</strong>&nbsp;&nbsp;<?php echo $fetch['fhb']?>;</p>
+							<p style="font-size: 15px;margin-left: 20px;" class="text-justify"><strong>weeks AOG via UTZ; </strong><strong>G:</strong>&nbsp;&nbsp;<?php echo $fetch['gravida']?>;&nbsp;&nbsp;&nbsp;&nbsp; <strong>P:</strong>&nbsp;&nbsp;<?php echo $fetch['para']?>;&nbsp;&nbsp;&nbsp;&nbsp;
+								<strong>FH:</strong>&nbsp;&nbsp;<?php echo $fetch['fh']?>;&nbsp;&nbsp;&nbsp;&nbsp; <strong>FHB:</strong>&nbsp;&nbsp;<?php echo $fetch['fhb']?>;&nbsp;&nbsp; </p>
+							
+							<p style="font-size: 15px;margin-left: 20px;" class="text-justify">
+								<strong>Tetanus Toxoid:</strong>&nbsp;<?php echo $fetch['tt']?><strong>&nbsp;&nbsp; given(</strong><?php echo $fetch['given']?><strong>);</strong> <strong>Laboratory & UTZ result attached;</strong></p>
 							<br>
 							<p style="font-size: 15px;margin-left: 20px;" class="text-justify"><strong>COMPLAINTS:</strong>&nbsp;&nbsp;
 								<br>
