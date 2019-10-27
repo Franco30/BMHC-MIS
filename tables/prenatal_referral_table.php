@@ -25,7 +25,10 @@ if(isset($_POST['show'])){
             <td><center><?php echo $fetch['complaints'] ?></center></td>
             <td><center><?php echo $fetch['referred_by'] ?></center></td>
             <td><center><?php echo $fetch['referral_date'] ?></center></td>
-            <td><center><button class="btn btn-sm btn-info" type="button">Overview</button></center></td>
+            <td><center>
+            <a href="referral_prenatal_record?referral_id=<?php echo $fetch['referral_id']?>" class="btn btn-sm btn-info">Overview </a>
+                </center>
+            </td>
         </tr>
                 <?php
 			}
