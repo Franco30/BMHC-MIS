@@ -85,12 +85,14 @@
 
     <!-- END THIS PAGE PLUGINS -->
 
+<!--
     <script>
         $.ajaxPrefilter(function(options, originalOptions, jqXHR) {
             options.async = true;
         });
 
     </script>
+-->
 
 </body>
 

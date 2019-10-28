@@ -21,10 +21,10 @@ if(isset($_POST['show'])){
             <td><center><?php echo $fetch['child_name']?></center></td>
             <td><center><?php echo $fetch['year']?></center></td>
             <td class="print"><center>
-                <button data-target="#edit_patient<?php echo $fetch['child_id']; ?>" data-toggle="modal" class="btn btn-sm btn-default">Update</button>
+                <button data-target="#edit_child_patient<?php echo $fetch['child_id']; ?>" data-toggle="modal" class="btn btn-sm btn-default">Update</button>
                 <a href="patient_overview_child?id=<?php echo $fetch['child_id']?>&child_name=<?php echo $fetch['child_name']?>" class="btn btn-sm btn-info">Overview</a>
                 </center>
-                <?php require('../modals/editpatient.php'); ?>
+                <?php require('../modals/editchildpatient.php'); ?>
             </td>
         </tr>
         <?php

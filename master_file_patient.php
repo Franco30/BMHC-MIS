@@ -137,8 +137,8 @@
     <!-- START THIS PAGE PLUGINS-->
     <script type="text/javascript" src="functions/patientmasterfile.js"></script>
     <script type="text/javascript" src="functions/childpatientmasterfile.js"></script>
-    <script type="text/javascript" src="js/plugins/bootstrap/bootstrap-datepicker.js"></script>
     <script type='text/javascript' src='js/plugins/bootstrap/bootstrap-select.js'></script>
+    <script type="text/javascript" src="js/plugins/bootstrap/bootstrap-datepicker.js"></script>
     <script type='text/javascript' src='js/plugins/icheck/icheck.min.js'></script>
     <script type="text/javascript" src="js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
     <script type="text/javascript" src="js/plugins/scrolltotop/scrolltopcontrol.js"></script>
@@ -150,7 +150,7 @@
     <script type="text/javascript" src="js/plugins.js"></script>
     <script type="text/javascript" src="js/actions.js"></script>
     <!-- END TEMPLATE -->
-<!--
+    <!--
     <script>
         $.ajaxPrefilter(function(options, originalOptions, jqXHR) {
             options.async = true;

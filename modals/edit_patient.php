@@ -1,11 +1,6 @@
 <div class="modal fade" id="edit_patient<?php echo $fetch['patient_id']; ?>" tabindex="-1" role="dialog" aria-labelledby="largeModalHead" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
-            <center>
-                <div id="modallabel" class="alert alert-danger" style="display:none;">
-                    <center><span id="checkfield"></span></center>
-                </div>
-            </center>
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                 <h4 class="modal-title" id="defModalHead">Edit Patient</h4>
@@ -37,7 +32,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group" style="margin-left:-10px;">
                                         <label>Gender</label>
-                                        <select class="form-control select" style="display: none;" id="gender<?php echo $fetch['patient_id']; ?>">
+                                        <select class="form-control select" id="gender<?php echo $fetch['patient_id']; ?>">
                                             <option value="<?php echo $fetch['gender']; ?>"><?php echo $fetch['gender']; ?></option>
                                             <option value="Male">Male</option>
                                             <option value="Female">Female</option>
@@ -47,7 +42,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group" style="margin-right:-10px;">
                                         <label>Civil Status</label>
-                                        <select class="form-control select" style="display: none;" id="civilstatus<?php echo $fetch['patient_id']; ?>">
+                                        <select class="form-control select" id="civilstatus<?php echo $fetch['patient_id']; ?>">
                                             <option value="<?php echo $fetch['civil_status'];?>"><?php echo $fetch['civil_status']; ?></option>
                                             <option value="Single">Single</option>
                                             <option value="Married">Married</option>
@@ -58,7 +53,7 @@
                             &nbsp;
                             <div class="form-group">
                                 <label>Purok</label>
-                                <select class="form-control select" data-live-search="true" style="display: none;" id="purok<?php echo $fetch['patient_id']; ?>">
+                                <select class="form-control select" data-live-search="true" id="purok<?php echo $fetch['patient_id']; ?>">
                                     <option value="<?php echo $fetch['purok']; ?>"><?php echo $fetch['purok']; ?></option>
                                     <option value="Gauzon">Prk. Gauzon</option>
                                     <option value="Himaya">Prk. Himaya</option>
@@ -125,7 +120,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="updatepatient btn btn-success" value="<?php echo $fetch['patient_id']; ?>">Save</button>
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>

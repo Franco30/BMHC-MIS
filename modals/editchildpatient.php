@@ -1,4 +1,4 @@
-<div class="modal fade" id="new_child_patient" tabindex="-1" role="dialog" aria-labelledby="largeModalHead" aria-hidden="true">
+<div class="modal fade" id="edit_child_patient<?php echo $fetch['child_id']; ?>" tabindex="-1" role="dialog" aria-labelledby="largeModalHead" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <center>
@@ -16,23 +16,23 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>Child Name</label>
-                                <input type="text" class="form-control" id="child_name" onkeyup="myFunction(this.id);" placeholder="Enter Child's Name" required />
+                                <input type="text" class="form-control" id="child_name<?php echo $fetch['child_id']; ?>" value="<?php echo $fetch['child_name']; ?>" onkeyup="myFunction(this.id);" placeholder="Enter Child's Name" required />
                             </div>
                             <div class="form-row">
                                 <div class="col-md-6">
                                     <div class="form-group" style="margin-left:-10px;">
                                         <label>Gender</label>
-                                        <select class="form-control select" style="display: none;" id="gender2">
-                                            <option>Select</option>
-                                            <option>Male</option>
-                                            <option>Female</option>
+                                        <select class="form-control select" style="display: none;" id="gender2<?php echo $fetch['child_id']; ?>">
+                                            <option value="<?php echo $fetch['gender']; ?>"><?php echo $fetch['gender']; ?></option>
+                                            <option value="Male">Male</option>
+                                            <option value="Female">Female</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group" style="margin-right:-10px;">
                                         <label>Birth Weight</label>
-                                        <input type="text" id="birth_weight" class="form-control" placeholder="Enter Weight in kg" required />
+                                        <input type="text" id="birth_weight<?php echo $fetch['child_id']; ?>" value="<?php echo $fetch['birth_weight']; ?>" class="form-control" placeholder="Enter Weight in kg" required />
                                     </div>
                                 </div>
                             </div>
@@ -41,21 +41,21 @@
                                 <div class="col-md-6">
                                     <div class="form-group" style="margin-left:-10px;">
                                         <label>Date First Seen</label>
-                                        <input type="text" id="date_first_seen" class="form-control datepicker" placeholder="Enter Date" required />
+                                        <input type="text" id="date_first_seen<?php echo $fetch['child_id']; ?>" value="<?php echo $fetch['date_first_seen']; ?>" class="form-control datepicker" placeholder="Enter Date" required />
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group" style="margin-right:-10px;">
                                         <label>Birth Date</label>
-                                        <input type="text" id="birthdate2" class="form-control datepicker" placeholder="Enter Date of Birth" required />
+                                        <input type="text" id="birthdate2<?php echo $fetch['child_id']; ?>" value="<?php echo $fetch['birthdate']; ?>" class="form-control datepicker" placeholder="Enter Date of Birth" required />
                                     </div>
                                 </div>
                             </div>
                             &nbsp;
                             <div class="form-group">
                                 <label>Purok</label>
-                                <select class="form-control select" data-live-search="true" style="display: none;" id="purok2">
-                                    <option>Select</option>
+                                <select class="form-control select" data-live-search="true" style="display: none;" id="purok2<?php echo $fetch['child_id']; ?>">
+                                    <option value="<?php echo $fetch['purok']; ?>"><?php echo $fetch['purok']; ?></option>
                                     <option value="Gauzon">Prk. Gauzon</option>
                                     <option value="Himaya">Prk. Himaya</option>
                                     <option value="Kabugwason">Prk. Kabugwason</option>
@@ -71,7 +71,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Street Address</label>
-                                <textarea class="form-control" spellcheck="false" id="street_address2" required></textarea>
+                                <textarea class="form-control" spellcheck="false" id="street_address2<?php echo $fetch['child_id']; ?>" required><?php echo $fetch['street_address']; ?></textarea>
                             </div>
                         </div>
 
@@ -80,13 +80,13 @@
                                 <div class="col-md-6">
                                     <div class="form-group" style="margin-left:-10px;">
                                         <label>Place of Delivery</label>
-                                        <input type="text" id="place_of_delivery" class="form-control" placeholder="Enter Name of the Hospital" required />
+                                        <input type="text" id="place_of_delivery<?php echo $fetch['child_id']; ?>" class="form-control" placeholder="Enter Name of the Hospital" value="<?php echo $fetch['place_of_delivery']; ?>" required />
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group" style="margin-right:-10px;">
                                         <label>Local Civil Registry Date</label>
-                                        <input type="text" id="birth_register_date" class="form-control datepicker" placeholder="Enter Date of Registry" required />
+                                        <input type="text" id="birth_register_date<?php echo $fetch['child_id']; ?>" class="form-control datepicker" placeholder="Enter Date of Registry" value="<?php echo $fetch['birth_register_date']; ?>" required />
                                     </div>
                                 </div>
                             </div>
@@ -95,46 +95,46 @@
                                 <div class="col-md-6">
                                     <div class="form-group" style="margin-left:-10px;">
                                         <label>Mother's Name</label>
-                                        <input type="text" id="mother_name" class="form-control" required />
+                                        <input type="text" id="mother_name<?php echo $fetch['child_id']; ?>" class="form-control" value="<?php echo $fetch['mother_name']; ?>" required />
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group" style="margin-right:-10px;">
                                         <label>Educational Level</label>
-                                        <input type="text" id="mother_education" class="form-control" required />
+                                        <input type="text" id="mother_education<?php echo $fetch['child_id']; ?>" class="form-control" value="<?php echo $fetch['mother_education']; ?>" required />
                                     </div>
                                 </div>
                             </div>
                             &nbsp;
                             <div class="form-group">
                                 <label>Occupation</label>
-                                <input type="text" class="form-control" id="mother_occupation" required />
+                                <input type="text" class="form-control" id="mother_occupation<?php echo $fetch['child_id']; ?>" value="<?php echo $fetch['mother_occupation']; ?>" required />
                             </div>
                             <div class="form-row">
                                 <div class="col-md-6">
                                     <div class="form-group" style="margin-left:-10px;">
                                         <label>Father's Name</label>
-                                        <input type="text" id="father_name" class="form-control" required />
+                                        <input type="text" id="father_name<?php echo $fetch['child_id']; ?>" class="form-control" value="<?php echo $fetch['father_name']; ?>" required />
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group" style="margin-right:-10px;">
                                         <label>Educational Level</label>
-                                        <input type="text" id="father_education" class="form-control" required />
+                                        <input type="text" id="father_education<?php echo $fetch['child_id']; ?>" class="form-control" value="<?php echo $fetch['father_education']; ?>" required />
                                     </div>
                                 </div>
                             </div>
                             &nbsp;
                             <div class="form-group">
                                 <label>Occupation</label>
-                                <input type="text" class="form-control" id="father_occupation" required />
+                                <input type="text" class="form-control" id="father_occupation<?php echo $fetch['child_id']; ?>" value="<?php echo $fetch['father_occupation']; ?>" required />
                             </div>
                         </div>
                     </div>
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" id="addnewchild" class="btn btn-success">Save</button>
+                <button type="button" value="<?php echo $fetch['child_id']; ?>" class="btn btn-success editchild">Save</button>
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
             </div>
         </div>

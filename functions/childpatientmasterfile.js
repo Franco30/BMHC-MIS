@@ -1,47 +1,65 @@
 $(document).ready(function () {
     showCPMF();
-    $(document).on('click', '.updatepatient', function () {
-        $patient_id = $(this).val();
-        $patient_name = $('#patient_name' + $patient_id).val();
-        $age = $('#age' + $patient_id).val();
-        $gender = $('#gender' + $patient_id).val();
-        $address = $('#address' + $patient_id).val();
-        $birthdate = $('#birthdate' + $patient_id).val();
-        $heigth = $('#height' + $patient_id).val();
-        $contact_no = $('#contact_no' + $patient_id).val();
-        $region_province = $('#region_province' + $patient_id).val();
-        $occupation = $('#occupation' + $patient_id).val();
-        $philhealth_no = $('#philhealth_no' + $patient_id).val();
-        $contact_person = $('#contact_person' + $patient_id).val();
-        $emergency_no = $('#emergency_no' + $patient_id).val();
-        $.ajax({
-            type: "POST",
-            url: "action/editpatient.php",
-            data: {
-                patient_id: $patient_id,
-                patient_name: $patient_name,
-                age: $age,
-                gender: $gender,
-                address: $address,
-                birthdate: $birthdate,
-                height: $heigth,
-                contact_no: $contact_no,
-                region_province: $region_province,
-                occupation: $occupation,
-                philhealth_no: $philhealth_no,
-                contact_person: $contact_person,
-                emergency_no: $emergency_no,
-                edit: 1,
-            },
-            success: function () {
-                $('#alert').slideDown();
-                $('#alerttext').text('Successfully updated Patient');
-                setTimeout(function () {
-                    $('#alert').fadeOut('slow');
-                }, 1500);
-                showPMF();
-            }
-        });
+    $(document).on('click', '.editchild', function () {
+        $child_id = $(this).val();
+        $child_name = $('#child_name' + $child_id).val();
+        $gender2 = $('#gender2' + $child_id).val();
+        $mother_name = $('#mother_name' + $child_id).val();
+        $mother_education = $('#mother_education' + $child_id).val();
+        $mother_occupation = $('#mother_occupation' + $child_id).val();
+        $father_name = $('#father_name' + $child_id).val();
+        $father_education = $('#father_education' + $child_id).val();
+        $father_occupation = $('#father_occupation' + $child_id).val();
+        $date_first_seen = $('#date_first_seen' + $child_id).val();
+        $birthdate2 = $('#birthdate2' + $child_id).val();
+        $birth_weight = $('#birth_weight' + $child_id).val();
+        $place_of_delivery = $('#place_of_delivery' + $child_id).val();
+        $birth_register_date = $('#birth_register_date' + $child_id).val();
+        $purok2 = $('#purok2' + $child_id).val();
+        $street_address2 = $('#street_address2' + $child_id).val();
+        if (confirm('Are you sure you want to update this patient?')) {
+            $.ajax({
+                type: "POST",
+                url: "action/editchildpatient.php",
+                data: {
+                    child_id: $child_id,
+                    child_name: $child_name,
+                    gender2: $gender2,
+                    mother_name: $mother_name,
+                    mother_education: $mother_education,
+                    mother_occupation: $mother_occupation,
+                    father_name: $father_name,
+                    father_education: $father_education,
+                    father_occupation: $father_occupation,
+                    date_first_seen: $date_first_seen,
+                    birthdate2: $birthdate2,
+                    birth_weight: $birth_weight,
+                    place_of_delivery: $place_of_delivery,
+                    birth_register_date: $birth_register_date,
+                    purok2: $purok2,
+                    street_address2: $street_address2,
+                    edit: 1,
+                },
+                success: function () {
+                    $('#edit_child_patient'+ $child_id).modal('hide');
+                    $('#alert').slideDown();
+                    $('#alerttext').text('Successfully updated Patient');
+                    setTimeout(function () {
+                        $('#alert').fadeOut('slow');
+                    }, 1500);
+                    $(document).ajaxComplete(function () {
+                        $(document).find('.select').selectpicker();
+                    });
+                    $(document).ajaxComplete(function () {
+                        $(document).find('.datepicker').datepicker({
+                            format: 'MM dd, yyyy',
+                            language: 'en'
+                        });
+                    });
+                    showCPMF();
+                }
+            });
+        }
     });
 });
 

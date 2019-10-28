@@ -150,7 +150,6 @@
     <script type="text/javascript" src="js/plugins/jquery/jquery-ui.min.js"></script>
     <script type="text/javascript" src="js/plugins/bootstrap/bootstrap.min.js"></script>
 
-
     <script type="text/javascript" src="js/plugins/bootstrap/bootstrap-datepicker.js"></script>
     <script type='text/javascript' src='js/plugins/icheck/icheck.min.js'></script>
     <script type="text/javascript" src="js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
@@ -209,12 +208,7 @@
         });
 
     </script>
-    <script>
-        $.ajaxPrefilter(function(options, originalOptions, jqXHR) {
-            options.async = true;
-        });
 
-    </script>
 </body>
 
 </html>
