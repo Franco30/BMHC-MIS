@@ -20,7 +20,7 @@ if(isset($_POST['show'])){
 			while($fetch = $query->fetch_array()){
 											?>
         <tr>
-            <td><center><?php echo $fetch['patient_name'] ?></center></td>
+            <td><center><strong><?php echo $fetch['patient_name'] ?></strong></center></td>
             <td><center><?php echo $fetch['to_hospital'] ?></center></td>
             <td><center><?php echo $fetch['complaints'] ?></center></td>
             <td><center><?php echo $fetch['referred_by'] ?></center></td>

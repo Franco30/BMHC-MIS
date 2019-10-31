@@ -22,8 +22,8 @@ if(isset($_POST['show'])){
     while($fetch = $query->fetch_array()){
         ?>
         <tr>
-            <td><center><?php echo $fetch['year']."0".$fetch['child_id'];?></center></td>
-            <td><center><?php echo $fetch['child_name']?></center></td>
+            <td><center><strong><?php echo $fetch['year']."0".$fetch['child_id'];?></strong></center></td>
+            <td><center><strong><?php echo $fetch['child_name']?></strong></center></td>
             <td><center><?php echo $fetch['gender']?></center></td>
             <td><center><?php echo $fetch['birthdate']?></center></td>
             <td><center>Prk. <?php echo $fetch['purok']?></center></td>

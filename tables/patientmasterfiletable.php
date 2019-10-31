@@ -18,8 +18,8 @@ if(isset($_POST['show'])){
     while($fetch = $query->fetch_array()){
         ?>
         <tr>
-            <td><center><?php echo $fetch['year']?><?php echo "0".$fetch['patient_id']?></center></td>
-            <td><center><?php echo $fetch['patient_name']?></center></td>
+            <td><center><strong><?php echo $fetch['year']?><?php echo "0".$fetch['patient_id']?></strong></center></td>
+            <td><center><strong><?php echo $fetch['patient_name']?></strong></center></td>
             <td><center><?php echo $fetch['year']?></center></td>
             <td class="print"><center>
 <!--                <button data-target="#edit_patient<?php //echo $fetch['patient_id']; ?>" data-toggle="modal" class="btn btn-sm btn-default">Update</button>-->

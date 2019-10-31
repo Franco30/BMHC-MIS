@@ -6,9 +6,8 @@ if(isset($_POST['show'])){
     <thead>
         <tr>
             <th><center>Patient Name</center></th>
-            <th><center>Type of Acceptor</center></th>
-            <th><center>Previously used Method</center></th>
-            <th><center>Birthdate</center></th>
+            <th><center>Age</center></th>
+            <th><center>Contact No.</center></th>
             <th><center>Address</center></th>
             <th><center>Action</center></th>
         </tr>
@@ -25,10 +24,9 @@ if(isset($_POST['show'])){
             $f = $q->fetch_array();
         ?>
         <tr>
-            <td><center><?php echo $fetch['patient_name']?></center></td>
-            <td><center><?php echo $fetch['type_of_acceptor']?></center></td>
-            <td><center><?php echo $fetch['prev_used_method']?></center></td>
-            <td><center><?php echo $fetch['birthdate']?></center></td>
+            <td><center><strong><?php echo $fetch['patient_name']?></strong></center></td>
+            <td><center><?php echo $fetch['age']?></center></td>
+            <td><center><?php echo $fetch['contact_no']?></center></td>
             <td><center><?php echo $fetch['purok']." ".$fetch['street_address'];?></center></td>
             <td><center><a href="childpatientmasterfiletable.php" class="btn btn-md btn-default">View <span class = "badge"><?php echo $f['total']?></span></a></center></td>
         </tr>

@@ -5,20 +5,20 @@ if(isset($_POST['show'])){
 <table id="mdtable" class="table datatable hover">
     <thead>
         <tr class="warning">
-             <th>
+            <th>
+                <center>Patient Name</center>
+            </th>
+            <th>
                 <center>Purpose</center>
             </th>
             <th>
                 <center>Medicine Name</center>
             </th>
             <th>
-                <center>Date and TIme</center>
-            </th>
-            <th>
                 <center>Quantity</center>
             </th>
             <th>
-                <center>Patient Name</center>
+                <center>Date and TIme</center>
             </th>
         </tr>
     </thead>
@@ -30,19 +30,19 @@ if(isset($_POST['show'])){
 		?>
         <tr>
             <td>
+                <center><strong><?php echo $fetch['patient_name']?></strong></center>
+            </td>
+            <td>
                 <center><?php echo $fetch['purpose']?></center>
             </td>
             <td>
                 <center><?php echo $fetch['medicine_name']?></center>
             </td>
             <td>
-                <center><?php echo $fetch['date_given'].' - '.$fetch['time_given']?></center>
-            </td>
-            <td>
                 <center><?php echo $fetch['quantity']?></center>
             </td>
             <td>
-                <center><?php echo $fetch['patient_name']?></center>
+                <center><?php echo $fetch['date_given'].' - '.$fetch['time_given']?></center>
             </td>
         </tr>
         <?php

@@ -23,8 +23,8 @@ if(isset($_POST['show'])){
     while($fetch = $query->fetch_array()){
         ?>
         <tr>
-            <td><center><?php echo $fetch['year']."0".$fetch['patient_id'];?></center></td>
-            <td><center><?php echo $fetch['patient_name']?></center></td>
+            <td><center><strong><?php echo $fetch['year']."0".$fetch['patient_id'];?></strong></center></td>
+            <td><center><strong><?php echo $fetch['patient_name']?></strong></center></td>
             <td><center><?php echo $fetch['birthdate']?></center></td>
             <td><center><?php echo $fetch['age']?></center></td>
             <td><center><?php echo $fetch['gender']?></center></td>

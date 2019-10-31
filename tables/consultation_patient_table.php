@@ -28,7 +28,7 @@ if(isset($_POST['show'])){
             $f2 = $q2->fetch_array();
         ?>
         <tr>
-            <td><center><?php echo $fetch['patient_name']?></center></td>
+            <td><center><strong><?php echo $fetch['patient_name']?></strong></center></td>
             <td><center><?php echo $fetch['age']?></center></td>
             <td><center><?php echo $fetch['gender']?></center></td>
             <td><center><?php echo $fetch['contact_no']?></center></td>
