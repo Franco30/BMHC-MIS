@@ -394,12 +394,14 @@ require 'require/logincheck.php';
         });
 
     </script>
+<!--
     <script>
         $.ajaxPrefilter(function(options, originalOptions, jqXHR) {
             options.async = true;
         });
 
     </script>
+-->
     <!-- END SCRIPTS -->
 </body>
 

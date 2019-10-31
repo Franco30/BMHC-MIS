@@ -2,63 +2,74 @@ $(document).ready(function () {
     showPatient();
 
     //check availability of patient name
-    
+
     //add patient ajax
     $(document).on('click', '#addnew', function () {
-        if ($('#patient_name').val() == "" || $('#age').val() == "" || $('#gender').val() == "" || $('#address').val() == "" || $('#birthdate').val() == "" || $('#height').val() == "" || $('#contact_no').val() == "" || $('#region_province').val() == "" || $('#occupation').val() == "" || $('#philhealth_no').val() == "" || $('#contact_person').val() == "" || $('#emergency_no').val() == "" ) {
-            $('#modallabel').slideDown();
-            $('#checkfield').html('<span class="fa fa-exclamation-circle"></span> All fields are required!');
+        if ($('#type_of_acceptor').val() == "" || $('#prevmethod').val() == "" || $('#datetime').val() == "" || $('#patient_education').val() == "" || $('#spouse_name').val() == "" || $('#spouse_birthdate').val() == "" || $('#spouse_education').val() == "" || $('#spouse_occupation').val() == "" || $('#monthly_income').val() == "" || $('#no_living_children').val() == "" || $('#planmorechildren').val() == "" || $('#reason').val() == "" || $('#method_accepted').val() == "") {
+            $('#alert2').slideDown();
+            $('#alerttext2').html('<span class="fa fa-exclamation-circle"></span> All fields are required!');
             setTimeout(function () {
-                $('#modallabel').fadeOut('slow');
+                $('#alert2').fadeOut('slow');
             }, 3500);
         } else {
-            $patient_name = $('#patient_name').val();
-            $age = $('#age').val();
-            $gender = $('#gender').val();
-            $address = $('#address').val();
-            $birthdate = $('#birthdate').val();
-            $height = $('#height').val();
-            $contact_no = $('#contact_no').val();
-            $region_province = $('#region_province').val();
-            $occupation = $('#occupation').val();
-            $philhealth_no = $('#philhealth_no').val();
-            $contact_person = $('#contact_person').val();
-            $emergency_no = $('#emergency_no').val();
+            $patient_id = $('#patient_id').val();
+            $type_of_acceptor = $('#type_of_acceptor').val();
+            $prevmethod = $('#prevmethod').val();
+            $datetime = $('#datetime').val();
+            $patient_education = $('#patient_education').val();
+            $spouse_name = $('#spouse_name').val();
+            $spouse_birthdate = $('#spouse_birthdate').val();
+            $spouse_education = $('#spouse_education').val();
+            $spouse_occupation = $('#spouse_occupation').val();
+            $monthly_income = $('#monthly_income').val();
+            $no_living_children = $('#no_living_children').val();
+            $planmorechildren = $('#planmorechildren').val();
+            $reason = $('#reason').val();
+            //            $method_accepted = $('#method_accepted').val();
+            var method_accepted = [];
 
-            if (confirm('Are you sure you want to add this new patient?')) {
+            $('#method_accepted option:selected').each(function (i) {
+                method_accepted[i] = $(this).val();
+            });
+
+            if (confirm('Are you sure you want to add this patient?')) {
                 $.ajax({
                     type: "POST",
-                    url: "action/addpatient.php",
+                    url: "action/addfamilyplanning.php",
                     cache: false,
                     async: false,
                     data: {
-                        patient_name: $patient_name,
-                        age: $age,
-                        gender: $gender,
-                        address: $address,
-                        birthdate: $birthdate,
-                        height: $height,
-                        contact_no: $contact_no,
-                        region_province: $region_province,
-                        occupation: $occupation,
-                        philhealth_no: $philhealth_no,
-                        contact_person: $contact_person,
-                        emergency_no: $emergency_no,
-                        add: 1,
+                        patient_id: $patient_id,
+                        type_of_acceptor: $type_of_acceptor,
+                        prevmethod: $prevmethod,
+                        datetime: $datetime,
+                        patient_education: $patient_education,
+                        spouse_name: $spouse_name,
+                        spouse_birthdate: $spouse_birthdate,
+                        spouse_education: $spouse_education,
+                        spouse_occupation: $spouse_occupation,
+                        monthly_income: $monthly_income,
+                        no_living_children: $no_living_children,
+                        planmorechildren: $planmorechildren,
+                        reason: $reason,
+                        method_accepted: method_accepted,
+                        add: 1
                     },
                     success: function () {
-                        
+                        console.log(method_accepted);
+                        $('form').trigger('reset');
                         $('#alert').slideDown();
                         $('#alerttext').text('Patient Added Successfully!');
-                        setTimeout(function() {
+                        setTimeout(function () {
                             $('#alert').fadeOut('slow');
                         }, 1500);
-                        $('#new_patient').modal('hide');
-                        showPatient();   
+                        setTimeout(function () {
+                            window.location.href = 'familyplanning';
+                        }, 2500);
+                        showPatient();
                     }
                 });
             }
-            $('form').trigger('reset');
         }
 
     });
@@ -78,5 +89,3 @@ function showPatient() {
         }
     });
 }
-
-
