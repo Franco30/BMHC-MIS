@@ -151,7 +151,7 @@
         <div class="panel panel-primary animated zoomIn xn-drop-left xn-panel-dragging">
             <div class="panel-heading">
                 <h3 class="panel-title">
-                    You have <?php echo $f['count']. " Family Planning Follow-up Visit " ?></h3>
+                    You have <?php echo $f['count']. " Family Planning Follow-up Visit Today" ?></h3>
                 <div class="pull-right">
                     <span class="label label-warning"><?php echo $f['count']?></span>
                 </div>

@@ -242,14 +242,12 @@ require 'require/logincheck.php';
                                 <div class="panel panel-primary">
                                     <div class="panel-heading">
                                         <h3 class="panel-title"><strong>Prenatal Follow Up Schedule Calendar</strong></h3>
-                                        <!--
                                         <div class="btn-group pull-right">
                                             <div class="pull-left">
                                                 <a href="follow_up_table" class="btn btn-primary pull-right">See
                                                     Detailed</a>
                                             </div>
                                         </div>
--->
                                     </div>
                                     <div class="panel-body">
                                         <div id="calendar" class="vertical-box-column p-15 calendar"></div>

@@ -43,7 +43,7 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label>Method/Brand</label>
-                                <textarea type="text" class="form-control" id="method" required></textarea>
+                                <input type="text" class="tagsinput" id="method" required />
                             </div>
                             <div class="form-group">
                                 <label>No. of Units</label>

@@ -33,7 +33,7 @@
 			$fetch2 = $query2->fetch_array();
 					?>
                 <li>Transactions</li>
-                <li><a href="consultation">Consultation</a></li>
+                <li><a href="familyplanning">Family Planning</a></li>
                 <li><mark><strong><?php echo $fetch2['patient_name']?></strong></mark></li>
             </ul>
             <!-- END BREADCRUMB -->
@@ -47,7 +47,7 @@
                         </div>
                         <div class="panel panel-primary">
                             <div class="panel-heading">
-                                <h3 class="panel-title"><strong>Consultation / <?php echo $fetch2['patient_name']?></strong></h3>
+                                <h3 class="panel-title"><strong>Familly Planning / <?php echo $fetch2['patient_name']?></strong></h3>
                                 <div class="btn-group pull-right">
                                     <div class="pull-left">
 
@@ -56,37 +56,36 @@
                             </div>
                             <div class="panel-body">
                                 <div class="table-responsive">
-                                    <table id="patientmasterfiletable" class="table datatable" width="100%">
+                                    <table id="fptable" class="table datatable" width="100%">
                                     <thead>
                                         <tr class="warning">
-                                        <th><center>Consultation No</center></th>
+                                        <th><center>Family Planning No</center></th>
                                         <th><center>Patient No</center></th>
                                         <th><center>Patient Name</center></th>
-                                        <th><center>Complaints</center></th>
+                                        <th><center>Type of Acceptor</center></th>
                                         <th class="print"><center>Action</center></th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php
 	                            require 'require/config.php';
-			                    $query = $conn->query("SELECT * FROM `consultation` WHERE `consultation`.`patient_id` =  '$_GET[patient_id]'") or die(mysqli_error());
+			                    $query = $conn->query("SELECT * FROM `family_planning` WHERE `family_planning`.`patient_id` =  '$_GET[patient_id]'") or die(mysqli_error());
                                     while($fetch = $query->fetch_array()){
                                         $q = $conn->query("SELECT * FROM `patient` WHERE `patient_id` = '$_GET[patient_id]'") or die(mysqli_error());
                                         $f = $q->fetch_array();
-                                        $q2 = $conn->query("SELECT * FROM `consultation` WHERE `patient_id` = '$_GET[patient_id]' && `status` = 'No Prescription'")or die(mysqli_error());
+                                        $q2 = $conn->query("SELECT * FROM `family_planning` WHERE `patient_id` = '$_GET[patient_id]' && `status` = 'No Assessment'")or die(mysqli_error());
                                         $f2 = $q2->fetch_array();
                                         ?>
                                         <tr>
-                                            <td><center><strong><?php echo $fetch['year']?><?php echo "0".$fetch['consultation_id']?></strong></center></td>
-                                            <td><center><strong><?php echo $f['year']?><?php echo "0".$fetch['patient_id']?></strong></center></td>
-                                            <td><center><strong><?php echo $f['patient_name']?></strong></center></td>
-                                            <td><center><?php echo $fetch['complaints']?></center></td>
+                                            <td><center><?php echo $fetch['year']?><?php echo "0".$fetch['family_planning_id']?></center></td>
+                                            <td><center><?php echo $f['year']?><?php echo "0".$fetch['patient_id']?></center></td>
+                                            <td><center><?php echo $f['patient_name']?></center></td>
+                                            <td><center><?php echo $fetch['type_of_acceptor']?></center></td>
                                             <td class="print"><center>
-                                            <?php if($fetch['status'] == 'No Prescription') { ?>
-                                            <a href="consultation_prescription?patient_id=<?php echo $fetch['patient_id']?>" class="btn btn-md btn-danger"><span class="fa fa-medkit animated infinite pulse"></span> Prescription</a>
-                                            <a href="consultation_treatment?patient_id=<?php echo $fetch['patient_id']?>" class="btn btn-md btn-danger"><span class="fa fa-medkit animated infinite pulse"></span> Prescription</a>
+                                            <?php if($fetch['status'] == 'No Assessment') { ?>
+                                            <a href="familyplanning_assessment?patient_id=<?php echo $fetch['patient_id']?>" class="btn btn-md btn-danger"><span class="fa fa-stethoscope animated infinite pulse"></span> Assessment</a>
                                             <?php } else { ?>
-                                            <a href="#" class="btn btn-md btn-default"><span class="fa fa-medkit"></span> Prescription</a>  <?php } ?>
+                                            <a href="#" class="btn btn-md btn-default"><span class="fa fa-stethoscope"></span> Prescription</a>  <?php } ?>
                                                 </center>
                                             </td>
                                         </tr>

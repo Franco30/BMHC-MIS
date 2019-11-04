@@ -19,7 +19,7 @@
                     if ($(".datepicker").length > 0) {
                         $(".datepicker").datepicker({
                             //format: 'yyyy-mm-dd'
-                            format: 'MM dd, yyyy',
+                            format: 'MM d, yyyy',
                             language: 'en'
                         });
                         $("#dp-2,#dp-3,#dp-4").datepicker(); // Sample

@@ -44,7 +44,7 @@
                                 <h3 class="panel-title"><strong>Consultation</strong></h3>
                                 <div class="btn-group pull-right">
                                     <div class="pull-left">
-                                        <button class="btn btn-primary btn-md" data-toggle="modal" data-target="#new_consultation">New Consultation</button>
+                                        <button class="btn btn-primary btn-md" data-toggle="modal" data-target="#new_consultation">Add Patient</button>
                                     </div>
                                 </div>
                             </div>

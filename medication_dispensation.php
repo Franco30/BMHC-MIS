@@ -16,6 +16,9 @@
     <link rel="stylesheet" type="text/css" id="theme" href="css/theme-brown.css" />
     <link rel="stylesheet" type="text/css" href="assets3/vendor/font-awesome/css/font-awesome.min.css" />
     <!-- EOF CSS INCLUDE -->
+    <script type="text/javascript" src="js/plugins/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.canvasjs.min.js"></script>
+    <?php require 'js/loadchart/medicine_inventory.php'?>
 </head>
 
 <body>
@@ -48,7 +51,7 @@
                             <ul class="nav nav-tabs" role="tablist">
                                 <li class="active"><a href="#tab-first" role="tab" data-toggle="tab">Medication Dispensation Log</a></li>
                                 <li><a href="#tab-second" role="tab" data-toggle="tab">Medicine Stockin List</a></li>
-<!--
+                                <!--
                                 <div class="btn-group pull-right">
                                     <div class="pull-left">
                                         <button class="btn btn-primary btn-md" data-toggle="modal" data-target="#dispensed">Dispense Medicine </button>
@@ -57,7 +60,7 @@
                                 </div>
 -->
                             </ul>
-                            <div class="panel-body list-group list-group-contacts scroll" style="height: 560px;">
+                            <div class="panel-body list-group list-group-contacts scroll" style="height: 590px;">
                                 <div class="panel-body tab-content">
                                     <div class="tab-pane active" id="tab-first">
                                         <div class="row">
@@ -116,7 +119,6 @@
 
     <!-- START SCRIPTS -->
     <!-- START PLUGINS -->
-    <script type="text/javascript" src="js/plugins/jquery/jquery.min.js"></script>
     <script type="text/javascript" src="js/plugins/jquery/jquery-ui.min.js"></script>
     <script type="text/javascript" src="js/plugins/bootstrap/bootstrap.min.js"></script>
     <!-- END PLUGINS -->
@@ -145,12 +147,14 @@
         });
 
     </script>
+    <!--
     <script>
         $.ajaxPrefilter(function(options, originalOptions, jqXHR) {
             options.async = true;
         });
 
     </script>
+-->
     <!-- END SCRIPTS -->
 </body>
 

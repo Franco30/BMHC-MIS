@@ -128,7 +128,7 @@
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label>Previosly Used Method</label>
-                                                    <input type="text" class="form-control" id="prevmethod" placeholder="Enter Previosly Used Method" required />
+                                                    <input type="text" class="tagsinput" id="prevmethod" placeholder="Enter Previosly Used Method" required />
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Date and Time</label>
@@ -214,7 +214,6 @@
                                         </div>
                                     </div>
                                     <hr>
-
                                 </form>
                             </div>
                         </div>
@@ -241,7 +240,8 @@
     <script type="text/javascript" src="js/plugins/bootstrap/bootstrap-timepicker.min.js"></script>
     <script type="text/javascript" src="js/plugins/bootstrap/bootstrap-select.js"></script>
     <script type="text/javascript" src="js/plugins/smartwizard/jquery.smartWizard-2.0.min.js"></script>
-
+    <script type="text/javascript" src="js/plugins/tagsinput/jquery.tagsinput.min.js"></script>
+    
     <script type="text/javascript" src="js/settings.js"></script>
     <script type="text/javascript" src="js/plugins.js"></script>
     <script type="text/javascript" src="js/actions.js"></script>

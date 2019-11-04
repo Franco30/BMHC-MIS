@@ -22,13 +22,21 @@ if(isset($_POST['show'])){
             $date=date("F j, Y");
             $q = $conn->query("SELECT COUNT(*) as total FROM `family_planning` WHERE `patient_id` = '$id'") or die(mysqli_error());
             $f = $q->fetch_array();
+            $q2 = $conn->query("SELECT * FROM `family_planning` WHERE `patient_id` = '$id' && `status` = 'No Assessment'") or die(mysqli_error());
+            $f2 = $q2->fetch_array();
         ?>
         <tr>
             <td><center><strong><?php echo $fetch['patient_name']?></strong></center></td>
             <td><center><?php echo $fetch['age']?></center></td>
             <td><center><?php echo $fetch['contact_no']?></center></td>
             <td><center><?php echo $fetch['purok']." ".$fetch['street_address'];?></center></td>
-            <td><center><a href="childpatientmasterfiletable.php" class="btn btn-md btn-default">View <span class = "badge"><?php echo $f['total']?></span></a></center></td>
+            <td><center>
+            <?php    
+            if($f2['status'] == 'No Assessment')
+                echo "<a href='patient_familyplanning?patient_id=".$fetch['patient_id']."' class='btn btn-md btn-default' data-toggle='tooltip' data-placement='top' title='Assessment Required'>All Records <span class='badge animated infinite pulse' style='animation-duration:.6s;background-color: #E04B4A;'>".$f['total']."</span></a>";
+            else echo "<a href='patient_familyplanning?patient_id=".$fetch['patient_id']."' class='btn btn-md btn-default'>All Records <span class='badge'>".$f['total']."</span></a>";
+            ?>  
+            </center></td>
         </tr>
         <?php
     }

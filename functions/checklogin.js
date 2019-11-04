@@ -68,7 +68,7 @@ $(document).ready(function () {
                     setTimeout(' window.location.href = "dashboard"; ', 1000);
                 } else {
                     $("#error").fadeIn(1000, function () {
-                        $("#error").html('<div class="alert alert-danger"> <span class="glyphicon glyphicon-info-sign"></span> &nbsp; ' + response + ' !</div>');
+                        $("#error").html('<div class="alert alert-danger"> <span class="glyphicon glyphicon-info-sign"></span> &nbsp; ' + 'Invalid Username or Password' + '!</div>');
                         $("#login").html('<span class="glyphicon glyphicon-log-in"></span> &nbsp; Sign me in');
                     });
                 }

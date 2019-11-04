@@ -46,7 +46,7 @@
                 ?>
             </div>
             <div class="modal-footer">
-            <input class="btn btn-info" type="submit" name="submit" value="Get Patient" />
+            <input class="btn btn-info" type="submit" name="submit" value="Proceed" />
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
             </div>
             </form>

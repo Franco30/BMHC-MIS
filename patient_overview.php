@@ -157,7 +157,6 @@
 												<hr style="margin:0px 0 5px 0;">
 											</div>
 										</div>
-										<hr>
 									</div>
 								</div>
 
@@ -221,189 +220,6 @@
 											</div>
 										</div>
 									</div>
-									<div class="row">
-										<div class="col-md-12">
-											<div class="panel panel-primary">
-												<div class="panel-heading">
-													<h3 class="panel-title"><strong>Prenatal Record</strong></h3>
-												</div>
-												<div class="panel-body">
-													<div class="col-md-6">
-														<div class="table-responsive">
-															<table id="prenatal" class="table table-bordered">
-																<tbody>
-																	<?php
-															$conn = new mysqli('localhost','root','','bmhc')or die(mysqli_error());
-								$query = $conn->query("SELECT * FROM `patient` NATURAL JOIN `prenatal` WHERE `patient_id` = '$_GET[id]' ORDER BY prenatal_id DESC") or die(mysqli_error());
-								while($fetch = $query->fetch_array()){
-									?>
-																	<tr>
-																		<td>
-																			<center><strong>Doctor's Order and Advice</strong></center>
-																		</td>
-																		<td>
-																			<center><?php echo $fetch['doctors_advice']?></center>
-																		</td>
-																	</tr>
-																	<tr>
-																		<td>
-																			<center><strong>Doctor's Order and Advice</strong></center>
-																		</td>
-																		<td>
-																			<center><?php echo $fetch['doctors_advice']?></center>
-																		</td>
-																	</tr>
-																	<tr>
-																		<td>
-																			<center><strong>Doctor's Order and Advice</strong></center>
-																		</td>
-																		<td>
-																			<center><?php echo $fetch['doctors_advice']?></center>
-																		</td>
-																	</tr>
-																	<?php
-												}
-												$conn->close();
-													?>
-																</tbody>
-															</table>
-														</div>
-													</div>
-													<div class="col-md-6">
-														<div class="table-responsive">
-															<table id="prenatal" class="table table-bordered">
-																<tbody>
-																	<?php
-															$conn = new mysqli('localhost','root','','bmhc')or die(mysqli_error());
-								$query = $conn->query("SELECT * FROM `patient` NATURAL JOIN `prenatal` WHERE `patient_id` = '$_GET[id]' ORDER BY prenatal_id DESC") or die(mysqli_error());
-								while($fetch = $query->fetch_array()){
-									?>
-																	<tr>
-																		<td>
-																			<center><strong>Doctor's Order and Advice</strong></center>
-																		</td>
-																		<td>
-																			<center><?php echo $fetch['doctors_advice']?></center>
-																		</td>
-																	</tr>
-																	<tr>
-																		<td>
-																			<center><strong>Doctor's Order and Advice</strong></center>
-																		</td>
-																		<td>
-																			<center><?php echo $fetch['doctors_advice']?></center>
-																		</td>
-																	</tr>
-																	<tr>
-																		<td>
-																			<center><strong>Doctor's Order and Advice</strong></center>
-																		</td>
-																		<td>
-																			<center><?php echo $fetch['doctors_advice']?></center>
-																		</td>
-																	</tr>
-																	<?php
-												}
-												$conn->close();
-													?>
-																</tbody>
-															</table>
-														</div>
-													</div>
-												</div>
-												<div class="panel panel-primary">
-												<div class="panel-footer">
-												<h3 class="panel-title"><strong>Nurse's Notes</strong></h3>
-												</div>
-												<div class="panel-body">
-													<div class="col-md-6">
-														<div class="table-responsive">
-															<table id="prenatal" class="table table-bordered">
-																<tbody>
-																	<?php
-															$conn = new mysqli('localhost','root','','bmhc')or die(mysqli_error());
-								$query = $conn->query("SELECT * FROM `patient` NATURAL JOIN `prenatal` WHERE `patient_id` = '$_GET[id]' ORDER BY prenatal_id DESC") or die(mysqli_error());
-								while($fetch = $query->fetch_array()){
-									?>
-																	<tr>
-																		<td>
-																			<center><strong>Doctor's Order and Advice</strong></center>
-																		</td>
-																		<td>
-																			<center><?php echo $fetch['doctors_advice']?></center>
-																		</td>
-																	</tr>
-																	<tr>
-																		<td>
-																			<center><strong>Doctor's Order and Advice</strong></center>
-																		</td>
-																		<td>
-																			<center><?php echo $fetch['doctors_advice']?></center>
-																		</td>
-																	</tr>
-																	<tr>
-																		<td>
-																			<center><strong>Doctor's Order and Advice</strong></center>
-																		</td>
-																		<td>
-																			<center><?php echo $fetch['doctors_advice']?></center>
-																		</td>
-																	</tr>
-																	<?php
-												}
-												$conn->close();
-													?>
-																</tbody>
-															</table>
-														</div>
-													</div>
-													<div class="col-md-6">
-														<div class="table-responsive">
-															<table id="prenatal" class="table table-bordered">
-																<tbody>
-																	<?php
-															$conn = new mysqli('localhost','root','','bmhc')or die(mysqli_error());
-								$query = $conn->query("SELECT * FROM `patient` NATURAL JOIN `prenatal` WHERE `patient_id` = '$_GET[id]' ORDER BY prenatal_id DESC") or die(mysqli_error());
-								while($fetch = $query->fetch_array()){
-									?>
-																	<tr>
-																		<td>
-																			<center><strong>Doctor's Order and Advice</strong></center>
-																		</td>
-																		<td>
-																			<center><?php echo $fetch['doctors_advice']?></center>
-																		</td>
-																	</tr>
-																	<tr>
-																		<td>
-																			<center><strong>Doctor's Order and Advice</strong></center>
-																		</td>
-																		<td>
-																			<center><?php echo $fetch['doctors_advice']?></center>
-																		</td>
-																	</tr>
-																	<tr>
-																		<td>
-																			<center><strong>Doctor's Order and Advice</strong></center>
-																		</td>
-																		<td>
-																			<center><?php echo $fetch['doctors_advice']?></center>
-																		</td>
-																	</tr>
-																	<?php
-												}
-												$conn->close();
-													?>
-																</tbody>
-															</table>
-														</div>
-													</div>
-												</div>
-												</div>
-											</div>
-										</div>
-									</div>
-									<hr>
 								</div>
 
 								<div class="tab-pane" id="tab-third">
@@ -438,12 +254,14 @@
 															<tbody>
 																<?php
 															$conn = new mysqli('localhost','root','','bmhc')or die(mysqli_error());
-								$query = $conn->query("SELECT * FROM `patient` NATURAL JOIN `family_planning` WHERE `patient_id` = '$_GET[id]' ORDER BY family_planning_id DESC") or die(mysqli_error());
+								$query = $conn->query("SELECT * FROM `family_planning` WHERE `family_planning`.`patient_id` =  '$_GET[id]'") or die(mysqli_error());
 								while($fetch = $query->fetch_array()){
+								$q2 = $conn->query("SELECT * FROM `patient` WHERE `patient_id` = '$_GET[id]'")or die(mysqli_error());
+								$f2 = $q2->fetch_array();
 									?>
 																<tr>
 																	<td>
-																		<center><?php echo $fetch['date']." ".$fetch['time'];?></center>
+																		<center><?php echo $fetch['date_time']?></center>
 																	</td>
 																	<td>
 																		<center><?php echo $fetch['type_of_acceptor']?></center>
@@ -452,13 +270,13 @@
 																		<center><?php echo $fetch['prev_used_method']?></center>
 																	</td>
 																	<td>
-																		<center><?php echo $fetch['patient_birthdate']?></center>
+																		<center><?php echo $f2['birthdate']?></center>
 																	</td>
 																	<td>
 																		<center><?php echo $fetch['patient_highest_education']?></center>
 																	</td>
 																	<td>
-																		<center><a class="btn btn-default" href="familyplanninginfo?id=<?php echo $fetch['patient_id'];?>&&patient_name=<?php echo $fetch['patient_name'];?>&&fp_id=<?php echo $fetch['family_planning_id'];?>">View Detail</a></center>
+																		<center><a class="btn btn-default" href="familyplanninginfo?id=<?php echo $f2['patient_id'];?>&&fp_id=<?php echo $fetch['family_planning_id'];?>">View Detail</a></center>
 																	</td>
 																</tr>
 																<?php
@@ -474,7 +292,6 @@
 											<!-- END CONTACT ITEM -->
 										</div>
 									</div>
-									<hr>
 								</div>
 
 								<div class="tab-pane" id="tab-fourth">
@@ -507,7 +324,7 @@
 																</tr>
 															</thead>
 															<tbody>
-<?php
+																<?php
 $conn = new mysqli('localhost','root','','bmhc')or die(mysqli_error());
 $query = $conn->query("SELECT * FROM `consultation` WHERE `consultation`.`patient_id` =  '$_GET[id]'") or die(mysqli_error());
 while($fetch = $query->fetch_array()){
@@ -546,7 +363,6 @@ $f = $q->fetch_array();
 											<!-- END CONTACT ITEM -->
 										</div>
 									</div>
-									<hr>
 								</div>
 
 							</div>

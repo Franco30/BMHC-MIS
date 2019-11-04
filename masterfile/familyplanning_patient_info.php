@@ -1,6 +1,6 @@
 				<?php
 	require 'require/config.php';
-			$query = $conn->query("SELECT * FROM `family_planning` NATURAL JOIN `patient` WHERE `patient_id` = '$_GET[id]' &&  `family_planning_id` = '$_GET[fp_id]'") or die(mysqli_error());
+			$query = $conn->query("SELECT * FROM `family_planning`, `patient` WHERE `patient`.`patient_id` =  '$_GET[id]' && `family_planning`.`patient_id` = '$_GET[id]' && `family_planning_id` = '$_GET[fp_id]'") or die(mysqli_error());
 			$fetch = $query->fetch_array();
 			$id = $fetch['patient_id'];
 			?>
@@ -19,11 +19,11 @@
 							<hr style="margin:0px 0 5px 0;">
 							<h6><strong>Patient Name: </strong><?php echo $fetch['patient_name']?></h6>
 							<hr style="margin:0px 0 5px 0;">
-							<h6><strong>Date of Birth: </strong><?php echo $fetch['patient_birthdate']?></h6>
+							<h6><strong>Date of Birth: </strong><?php echo $fetch['birthdate']?></h6>
 							<hr style="margin:0px 0 5px 0;">
 							<h6><strong>Highest Education: </strong><?php echo $fetch['patient_highest_education']?></h6>
 							<hr style="margin:0px 0 5px 0;">
-							<h6><strong>Occupation: </strong><?php echo $fetch['patient_occupation']?></h6>
+							<h6><strong>Occupation: </strong><?php echo $fetch['occupation']?></h6>
 							<hr style="margin:0px 0 5px 0;">
 							<h6><strong>Name of Spouse: </strong><?php echo $fetch['spouse_name']?></h6>
 							<hr style="margin:0px 0 5px 0;">
@@ -34,13 +34,14 @@
 							<h6><strong>Occupation: </strong><?php echo $fetch['spouse_occupation']?></h6>
 							<hr style="margin:0px 0 5px 0;">
 							<h6><strong>Average Monthly Income: </strong><?php echo $fetch['average_monthly_income']?></h6>
+							<hr style="margin:0px 0 5px 0;">
 						</div>
 						<div class="col-md-6">    
+							<h6><strong>Address: </strong><?php echo $fetch['purok']." ".$fetch['street_address'];?></h6>
 							<hr style="margin:0px 0 5px 0;">
-							<h6><strong>Address: </strong><?php echo $fetch['address']?></h6>
+							<h6><strong>Province: </strong><?php echo $fetch['region_province']?></h6>
 							<hr style="margin:0px 0 5px 0;">
-							<h6><strong>Province: </strong><?php echo $fetch['address']?></h6>
-							<h6><strong>Registration Date: </strong><?php echo $fetch['date']?></h6>
+							<h6><strong>Registration Date: </strong><?php echo $fetch['date_time']?></h6>
 							<hr style="margin:0px 0 5px 0;">
 							<h6><strong>No. of Living Children: </strong><?php echo $fetch['no_of_living_children']?></h6>
 							<hr style="margin:0px 0 5px 0;">
