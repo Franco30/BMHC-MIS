@@ -31,10 +31,10 @@ $(document).ready(function () {
     $("#login-form").validate({
         rules: {
             password: {
-                required: true,
+                required: true
             },
             username: {
-                required: true,
+                required: true
             },
         },
         messages: {
@@ -57,7 +57,8 @@ $(document).ready(function () {
                 $("#login").html('<img src="action/ajax-loader3.gif" /> &nbsp; Signing In ...');
             },
             success: function (response) {
-                if (response == "ok") {
+                if (response == "Login Successfully") {
+                    console.log("gagana");
                     $("#error").fadeOut();
                     $("#login").html('<img src="action/ajax-loader3.gif" /> &nbsp; Signing In ...');
                     setTimeout(' window.location.href = "admindashboard"; ', 1000);
@@ -68,13 +69,14 @@ $(document).ready(function () {
                     setTimeout(' window.location.href = "dashboard"; ', 1000);
                 } else {
                     $("#error").fadeIn(1000, function () {
-                        $("#error").html('<div class="alert alert-danger"> <span class="glyphicon glyphicon-info-sign"></span> &nbsp; ' + 'Invalid Username or Password' + '!</div>');
+                        $("#error").html('<div class="alert alert-danger"> <span class="glyphicon glyphicon-info-sign"></span> &nbsp; ' +  response  + '!</div>');
                         $("#login").html('<span class="glyphicon glyphicon-log-in"></span> &nbsp; Sign me in');
                     });
                 }
             }
         });
         return false;
+//        'Invalid Username or Password'
     }
 
 });

@@ -17,12 +17,12 @@ if(isset($_POST['edit'])){
         $conn->query("INSERT INTO `users_activity_log` VALUES('', '$userid', 'Updated account of $fullname','$date_time')") or die(mysqli_error());
     }
     else {
-        $pass = sha1($password);
-        $salt = "STG3Wim4UAAAAAIX3525VGdasGfWty2w2N67dagj";
-        $pass1 = $salt.$pass;
-
+//        $pass = sha1($password);
+//        $salt = "STG3Wim4UAAAAAIX3525VGdasGfWty2w2N67dagj";
+//        $pass1 = $salt.$pass;
+        $hashed_password = password_hash($password, PASSWORD_DEFAULT);
         require ('../require/config.php');
-        $conn->query("UPDATE `users` SET `fullname` = '$fullname', `username` = '$username',  `password` = '$pass1' WHERE `user_id` = '$userid'") or die(mysqli_error());
+        $conn->query("UPDATE `users` SET `fullname` = '$fullname', `username` = '$username',  `password` = '$hashed_password' WHERE `user_id` = '$userid'") or die(mysqli_error());
 
         $conn->query("INSERT INTO `users_activity_log` VALUES('', '$userid', 'Updated account of $fullname','$date_time')") or die(mysqli_error());
 

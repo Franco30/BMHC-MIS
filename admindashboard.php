@@ -61,19 +61,41 @@ require 'require/logincheck.php';
                         <div class="widget widget-primary widget-carousel">
                             <div class="owl-carousel" id="owl-example">
                                 <div>
+                                    <?php
+	       $year = date('Y');
+			if(isset($_GET['year']))
+			{
+				$year=$_GET['year'];
+			}
+			$conn = new mysqli("localhost", "root", "", "bmhc") or die(mysqli_error());
+			$q = $conn->query("SELECT COUNT(*) as total FROM `family_planning`, `patient` WHERE `family_planning`.`patient_id` = `patient`.`patient_id` && `family_planning`.`year` = '$year'") or die(mysqli_error());
+			$f = $q->fetch_array();
+			$q2 = $conn->query("SELECT COUNT(*) as total FROM `prenatal` WHERE `year` = '$year'") or die(mysqli_error());
+			$fetch = $q2->fetch_array();
+			$q3 = $conn->query("SELECT COUNT(*) as total FROM `immunization` WHERE `year` = '$year'") or die(mysqli_error());
+			$fetch2 = $q3->fetch_array();
+            $q4 = $conn->query("SELECT COUNT(*) as total FROM `consultation` WHERE `year` = '$year'") or die(mysqli_error());
+			$fetch3 = $q4->fetch_array();
+
+										?>
                                     <div class="widget-title">Family Planning</div>
                                     <div class="widget-subtitle">Patients</div>
-                                    <div class="widget-int">3</div>
+                                    <div class="widget-int"><?php echo $f['total']?></div>
                                 </div>
                                 <div>
                                     <div class="widget-title">Prenatal</div>
                                     <div class="widget-subtitle">Patients</div>
-                                    <div class="widget-int">2</div>
+                                    <div class="widget-int"><?php echo $fetch['total']?></div>
                                 </div>
                                 <div>
                                     <div class="widget-title">Immunization</div>
                                     <div class="widget-subtitle">Patients</div>
-                                    <div class="widget-int">5</div>
+                                    <div class="widget-int"><?php echo $fetch2['total']?></div>
+                                </div>
+                                <div>
+                                    <div class="widget-title">Consultation</div>
+                                    <div class="widget-subtitle">Patients</div>
+                                    <div class="widget-int"><?php echo $fetch3['total']?></div>
                                 </div>
                             </div>
                             <div class="widget-controls">
@@ -324,11 +346,31 @@ require 'require/logincheck.php';
                                                 - Type of Treatment</strong></h3>
                                     </div>
                                     <div class="panel-body">
+                                        <?php
+                                $year = date('Y');
+			                 if(isset($_GET['year']))
+			                     {
+				                $year=$_GET['year'];
+			                         }
+												require 'require/config.php';	
+												$query1 = $conn->query("SELECT COUNT(*) as total FROM `family_planning` WHERE `year` = '$year'") or die(mysqli_error());
+												$fetch1 = $query1->fetch_array();
+
+												$query2 = $conn->query("SELECT COUNT(*) as total FROM `immunization` WHERE `year` = '$year'") or die(mysqli_error());
+												$fetch2 = $query2->fetch_array();
+                                                
+                                                $query3 = $conn->query("SELECT COUNT(*) as total FROM `prenatal` WHERE `year` = '$year'") or die(mysqli_error());
+												$fetch3 = $query3->fetch_array();
+                                                
+                                                $query4 = $conn->query("SELECT COUNT(*) as total FROM `consultation` WHERE `year` = '$year'") or die(mysqli_error());
+												$fetch4 = $query4->fetch_array();
+											?>
                                         <ul class='list-group border-bottom'>
                                             <li class='list-group-item'><span class='fa fa-user'></span>Family
-                                                Planning<span class='badge badge-info'>1</span></li>
-                                            <li class='list-group-item'><span class='fa fa-user'></span>Immunization<span class='badge badge-info'>0</span></li>
-                                            <li class='list-group-item'><span class='fa fa-user'></span>Prenatal<span class='badge badge-info'>0</span></li>
+                                                Planning<span class='badge badge-info'><?php echo $fetch1['total']?></span></li>
+                                            <li class='list-group-item'><span class='fa fa-user'></span>Immunization<span class='badge badge-info'><?php echo $fetch2['total']?></span></li>
+                                            <li class='list-group-item'><span class='fa fa-user'></span>Prenatal<span class='badge badge-info'><?php echo $fetch3['total']?></span></li>
+                                            <li class='list-group-item'><span class='fa fa-user'></span>Consultation<span class='badge badge-info'><?php echo $fetch4['total']?></span></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -392,7 +434,7 @@ require 'require/logincheck.php';
         });
 
     </script>
-<!--
+    <!--
     <script>
         $.ajaxPrefilter(function(options, originalOptions, jqXHR) {
             options.async = true;

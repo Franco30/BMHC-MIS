@@ -17,12 +17,15 @@ if(isset($_POST['add'])){
 
     
     // meaning ni ka $pass1 nag declare ko function nga SHA1, sa PHP ang SHA1 amu na ang ga encrypt ka plain text,
-    $pass1 = sha1($password);
+    //$pass1 = sha1($password);
+    
+    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+    
     // nag declare pa gid ko another variable na ma combine sa na encrypt na nga password, meaning pa gamuhon ko pa gid ang na encrypt para budlay pa gid idecrypt.
-    $salt = "STG3Wim4UAAAAAIX3525VGdasGfWty2w2N67dagj";
+    //$salt = "STG3Wim4UAAAAAIX3525VGdasGfWty2w2N67dagj";
     
     // sa diri na part gna combine ko na ang na encrypt nga password kag ang patalang ko na variable ang $salt. 
-    $pass1 = $salt.$pass1;
+    //$pass1 = $salt.$pass1;
 
     //history_log
     $user_id=$_SESSION['user_id'];
@@ -32,7 +35,7 @@ if(isset($_POST['add'])){
 
     require '../require/config.php';
 
-    $conn->query("INSERT INTO `users` VALUES('', '$fullname', '$license', '$position', '$username', '$pass1', '1', '', '$date', '$time')") or die(mysqli_error());
+    $conn->query("INSERT INTO `users` VALUES('', '$fullname', '$license', '$position', '$username', '$hashed_password', '1', '', '$date', '$time')") or die(mysqli_error());
 
     $conn->query("INSERT INTO `users_activity_log` VALUES('', '$user_id', 'Added $fullname as New User','$date_time')") or die(mysqli_error());
     $conn->close();

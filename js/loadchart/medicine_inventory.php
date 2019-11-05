@@ -82,6 +82,7 @@ json_encode($data_points);
 				{ 
 					type: "pie", 
 					startAngle: 240,
+					radius: 80,
 					toolTipContent: "{label} <br/> {y} pcs.", 
 					indexLabel: "{label} {y} pcs.", 
 					//legendText: "<?php echo $f1['medicine_name']?>",

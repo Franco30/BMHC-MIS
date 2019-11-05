@@ -16,61 +16,74 @@
             <div class="modal-body">
                 <form id="dispensedform">
                     <fieldset>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label>Purpose</label>
-                                <select class="form-control select" data-live-search="true" id="purpose" required>
-                                    <option>Select</option>
-                                    <option>Consultation</option>
-                                    <option>TB Medicine</option>
-                                    <option>Family Planning</option>
-                                    <option>Immunization</option>
-                                    <option>Prenatal</option>
-                                </select>
+                        <div class="col-md-8" style="margin-left: 150px;">
+                            <div class="panel panel-default">
+                                <div class="panel-body scroll" style="height: 350px;">
+                                    <div id="medicine" style="width: 100%; height: 320px"></div>
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <label>Medicine Name</label>
-                                <select class="form-control select" data-live-search="true" id="medicine_name" required>
-                                    <option value="#">Select</option>
-                                    <?php
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Purpose</label>
+                                        <select class="form-control select" data-live-search="true" id="purpose" required>
+                                            <option>Select</option>
+                                            <option>Consultation</option>
+                                            <option>TB Medicine</option>
+                                            <option>Family Planning</option>
+                                            <option>Immunization</option>
+                                            <option>Prenatal</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Medicine Name</label>
+                                        <select class="form-control select" data-live-search="true" id="medicine_name" required>
+                                            <option value="#">Select</option>
+                                            <?php
 	                $conn = new mysqli("localhost", "root", "", "bmhc") or die(mysqli_error());
 					$query = $conn->query("SELECT * FROM `medicine`") or die(mysqli_error());
 
 					while($fetch = $query->fetch_array()){
 									?>
-                                    <option value="<?php echo $fetch['medicine_id'];?>"><?php echo $fetch['medicine_name']?></option>
-                                    <?php
+                                            <option value="<?php echo $fetch['medicine_id'];?>"><?php echo $fetch['medicine_name']?></option>
+                                            <?php
 					}
                                  $medicine_id = $fetch['medicine_id'];
 									?>
-                                </select>
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <label>Quantity</label>
-                                <div id="quantity_response"></div>
-                                <input type="number" class="form-control" id="quantity" placeholder="Enter Quantity" required />
-                            </div>
-                            <div class="form-group">
-                                <label>Patient Name</label>
-                                <select class="form-control select" data-live-search="true" id="received">
-                                    <option value="#">Select</option>
-                                    <?php
+                            &nbsp;
+                            <div class="form-row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Quantity</label>
+                                        <div id="quantity_response"></div>
+                                        <input type="number" class="form-control" id="quantity" placeholder="Enter Quantity" required />
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Patient Name</label>
+                                        <select class="form-control select" data-live-search="true" id="received">
+                                            <option value="#">Select</option>
+                                            <?php
 	                $conn = new mysqli("localhost", "root", "", "bmhc") or die(mysqli_error());
 					$query = $conn->query("SELECT * FROM `patient` where `status` = 'Registered'") or die(mysqli_error());
 
 					while($fetch = $query->fetch_array()){
 									?>
-                                    <option value="<?php echo $fetch['patient_id'];?>"><?php echo $fetch['patient_name']?></option>
-                                    <?php
+                                            <option value="<?php echo $fetch['patient_id'];?>"><?php echo $fetch['patient_name']?></option>
+                                            <?php
 					}
 									?>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-8">
-                            <div class="panel panel-default">
-                                <div class="panel-body scroll" style="height: 250px;">
-                                    <div id="medicine" style="width: 100%; height: 425px"></div>
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
                         </div>

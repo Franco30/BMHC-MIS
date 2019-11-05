@@ -36,62 +36,61 @@
             <div class="page-content-wrap">
                 <div class="row">
                     <div class="col-md-6">
-                    <?php
+                        <?php
                         require 'require/config.php';
                         $id = $_SESSION['user_id'];
                         $q = $conn->query("SELECT * FROM `users` where `user_id` = '$id'") or die(mysqli_error());
                         $f = $q->fetch_array();
-                    ?>            
-                    <div class="panel panel-primary">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title">
-                                        Account Details
-                                    </h4>
-                                </div>
-                                <div class="panel-body">
-                                    <form role="form" id="user">
+                    ?>
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    Account Details
+                                </h4>
+                            </div>
+                            <div class="panel-body">
+                                <form role="form" id="user">
                                     <div id="alert" class="alert alert-success" style="display:none;">
                                         <center><span id="alerttext"></span></center>
                                     </div>
-                                        <div class="form-group row m-b-15">
-                                            <label class="col-md-2 col-form-label">Name</label>
-                                            <div class="col-md-8">
-                                                <input type="hidden" name="user_id" id="user_id" value="<?php echo $id?>">
-                                                <input type="text" id="fullname" class="form-control" value="<?php echo $f['fullname']?>" placeholder="Enter Full Name"/>
-                                            </div>
+                                    <div class="form-group row m-b-15">
+                                        <label class="col-md-2 col-form-label">Name</label>
+                                        <div class="col-md-8">
+                                            <input type="hidden" name="user_id" id="user_id" value="<?php echo $id?>">
+                                            <input type="text" id="fullname" class="form-control" value="<?php echo $f['fullname']?>" placeholder="Enter Full Name" />
                                         </div>
-                                        <div class="form-group row m-b-15">
-                                            <label class="col-md-2 col-form-label">Username</label>
-                                            <div class="col-md-8">
-                                                <input type="text" id="username" class="form-control" value="<?php echo $f['username']?>" placeholder="Enter Userame"/>
-                                            </div>
+                                    </div>
+                                    <div class="form-group row m-b-15">
+                                        <label class="col-md-2 col-form-label">Username</label>
+                                        <div class="col-md-8">
+                                            <input type="text" id="username" class="form-control" value="<?php echo $f['username']?>" placeholder="Enter Userame" />
                                         </div>
-                                        <div class="form-group row m-b-15">
-                                            <label class="col-md-2 col-form-label">New Password</label>
-                                            <div class="col-md-8">
-                                                <input type="text" id="password" name="password" class="form-control" placeholder="Enter Password"/>
-                                            </div>
+                                    </div>
+                                    <div class="form-group row m-b-15">
+                                        <label class="col-md-2 col-form-label">New Password</label>
+                                        <div class="col-md-8">
+                                            <input type="text" id="password" name="password" class="form-control" placeholder="Enter Password" />
                                         </div>
-                                        <div class="form-group row m-b-15">
-                                            <label class="col-md-2 col-form-label">Confirm Password</label>
-                                            <div class="col-md-8">
-                                                <input type="text" id="cfmpassword" name="cfmpassword" class="form-control" placeholder="Retype Password"/>
-                                            </div>
+                                    </div>
+                                    <div class="form-group row m-b-15">
+                                        <label class="col-md-2 col-form-label">Confirm Password</label>
+                                        <div class="col-md-8">
+                                            <input type="text" id="cfmpassword" name="cfmpassword" class="form-control" placeholder="Retype Password" />
                                         </div>
-                                        <hr>
-                                        <button type = "button" id="savechanges" class = "btn btn-md btn-info update_account">Save Changes</button>
-                                    </form>
-                                </div>
+                                    </div>
+                                    <hr>
+                                    <button type="button" id="savechanges" class="btn btn-md btn-info update_account">Save Changes</button>
+                                </form>
                             </div>
-                        </div>              
-
+                        </div>
                     </div>
+
                 </div>
             </div>
-            <!-- END PAGE CONTENT WRAPPER -->
         </div>
-        <!-- END PAGE CONTENT -->
+        <!-- END PAGE CONTENT WRAPPER -->
     </div>
+    <!-- END PAGE CONTENT -->
     <!-- END PAGE CONTAINER -->
 
     <!-- START PRELOADS -->
@@ -117,16 +116,15 @@
             ignore: [],
             rules: {
                 password: {
-                    minlength: 5,
-                    maxlength: 10
+                    minlength: 5
                 },
                 'cfmpassword': {
                     minlength: 5,
-                    maxlength: 10,
                     equalTo: "#password"
                 }
             }
         });
+
     </script>
     <!-- END PAGE PLUGINS -->
 

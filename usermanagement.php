@@ -97,12 +97,14 @@
     <script type="text/javascript" src="js/actions.js"></script>
     <!-- END TEMPLATE -->
     <!-- END SCRIPTS -->
+<!--
     <script>
         $.ajaxPrefilter(function(options, originalOptions, jqXHR) {
             options.async = true;
         });
 
     </script>
+-->
 </body>
 
 </html>
