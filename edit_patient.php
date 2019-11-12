@@ -191,6 +191,14 @@
                                                 <label>Emergency Number</label>
                                                 <input type="text" class="mask_cpnumber form-control" id="emergency_no<?php echo $fetch['patient_id']; ?>" placeholder="Enter Emergency Number" value="<?php echo $fetch['emergency_no']; ?>" required />
                                             </div>
+                                            <div class="form-group">
+                                                <label>Patient Condition</label>
+                                                <select class="form-control select" data-live-search="true" style="display: none;" id="status<?php echo $fetch['patient_id']; ?>">
+                                                    <option value="<?php echo $fetch['status']; ?>"><?php echo $fetch['status']; ?></option>
+                                                    <option value="Deceased">Deceased</option>
+                                                    <option value="Active">Active</option>
+                                                </select>
+                                            </div>
                                         </div>
                                     </div>
                                 </form>

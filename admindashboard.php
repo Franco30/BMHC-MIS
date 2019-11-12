@@ -18,11 +18,30 @@ require 'require/logincheck.php';
     <link rel="stylesheet" type="text/css" id="theme" href="css/theme-brown.css" />
     <link rel="stylesheet" type="text/css" href="assets3/vendor/font-awesome/css/font-awesome.min.css" />
     <!-- EOF CSS INCLUDE -->
+    <script src="js/jquery.canvasjs.min.js"></script>
     <script type="text/javascript" src="js/plugins/jquery/jquery.min.js"></script>
     <script type="text/javascript" src="js/plugins/jquery/jquery-ui.min.js"></script>
+    <?php require 'js/loadcharts/dashboard/dashboardgraphs.php'?>
+    
     <script src="js/moment.min.js"></script>
     <script src="js/fullcalendar.min.js"></script>
-    <script src="js/jquery.canvasjs.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("select").change(function() {
+                $(this).find("option:selected").each(function() {
+                    var optionValue = $(this).attr("value");
+                    if (optionValue) {
+                        $(".reporttype").not("." + optionValue).hide();
+                        $("." + optionValue).show();
+                    } else {
+                        $(".reporttype").hide();
+                    }
+                });
+            }).change();
+        });
+
+    </script>
+
     <script>
         $(document).ready(function() {
             $("#pyear").on('change', function() {
@@ -32,7 +51,6 @@ require 'require/logincheck.php';
         });
 
     </script>
-    <?php require 'js/loadcharts/dashboard/dashboardgraphs.php'?>
     <script src="functions/loadcalendar.js"></script>
 </head>
 
@@ -122,11 +140,14 @@ require 'require/logincheck.php';
                     date_default_timezone_set('Asia/Manila');	
 	                   $time=date("g:i a");
 	                   $date=date("F j, Y");
-                $dbconn = new mysqli("localhost", "root", "", "bmhc") or die(mysqli_error());
-	               $q = $dbconn->query("SELECT COUNT(*) as total FROM `patient` WHERE `year`='$year'") or die(mysqli_error());
-										 $fetch = $q->fetch_array();
+                    $conn = new mysqli("localhost", "root", "", "bmhc") or die(mysqli_error());
+                    $q = $conn->query("SELECT COUNT(*) as total FROM `patient` WHERE `year` = '$year'") or die(mysqli_error());
+                    $fetch = $q->fetch_array();
+                    $q2 = $conn->query("SELECT COUNT(*) as total FROM `patient_child` WHERE `year` = '$year'") or die(mysqli_error());
+                    $f2 = $q2->fetch_array();
+                    $sum = $fetch['total'] + $f2['total'];
 ?>
-                                <div class="widget-int num-count counter" data-count="<?php echo $fetch['total']?>">0
+                                <div class="widget-int num-count counter" data-count="<?php echo $sum?>">0
                                 </div>
                                 <div class="widget-title">Total Patients</div>
                                 <div class="widget-subtitle">Registered - Year <?php echo $year;?></div>
@@ -207,11 +228,12 @@ require 'require/logincheck.php';
                         <div class="col-md-12">
                             <div class="panel panel-primary">
                                 <div class="panel-heading">
-                                    <div class="form-group">
+                                    <div class="form-row">
                                         <div class="col-md-2">
-                                            <select class="form-control select" data-style="btn-primary" id="pyear">
-                                                <option selected disabled>Select Year</option>
-                                                <option value="<?php 
+                                            <div class="form-group" style="margin-left:-10px">
+                                                <select class="form-control select" data-style="btn-primary" id="pyear">
+                                                    <option selected disabled>Select Year</option>
+                                                    <option value="<?php 
                                                                     if(isset($_GET['year']))
                                                                     {
                                                                         $value=$_GET['year']; 
@@ -222,7 +244,7 @@ require 'require/logincheck.php';
                                                                         echo date('Y');
                                                                     }
                                                                 ?>">
-                                                    <?php 
+                                                        <?php 
                                                                             if(isset($_GET['year']))
                                                                             {
                                                                                 $value=$_GET['year']; 
@@ -233,86 +255,104 @@ require 'require/logincheck.php';
                                                                                 echo date('Y');
                                                                             }
                                                                     ?>
-                                                </option>
+                                                    </option>
 
-                                                <?php
+                                                    <?php
                                                     $conn = new mysqli("localhost", "root", "", "bmhc") or die(mysqli_error());
                                                     $query = $conn->query("SELECT * FROM `patient` group by year") or die(mysqli_error());
 
                                                     while($fetch = $query->fetch_array())
                                                  {
                                                         ?>
-                                                <option value="<?php echo $fetch['year'];?>">
-                                                    <?php echo $fetch['year']?>
-                                                </option>
-                                                <?php
+                                                    <option value="<?php echo $fetch['year'];?>">
+                                                        <?php echo $fetch['year']?>
+                                                    </option>
+                                                    <?php
                                                 }
                                                  ?>
-                                            </select>
+                                                </select>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <br>
-                                </div>
-                                <div class="panel-body">
-                                    <div id="chartContainer1" style="width: 100%; height: 300px"></div>
-                                </div>
-                            </div>
-                        </div>
+                                        <div class="col-md-2">
+                                            <div class="form-group" style="margin-left:-10px">
+                                                <select class="form-control select" data-style="btn-info" id="select-report" name="filterbutton">
+                                                    <option disabled="disabled">Select Report</option>
+                                                    <option value="patient">Patient</option>
+                                                    <option value="child">Infant Patient</option>
 
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="panel panel-primary">
-                                    <div class="panel-heading">
-                                        <h3 class="panel-title"><strong>Prenatal Follow Up Schedule Calendar</strong></h3>
-                                        <div class="btn-group pull-right">
-                                            <div class="pull-left">
-                                                <a href="follow_up_table" class="btn btn-primary pull-right">See
-                                                    Detailed</a>
+                                                </select>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="panel-body">
-                                        <div id="calendar" class="vertical-box-column p-15 calendar"></div>
-                                    </div>
+                                </div>
+                                <div class="panel-body">
+                                    <div id="chartContainer1" class="patient reporttype" style="width: 100%; height: 300px;"></div>
+                                    <div id="chartContainer2" class="child reporttype" style="width: 100%; height: 300px;"></div>
                                 </div>
                             </div>
                         </div>
+                    </div>
 
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="panel panel-primary">
-                                    <div class="panel-heading">
-                                        <h3 class="panel-title"><strong>Patient Classification - Gender</strong></h3>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title"><strong>Prenatal Follow Up Schedule Calendar</strong></h3>
+                                    <div class="btn-group pull-right">
+                                        <div class="pull-left">
+                                            <a href="follow_up_table" class="btn btn-primary pull-right">See
+                                                Detailed</a>
+                                        </div>
                                     </div>
-                                    <div class="panel-body">
-                                        <?php
+                                </div>
+                                <div class="panel-body">
+                                    <div id="calendar" class="vertical-box-column p-15 calendar"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title"><strong>Patient Classification - Gender</strong></h3>
+                                </div>
+                                <div class="panel-body">
+                                    <?php
                                  $year = date('Y');
 			                 if(isset($_GET['year']))
 			                     {
 				                $year=$_GET['year'];
 			                         }
 										require 'require/config.php';	
-												$query1 = $conn->query("SELECT count(*) as total from `patient` where patient_id && gender = 'Male' && year = '$year'") or die(mysqli_error());
+												$query1 = $conn->query("SELECT count(*) as total from `patient` where gender = 'Male' && year = '$year'") or die(mysqli_error());
 												$fetch1 = $query1->fetch_array();
-												$query2 = $conn->query("SELECT count(*) as total from `patient` where patient_id && gender = 'Female' && year = '$year'") or die(mysqli_error());
+                                                $query3 = $conn->query("SELECT count(*) as total from `patient_child` where gender = 'Male' && year = '$year'") or die(mysqli_error());
+                                                $fetch3 = $query3->fetch_array();
+                                                $sum = $fetch1['total'] + $fetch3['total'];
+												$query2 = $conn->query("SELECT count(*) as total from `patient` where gender = 'Female' && year = '$year'") or die(mysqli_error());
 												$fetch2 = $query2->fetch_array();
+                                                $query4 = $conn->query("SELECT count(*) as total from `patient_child` where gender = 'Female' && year = '$year'") or die(mysqli_error());
+                                                $fetch4 = $query4->fetch_array();
+                                                $sum2 = $fetch2['total'] + $fetch4['total'];
 										?>
-                                        <ul class='list-group border-bottom'>
-                                            <li class='list-group-item'><span class='fa fa-male'></span>Male<span class='badge badge-info'><?php echo $fetch1['total']?></span></li>
-                                            <li class='list-group-item'><span class='fa fa-female'></span>Female<span class='badge badge-info'><?php echo $fetch2['total']?></span></li>
+                                    <ul class='list-group border-bottom'>
+                                        <li class='list-group-item'><span class='fa fa-male'></span>Male<span class='badge badge-info'><?php echo $sum?></span></li>
+                                        <li class='list-group-item'><span class='fa fa-female'></span>Female<span class='badge badge-info'><?php echo $sum2?></span></li>
 
-                                        </ul>
-                                    </div>
+                                    </ul>
                                 </div>
                             </div>
+                        </div>
 
-                            <div class="col-md-4">
-                                <div class="panel panel-primary">
-                                    <div class="panel-heading">
-                                        <h3 class="panel-title"><strong>Patient Classification - Type</strong></h3>
-                                    </div>
-                                    <div class="panel-body">
-                                        <?php
+                        <div class="col-md-4">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title"><strong>Patient Classification - Type</strong></h3>
+                                </div>
+                                <div class="panel-body">
+                                    <?php
                                 $year = date('Y');
 			                 if(isset($_GET['year']))
 			                     {
@@ -330,23 +370,23 @@ require 'require/logincheck.php';
                                                 
                                                 $sum = $fetch1['total'] + $fetch3['total'];
 											?>
-                                        <ul class='list-group border-bottom'>
-                                            <li class='list-group-item'><span class='fa fa-child'></span>Children<span class='badge badge-info'><?php echo $sum?></span></li>
-                                            <li class='list-group-item'><span class='fa fa-user'></span>Adult<span class='badge badge-info'><?php echo $fetch2['total']?></span></li>
+                                    <ul class='list-group border-bottom'>
+                                        <li class='list-group-item'><span class='fa fa-child'></span>Children<span class='badge badge-info'><?php echo $sum?></span></li>
+                                        <li class='list-group-item'><span class='fa fa-user'></span>Adult<span class='badge badge-info'><?php echo $fetch2['total']?></span></li>
 
-                                        </ul>
-                                    </div>
+                                    </ul>
                                 </div>
                             </div>
+                        </div>
 
-                            <div class="col-md-4">
-                                <div class="panel panel-primary">
-                                    <div class="panel-heading">
-                                        <h3 class="panel-title" style="font-size: 15px;"><strong>Patient Classification
-                                                - Type of Treatment</strong></h3>
-                                    </div>
-                                    <div class="panel-body">
-                                        <?php
+                        <div class="col-md-4">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title" style="font-size: 15px;"><strong>Patient Classification
+                                            - Type of Treatment</strong></h3>
+                                </div>
+                                <div class="panel-body">
+                                    <?php
                                 $year = date('Y');
 			                 if(isset($_GET['year']))
 			                     {
@@ -365,14 +405,13 @@ require 'require/logincheck.php';
                                                 $query4 = $conn->query("SELECT COUNT(*) as total FROM `consultation` WHERE `year` = '$year'") or die(mysqli_error());
 												$fetch4 = $query4->fetch_array();
 											?>
-                                        <ul class='list-group border-bottom'>
-                                            <li class='list-group-item'><span class='fa fa-user'></span>Family
-                                                Planning<span class='badge badge-info'><?php echo $fetch1['total']?></span></li>
-                                            <li class='list-group-item'><span class='fa fa-user'></span>Immunization<span class='badge badge-info'><?php echo $fetch2['total']?></span></li>
-                                            <li class='list-group-item'><span class='fa fa-user'></span>Prenatal<span class='badge badge-info'><?php echo $fetch3['total']?></span></li>
-                                            <li class='list-group-item'><span class='fa fa-user'></span>Consultation<span class='badge badge-info'><?php echo $fetch4['total']?></span></li>
-                                        </ul>
-                                    </div>
+                                    <ul class='list-group border-bottom'>
+                                        <li class='list-group-item'><span class='fa fa-user'></span>Family
+                                            Planning<span class='badge badge-info'><?php echo $fetch1['total']?></span></li>
+                                        <li class='list-group-item'><span class='fa fa-user'></span>Immunization<span class='badge badge-info'><?php echo $fetch2['total']?></span></li>
+                                        <li class='list-group-item'><span class='fa fa-user'></span>Prenatal<span class='badge badge-info'><?php echo $fetch3['total']?></span></li>
+                                        <li class='list-group-item'><span class='fa fa-user'></span>Consultation<span class='badge badge-info'><?php echo $fetch4['total']?></span></li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>

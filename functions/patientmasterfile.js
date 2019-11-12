@@ -17,6 +17,7 @@ $(document).ready(function () {
         $philhealth_no = $('#philhealth_no' + $patient_id).val();
         $contact_person = $('#contact_person' + $patient_id).val();
         $emergency_no = $('#emergency_no' + $patient_id).val();
+        $status = $('#status' + $patient_id).val();
 //        if (confirm('Are you sure you want to update this patient?')) {
             $.ajax({
                 type: "POST",
@@ -40,6 +41,7 @@ $(document).ready(function () {
                     philhealth_no: $philhealth_no,
                     contact_person: $contact_person,
                     emergency_no: $emergency_no,
+                    status: $status,
                     edit: 1,
                 },
                 success: function () {

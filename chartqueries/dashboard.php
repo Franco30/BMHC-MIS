@@ -35,10 +35,36 @@ $qdec = $conn->query("SELECT COUNT(*) as total FROM `patient` WHERE `month` = 'D
 $fdec = $qdec->fetch_array();
 $total = $conn->query("SELECT COUNT(*) as total FROM `patient` WHERE `year` = '$year'") or die(mysqli_error());
 $total = $total->fetch_array();
+
+$qjan2 = $conn->query("SELECT COUNT(*) as total FROM `patient_child` WHERE `month` = 'Jan' && `year` = '$year'") or die(mysqli_error());
+$fjan2 = $qjan2->fetch_array();
+$qfeb2 = $conn->query("SELECT COUNT(*) as total FROM `patient_child` WHERE `month` = 'Feb' && `year` = '$year'") or die(mysqli_error());
+$ffeb2 = $qfeb2->fetch_array();
+$qmar2 = $conn->query("SELECT COUNT(*) as total FROM `patient_child` WHERE `month` = 'Mar' && `year` = '$year'") or die(mysqli_error());
+$fmar2 = $qmar2->fetch_array();
+$qapr2 = $conn->query("SELECT COUNT(*) as total FROM `patient_child` WHERE `month` = 'Apr' && `year` = '$year'") or die(mysqli_error());
+$fapr2 = $qapr2->fetch_array();
+$qmay2 = $conn->query("SELECT COUNT(*) as total FROM `patient_child` WHERE `month` = 'May' && `year` = '$year'") or die(mysqli_error());
+$fmay2 = $qmay2->fetch_array();
+$qjun2 = $conn->query("SELECT COUNT(*) as total FROM `patient_child` WHERE `month` = 'Jun' && `year` = '$year'") or die(mysqli_error());
+$fjun2 = $qjun2->fetch_array();
+$qjul2 = $conn->query("SELECT COUNT(*) as total FROM `patient_child` WHERE `month` = 'Jul' && `year` = '$year'") or die(mysqli_error());
+$fjul2 = $qjul2->fetch_array();
+$qaug2 = $conn->query("SELECT COUNT(*) as total FROM `patient_child` WHERE `month` = 'Aug' && `year` = '$year'") or die(mysqli_error());
+$faug2 = $qaug2->fetch_array();
+$qsep2 = $conn->query("SELECT COUNT(*) as total FROM `patient_child` WHERE `month` = 'Sep' && `year` = '$year'") or die(mysqli_error());
+$fsep2 = $qsep2->fetch_array();
+$qoct2 = $conn->query("SELECT COUNT(*) as total FROM `patient_child` WHERE `month` = 'Oct' && `year` = '$year'") or die(mysqli_error());
+$foct2 = $qoct2->fetch_array();
+$qnov2 = $conn->query("SELECT COUNT(*) as total FROM `patient_child` WHERE `month` = 'Nov' && `year` = '$year'") or die(mysqli_error());
+$fnov2 = $qnov2->fetch_array();
+$qdec2 = $conn->query("SELECT COUNT(*) as total FROM `patient_child` WHERE `month` = 'Dec' && `year` = '$year'") or die(mysqli_error());
+$fdec2 = $qdec2->fetch_array();
+$total2 = $conn->query("SELECT COUNT(*) as total FROM `patient_child` WHERE `year` = '$year'") or die(mysqli_error());
+$total2 = $total2->fetch_array();
 ?>
 
 
-<!-- Annual Dispatch-->
 <?php
 $year = date('Y');
 if(isset($_GET['year']))
@@ -57,6 +83,7 @@ while($result3 = $res3->fetch_array()){
 }
 json_encode($data_points3);
 ?>
+
 
 
 

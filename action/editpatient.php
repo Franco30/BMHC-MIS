@@ -18,6 +18,7 @@ if(isset($_POST['edit'])){
     $philhealth_no = $_POST['philhealth_no'];
     $contact_person = $_POST['contact_person'];
     $emergency_no = $_POST['emergency_no'];
+    $status = $_POST['status'];
     
     $user_id=$_SESSION['user_id'];
     $year = date("Y", strtotime("+8 HOURS"));
@@ -27,7 +28,7 @@ if(isset($_POST['edit'])){
     $remarks = "Edited $patient_name Patient Profile";
 
     require '../require/config.php';
-    $conn->query("UPDATE `patient` SET `patient_name` = '$patient_name', `civil_status` = '$civilstatus', `birthdate` = '$birthdate', `age` = '$age', `gender` = '$gender', `purok` = '$purok', `street_address` = '$streetaddress', `height` = '$height', `weight` = '$weight', `contact_no` = '$contact_no', `region_province` = '$region_province', `occupation` = '$occupation', `philhealth_no` = '$philhealth_no', `contact_person` = '$contact_person', `emergency_no` = '$emergency_no' WHERE `patient_id` = '$patient_id'") or die(mysqli_error());
+    $conn->query("UPDATE `patient` SET `patient_name` = '$patient_name', `civil_status` = '$civilstatus', `birthdate` = '$birthdate', `age` = '$age', `gender` = '$gender', `purok` = '$purok', `street_address` = '$streetaddress', `height` = '$height', `weight` = '$weight', `contact_no` = '$contact_no', `region_province` = '$region_province', `occupation` = '$occupation', `philhealth_no` = '$philhealth_no', `contact_person` = '$contact_person', `emergency_no` = '$emergency_no', `status` = '$status' WHERE `patient_id` = '$patient_id'") or die(mysqli_error());
     $conn->query("INSERT INTO `users_activity_log` VALUES('', '$user_id', '$remarks','$date_time')") or die(mysqli_error());
 }
 ?>

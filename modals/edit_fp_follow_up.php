@@ -43,7 +43,7 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label>Method/Brand</label>
-                                <textarea type="text" class="form-control" id="method<?php echo $fetch1['fp_follow_up_id']; ?>" required><?php echo $fetch1['method_brand']; ?></textarea>
+                                <input type="text" class="tagsinput" id="method<?php echo $fetch1['fp_follow_up_id']; ?>" value="<?php echo $fetch1['method_brand']; ?>" required />
                             </div>
                             <div class="form-group">
                                 <label>No. of Units</label>

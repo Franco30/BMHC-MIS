@@ -74,7 +74,7 @@
                                             <option value="#">Select</option>
                                             <?php
 	                $conn = new mysqli("localhost", "root", "", "bmhc") or die(mysqli_error());
-					$query = $conn->query("SELECT * FROM `patient` where `status` = 'Registered'") or die(mysqli_error());
+					$query = $conn->query("SELECT * FROM `patient` where `status` = 'Active'") or die(mysqli_error());
 
 					while($fetch = $query->fetch_array()){
 									?>

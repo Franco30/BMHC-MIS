@@ -51,6 +51,7 @@
                                             <option>Select</option>
                                             <option>Single</option>
                                             <option>Married</option>
+                                            <option>Widowed</option>
                                         </select>
                                     </div>
                                 </div>

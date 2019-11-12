@@ -31,10 +31,12 @@
 	       require 'require/config.php';
             $query = $conn->query("SELECT * FROM `patient` WHERE `patient_id` = '$_GET[patient_id]'") or die(mysqli_error());
 			$fetch = $query->fetch_array();
+            $q2 = $conn->query("SELECT * FROM `consultation` WHERE `patient_id` = '$_GET[patient_id]' && `status` = 'No Prescription'") or die(mysqli_error());
+			$f2 = $q2->fetch_array();
 					?>
                 <li>Transactions</li>
                 <li>Consultation</li>
-                <li>Treatment</li>
+                <li><a href="patient_consultation?patient_id=<?php echo $fetch['patient_id']?>">Treatment</a></li>
                 <li><mark><strong><?php echo $fetch['patient_name']?></strong></mark></li>
             </ul>
             <!-- END BREADCRUMB -->
@@ -56,26 +58,42 @@
                                 </div>
                             </div>
                             <div class="panel-body">
-                                <table id="patientmasterfiletable" class="table datatable" width="100%">
+<!--                                <div id="prescriptionTable"></div>-->
+                                <table id="prescriptiontable" class="table datatable">
                                     <thead>
                                         <tr class="warning">
                                             <th>
                                                 <center>Medicine Category</center>
                                             </th>
                                             <th>
-                                                <center>Medicine Name</center>
+                                                <center>Medication & Dosage</center>
                                             </th>
                                             <th>
-                                                <center>Breakfast</center>
+                                                <center>6 (AM)</center>
                                             </th>
                                             <th>
-                                                <center>Lunch</center>
+                                                <center>8 (AM)</center>
                                             </th>
                                             <th>
-                                                <center>Dinner</center>
+                                                <center>12 (NN)</center>
                                             </th>
                                             <th>
-                                                <center>Recommendations</center>
+                                                <center>2 (PM)</center>
+                                            </th>
+                                            <th>
+                                                <center>4 (PM)</center>
+                                            </th>
+                                            <th>
+                                                <center>6 (PM)</center>
+                                            </th>
+                                            <th>
+                                                <center>8 (PM)</center>
+                                            </th>
+                                            <th>
+                                                <center>Quantity</center>
+                                            </th>
+                                            <th>
+                                                <center>Recommendation</center>
                                             </th>
                                             <th>
                                                 <center>Action</center>
@@ -83,32 +101,57 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        <?php
+            $query = $conn->query("SELECT * FROM `consultation_prescription` WHERE `patient_id` = '$_GET[patient_id]' && `consultation_id` = '$_GET[consultation_id]'") or die(mysqli_error());
+            while($fetch = $query->fetch_array()){
+            ?>
                                         <tr>
-                                            <th>
-                                                <center>Antibiotic</center>
-                                            </th>
                                             <td>
-                                                <center>Dolfenal</center>
+                                                <center><strong><?php echo $fetch['medicine_category']?></strong></center>
                                             </td>
                                             <td>
-                                                <center>1</center>
+                                                <center><strong><?php echo $fetch['medname']?></strong></center>
                                             </td>
                                             <td>
-                                                <center>1</center>
+                                                <center><?php echo $fetch['6am']?></center>
                                             </td>
                                             <td>
-                                                <center>1</center>
+                                                <center><?php echo $fetch['8am']?></center>
                                             </td>
                                             <td>
-                                                <center>Drink lot of water</center>
+                                                <center><?php echo $fetch['12nn']?></center>
                                             </td>
                                             <td>
-                                                <center><button type="button" class="btn btn-info">UPDATE</button></center>
+                                                <center><?php echo $fetch['2pm']?></center>
+                                            </td>
+                                            <td>
+                                                <center><?php echo $fetch['4pm']?></center>
+                                            </td>
+                                            <td>
+                                                <center><?php echo $fetch['6pm']?></center>
+                                            </td>
+                                            <td>
+                                                <center><?php echo $fetch['8pm']?></center>
+                                            </td>
+                                            <td>
+                                                <center><?php echo $fetch['qty']?></center>
+                                            </td>
+                                            <td>
+                                                <center><?php echo $fetch['recommendation']?></center>
+                                            </td>
+                                            <td class="print">
+                                                <center>
+                                                    <button data-target="#edit_child_patient<?php echo $fetch['child_id']; ?>" data-toggle="modal" class="btn btn-sm btn-default">Update</button>
+                                                </center>
+                                                <?php //require('../modals/editchildpatient.php'); ?>
                                             </td>
                                         </tr>
+                                        <?php
+                                        }
+                                        $conn->close();
+                                            ?>
                                     </tbody>
                                 </table>
-                                <div id="prescriptionTable"></div>
                             </div>
                         </div>
                     </div>
@@ -122,7 +165,7 @@
     <audio id="audio-alert" src="audio/alert.mp3" preload="auto"></audio>
     <audio id="audio-fail" src="audio/fail.mp3" preload="auto"></audio>
     <script type="text/javascript" src="js/plugins/jquery/jquery.min.js"></script>
-    <script type="text/javascript" src="functions/crudconsultation.js"></script>
+    <script type="text/javascript" src="functions/crud_prescription.js"></script>
     <script src="js/angolia.js"></script>
     <script type="text/javascript" src="js/plugins/jquery/jquery-ui.min.js"></script>
     <script type="text/javascript" src="js/plugins/bootstrap/bootstrap.min.js"></script>
@@ -140,7 +183,7 @@
     <script type="text/javascript" src="js/actions.js"></script>
 
     <!-- END THIS PAGE PLUGINS -->
-<!--
+    <!--
     <script>
         $.ajaxPrefilter(function(options, originalOptions, jqXHR) {
             options.async = true;
@@ -148,6 +191,7 @@
 
     </script>
 -->
+    <!--
     <script type="text/javascript">
         $(document).ready(function() {
             $('#medicine_category').change(function() {
@@ -226,7 +270,7 @@
         });
 
     </script>
-
+-->
 </body>
 
 </html>

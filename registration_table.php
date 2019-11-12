@@ -88,43 +88,41 @@
                                 <li class="active"><a href="#tab-first" role="tab" data-toggle="tab">Patient Registration</a></li>
                                 <li><a href="#tab-second" role="tab" data-toggle="tab">Child Patient Registration</a></li>
                             </ul>
-                            <div class="panel-body tab-content">
-                                <div class="tab-pane active" id="tab-first">
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="panel panel-default">
-                                                <div class="panel-heading">
-                                                    <div class="btn-group pull-right print">
-                                                        <div class="pull-left">
-                                                            <button class="btn btn-primary btn-md" data-toggle="modal" data-target="#new_patient">New Patient</button>
+                            <div class="panel-body list-group list-group-contacts scroll" style="height: 790px;">
+                                <div class="panel-body tab-content">
+                                    <div class="tab-pane active" id="tab-first">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="panel panel-default">
+                                                    <div class="panel-heading">
+                                                        <div class="btn-group pull-right print">
+                                                            <div class="pull-left">
+                                                                <button class="btn btn-primary btn-md" data-toggle="modal" data-target="#new_patient">New Patient</button>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <div class="panel-body list-group list-group-contacts scroll" style="height: 670px;">
-                                                    <div class="panel-body">
-                                                        <div id="patientTable"></div>
-                                                    </div>
+                                                        <div class="panel-body">
+                                                            <div id="patientTable"></div>
+                                                        </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
 
-                                <div class="tab-pane" id="tab-second">
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="panel panel-default">
-                                                <div class="panel-heading">
-                                                    <div class="btn-group pull-right print">
-                                                        <div class="pull-left">
-                                                            <button class="btn btn-primary btn-md" data-toggle="modal" data-target="#new_child_patient">New Patient</button>
+                                    <div class="tab-pane" id="tab-second">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="panel panel-default">
+                                                    <div class="panel-heading">
+                                                        <div class="btn-group pull-right print">
+                                                            <div class="pull-left">
+                                                                <button class="btn btn-primary btn-md" data-toggle="modal" data-target="#new_child_patient">New Patient</button>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <div class="panel-body list-group list-group-contacts scroll" style="height: 670px;">
-                                                    <div class="panel-body">
-                                                        <div id="childpatientTable"></div>
-                                                    </div>
+                                                        <div class="panel-body">
+                                                            <div id="childpatientTable"></div>
+                                                        </div>
                                                 </div>
                                             </div>
                                         </div>

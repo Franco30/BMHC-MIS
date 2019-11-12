@@ -6,6 +6,7 @@ if(isset($_POST['show'])){
 <table id="consultationpatienttable" class="table datatable">
     <thead>
         <tr>
+            <th><center>Consultation ID</center></th>
             <th><center>Patient Name</center></th>
             <th>Age</th>
             <th><center>Gender</center></th>
@@ -28,6 +29,7 @@ if(isset($_POST['show'])){
             $f2 = $q2->fetch_array();
         ?>
         <tr>
+            <td><center><strong><?php echo $fetch['consultation_id']?></strong></center></td>
             <td><center><strong><?php echo $fetch['patient_name']?></strong></center></td>
             <td><center><?php echo $fetch['age']?></center></td>
             <td><center><?php echo $fetch['gender']?></center></td>

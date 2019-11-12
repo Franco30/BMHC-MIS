@@ -47,7 +47,7 @@
                                 date_default_timezone_set('Asia/Manila');
                                 $date=date("F j, Y");
 									?>
-                                <form id="familyplanningform">
+                                <form id="prenatalform">
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="col-md-6">
