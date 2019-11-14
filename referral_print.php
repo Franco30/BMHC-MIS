@@ -32,7 +32,7 @@
 	</style>
 </head>
 <?php
-$conn = new mysqli("localhost", "root", "", "bmhc") or die(mysqli_error());
+require 'require/config.php';
 $query = $conn->query("SELECT * FROM `referral` WHERE `referral_id` = '$_GET[referral_id]'") or die(mysqli_error());
 $fetch = $query->fetch_array();
 ?>
@@ -55,7 +55,7 @@ $fetch = $query->fetch_array();
 					<div id="print">
 						<div class="panel-body">
 							<?php
-								$conn = new mysqli("localhost", "root", "", "bmhc") or die(mysqli_error());
+								require 'require/config.php';
 								$query = $conn->query("SELECT * FROM `referral` WHERE `referral_id` = '$_GET[referral_id]'") or die(mysqli_error());
 								$fetch = $query->fetch_array();
 								?>

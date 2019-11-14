@@ -75,7 +75,7 @@
                                                         <table id="prenatal" class="table table-bordered">
                                                             <tbody>
                                                                 <?php
-                                $conn = new mysqli('localhost','root','','bmhc')or die(mysqli_error());
+                                require 'require/config.php';
                                 $query = $conn->query("SELECT * FROM `referral` WHERE `referral_id` = '$_GET[referral_id]'") or die(mysqli_error());
                                 while($fetch = $query->fetch_array()){
                                 ?>
@@ -132,7 +132,7 @@
                                                         <table id="referral2" class="table table-bordered">
                                                             <tbody>
                                                                 <?php
-                                            $conn = new mysqli('localhost','root','','bmhc')or die(mysqli_error());
+                                            require 'require/config.php';
                                             $query = $conn->query("SELECT * FROM `referral` WHERE `referral_id` = '$_GET[referral_id]'") or die(mysqli_error());
                                             while($fetch = $query->fetch_array()){
                                             ?>
@@ -197,7 +197,7 @@
                                                         <table id="referral3" class="table table-bordered">
                                                             <tbody>
                                                                 <?php
-															$conn = new mysqli('localhost','root','','bmhc')or die(mysqli_error());
+															require 'require/config.php';
 								$query = $conn->query("SELECT * FROM `referral` WHERE `referral_id` = '$_GET[referral_id]'") or die(mysqli_error());
 								while($fetch = $query->fetch_array()){
 									?>

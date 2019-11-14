@@ -1,7 +1,6 @@
 <?php
 
 //fetch_data.php
-
 $connect = new PDO("mysql:host=localhost;dbname=testing", "root", "");
 
 $method = $_SERVER['REQUEST_METHOD'];

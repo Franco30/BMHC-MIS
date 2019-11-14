@@ -20,7 +20,7 @@
                 }
                 ?></option>
             <?php
-            $conn = new mysqli("localhost", "root", "", "bmhc") or die(mysqli_error());
+            require 'require/config.php';
             $query = $conn->query("SELECT * FROM `patient` group by year") or die(mysqli_error());
 
             while($fetch = $query->fetch_array())

@@ -1,8 +1,7 @@
 <?php
 
 //load.php
-
-$connect = new PDO('mysql:host=localhost;dbname=bmhc', 'root', '');
+require 'require/config2.php';
 
 $data = array();
 

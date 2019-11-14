@@ -140,7 +140,7 @@
         <?php
         date_default_timezone_set('Asia/Manila');
 		$date_today = date('F j, Y');
-		$conn = new mysqli("localhost", "root", "", "bmhc") or die(mysqli_error());
+        require 'require/config.php';
 		$q = $conn->query("SELECT COUNT(*) as count from `fp_follow_up` WHERE `next_service_date` = '$date_today'") or die(mysqli_error());
 		$f = $q->fetch_array();
 		?>
@@ -158,7 +158,7 @@
             </div>
             <div class="panel-body list-group list-group-contacts scroll" style="height: 400px;">
                 <?php 
-					$conn = new mysqli("localhost", "root", "", "bmhc") or die(mysqli_error());
+					require 'require/config.php';
 					$q = $conn->query("SELECT * FROM `fp_follow_up` NATURAL JOIN `patient` WHERE `next_service_date` = '$date_today'") or die(mysqli_error());
 					while($f = $q->fetch_array()){
 				?>
@@ -186,7 +186,7 @@
 
     <li class="xn-icon-button pull-right">
         <?php
-		$conn = new mysqli("localhost", "root", "", "bmhc") or die(mysqli_error());
+		require 'require/config.php';
 		$q = $conn->query("SELECT COUNT(*) as count from `medicine` WHERE `running_balance` <= 15") or die(mysqli_error());
 		$f = $q->fetch_array();
 		?>
@@ -204,7 +204,7 @@
             </div>
             <div class="panel-body list-group list-group-contacts scroll" style="height: 400px;">
                 <?php 
-					$conn = new mysqli("localhost", "root", "", "bmhc") or die(mysqli_error());
+					require 'require/config.php';
 					$q = $conn->query("SELECT * FROM `medicine` WHERE `running_balance` <= 15") or die(mysqli_error());
 					while($f = $q->fetch_array()){
 				?>
@@ -231,7 +231,7 @@
         <?php
 		date_default_timezone_set('Asia/Manila');
 		$date_today = date('F j, Y');
-		$conn = new mysqli("localhost", "root", "", "bmhc") or die(mysqli_error());
+		require 'require/config.php';
 		$query = $conn->query("SELECT * FROM `medication_dispensation` ORDER BY `dispensation_id` DESC") or die(mysqli_error());
 		$fetch = $query->fetch_array();
 		$q = $conn->query("SELECT COUNT(*) as total FROM `medication_dispensation` WHERE `date_given` = '$date_today'") or die(mysqli_error());
@@ -250,7 +250,7 @@
             <div class="panel-body list-group list-group-contacts scroll" style="height: 400px;">
                 <?php 
 					$date_today = date('F j, Y');
-					$conn = new mysqli("localhost", "root", "", "bmhc") or die(mysqli_error());
+					require 'require/config.php';
 					$q = $conn->query("SELECT * FROM `patient`,`medication_dispensation` WHERE patient.patient_id = medication_dispensation.patient_id  order by `dispensation_id` DESC limit 10") or die(mysqli_error());
 					while($f = $q->fetch_array())
 					{

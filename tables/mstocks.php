@@ -19,7 +19,7 @@ if(isset($_POST['show'])){
     </thead>
     <tbody>
         <?php
-        $conn = new mysqli("localhost", "root", "", "bmhc") or die(mysqli_error());
+        require '../require/config.php';
         $query = $conn->query("SELECT * FROM `medicine` NATURAL JOIN `medicine_stocks` WHERE medicine_stocks.medicine_id = medicine.medicine_id ORDER BY `medicine_stock_id` DESC") or die(mysqli_error());
         while($fetch = $query->fetch_array()){
         ?>

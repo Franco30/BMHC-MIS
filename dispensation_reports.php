@@ -72,7 +72,7 @@
                                         <tbody>
                                             <?php
 
-    $conn = new mysqli("localhost", "root", "", "bmhc") or die(mysqli_error());
+            require 'require/config.php';
             $query = $conn->query("SELECT * FROM `patient`,`medicine`,`medication_dispensation` WHERE medicine.medicine_id = medication_dispensation.medicine_id && patient.patient_id = medication_dispensation.patient_id && patient.patient_id = '$_GET[id]'") or die(mysqli_error());
             while($fetch = $query->fetch_array()){
                                                 ?>

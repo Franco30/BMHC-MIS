@@ -16,7 +16,7 @@ if(isset($_POST['show'])){
     </thead>
     <tbody>
         <?php
-	$conn = new mysqli("localhost", "root", "", "bmhc") or die(mysqli_error());
+	        require '../require/config.php';
 			$query = $conn->query("SELECT * FROM `referral` ORDER BY `referral_id` DESC") or die(mysqli_error());
 			while($fetch = $query->fetch_array()){
 											?>

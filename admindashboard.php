@@ -85,7 +85,7 @@ require 'require/logincheck.php';
 			{
 				$year=$_GET['year'];
 			}
-			$conn = new mysqli("localhost", "root", "", "bmhc") or die(mysqli_error());
+			require 'require/config.php';
 			$q = $conn->query("SELECT COUNT(*) as total FROM `family_planning`, `patient` WHERE `family_planning`.`patient_id` = `patient`.`patient_id` && `family_planning`.`year` = '$year'") or die(mysqli_error());
 			$f = $q->fetch_array();
 			$q2 = $conn->query("SELECT COUNT(*) as total FROM `prenatal` WHERE `year` = '$year'") or die(mysqli_error());
@@ -140,7 +140,7 @@ require 'require/logincheck.php';
                     date_default_timezone_set('Asia/Manila');	
 	                   $time=date("g:i a");
 	                   $date=date("F j, Y");
-                    $conn = new mysqli("localhost", "root", "", "bmhc") or die(mysqli_error());
+                    require 'require/config.php';
                     $q = $conn->query("SELECT COUNT(*) as total FROM `patient` WHERE `year` = '$year'") or die(mysqli_error());
                     $fetch = $q->fetch_array();
                     $q2 = $conn->query("SELECT COUNT(*) as total FROM `patient_child` WHERE `year` = '$year'") or die(mysqli_error());
@@ -258,7 +258,7 @@ require 'require/logincheck.php';
                                                     </option>
 
                                                     <?php
-                                                    $conn = new mysqli("localhost", "root", "", "bmhc") or die(mysqli_error());
+                                                    require 'require/config.php';
                                                     $query = $conn->query("SELECT * FROM `patient` group by year") or die(mysqli_error());
 
                                                     while($fetch = $query->fetch_array())

@@ -5,7 +5,7 @@ if(isset($_GET['year']))
 	$year=$_GET['year'];
 }
 
-$conn = new mysqli("localhost", "root", "", "bmhc") or die(mysqli_error());
+require 'require/config.php';
 $res = $conn->query("SELECT * FROM `medicine` GROUP BY medicine_name") or die(mysqli_error());
 $data_points = array();
 while($result = $res->fetch_array()){

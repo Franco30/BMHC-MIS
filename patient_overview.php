@@ -188,7 +188,7 @@
 															</thead>
 															<tbody>
 																<?php
-															$conn = new mysqli('localhost','root','','bmhc')or die(mysqli_error());
+															require 'require/config.php';
 								$query = $conn->query("SELECT * FROM `patient` NATURAL JOIN `prenatal` WHERE `patient_id` = '$_GET[id]' ORDER BY prenatal_id DESC") or die(mysqli_error());
 								while($fetch = $query->fetch_array()){
 									?>
@@ -253,7 +253,7 @@
 															</thead>
 															<tbody>
 																<?php
-															$conn = new mysqli('localhost','root','','bmhc')or die(mysqli_error());
+															require 'require/config.php';
 								$query = $conn->query("SELECT * FROM `family_planning` WHERE `family_planning`.`patient_id` =  '$_GET[id]'") or die(mysqli_error());
 								while($fetch = $query->fetch_array()){
 								$q2 = $conn->query("SELECT * FROM `patient` WHERE `patient_id` = '$_GET[id]'")or die(mysqli_error());
@@ -325,7 +325,7 @@
 															</thead>
 															<tbody>
 																<?php
-$conn = new mysqli('localhost','root','','bmhc')or die(mysqli_error());
+require 'require/config.php';
 $query = $conn->query("SELECT * FROM `consultation` WHERE `consultation`.`patient_id` =  '$_GET[id]'") or die(mysqli_error());
 while($fetch = $query->fetch_array()){
 $q = $conn->query("SELECT * FROM `patient` WHERE `patient_id` = '$_GET[id]'") or die(mysqli_error());

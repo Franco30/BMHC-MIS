@@ -60,7 +60,7 @@
                             </div>
                             <div class="panel-body list-group list-group-contacts scroll" style="height: 288px;">
                                 <?php
-                            $conn = new mysqli('localhost','root','','bmhc')or die(mysqli_error());
+                            require 'require/config.php';
                             $query = $conn->query("SELECT * FROM `medicine` order by `running_balance` ASC") or die(mysqli_error());
                             while($fetch = $query->fetch_array()){
                             ?>
