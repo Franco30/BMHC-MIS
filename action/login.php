@@ -16,7 +16,7 @@ if(ISSET($_POST['login']))
 	//2 ---> Fetch The Hashed Password From Your Database
 	//3 ---> Compare The User`s Input And The Hashed Password
 
-	$conn = new mysqli("localhost", "root", "", "bmhc") or die(mysqli_error());
+	require ('../require/config.php');
 	$query = $conn->query("SELECT * FROM `users` WHERE BINARY `username` = '$user' && `status` = '1'") or die(mysqli_error());
 	$fetch = $query->fetch_array();
 	$hashed_password = $fetch['password'];
