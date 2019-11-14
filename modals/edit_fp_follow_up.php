@@ -41,9 +41,9 @@
                         </div>
                         &nbsp;
                         <div class="col-md-12">
-                            <div class="form-group">
+                            <div class="form-group"> 
                                 <label>Method/Brand</label>
-                                <input type="text" class="tagsinput" id="method<?php echo $fetch1['fp_follow_up_id']; ?>" value="<?php echo $fetch1['method_brand']; ?>" required />
+                                <input type="text" class="tagsinput" id="method<?php echo $fetch1['fp_follow_up_id']; ?>" value="<?php echo $fetch1['method_brand']; ?>" data-role="tagsinput" required />
                             </div>
                             <div class="form-group">
                                 <label>No. of Units</label>

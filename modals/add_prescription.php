@@ -16,8 +16,8 @@
                         <div class="col-md-12">
                             <div class="form-group">
 <!--                                <label>Medicine Category</label>-->
-                                <input type="text" class="form-control" value="<?php echo $f2['consultation_id']?>" id="consultation_id" required />
-                                <input type="text" class="form-control" value="<?php echo $f2['patient_id']?>" id="patient_id" required />
+                                <input type="hidden" class="form-control" value="<?php echo $f2['consultation_id']?>" id="consultation_id" required />
+                                <input type="hidden" class="form-control" value="<?php echo $f2['patient_id']?>" id="patient_id" required />
 <!--
                                 <select class="form-control select" data-live-search="true" id="medicine_category">
                                     <option value="">Select</option>

@@ -52,7 +52,7 @@
 					<li class="xn-openable">
 						<a href="#"><span class="fa fa-bar-chart"></span> <span class="xn-text">Reports</span></a>
 						<ul>
-							<li><a href="medication_dispense_table"><span class="fa fa-apple"></span><span class="xn-text">Medicine Dispensed</span></a></li>
+							<li><a href="medication_dispense_table"><span class="fa fa-apple"></span><span class="xn-text">Inventory Report</span></a></li>
 						</ul>
 					</li>
 					<li class="xn-openable">
