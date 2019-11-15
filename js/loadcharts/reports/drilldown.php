@@ -1,15 +1,6 @@
 <?php require 'chartqueries/drilldown.php'?>
 <script type="text/javascript">
 $(document).ready(function(){
-CanvasJS.addColorSet("customColorSet", [ 
-	"#f6e58d",
-	"#ffbe76", 
-	"#ff7979", 
-	"#eb4d4b", 
-	"#7ed6df",
-	"#22a6b3",
-	"#6ab04c",
-]);
 var totalPatients = <?php echo $total3 ?>;
 var patientsData = {
 	"Patient and Infant Patient": [{
@@ -23,13 +14,14 @@ var patientsData = {
 		showInLegend: true,
 		startAngle: 90,
 		type: "doughnut",
+		indexLabel: "{label} {y}",
 		dataPoints: [
 			{ name: "Patient", color: "#E7823A", y: <?php echo $total['total']?> },
 			{ name: "Infant Patient", color: "#546BC1", y: <?php echo $total2['total']?> }
 		]
 	}],
 	"Patient": [{
-		colorSet: "customColorSet",
+		color: "#E7823A",
 		name: "Patient",
 		showInLegend: true, 
         legendText: "Number of Patient",
@@ -51,7 +43,7 @@ var patientsData = {
 		]
 	}],
 	"Infant Patient": [{
-		colorSet: "customColorSet",
+		color: "#546BC1",
 		name: "Infant Patient",
 		showInLegend: true,
 		legendText: "Number of Infant Patient",
@@ -76,9 +68,11 @@ var patientsData = {
 
 var patientandinfantpatientOptions = {
 	animationEnabled: true,
+	exportFileName: "Monthly Count - BMHC", 
+	exportEnabled: true,
 	theme: "light2",
 	title: {
-		text: "Patient and Infant Patient",
+		text: "Patient and Infant Patient <?php echo $year?>",
 	},
 	subtitles: [{
 		text: "Click on Any Segment to Drilldown",
@@ -91,7 +85,7 @@ var patientandinfantpatientOptions = {
 		fontFamily: "calibri",
 		fontSize: 14,
 		itemTextFormatter: function (e) {
-			return e.dataPoint.name + ": " + Math.round(e.dataPoint.y / totalPatients * 100) + "%";  
+			return e.dataPoint.name + ": " + Math.round(e.dataPoint.y / totalPatients * 100) + "%";
 		}
 	},
 	data: []
