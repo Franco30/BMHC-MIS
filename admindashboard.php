@@ -173,8 +173,8 @@ require 'require/logincheck.php';
 			                     {
 				                $year=$_GET['year'];
 			                         }
-                $dbconn = new mysqli("localhost", "root", "", "bmhc") or die(mysqli_error());
-	               $q = $dbconn->query("SELECT COUNT(*) as total FROM `users`") or die(mysqli_error());
+                require 'require/config.php';
+	               $q = $conn->query("SELECT COUNT(*) as total FROM `users`") or die(mysqli_error());
 										 $fetch = $q->fetch_array();
 ?>
                                 <div class="widget-int num-count counter" data-count="<?php echo $fetch['total']?>">

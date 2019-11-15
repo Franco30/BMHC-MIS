@@ -215,7 +215,15 @@
                                                         <h5 style="font-size: 12px;font-weight: bold;">S</h5>
                                                         <div class="form-group">
                                                             <label>Complaints:</label>
-                                                            <textarea class="form-control" spellcheck="false" id="complaints"></textarea>
+<!--                                                            <textarea class="form-control" spellcheck="false" id="complaints"></textarea>-->
+                                                            <select multiple class="form-control select" data-live-search="true" style="display: none;" id="complaints" name="complaints[]">
+                                                                <option value="COC">Fever</option>
+                                                                <option value="IUD">IUD</option>
+                                                                <option value="BTL">BTL</option>
+                                                                <option value="VSC">VSC</option>
+                                                                <option value="LAM">LAM</option>
+                                                                <option value="SDM">SDM</option>
+                                                            </select>
                                                         </div>
 
                                                         <h5 style="font-size: 12px;font-weight: bold;">O:</h5>

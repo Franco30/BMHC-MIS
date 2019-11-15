@@ -16,6 +16,30 @@
     <link rel="stylesheet" type="text/css" id="theme" href="css/theme-brown.css" />
     <link rel="stylesheet" type="text/css" href="assets3/vendor/font-awesome/css/font-awesome.min.css" />
     <!-- EOF CSS INCLUDE -->
+    <script type="text/javascript" src="js/plugins/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.canvasjs.min.js"></script>
+    <?php require 'js/loadcharts/reports/drilldown.php'?>
+    <style>
+        #backButton {
+/*
+            border-radius: 4px;
+            padding: 6px;
+            border: none;
+            font-size: 16px;
+            background-color: #2eacd1;
+            color: white;
+*/
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+
+        .invisible {
+            display: none;
+        }
+
+    </style>
 </head>
 
 <body>
@@ -29,8 +53,8 @@
             <?php require 'require/adminheader.php' ?>
             <!-- START BREADCRUMB -->
             <ul class="breadcrumb">
-                <li>Data Entry</li>
-                <li><mark><strong>Add New Medicine</strong></mark></li>
+                <li>Reports</li>
+                <li class="active"><strong><mark>Inventory Report</mark></strong></li>
             </ul>
             <!-- END BREADCRUMB -->
             <!-- PAGE CONTENT WRAPPER -->
@@ -38,34 +62,35 @@
 
                 <div class="row">
                     <div class="col-md-12">
-                        <div id="alert" class="alert alert-info" style="display:none;">
-                            <center><span id="alerttext"></span></center>
-                        </div>
                         <div class="panel panel-primary">
                             <div class="panel-heading">
-                                <h3 class="panel-title"><strong>Medicine's List</strong></h3>
-                                <div class="btn-group pull-right">
-                                    <div class="pull-left">
-                                        <button class="btn btn-primary btn-md" data-toggle="modal" data-target="#new_medicine">New Medicine</button>
-                                        <a href="medication_dispensation" class="btn btn-md btn-default">Go to Medicine
-                                            Dispense</a>
-                                    </div>
-                                </div>
+                                <h3 class="panel-title"><strong>Drill Down Report</strong></h3>
+                                <?php require 'require/select_year.php'?>
                             </div>
                             <div class="panel-body">
-                                <div id="medicineTable"></div>
+                                <div id="chartContainer" style="width: 100%; height: 310px"></div>
+                                <div class="pull-left">
+                                    <button class="btn btn-info invisible" id="backButton" style="margin: -51px;margin-right: 230px;">Back</button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
+                <!-- END PAGE CONTENT WRAPPER -->
             </div>
-            <!-- END PAGE CONTENT WRAPPER -->
+            <!-- END PAGE CONTENT -->
         </div>
-        <!-- END PAGE CONTENT -->
     </div>
     <!-- END PAGE CONTAINER -->
-    <?php require 'modals/new_medicine.php'?>
+    <script>
+        $(document).ready(function() {
+            $("#pyear").on('change', function() {
+                var year = $(this).val();
+                window.location = 'sample_report?year=' + year;
+            });
+        });
+
+    </script>
     <!-- START PRELOADS -->
     <audio id="audio-alert" src="audio/alert.mp3" preload="auto"></audio>
     <audio id="audio-fail" src="audio/fail.mp3" preload="auto"></audio>
@@ -73,34 +98,23 @@
 
     <!-- START SCRIPTS -->
     <!-- START PLUGINS -->
-    <script type="text/javascript" src="js/plugins/jquery/jquery.min.js"></script>
     <script type="text/javascript" src="js/plugins/jquery/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="js/plugins/bootstrap/bootstrap.min.js"></script>
     <!-- END PLUGINS -->
 
     <!-- START THIS PAGE PLUGINS-->
-    <script type="text/javascript" src="functions/crudmedicine.js"></script>
-    <script type='text/javascript' src='js/plugins/bootstrap/bootstrap-select.js'></script>
-    <script type="text/javascript" src="js/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="js/plugins/bootstrap/bootstrap.min.js"></script>
     <script type='text/javascript' src='js/plugins/icheck/icheck.min.js'></script>
     <script type="text/javascript" src="js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
     <script type="text/javascript" src="js/plugins/scrolltotop/scrolltopcontrol.js"></script>
+    <script type='text/javascript' src='js/plugins/bootstrap/bootstrap-select.js'></script>
+    <script type="text/javascript" src="js/plugins/datatables/jquery.dataTables.min.js"></script>
     <!-- END THIS PAGE PLUGINS-->
-
     <!-- START TEMPLATE -->
     <script type="text/javascript" src="js/settings.js"></script>
     <script type="text/javascript" src="js/plugins.js"></script>
     <script type="text/javascript" src="js/actions.js"></script>
     <!-- END TEMPLATE -->
     <!-- END SCRIPTS -->
-<!--
-    <script>
-        $.ajaxPrefilter(function(options, originalOptions, jqXHR) {
-            options.async = true;
-        });
-
-    </script>
--->
 </body>
 
 </html>
