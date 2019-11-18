@@ -36,13 +36,11 @@
             <!-- END BREADCRUMB -->
             <!-- PAGE CONTENT WRAPPER -->
             <div class="page-content-wrap">
-
-                <div id="alert" class="alert alert-info" style="display:none;">
-                    <center><span id="alerttext"></span></center>
-                </div>
-
                 <div class="row">
                     <div class="col-md-12">
+                        <div id="alert" class="alert alert-info" style="display:none;">
+                            <center><span id="alerttext"></span></center>
+                        </div>
                         <div class="panel panel-default tabs">
                             <ul class="nav nav-tabs" role="tablist">
                                 <li class="active"><a href="#tab-first" role="tab" data-toggle="tab">Prenatal</a></li>

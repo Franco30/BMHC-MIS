@@ -178,7 +178,7 @@
 				?>
             </div>
             <div class="panel-footer text-center">
-                <a href="medicine_table" class="text-left">Show all Family Planning Follow-up Visit</a>
+                <a href="follow_up_table" class="text-left">Show all Family Planning Follow-up Visit</a>
             </div>
         </div>
     </li>

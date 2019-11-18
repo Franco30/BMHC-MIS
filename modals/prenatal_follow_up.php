@@ -21,7 +21,7 @@
                                         <option value="#">Select</option>
                                         <?php
 	                $conn = new mysqli("localhost", "root", "", "bmhc") or die(mysqli_error());
-					$query = $conn->query("SELECT * FROM `prenatal` NATURAL JOIN `patient` GROUP BY `patient_id` ORDER BY `prenatal_id` DESC") or die(mysqli_error());
+					$query = $conn->query("SELECT * FROM `prenatal`, `patient` WHERE `prenatal`.`patient_id` = `patient`.`patient_id` GROUP BY `prenatal`.`patient_id` ORDER BY `prenatal`.`prenatal_id` DESC") or die(mysqli_error());
 
 					while($fetch = $query->fetch_array()){
 									?>

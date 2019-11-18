@@ -7,41 +7,40 @@
                 </div>
             </center>
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
-                        class="sr-only">Close</span></button>
-                <h4 class="modal-title" id="defModalHead">New User</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="defModalHead"><strong>New User</strong></h4>
             </div>
             <div class="modal-body">
                 <form id="users">
                     <fieldset>
-                        <div class="form-group">
-                            <label>Name</label>
-                            <div id="cname_response"></div>
-                            <input type="text" id="fullname" class="form-control" placeholder="Enter Complete Name"
-                                required />
-                        </div>
-                        <div class="form-group">
-                            <label>License</label>
-                            <input type="text" id="license" class="form-control" placeholder="Enter License" required />
-                        </div>
-                        <div class="form-group">
-                            <label>Position</label>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Name</label>
+                                <div id="cname_response"></div>
+                                <input type="text" id="fullname" class="form-control" placeholder="Enter Complete Name" required />
+                            </div>
+                            <div class="form-group">
+                                <label>License</label>
+                                <input type="text" id="license" class="form-control" placeholder="Enter License" required />
+                            </div>
+                            <div class="form-group">
+                                <label>Position</label>
                                 <select id="position" class="form-control select" required>
                                     <option>Please Select</option>
                                     <option value="Nurse">Nurse</option>
                                     <option value="Midwife">Midwife</option>
                                     <option value="Medical Officer">Medical Officer</option>
                                 </select>
-                        </div>
-                        <div class="form-group">
-                            <label>Username</label>
-                            <div id="uname_response"></div>
-                            <input type="text" id="username" class="form-control" placeholder="Enter Username"
-                                required />
-                        </div>
-                        <div class="form-group">
-                            <label>Password</label>
-                            <input type="text" id="password" class="form-control"  placeholder="Enter Password" required />
+                            </div>
+                            <div class="form-group">
+                                <label>Username</label>
+                                <div id="uname_response"></div>
+                                <input type="text" id="username" class="form-control" placeholder="Enter Username" required />
+                            </div>
+                            <div class="form-group">
+                                <label>Password</label>
+                                <input type="text" id="password" class="form-control" placeholder="Enter Password" required />
+                            </div>
                         </div>
                     </fieldset>
                 </form>

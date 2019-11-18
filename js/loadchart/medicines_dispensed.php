@@ -18,18 +18,18 @@ while($result = $res->fetch_array()){
 }
 json_encode($data_points);
 ?>
-<script type="text/javascript"> 
-	window.onload = function(){
-		CanvasJS.addColorSet("customColorSet", [ 
-			"#393f63",
-			"#e5d8B0", 
-			"#ffb367", 
-			"#f98461", 
-			"#d9695f",
-			"#e05850",
-			"#7E8F74",
+<script type="text/javascript">
+	$(document).ready(function() {
+		CanvasJS.addColorSet("customColorSet", [
+			"#f6e58d",
+			"#ffbe76",
+			"#ff7979",
+			"#eb4d4b",
+			"#7ed6df",
+			"#22a6b3",
+			"#6ab04c",
 		]);
-		$("#medicine").CanvasJSChart({
+		var chart1 = new CanvasJS.Chart("chartContainer2", {
 			theme: "light2",
 			zoomEnabled: true,
 			zoomType: "x",
@@ -37,24 +37,80 @@ json_encode($data_points);
 			animationEnabled: true,
 			animationDuration: 1000,
 			colorSet: "customColorSet",
-			//exportFileName: "Monthly Population", 
-			//exportEnabled: true,
+			exportFileName: "Monthly Population",
+			exportEnabled: true,
 			toolTip: {
-				shared: true  
+				shared: true
 			},
-			title: { 
+			title: {
 				text: "Barangay Mansilingan Health Center",
 				fontSize: 20
 			},
-			subtitles:[
-				{
-					text: "Total Dispensed Medicines - Year <?php echo $year?>"
-				}
-			],
+			subtitles: [{
+				text: "Total Dispensed Medicines - Year <?php echo $year?>"
+			}],
+            legend: {
+                cursor: "pointer",
+                itemclick: function (e) {
+                    if (typeof (e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+                        e.dataSeries.visible = false;
+                    } else {
+                        e.dataSeries.visible = true;
+                    }
+                    e.chart.render();
+                },
+                itemmouseover: function(e) {
+                    e.dataSeries.lineThickness = e.chart.data[e.dataSeriesIndex].lineThickness * 2;
+                    e.dataSeries.markerSize = e.chart.data[e.dataSeriesIndex].markerSize + 2;
+                    e.chart.render();
+                },
+                itemmouseout: function(e) {
+                    e.dataSeries.lineThickness = e.chart.data[e.dataSeriesIndex].lineThickness / 2;
+                    e.dataSeries.markerSize = e.chart.data[e.dataSeriesIndex].markerSize - 2;
+                    e.chart.render();
+                }
+            },
+			axisX: {
+				interval: 1,
+				labelFontColor: "black",
+			},
+			axisY: {
+				//title: "Stocks Remaining", 
+				labelFontColor: "black",
+			},
+			data: [{
+				type: "column",
+				toolTipContent: "{label} <br/> {y} pcs.",
+				indexLabel: "{y} pcs.",
+				//legendText: "<?php echo $f1['medicine_name']?>",
+				//					name: "Total Patients this year",
+				dataPoints: <?php echo json_encode($data_points); ?>
+			}]
+		});
+		var chart2 = new CanvasJS.Chart("chartContainer3", {
+			theme: "light2",
+			zoomEnabled: true,
+			zoomType: "x",
+			panEnabled: true,
+			animationEnabled: true,
+			animationDuration: 1000,
+			colorSet: "customColorSet",
+			exportFileName: "Monthly Population",
+			exportEnabled: true,
+			toolTip: {
+				shared: true
+			},
+			title: {
+				text: "Barangay Mansilingan Health Center",
+				fontSize: 20
+			},
+			subtitles: [{
+				text: "Total Dispensed Medicines - Year <?php echo $year?>"
+			}],
 			legend: {
 				cursor: "pointer",
-				itemclick: function (e) {
-					if (typeof (e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+				itemclick: function(e) {
+					if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
 						e.dataSeries.visible = false;
 					} else {
 						e.dataSeries.visible = true;
@@ -62,33 +118,185 @@ json_encode($data_points);
 					e.chart.render();
 				}
 			},
-			axisX: {	
+			axisX: {
 				interval: 1,
 				gridDashType: "dot",
 				gridThickness: 1,
 				labelFontColor: "black",
 				crosshair: {
-					enabled: true 
+					enabled: true
 				}
 			},
-			axisY: { 
+			axisY: {
 				//title: "Stocks Remaining", 
 				labelFontColor: "black",
 				crosshair: {
-					enabled: true 
+					enabled: true
 				}
-			}, 
-			data: [ 
-				{ 
-					type: "bar", 
-					//showInLegend: true, 
-					toolTipContent: "{label} <br/> {y} pcs.", 
-					indexLabel: "{y}pcs.", 
-					//legendText: "<?php echo $f1['medicine_name']?>",
-					//name: "Total Patients this year",
-					dataPoints: <?php echo json_encode($data_points); ?>
+			},
+			data: [{
+				type: "pie",
+				startAngle: 240,
+				radius: 100,
+				toolTipContent: "{label} <br/> {y} pcs.",
+				indexLabel: "{label} {y} pcs.",
+				//legendText: "<?php echo $f1['medicine_name']?>",
+				//					name: "Total Patients this year",
+				dataPoints: <?php echo json_encode($data_points); ?>
+			}]
+		});
+		var chart3 = new CanvasJS.Chart("chartContainer4", {
+			theme: "light2",
+			zoomEnabled: true,
+			zoomType: "x",
+			panEnabled: true,
+			animationEnabled: true,
+			animationDuration: 1000,
+			colorSet: "customColorSet",
+			exportFileName: "Monthly Population",
+			exportEnabled: true,
+			toolTip: {
+				shared: true
+			},
+			title: {
+				text: "Barangay Mansilingan Health Center",
+				fontSize: 20
+			},
+			subtitles: [{
+				text: "Total Dispensed Medicines - Year <?php echo $year?>"
+			}],
+			legend: {
+				cursor: "pointer",
+				itemclick: function(e) {
+					if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+						e.dataSeries.visible = false;
+					} else {
+						e.dataSeries.visible = true;
+					}
+					e.chart.render();
 				}
-					] 
-				}); 
-			}
+			},
+			axisX: {
+				interval: 1,
+				labelFontColor: "black",
+			},
+			axisY: {
+				//title: "Stocks Remaining", 
+				labelFontColor: "black",
+			},
+			data: [{
+				type: "bar",
+				indexLabel: "{y} pcs.",
+				toolTipContent: "{label} <br/> {y} pcs.",
+				//legendText: "<?php echo $f1['medicine_name']?>",
+				//					name: "Total Patients this year",
+				dataPoints: <?php echo json_encode($data_points); ?>
+			}]
+		});
+		var chart4 = new CanvasJS.Chart("chartContainer5", {
+			theme: "light2",
+			zoomEnabled: true,
+			zoomType: "x",
+			panEnabled: true,
+			animationEnabled: true,
+			animationDuration: 1000,
+			colorSet: "customColorSet",
+			exportFileName: "Monthly Population",
+			exportEnabled: true,
+			toolTip: {
+				shared: true
+			},
+			title: {
+				text: "Barangay Mansilingan Health Center",
+				fontSize: 20
+			},
+			subtitles: [{
+				text: "Total Dispensed Medicines - Year <?php echo $year?>"
+			}],
+			legend: {
+				cursor: "pointer",
+				itemclick: function(e) {
+					if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+						e.dataSeries.visible = false;
+					} else {
+						e.dataSeries.visible = true;
+					}
+					e.chart.render();
+				}
+			},
+			axisX: {
+				interval: 1,
+				labelFontColor: "black",
+			},
+			axisY: {
+				//title: "Stocks Remaining", 
+				labelFontColor: "black",
+			},
+			data: [{
+				type: "line",
+				indexLabel: "{y} pcs.",
+				toolTipContent: "{label} <br/> {y} pcs.",
+				//legendText: "<?php echo $f1['medicine_name']?>",
+				//					name: "Total Patients this year",
+				dataPoints: <?php echo json_encode($data_points); ?>
+			}]
+		});
+		var chart5 = new CanvasJS.Chart("chartContainer6", {
+			theme: "light2",
+			zoomEnabled: true,
+			zoomType: "x",
+			panEnabled: true,
+			animationEnabled: true,
+			animationDuration: 1000,
+			colorSet: "customColorSet",
+			exportFileName: "Monthly Population",
+			exportEnabled: true,
+			toolTip: {
+				shared: true
+			},
+			title: {
+				text: "Barangay Mansilingan Health Center",
+				fontSize: 20
+			},
+			subtitles: [{
+				text: "Total Dispensed Medicines - Year <?php echo $year?>"
+			}],
+			legend: {
+				cursor: "pointer",
+				itemclick: function(e) {
+					if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+						e.dataSeries.visible = false;
+					} else {
+						e.dataSeries.visible = true;
+					}
+					e.chart.render();
+				}
+			},
+			axisX: {
+				interval: 1,
+				labelFontColor: "black",
+			},
+			axisY: {
+				//title: "Stocks Remaining", 
+				labelFontColor: "black",
+			},
+			data: [{
+				type: "doughnut",
+				startAngle: 240,
+				radius: 100,
+				indexLabel: "{label} {y} pcs.",
+				toolTipContent: "{label} <br/> {y} pcs.",
+				//legendText: "<?php echo $f1['medicine_name']?>",
+				//					name: "Total Patients this year",
+				dataPoints: <?php echo json_encode($data_points); ?>
+			}]
+		});
+
+		chart1.render();
+		chart2.render();
+		chart3.render();
+		chart4.render();
+		chart5.render();
+	});
+
 </script>

@@ -18,7 +18,7 @@
             animationEnabled: true,
             animationDuration: 1000,
             colorSet: "customColorSet",
-            exportFileName: "Monthly Dispatch - BDRRMO", 
+            exportFileName: "Medicine Stocks", 
             exportEnabled: true,
             toolTip: {
                 shared: true  
@@ -53,6 +53,14 @@
                     e.chart.render();
                 }
             },
+            axisX: {
+				interval: 1,
+				labelFontColor: "black",
+			},
+			axisY: {
+				//title: "Stocks Remaining", 
+				labelFontColor: "black",
+			},
             data: [ 
                 { 
                     type: "column", 

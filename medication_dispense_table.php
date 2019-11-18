@@ -17,6 +17,7 @@
     <link rel="stylesheet" type="text/css" href="assets3/vendor/font-awesome/css/font-awesome.min.css" />
     <!-- EOF CSS INCLUDE -->
     <script type="text/javascript" src="js/plugins/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="js/plugins/jquery/jquery-ui.min.js"></script>
     <script type="text/javascript" src="js/jquery.canvasjs.min.js"></script>
     <?php require 'js/loadchart/medicines_dispensed.php'?>
     <?php require 'js/loadcharts/reports/reportsinventory.php'?>
@@ -42,21 +43,11 @@
 
                 <div class="row">
 
-
-                    <div class="col-md-8">
-                        <div class="panel panel-default">
-                            <div class="panel-body">
-                                <div id="chartContainer1" style="width: 100%; height: 310px"></div>
-                            </div>
-                        </div>
-                    </div>
-
                     <div class="col-md-4">
-
                         <!-- NEWS WIDGET -->
                         <div class="panel panel-primary">
                             <div class="panel-heading">
-                                <h3 class="panel-title">Medicine Current Stocks</h3>
+                                <h3 class="panel-title"><strong>Medicine Current Stocks</strong></h3>
                             </div>
                             <div class="panel-body list-group list-group-contacts scroll" style="height: 288px;">
                                 <?php
@@ -86,12 +77,9 @@
                     </div>
 
                     <div class="col-md-8">
-                        <div class="panel panel-primary">
-                            <div class="panel-heading">
-                                <?php require 'require/select_year.php'?>
-                            </div>
-                            <div class="panel-body scroll" style="height: 470px;">
-                                <div id="medicine" style="width: 100%; height: 425px"></div>
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <div id="chartContainer1" style="width: 100%; height: 310px"></div>
                             </div>
                         </div>
                     </div>
@@ -132,7 +120,33 @@
                             </div>
                         </div>
                     </div>
-
+                    <div class="col-md-8">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <?php require 'require/select_year.php'?>
+                                <div class="btn-group pull-left">
+                                    <div class="pull-left">
+                                        <!-- Chart Type Monthly -->
+                                        <select class="form-control select" data-style="btn-primary" data-live-search="true" id="select-report" name="filterbutton">
+                                            <option disabled="disabled">Select Chart Type</option>
+                                            <option value="colmonth">Column Chart</option>
+                                            <option value="piemonth">Pie Chart</option>
+                                            <option value="barmonth">Bar Chart</option>
+                                            <option value="linemonth">Line Chart</option>
+                                            <option value="doughnutmonth">Doughnut Chart</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel-body scroll" style="height: 470px;">
+                                <div id="chartContainer2" class="colmonth reporttype" style="width: 100%; height: 425px;"></div>
+                                <div id="chartContainer3" class="piemonth reporttype" style="width: 100%; height: 425px"></div>
+                                <div id="chartContainer4" class="barmonth reporttype" style="width: 100%; height: 425px"></div>
+                                <div id="chartContainer5" class="linemonth reporttype" style="width: 100%; height: 425px"></div>
+                                <div id="chartContainer6" class="doughnutmonth reporttype" style="width: 100%; height: 425px"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <!-- END PAGE CONTENT WRAPPER -->
             </div>
@@ -140,15 +154,6 @@
         </div>
     </div>
     <!-- END PAGE CONTAINER -->
-    <script>
-        $(document).ready(function() {
-            $("#pyear").on('change', function() {
-                var year = $(this).val();
-                window.location = 'medication_dispense_table?year=' + year;
-            });
-        });
-
-    </script>
     <!-- START PRELOADS -->
     <audio id="audio-alert" src="audio/alert.mp3" preload="auto"></audio>
     <audio id="audio-fail" src="audio/fail.mp3" preload="auto"></audio>
@@ -156,7 +161,6 @@
 
     <!-- START SCRIPTS -->
     <!-- START PLUGINS -->
-    <script type="text/javascript" src="js/plugins/jquery/jquery-ui.min.js"></script>
     <!-- END PLUGINS -->
 
     <!-- START THIS PAGE PLUGINS-->
@@ -172,6 +176,34 @@
     <script type="text/javascript" src="js/plugins.js"></script>
     <script type="text/javascript" src="js/actions.js"></script>
     <!-- END TEMPLATE -->
+
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("select").change(function() {
+                $(this).find("option:selected").each(function() {
+                    var optionValue = $(this).attr("value");
+                    if (optionValue) {
+                        $(".reporttype").not("." + optionValue).hide();
+                        $("." + optionValue).show();
+                    } else {
+                        $(".reporttype").hide();
+                    }
+                });
+            }).change();
+        });
+
+    </script>
+
+    <script>
+        $(document).ready(function() {
+            $("#pyear").on('change', function() {
+                var year = $(this).val();
+                window.location = 'medication_dispense_table?year=' + year;
+            });
+        });
+
+    </script>
     <!-- END SCRIPTS -->
 </body>
 

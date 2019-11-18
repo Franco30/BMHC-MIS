@@ -54,6 +54,7 @@
 						<ul>
 							<li><a href="medication_dispense_table"><span class="fa fa-apple"></span><span class="xn-text">Inventory Report</span></a></li>
 							<li><a href="sample_report"><span class="fa fa-adjust"></span><span class="xn-text">Drill Down Report</span></a></li>
+							<li><a href="patient_report"><span class="fa fa-adjust"></span><span class="xn-text">Patient Report</span></a></li>
 						</ul>
 					</li>
 					<li class="xn-openable">

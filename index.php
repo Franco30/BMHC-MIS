@@ -28,11 +28,27 @@
 	<script src="assets2/plugins/pace/pace.min.js"></script>
 	<!-- ================== END BASE JS ================== -->
 	<style>
-		.error{
+		error {
 			font-size: 10pt;
-			color:darkred
+			color: darkred
 		}
-		</style>
+
+	</style>
+	<style>
+		.field-icon {
+			float: right;
+			margin-right: 9px;
+			margin-top: -29px;
+			position: relative;
+			z-index: 2;
+		}
+
+		.container {
+			padding-top: 50px;
+			margin: auto;
+		}
+
+	</style>
 </head>
 
 <body class="pace-top bg-white">
@@ -54,8 +70,8 @@
 			<!-- begin news-feed -->
 			<div class="news-feed">
 				<div class="news-image">
-				<img src="assets/images/bmhc.png" data-id="login-cover-image" alt="bmhcpicture" />
-			</div>
+					<img src="assets/images/bmhc.png" data-id="login-cover-image" alt="bmhcpicture" />
+				</div>
 				<!-- <div class="news-caption">
 					<h4 class="caption-title">Barangay Mansilingan Health Center - MIS</h4>
 					<p>
@@ -69,8 +85,8 @@
 				<!-- begin login-header -->
 				<div class="login-header">
 					<center>
-                        <img src="assets/images/bmhclogo.png" style="width:131px;height:100px; padding: -10px; margin: -30px 0px 0px -3px"alt="bmhclogo" />
-						</center>
+						<img src="assets/images/bmhclogo.png" style="width:131px;height:100px; padding: -10px; margin: -30px 0px 0px -3px" alt="bmhclogo" />
+					</center>
 					&nbsp;
 					<div class="brand">
 						<h4 style="font-size: 20px;">Barangay Mansilingan Health Center</h4>
@@ -83,7 +99,7 @@
 				<!-- end login-header -->
 				<!-- begin login-content -->
 				<div class="login-content">
-				<div id="error"></div>
+					<div id="error"></div>
 					<form method="POST" id="login-form" class="margin-bottom-0">
 						<div class="form-group m-b-15">
 							<div id="uname_response"></div>
@@ -91,6 +107,7 @@
 						</div>
 						<div class="form-group m-b-15">
 							<input type="password" class="form-control form-control-lg" placeholder="Password" name="password" id="password" required />
+							<span toggle="#password" class="fa fa-eye field-icon toggle-password"></span>
 						</div>
 						<!-- <div class="checkbox checkbox-css m-b-30">
 							<input type="checkbox" id="remember_me_checkbox" value="" />
@@ -102,7 +119,7 @@
 							<button type="submit" class="btn btn-pink btn-block btn-lg" id="login" name="login">Sign me in</button>
 						</div>
 						<div class="m-t-20 m-b-40 p-b-40 text-inverse">
-						<!--Not a member yet? Click <a href="signup" class="text-pink">here</a> to register.-->
+							<!--Not a member yet? Click <a href="signup" class="text-pink">here</a> to register.-->
 						</div>
 						<hr />
 						<p class="text-center text-grey-darker">
@@ -134,6 +151,20 @@
 		$(document).ready(function() {
 			App.init();
 		});
+
+	</script>
+	<script type="text/javascript">
+		$(".toggle-password").click(function() {
+
+			$(this).toggleClass("fa-eye fa-eye-slash");
+			var input = $($(this).attr("toggle"));
+			if (input.attr("type") == "password") {
+				input.attr("type", "text");
+			} else {
+				input.attr("type", "password");
+			}
+		});
+
 	</script>
 </body>
 
