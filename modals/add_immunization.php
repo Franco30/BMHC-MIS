@@ -21,7 +21,7 @@
                                     <option value="#">Select</option>
                                     <?php
 	                $conn = new mysqli("localhost", "root", "", "bmhc") or die(mysqli_error());
-					$query = $conn->query("SELECT * FROM `patient_child` where `status` = 'Registered'") or die(mysqli_error());
+					$query = $conn->query("SELECT * FROM `patient_child` WHERE `status` != 'Registered Immunization'") or die(mysqli_error());
                                     
 					while($fetch = $query->fetch_array()){
                         

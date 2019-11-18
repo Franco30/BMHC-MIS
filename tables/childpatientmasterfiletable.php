@@ -13,7 +13,7 @@ if(isset($_POST['show'])){
     </thead>
     <tbody>
         <?php
-    $query = $conn->query("SELECT * FROM `patient_child` WHERE `status` = 'Registered'") or die(mysqli_error());
+    $query = $conn->query("SELECT * FROM `patient_child`") or die(mysqli_error());
     while($fetch = $query->fetch_array()){
         ?>
         <tr>
