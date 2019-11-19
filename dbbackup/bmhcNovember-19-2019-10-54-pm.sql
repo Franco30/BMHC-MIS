@@ -111,7 +111,7 @@ CREATE TABLE `db_backup` (
   `time` varchar(12) NOT NULL,
   `activity_status` varchar(100) NOT NULL,
   PRIMARY KEY (`back_up_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=latin1;
 
 INSERT INTO db_backup VALUES("3","27","Export","September 22, 2019","11:17 pm","Successfully Exported Database"); 
 INSERT INTO db_backup VALUES("4","26","Export","September 24, 2019","4:23 am","Successfully Exported Database"); 
@@ -135,6 +135,11 @@ INSERT INTO db_backup VALUES("21","182","Export","November 2, 2019","12:32 pm","
 INSERT INTO db_backup VALUES("22","182","Export","November 2, 2019","12:32 pm","Successfully Exported Database"); 
 INSERT INTO db_backup VALUES("23","27","Export","November 5, 2019","5:41 pm","Successfully Exported Database"); 
 INSERT INTO db_backup VALUES("24","27","Export","November 18, 2019","9:17 pm","Successfully Exported Database"); 
+INSERT INTO db_backup VALUES("25","27","Export","November 19, 2019","10:45 pm","Successfully Exported Database"); 
+INSERT INTO db_backup VALUES("26","27","Export","November 19, 2019","10:50 pm","Successfully Exported Database"); 
+INSERT INTO db_backup VALUES("27","27","Export","November 19, 2019","10:52 pm","Successfully Exported Database"); 
+INSERT INTO db_backup VALUES("28","27","Export","November 19, 2019","10:53 pm","Successfully Exported Database"); 
+INSERT INTO db_backup VALUES("29","27","Export","November 19, 2019","10:54 pm","Successfully Exported Database"); 
 
 
 
@@ -218,12 +223,9 @@ CREATE TABLE `immunization` (
   `month` varchar(30) NOT NULL,
   `year` varchar(30) NOT NULL,
   PRIMARY KEY (`immunization_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 
-INSERT INTO immunization VALUES("4","6","89-383493438-3","9:15 PM","23","(09) 061613101","1","2","3","34","38","CLMMH","Emergency Room","Normal","Registered","Nov","2019"); 
-INSERT INTO immunization VALUES("5","7","38-362328483-4","8:30 PM","20","(09) 061613101","3","2","1","30","35","Doctors Hospital","Labor Room","Normal","Registered","Nov","2019"); 
-INSERT INTO immunization VALUES("6","5","93-834348394-0","7:45 PM","2.1","(09) 061613101","1","0","0","45","49","CLMMH","Labor Room","Normal","Registered","Nov","2019"); 
-INSERT INTO immunization VALUES("8","3","74-747487382-8","9:15 PM","3.4","(09) 347373373","1","3","5","33","34","CLLMH","Labor Room","Normal","Registered","Nov","2019"); 
+INSERT INTO immunization VALUES("9","6","38-384784848-4","4:00 PM","2.5","(09) 037373737","0","0","0","45","49","CLMMH","Labor Room","Normal","Registered","Nov","2019"); 
 
 
 
@@ -240,16 +242,9 @@ CREATE TABLE `immunization_treatment` (
   `treatment_temp` varchar(30) NOT NULL,
   `treatment_remarks` varchar(200) NOT NULL,
   PRIMARY KEY (`treatment_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
 
-INSERT INTO immunization_treatment VALUES("1","6","BCG","November 18, 2019","1 month and 15 Days","4.3","54","36.5","Sample"); 
-INSERT INTO immunization_treatment VALUES("7","6","OPV 1","November 26, 2019","1 month","4.5","54","36.0","Test 4"); 
-INSERT INTO immunization_treatment VALUES("8","6","HEPA B","November 19, 2019","1 month","4.6","54","37.0","Test 4"); 
-INSERT INTO immunization_treatment VALUES("9","6","PCV 2","November 13, 2019","1 month","4.5","54","37.5","EZ"); 
-INSERT INTO immunization_treatment VALUES("10","7","BCG","November 12, 2019","2 months","4.6","56","37.5","Sansa sample"); 
-INSERT INTO immunization_treatment VALUES("11","5","BCG","November 13, 2019","1 month + 15 Days","4.5","54","37.0","Sample"); 
-INSERT INTO immunization_treatment VALUES("12","6","PCV 3","November 11, 2019","1 month","4.5","45","36.5",""); 
-INSERT INTO immunization_treatment VALUES("13","6","","","","","","",""); 
+INSERT INTO immunization_treatment VALUES("14","6","BCG","November 13, 2019","1 month","4.5","54","37.0",""); 
 
 
 
@@ -452,11 +447,11 @@ CREATE TABLE `patient_child` (
   KEY `child_id` (`child_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
-INSERT INTO patient_child VALUES("3","Hilary Ahmor Sipat","Female","Mary Ann Sipat","High School Graduate","BHW","Hilario Dorimon","College Graduate","Sr. Salesman","November 15, 2005","November 15, 2005","20","CLMMRH","November 29, 2005","Mabinuligon","#15 Everlasting","Registered Immunization","Nov","2019"); 
+INSERT INTO patient_child VALUES("3","Hilary Ahmor Sipat","Female","Mary Ann Sipat","High School Graduate","BHW","Hilario Dorimon","College Graduate","Sr. Salesman","November 15, 2005","November 15, 2005","20","CLMMRH","November 29, 2005","Mabinuligon","#15 Everlasting","Registered","Nov","2019"); 
 INSERT INTO patient_child VALUES("4","Jonathan Simmons","Male","Mary Ann Simmons","College","College","J.K Simmons","College","Businessman","June 13, 2007","June 13, 2007","10","CLMH","June 10, 2008","Kasilingan","#3 Sa balota","Registered","Oct","2019"); 
-INSERT INTO patient_child VALUES("5","Jamie Lannister","Male","Minda Lannister","College","Medical Technologist","Tywin Lannister","College","Doctor","October 16, 2019","October 16, 2019","10","CLMH","October 31, 2019","Kasilingan","#3 Area 51","Registered Immunization","Oct","2019"); 
+INSERT INTO patient_child VALUES("5","Jamie Lannister","Male","Minda Lannister","College","Medical Technologist","Tywin Lannister","College","Doctor","October 16, 2019","October 16, 2019","10","CLMH","October 31, 2019","Kasilingan","#3 Area 51","Registered","Oct","2019"); 
 INSERT INTO patient_child VALUES("6","Arya Stark","Female","Catelyn Stark","College","Teacher","Eddard Stark","College","Artist","October 16, 2019","October 16, 2019","10","CLMH","October 23, 2019","Kasilingan","#3 Area 51","Registered Immunization","Oct","2019"); 
-INSERT INTO patient_child VALUES("7","Sansa Stark","Female","Catelyn Stark","College","Teacher","Eddard Stark","College","Programmer","October 15, 2019","October 15, 2019","10","CLMH","October 23, 2019","Kahirup B","#3 sa balota","Registered Immunization","Oct","2019"); 
+INSERT INTO patient_child VALUES("7","Sansa Stark","Female","Catelyn Stark","College","Teacher","Eddard Stark","College","Programmer","October 15, 2019","October 15, 2019","10","CLMH","October 23, 2019","Kahirup B","#3 sa balota","Registered","Oct","2019"); 
 
 
 
@@ -580,9 +575,9 @@ CREATE TABLE `tetanus_toxoid` (
   `tt5` varchar(30) NOT NULL,
   `ttl` varchar(30) NOT NULL,
   PRIMARY KEY (`tetanus_toxoid_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
-INSERT INTO tetanus_toxoid VALUES("1","3","","","","","",""); 
+INSERT INTO tetanus_toxoid VALUES("2","6","","","","","",""); 
 
 
 
@@ -597,10 +592,9 @@ CREATE TABLE `tetanus_toxoid_fp` (
   `vit_a` varchar(30) NOT NULL,
   `feso4` varchar(30) NOT NULL,
   PRIMARY KEY (`tetanus_toxoid_fp_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
-INSERT INTO tetanus_toxoid_fp VALUES("1","6","June 18, 2016","June 22, 2016","April 18, 2017","May 18, 2017","December 18, 2017"); 
-INSERT INTO tetanus_toxoid_fp VALUES("2","3","","","","",""); 
+INSERT INTO tetanus_toxoid_fp VALUES("3","6","","","","",""); 
 
 
 
@@ -614,10 +608,9 @@ CREATE TABLE `type_of_feeding` (
   `bff` varchar(11) NOT NULL,
   `tof_date` varchar(30) NOT NULL,
   PRIMARY KEY (`type_of_feeding_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 
-INSERT INTO type_of_feeding VALUES("7","6","✓","","","November 12, 2019"); 
-INSERT INTO type_of_feeding VALUES("8","3","","","✓","August 27, 2019"); 
+INSERT INTO type_of_feeding VALUES("9","6","✓","","","November 22, 2019"); 
 
 
 
@@ -632,10 +625,9 @@ CREATE TABLE `type_of_feeding_2` (
   `nbs` varchar(30) NOT NULL,
   `vit_k` varchar(30) NOT NULL,
   PRIMARY KEY (`type_of_feeding_2_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
-INSERT INTO type_of_feeding_2 VALUES("1","6","September 18, 2018","","","",""); 
-INSERT INTO type_of_feeding_2 VALUES("2","3","","","","",""); 
+INSERT INTO type_of_feeding_2 VALUES("3","6","","","","",""); 
 
 
 
@@ -675,7 +667,7 @@ CREATE TABLE `users_activity_log` (
   `action` varchar(100) NOT NULL,
   `date_time` varchar(70) NOT NULL,
   PRIMARY KEY (`log_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=863 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=870 DEFAULT CHARSET=latin1;
 
 INSERT INTO users_activity_log VALUES("532","27","Edited  Patient Profile","October 28, 2019 - 11:23 pm"); 
 INSERT INTO users_activity_log VALUES("533","27","Edited  Patient Profile","October 28, 2019 - 11:36 pm"); 
@@ -1008,6 +1000,13 @@ INSERT INTO users_activity_log VALUES("859","27","Added Immunization Treatment t
 INSERT INTO users_activity_log VALUES("860","27","Added Hilary Ahmor Sipat to Immunization","November 19, 2019 - 9:11 pm"); 
 INSERT INTO users_activity_log VALUES("861","27","Added Immunization Treatment to Arya Stark","November 19, 2019 - 10:10 pm"); 
 INSERT INTO users_activity_log VALUES("862","27","Added Immunization Treatment to Arya Stark","November 19, 2019 - 10:10 pm"); 
+INSERT INTO users_activity_log VALUES("863","27","Successfully Backup the database","November 19, 2019, 10:45 pm"); 
+INSERT INTO users_activity_log VALUES("864","27","Added Arya Stark to Immunization","November 19, 2019 - 10:49 pm"); 
+INSERT INTO users_activity_log VALUES("865","27","Added Immunization Treatment to Arya Stark","November 19, 2019 - 10:50 pm"); 
+INSERT INTO users_activity_log VALUES("866","27","Successfully Backup the database","November 19, 2019, 10:50 pm"); 
+INSERT INTO users_activity_log VALUES("867","27","Successfully Backup the database","November 19, 2019, 10:52 pm"); 
+INSERT INTO users_activity_log VALUES("868","27","Successfully Backup the database","November 19, 2019, 10:53 pm"); 
+INSERT INTO users_activity_log VALUES("869","27","Successfully Backup the database","November 19, 2019, 10:54 pm"); 
 
 
 
