@@ -61,7 +61,7 @@ $(document).ready(function () {
 
                 });
                 $("#medname").val('default');
-                $('#medname').selectpicker('refresh')
+                $('#medname').selectpicker('refresh');
                 $('input[type="radio"]').prop('checked', false);
                 $('form').trigger('reset');
             }

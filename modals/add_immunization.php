@@ -48,7 +48,7 @@
             <div class="modal-footer">
             <a href="registration_table" class="btn btn-warning">Register</a>
             <input class="btn btn-info" type="submit" name="submit" value="Proceed" />
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
             </div>
             </form>
         </div>

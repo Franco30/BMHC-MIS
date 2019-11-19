@@ -30,8 +30,8 @@
 			<!-- START BREADCRUMB -->
 			<ul class="breadcrumb">
 				<?php
-	require 'require/config.php';
-			$query = $conn->query("SELECT * FROM `patient_child` WHERE `child_id` = '$_GET[id]' && `child_name` = '$_GET[child_name]'") or die(mysqli_error());
+			require 'require/config.php';
+			$query = $conn->query("SELECT * FROM `patient_child` WHERE `child_id` = '$_GET[child_id]'") or die(mysqli_error());
 			$fetch = $query->fetch_array();
 			$id = $fetch['child_id'];
 					?>
@@ -49,11 +49,13 @@
 						</div>
 						<div class="panel panel-default tabs">
 							<ul class="nav nav-tabs" role="tablist">
-								<li><a href="#tab-first" role="tab" data-toggle="tab">Patient Info</a></li>
-								<li class="active"><a href="#tab-second" role="tab" data-toggle="tab">Immunization</a></li>
+								<li class="active"><a href="#tab-first" role="tab" data-toggle="tab">Patient Info</a></li>
+								<?php if($fetch['status'] == 'Registered Immunization') { ?>
+								<li><a href="#tab-second" role="tab" data-toggle="tab">Immunization</a></li>
+								<?php } ?>
 							</ul>
 							<div class="panel-body tab-content">
-								<div class="tab-pane" id="tab-first">
+								<div class="tab-pane active" id="tab-first">
 									<div class="panel-body list-group list-group-contacts scroll" style="height: 460px;">
 										<div class="row">
 											<div class="col-md-3">
@@ -64,7 +66,7 @@
 														</div>
 														<div class="profile-data">
 															<div class="profile-data-name" style="color:#555252; font-size:20px;">
-																<strong><?php echo $_GET['child_name']?></strong>
+																<strong><?php echo $fetch['child_name']?></strong>
 															</div>
 															<div class="profile-data-title" style="color:#555252; font-size:12px;">
 																<strong><?php echo $fetch['year']. "0" .$fetch['child_id']?></strong>
@@ -143,7 +145,7 @@
 									</div>
 								</div>
 
-								<div class="tab-pane active" id="tab-second">
+								<div class="tab-pane" id="tab-second">
 									<div class="row">
 										<?php require 'masterfile/overview_immunization.php'?>
 									</div>

@@ -393,7 +393,7 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" id="addnew" class="btn btn-info">Save</button>
+                <button type="button" id="addnew" class="btn btn-success">Save</button>
                 <button type="button" class="btn btn-danger" data-dismiss="modal" id="cancel">Cancel</button>
             </div>
         </div>

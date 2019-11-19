@@ -1,15 +1,17 @@
 				<?php
-	require 'require/config.php';
-			$query = $conn->query("SELECT * FROM `patient_child`, `immunization` WHERE patient_child.child_id = immunization.child_id") or die(mysqli_error());
-			$fetch = $query->fetch_array();
-			$id = $fetch['child_id'];
+		require 'require/config.php';
+        $query = $conn->query("SELECT * FROM `patient_child`, `immunization` WHERE `patient_child`.`child_id`= '$_GET[child_id]' && `immunization`.`child_id` = '$_GET[child_id]'") or die(mysqli_error());
+        $fetch = $query->fetch_array();
+        $q2 = $conn->query("SELECT * FROM `immunization` WHERE `child_id` = '$_GET[child_id]'") or die(mysqli_error());
+        $f2 = $q2->fetch_array();
+        date_default_timezone_set('Asia/Manila');
+        $date=date("F j, Y");
 					?>
-				<div class="row">
 					<div class="col-md-9">
 						<div class="panel panel-default">
 							<div class="panel-body">
 								<div class="tocify-content">
-									<h2> <strong><mark>Child No: <?php echo $fetch['year']. "0" .$fetch['child_id']?></mark></strong></h2>
+									<h2> <strong><mark>Child No: <?php echo $f2['year']. "0" .$f2['child_id']?></mark></strong></h2>
 									<hr>
 									<h4>Overview</h4>
 									<div class="row">
@@ -19,15 +21,14 @@
 													<img src="assets/images/patient.ico" alt="John Doe" />
 												</div>
 												<div class="profile-data">
-													<div class="profile-data-name" style="color:#555252; font-size:20px;"><strong><?php echo $_GET['child_name']?></strong></div>
+													<div class="profile-data-name" style="color:#555252; font-size:20px;"><strong><?php echo $fetch['child_name']?></strong></div>
 													<div class="profile-data-title" style="color:#555252; font-size:12px;"><strong><?php echo $fetch['year']."" .$fetch['child_id']?></strong></div>
 												</div>
 											</div>
 											<div class="panel-body">
 												<div class="contact-info">
 													<p><small style="font-size:13px;">Gender</small><br /><?php echo $fetch['gender']?></p>
-													<p><small style="font-size:13px;">Civil Status</small><br /><?php echo $fetch['civil_status']?></p>
-													<p><small style="font-size:13px;">Current Address</small><br /><?php echo $fetch['address']?></p>
+													<p><small style="font-size:13px;">Current Address</small><br /><?php echo $fetch['purok']?> <?php echo $fetch['street_address']?></p>
 												</div>
 											</div>
 										</div>
@@ -106,321 +107,23 @@
 													</tr>
 												</thead>
 												<tbody>
+					<?php
+					$query = $conn->query("select * from `immunization_treatment` WHERE `child_id` = '$_GET[child_id]' order by `child_id` DESC") or die(mysqli_error());
+					while($fetch = $query->fetch_array()){
+					?>
 													<tr>
-														<td>BCG</td>
-														<td>
-															<center></center>
-														</td>
-														<td>
-															<center></center>
-														</td>
-														<td>
-															<center></center>
-														</td>
-														<td>
-															<center></center>
-														</td>
-														<td>
-															<center></center>
-														</td>
-														<td>
-															<center></center>
-														</td>
+														<td><center><?php echo $fetch['treatment_type']?></center></td>
+														<td><center><?php echo $fetch['treatment_date']?></center></td>
+														<td><center><?php echo $fetch['treatment_age']?></center></td>
+														<td><center><?php echo $fetch['treatment_weight']?></center></td>
+														<td><center><?php echo $fetch['treatment_height']?></center></td>
+														<td><center><?php echo $fetch['treatment_temp']?></center></td>
+														<td><center><?php echo $fetch['treatment_remarks']?></center></td>
 													</tr>
-													<tr>
-														<td>HEPA B</td>
-														<td>
-															<center></center>
-														</td>
-														<td>
-															<center></center>
-														</td>
-														<td>
-															<center></center>
-														</td>
-														<td>
-															<center></center>
-														</td>
-														<td>
-															<center></center>
-														</td>
-														<td>
-															<center></center>
-														</td>
-													</tr>
-													<tr>
-														<td>PHIB 1</td>
-														<td>
-															<center>2019-15-11</center>
-														</td>
-														<td>
-															<center>1 month & 15 days</center>
-														</td>
-														<td>
-															<center>43 kg</center>
-														</td>
-														<td>
-															<center>54 cm</center>
-														</td>
-														<td>
-															<center>36 C</center>
-														</td>
-														<td>
-															<center></center>
-														</td>
-													</tr>
-													<tr>
-														<td>PHIB 2</td>
-														<td>
-															<center>2019-16-10</center>
-														</td>
-														<td>
-															<center></center>
-														</td>
-														<td>
-															<center></center>
-														</td>
-														<td>
-															<center></center>
-														</td>
-														<td>
-															<center></center>
-														</td>
-														<td>
-															<center></center>
-														</td>
-													</tr>
-													<tr>
-														<td>PHIB 3</td>
-														<td>
-															<center></center>
-														</td>
-														<td>
-															<center></center>
-														</td>
-														<td>
-															<center></center>
-														</td>
-														<td>
-															<center></center>
-														</td>
-														<td>
-															<center></center>
-														</td>
-														<td>
-															<center></center>
-														</td>
-													</tr>
-													<tr>
-														<td>OPV 1</td>
-														<td>
-															<center></center>
-														</td>
-														<td>
-															<center></center>
-														</td>
-														<td>
-															<center></center>
-														</td>
-														<td>
-															<center></center>
-														</td>
-														<td>
-															<center></center>
-														</td>
-														<td>
-															<center></center>
-														</td>
-													</tr>
-													<tr>
-														<td>OPV 2</td>
-														<td>
-															<center></center>
-														</td>
-														<td>
-															<center></center>
-														</td>
-														<td>
-															<center></center>
-														</td>
-														<td>
-															<center></center>
-														</td>
-														<td>
-															<center></center>
-														</td>
-														<td>
-															<center></center>
-														</td>
-													</tr>
-													<tr>
-														<td>OPV 3</td>
-														<td>
-															<center></center>
-														</td>
-														<td>
-															<center></center>
-														</td>
-														<td>
-															<center></center>
-														</td>
-														<td>
-															<center></center>
-														</td>
-														<td>
-															<center></center>
-														</td>
-														<td>
-															<center></center>
-														</td>
-													</tr>
-													<tr>
-														<td>IPV</td>
-														<td>
-															<center></center>
-														</td>
-														<td>
-															<center></center>
-														</td>
-														<td>
-															<center></center>
-														</td>
-														<td>
-															<center></center>
-														</td>
-														<td>
-															<center></center>
-														</td>
-														<td>
-															<center></center>
-														</td>
-													</tr>
-													<tr>
-														<td>PCV 1</td>
-														<td>
-															<center></center>
-														</td>
-														<td>
-															<center></center>
-														</td>
-														<td>
-															<center></center>
-														</td>
-														<td>
-															<center></center>
-														</td>
-														<td>
-															<center></center>
-														</td>
-														<td>
-															<center></center>
-														</td>
-													</tr>
-													<tr>
-														<td>PCV 2</td>
-														<td>
-															<center></center>
-														</td>
-														<td>
-															<center></center>
-														</td>
-														<td>
-															<center></center>
-														</td>
-														<td>
-															<center></center>
-														</td>
-														<td>
-															<center></center>
-														</td>
-														<td>
-															<center></center>
-														</td>
-													</tr>
-													<tr>
-														<td>PCV 3</td>
-														<td>
-															<center></center>
-														</td>
-														<td>
-															<center></center>
-														</td>
-														<td>
-															<center></center>
-														</td>
-														<td>
-															<center></center>
-														</td>
-														<td>
-															<center></center>
-														</td>
-														<td>
-															<center></center>
-														</td>
-													</tr>
-													<tr>
-														<td>MVO (6 mos.)</td>
-														<td>
-															<center></center>
-														</td>
-														<td>
-															<center></center>
-														</td>
-														<td>
-															<center></center>
-														</td>
-														<td>
-															<center></center>
-														</td>
-														<td>
-															<center></center>
-														</td>
-														<td>
-															<center></center>
-														</td>
-													</tr>
-													<tr>
-														<td>MV 9 (mos.)</td>
-														<td>
-															<center></center>
-														</td>
-														<td>
-															<center></center>
-														</td>
-														<td>
-															<center></center>
-														</td>
-														<td>
-															<center></center>
-														</td>
-														<td>
-															<center></center>
-														</td>
-														<td>
-															<center></center>
-														</td>
-													</tr>
-													<tr>
-														<td>MMR</td>
-														<td>
-															<center></center>
-														</td>
-														<td>
-															<center></center>
-														</td>
-														<td>
-															<center></center>
-														</td>
-														<td>
-															<center></center>
-														</td>
-														<td>
-															<center></center>
-														</td>
-														<td>
-															<center></center>
-														</td>
-													</tr>
+													<?php
+													}
+													$conn->close();
+													?>
 												</tbody>
 											</table>
 										</div>
@@ -637,4 +340,4 @@
 					<div class="col-md-3" style="position: relative;">
 						<div id="tocify"></div>
 					</div>
-				</div>
+				

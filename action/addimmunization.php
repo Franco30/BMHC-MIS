@@ -36,5 +36,9 @@ if(isset($_POST['add'])){
     $conn->query("UPDATE `patient_child` SET `status` = 'Registered Immunization' WHERE `child_id` = '$child_id'") or die(mysqli_error());
     
     $conn->query("INSERT INTO `users_activity_log` VALUES('', '$user_id', '$remarks','$date_time')") or die(mysqli_error());
+    
+    $conn->query("INSERT INTO `type_of_feeding_2` VALUES('', '$child_id', '', '', '', '', '')") or die(mysqli_error());
+    $conn->query("INSERT INTO `tetanus_toxoid` VALUES('', '$child_id', '', '', '', '', '', '')") or die(mysqli_error());
+    $conn->query("INSERT INTO `tetanus_toxoid_fp` VALUES('', '$child_id', '', '', '', '', '')") or die(mysqli_error());
     }
 ?>
