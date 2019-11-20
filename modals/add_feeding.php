@@ -13,13 +13,6 @@
             <div class="modal-body">
                 <form id="frm">
                     <fieldset>
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <input type="hidden" class="form-control" value="<?php echo $f2['immunization_id']?>" id="immunization_id2" />
-                                <input type="hidden" class="form-control" value="<?php echo $f2['child_id']?>" id="child_id2" required />
-                            </div>
-                        </div>
-                        &nbsp;
                         <div class="form-row">
                             <div class="alert alert-warning" style="padding:1px;">
                                 <center><span><span class="fa fa-exclamation-circle"></span> Please select only 1</span></center>
@@ -29,6 +22,8 @@
                                     <center>
                                         <label>EBF</label>
                                         <br>
+                                        <input type="hidden" class="form-control" value="<?php echo $f2['immunization_id']?>" id="immunization_id2" />
+                                        <input type="hidden" class="form-control" value="<?php echo $f2['child_id']?>" id="child_id2" required />
                                         <input type="radio" value="✓" name="ebf" required />
                                     </center>
                                 </div>

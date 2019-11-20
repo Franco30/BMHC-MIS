@@ -19,7 +19,7 @@
                         <div class="col-md-8" style="margin-left: 150px;">
                             <div class="panel panel-default">
                                 <div class="panel-body scroll" style="height: 350px;">
-                                    <div id="medicine" style="width: 100%; height: 320px"></div>
+                                    <div id="medicine" style="width: 100%; height: 350px"></div>
                                 </div>
                             </div>
                         </div>

@@ -21,6 +21,12 @@ $(document).ready(function () {
             $diagnosis = $('#diagnosis').val();
             $labrequest = $('#labrequest').val();
 
+            var complaints = [];
+
+            $('#complaints option:selected').each(function (i) {
+                complaints[i] = $(this).val();
+            });
+
             if (confirm('Are you sure you want to add this patient?')) {
                 $.ajax({
                     type: "POST",
@@ -36,7 +42,7 @@ $(document).ready(function () {
                         headfamily: $headfamily,
                         rr: $rr,
                         pr: $pr,
-                        complaints: $complaints,
+                        complaints: complaints,
                         pefindings: $pefindings,
                         diagnosis: $diagnosis,
                         labrequest: $labrequest,

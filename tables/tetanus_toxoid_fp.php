@@ -15,7 +15,7 @@ require 'require/config.php';
     </thead>
     <tbody>
         <?php
-    $query = $conn->query("select * from `tetanus_toxoid_fp` WHERE `child_id` = '$_GET[child_id]' order by `child_id` DESC") or die(mysqli_error());
+    $query = $conn->query("SELECT * FROM `tetanus_toxoid_fp` WHERE `child_id` = '$_GET[child_id]' order by `child_id` DESC") or die(mysqli_error());
     while($fetch = $query->fetch_array()){
         
         ?>
@@ -25,7 +25,11 @@ require 'require/config.php';
             <td><center><?php echo $fetch['1_year']?></center></td>
             <td><center><?php echo $fetch['vit_a']?></center></td>
             <td><center><?php echo $fetch['feso4']?></center></td>
-            <td><center><button type="button" class="btn btn-sm btn-info">UPDATE</button></center></td>
+            <td><center>
+                    <button type="button" data-target="#edit_tt_fp<?php echo $fetch['tetanus_toxoid_fp_id'];?>" data-toggle="modal" class="btn btn-sm btn-info"> UPDATE</button>
+                </center>
+                <?php require('modals/edit_tt_fp.php'); ?>
+            </td>
         </tr>
         <?php
     }

@@ -112,25 +112,25 @@
                                             <td>
                                                 <center><strong><?php echo $fetch['medname']?></strong></center>
                                             </td>
-                                            <td>
+                                            <td style="font-weight: bold;">
                                                 <center><?php echo $fetch['6am']?></center>
                                             </td>
-                                            <td>
+                                            <td style="font-weight: bold;">
                                                 <center><?php echo $fetch['8am']?></center>
                                             </td>
-                                            <td>
+                                            <td style="font-weight: bold;">
                                                 <center><?php echo $fetch['12nn']?></center>
                                             </td>
-                                            <td>
+                                            <td style="font-weight: bold;">
                                                 <center><?php echo $fetch['2pm']?></center>
                                             </td>
-                                            <td>
+                                            <td style="font-weight: bold;">
                                                 <center><?php echo $fetch['4pm']?></center>
                                             </td>
-                                            <td>
+                                            <td style="font-weight: bold;">
                                                 <center><?php echo $fetch['6pm']?></center>
                                             </td>
-                                            <td>
+                                            <td style="font-weight: bold;">
                                                 <center><?php echo $fetch['8pm']?></center>
                                             </td>
                                             <td>

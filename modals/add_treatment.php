@@ -78,7 +78,7 @@
                             &nbsp;
                             <br />
                             <div class="col-md-12">
-                                <div class="form-group" style="margin-left:-10px;">
+                                <div class="form-group" style="margin-left:-10px;margin-right:-10px;">
                                     <label>Remarks</label>
                                     <textarea id="treatment_remarks" class="form-control"></textarea>
                                 </div>

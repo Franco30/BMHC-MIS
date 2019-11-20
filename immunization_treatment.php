@@ -122,39 +122,23 @@
                                                              </li>
                                                              <li><a href="#tab-2second" role="tab" data-toggle="tab">Mother - Tetanus Toxoid</a>
                                                              </li>
+                                                             <div class="btn-group pull-right">
+                                                                 <button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target="#add_feeding">Add Feeding</button>
+                                                             </div>
                                                          </ul>
                                                          <div class="panel-body">
                                                             <form id="treatment2form">
                                                                  <div class="panel-body tab-content">
                                                                      <div class="tab-pane active" id="tab-2first">
-                                                                         <div class="row">
-                                                                             <div class="col-md-12">
-                                                                                 <div class="panel panel-default">
-                                                                                     <div class="panel-heading">
-                                                                                         <div class="btn-group pull-right">
-                                                                                             <button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target="#add_feeding">Add Feeding</button>
-                                                                                         </div>
-                                                                                     </div>
-                                                                                     <div class="panel-body">
-                                                                                         <?php 
-                                                                                         require 'tables/type_of_feeding.php';  
-                                                                                         ?>
-                                                                                         <hr>
-                                                                                         <?php require 'tables/type_of_feeding2.php'; ?>
-                                                                                     </div>
-                                                                                 </div>
-                                                                             </div>
-                                                                         </div>
+                                                                         <?php require 'tables/type_of_feeding.php'; ?>
+                                                                         <hr>
+                                                                         <?php require 'tables/type_of_feeding2.php'; ?>
                                                                      </div>
 
                                                                      <div class="tab-pane" id="tab-2second">
-                                                                         <div class="row">
-                                                                             <div class="col-md-12">
-                                                                                 <?php require 'tables/tetanus_toxoid.php'; ?>
-                                                                                 <hr>
-                                                                                 <?php require 'tables/tetanus_toxoid_fp.php'; ?>
-                                                                             </div>
-                                                                         </div>
+                                                                         <?php require 'tables/tetanus_toxoid.php'; ?>
+                                                                         <hr>
+                                                                         <?php require 'tables/tetanus_toxoid_fp.php'; ?>
                                                                      </div>
                                                                  </div>
                                                              </form>
@@ -181,6 +165,9 @@
     <script type="text/javascript" src="js/plugins/jquery/jquery.min.js"></script>
     <script type="text/javascript" src="functions/crudtreatment.js"></script>
     <script type="text/javascript" src="functions/crudfeeding.js"></script>
+    <script type="text/javascript" src="functions/crudfeeding2.js"></script>
+    <script type="text/javascript" src="functions/crudtetanustoxoid.js"></script>
+    <script type="text/javascript" src="functions/crudttfp.js"></script>
     <script type="text/javascript" src="js/plugins/jquery/jquery-ui.min.js"></script>
     <script type="text/javascript" src="js/plugins/bootstrap/bootstrap.min.js"></script>
     <script type='text/javascript' src='js/plugins/icheck/icheck.min.js'></script>

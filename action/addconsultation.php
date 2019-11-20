@@ -16,6 +16,11 @@ if(isset($_POST['add'])){
     $diagnosis = $_POST['diagnosis'];
     $labrequest = $_POST['labrequest'];
     
+        $C = "";
+    foreach($complaints as $value) {
+        $C .= $value . ", ";  
+    }
+    
     $user_id=$_SESSION['user_id'];
     $year = date("Y", strtotime("+8 HOURS"));
     date_default_timezone_set('Asia/Manila');
@@ -30,7 +35,8 @@ if(isset($_POST['add'])){
     $remarks = "Added $patient_name to Consultation";
 
     require '../require/config.php';
-    $conn->query("INSERT INTO `consultation` VALUES('', '$patient_id', '$date_today', '$headfamily', '$weight', '$bp', '$temp', '$rr', '$pr', '$complaints', '$pefindings', '$diagnosis', '$labrequest', '$month', '$year', 'No Prescription', '$date_time')") or die(mysqli_error());
+    $C = substr($C, 0, -2);
+    $conn->query("INSERT INTO `consultation` VALUES('', '$patient_id', '$date_today', '$headfamily', '$weight', '$bp', '$temp', '$rr', '$pr', '$C', '$pefindings', '$diagnosis', '$labrequest', '$month', '$year', 'No Prescription', '$date_time')") or die(mysqli_error());
     $conn->query("INSERT INTO `users_activity_log` VALUES('', '$user_id', '$remarks','$date_time')") or die(mysqli_error());
     }
 ?>

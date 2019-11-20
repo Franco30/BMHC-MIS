@@ -27,7 +27,11 @@ require 'require/config.php';
             <td><center><?php echo $fetch['tt4']?></center></td>
             <td><center><?php echo $fetch['tt5']?></center></td>
             <td><center><?php echo $fetch['ttl']?></center></td>
-            <td><center><button type="button" class="btn btn-sm btn-info">UPDATE</button></center></td>
+            <td><center>
+                    <button type="button" data-target="#edit_tetanus_toxoid<?php echo $fetch['tetanus_toxoid_id'];?>" data-toggle="modal" class="btn btn-sm btn-info"> UPDATE</button>
+                </center>
+                <?php require('modals/edit_tt.php'); ?>
+            </td>
         </tr>
         <?php
     }

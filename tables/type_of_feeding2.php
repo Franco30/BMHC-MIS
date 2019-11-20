@@ -24,7 +24,11 @@ require 'require/config.php';
             <td><center><?php echo $fetch2['1_year']?></center></td>
             <td><center><?php echo $fetch2['nbs']?></center></td>
             <td><center><?php echo $fetch2['vit_k']?></center></td>
-            <td><center><button type="button" class="btn btn-sm btn-info">UPDATE</button></center></td>
+            <td><center>
+                    <button type="button" data-target="#edit_feeding2<?php echo $fetch2['type_of_feeding_2_id']; ?>" data-toggle="modal" class="btn btn-sm btn-info"> UPDATE</button>
+                </center>
+                <?php require('modals/edit_feeding2.php'); ?>
+            </td>
         </tr>
         <?php
     }
