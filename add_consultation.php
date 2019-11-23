@@ -215,8 +215,9 @@
                                                         <h5 style="font-size: 12px;font-weight: bold;">S</h5>
                                                         <div class="form-group">
                                                             <label>Complaints:</label>
-<!--                                                            <textarea class="form-control" spellcheck="false" id="complaints"></textarea>-->
+                                                            <!--                                                            <textarea class="form-control" spellcheck="false" id="complaints"></textarea>-->
                                                             <select multiple class="form-control select" data-live-search="true" style="display: none;" id="complaints" name="complaints[]">
+                                                                <option value="">Select</option>
                                                                 <option value="Fever">Fever</option>
                                                                 <option value="Colds">Colds</option>
                                                                 <option value="Headache">Headache</option>
@@ -253,69 +254,6 @@
 
                                                     </div>
                                                 </div>
-                                                <!-- END OF STEP 3 -->
-                                                <!--
-                                                <div id="step-3">
-                                                    <div class="col-md-6">
-                                                        <div class="form-row">
-                                                            <div class="col-md-6">
-                                                                <div class="form-group" style="margin-left:-10px;">
-                                                                    <label>Antibiotic</label>
-                                                                    <select multiple class="form-control select" data-live-search="true" id="antibiotic">
-                                                                        <option value="#">Select</option>
-                                                                        <?php
-                                                            //$conn = new mysqli("localhost", "root", "", "bmhc") or die(mysqli_error());
-                                                           // $query = $conn->query("SELECT * FROM `medicine`") or die(mysqli_error());
-
-                                                           // while($fetch = $query->fetch_array())//{
-									                           ?>
-                                                                        <option value="<?php //echo $fetch['medicine_id'];?>"><?php //echo $fetch['medicine_name']?></option>
-                                                                        <?php
-					                                               //}
-									                               ?>
-                                                                    </select>
-                                                                </div>
-
-                                                            </div>
-                                                            <div class="col-md-6">
-                                                                <div class="form-group" style="margin-right:-10px;">
-                                                                    <label>Quantity</label>
-                                                                    <input type="text" class="form-control" id="quantity" required />
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="form-group">
-                                                            <label>Analgesic</label>
-                                                            <textarea class="form-control" spellcheck="false" id="analgesic"></textarea>
-                                                        </div>
-
-                                                        <div class="form-group">
-                                                            <label>Cough Preparation</label>
-                                                            <textarea class="form-control" spellcheck="false" id="coughpreparation"></textarea>
-                                                        </div>
-
-                                                    </div>
-                                                    <div class="col-md-6">
-
-                                                        <div class="form-group">
-                                                            <label>Antipyretic</label>
-                                                            <textarea class="form-control" spellcheck="false" id="antipyretic"></textarea>
-                                                        </div>
-
-                                                        <div class="form-group">
-                                                            <label>Vitamins</label>
-                                                            <textarea class="form-control" spellcheck="false" id="antibiotic"></textarea>
-                                                        </div>
-
-                                                        <div class="form-group">
-                                                            <label>Recommendations</label>
-                                                            <textarea class="form-control" spellcheck="false" id="recommendation"></textarea>
-                                                        </div>
-
-                                                    </div>
-                                                </div>
--->
                                             </div>
                                         </form>
                                     </div>
@@ -351,12 +289,13 @@
     <script type="text/javascript" src="js/actions.js"></script>
 
     <!-- END THIS PAGE PLUGINS -->
+<!--
     <script>
         $.ajaxPrefilter(function(options, originalOptions, jqXHR) {
             options.async = true;
         });
-
     </script>
+-->
 </body>
 
 </html>

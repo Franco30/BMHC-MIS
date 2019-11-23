@@ -25,22 +25,6 @@ require 'require/logincheck.php';
     
     <script src="js/moment.min.js"></script>
     <script src="js/fullcalendar.min.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $("select").change(function() {
-                $(this).find("option:selected").each(function() {
-                    var optionValue = $(this).attr("value");
-                    if (optionValue) {
-                        $(".reporttype").not("." + optionValue).hide();
-                        $("." + optionValue).show();
-                    } else {
-                        $(".reporttype").hide();
-                    }
-                });
-            }).change();
-        });
-
-    </script>
 
     <script>
         $(document).ready(function() {
@@ -273,21 +257,10 @@ require 'require/logincheck.php';
                                                 </select>
                                             </div>
                                         </div>
-                                        <div class="col-md-2">
-                                            <div class="form-group" style="margin-left:-10px">
-                                                <select class="form-control select" data-style="btn-info" id="select-report" name="filterbutton">
-                                                    <option disabled="disabled">Select Report</option>
-                                                    <option value="patient">Patient</option>
-                                                    <option value="child">Infant Patient</option>
-
-                                                </select>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
                                 <div class="panel-body">
-                                    <div id="chartContainer1" class="patient reporttype" style="width: 100%; height: 300px;"></div>
-                                    <div id="chartContainer2" class="child reporttype" style="width: 100%; height: 300px;"></div>
+                                    <div id="chartContainer1" style="width: 100%; height: 300px;"></div>
                                 </div>
                             </div>
                         </div>

@@ -36,7 +36,7 @@ if(isset($_POST['add'])){
     $remarks = "Added Prescription to $patient_name";
 
     require '../require/config.php';
-    $conn->query("INSERT INTO `consultation_prescription` VALUES('', '$consultation_id', '$patient_id', '$medicine_category', '$medname', '$sixam', '$eightam', '$twelvenoon', '$twopm', '$fourpm', '$sixpm', '$eightpm', '$qty', '$recommendation')") or die(mysqli_error());
+    $conn->query("INSERT INTO `consultation_prescription` VALUES('', '$consultation_id', '$patient_id', '$user_id', '$medicine_category', '$medname', '$sixam', '$eightam', '$twelvenoon', '$twopm', '$fourpm', '$sixpm', '$eightpm', '$qty', '$recommendation')") or die(mysqli_error());
     $conn->query("UPDATE `consultation` SET `status` = 'With Prescription' WHERE `consultation_id` = '$consultation_id' && `patient_id` = '$patient_id'") or die(mysqli_error());
     
     $conn->query("INSERT INTO `users_activity_log` VALUES('', '$user_id', '$remarks','$date_time')") or die(mysqli_error());

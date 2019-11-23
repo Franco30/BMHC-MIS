@@ -1,10 +1,14 @@
+<!-- Monthly Dispatch -->
 <?php
 $year = date('Y');
 if(isset($_GET['year']))
 {
     $year=$_GET['year'];
 }
-$conn = new mysqli('localhost','root','','bmhc')or die(mysqli_error());
+
+
+// meaning ni gna count ang dispatch for every month 
+require 'require/config.php';
 $qjan = $conn->query("SELECT COUNT(*) as total FROM `patient` WHERE `month` = 'Jan' && `year` = '$year'") or die(mysqli_error());
 $fjan = $qjan->fetch_array();
 $qfeb = $conn->query("SELECT COUNT(*) as total FROM `patient` WHERE `month` = 'Feb' && `year` = '$year'") or die(mysqli_error());
@@ -58,9 +62,8 @@ $qdec2 = $conn->query("SELECT COUNT(*) as total FROM `patient_child` WHERE `mont
 $fdec2 = $qdec2->fetch_array();
 $total2 = $conn->query("SELECT COUNT(*) as total FROM `patient_child` WHERE `year` = '$year'") or die(mysqli_error());
 $total2 = $total2->fetch_array();
-
-$total3 = $total['total'] + $total2['total'];
 ?>
+
 
 <?php
 $year = date('Y');
@@ -80,3 +83,8 @@ while($result3 = $res3->fetch_array()){
 }
 json_encode($data_points3);
 ?>
+
+
+
+
+

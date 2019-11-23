@@ -29,7 +29,7 @@
             },
             subtitles:[
                 {
-                    text: "Medicine Current Stocks - <?php echo $year?>"
+                    text: "Medicine Current Stocks - <?php echo $year?><?php echo $itot['total']?>"
                 }
             ],
             legend: {

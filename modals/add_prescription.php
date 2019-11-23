@@ -15,10 +15,10 @@
                     <fieldset>
                         <div class="col-md-12">
                             <div class="form-group">
-<!--                                <label>Medicine Category</label>-->
+                                <!--                                <label>Medicine Category</label>-->
                                 <input type="hidden" class="form-control" value="<?php echo $f2['consultation_id']?>" id="consultation_id" required />
                                 <input type="hidden" class="form-control" value="<?php echo $f2['patient_id']?>" id="patient_id" required />
-<!--
+                                <!--
                                 <select class="form-control select" data-live-search="true" id="medicine_category">
                                     <option value="">Select</option>
                                     <option value="Antibiotic">Antibiotic</option>
@@ -31,7 +31,7 @@
 -->
                             </div>
                         </div>
-<!--                        &nbsp;-->
+                        <!--                        &nbsp;-->
                         <div class="form-row">
                             <div class="col-md-3">
                                 <div class="form-group" style="margin-right:-10px;">

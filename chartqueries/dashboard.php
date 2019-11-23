@@ -63,8 +63,22 @@ $fdec2 = $qdec2->fetch_array();
 $total2 = $conn->query("SELECT COUNT(*) as total FROM `patient_child` WHERE `year` = '$year'") or die(mysqli_error());
 $total2 = $total2->fetch_array();
 ?>
+<?php 
+$sjan = $fjan['total'] + $fjan2['total'];
+$sfeb = $ffeb['total'] + $ffeb2['total'];
+$smar = $fmar['total'] + $fmar2['total'];
+$sapr = $fapr['total'] + $fapr2['total'];
+$smay = $fmay['total'] + $fmay2['total'];
+$sjun = $fjun['total'] + $fjun2['total'];
+$sjul = $fjul['total'] + $fjul2['total'];
+$saug = $faug['total'] + $faug2['total'];
+$ssep = $fsep['total'] + $fsep2['total'];
+$soct = $foct['total'] + $foct2['total'];
+$snov = $fnov['total'] + $fnov2['total'];
+$sdec = $fdec['total'] + $fdec2['total'];
+?>                   
 
-
+                    
 <?php
 $year = date('Y');
 if(isset($_GET['year']))
