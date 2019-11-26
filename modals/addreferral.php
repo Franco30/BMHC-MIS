@@ -107,10 +107,12 @@
 									?>
                                 </select>
                             </div>
+<!--
                             <div class="form-group">
                                 <label>Designation</label>
                                 <input type="text" class="form-control" id="designation" placeholder="Enter Designation" required />
                             </div>
+-->
                         </div>
                     </div>
 

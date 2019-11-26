@@ -73,7 +73,7 @@ $fetch = $query->fetch_array();
 
 							<p style="font-size: 15px;margin-left: 20px;" class="text-justify"><strong>ADDRESS:</strong>&nbsp;&nbsp;<strong><?php echo $fetch['origin_address']?></strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>ADDRESS:</strong>&nbsp;&nbsp;<?php echo $fetch['destination_address']?></p>
 
-							<p style="font-size: 15px;margin-left: 20px;" class="text-justify"><strong>NAME OF PATIENT:</strong>&nbsp;&nbsp;<?php echo $fetch['patient_name']?>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>DESIGNATION:</strong>&nbsp;&nbsp;<?php echo $fetch['designation']?>&emsp;&emsp;</p>
+							<p style="font-size: 15px;margin-left: 20px;" class="text-justify"><strong>NAME OF PATIENT:</strong>&nbsp;&nbsp;<?php echo $fetch['patient_name']?>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
 
 							<p style="font-size: 15px;margin-left: 20px;" class="text-justify"><strong>WT:</strong>&nbsp;&nbsp;<?php echo $fetch['weight']?> kg.&nbsp;&nbsp;&nbsp;&nbsp; <strong>BP:</strong>&nbsp;&nbsp;<?php echo $fetch['bp']?> mmHg&nbsp;&nbsp;&nbsp;&nbsp;
 								<strong>TEMP:</strong>&nbsp;&nbsp;<?php echo $fetch['temp']?> °C&nbsp;&nbsp;&nbsp;&nbsp; <strong>AGE:</strong>&nbsp;&nbsp;<?php echo $fetch['age']?> yrs. old</p>

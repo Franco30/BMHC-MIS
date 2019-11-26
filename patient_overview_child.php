@@ -110,34 +110,43 @@
 												<h5><strong>Brothers and Sisters</strong></h5>
 												<hr style="margin:0px 0 5px 0;">
 												<br>
-												<table class="table datatable">
-													<thead>
-														<tr class="default">
-															<th>
-																<center>Name</center>
-															</th>
-															<th>
-																<center>Gender</center>
-															</th>
-															<th>
-																<center>Date of Birth</center>
-															</th>
-														</tr>
-													</thead>
-													<tbody>
-														<tr>
-															<td>
-																<center>John Michael Sipat</center>
-															</td>
-															<td>
-																<center>Male</center>
-															</td>
-															<td><strong>
-																	<center>1998-30-08</center>
-																</strong></td>
-														</tr>
-													</tbody>
-												</table>
+												<div class="panel panel-default">
+												<div class="panel-heading">
+													<div class="btn-group pull-right">
+														<div class="pull-left">
+															<button type="button" class="btn btn-info">New Brother and Sister</button>
+														</div>
+													</div>
+												</div>
+												<div class="panel-body">
+												<div class="table-responsive">
+													<table class="table table-bordered">
+														<thead>
+															<tr class="warning">
+																<th><center>Name</center></th>
+																<th><center>Gender</center></th>
+																<th><center>Date of Birth</center></th>
+															</tr>
+														</thead>
+														<tbody>
+															<?php
+$query = $conn->query("SELECT * FROM `brothers_and_sisters` WHERE `child_id` = '$_GET[child_id]'") or die(mysqli_error());
+while($fetch = $query->fetch_array()){
+?>
+															<tr>
+																<td><center><?php echo $fetch['fullname']?></center></td>
+																<td><center><?php echo $fetch['gender']?></center></td>
+																<td><center><?php echo $fetch['birthdate']?></center></td>
+															</tr>
+															<?php
+															}
+															$conn->close();
+															?>
+														</tbody>
+													</table>
+												</div>
+												</div>
+												</div>
 											</div>
 
 										</div>
@@ -166,7 +175,7 @@
 	<!-- END PRELOADS -->
 
 	<!-- START SCRIPTS -->
-	<!-- START PLUGINS -->z
+	<!-- START PLUGINS -->
 	<script type="text/javascript" src="js/plugins/jquery/jquery.min.js"></script>
 	<script type="text/javascript" src="js/plugins/jquery/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="js/plugins/bootstrap/bootstrap.min.js"></script>

@@ -28,7 +28,9 @@ $query = $conn->query("SELECT * FROM `immunization`, `patient_child` WHERE `pati
             <td><center>Prk. <?php echo $fetch['purok']." ".$fetch['street_address']?></center></td>
             <td><center>
             <a href="immunization_treatment?child_id=<?php echo $fetch['child_id'];?>&&immunization_id=<?php echo $fetch['immunization_id']?>" class="btn btn-sm btn-info">
-                <span class="fa fa-heartbeat"></span> Treatment</a>
+            <span class="fa fa-heartbeat"></span> Treatment</a>
+            <a href="immunization_consultation?child_id=<?php echo $fetch['child_id'];?>&&immunization_id=<?php echo $fetch['immunization_id']?>" class="btn btn-sm btn-default">
+            <span class="fa fa-stethoscope"></span> Consultation</a>
             </center></td>
         </tr>
         <?php

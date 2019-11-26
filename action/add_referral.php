@@ -15,7 +15,6 @@ if(isset($_POST['add'])){
     $origin = $_POST['origin'];
     $destination = $_POST['destination'];
     $referred_by = $_POST['referred_by'];
-    $designation = $_POST['designation'];
     
     $user_id=$_SESSION['user_id'];
     $year = date("Y", strtotime("+8 HOURS"));
@@ -26,7 +25,7 @@ if(isset($_POST['add'])){
     $remarks = "Added a New Individual Referral Record";
     
     require '../require/config.php';
-    $conn->query("INSERT INTO `referral` VALUES ('', '$date', '$from', '$to', '$origin', '$destination', '$patient_name', '$weight', '$bp', '$temp', '$age', '$complaints', '$referred_by', '$designation', '$month', '$year', '$date_time')") or die(mysqli_error());
+    $conn->query("INSERT INTO `referral` VALUES ('', '$date', '$from', '$to', '$origin', '$destination', '$patient_name', '$weight', '$bp', '$temp', '$age', '$complaints', '$referred_by', '$month', '$year', '$date_time')") or die(mysqli_error());
     $conn->query("INSERT INTO `users_activity_log` VALUES('', '$user_id', '$remarks','$date_time')") or die(mysqli_error());
     }
 ?>

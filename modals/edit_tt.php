@@ -52,7 +52,7 @@
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label>TT L</label>
-                                    <input type="text" class="form-control datepicker" value="<?php echo $fetch['ttl']?>" id="ttl<?php echo $fetch['tetanus_toxoid_id']; ?>" />
+                                    <input type="text" class="form-control" value="<?php echo $fetch['ttl']?>" id="ttl<?php echo $fetch['tetanus_toxoid_id']; ?>" />
                                 </div>
                             </div>
                         </div>

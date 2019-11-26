@@ -76,34 +76,20 @@
 								</div>
 								<div class="panel-body">
 									<div class="tocify-content">
-										<h2><strong>Treatment Table</strong></h2>
+										<h2><strong>Treatment Table I</strong></h2>
 										<hr>
 										<h4>Overview</h4>
-										<div class="panel-body panel-body-table">
-											<table class="table table-bordered">
+										<div class="table-responsive">
+											<table class="table table-hover table-bordered">
 												<thead>
-													<tr>
-														<th>
-															<center></center>
-														</th>
-														<th>
-															<center>Date</center>
-														</th>
-														<th>
-															<center>Age</center>
-														</th>
-														<th>
-															<center>Weight</center>
-														</th>
-														<th>
-															<center>Height</center>
-														</th>
-														<th>
-															<center>Temperature</center>
-														</th>
-														<th>
-															<center>Remarks</center>
-														</th>
+													<tr class="warning">
+														<th><center>Treatment Type</center></th>
+														<th><center>Date</center></th>
+														<th><center>Age</center></th>
+														<th><center>Weight</center></th>
+														<th><center>Height</center></th>
+														<th><center>Temperature</center></th>
+														<th><center>Remarks</center></th>
 													</tr>
 												</thead>
 												<tbody>
@@ -134,204 +120,150 @@
 										<hr>
 										<h4>Overview</h4>
 										<div class="panel-body">
-											<table id="treatmenttable2" class="table table-hover">
+											<table id="treatmenttable2" class="table table-hover table-bordered">
 												<thead>
 													<div>
 														<h4 style="color:#56688A;">
-															<strong>
-																<center>Child <br /> Type of feeding
-																</center>
-															</strong>
+															<strong><center>Child <br /> Type of feeding</center></strong>
 														</h4>
 													</div>
 													<tr class="warning">
-														<th>
-															<center>EBF</center>
-														</th>
-														<th>
-															<center>MF</center>
-														</th>
-														<th>
-															<center>BFF</center>
-														</th>
+														<th><center>EBF</center></th>
+														<th><center>MF</center></th>
+														<th><center>BFF</center></th>
+														<th><center>Date</center></th>
 													</tr>
 												</thead>
 												<tbody>
+			<?php
+			require 'require/config.php';
+			$query = $conn->query("SELECT * FROM `type_of_feeding` WHERE `child_id` = '$_GET[child_id]' order by `child_id` DESC") or die(mysqli_error());
+			while($fetch = $query->fetch_array()){
+			?>	
 													<tr>
-														<td>
-															<center>✓</center>
-														</td>
-														<td>
-															<center></center>
-														</td>
-														<td>
-															<center></center>
-														</td>
+														<td><center><?php echo $fetch['ebf']?></center></td>
+														<td><center><?php echo $fetch['mf']?></center></td>
+														<td><center><?php echo $fetch['bff']?></center></td>
+														<td><center><?php echo $fetch['tof_date']?></center></td>
 													</tr>
-													<tr>
-														<td>
-															<center></center>
-														</td>
-														<td>
-															<center>✓</center>
-														</td>
-														<td>
-															<center></center>
-														</td>
-													</tr>
+												<?php
+												}
+												$conn->close();
+												?>
 												</tbody>
 											</table>
 											<hr>
-											<table id="treatmenttable2" class="table table-hover">
+											<table id="treatmenttable2" class="table table-hover table-bordered">
 												<thead>
+													<div>
+													<h4 style="color:#56688A;">
+													<strong><center>Mother <br /> Tetanus Toxoid</center></strong>
+													</h4>
+													</div>
 													<tr class="warning">
-														<th>
-															<center>Mother</center>
-															<center>Tetanus Toxoid</center>
-														</th>
-														<th>
-															<center>Date</center>
-														</th>
+														<th><center>TT 1</center></th>
+														<th><center>TT 2</center></th>
+														<th><center>TT 3</center></th>
+														<th><center>TT 4</center></th>
+														<th><center>TT 5</center></th>
+														<th><center>TT L</center></th>
 													</tr>
 												</thead>
+		<?php
+		require 'require/config.php';
+		$query = $conn->query("SELECT * FROM `tetanus_toxoid` WHERE `child_id` = '$_GET[child_id]' order by `child_id` DESC") or die(mysqli_error());
+		while($fetch = $query->fetch_array()){
+		?>	
 												<tbody>
 													<tr>
-														<td>
-															<center>TT1</center>
-														</td>
-														<td>
-															<center>2016-05-05</center>
-														</td>
-													</tr>
-													<tr>
-														<td>
-															<center>TT2</center>
-														</td>
-														<td>
-															<center>2016-14-06</center>
-														</td>
-													</tr>
-													<tr>
-														<td>
-															<center>TT3</center>
-														</td>
-														<td>
-															<center></center>
-														</td>
-													</tr>
-													<tr>
-														<td>
-															<center>TT4</center>
-														</td>
-														<td>
-															<center></center>
-														</td>
-													</tr>
-													<tr>
-														<td>
-															<center>TTL</center>
-														</td>
-														<td>
-															<center></center>
-														</td>
+														<td><center><?php echo $fetch['tt1']?></center></td>
+														<td><center><?php echo $fetch['tt2']?></center></td>
+														<td><center><?php echo $fetch['tt3']?></center></td>
+														<td><center><?php echo $fetch['tt4']?></center></td>
+														<td><center><?php echo $fetch['tt5']?></center></td>
+														<td><center><?php echo $fetch['ttl']?></center></td>
 													</tr>
 												</tbody>
+												<?php
+												}
+												$conn->close();
+												?>
 											</table>
 											<hr>
-											<table id="treatmenttable2" class="table table-hover">
+											<div class="table-responsive">
+											<table id="treatmenttable2" class="table table-hover table-bordered">
 												<thead>
+												<div>
+												<h4 style="color:#56688A;">
+												<strong><center>Child</center></strong>
+												</h4>
+												</div>
 													<tr class="warning">
-														<th>
-															<center>Child</center>
-														</th>
-														<th>
-															<center>Date</center>
-														</th>
-														<th>
-															<center>Mother</center>
-															<center>Family Planning</center>
-														</th>
-														<th>
-															<center>Date</center>
-														</th>
+														<th><center>VTI A</center></th>
+														<th><center>6 mos.</center></th>
+														<th><center>1 yr.</center></th>
+														<th><center>NBS</center></th>
+														<th><center>VIT K</center></th>
 													</tr>
 												</thead>
+	<?php
+	require 'require/config.php';
+	$query = $conn->query("SELECT * FROM `type_of_feeding_2` WHERE `child_id` = '$_GET[child_id]' order by `child_id` DESC") or die(mysqli_error());
+	while($fetch = $query->fetch_array()){
+	?>
 												<tbody>
 													<tr>
-														<td>
-															<center>VIT A.</center>
-														</td>
-														<td>
-															<center></center>
-														</td>
-														<td>
-															<center>UID</center>
-														</td>
-														<td>
-															<center></center>
-														</td>
+														<td><center><?php echo $fetch['vit_a']?></center></td>
+														<td><center><?php echo $fetch['6_months']?></center></td>
+														<td><center><?php echo $fetch['1_year']?></center></td>
+														<td><center><?php echo $fetch['nbs']?></center></td>
+														<td><center><?php echo $fetch['vit_k']?></center></td>
 													</tr>
-													<tr>
-														<td>
-															<center>6 mos.</center>
-														</td>
-														<td>
-															<center></center>
-														</td>
-														<td>
-															<center>BTL</center>
-														</td>
-														<td>
-															<center></center>
-														</td>
-													</tr>
-													<tr>
-														<td>
-															<center>1 yr.</center>
-														</td>
-														<td>
-															<center></center>
-														</td>
-														<td>
-															<center>1 yr.</center>
-														</td>
-														<td>
-															<center></center>
-														</td>
-													</tr>
-													<tr>
-														<td>
-															<center>NBS</center>
-														</td>
-														<td>
-															<center></center>
-														</td>
-														<td>
-															<center>VIT A.</center>
-														</td>
-														<td>
-															<center></center>
-														</td>
-													</tr>
-													<tr>
-														<td>
-															<center>VIT K.</center>
-														</td>
-														<td>
-															<center></center>
-														</td>
-														<td>
-															<center>FeSO4</center>
-														</td>
-														<td>
-															<center></center>
-														</td>
-													</tr>
-
 												</tbody>
+											<?php
+											}
+											$conn->close();
+											?>
 											</table>
-										</div>&nbsp;
+												</div>
+										</div>
 										<hr>
+										<div class="table-responsive">
+											<table id="treatmenttable3" class="table table-hover table-bordered">
+												<thead>
+												<div>
+												<h4 style="color:#56688A;">
+												<strong><center>Mother <br> Family Planning</center></strong>
+												</h4>
+												</div>
+													<tr class="warning">
+														<th><center>IUD</center></th>
+														<th><center>BTL</center></th>
+														<th><center>1 yr.</center></th>
+														<th><center>VIT A</center></th>
+														<th><center>FeSO4</center></th>
+													</tr>
+												</thead>
+	<?php
+	require 'require/config.php';
+	$query = $conn->query("SELECT * FROM `tetanus_toxoid_fp` WHERE `child_id` = '$_GET[child_id]' order by `child_id` DESC") or die(mysqli_error());
+	while($fetch = $query->fetch_array()){
+	?>
+												<tbody>
+													<tr>
+														<td><center><?php echo $fetch['uid']?></center></td>
+														<td><center><?php echo $fetch['btl']?></center></td>
+														<td><center><?php echo $fetch['1_year']?></center></td>
+														<td><center><?php echo $fetch['vit_a']?></center></td>
+														<td><center><?php echo $fetch['feso4']?></center></td>
+													</tr>
+												</tbody>
+											<?php
+											}
+											$conn->close();
+											?>
+											</table>
+												</div>
 									</div>
 								</div>
 							</div>

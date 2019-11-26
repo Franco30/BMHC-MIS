@@ -88,7 +88,7 @@
                                 <li class="active"><a href="#tab-first" role="tab" data-toggle="tab">Patient Registration</a></li>
                                 <li><a href="#tab-second" role="tab" data-toggle="tab">Child Patient Registration</a></li>
                             </ul>
-                            <div class="panel-body list-group list-group-contacts scroll" style="height: 790px;">
+                            <div class="panel-body list-group list-group-contacts scroll" style="height: 490px;">
                                 <div class="panel-body tab-content">
                                     <div class="tab-pane active" id="tab-first">
                                         <div class="row">

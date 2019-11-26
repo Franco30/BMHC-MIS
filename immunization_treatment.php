@@ -38,6 +38,7 @@
         ?>
                 <li>Transactions</li>
                 <li><a href="immunization_table">Immunization</a></li>
+                <li>Immunization Treatment</li>
                 <li><mark><strong><?php echo $fetch['child_name']?></strong></mark></li>
             </ul>
             <!-- END BREADCRUMB -->

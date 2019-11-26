@@ -35,8 +35,8 @@
 			$f2 = $q2->fetch_array();
 					?>
                 <li>Transactions</li>
-                <li>Consultation</li>
-                <li><a href="patient_consultation?patient_id=<?php echo $fetch['patient_id']?>">Treatment</a></li>
+                <li><a href="patient_consultation?patient_id=<?php echo $fetch['patient_id']?>">Consultation</a></li>
+                <li>Treatment</li>
                 <li><mark><strong><?php echo $fetch['patient_name']?></strong></mark></li>
             </ul>
             <!-- END BREADCRUMB -->
@@ -53,12 +53,13 @@
                                 <h3 class="panel-title"><strong>Consultation / Treatment / <?php echo $fetch['patient_name']?></strong></h3>
                                 <div class="btn-group pull-right">
                                     <div class="pull-left">
+                                        <a href="prescription_print?patient_id=<?php echo $f2['patient_id']?>&&consultation_id=<?php echo $f2['consultation_id']?>" class="btn btn-md btn-info"><span class="glyphicon glyphicon-print"></span> Preview</a>
                                         <button class="btn btn-primary btn-md" data-toggle="modal" data-target="#add_prescription">Add Prescription</button>
                                     </div>
                                 </div>
                             </div>
                             <div class="panel-body">
-                               <?php require 'tables/consultation_treatment_table.php'?>
+                                <?php require 'tables/consultation_treatment_table.php'?>
                             </div>
                         </div>
                     </div>

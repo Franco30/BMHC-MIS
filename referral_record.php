@@ -217,14 +217,6 @@
                                                                         <center><?php echo $fetch['referred_by']?></center>
                                                                     </td>
                                                                 </tr>
-                                                                <tr>
-                                                                    <td class="warning">
-                                                                        <center><strong>Designation</strong></center>
-                                                                    </td>
-                                                                    <td>
-                                                                        <center><?php echo $fetch['designation']?></center>
-                                                                    </td>
-                                                                </tr>
                                                                 <?php
 												}
 												$conn->close();

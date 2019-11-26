@@ -123,7 +123,7 @@
 						</div>
 						<hr />
 						<p class="text-center text-grey-darker">
-							<span class="helper-text"><i class="fa fa-code"></i> <a href="page-lockscreen" class="text-pink">Developed by Three-Eyed Ravens</a></span>
+							<span class="helper-text"><i class="fa fa-code"></i> <a href="page-lockscreen2" class="text-pink">Developed by Three-Eyed Ravens</a></span>
 						</p>
 					</form>
 				</div>

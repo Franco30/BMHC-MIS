@@ -2,7 +2,7 @@ $(document).ready(function () {
     showPatient();
 
     $(document).on('click', '#addnew', function () {
-        if ($('#date').val() == "" || $('#patient_name').val() == "" || $('#weight').val() == "" || $('#bp').val() == "" || $('#temp').val() == "" || $('#age').val() == "" || $('#complaints').val() == "" || $('#from').val() == "" || $('#to').val() == "" || $('#origin').val() == "" || $('#destination').val() == "" || $('#referred_by').val() == "" || $('#designation').val() == "") {
+        if ($('#date').val() == "" || $('#patient_name').val() == "" || $('#weight').val() == "" || $('#bp').val() == "" || $('#temp').val() == "" || $('#age').val() == "" || $('#complaints').val() == "" || $('#from').val() == "" || $('#to').val() == "" || $('#origin').val() == "" || $('#destination').val() == "" || $('#referred_by').val() == "") {
             $('#modallabel').slideDown();
             $('#checkfield').html('<span class="fa fa-exclamation-circle"></span> All fields are required!');
             setTimeout(function () {
@@ -21,7 +21,7 @@ $(document).ready(function () {
             $origin = $('#origin').val();
             $destination = $('#destination').val();
             $referred_by = $('#referred_by').val();
-            $designation = $('#designation').val();
+//            $designation = $('#designation').val();
 
             if (confirm('Are you sure you want to add this new Referral?')) {
                 $.ajax({
@@ -42,7 +42,7 @@ $(document).ready(function () {
                         origin: $origin,
                         destination: $destination,
                         referred_by: $referred_by,
-                        designation: $designation,
+//                        designation: $designation,
                         add: 1,
                     },
                     success: function () {

@@ -2,7 +2,7 @@ $(document).ready(function () {
     showPP();
 
     $(document).on('click', '#addnew', function () {
-        if ($('#date2').val() == "" || $('#from2').val() == "" || $('#to2').val() == "" || $('#origin2').val() == "" || $('#destination2').val() == "" || $('#patient_name2').val() == "" || $('#weight2').val() == "" || $('#bp2').val() == "" || $('#temp2').val() == "" || $('#age2').val() == "" || $('#complaints2').val() == "" || $('#gravida').val() == "" || $('#para').val() == "" || $('#fh').val() == "" || $('#fhb').val() == "" || $('#tt').val() == "" || $('#given').val() == "" || $('#referred_by2').val() == "" || $('#designation2').val() == "") {
+        if ($('#date2').val() == "" || $('#from2').val() == "" || $('#to2').val() == "" || $('#origin2').val() == "" || $('#destination2').val() == "" || $('#patient_name2').val() == "" || $('#weight2').val() == "" || $('#bp2').val() == "" || $('#temp2').val() == "" || $('#age2').val() == "" || $('#complaints2').val() == "" || $('#gravida').val() == "" || $('#para').val() == "" || $('#fh').val() == "" || $('#fhb').val() == "" || $('#tt').val() == "" || $('#given').val() == "" || $('#referred_by2').val() == "") {
             $('#modallabel2').slideDown();
             $('#checkfield2').html('<span class="fa fa-exclamation-circle"></span> All fields are required!');
             setTimeout(function () {
@@ -27,7 +27,7 @@ $(document).ready(function () {
             $tt = $('#tt').val();
             $given = $('#given').val();
             $referred_by2 = $('#referred_by2').val();
-            $designation2 = $('#designation2').val();
+//            $designation2 = $('#designation2').val();
 
             if (confirm('Are you sure you want to add this new Prenatal Referral?')) {
                 $.ajax({
@@ -54,7 +54,7 @@ $(document).ready(function () {
                         tt: $tt,
                         given: $given,
                         referred_by2: $referred_by2,
-                        designation2: $designation2,
+//                        designation2: $designation2,
                         add: 1,
                     },
                     success: function () {
