@@ -30,12 +30,14 @@
                             <label>Medicine Category</label>
                             <select class="form-control select" data-live-search="true" id="medicine_category" required>
                                 <option>Choose</option>
-                                <option value="Antibiotic">Antibiotic</option>
                                 <option value="Analgesic">Analgesic</option>
-                                <option value="Vitamins">Vitamins</option>
-                                <option value="Cough Preparation">Cough Preparation</option>
-                                <option value="Antihistamines">Antihistamines</option>
                                 <option value="Anti-TB Drugs">Anti-TB Drugs</option>
+                                <option value="Antibiotic">Antibiotic</option>
+                                <option value="Antihistamine">Antihistamine</option>
+                                <option value="Antipyretic">Antipyretic</option>
+                                <option value="Cough Preparation">Cough Preparation</option>
+                                <option value="Oral contraceptives">Oral contraceptives</option>
+                                <option value="Vitamins">Vitamins</option>
                             </select>
                         </div>
                     </fieldset>

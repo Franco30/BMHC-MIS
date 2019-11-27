@@ -41,9 +41,14 @@
                         </div>
                         &nbsp;
                         <div class="col-md-12">
-                            <div class="form-group"> 
-                                <label>Method/Brand</label>
-                                <input type="text" class="tagsinput" id="method<?php echo $fetch1['fp_follow_up_id']; ?>" value="<?php echo $fetch1['method_brand']; ?>" data-role="tagsinput" required />
+                            <div class="form-group">
+                                <label>Method/Brand</label>             
+                                <select class="form-control select" style="display: none;" id="method<?php echo $fetch1['fp_follow_up_id']; ?>">
+                                    <option value="<?php echo $fetch1['method_brand']; ?>"><?php echo $fetch1['method_brand']; ?></option>
+                                    <option value="COC">COC</option>
+                                    <option value="Condom">Condom</option>
+                                    <option value="IUD">IUD</option>
+                                </select>
                             </div>
                             <div class="form-group">
                                 <label>No. of Units</label>

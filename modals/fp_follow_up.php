@@ -43,7 +43,12 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label>Method/Brand</label>
-                                <input type="text" class="tagsinput" id="method" required />
+<!--                                <input type="text" class="tagsinput" id="method" required />-->
+                                <select class="form-control select" style="display: none;" id="method">
+                                    <option value="COC">COC</option>
+                                    <option value="Condom">Condom</option>
+                                    <option value="IUD">IUD</option>
+                                </select>
                             </div>
                             <div class="form-group">
                                 <label>No. of Units</label>
@@ -76,8 +81,8 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group" style="margin-left:-10px;">
-                                        <label>Next Service Date</label>
-                                        <input type="text" class="form-control datepicker" id="next_service_date" required />
+                                    <label>Next Service Date</label>
+                                    <input type="text" class="form-control datepicker" id="next_service_date" required />
                                 </div>
                             </div>
                         </div>

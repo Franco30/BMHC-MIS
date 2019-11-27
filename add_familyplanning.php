@@ -195,19 +195,8 @@
                                                     <label>Method Accepted</label>
                                                     <select multiple class="form-control select" data-live-search="true" style="display: none;" id="method_accepted" name="method_accepted[]">
                                                         <option value="COC">COC</option>
-                                                        <option value="Contraceptive patch">Contraceptive patch</option>
-                                                        <option value="POP">POP</option>
-                                                        <option value="Injectable">Injectable</option>
                                                         <option value="Condom">Condom</option>
                                                         <option value="IUD">IUD</option>
-                                                        <option value="BTL">BTL</option>
-                                                        <option value="VSC">VSC</option>
-                                                        <option value="LAM">LAM</option>
-                                                        <option value="SDM">SDM</option>
-                                                        <option value="BBT">BBT</option>
-                                                        <option value="Billings/Cervical Mucus/Ovulatino Method">Billings/Cervical Mucus/Ovulatino Method
-                                                        </option>
-                                                        <option value="Sympto-thermal">Sympto-thermal</option>
                                                     </select>
                                                 </div>
                                             </div>

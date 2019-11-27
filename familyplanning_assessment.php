@@ -47,12 +47,12 @@
             <div class="page-content-wrap">
                 <div class="row">
                     <div class="col-md-12">
-                    <div id="alert" class="alert alert-info" style="display:none;">
-                        <center><span id="alerttext"></span></center>
-                    </div>
-                    <div id="alert2" class="alert alert-danger" style="display:none;">
-                        <center><span id="alerttext2"></span></center>
-                    </div>
+                        <div id="alert" class="alert alert-info" style="display:none;">
+                            <center><span id="alerttext"></span></center>
+                        </div>
+                        <div id="alert2" class="alert alert-danger" style="display:none;">
+                            <center><span id="alerttext2"></span></center>
+                        </div>
                         <div class="panel panel-default tabs">
                             <ul class="nav nav-tabs" role="tablist">
                                 <li class="active"><a href="#tab-first" role="tab" data-toggle="tab">Medical History and Obstetrical History</a>
@@ -78,9 +78,10 @@
                                                             <div class="col-md-6">
                                                                 <div class="form-group" style="margin-left:-10px;margin-right:-10px;">
                                                                     <label>Heent</label>
-                                                                    <input type="hidden" class="form-control" value="<?php echo $fetch2['family_planning_id'];?>" id="family_planning_id" required/>
-                                                                    <input type="hidden" class="form-control" value="<?php echo $fetch['patient_id'];?>" id="patient_id" required/>
+                                                                    <input type="hidden" class="form-control" value="<?php echo $fetch2['family_planning_id'];?>" id="family_planning_id" required />
+                                                                    <input type="hidden" class="form-control" value="<?php echo $fetch['patient_id'];?>" id="patient_id" required />
                                                                     <select multiple class="form-control select" data-live-search="true" style="display: none;" id="heent" name="heent[]">
+                                                                        <option value="None">None</option>
                                                                         <option value="Epilepsy/Convulsion/Seizure">Epilepsy/Convulsion/Seizure</option>
                                                                         <option value="Severe Headache/dizziness">Severe Headache/dizziness</option>
                                                                         <option value="Visual disturbance/blurring of vision">Visual disturbance/blurring of vision
@@ -94,6 +95,7 @@
                                                                 <div class="form-group" style="margin-right:-10px;">
                                                                     <label>Chest/Heart</label>
                                                                     <select multiple class="form-control select" data-live-search="true" style="display: none;" id="chestheart" name="chestheart[]">
+                                                                        <option value="None">None</option>
                                                                         <option value="Severe chest pain">Severe chest pain</option>
                                                                         <option value="Shortness of breath and easy fatigability">Shortness of breath and easy fatigability
                                                                         </option>
@@ -117,6 +119,7 @@
                                                                 <div class="form-group" style="margin-left:-10px;margin-right:-10px;">
                                                                     <label>Abdomen</label>
                                                                     <select multiple class="form-control select" data-live-search="true" style="display: none;" id="abdomen" name="abdomen[]">
+                                                                        <option value="None">None</option>
                                                                         <option value="Mass in the abdomen">Mass in the abdomen</option>
                                                                         <option value="History of gallbladder disease">History of gallbladder disease</option>
                                                                         <option value="History of liver disease">History of liver disease</option>
@@ -127,6 +130,7 @@
                                                                 <div class="form-group" style="margin-right:-10px;">
                                                                     <label>Genital</label>
                                                                     <select multiple class="form-control select" data-live-search="true" style="display: none;" id="genital" name="genital[]">
+                                                                        <option value="None">None</option>
                                                                         <option value="Mass in the uterus">Mass in the uterus</option>
                                                                         <option value="Vaginal discharge">Vaginal discharge</option>
                                                                         <option value="Intermenstrual bleeding">Intermenstrual bleeding</option>
@@ -141,6 +145,7 @@
                                                                 <div class="form-group" style="margin-left:-10px;margin-right:-10px;">
                                                                     <label>Extremities</label>
                                                                     <select multiple class="form-control select" data-live-search="true" style="display: none;" id="extremities" name="extremities[]">
+                                                                        <option value="None">None</option>
                                                                         <option value="Severe varicosities">Severe varicosities</option>
                                                                         <option value="Swelling or severe pain in the legs not
                                                                             related to
@@ -154,6 +159,7 @@
                                                                 <div class="form-group" style="margin-right:-10px;">
                                                                     <label>History of any of the following</label>
                                                                     <select multiple class="form-control select" data-live-search="true" style="display: none;" id="history" name="history[]">
+                                                                        <option value="None">None</option>
                                                                         <option value="Smoking">Smoking</option>
                                                                         <option value="Allergies">Allergies</option>
                                                                         <option value="Drug Intake (anti-tuberculosis,
@@ -189,6 +195,7 @@
                                                                 <div class="form-group" style="margin-left:-10px;margin-right:-10px;">
                                                                     <label>For Women</label>
                                                                     <select multiple class="form-control select" data-live-search="true" style="display: none;" id="forwomen" name="forwomen[]">
+                                                                        <option value="None">None</option>
                                                                         <option value="Unusual discharge from vagina">Unusual discharge from vagina
                                                                         </option>
                                                                         <option value="Itching or sores in or around vagina">Itching or sores in or around vagina
@@ -203,6 +210,7 @@
                                                                 <div class="form-group" style="margin-right:-10px;">
                                                                     <label>For Men</label>
                                                                     <select multiple class="form-control select" data-live-search="true" style="display: none;" id="formen" name="formen[]">
+                                                                        <option value="None">None</option>
                                                                         <option value="Pain or burning sensation">Pain or burning sensation</option>
                                                                         <option value="Open sores anywhere in genital area">Open sores anywhere in genital area
                                                                         </option>
@@ -287,6 +295,7 @@
                                                         <div class="form-group">
                                                             <label>History of any of the following</label>
                                                             <select multiple class="form-control select" data-live-search="true" style="display: none;" id="history2" name="history2[]">
+                                                                <option value="None">None</option>
                                                                 <option value="Hydatidiform mole (within the last 12
                                                                     months)">Hydatidiform mole (within the last 12
                                                                     months)</option>
@@ -364,6 +373,7 @@
                                                                 <div class="form-group" style="margin-left:-10px;margin-right:-10px;">
                                                                     <label>Breast</label>
                                                                     <select multiple class="form-control select" data-live-search="true" style="display: none;" id="breast" name="breast[]" required>
+                                                                        <option value="None">None</option>
                                                                         <option value="Mass">Mass</option>
                                                                         <option value="Nipple discharge">Nipple discharge</option>
                                                                         <option value="Skin - orange peel or dimpling">Skin - orange peel or dimpling</option>
@@ -375,6 +385,7 @@
                                                                 <div class="form-group" style="margin-right:-10px;">
                                                                     <label>Thorax</label>
                                                                     <select multiple class="form-control select" data-live-search="true" style="display: none;" id="thorax" name="thorax[]">
+                                                                        <option value="None">None</option>
                                                                         <option value="Abnormal heart sounds/cardiac rate">Abnormal heart sounds/cardiac rate</option>
                                                                         <option value="Abnormal breath sounds/respiratory rate">Abnormal breath sounds/respiratory rate</option>
                                                                     </select>
@@ -387,6 +398,7 @@
                                                                 <div class="form-group" style="margin-left:-10px;margin-right:-10px;">
                                                                     <label>Abdomen</label>
                                                                     <select multiple class="form-control select" data-live-search="true" style="display: none;" id="abdomen2" name="abdomen2[]" required>
+                                                                        <option value="None">None</option>
                                                                         <option value="Enlarged liver">Enlarged liver</option>
                                                                         <option value="Mass">Mass</option>
                                                                         <option value="Tenderness">Tenderness</option>
@@ -397,6 +409,7 @@
                                                                 <div class="form-group" style="margin-right:-10px;">
                                                                     <label>Extremities</label>
                                                                     <select multiple class="form-control select" data-live-search="true" style="display: none;" id="extremities2" name="extremities2[]">
+                                                                        <option value="None">None</option>
                                                                         <option value="Edema">Edema</option>
                                                                         <option value="Varicosities">Varicosities</option>
                                                                     </select>
@@ -413,7 +426,7 @@
                                                                         <option value="None">None</option>
                                                                         <option value="History of domestic violence or VAW">History of domestic violence or VAW</option>
                                                                         <option value="Unpleasant relationship with partner">Unpleasant relationship with partner</option>
-                                                                        <option value="Partner does not approve of the visit to FP">Partner does not approve of the visit to FP
+                                                                        <option value="Partner does not approve of the visit to FP Clinic">Partner does not approve of the visit to FP
                                                                             Clinic</option>
                                                                         <option value="Partner disagrees to use FP">Partner disagrees to use FP</option>
                                                                     </select>
@@ -423,7 +436,7 @@
                                                                 <div class="form-group" style="margin-right:-10px;">
                                                                     <label>Referred to</label>
                                                                     <select class="form-control select" style="display: none;" data-live-search="true" id="referredrisks">
-                                                                        <option value="">Select</option>
+                                                                        <option value="None">None</option>
                                                                         <option value="DSWD">DSWD</option>
                                                                         <option value="WCPU">WCPU</option>
                                                                         <option value="NGOs">NGOs</option>
@@ -446,6 +459,7 @@
                                                                 <div class="form-group" style="margin-left:-10px;margin-right:-10px;">
                                                                     <label>Perineum</label>
                                                                     <select multiple class="form-control select" data-live-search="true" style="display: none;" id="perineum" name="perineum[]" required>
+                                                                        <option value="None">None</option>
                                                                         <option value="Scars">Scars</option>
                                                                         <option value="Warts">Warts</option>
                                                                         <option value="Reddish">Reddish</option>
@@ -457,10 +471,11 @@
                                                                 <div class="form-group" style="margin-right:-10px;">
                                                                     <label>Vagina</label>
                                                                     <select multiple class="form-control select" data-live-search="true" style="display: none;" id="vagina" name="vagina[]">
+                                                                        <option value="None">None</option>
                                                                         <option value="Congested">Congested</option>
-                                                                        <option value="Bartholin's cyst">Bartholin's cyst</option>
+                                                                        <option value="Bartholin cyst">Bartholin's cyst</option>
                                                                         <option value="Warts">Warts</option>
-                                                                        <option value="Skene's Gland Discharge">Skene's Gland Discharge</option>
+                                                                        <option value="Skene Gland Discharge">Skene's Gland Discharge</option>
                                                                         <option value="Rectocoele">Rectocoele</option>
                                                                         <option value="Cystocoele">Cystocoele</option>
                                                                     </select>
@@ -473,6 +488,7 @@
                                                                 <div class="form-group" style="margin-left:-10px;margin-right:-10px;">
                                                                     <label>Cervix</label>
                                                                     <select multiple class="form-control select" data-live-search="true" style="display: none;" id="cervix" name="cervix[]" required>
+                                                                        <option value="None">None</option>
                                                                         <option value="Congested">Congested</option>
                                                                         <option value="Erosion">Erosion</option>
                                                                         <option value="Discharge">Discharge</option>
@@ -521,7 +537,7 @@
                                                                 <div class="form-group" style="margin-right:-10px;">
                                                                     <label>Mass</label>
                                                                     <select class="form-control select" data-live-search="true" style="display: none;" id="mass">
-                                                                        <option value="None">none</option>
+                                                                        <option value="None">None</option>
                                                                         <option value="Yes">Yes</option>
                                                                     </select>
                                                                 </div>

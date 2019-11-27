@@ -95,14 +95,6 @@ $(document).ready(function () {
                 extremities2[i] = $(this).val();
             });
 
-            //Risk for Violence
-            var risks = [];
-            $('#risks option:selected').each(function (i) {
-                risks[i] = $(this).val();
-            });
-            $referredrisks = $('#referredrisks').val();
-            $risksothers = $('#risksothers').val();
-
             //Pelvic Examination
             var perineum = [];
             $('#perineum option:selected').each(function (i) {
@@ -134,6 +126,14 @@ $(document).ready(function () {
             $('#adnexa option:selected').each(function (i) {
                 adnexa[i] = $(this).val();
             });
+        
+            //Risk for Violence
+            var risks = [];
+            $('#risks option:selected').each(function (i) {
+                risks[i] = $(this).val();
+            });
+            $referredrisks = $('#referredrisks').val();
+            $risksothers = $('#risksothers').val();
 
             if (confirm('Are you sure you want to add this patient?')) {
                 $.ajax({
@@ -184,11 +184,6 @@ $(document).ready(function () {
                         abdomen2: abdomen2,
                         extremities2: extremities2,
 
-                        //Risk for Violence
-                        risks: risks,
-                        referredrisks: $referredrisks,
-                        risksothers: $risksothers,
-
                         //Pelvic Examination
                         perineum: perineum,
                         vagina: vagina,
@@ -199,6 +194,11 @@ $(document).ready(function () {
                         mass: $mass,
                         uterinedepth: $uterinedepth,
                         adnexa: adnexa,
+                        
+                        //Risk for Violence
+                        risks: risks,
+                        referredrisks: $referredrisks,
+                        risksothers: $risksothers,
                         add: 1
                     },
                     success: function () {

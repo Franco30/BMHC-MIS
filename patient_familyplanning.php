@@ -77,15 +77,15 @@
                                         $f2 = $q2->fetch_array();
                                         ?>
                                         <tr>
-                                            <td><center><?php echo $fetch['year']?><?php echo "0".$fetch['family_planning_id']?></center></td>
-                                            <td><center><?php echo $f['year']?><?php echo "0".$fetch['patient_id']?></center></td>
-                                            <td><center><?php echo $f['patient_name']?></center></td>
+                                            <td><center><strong><?php echo $fetch['year']?><?php echo "0".$fetch['family_planning_id']?></strong></center></td>
+                                            <td><center><strong><?php echo $f['year']?><?php echo "0".$fetch['patient_id']?></strong></center></td>
+                                            <td><center><?php echo $fetch['method_accepted']?></center></td>
                                             <td><center><?php echo $fetch['type_of_acceptor']?></center></td>
                                             <td class="print"><center>
                                             <?php if($fetch['status'] == 'No Assessment') { ?>
                                             <a href="familyplanning_assessment?patient_id=<?php echo $fetch['patient_id']?>&&family_planning_id=<?php echo $fetch['family_planning_id']?>" class="btn btn-md btn-danger"><span class="fa fa-stethoscope animated infinite pulse"></span> Assessment</a>
                                             <?php } else { ?>
-                                            <a href="#" class="btn btn-md btn-default"><span class="fa fa-stethoscope"></span> Prescription</a>  <?php } ?>
+                                            <a href="#" class="btn btn-md btn-info">Overview</a>  <?php } ?>
                                                 </center>
                                             </td>
                                         </tr>

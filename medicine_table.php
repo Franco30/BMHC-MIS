@@ -52,9 +52,11 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="panel-body">
-                                <div id="medicineTable"></div>
-                            </div>
+<!--                            <div class="panel-body list-group list-group-contacts scroll" style="height:450px">-->
+                                <div class="panel-body">
+                                    <div id="medicineTable"></div>
+                                </div>
+<!--                            </div>-->
                         </div>
                     </div>
                 </div>
@@ -93,7 +95,7 @@
     <script type="text/javascript" src="js/actions.js"></script>
     <!-- END TEMPLATE -->
     <!-- END SCRIPTS -->
-<!--
+    <!--
     <script>
         $.ajaxPrefilter(function(options, originalOptions, jqXHR) {
             options.async = true;

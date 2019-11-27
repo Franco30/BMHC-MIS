@@ -1,3 +1,21 @@
+DROP TABLE brothers_and_sisters;
+
+CREATE TABLE `brothers_and_sisters` (
+  `bs_id` int(11) NOT NULL AUTO_INCREMENT,
+  `child_id` int(11) NOT NULL,
+  `fullname` varchar(50) NOT NULL,
+  `gender` varchar(30) NOT NULL,
+  `birthdate` varchar(30) NOT NULL,
+  PRIMARY KEY (`bs_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+
+INSERT INTO brothers_and_sisters VALUES("1","3","John Michael Sipat","Male","August 30, 1998"); 
+INSERT INTO brothers_and_sisters VALUES("2","3","Michaela Sipat","Female","June 25, 1998"); 
+INSERT INTO brothers_and_sisters VALUES("3","3","Desmond Sipat","Male","April 21, 1994"); 
+INSERT INTO brothers_and_sisters VALUES("4","6","Sansa Stark","Female","April 14, 2010"); 
+
+
+
 DROP TABLE chicks;
 
 CREATE TABLE `chicks` (
@@ -40,10 +58,15 @@ CREATE TABLE `consultation` (
   `status` varchar(30) NOT NULL,
   `date_time` varchar(50) NOT NULL,
   PRIMARY KEY (`consultation_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=latin1;
 
 INSERT INTO consultation VALUES("29","12","November 23, 2019","Salvador Latosa","59","120/50","37.5","180","80","Fever, Colds, Headache","NONE","NONE","NONE","Nov","2019","With Prescription","November 23, 2019 - 6:41 pm"); 
 INSERT INTO consultation VALUES("30","29","November 23, 2019","Me","72","100/30","37.5","180","80","Fever, Headache","NONE","NONE","NONE","Nov","2019","With Prescription","November 23, 2019 - 7:28 pm"); 
+INSERT INTO consultation VALUES("31","12","November 23, 2019","Salvador Latosa","59","100/11","36.5","190","80","Allergy","NONE","NONE","NONE","Nov","2019","With Prescription","November 23, 2019 - 8:16 pm"); 
+INSERT INTO consultation VALUES("32","4","November 24, 2019","Michael Gerose","58","120/50","37.0","180","90","Fever","NONE","NONE","NONE","Nov","2019","With Prescription","November 24, 2019 - 3:11 pm"); 
+INSERT INTO consultation VALUES("33","11","November 24, 2019","Denz Zeil Cuachon","89","100/50","37.5","180","90","Fever, Colds, Headache","NONE","NONE","NONE","Nov","2019","With Prescription","November 24, 2019 - 3:19 pm"); 
+INSERT INTO consultation VALUES("34","8","November 11, 2019","George Go","86","100/10","34.4","110","50","Fever, Colds","none","none","none","Nov","2019","With Prescription","November 25, 2019 - 4:26 pm"); 
+INSERT INTO consultation VALUES("36","6","November 25, 2019","Me","89","120/40","37.5","180","80","Sakit ang Likod, Sakit ang Kilid","NONE","NONE","NONE","Nov","2019","With Prescription","November 25, 2019 - 9:12 pm"); 
 
 
 
@@ -66,11 +89,20 @@ CREATE TABLE `consultation_prescription` (
   `qty` varchar(30) NOT NULL,
   `recommendation` varchar(200) NOT NULL,
   PRIMARY KEY (`prescription_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=latin1;
 
 INSERT INTO consultation_prescription VALUES("34","29","12","27","Analgesic","Biogesic","✓","","✓","","✓","","✓","10","Drink more water"); 
 INSERT INTO consultation_prescription VALUES("35","29","12","27","Antihistamines","Ceterizine","✓","","","","","","","3","NONE"); 
 INSERT INTO consultation_prescription VALUES("36","30","29","27","Analgesic","Biogesic","✓","","✓","","✓","","✓","5","Drink More Water"); 
+INSERT INTO consultation_prescription VALUES("37","31","12","27","Antihistamines","Levocetirizine","","✓","","","","","","2","NONE"); 
+INSERT INTO consultation_prescription VALUES("38","32","4","27","Analgesic","Biogesic","✓","","✓","","","✓","","5","NONE"); 
+INSERT INTO consultation_prescription VALUES("39","33","11","27","Analgesic","Biogesic","✓","","✓","","✓","","","4","4"); 
+INSERT INTO consultation_prescription VALUES("40","33","11","27","Antihistamines","Levocetirizine","✓","","✓","","✓","","","3","3"); 
+INSERT INTO consultation_prescription VALUES("41","34","8","27","Analgesic","Biogesic","✓","","✓","","✓","","","3","none"); 
+INSERT INTO consultation_prescription VALUES("42","36","6","27","Analgesic","Dolfenal","","✓","","","","","","2","NONE"); 
+INSERT INTO consultation_prescription VALUES("43","29","12","27","Anti-TB Drugs","Isoniazid","✓","","✓","","","","","3","e3"); 
+INSERT INTO consultation_prescription VALUES("44","29","12","27","Antibiotic","Cefalexin 250 ","✓","","✓","","","","","3","ee"); 
+INSERT INTO consultation_prescription VALUES("45","29","12","27","Analgesic","Dolfenal","✓","","✓","","","","","2","2"); 
 
 
 
@@ -84,7 +116,7 @@ CREATE TABLE `db_backup` (
   `time` varchar(12) NOT NULL,
   `activity_status` varchar(100) NOT NULL,
   PRIMARY KEY (`back_up_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=latin1;
 
 INSERT INTO db_backup VALUES("3","27","Export","September 22, 2019","11:17 pm","Successfully Exported Database"); 
 INSERT INTO db_backup VALUES("4","26","Export","September 24, 2019","4:23 am","Successfully Exported Database"); 
@@ -114,6 +146,8 @@ INSERT INTO db_backup VALUES("27","27","Export","November 19, 2019","10:52 pm","
 INSERT INTO db_backup VALUES("28","27","Export","November 19, 2019","10:53 pm","Successfully Exported Database"); 
 INSERT INTO db_backup VALUES("29","27","Export","November 19, 2019","10:54 pm","Successfully Exported Database"); 
 INSERT INTO db_backup VALUES("30","27","Export","November 19, 2019","10:54 pm","Successfully Exported Database"); 
+INSERT INTO db_backup VALUES("31","27","Export","November 23, 2019","7:29 pm","Successfully Exported Database"); 
+INSERT INTO db_backup VALUES("32","27","Export","November 24, 2019","4:36 pm","Successfully Exported Database"); 
 
 
 
@@ -141,11 +175,9 @@ CREATE TABLE `family_planning` (
   PRIMARY KEY (`family_planning_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=latin1;
 
-INSERT INTO family_planning VALUES("34","20","New to the Program","Pills","October 31, 2019 10:42 PM","College","Jesse Franco Latosa","August 30, 1998","College","Programmer","120000","1","Yes","For Thesis Purposes","COC, Contraceptive patch, LAM, Billings/Cervical Mucus/Ovulatino Method, Sympto-thermal","No Assessment","Nov","2019"); 
-INSERT INTO family_planning VALUES("35","4","Continuing User","Pills","October 31, 2019 10:47 PM","High School","Marvin Gerose","August 13, 1974","College","Sr. Businessman","10000","7","Yes","Limiting or Spacing","IUD, BTL, VSC, LAM, SDM","No Assessment","Nov","2019"); 
-INSERT INTO family_planning VALUES("36","10","New to the Program","Pills","October 31, 2019 11:09 PM","College","Ronjay Buenafuente","May 06, 1969","College","Accountant","124000","1","Yes","Try lang","Condom, IUD, BTL, LAM","No Assessment","Nov","2019"); 
-INSERT INTO family_planning VALUES("37","20","Continuing User","Pills","November 02, 2019 11:25 AM","College","Franco","August 30, 2019","College","IT","30000","1","Yes","Sample","Contraceptive patch, POP, Injectable, Condom, IUD, Billings/Cervical Mucus/Ovulatino Method, Sympto-thermal","No Assessment","Nov","2019"); 
-INSERT INTO family_planning VALUES("38","19","New to the Program","Pills","November 04, 2019 5:48 PM","College","Mark Panabe","June 2, 1998","College","Programmer","15000","1","No","Sample 1","LAM, SDM, BBT","No Assessment","Nov","2019"); 
+INSERT INTO family_planning VALUES("36","10","New to the Program","Pills","October 31, 2019 11:09 PM","College","Ronjay Buenafuente","May 06, 1969","College","Accountant","124000","1","Yes","Try lang","Condom, IUD, BTL, LAM","Assessed","Nov","2019"); 
+INSERT INTO family_planning VALUES("37","10","New to the Program","Pills","October 31, 2019 11:09 PM","College","Ronjay Buenafuente","May 06, 1969","College","Accountant","124000","1","Yes","Try lang","Condom, IUD, BTL, LAM","Assessed","Nov","2019"); 
+INSERT INTO family_planning VALUES("38","10","New to the Program","Pills","October 31, 2019 11:09 PM","College","Ronjay Buenafuente","May 06, 1969","College","Accountant","124000","1","Yes","Try lang","Condom, IUD, BTL, LAM","Assessed","Nov","2019"); 
 
 
 
@@ -207,6 +239,32 @@ INSERT INTO immunization VALUES("10","3","33-483838338-3","12:00 PM","4.9","(09)
 
 
 
+DROP TABLE immunization_consultation;
+
+CREATE TABLE `immunization_consultation` (
+  `ic_id` int(11) NOT NULL AUTO_INCREMENT,
+  `immunization_id` int(11) NOT NULL,
+  `child_id` int(11) NOT NULL,
+  `nutritional_status` varchar(50) NOT NULL,
+  `medical_history` varchar(50) NOT NULL,
+  `date` varchar(50) NOT NULL,
+  `temp` varchar(50) NOT NULL,
+  `rr` varchar(50) NOT NULL,
+  `bp` varchar(50) NOT NULL,
+  `weight` varchar(30) NOT NULL,
+  `complaints` varchar(100) NOT NULL,
+  `diagnosis` varchar(100) NOT NULL,
+  `plan_of_action` varchar(100) NOT NULL,
+  `remarks` varchar(100) NOT NULL,
+  PRIMARY KEY (`ic_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+
+INSERT INTO immunization_consultation VALUES("1","9","6","SAMPLE","SAMPLE","N\\ovember 25, 2019","37.5","90","130/40","3.4","SAMPLE COMPLAINTS","SAMPLE DIAGNOSIS","SAMPLE PLAN OF ACTION","SAMPLE REMARKS"); 
+INSERT INTO immunization_consultation VALUES("7","10","3","SAMPLE 1 ","SAMPLE 2","November 27, 2019","35.0","90","140/40","30","SAMPLE 3","SAMPLE 5","SAMPLE 6","SAMPLE 7"); 
+INSERT INTO immunization_consultation VALUES("8","9","6","GAGANA?","GAGANA NI?","November 11, 2019","35.6","80","120/40","43","GAGANA GALI","AWW AHH","ABI KO ","WALA GAGANA"); 
+
+
+
 DROP TABLE immunization_treatment;
 
 CREATE TABLE `immunization_treatment` (
@@ -224,6 +282,32 @@ CREATE TABLE `immunization_treatment` (
 
 INSERT INTO immunization_treatment VALUES("14","6","BCG","November 13, 2019","1 month","4.5","54","37.0",""); 
 INSERT INTO immunization_treatment VALUES("15","3","BCG","November 20, 2019","1 month + 15 days","4.9","54","37.0",""); 
+
+
+
+DROP TABLE medical_history;
+
+CREATE TABLE `medical_history` (
+  `medical_history_id` int(11) NOT NULL AUTO_INCREMENT,
+  `family_planning_id` int(11) NOT NULL,
+  `patient_id` int(11) NOT NULL,
+  `heent` varchar(500) NOT NULL,
+  `chest_heart` varchar(500) NOT NULL,
+  `abdomen` varchar(500) NOT NULL,
+  `genital` varchar(500) NOT NULL,
+  `extremities` varchar(500) NOT NULL,
+  `skin` varchar(500) NOT NULL,
+  `history` varchar(500) NOT NULL,
+  PRIMARY KEY (`medical_history_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=latin1;
+
+INSERT INTO medical_history VALUES("29","38","10","Epilepsy/Convulsion/Seizure, Severe Headache/dizziness, Visual disturbance/blurring of vision, Yellowish conjunctiva, Enlarged thyroid","Severe chest pain, Shortness of breath and easy fatigability, Breast/axillary masses, Nipple discharges (specify if blood or pus), Systolic of 140 & above, Diastolic of 90 & above, Family history of CVA (strokes),
+                                                                            hypertension asthma,
+                                                                            rheumatic heart disease","Mass in the abdomen, History of gallbladder disease, History of liver disease","Mass in the uterus, Vaginal discharge, Intermenstrual bleeding, Postcoital bleeding","Severe varicosities, Swelling or severe pain in the legs not
+                                                                            related to
+                                                                            injuries","Yellowish Skin","None, Smoking, Allergies, Drug Intake (anti-tuberculosis,
+                                                                            anti-diabetic,
+                                                                            anticonvulsant), Bleeding tendencies (nose, gums, etc.), Anemia, Diabetes"); 
 
 
 
@@ -291,7 +375,7 @@ CREATE TABLE `medicine` (
   `running_balance` int(10) NOT NULL,
   `date_time_call` varchar(30) NOT NULL,
   PRIMARY KEY (`medicine_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
 
 INSERT INTO medicine VALUES("1","Ceterizine","Tablet","Antihistamines","25","August 3, 2019 12:46 pm"); 
 INSERT INTO medicine VALUES("2","Ambroxol","Tablet","Cough Preparation","31","August 11, 2019 11:42 pm"); 
@@ -301,10 +385,14 @@ INSERT INTO medicine VALUES("5","Isoniazid","Tablet","Anti-TB Drugs","9","Septem
 INSERT INTO medicine VALUES("6","Rifapentine","Tablet","Anti-TB Drugs","16","September 27, 2019 - 1:47 am"); 
 INSERT INTO medicine VALUES("7","Claritin","Tablet","Antihistamines","30","October 11, 2019 - 2:04 am"); 
 INSERT INTO medicine VALUES("8","Celin","Tablet","Vitamins","30","October 25, 2019 - 2:11 am"); 
-INSERT INTO medicine VALUES("9","Biogesic","Tablet","Analgesic","42","October 25, 2019 - 2:14 am"); 
+INSERT INTO medicine VALUES("9","Biogesic","Tablet","Antipyretic","42","October 25, 2019 - 2:14 am"); 
 INSERT INTO medicine VALUES("10","Cecon 500 mg","Tablet","Vitamins","0","November 17, 2019 - 12:42 pm"); 
 INSERT INTO medicine VALUES("11","Dolfenal","Tablet","Analgesic","0","November 17, 2019 - 12:44 pm"); 
 INSERT INTO medicine VALUES("12","Levocetirizine","Tablet","Antihistamines","0","November 17, 2019 - 12:46 pm"); 
+INSERT INTO medicine VALUES("13","Rifampicin + isoniazid","Tablet","Anti-TB Drugs","0","November 27, 2019 - 2:49 pm"); 
+INSERT INTO medicine VALUES("15","Rifampicin + isoniazid + Pyrazinamide + Ethambutol","Tablet","Anti-TB Drugs","0","November 27, 2019 - 2:50 pm"); 
+INSERT INTO medicine VALUES("16","Calcium Carbonate (Calcimate)","Tablet","Antibiotic","0","November 27, 2019 - 2:51 pm"); 
+INSERT INTO medicine VALUES("17","Ferrous Sulphate + Folic Acid","Tablet","Vitamins","0","November 27, 2019 - 2:54 pm"); 
 
 
 
@@ -344,6 +432,31 @@ INSERT INTO medicine_stocks VALUES("83","9","30","November 15, 2019 8:01 pm");
 INSERT INTO medicine_stocks VALUES("84","8","20","November 15, 2019 8:01 pm"); 
 INSERT INTO medicine_stocks VALUES("85","3","25","November 15, 2019 8:02 pm"); 
 INSERT INTO medicine_stocks VALUES("86","7","20","November 15, 2019 8:02 pm"); 
+
+
+
+DROP TABLE obstetrical_history;
+
+CREATE TABLE `obstetrical_history` (
+  `obstetrical_history_id` int(11) NOT NULL AUTO_INCREMENT,
+  `family_planning_id` int(11) NOT NULL,
+  `patient_id` int(11) NOT NULL,
+  `num_of_pregnancies` varchar(30) NOT NULL,
+  `full_term` varchar(30) NOT NULL,
+  `premature` varchar(30) NOT NULL,
+  `abortions` varchar(30) NOT NULL,
+  `living_children` varchar(30) NOT NULL,
+  `dateoflastdelivery` varchar(30) NOT NULL,
+  `typeoflastdelivery` varchar(100) NOT NULL,
+  `pastmenstrualperiod` varchar(200) NOT NULL,
+  `lastmenstrualperiod` varchar(200) NOT NULL,
+  `dcmenstrualbleeding` varchar(200) NOT NULL,
+  `history` varchar(500) NOT NULL,
+  PRIMARY KEY (`obstetrical_history_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=latin1;
+
+INSERT INTO obstetrical_history VALUES("29","38","10","1","3","3","0","4","November 18, 2019 ","Normal ","6 days","14 months","1 hour","Hydatidiform mole (within the last 12
+                                                                    months), Ectopetic pregnancy"); 
 
 
 
@@ -435,6 +548,51 @@ INSERT INTO patient_child VALUES("7","Sansa Stark","Female","Catelyn Stark","Col
 
 
 
+DROP TABLE pelvic_examination;
+
+CREATE TABLE `pelvic_examination` (
+  `pelvic_examination_id` int(11) NOT NULL AUTO_INCREMENT,
+  `family_planning_id` int(11) NOT NULL,
+  `patient_id` int(11) NOT NULL,
+  `perineum` varchar(500) NOT NULL,
+  `vagina` varchar(500) NOT NULL,
+  `cervix` varchar(500) NOT NULL,
+  `consistency` varchar(500) NOT NULL,
+  `uterus_position` varchar(500) NOT NULL,
+  `uterus_size` varchar(500) NOT NULL,
+  `uterus_mass` varchar(500) NOT NULL,
+  `uterine_depth` varchar(500) NOT NULL,
+  `adnexa` varchar(500) NOT NULL,
+  PRIMARY KEY (`pelvic_examination_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=latin1;
+
+INSERT INTO pelvic_examination VALUES("39","38","10","Scars, Warts, Reddish, Laceration","Congested, Bartholin cyst, Warts, Skene Gland Discharge, Rectocoele, Cystocoele","Congested, Erosion, Discharge, Polyps/cysts, Laceration","Firm, Soft","Mid, Anteflexed, Retroflexed","Normal, Small, Large","Yes","50","Mass, Tenderness"); 
+
+
+
+DROP TABLE physical_examination;
+
+CREATE TABLE `physical_examination` (
+  `physical_examination_id` int(11) NOT NULL AUTO_INCREMENT,
+  `family_planning_id` int(11) NOT NULL,
+  `patient_id` int(11) NOT NULL,
+  `bp` varchar(30) NOT NULL,
+  `weight` varchar(30) NOT NULL,
+  `height` varchar(30) NOT NULL,
+  `pr` varchar(30) NOT NULL,
+  `conjunctiva` varchar(200) NOT NULL,
+  `neck` varchar(200) NOT NULL,
+  `breast` varchar(200) NOT NULL,
+  `thorax` varchar(200) NOT NULL,
+  `abdomen` varchar(200) NOT NULL,
+  `extremities` varchar(200) NOT NULL,
+  PRIMARY KEY (`physical_examination_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=latin1;
+
+INSERT INTO physical_examination VALUES("29","38","10","130/50","89","168","90","Pale, Yellowish","Enlarged thyroid, Enlarged lymph nodes","Mass, Nipple discharge, Skin - orange peel or dimpling, Enlarged axillary lymph nodes","Abnormal heart sounds/cardiac rate, Abnormal breath sounds/respiratory rate","Enlarged liver, Mass","Edema, Varicosities"); 
+
+
+
 DROP TABLE prenatal;
 
 CREATE TABLE `prenatal` (
@@ -473,7 +631,7 @@ INSERT INTO prenatal_follow_up VALUES("20","27","10","October 26, 2019 8:41 PM",
 INSERT INTO prenatal_follow_up VALUES("21","182","10","October 07, 2019 8:41 PM","dfdf","Cancelled"); 
 INSERT INTO prenatal_follow_up VALUES("22","27","4","October 01, 2019 8:41 PM","dfdfd","Done"); 
 INSERT INTO prenatal_follow_up VALUES("23","27","10","October 08, 2019 8:41 PM","dfdf","Done"); 
-INSERT INTO prenatal_follow_up VALUES("24","27","4","November 15, 2019 8:10 PM","MS Office","Pending"); 
+INSERT INTO prenatal_follow_up VALUES("24","27","4","November 15, 2019 8:10 PM","MS Office","Done"); 
 
 
 
@@ -493,17 +651,17 @@ CREATE TABLE `referral` (
   `age` varchar(30) NOT NULL,
   `complaints` varchar(100) NOT NULL,
   `referred_by` varchar(50) NOT NULL,
-  `designation` varchar(50) NOT NULL,
   `month` varchar(50) NOT NULL,
   `year` varchar(30) NOT NULL,
   `date_time` varchar(50) NOT NULL,
   PRIMARY KEY (`referral_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 
-INSERT INTO referral VALUES("5","October 23, 2019","Mansilingan Health Center","CLMH","Mansilingan, Bacolod City","Lacson St.","James Reid","90","140/40","33.3","33","High Fever","Jesse Franco Latosa","ER","Oct","2019","October 26, 2019 10:12 pm"); 
-INSERT INTO referral VALUES("6","November 4, 2019","Mansilingan Health Center","The Doctors Hospital","Mansilingan, Bacolod City","B.S. Aquino Drive, Bacolod","Kherrie Tejare","58","130/80","37.5","18","High Fever","Jesse Franco Latosa","Emergency Room","Nov","2019","November 4, 2019 8:33 pm"); 
-INSERT INTO referral VALUES("7","November 16, 2019","Mansilingan Health Center","CLMMH","Mansilingan, Bacolod City","Lacson St.","Lolita Villarosa Gerose","68","130/50","37.5","48","High Fever","Manilyn V. Jimera","Emergency Room","Nov","2019","November 16, 2019 9:37 pm"); 
-INSERT INTO referral VALUES("8","November 16, 2019","Mansilingan Health Center","CLMMH","Mansilingan, Bacolod City","Lacson St.","Kevin Durant","89","150/40","39.5","34","High Fever","Manilyn V. Jimera","Emergency Room","Nov","2019","November 16, 2019 9:40 pm"); 
+INSERT INTO referral VALUES("5","October 23, 2019","Mansilingan Health Center","CLMH","Mansilingan, Bacolod City","Lacson St.","James Reid","90","140/40","33.3","33","High Fever","Jesse Franco Latosa","Oct","2019","October 26, 2019 10:12 pm"); 
+INSERT INTO referral VALUES("6","November 4, 2019","Mansilingan Health Center","The Doctors Hospital","Mansilingan, Bacolod City","B.S. Aquino Drive, Bacolod","Kherrie Tejare","58","130/80","37.5","18","High Fever","Jesse Franco Latosa","Nov","2019","November 4, 2019 8:33 pm"); 
+INSERT INTO referral VALUES("7","November 16, 2019","Mansilingan Health Center","CLMMH","Mansilingan, Bacolod City","Lacson St.","Lolita Villarosa Gerose","68","130/50","37.5","48","High Fever","Manilyn V. Jimera","Nov","2019","November 16, 2019 9:37 pm"); 
+INSERT INTO referral VALUES("8","November 16, 2019","Mansilingan Health Center","CLMMH","Mansilingan, Bacolod City","Lacson St.","Kevin Durant","89","150/40","39.5","34","High Fever","Manilyn V. Jimera","Nov","2019","November 16, 2019 9:40 pm"); 
+INSERT INTO referral VALUES("9","November 25, 2019","Mansilingan Health Center","CLMMH/Emergency Room","Mansilingan, Bacolod City","Lacson St.","Paul Galanza","58","120/40","36.5","38","Bleeding","Manilyn V. Jimera","Nov","2019","November 25, 2019 8:22 pm"); 
 
 
 
@@ -529,17 +687,48 @@ CREATE TABLE `referral_prenatal` (
   `tt` varchar(50) NOT NULL,
   `given` varchar(50) NOT NULL,
   `referred_by` varchar(50) NOT NULL,
-  `designation` varchar(50) NOT NULL,
   `month` varchar(50) NOT NULL,
   `year` varchar(30) NOT NULL,
   `date_time` varchar(50) NOT NULL,
   PRIMARY KEY (`referral_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
 
-INSERT INTO referral_prenatal VALUES("8","October 21, 2019","Mansilingan Health Center","CLMH","Mansilingan, Bacolod City","Lacson st.","Kherrie Tejare","50","130/40","37.5","18","Fever","1","1","2","2","TT3","October 22, 2019","Jesse Franco Latosa","Hospital ehh syempre","Oct","2019","October 26, 2019 9:00 AM"); 
-INSERT INTO referral_prenatal VALUES("9","October 21, 2019","Mansilingan Health Center","CLMH","Mansilingan, Bacolod City","Lacson st.","Kherrie Tejare","50","130/40","37.5","18","Fever","1","1","2","2","TT3","October 22, 2019","Jesse Franco Latosa","Hospital ehh syempre","Oct","2019","October 26, 2019 9:00 AM"); 
-INSERT INTO referral_prenatal VALUES("10","October 23, 2019","Mansilingan Health Center","CLMH","Mansilingan, Bacolod City","Lacson St.","Franze Beatriz Caballero","78","150/55","37.6","17","Fever","1","1","1","1","TT1","October 22, 2019","Jesse Franco Latosa","E.R.","Oct","2019","October 26, 2019 11:19 pm"); 
-INSERT INTO referral_prenatal VALUES("15","October 24, 2019","Mansilingan Health Center","CLMH","Mansilingan, Bacolod City","Lacson St.","Franze Beatriz Caballero","66","150/55","36.6","17","Fever","0","1","1","1","TT3","October 23, 2019","Jesse Franco Latosa","S.R.","Oct","2019","October 26, 2019 11:27 pm"); 
+INSERT INTO referral_prenatal VALUES("8","October 21, 2019","Mansilingan Health Center","CLMH","Mansilingan, Bacolod City","Lacson st.","Kherrie Tejare","50","130/40","37.5","18","Fever","1","1","2","2","TT3","October 22, 2019","Jesse Franco Latosa","Oct","2019","October 26, 2019 9:00 AM"); 
+INSERT INTO referral_prenatal VALUES("9","October 21, 2019","Mansilingan Health Center","CLMH","Mansilingan, Bacolod City","Lacson st.","Kherrie Tejare","50","130/40","37.5","18","Fever","1","1","2","2","TT3","October 22, 2019","Jesse Franco Latosa","Oct","2019","October 26, 2019 9:00 AM"); 
+INSERT INTO referral_prenatal VALUES("10","October 23, 2019","Mansilingan Health Center","CLMH","Mansilingan, Bacolod City","Lacson St.","Franze Beatriz Caballero","78","150/55","37.6","17","Fever","1","1","1","1","TT1","October 22, 2019","Jesse Franco Latosa","Oct","2019","October 26, 2019 11:19 pm"); 
+INSERT INTO referral_prenatal VALUES("15","October 24, 2019","Mansilingan Health Center","CLMH","Mansilingan, Bacolod City","Lacson St.","Franze Beatriz Caballero","66","150/55","36.6","17","Fever","0","1","1","1","TT3","October 23, 2019","Jesse Franco Latosa","Oct","2019","October 26, 2019 11:27 pm"); 
+INSERT INTO referral_prenatal VALUES("16","November 25, 2019","Mansilingan Health Center","City Health Center","Mansilingan, Bacolod City","Shopping","Marian Guadalupe","89","130/50","36.5","39","Stomach Ache","0","0","0","0","TT1","November 23, 2019","Manilyn V. Jimera","Nov","2019","November 25, 2019 8:35 pm"); 
+
+
+
+DROP TABLE risk_for_vaw;
+
+CREATE TABLE `risk_for_vaw` (
+  `risk_for_vaw_id` int(11) NOT NULL AUTO_INCREMENT,
+  `family_planning_id` int(11) NOT NULL,
+  `patient_id` int(11) NOT NULL,
+  `risks` varchar(500) NOT NULL,
+  `referred_to` varchar(500) NOT NULL,
+  PRIMARY KEY (`risk_for_vaw_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=latin1;
+
+INSERT INTO risk_for_vaw VALUES("21","38","10","History of domestic violence or VAW, Unpleasant relationship with partner, Partner does not approve of the visit to FP Clinic, Partner disagrees to use FP","Others ITOT"); 
+
+
+
+DROP TABLE sti_risks;
+
+CREATE TABLE `sti_risks` (
+  `sti_risks_id` int(11) NOT NULL AUTO_INCREMENT,
+  `family_planning_id` int(11) NOT NULL,
+  `patient_id` int(11) NOT NULL,
+  `sti_risk` varchar(100) NOT NULL,
+  `forwomen` varchar(500) NOT NULL,
+  `formen` varchar(500) NOT NULL,
+  PRIMARY KEY (`sti_risks_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=latin1;
+
+INSERT INTO sti_risks VALUES("29","38","10","With history of multiple partners","Unusual discharge from vagina, Itching or sores in or around vagina, Pain or burning sensation, Treated for STIs in the past","Pain or burning sensation, Open sores anywhere in genital area, Pus corning from penis, >Swollen testicles or penis, Treated for STIs in the past"); 
 
 
 
@@ -557,7 +746,7 @@ CREATE TABLE `tetanus_toxoid` (
   PRIMARY KEY (`tetanus_toxoid_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
-INSERT INTO tetanus_toxoid VALUES("2","6","November 21, 2019","November 12, 2019","November 27, 2019","January 24, 2019","March 27, 2019","August 7, 2019"); 
+INSERT INTO tetanus_toxoid VALUES("2","6","November 21, 2019","November 12, 2019","November 27, 2019","January 24, 2019","March 27, 2019","5"); 
 INSERT INTO tetanus_toxoid VALUES("3","3","","","","","",""); 
 
 
@@ -576,7 +765,7 @@ CREATE TABLE `tetanus_toxoid_fp` (
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 INSERT INTO tetanus_toxoid_fp VALUES("3","6","November 1, 2019","November 2, 2019","November 3, 2019","November 4, 2019","November 5, 2019"); 
-INSERT INTO tetanus_toxoid_fp VALUES("4","3","","","","",""); 
+INSERT INTO tetanus_toxoid_fp VALUES("4","3","November 13, 2019","October 29, 2019","","",""); 
 
 
 
@@ -637,7 +826,7 @@ CREATE TABLE `users` (
 INSERT INTO users VALUES("23","Daniel Andrew Go","Drivers License","Midwife","daniel","$2y$10$yhkB7S3FyI5nm2o187mVJuYntg5VJs2tUEBSj9Ml7Z1PIrEsK1o9m","1","November 5, 2019, 3:53 pm","July 29, 2019","3:00 am"); 
 INSERT INTO users VALUES("24","John Phillip Dela Cruz","Mothers License","Nurse","jp","$2y$10$MDC.OKbb4X41APh3g.nJPez63/7iaepg4cSujwpt8jYLZm4W.JIeW","1","September 13, 2019, 8:43 pm","July 29, 2019","3:01 am"); 
 INSERT INTO users VALUES("26","Jesse Franco Latosa","dfdfdadf","Nurse","jfranco30","$2y$10$AmErpVx3eb6EMXQjWl4/ouahb11YQvXJfjsGgSEK2.QVdNO046s.K","1","November 12, 2019, 5:26 pm","September 20, 2019","12:25 am"); 
-INSERT INTO users VALUES("27","Diana Rose S. Laput","123456789","Medical Officer","admin","$2y$10$08FnLCLTdOVSlhiJlxLDZuFBs2vt196tGyCvgyg0.u0yctd/aoscK","1","November 23, 2019, 3:03 pm","September 22, 2019","4:01 am"); 
+INSERT INTO users VALUES("27","Diana Rose S. Laput","123456789","Medical Officer","admin","$2y$10$08FnLCLTdOVSlhiJlxLDZuFBs2vt196tGyCvgyg0.u0yctd/aoscK","1","November 27, 2019, 3:25 pm","September 22, 2019","4:01 am"); 
 INSERT INTO users VALUES("28","Manilyn V. Jimera","343433434","Nurse","nurse101","$2y$10$nC9iALapDw9Fq.HyO1jm3eq5w6eYmTCtFC9uaerCDkjkYip1o1LHq","1","October 11, 2019, 3:11 am","September 22, 2019","4:01 am"); 
 INSERT INTO users VALUES("29","Imelita 0. Anjao","345343","Midwife","midwife101","$2y$10$U5yakieAi0iObyzb68dtTORgd0cSf82Ro72COmfZgPJv6rygNlrQy","1","","September 22, 2019","4:02 am"); 
 INSERT INTO users VALUES("30","Arian M. Garcia","3487y98u9","Midwife","midwife","$2y$10$JLIAeWbBY1RY2j.KtaLGMO2byjeT6rqNWaw/FsWVQk1EC9yxiwF0m","1","","September 22, 2019","4:02 am"); 
@@ -654,7 +843,7 @@ CREATE TABLE `users_activity_log` (
   `action` varchar(100) NOT NULL,
   `date_time` varchar(70) NOT NULL,
   PRIMARY KEY (`log_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=910 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=949 DEFAULT CHARSET=latin1;
 
 INSERT INTO users_activity_log VALUES("532","27","Edited  Patient Profile","October 28, 2019 - 11:23 pm"); 
 INSERT INTO users_activity_log VALUES("533","27","Edited  Patient Profile","October 28, 2019 - 11:36 pm"); 
@@ -1034,6 +1223,45 @@ INSERT INTO users_activity_log VALUES("906","27","Added Prescription to Jesse Fr
 INSERT INTO users_activity_log VALUES("907","27","Registered Markh B. Jamandre as new Patient","November 23, 2019 - 7:27 pm"); 
 INSERT INTO users_activity_log VALUES("908","27","Added Markh B. Jamandre to Consultation","November 23, 2019 - 7:28 pm"); 
 INSERT INTO users_activity_log VALUES("909","27","Added Prescription to Markh B. Jamandre","November 23, 2019 - 7:28 pm"); 
+INSERT INTO users_activity_log VALUES("910","27","Successfully Backup the database","November 23, 2019, 7:29 pm"); 
+INSERT INTO users_activity_log VALUES("911","27","Added Jesse Franco Latosa to Consultation","November 23, 2019 - 8:16 pm"); 
+INSERT INTO users_activity_log VALUES("912","27","Added Prescription to Jesse Franco Latosa","November 23, 2019 - 8:17 pm"); 
+INSERT INTO users_activity_log VALUES("913","27","Added Lolita Villarosa Gerose to Consultation","November 24, 2019 - 3:11 pm"); 
+INSERT INTO users_activity_log VALUES("914","27","Added Prescription to Lolita Villarosa Gerose","November 24, 2019 - 3:12 pm"); 
+INSERT INTO users_activity_log VALUES("915","27","Added Dennzel Quatchon to Consultation","November 24, 2019 - 3:19 pm"); 
+INSERT INTO users_activity_log VALUES("916","27","Added Prescription to Dennzel Quatchon","November 24, 2019 - 3:19 pm"); 
+INSERT INTO users_activity_log VALUES("917","27","Added Prescription to Dennzel Quatchon","November 24, 2019 - 3:20 pm"); 
+INSERT INTO users_activity_log VALUES("918","27","Edited Hilary Ahmor Sipat Child Patient Profile","November 24, 2019 - 3:24 pm"); 
+INSERT INTO users_activity_log VALUES("919","27","Updated the Prenatal follow-up date for Lolita Villarosa Gerose","November 24, 2019 - 4:33 pm"); 
+INSERT INTO users_activity_log VALUES("920","27","Successfully Backup the database","November 24, 2019, 4:36 pm"); 
+INSERT INTO users_activity_log VALUES("921","27","Added Janeil Alcano to Consultation","November 25, 2019 - 4:26 pm"); 
+INSERT INTO users_activity_log VALUES("922","27","Added Prescription to Janeil Alcano","November 25, 2019 - 4:28 pm"); 
+INSERT INTO users_activity_log VALUES("923","27","Updated the Prenatal follow-up date for Lolita Villarosa Gerose","November 25, 2019 - 4:39 pm"); 
+INSERT INTO users_activity_log VALUES("924","27","Added a New Individual Referral Record","November 25, 2019 8:22 pm"); 
+INSERT INTO users_activity_log VALUES("925","27","Added a New Prenatal Referral Record","November 25, 2019 8:35 pm"); 
+INSERT INTO users_activity_log VALUES("926","27","Added Markh B. Jamandre to Consultation","November 25, 2019 - 9:09 pm"); 
+INSERT INTO users_activity_log VALUES("927","27","Added Bernard Bermo to Consultation","November 25, 2019 - 9:12 pm"); 
+INSERT INTO users_activity_log VALUES("928","27","Added Prescription to Bernard Bermo","November 25, 2019 - 9:12 pm"); 
+INSERT INTO users_activity_log VALUES("929","27","Added Prescription to Jesse Franco Latosa","November 26, 2019 - 12:22 am"); 
+INSERT INTO users_activity_log VALUES("930","27","Added Prescription to Jesse Franco Latosa","November 26, 2019 - 12:22 am"); 
+INSERT INTO users_activity_log VALUES("931","27","Added Prescription to Jesse Franco Latosa","November 26, 2019 - 12:22 am"); 
+INSERT INTO users_activity_log VALUES("932","27","Added Margarita Diana to Family Planning","November 26, 2019 - 10:53 pm"); 
+INSERT INTO users_activity_log VALUES("933","27","Added Margarita Diana to Family Planning","November 26, 2019 - 11:09 pm"); 
+INSERT INTO users_activity_log VALUES("934","27","Added Lolita Villarosa Gerose to Family Planning Assessment","November 26, 2019 - 11:24 pm"); 
+INSERT INTO users_activity_log VALUES("935","27","Added Mercy Buenafuente to Family Planning Assessment","November 27, 2019 - 10:47 am"); 
+INSERT INTO users_activity_log VALUES("936","27","Added Mercy Buenafuente to Family Planning Assessment","November 27, 2019 - 10:47 am"); 
+INSERT INTO users_activity_log VALUES("937","27","Added Mercy Buenafuente to Family Planning Assessment","November 27, 2019 - 10:48 am"); 
+INSERT INTO users_activity_log VALUES("938","27","Added Mercy Buenafuente to Family Planning Assessment","November 27, 2019 - 11:39 am"); 
+INSERT INTO users_activity_log VALUES("939","27","Added Mercy Buenafuente to Family Planning Assessment","November 27, 2019 - 11:42 am"); 
+INSERT INTO users_activity_log VALUES("940","27","Added Mercy Buenafuente to Family Planning Assessment","November 27, 2019 - 11:44 am"); 
+INSERT INTO users_activity_log VALUES("941","27","Added Mercy Buenafuente to Family Planning Assessment","November 27, 2019 - 11:46 am"); 
+INSERT INTO users_activity_log VALUES("942","27","Added Mercy Buenafuente to Family Planning Assessment","November 27, 2019 - 11:46 am"); 
+INSERT INTO users_activity_log VALUES("943","27","Added Rifampicin + isoniazid as new medicine","November 27, 2019 - 2:49 pm"); 
+INSERT INTO users_activity_log VALUES("944","27","Added Rifampicin + isoniazid + Pyrazinamide + Ethambutol as new medicine","November 27, 2019 - 2:49 pm"); 
+INSERT INTO users_activity_log VALUES("945","27","Added Rifampicin + isoniazid + Pyrazinamide + Ethambutol as new medicine","November 27, 2019 - 2:50 pm"); 
+INSERT INTO users_activity_log VALUES("946","27","Added Calcium Carbonate (Calcimate) as new medicine","November 27, 2019 - 2:51 pm"); 
+INSERT INTO users_activity_log VALUES("947","27","Added Ferrous Sulphate + Folic Acid as new medicine","November 27, 2019 - 2:54 pm"); 
+INSERT INTO users_activity_log VALUES("948","27","Added Mercy Buenafuente to Family Planning Assessment","November 27, 2019 - 5:21 pm"); 
 
 
 

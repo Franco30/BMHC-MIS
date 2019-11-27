@@ -126,37 +126,37 @@ if(isset($_POST['add'])){
     foreach($PERINEUM as $value) {
         $perineum .= $value . ", ";  
     }
-    $perineum = substr($perineum, 0, -2);
+    $perineum2 = substr($perineum, 0, -2);
     $VAGINA = $_POST['vagina'];
         $vagina = "";
     foreach($VAGINA as $value) {
         $vagina .= $value . ", ";  
     }
-    $vagina = substr($vagina, 0, -2);
+    $vagina2 = substr($vagina, 0, -2);
     $CERVIX = $_POST['cervix'];
         $cervix = "";
     foreach($CERVIX as $value) {
         $cervix .= $value . ", ";  
     }
-    $cervix = substr($cervix, 0, -2);
+    $cervix2 = substr($cervix, 0, -2);
     $CONSISTENCY = $_POST['consistency'];
         $consistency = "";
     foreach($CONSISTENCY as $value) {
         $consistency .= $value . ", ";  
     }
-    $consistency = substr($consistency, 0, -2);
+    $consistency2 = substr($consistency, 0, -2);
     $POSITION = $_POST['position'];
         $position = "";
     foreach($POSITION as $value) {
         $position .= $value . ", ";  
     }
-    $position = substr($position, 0, -2);
+    $position2 = substr($position, 0, -2);
     $SIZE = $_POST['size'];
         $size = "";
     foreach($SIZE as $value) {
         $size .= $value . ", ";  
     }
-    $size = substr($size, 0, -2);
+    $size2 = substr($size, 0, -2);
     $mass = $_POST['mass'];
     $uterinedepth = $_POST['uterinedepth'];
     $ADNEXA = $_POST['adnexa'];
@@ -164,7 +164,7 @@ if(isset($_POST['add'])){
     foreach($ADNEXA as $value) {
         $adnexa .= $value . ", ";  
     }
-    $adnexa = substr($adnexa, 0, -2);
+    $adnexa2 = substr($adnexa, 0, -2);
     
     //Risk for Violence
     $RISKS = $_POST['risks'];
@@ -172,8 +172,8 @@ if(isset($_POST['add'])){
     foreach($RISKS as $value) {
         $risks .= $value . ", ";  
     }
-    $risks = substr($risks, 0, -2);
-    $referredrisks = $_POST['referredrisks']. ' ' .$_POST['risksothers'];
+    $risks2 = substr($risks, 0, -2);
+    $referredrisks = $_POST['referredrisks']. ' - ' .$_POST['risksothers'];
     
     $user_id=$_SESSION['user_id'];
     $year = date("Y", strtotime("+8 HOURS"));
@@ -198,12 +198,11 @@ if(isset($_POST['add'])){
     
     $conn->query("INSERT INTO `physical_examination` VALUES('', '$family_planning_id', '$patient_id', '$bp', '$weight', '$height', '$pr', '$conjuntiva', '$neck', '$breast', '$thorax', '$abdomen2', '$extremities2')") or die(mysqli_error());
 
-    $conn->query("INSERT INTO `pelvic_examination` VALUES('', '$family_planning_id', '$patient_id', '$perineum', '$vagina', '$cervix', '$consistency', '$position', '$size', '$mass', '$uterinedepth', '$adnexa')") or die(mysqli_error());
+    $conn->query("INSERT INTO `pelvic_examination` VALUES ('', '$family_planning_id', '$patient_id', '$perineum2', '$vagina2', '$cervix2', '$consistency2', '$position2', '$size2', '$mass', '$uterinedepth', '$adnexa2')")or die(mysqli_error());
+
+    $conn->query("INSERT INTO `risk_for_vaw` VALUES('', '$family_planning_id', '$patient_id', '$risks2', '$referredrisks')") or die(mysqli_error());
     
-    $conn->query("INSERT INTO `risk_for_vaw` VALUES('', '$family_planning_id', '$patient_id', '$risks', '$referredrisks')") or die(mysqli_error());
-    
-    $conn->query("UPDATE `family_planning` SET `status` = 'Assessed' WHERE `family_planning_id` = '$family_planning_id' && `patient_id` = '$patient_id')") or die(mysqli_error());
-    $conn->close();
+    $conn->query("UPDATE `family_planning` SET `status` = 'Assessed' WHERE `family_planning_id` = '$family_planning_id' && `patient_id` = '$patient_id'") or die(mysqli_error());
     
     $conn->query("INSERT INTO `users_activity_log` VALUES('', '$user_id', '$remarks','$date_time')") or die(mysqli_error());
     
