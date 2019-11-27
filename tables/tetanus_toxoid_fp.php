@@ -5,7 +5,7 @@ require 'require/config.php';
 <table id="tetanustoxoidtable" class="table datatable">
     <thead>
         <tr class="warning">
-            <th><center>UID</center></th>
+            <th><center>IUD</center></th>
             <th><center>BTL</center></th>
             <th><center>1 yr.</center></th>
             <th><center>VIT A</center></th>

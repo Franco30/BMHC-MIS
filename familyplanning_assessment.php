@@ -30,19 +30,29 @@
             <ul class="breadcrumb">
                 <?php
             require 'require/config.php';
-            $query2 = $conn->query("SELECT * FROM `patient` WHERE `patient_id` = '$_GET[patient_id]'") or die(mysqli_error());
+            $query = $conn->query("SELECT * FROM `patient` WHERE `patient_id` = '$_GET[patient_id]'") or die(mysqli_error());
+            $fetch = $query->fetch_array();
+            date_default_timezone_set('Asia/Manila');
+            $date=date("F j, Y");
+            $query2 = $conn->query("SELECT * FROM `family_planning` WHERE `patient_id` = '$_GET[patient_id]' && `family_planning_id` = '$_GET[family_planning_id]'") or die(mysqli_error());
             $fetch2 = $query2->fetch_array();
             ?>
                 <li>Transaction</li>
                 <li>Family Planning</li>
                 <li>Assessment</li>
-                <li><mark><strong><?php echo $fetch2['patient_name'];?></strong></mark></li>
+                <li><mark><strong><?php echo $fetch['patient_name'];?></strong></mark></li>
             </ul>
             <!-- END BREADCRUMB -->
             <!-- PAGE CONTENT WRAPPER -->
             <div class="page-content-wrap">
                 <div class="row">
                     <div class="col-md-12">
+                    <div id="alert" class="alert alert-info" style="display:none;">
+                        <center><span id="alerttext"></span></center>
+                    </div>
+                    <div id="alert2" class="alert alert-danger" style="display:none;">
+                        <center><span id="alerttext2"></span></center>
+                    </div>
                         <div class="panel panel-default tabs">
                             <ul class="nav nav-tabs" role="tablist">
                                 <li class="active"><a href="#tab-first" role="tab" data-toggle="tab">Medical History and Obstetrical History</a>
@@ -51,22 +61,14 @@
                                 </li>
                                 <div class="btn-group pull-right">
                                     <div class="pull-left">
-                                        <button type="button" class="btn btn-success" id="addnew"><span class="fa fa-check"></span>Save</button>
-                                        <a href="patient_familyplanning?patient_id=<?php echo $fetch2['patient_id'] ?>" class="btn btn-danger"><span class="fa fa-times"></span>Cancel</a>
+                                        <button type="button" class="btn btn-success" id="addassessment"><span class="fa fa-check"></span>Save</button>
+                                        <a href="patient_familyplanning?patient_id=<?php echo $fetch['patient_id'] ?>" class="btn btn-danger"><span class="fa fa-times"></span>Cancel</a>
                                     </div>
                                 </div>
                             </ul>
                             <div class="panel-body list-group list-group-contacts scroll" style="height: 520px;">
-                                <?php
-	                            require 'require/config.php';
-			                    $query = $conn->query("SELECT * FROM `patient` WHERE `patient_id` = '$_GET[patient_id]'") or die(mysqli_error());
-                                $fetch = $query->fetch_array();
-                                date_default_timezone_set('Asia/Manila');
-                                $date=date("F j, Y");
-									?>
                                 <form id="familyplanningform">
                                     <div class="panel-body tab-content">
-
                                         <div class="tab-pane active" id="tab-first">
                                             <div class="row">
                                                 <div class="col-md-12">
@@ -76,7 +78,9 @@
                                                             <div class="col-md-6">
                                                                 <div class="form-group" style="margin-left:-10px;margin-right:-10px;">
                                                                     <label>Heent</label>
-                                                                    <select multiple class="form-control select" data-live-search="true" style="display: none;" id="heent">
+                                                                    <input type="hidden" class="form-control" value="<?php echo $fetch2['family_planning_id'];?>" id="family_planning_id" required/>
+                                                                    <input type="hidden" class="form-control" value="<?php echo $fetch['patient_id'];?>" id="patient_id" required/>
+                                                                    <select multiple class="form-control select" data-live-search="true" style="display: none;" id="heent" name="heent[]">
                                                                         <option value="Epilepsy/Convulsion/Seizure">Epilepsy/Convulsion/Seizure</option>
                                                                         <option value="Severe Headache/dizziness">Severe Headache/dizziness</option>
                                                                         <option value="Visual disturbance/blurring of vision">Visual disturbance/blurring of vision
@@ -89,7 +93,7 @@
                                                             <div class="col-md-6">
                                                                 <div class="form-group" style="margin-right:-10px;">
                                                                     <label>Chest/Heart</label>
-                                                                    <select multiple class="form-control select" data-live-search="true" style="display: none;" id="chestheart">
+                                                                    <select multiple class="form-control select" data-live-search="true" style="display: none;" id="chestheart" name="chestheart[]">
                                                                         <option value="Severe chest pain">Severe chest pain</option>
                                                                         <option value="Shortness of breath and easy fatigability">Shortness of breath and easy fatigability
                                                                         </option>
@@ -112,7 +116,7 @@
                                                             <div class="col-md-6">
                                                                 <div class="form-group" style="margin-left:-10px;margin-right:-10px;">
                                                                     <label>Abdomen</label>
-                                                                    <select multiple class="form-control select" data-live-search="true" style="display: none;" id="abdomen">
+                                                                    <select multiple class="form-control select" data-live-search="true" style="display: none;" id="abdomen" name="abdomen[]">
                                                                         <option value="Mass in the abdomen">Mass in the abdomen</option>
                                                                         <option value="History of gallbladder disease">History of gallbladder disease</option>
                                                                         <option value="History of liver disease">History of liver disease</option>
@@ -122,7 +126,7 @@
                                                             <div class="col-md-6">
                                                                 <div class="form-group" style="margin-right:-10px;">
                                                                     <label>Genital</label>
-                                                                    <select multiple class="form-control select" data-live-search="true" style="display: none;" id="genital">
+                                                                    <select multiple class="form-control select" data-live-search="true" style="display: none;" id="genital" name="genital[]">
                                                                         <option value="Mass in the uterus">Mass in the uterus</option>
                                                                         <option value="Vaginal discharge">Vaginal discharge</option>
                                                                         <option value="Intermenstrual bleeding">Intermenstrual bleeding</option>
@@ -136,7 +140,7 @@
                                                             <div class="col-md-6">
                                                                 <div class="form-group" style="margin-left:-10px;margin-right:-10px;">
                                                                     <label>Extremities</label>
-                                                                    <select multiple class="form-control select" data-live-search="true" style="display: none;" id="extremities">
+                                                                    <select multiple class="form-control select" data-live-search="true" style="display: none;" id="extremities" name="extremities[]">
                                                                         <option value="Severe varicosities">Severe varicosities</option>
                                                                         <option value="Swelling or severe pain in the legs not
                                                                             related to
@@ -149,7 +153,7 @@
                                                             <div class="col-md-6">
                                                                 <div class="form-group" style="margin-right:-10px;">
                                                                     <label>History of any of the following</label>
-                                                                    <select multiple class="form-control select" data-live-search="true" style="display: none;" id="history">
+                                                                    <select multiple class="form-control select" data-live-search="true" style="display: none;" id="history" name="history[]">
                                                                         <option value="Smoking">Smoking</option>
                                                                         <option value="Allergies">Allergies</option>
                                                                         <option value="Drug Intake (anti-tuberculosis,
@@ -184,7 +188,7 @@
                                                             <div class="col-md-6">
                                                                 <div class="form-group" style="margin-left:-10px;margin-right:-10px;">
                                                                     <label>For Women</label>
-                                                                    <select multiple class="form-control select" data-live-search="true" style="display: none;" id="forwomen">
+                                                                    <select multiple class="form-control select" data-live-search="true" style="display: none;" id="forwomen" name="forwomen[]">
                                                                         <option value="Unusual discharge from vagina">Unusual discharge from vagina
                                                                         </option>
                                                                         <option value="Itching or sores in or around vagina">Itching or sores in or around vagina
@@ -198,7 +202,7 @@
                                                             <div class="col-md-6">
                                                                 <div class="form-group" style="margin-right:-10px;">
                                                                     <label>For Men</label>
-                                                                    <select multiple class="form-control select" data-live-search="true" style="display: none;" id="formen">
+                                                                    <select multiple class="form-control select" data-live-search="true" style="display: none;" id="formen" name="formen[]">
                                                                         <option value="Pain or burning sensation">Pain or burning sensation</option>
                                                                         <option value="Open sores anywhere in genital area">Open sores anywhere in genital area
                                                                         </option>
@@ -212,7 +216,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
-                                                        <h5><strong>Obsterical History</strong></h5>
+                                                        <h5><strong>Obstetrical History</strong></h5>
                                                         <div class="form-row">
                                                             <div class="col-md-6">
                                                                 <div class="form-group" style="margin-left:-10px;margin-right:-10px;">
@@ -223,7 +227,7 @@
                                                             <div class="col-md-6">
                                                                 <div class="form-group" style="margin-right:-10px;">
                                                                     <label>Type of last delivery</label>
-                                                                    <input type="text" class="form-control" id="type" placeholder="Enter Type of last delivery" required />
+                                                                    <input type="text" class="form-control" id="typeoflastdelivery" placeholder="Enter Type of last delivery" required />
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -282,7 +286,7 @@
                                                         &nbsp;
                                                         <div class="form-group">
                                                             <label>History of any of the following</label>
-                                                            <select multiple class="form-control select" data-live-search="true" style="display: none;" id="history2">
+                                                            <select multiple class="form-control select" data-live-search="true" style="display: none;" id="history2" name="history2[]">
                                                                 <option value="Hydatidiform mole (within the last 12
                                                                     months)">Hydatidiform mole (within the last 12
                                                                     months)</option>
@@ -327,7 +331,7 @@
                                                             <div class="col-md-3">
                                                                 <div class="form-group" style="margin-right:-10px;">
                                                                     <label>Pulse Rate</label>
-                                                                    <input type="text" class="form-control" id="pulserate" placeholder="Enter mins." required />
+                                                                    <input type="text" class="form-control" id="pr" placeholder="Enter mins." required />
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -336,7 +340,7 @@
                                                             <div class="col-md-6">
                                                                 <div class="form-group" style="margin-left:-10px;margin-right:-10px;">
                                                                     <label>Conjunctiva</label>
-                                                                    <select multiple class="form-control select" data-live-search="true" style="display: none;" id="conjuntiva" required>
+                                                                    <select multiple class="form-control select" data-live-search="true" style="display: none;" id="conjuntiva" name="conjunctiva[]" required>
                                                                         <option value="None">None</option>
                                                                         <option value="Pale">Pale</option>
                                                                         <option value="Yellowish">Yellowish</option>
@@ -346,7 +350,7 @@
                                                             <div class="col-md-6">
                                                                 <div class="form-group" style="margin-right:-10px;">
                                                                     <label>Neck</label>
-                                                                    <select multiple class="form-control select" data-live-search="true" style="display: none;" id="neck">
+                                                                    <select multiple class="form-control select" data-live-search="true" style="display: none;" id="neck" name="neck[]">
                                                                         <option value="None">None</option>
                                                                         <option value="Enlarged thyroid">Enlarged thyroid</option>
                                                                         <option value="Enlarged lymph nodes">Enlarged lymph nodes</option>
@@ -359,7 +363,7 @@
                                                             <div class="col-md-6">
                                                                 <div class="form-group" style="margin-left:-10px;margin-right:-10px;">
                                                                     <label>Breast</label>
-                                                                    <select multiple class="form-control select" data-live-search="true" style="display: none;" id="breast" required>
+                                                                    <select multiple class="form-control select" data-live-search="true" style="display: none;" id="breast" name="breast[]" required>
                                                                         <option value="Mass">Mass</option>
                                                                         <option value="Nipple discharge">Nipple discharge</option>
                                                                         <option value="Skin - orange peel or dimpling">Skin - orange peel or dimpling</option>
@@ -370,7 +374,7 @@
                                                             <div class="col-md-6">
                                                                 <div class="form-group" style="margin-right:-10px;">
                                                                     <label>Thorax</label>
-                                                                    <select multiple class="form-control select" data-live-search="true" style="display: none;" id="thorax">
+                                                                    <select multiple class="form-control select" data-live-search="true" style="display: none;" id="thorax" name="thorax[]">
                                                                         <option value="Abnormal heart sounds/cardiac rate">Abnormal heart sounds/cardiac rate</option>
                                                                         <option value="Abnormal breath sounds/respiratory rate">Abnormal breath sounds/respiratory rate</option>
                                                                     </select>
@@ -382,7 +386,7 @@
                                                             <div class="col-md-6">
                                                                 <div class="form-group" style="margin-left:-10px;margin-right:-10px;">
                                                                     <label>Abdomen</label>
-                                                                    <select multiple class="form-control select" data-live-search="true" style="display: none;" id="abdomen" required>
+                                                                    <select multiple class="form-control select" data-live-search="true" style="display: none;" id="abdomen2" name="abdomen2[]" required>
                                                                         <option value="Enlarged liver">Enlarged liver</option>
                                                                         <option value="Mass">Mass</option>
                                                                         <option value="Tenderness">Tenderness</option>
@@ -392,7 +396,7 @@
                                                             <div class="col-md-6">
                                                                 <div class="form-group" style="margin-right:-10px;">
                                                                     <label>Extremities</label>
-                                                                    <select multiple class="form-control select" data-live-search="true" style="display: none;" id="extremities">
+                                                                    <select multiple class="form-control select" data-live-search="true" style="display: none;" id="extremities2" name="extremities2[]">
                                                                         <option value="Edema">Edema</option>
                                                                         <option value="Varicosities">Varicosities</option>
                                                                     </select>
@@ -405,7 +409,7 @@
                                                             <div class="col-md-6">
                                                                 <div class="form-group" style="margin-left:-10px;margin-right:-10px;">
                                                                     <label>Option</label>
-                                                                    <select multiple class="form-control select" data-live-search="true" style="display: none;" id="risks">
+                                                                    <select multiple class="form-control select" data-live-search="true" style="display: none;" id="risks" name="risks[]">
                                                                         <option value="None">None</option>
                                                                         <option value="History of domestic violence or VAW">History of domestic violence or VAW</option>
                                                                         <option value="Unpleasant relationship with partner">Unpleasant relationship with partner</option>
@@ -418,7 +422,7 @@
                                                             <div class="col-md-6">
                                                                 <div class="form-group" style="margin-right:-10px;">
                                                                     <label>Referred to</label>
-                                                                    <select class="form-control select" style="display: none;" data-live-search="true" id="stirisks">
+                                                                    <select class="form-control select" style="display: none;" data-live-search="true" id="referredrisks">
                                                                         <option value="">Select</option>
                                                                         <option value="DSWD">DSWD</option>
                                                                         <option value="WCPU">WCPU</option>
@@ -430,7 +434,7 @@
                                                             &nbsp;
                                                             <div class="form-group" id="category1" style="display: none;">
                                                                 <label>Others</label>
-                                                                <input type="text" class="form-control" id="stirisksothers" placeholder="please specify" required />
+                                                                <input type="text" class="form-control" id="risksothers" placeholder="please specify" required />
                                                             </div>
                                                         </div>
                                                     </div>
@@ -441,7 +445,7 @@
                                                             <div class="col-md-6">
                                                                 <div class="form-group" style="margin-left:-10px;margin-right:-10px;">
                                                                     <label>Perineum</label>
-                                                                    <select multiple class="form-control select" data-live-search="true" style="display: none;" id="perineum" required>
+                                                                    <select multiple class="form-control select" data-live-search="true" style="display: none;" id="perineum" name="perineum[]" required>
                                                                         <option value="Scars">Scars</option>
                                                                         <option value="Warts">Warts</option>
                                                                         <option value="Reddish">Reddish</option>
@@ -452,7 +456,7 @@
                                                             <div class="col-md-6">
                                                                 <div class="form-group" style="margin-right:-10px;">
                                                                     <label>Vagina</label>
-                                                                    <select multiple class="form-control select" data-live-search="true" style="display: none;" id="vagina">
+                                                                    <select multiple class="form-control select" data-live-search="true" style="display: none;" id="vagina" name="vagina[]">
                                                                         <option value="Congested">Congested</option>
                                                                         <option value="Bartholin's cyst">Bartholin's cyst</option>
                                                                         <option value="Warts">Warts</option>
@@ -468,7 +472,7 @@
                                                             <div class="col-md-6">
                                                                 <div class="form-group" style="margin-left:-10px;margin-right:-10px;">
                                                                     <label>Cervix</label>
-                                                                    <select multiple class="form-control select" data-live-search="true" style="display: none;" id="cervix" required>
+                                                                    <select multiple class="form-control select" data-live-search="true" style="display: none;" id="cervix" name="cervix[]" required>
                                                                         <option value="Congested">Congested</option>
                                                                         <option value="Erosion">Erosion</option>
                                                                         <option value="Discharge">Discharge</option>
@@ -480,7 +484,7 @@
                                                             <div class="col-md-6">
                                                                 <div class="form-group" style="margin-right:-10px;">
                                                                     <label>Consistency</label>
-                                                                    <select multiple class="form-control select" style="display: none;" id="consistency">
+                                                                    <select multiple class="form-control select" style="display: none;" id="consistency" name="consistency[]">
                                                                         <option value="None">None</option>
                                                                         <option value="Firm">Firm</option>
                                                                         <option value="Soft">Soft</option>
@@ -494,8 +498,8 @@
                                                             <div class="col-md-4">
                                                                 <div class="form-group" style="margin-left:-10px;margin-right:-10px;">
                                                                     <label>Position</label>
-                                                                    <select class="form-control select" data-live-search="true" style="display: none;" id="position" required>
-                                                                        <option>Select</option>
+                                                                    <select multiple class="form-control select" data-live-search="true" style="display: none;" id="position" name="position[]" required>
+                                                                        <option value="None">None</option>
                                                                         <option value="Mid">Mid</option>
                                                                         <option value="Anteflexed">Anteflexed</option>
                                                                         <option value="Retroflexed">Retroflexed</option>
@@ -505,8 +509,8 @@
                                                             <div class="col-md-4">
                                                                 <div class="form-group" style="margin-right:-10px;">
                                                                     <label>Size</label>
-                                                                    <select class="form-control select" style="display: none;" id="size">
-                                                                        <option>Select</option>
+                                                                    <select multiple class="form-control select" style="display: none;" id="size" name="size[]">
+                                                                        <option value="None">None</option>
                                                                         <option value="Normal">Normal</option>
                                                                         <option value="Small">Small</option>
                                                                         <option value="Large">Large</option>
@@ -516,7 +520,7 @@
                                                             <div class="col-md-4">
                                                                 <div class="form-group" style="margin-right:-10px;">
                                                                     <label>Mass</label>
-                                                                    <select class="form-control select" data-live-search="true" style="display: none;" id="size">
+                                                                    <select class="form-control select" data-live-search="true" style="display: none;" id="mass">
                                                                         <option value="None">none</option>
                                                                         <option value="Yes">Yes</option>
                                                                     </select>
@@ -534,7 +538,7 @@
                                                             <div class="col-md-6">
                                                                 <div class="form-group" style="margin-left:-10px;margin-right:-10px;">
                                                                     <label>Adnexa</label>
-                                                                    <select multiple class="form-control select" data-live-search="true" style="display: none;" id="adnexa">
+                                                                    <select multiple class="form-control select" data-live-search="true" style="display: none;" id="adnexa" name="adnexa[]">
                                                                         <option value="None">None</option>
                                                                         <option value="Mass">Mass</option>
                                                                         <option value="Tenderness">Tenderness</option>
@@ -543,7 +547,6 @@
                                                             </div>
                                                         </div>
                                                     </div>
-
                                                 </div>
                                             </div>
                                             <hr>
@@ -562,7 +565,7 @@
     <audio id="audio-alert" src="audio/alert.mp3" preload="auto"></audio>
     <audio id="audio-fail" src="audio/fail.mp3" preload="auto"></audio>
     <script type="text/javascript" src="js/plugins/jquery/jquery.min.js"></script>
-    <script type="text/javascript" src="functions/crudpatient.js"></script>
+    <script type="text/javascript" src="functions/crudfpassessment.js"></script>
     <script type="text/javascript" src="js/plugins/jquery/jquery-ui.min.js"></script>
     <script type="text/javascript" src="js/plugins/bootstrap/bootstrap.min.js"></script>
     <script type='text/javascript' src='js/plugins/icheck/icheck.min.js'></script>
@@ -584,10 +587,10 @@
     <!-- END THIS PAGE PLUGINS -->
     <script type="text/javascript">
         $(document).ready(function() {
-            $('#stirisks').change(function() {
-                var stirisks = $('#stirisks').val();
+            $('#referredrisks').change(function() {
+                var risks = $('#referredrisks').val();
 
-                switch (stirisks) {
+                switch (risks) {
 
                     case 'DSWD':
                         document.getElementById("category1").style.display = "none";

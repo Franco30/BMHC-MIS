@@ -199,7 +199,7 @@
 												</h4>
 												</div>
 													<tr class="warning">
-														<th><center>VTI A</center></th>
+														<th><center>VIT A</center></th>
 														<th><center>6 mos.</center></th>
 														<th><center>1 yr.</center></th>
 														<th><center>NBS</center></th>
@@ -226,9 +226,8 @@
 											?>
 											</table>
 												</div>
-										</div>
-										<hr>
-										<div class="table-responsive">
+											<hr>
+											<div class="table-responsive">
 											<table id="treatmenttable3" class="table table-hover table-bordered">
 												<thead>
 												<div>
@@ -264,6 +263,7 @@
 											?>
 											</table>
 												</div>
+										</div>
 									</div>
 								</div>
 							</div>

@@ -227,66 +227,7 @@
 										<div class="col-md-12">
 											<div class="panel panel-default">
 												<div class="panel-body">
-													<div class="table-responsive">
-														<table id="familyplanning" class="table datatable">
-															<thead>
-																<tr>
-																	<th>
-																		<center>Date & Time</center>
-																	</th>
-																	<th>
-																		<center>Type of Acceptor</center>
-																	</th>
-																	<th>
-																		<center>Previously Used Method</center>
-																	</th>
-																	<th>
-																		<center>Birthdate</center>
-																	</th>
-																	<th>
-																		<center>Highest Education</center>
-																	</th>
-																	<th>
-																		<center>Action</center>
-																	</th>
-																</tr>
-															</thead>
-															<tbody>
-																<?php
-															require 'require/config.php';
-								$query = $conn->query("SELECT * FROM `family_planning` WHERE `family_planning`.`patient_id` =  '$_GET[id]'") or die(mysqli_error());
-								while($fetch = $query->fetch_array()){
-								$q2 = $conn->query("SELECT * FROM `patient` WHERE `patient_id` = '$_GET[id]'")or die(mysqli_error());
-								$f2 = $q2->fetch_array();
-									?>
-																<tr>
-																	<td>
-																		<center><?php echo $fetch['date_time']?></center>
-																	</td>
-																	<td>
-																		<center><?php echo $fetch['type_of_acceptor']?></center>
-																	</td>
-																	<td>
-																		<center><?php echo $fetch['prev_used_method']?></center>
-																	</td>
-																	<td>
-																		<center><?php echo $f2['birthdate']?></center>
-																	</td>
-																	<td>
-																		<center><?php echo $fetch['patient_highest_education']?></center>
-																	</td>
-																	<td>
-																		<center><a class="btn btn-default" href="familyplanninginfo?id=<?php echo $f2['patient_id'];?>&&fp_id=<?php echo $fetch['family_planning_id'];?>">View Detail</a></center>
-																	</td>
-																</tr>
-																<?php
-												}
-												$conn->close();
-													?>
-															</tbody>
-														</table>
-													</div>
-
+													<?php require 'tables/masterfile_familyplanning.php'; ?>
 												</div>
 											</div>
 											<!-- END CONTACT ITEM -->
@@ -299,65 +240,7 @@
 										<div class="col-md-12">
 											<div class="panel panel-default">
 												<div class="panel-body">
-													<div class="table-responsive">
-														<table id="consultation" class="table datatable">
-															<thead>
-																<tr>
-																	<th>
-																		<center>Date</center>
-																	</th>
-																	<th>
-																		<center>Complaints</center>
-																	</th>
-																	<th>
-																		<center>Pertinent P.E Findings</center>
-																	</th>
-																	<th>
-																		<center>Diagnosis</center>
-																	</th>
-																	<th>
-																		<center>Laboratory Request</center>
-																	</th>
-																	<th>
-																		<center>Action</center>
-																	</th>
-																</tr>
-															</thead>
-															<tbody>
-																<?php
-require 'require/config.php';
-$query = $conn->query("SELECT * FROM `consultation` WHERE `consultation`.`patient_id` =  '$_GET[id]'") or die(mysqli_error());
-while($fetch = $query->fetch_array()){
-$q = $conn->query("SELECT * FROM `patient` WHERE `patient_id` = '$_GET[id]'") or die(mysqli_error());
-$f = $q->fetch_array();
-?>
-																<tr>
-																	<td>
-																		<center><?php echo $fetch['date']?></center>
-																	</td>
-																	<td>
-																		<center><?php echo $fetch['complaints']?></center>
-																	</td>
-																	<td>
-																		<center><?php echo $fetch['pe_findings']?></center>
-																	</td>
-																	<td>
-																		<center><?php echo $fetch['diagnosis']?></center>
-																	</td>
-																	<td>
-																		<center><?php echo $fetch['lab_request']?></center>
-																	</td>
-																	<td>
-																		<center><a class="btn btn-default" href="familyplanninginfo?id=<?php echo $f['patient_id'];?>&&patient_name=<?php echo $f['patient_name'];?>&&c_id=<?php echo $fetch['consultation_id'];?>">View Detail</a></center>
-																	</td>
-																</tr>
-																<?php
-												}
-												$conn->close();
-													?>
-															</tbody>
-														</table>
-													</div>
+													<?php require 'tables/masterfile_consultation.php'; ?>
 												</div>
 											</div>
 											<!-- END CONTACT ITEM -->

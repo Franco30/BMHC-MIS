@@ -47,6 +47,8 @@
 						<div id="alert" class="alert alert-info" style="display:none;">
 							<center><span id="alerttext"></span></center>
 						</div>
+						<div class="panel panel-default">
+							<div class="panel-body">
 						<div class="panel panel-default tabs">
 							<ul class="nav nav-tabs" role="tablist">
 								<li class="active"><a href="#tab-first" role="tab" data-toggle="tab">Patient Info</a></li>
@@ -56,7 +58,7 @@
 							</ul>
 							<div class="panel-body tab-content">
 								<div class="tab-pane active" id="tab-first">
-									<div class="panel-body list-group list-group-contacts scroll" style="height: 460px;">
+									<div class="panel-body scroll" style="height: 430px;">
 										<div class="row">
 											<div class="col-md-3">
 												<div class="panel panel-default">
@@ -106,7 +108,7 @@
 													</strong><?php echo $fetch['father_occupation']?></h5>
 												<hr style="margin:0px 0 5px 0;">
 											</div>
-											<div class="col-md-8" style="width:800px">
+											<div class="col-md-9">
 												<h5><strong>Brothers and Sisters</strong></h5>
 												<hr style="margin:0px 0 5px 0;">
 												<br>
@@ -114,7 +116,7 @@
 												<div class="panel-heading">
 													<div class="btn-group pull-right">
 														<div class="pull-left">
-															<button type="button" class="btn btn-info">New Brother and Sister</button>
+															<button class="btn btn-info btn-md" data-toggle="modal" data-target="#add_brattysis">Add Brother and Sister</button>
 														</div>
 													</div>
 												</div>
@@ -130,9 +132,9 @@
 														</thead>
 														<tbody>
 															<?php
-$query = $conn->query("SELECT * FROM `brothers_and_sisters` WHERE `child_id` = '$_GET[child_id]'") or die(mysqli_error());
-while($fetch = $query->fetch_array()){
-?>
+															$query = $conn->query("SELECT * FROM `brothers_and_sisters` WHERE `child_id` = '$_GET[child_id]'") or die(mysqli_error());
+															while($fetch = $query->fetch_array()){
+															?>
 															<tr>
 																<td><center><?php echo $fetch['fullname']?></center></td>
 																<td><center><?php echo $fetch['gender']?></center></td>
@@ -148,19 +150,21 @@ while($fetch = $query->fetch_array()){
 												</div>
 												</div>
 											</div>
-
 										</div>
-										<hr>
 									</div>
 								</div>
 
 								<div class="tab-pane" id="tab-second">
-									<div class="row">
-										<?php require 'masterfile/overview_immunization.php'?>
+									<div class="panel-body">
+										<div class="row">
+											<?php require 'masterfile/overview_immunization.php'?>
+										</div>
 									</div>
 								</div>
 							</div>
 						</div>
+							</div>
+							</div>
 					</div>
 					<!-- END PAGE CONTENT WRAPPER -->
 				</div>
@@ -168,6 +172,7 @@ while($fetch = $query->fetch_array()){
 			</div>
 		</div>
 	</div>
+	<?php require 'modals/add_brattysis.php'?>
 	<!-- END PAGE CONTAINER -->
 	<!-- START PRELOADS -->
 	<audio id="audio-alert" src="audio/alert.mp3" preload="auto"></audio>
@@ -177,6 +182,7 @@ while($fetch = $query->fetch_array()){
 	<!-- START SCRIPTS -->
 	<!-- START PLUGINS -->
 	<script type="text/javascript" src="js/plugins/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="functions/brattysis.js"></script>
 	<script type="text/javascript" src="js/plugins/jquery/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="js/plugins/bootstrap/bootstrap.min.js"></script>
 	<!-- END PLUGINS -->
@@ -186,6 +192,9 @@ while($fetch = $query->fetch_array()){
 	<script type='text/javascript' src='js/plugins/icheck/icheck.min.js'></script>
 	<script type="text/javascript" src="js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
 	<script type="text/javascript" src="js/plugins/scrolltotop/scrolltopcontrol.js"></script>
+	<script type="text/javascript" src="js/plugins/bootstrap/bootstrap-datepicker.js"></script>
+	<script type="text/javascript" src="js/plugins/bootstrap/bootstrap-select.js"></script>
+	<script type="text/javascript" src="js/plugins/datatables/jquery.dataTables.min.js"></script>
 	<script type="text/javascript" src="js/plugins/tocify/jquery.tocify.min.js"></script>
 	<script>
 		$(function() {
@@ -199,7 +208,6 @@ while($fetch = $query->fetch_array()){
 
 	</script>
 	<!-- END THIS PAGE PLUGINS-->
-	<script type="text/javascript" src="js/plugins/datatables/jquery.dataTables.min.js"></script>
 	<!-- START TEMPLATE -->
 	<script type="text/javascript" src="js/settings.js"></script>
 	<script type="text/javascript" src="js/plugins.js"></script>

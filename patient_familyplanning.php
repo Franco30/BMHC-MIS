@@ -83,7 +83,7 @@
                                             <td><center><?php echo $fetch['type_of_acceptor']?></center></td>
                                             <td class="print"><center>
                                             <?php if($fetch['status'] == 'No Assessment') { ?>
-                                            <a href="familyplanning_assessment?patient_id=<?php echo $fetch['patient_id']?>" class="btn btn-md btn-danger"><span class="fa fa-stethoscope animated infinite pulse"></span> Assessment</a>
+                                            <a href="familyplanning_assessment?patient_id=<?php echo $fetch['patient_id']?>&&family_planning_id=<?php echo $fetch['family_planning_id']?>" class="btn btn-md btn-danger"><span class="fa fa-stethoscope animated infinite pulse"></span> Assessment</a>
                                             <?php } else { ?>
                                             <a href="#" class="btn btn-md btn-default"><span class="fa fa-stethoscope"></span> Prescription</a>  <?php } ?>
                                                 </center>

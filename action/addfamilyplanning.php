@@ -22,6 +22,7 @@ if(isset($_POST['add'])){
     foreach($method_accepted as $value) {
         $MA .= $value . ", ";  
     }
+    $MA = substr($MA, 0, -2);
     
     $user_id=$_SESSION['user_id'];
     $year = date("Y", strtotime("+8 HOURS"));
@@ -37,7 +38,7 @@ if(isset($_POST['add'])){
     $remarks = "Added $patient_name to Family Planning";
 
     require '../require/config.php';
-    $MA = substr($MA, 0, -2);
+
     $conn->query("INSERT INTO `family_planning` VALUES('', '$patient_id', '$type_of_acceptor', '$prevmethod', '$datetime', '$patient_education', '$spouse_name', '$spouse_birthdate', '$spouse_education', '$spouse_occupation', '$monthly_income', '$no_living_children', '$planmorechildren', '$reason', '$MA', 'No Assessment', '$month', '$year')") or die(mysqli_error());
     $conn->query("INSERT INTO `users_activity_log` VALUES('', '$user_id', '$remarks','$date_time')") or die(mysqli_error());
     }
