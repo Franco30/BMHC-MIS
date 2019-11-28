@@ -1,7 +1,8 @@
 $(document).ready(function () {
     showPatient();
+//    || $('#pefindings').val() == "" || $('#diagnosis').val() == "" || $('#labrequest').val() == ""
     $(document).on('click', '#addnew', function () {
-        if ($('#date_today').val() == "" || $('#weight').val() == "" || $('#bp').val() == "" || $('#temp').val() == "" || $('#headfamily').val() == "" || $('#rr').val() == "" || $('#pr').val() == "" || $('#complaints').val() == "" || $('#pefindings').val() == "" || $('#diagnosis').val() == "" || $('#labrequest').val() == "") {
+        if ($('#date_today').val() == "" || $('#weight').val() == "" || $('#bp').val() == "" || $('#temp').val() == "" || $('#headfamily').val() == "" || $('#rr').val() == "" || $('#pr').val() == "" || $('#complaints').val() == "") {
             $('#alert2').slideDown();
             $('#alerttext2').html('<span class="fa fa-exclamation-circle"></span> All fields are required!');
             setTimeout(function () {
@@ -11,6 +12,7 @@ $(document).ready(function () {
             $patient_id = $('#patient_id').val();
             $date_today = $('#date_today').val();
             $weight = $('#weight').val();
+            $height = $('#height').val();
             $bp = $('#bp').val();
             $temp = $('#temp').val();
             $headfamily = $('#headfamily').val();
@@ -20,6 +22,9 @@ $(document).ready(function () {
             $pefindings = $('#pefindings').val();
             $diagnosis = $('#diagnosis').val();
             $labrequest = $('#labrequest').val();
+            $purok = $('#purok').val();
+            $gender = $('#gender').val();
+            $age = $('#age').val();
 
 //            var complaints = [];
 //
@@ -37,6 +42,7 @@ $(document).ready(function () {
                         patient_id: $patient_id,
                         date_today: $date_today,
                         weight: $weight,
+                        height: $height,
                         bp: $bp,
                         temp: $temp,
                         headfamily: $headfamily,
@@ -46,6 +52,9 @@ $(document).ready(function () {
                         pefindings: $pefindings,
                         diagnosis: $diagnosis,
                         labrequest: $labrequest,
+                        purok: $purok,
+                        gender: $gender,
+                        age: $age,
                         add: 1,
                     },
                     success: function () {

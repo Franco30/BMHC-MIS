@@ -43,8 +43,8 @@
                                     </div>
                                     <div class="panel-body" style="background-color: #5b554a;color: white;">
                                         <div class="contact-info">
-                                            <p><small>Mobile</small><br />(555) 555-55-55</p>
-                                            <p><small>Email</small><br />nadiaali@domain.com</p>
+<!--                                            <p><small>Mobile</small><br />(555) 555-55-55</p>-->
+                                            <p><small>Email</small><br />andrewsgo98@gmail.com</p>
                                         </div>
                                     </div>
                                 </div>
@@ -65,7 +65,7 @@
                                     </div>
                                     <div class="panel-body" style="background-color: #5b554a;color: white;">
                                         <div class="contact-info">
-                                            <p><small>Mobile</small><br />(09) 061613101</p>
+<!--                                            <p><small>Mobile</small><br />(09) 061613101</p>-->
                                             <p><small>Email</small><br />francolatosa12@gmail.com</p>
                                         </div>
                                     </div>
@@ -87,8 +87,8 @@
                                     </div>
                                     <div class="panel-body" style="background-color: #5b554a;color: white;">
                                         <div class="contact-info">
-                                            <p><small>Mobile</small><br />(555) 555-55-55</p>
-                                            <p><small>Email</small><br />nadiaali@domain.com</p>
+<!--                                            <p><small>Mobile</small><br />(555) 555-55-55</p>-->
+                                            <p><small>Email</small><br />jheypdlcrz@gmail.com</p>
                                         </div>
                                     </div>
                                 </div>

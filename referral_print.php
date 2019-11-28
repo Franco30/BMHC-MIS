@@ -63,7 +63,7 @@ $fetch = $query->fetch_array();
 								<h6><strong>Barangay Mansilingan Health Center</strong></h6>
 								<p><small><strong>Brgy. Mansilingan 6100 Bacolod City</strong> <br>
 										(034) 434 4098 <br>
-										cho_bacolod_city@yahoo.com</small></p> <br>
+										barangaymansilingan@yahoo.com</small></p> <br>
 
 								<h6 style="font-size:25px;"><strong>REFERRAL SLIP</strong></h6>
 							</center>

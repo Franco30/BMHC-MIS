@@ -131,22 +131,27 @@
                                                         </div>
                                                         &nbsp;
                                                         <div class="form-row">
-                                                            <div class="col-md-4">
+                                                            <div class="col-md-3">
                                                                 <div class="form-group" style="margin-left:-10px;">
                                                                     <label>Weight</label>
                                                                     <input type="number" class="form-control" id="weight" placeholder="kgs." required />
                                                                 </div>
-
                                                             </div>
-                                                            <div class="col-md-4">
-                                                                <div class="form-group">
+                                                            <div class="col-md-3">
+                                                                <div class="form-group" style="margin-left:-10px;">
+                                                                    <label>Height</label>
+                                                                    <input type="number" class="form-control" id="height" placeholder="cm." required />
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-3">
+                                                                <div class="form-group" style="margin-left:-10px;">
                                                                     <label>Blood Pressure - BP</label>
                                                                     <input type="text" class="mask_bp form-control" id="bp" name="bp" placeholder="mmHg" required />
                                                                 </div>
                                                             </div>
 
-                                                            <div class="col-md-4">
-                                                                <div class="form-group" style="margin-right:-10px;">
+                                                            <div class="col-md-3">
+                                                                <div class="form-group" style="margin-left:-10px;margin-right:-10px;">
                                                                     <label>Temperature</label>
                                                                     <input type="text" class="mask_temp form-control" id="temp" placeholder="°C" required />
                                                                 </div>
@@ -216,7 +221,7 @@
                                                         <div class="form-group">
                                                             <label>Complaints:</label>
                                                             <textarea class="form-control" spellcheck="false" id="complaints"></textarea>
-<!--
+                                                            <!--
                                                             <select multiple class="form-control select" data-live-search="true" style="display: none;" id="complaints" name="complaints[]">
                                                                 <option value="">Select</option>
                                                                 <option value="Fever">Fever</option>
@@ -291,7 +296,7 @@
     <script type="text/javascript" src="js/actions.js"></script>
 
     <!-- END THIS PAGE PLUGINS -->
-<!--
+    <!--
     <script>
         $.ajaxPrefilter(function(options, originalOptions, jqXHR) {
             options.async = true;

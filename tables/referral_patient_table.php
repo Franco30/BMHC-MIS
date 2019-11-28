@@ -23,7 +23,7 @@ if(isset($_POST['show'])){
         <tr>
             <td><center><strong><?php echo $fetch['patient_name'] ?></strong></center></td>
             <td><center><?php echo $fetch['to_hospital'] ?></center></td>
-            <td><center><?php echo $fetch['complaints'] ?></center></td>
+            <td style="width:26%;"><center><?php echo $fetch['complaints'] ?></center></td>
             <td><center><?php echo $fetch['referred_by'] ?></center></td>
             <td><center><?php echo $fetch['referral_date'] ?></center></td>
             <td><center>

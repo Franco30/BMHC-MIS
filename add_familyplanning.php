@@ -68,14 +68,21 @@
                                                 <div class="form-group">
                                                     <label>Patient Name</label>
                                                     <input type="hidden" id="patient_id" class="form-control" value="<?php echo $fetch['patient_id'];?>" style="color:#444444;" readonly required />
-                                                    <input type="text" id="provider" class="form-control" value="<?php echo $fetch['patient_name'];?>" style="color:#444444;" readonly required />
+                                                    <input type="text" class="form-control" value="<?php echo $fetch['patient_name'];?>" style="color:#444444;" readonly required />
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Type of Acceptor</label>
                                                     <select class="form-control select" style="display: none;" id="type_of_acceptor">
-                                                        <option>Select</option>
-                                                        <option>New to the Program</option>
+                                                    <?php
+                                                        require 'require/config.php';
+                                                $q = $conn->query("SELECT * FROM `family_planning` WHERE `patient_id` =  '$_GET[patient_id]'") or die(mysqli_error());
+                                                $f = $q->fetch_array();
+                                                        ?>
+                                                        <?php if($f['type_of_acceptor'] == 'New to the Program') { ?>
                                                         <option>Continuing User</option>
+                                                        <?php } else { ?>
+                                                        <option>New to the Program</option>
+                                                        <?php } ?>    
                                                     </select>
                                                 </div>
                                                 <div class="form-group">
@@ -128,7 +135,13 @@
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label>Previosly Used Method</label>
-                                                    <input type="text" class="tagsinput" id="prevmethod" placeholder="Enter Previosly Used Method" required />
+<!--                                                    <input type="text" class="tagsinput" id="prevmethod" placeholder="Enter Previosly Used Method" required />-->
+                                                    <select class="form-control select" data-live-search="true" style="display: none;" id="prevmethod">
+                                                        <option value="None">None</option>
+                                                        <option value="COC">COC</option>
+                                                        <option value="Condom">Condom</option>
+                                                        <option value="IUD">IUD</option>
+                                                    </select>
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Date and Time</label>
@@ -178,7 +191,6 @@
                                                         <div class="form-group" style="margin-right:-10px;">
                                                             <label>Plan More Children</label>
                                                             <select class="form-control select" style="display: none;" id="planmorechildren">
-                                                                <option>Select</option>
                                                                 <option>No</option>
                                                                 <option>Yes</option>
                                                             </select>
@@ -230,7 +242,7 @@
     <script type="text/javascript" src="js/plugins/bootstrap/bootstrap-select.js"></script>
     <script type="text/javascript" src="js/plugins/smartwizard/jquery.smartWizard-2.0.min.js"></script>
     <script type="text/javascript" src="js/plugins/tagsinput/jquery.tagsinput.min.js"></script>
-    
+
     <script type="text/javascript" src="js/settings.js"></script>
     <script type="text/javascript" src="js/plugins.js"></script>
     <script type="text/javascript" src="js/actions.js"></script>

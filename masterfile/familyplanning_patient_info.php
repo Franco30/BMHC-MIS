@@ -56,9 +56,9 @@
 				</div>&nbsp;<hr>
 				<h2> <strong>Medical History</strong></h2><hr>
 				<h4>Results</h4>
+				<div class="table-responsive">
 				<div class="panel-body panel-body-table">
-					<table  class="table table-bordered">
-
+					<table class="table table-bordered">
 						<thead>
 							<tr class="warning">
 								<th><center>Heent</center></th>
@@ -71,25 +71,42 @@
 							</tr>
 						</thead>
 						<tbody>
-								<!--php code here-->
+<?php
+require 'require/config.php';
+$query = $conn->query("SELECT * FROM `medical_history` WHERE `patient_id` = '$_GET[id]' && `family_planning_id` = '$_GET[fp_id]' order by `patient_id` DESC") or die(mysqli_error());
+while($fetch = $query->fetch_array()){
+?>
 							<tr>
-								<td><center>Enlarged thyroid</center></td>
-								<td><center>Severe chest pain</center></td>
-								<td><center>Mass in the abdomen</center></td>
-								<td><center>Mass in the Uterus</center></td>
-								<td><center>Severe varicosities</center></td>
-								<td><center>yellowish skin</center></td>
-								<td><center>Smoking, Allergies</center></td>
+								<td><center><?php echo $fetch['heent'];?></center></td>
+								<td><center><?php echo $fetch['chest_heart'];?></center></td>
+								<td><center><?php echo $fetch['abdomen'];?></center></td>
+								<td><center><?php echo $fetch['genital'];?></center></td>
+								<td><center><?php echo $fetch['extremities'];?></center></td>
+								<td><center><?php echo $fetch['skin'];?></center></td>
+								<td><center><?php echo $fetch['history'];?></center></td>
 							</tr>
+							<?php
+							}
+							$conn->close();
+							?>
 						</tbody>
 					</table>
-				</div>&nbsp;<hr>
-				<h2> <strong>Obsterical History</strong></h2><hr>
+				</div>
+				</div>
+				&nbsp;
+				<hr>
+				<h2> <strong>Obstetrical History</strong></h2><hr>
 				<h4>Results</h4>
 				<div class="panel-body panel-body-table">
-					<table  class="table table-bordered">
+					<div class="table-responsive">
+					<table class="table table-bordered" style="max-width: 300%;width: 200%;">
 						<thead>
 							<tr class="warning">
+								<th><center>Number of pregnancies</center></th>
+								<th><center>Full Term</center></th>
+								<th><center>Premature</center></th>
+								<th><center>Abortions</center></th>
+								<th><center>Living Children</center></th>
 								<th><center>Date of last delivery</center></th>
 								<th><center>Type of last delivery</center></th>
 								<th><center>Past menstrual period</center></th>
@@ -99,23 +116,38 @@
 							</tr>
 						</thead>
 						<tbody>
-							
+<?php
+require 'require/config.php';
+$query = $conn->query("SELECT * FROM `obstetrical_history` WHERE `patient_id` = '$_GET[id]' && `family_planning_id` = '$_GET[fp_id]' order by `patient_id` DESC") or die(mysqli_error());
+while($fetch = $query->fetch_array()){
+?>				
 							<tr>
-								<td><center></center></td>
-								<td><center></center></td>
-								<td><center></center></td>
-								<td><center></center></td>
-								<td><center></center></td>
-								<td><center></center></td>
+								<td><center><?php echo $fetch['num_of_pregnancies'];?></center></td>
+								<td><center><?php echo $fetch['full_term'];?></center></td>
+								<td><center><?php echo $fetch['premature'];?></center></td>
+								<td><center><?php echo $fetch['abortions'];?></center></td>
+								<td><center><?php echo $fetch['living_children'];?></center></td>
+								<td><center><?php echo $fetch['dateoflastdelivery'];?></center></td>
+								<td><center><?php echo $fetch['typeoflastdelivery'];?></center></td>
+								<td><center><?php echo $fetch['pastmenstrualperiod'];?></center></td>
+								<td><center><?php echo $fetch['lastmenstrualperiod'];?></center></td>
+								<td><center><?php echo $fetch['dcmenstrualbleeding'];?></center></td>
+								<td><center><?php echo $fetch['history'];?></center></td>
 							</tr>
+						<?php
+						}
+						$conn->close();
+						?>
 						</tbody>
 					</table>
+					</div>
 				</div>&nbsp;<hr>
 
 				<h2> <strong>STI Risks</strong></h2><hr>
 				<h4>Results</h4>
 				<div class="panel-body panel-body-table">
-					<table class="table table-bordered">
+					<div class="table-responsive">
+					<table class="table table-hover table-bordered">
 						<thead>
 							<tr class="warning">
 								<th><center>Option</center></th>
@@ -124,24 +156,35 @@
 							</tr>
 						</thead>
 						<tbody>
-							
+<?php
+require 'require/config.php';
+$query = $conn->query("SELECT * FROM `sti_risks` WHERE `patient_id` = '$_GET[id]' && `family_planning_id` = '$_GET[fp_id]' order by `patient_id` DESC") or die(mysqli_error());
+while($fetch = $query->fetch_array()){
+?>	
 							<tr>
-								<td><center></center></td>
-								<td><center></center></td>
-								<td><center></center></td>
+								<td><center><?php echo $fetch['sti_risk'];?></center></td>
+								<td><center><?php echo $fetch['forwomen'];?></center></td>
+								<td><center><?php echo $fetch['formen'];?></center></td>
 							</tr>
+						<?php
+						}
+						$conn->close();
+						?>
 						</tbody>
 					</table>
+					</div>
 				</div>&nbsp;<hr>
 
 				<h2> <strong>Physical Examination</strong></h2><hr>
 				<h4>Results</h4>                
 				<div class="panel-body panel-body-table">
-					<table  class="table table-bordered">
+					<div class="table-responsive">
+					<table class="table table-bordered">
 						<thead>
 							<tr class="warning">
 								<th><center>Blood Pressure</center></th>
 								<th><center>Weight</center></th>
+								<th><center>Height</center></th>
 								<th><center>Pulse Rate</center></th>
 								<th><center>Conjunctiva</center></th>
 								<th><center>Neck</center></th>
@@ -152,62 +195,81 @@
 							</tr>
 						</thead>
 						<tbody>
-							
+<?php
+require 'require/config.php';
+$query = $conn->query("SELECT * FROM `physical_examination` WHERE `patient_id` = '$_GET[id]' && `family_planning_id` = '$_GET[fp_id]' order by `patient_id` DESC") or die(mysqli_error());
+while($fetch = $query->fetch_array()){
+?>
 							<tr>
-								<td><center></center></td>
-								<td><center></center></td>
-								<td><center></center></td>
-								<td><center></center></td>
-								<td><center></center></td>
-								<td><center></center></td>
-								<td><center></center></td>
-								<td><center></center></td>
-								<td><center></center></td>
+								<td><center><?php echo $fetch['bp'];?></center></td>
+								<td><center><?php echo $fetch['weight'];?></center></td>
+								<td><center><?php echo $fetch['height'];?></center></td>
+								<td><center><?php echo $fetch['pr'];?></center></td>
+								<td><center><?php echo $fetch['conjunctiva'];?></center></td>
+								<td><center><?php echo $fetch['neck'];?></center></td>
+								<td><center><?php echo $fetch['breast'];?></center></td>
+								<td><center><?php echo $fetch['thorax'];?></center></td>
+								<td><center><?php echo $fetch['abdomen'];?></center></td>
+								<td><center><?php echo $fetch['extremities'];?></center></td>
 							</tr>
-							
+						<?php
+						}
+						$conn->close();
+						?>
 						</tbody>
 					</table>
+					</div>
 				</div>&nbsp;<hr>
 
 				<h2> <strong>Pelvic Examination</strong></h2><hr>
 				<h4>Results</h4>                
 				<div class="panel-body panel-body-table">
-					<table  class="table table-bordered">
+					<div class="table-responsive">
+					<table class="table table-bordered">
 						<thead>
 							<tr class="warning"> 
 								<th><center>Perineum</center></th>
-								<th><center>Uterus</center></th>
 								<th><center>Vagina</center></th>
-								<th><center>Size</center></th>
-								<th><center>Mass</center></th>
-								<th><center>Uterine Depth</center></th>
 								<th><center>Cervix</center></th>
-								<th><center>Adnexa</center></th>
 								<th><center>Consistency</center></th>
+								<th><center>Uterus Position</center></th>
+								<th><center>Uterus Size</center></th>
+								<th><center>Uterus Mass</center></th>
+								<th><center>Uterine Depth</center></th>
+								<th><center>Adnexa</center></th>
 							</tr>
 						</thead>
 						<tbody>
-							
+<?php
+require 'require/config.php';
+$query = $conn->query("SELECT * FROM `pelvic_examination` WHERE `patient_id` = '$_GET[id]' && `family_planning_id` = '$_GET[fp_id]' order by `patient_id` DESC") or die(mysqli_error());
+while($fetch = $query->fetch_array()){
+?>	
 							<tr>
-								<td><center></center></td>
-								<td><center></center></td>
-								<td><center></center></td>
-								<td><center></center></td>
-								<td><center></center></td>
-								<td><center></center></td>
-								<td><center></center></td>
-								<td><center></center></td>
-								<td><center></center></td>
+								<td><center><?php echo $fetch['perineum'];?></center></td>
+								<td><center><?php echo $fetch['vagina'];?></center></td>
+								<td><center><?php echo $fetch['cervix'];?></center></td>
+								<td><center><?php echo $fetch['consistency'];?></center></td>
+								<td><center><?php echo $fetch['uterus_position'];?></center></td>
+								<td><center><?php echo $fetch['uterus_size'];?></center></td>
+								<td><center><?php echo $fetch['uterus_mass'];?></center></td>
+								<td><center><?php echo $fetch['uterine_depth'];?> cms.</center></td>
+								<td><center><?php echo $fetch['adnexa'];?></center></td>
 							</tr>
-
+						<?php
+						}
+						$conn->close();
+						?>
 						</tbody>
 					</table>
+					</div>
 				</div>&nbsp;<hr>
 
 				<h2> <strong>Risks for Violence Against Women (VAW)</strong></h2><hr>
 				<h4>Overview</h4>    
 				<div class="panel-body panel-body-table">
-					<table  class="table table-bordered">
+					<div class="table-responsive">
+					<table class="table table-bordered">
 						<thead>
 							<tr class="warning"> 
 								<th><center>option</center></th>
@@ -215,21 +277,30 @@
 							</tr>
 						</thead>
 						<tbody>
-							
+<?php
+require 'require/config.php';
+$query = $conn->query("SELECT * FROM `risk_for_vaw` WHERE `patient_id` = '$_GET[id]' && `family_planning_id` = '$_GET[fp_id]' order by `patient_id` DESC") or die(mysqli_error());
+while($fetch = $query->fetch_array()){
+?>	
 							<tr>
-								<td><center></center></td>
-								<td><center></center></td>
+								<td><center><?php echo $fetch['risks'];?></center></td>
+								<td><center><?php echo $fetch['referred_to'];?></center></td>
 							</tr>
-
+						<?php
+						}
+						$conn->close();
+						?>
 						</tbody>
 					</table>
+					</div>
 				</div>
 				&nbsp;
 				<hr>
 				<h2> <strong>Follow Up Schedule</strong></h2><hr>
 				<h4>Overview</h4>    
 				<div class="panel-body panel-body-table">
-					<table  class="table table-bordered">
+					<div class="table-responsive">
+					<table class="table table-bordered">
 						<thead>
 							<tr class="warning"> 
 								<th><center>Date Service Given</center></th>
@@ -238,62 +309,32 @@
 								<th><center>Remarks</center></th>
 								<th><center>Name of Provider</center></th>
 								<th><center>Next Service Date</center></th>
+								<th><center>Status</center></th>
 							</tr>
 						</thead>
 						<tbody>
-							
+<?php
+require 'require/config.php';
+$query = $conn->query("SELECT * FROM `fp_follow_up` WHERE `patient_id` = '$_GET[id]' order by `patient_id` DESC") or die(mysqli_error());
+while($fetch = $query->fetch_array()){
+?>		
 							<tr>
-								<td><center></center></td>
-								<td><center></center></td>
-								<td><center></center></td>
-								<td><center></center></td>
-								<td><center></center></td>
-								<td><center></center></td>
+								<td><center><?php echo $fetch['date_service_given'];?></center></td>
+								<td><center><?php echo $fetch['method_brand'];?></center></td>
+								<td><center><?php echo $fetch['no_of_units'];?></center></td>
+								<td><center><?php echo $fetch['remarks'];?></center></td>
+								<td><center><?php echo $fetch['name_of_provider'];?></center></td>
+								<td><center><?php echo $fetch['next_service_date'];?></center></td>
+								<td><center><?php echo $fetch['follow_up_status'];?></center></td>
 							</tr>
-
+						<?php
+						}
+						$conn->close();
+						?>
 						</tbody>
 					</table>
+					</div>
 				</div>
-<!--
-					<table  class="table table-bordered">
-
-						<thead>
-							<tr class="warning">
-								<th><center>Criteria</center></th>
-								<th><center>Frequency of occurences during treatment</center></th>
-
-							</tr>
-						</thead>
-						<tbody>
-							
-							<tr>
-								<td> Unexplained fever greater than 2 weeks</td>
-								<td><center>dfd</center></td>
-							</tr>
-							<tr>
-								<td>Unexplained cough or wheezing greater than 2 weeks</td>
-								<td><center>dfdf</center></td>
-							</tr>
-							<tr>
-								<td>Unimproved general well-being</td>
-								<td><center>dfd</center></td>
-							</tr>
-							<tr>
-								<td>Poor Appetite</td>
-								<td><center>dfd</center></td>
-							</tr>
-							<tr>
-								<td>Positive PE findings for Extra-pulmonary TB</td>
-								<td><center>dfd</center></td>
-							</tr>
-						</tbody>
-					</table>
--->
-<!--
-				<h2> <strong>Medicines and Dosages Taken</strong></h2><hr>
-				<h4>Graphical</h4>    
-				<div id="medicines_taken" style="width: 100%; height: 425px"></div>
--->
 			</div>
 		</div>
 	</div>

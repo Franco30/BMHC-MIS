@@ -119,7 +119,8 @@
 										<h2><strong>Treatment Table II</strong></h2>
 										<hr>
 										<h4>Overview</h4>
-										<div class="panel-body">
+										<div class="panel-body panel-body-table">
+											<div class="table-responsive">
 											<table id="treatmenttable2" class="table table-hover table-bordered">
 												<thead>
 													<div>
@@ -152,7 +153,9 @@
 												?>
 												</tbody>
 											</table>
+											</div>
 											<hr>
+											<div class="table-responsive">
 											<table id="treatmenttable2" class="table table-hover table-bordered">
 												<thead>
 													<div>
@@ -189,6 +192,7 @@
 												$conn->close();
 												?>
 											</table>
+											</div>
 											<hr>
 											<div class="table-responsive">
 											<table id="treatmenttable2" class="table table-hover table-bordered">
@@ -227,6 +231,7 @@
 											</table>
 												</div>
 											<hr>
+											<div class="panel-body panel-body-table">
 											<div class="table-responsive">
 											<table id="treatmenttable3" class="table table-hover table-bordered">
 												<thead>
@@ -263,6 +268,7 @@
 											?>
 											</table>
 												</div>
+											</div>
 										</div>
 									</div>
 								</div>

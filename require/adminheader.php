@@ -141,7 +141,7 @@
         date_default_timezone_set('Asia/Manila');
 		$date_today = date('F j, Y');
         require 'require/config.php';
-		$q = $conn->query("SELECT COUNT(*) as count from `fp_follow_up` WHERE `next_service_date` = '$date_today'") or die(mysqli_error());
+		$q = $conn->query("SELECT COUNT(*) as count from `fp_follow_up` WHERE `next_service_date` = '$date_today' && `follow_up_status` = 'Pending'") or die(mysqli_error());
 		$f = $q->fetch_array();
 		?>
         <a href="#"><span class="fa fa-tasks"></span></a>
@@ -159,7 +159,7 @@
             <div class="panel-body list-group list-group-contacts scroll" style="height: 400px;">
                 <?php 
 					require 'require/config.php';
-					$q = $conn->query("SELECT * FROM `fp_follow_up` NATURAL JOIN `patient` WHERE `next_service_date` = '$date_today'") or die(mysqli_error());
+					$q = $conn->query("SELECT * FROM `fp_follow_up` NATURAL JOIN `patient` WHERE `next_service_date` = '$date_today'  && `follow_up_status` = 'Pending'") or die(mysqli_error());
 					while($f = $q->fetch_array()){
 				?>
                 <a href="#" class="list-group-item">

@@ -39,7 +39,7 @@
                                     <select class="form-control select" data-live-search="true" id="medname" required>
                                         <option value="">Select</option>
                                         <?php
-                                    $conn = new mysqli("localhost", "root", "", "bmhc") or die(mysqli_error());
+                                    require 'require/config.php';
                                     $query = $conn->query("SELECT * FROM `medicine`") or die(mysqli_error());
 
                                     while($fetch = $query->fetch_array()){

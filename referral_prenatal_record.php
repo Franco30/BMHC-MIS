@@ -217,7 +217,7 @@
                                                                 </tr>
                                                                 <tr>
                                                                     <td class="warning">
-                                                                        <center><strong>Fetal Hearth</strong></center>
+                                                                        <center><strong>Fundal Height</strong></center>
                                                                     </td>
                                                                     <td>
                                                                         <center><?php echo $fetch['fh']?></center>

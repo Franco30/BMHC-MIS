@@ -21,9 +21,33 @@
                                 <label>Date:</label>
                                 <input type="text" class="form-control datepicker" id="date" required />
                             </div>
-                            <div class="form-group">
-                                <label>Name of Patient:</label>
+                            <label>Patient Category:</label>
+                            <select class="form-control select" style="display: none;" data-live-search="true" id="patientcategory">
+                                <option value="Unregistered">Unregistered Patients</option>
+                                <option value="Registered">Registered Patients</option>
+                            </select>
+                            &nbsp;
+                            <div class="form-group" id="category1">
+                                <label>Patient Name:</label>
                                 <input type="text" class="form-control" id="patient_name" required />
+                            </div>
+
+                            <div class="form-group" id="category2" style="display:none;">
+                                <label>Patient Name:</label>
+                                <select class="form-control select" data-live-search="true" id="registered" required>
+                                    <option value="">Select</option>
+                                    <?php
+                                    require 'require/config.php';
+                                    $query = $conn->query("SELECT * FROM `patient` WHERE `status` = 'Active'") or die(mysqli_error());
+
+                                    while($fetch = $query->fetch_array()){
+                                    ?>
+                                    <option value="<?php echo $fetch['patient_name'];?>"><?php echo $fetch['patient_name']?></option>
+                                    <?php
+                                    }
+                                    $conn->close();
+                                    ?>
+                                </select>
                             </div>
                             <div class="form-row">
                                 <div class="col-md-3">
@@ -50,11 +74,6 @@
                                         <input type="number" class="form-control" id="age" required />
                                     </div>
                                 </div>
-                            </div>
-                            &nbsp;
-                            <div class="form-group">
-                                <label>Complaints</label>
-                                <textarea class="form-control" spellcheck="false" id="complaints"></textarea>
                             </div>
                         </div>
 
@@ -107,7 +126,11 @@
 									?>
                                 </select>
                             </div>
-<!--
+                            <div class="form-group">
+                                <label>Complaints</label>
+                                <textarea class="form-control" spellcheck="false" id="complaints"></textarea>
+                            </div>
+                            <!--
                             <div class="form-group">
                                 <label>Designation</label>
                                 <input type="text" class="form-control" id="designation" placeholder="Enter Designation" required />

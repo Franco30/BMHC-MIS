@@ -13,6 +13,7 @@ $(document).ready(function () {
             }, 3500);
         } else {
             $patient_id = $('#patient_id').val();
+            $purok = $('#purok').val();
             $type_of_acceptor = $('#type_of_acceptor').val();
             $prevmethod = $('#prevmethod').val();
             $datetime = $('#datetime').val();
@@ -53,10 +54,11 @@ $(document).ready(function () {
                         planmorechildren: $planmorechildren,
                         reason: $reason,
                         method_accepted: method_accepted,
+                        purok: $purok,
                         add: 1
                     },
                     success: function () {
-                        console.log(method_accepted);
+                        console.log($purok);
                         $('form').trigger('reset');
                         $('#alert').slideDown();
                         $('#alerttext').text('Patient Added Successfully!');

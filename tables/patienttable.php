@@ -5,7 +5,7 @@ if(isset($_POST['show'])){
 <div class="table-responsive">
 <table id="patienttable" class="table datatable" width="100%">
     <thead>
-        <tr>
+        <tr class="warning">
             <th class="colorshit"><center>Patient ID</center></th>
             <th><center>Patient Name</center></th>
             <th><center>Birth Date</center></th>
@@ -25,13 +25,13 @@ if(isset($_POST['show'])){
         ?>
         <tr>
             <td><center><strong><?php echo $fetch['year']."0".$fetch['patient_id'];?></strong></center></td>
-            <td><center><strong><?php echo $fetch['patient_name']?></strong></center></td>
+            <td style="width:12%;"><center><strong><?php echo $fetch['patient_name']?></strong></center></td>
             <td><center><?php echo $fetch['birthdate']?></center></td>
             <td><center><?php echo $fetch['age']?></center></td>
             <td><center><?php echo $fetch['gender']?></center></td>
             <td><center><?php echo $fetch['civil_status']?></center></td>
             <td><center>Prk. <?php echo $fetch['purok']?></center></td>
-            <td><center><?php echo $fetch['street_address']?></center></td>
+            <td style="width:12%;"><center><?php echo $fetch['street_address']?></center></td>
             <td><center><?php echo $fetch['contact_no']?></center></td>
 <!--
             <td class="print"><center>

@@ -17,7 +17,7 @@ if(isset($_POST['add'])){
     $planmorechildren = $_POST['planmorechildren'];
     $reason = $_POST['reason'];
     $method_accepted = $_POST['method_accepted'];
-    
+    $purok = $_POST['purok'];
     $MA = "";
     foreach($method_accepted as $value) {
         $MA .= $value . ", ";  
@@ -39,7 +39,7 @@ if(isset($_POST['add'])){
 
     require '../require/config.php';
 
-    $conn->query("INSERT INTO `family_planning` VALUES('', '$patient_id', '$type_of_acceptor', '$prevmethod', '$datetime', '$patient_education', '$spouse_name', '$spouse_birthdate', '$spouse_education', '$spouse_occupation', '$monthly_income', '$no_living_children', '$planmorechildren', '$reason', '$MA', 'No Assessment', '$month', '$year')") or die(mysqli_error());
+    $conn->query("INSERT INTO `family_planning` VALUES('', '$patient_id', '$type_of_acceptor', '$prevmethod', '$datetime', '$patient_education', '$spouse_name', '$spouse_birthdate', '$spouse_education', '$spouse_occupation', '$monthly_income', '$no_living_children', '$planmorechildren', '$reason', '$MA', '$purok', 'No Assessment', '$month', '$year')") or die(mysqli_error());
     $conn->query("INSERT INTO `users_activity_log` VALUES('', '$user_id', '$remarks','$date_time')") or die(mysqli_error());
     }
 ?>

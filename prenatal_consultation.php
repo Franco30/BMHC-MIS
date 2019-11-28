@@ -301,7 +301,7 @@
                                                                     </div>
                                                                     <div class="col-md-3">
                                                                         <div class="form-group" style="margin-left:-10px;">
-                                                                            <label>Foetal Heart</label>
+                                                                            <label>Fundal Height</label>
                                                                             <input type="text" class="form-control" id="fh" required />
                                                                         </div>
                                                                     </div>

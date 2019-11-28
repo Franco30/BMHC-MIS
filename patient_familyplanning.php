@@ -61,7 +61,7 @@
                                         <tr class="warning">
                                         <th><center>Family Planning No</center></th>
                                         <th><center>Patient No</center></th>
-                                        <th><center>Patient Name</center></th>
+                                        <th><center>Method Accepted</center></th>
                                         <th><center>Type of Acceptor</center></th>
                                         <th class="print"><center>Action</center></th>
                                         </tr>
@@ -75,6 +75,8 @@
                                         $f = $q->fetch_array();
                                         $q2 = $conn->query("SELECT * FROM `family_planning` WHERE `patient_id` = '$_GET[patient_id]' && `status` = 'No Assessment'")or die(mysqli_error());
                                         $f2 = $q2->fetch_array();
+                                        $q3 = $conn->query("SELECT * FROM `family_planning` WHERE `patient_id` = '$_GET[patient_id]'")or die(mysqli_error());
+                                        $f3 = $q3->fetch_array();
                                         ?>
                                         <tr>
                                             <td><center><strong><?php echo $fetch['year']?><?php echo "0".$fetch['family_planning_id']?></strong></center></td>
@@ -85,7 +87,8 @@
                                             <?php if($fetch['status'] == 'No Assessment') { ?>
                                             <a href="familyplanning_assessment?patient_id=<?php echo $fetch['patient_id']?>&&family_planning_id=<?php echo $fetch['family_planning_id']?>" class="btn btn-md btn-danger"><span class="fa fa-stethoscope animated infinite pulse"></span> Assessment</a>
                                             <?php } else { ?>
-                                            <a href="#" class="btn btn-md btn-info">Overview</a>  <?php } ?>
+                                            <a class="btn btn-md btn-info" href="familyplanning_overview?patient_id=<?php echo $f['patient_id'];?>&&family_planning_id=<?php echo $f3['family_planning_id'];?>">Overview</a>
+                                             <?php } ?>
                                                 </center>
                                             </td>
                                         </tr>

@@ -130,12 +130,63 @@
     <script type="text/javascript" src="js/actions.js"></script>
     <!-- END TEMPLATE -->
     <!-- END SCRIPTS -->
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#patientcategory').change(function() {
+                var patientcategory = $('#patientcategory').val();
+
+                switch (patientcategory) {
+
+                    case 'Registered':
+                        document.getElementById("category1").style.display = "none";
+                        document.getElementById("category2").style.display = "block";
+                        break;
+
+                    case 'Unregistered':
+                        document.getElementById("category2").style.display = "none";
+                        document.getElementById("category1").style.display = "block";
+                        break;
+
+                    default:
+                        document.getElementById("category2").style.display = "none";
+                }
+            });
+        });
+
+    </script>
+    
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#patientcategory2').change(function() {
+                var patientcategory2 = $('#patientcategory2').val();
+
+                switch (patientcategory2) {
+
+                    case 'Registered2':
+                        document.getElementById("category3").style.display = "none";
+                        document.getElementById("category4").style.display = "block";
+                        break;
+
+                    case 'Unregistered2':
+                        document.getElementById("category4").style.display = "none";
+                        document.getElementById("category3").style.display = "block";
+                        break;
+
+                    default:
+                        document.getElementById("category4").style.display = "none";
+                }
+            });
+        });
+
+    </script>
+    <!--
     <script>
         $.ajaxPrefilter(function(options, originalOptions, jqXHR) {
             options.async = true;
         });
 
     </script>
+-->
 </body>
 
 </html>

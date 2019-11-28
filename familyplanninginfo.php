@@ -64,12 +64,14 @@
             <div class="page-content-wrap">
 
                 <div class="row print">
+<!--
                     <div class="col-md-10"></div>
                     <div class="col-md-2">
                         <div class="alert alert-info fade in m-b-15" style="background-color: #7cdda7;color: #3c763d;border-color: #7cdda7;">
                             <strong><i class="fa fa-print"></i> Press P to Print!</strong>
                         </div>
                     </div>
+-->
                 </div>
 
                 <div class="row">

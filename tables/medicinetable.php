@@ -20,7 +20,7 @@ if(isset($_POST['show'])){
 			while($fetch = $query->fetch_array()){
 											?>
         <tr>
-            <td><center><?php echo $fetch['medicine_name']?></center></td>
+            <td style="width:28%;"><center><?php echo $fetch['medicine_name']?></center></td>
             <td><center><?php echo $fetch['medicine_type']?></center></td>
             <td><center><?php echo $fetch['medicine_category']?></center></td>
             <td><center><?php if ($fetch['running_balance']<=15) 
@@ -33,7 +33,7 @@ if(isset($_POST['show'])){
 													?></center></td>
             <td>
                 <center>
-                    <button data-target="#editmedicine<?php echo $fetch['medicine_id']; ?>" data-toggle="modal" class="btn btn-sm btn-info"> Edit</button>
+                    <button data-target="#editmedicine<?php echo $fetch['medicine_id']; ?>" data-toggle="modal" class="btn btn-sm btn-info"> UPDATE</button>
                 </center>
                 <?php require('../modals/edit_medicine.php'); ?>
             </td>

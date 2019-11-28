@@ -9,6 +9,7 @@ if(isset($_POST['add'])){
     $origin = $_POST['origin2'];
     $destination = $_POST['destination2'];
     $patient_name = $_POST['patient_name2'];
+    $registered2 = $_POST['registered2'];
     $weight = $_POST['weight2'];
     $bp = $_POST['bp2'];
     $temp = $_POST['temp2'];
@@ -31,7 +32,7 @@ if(isset($_POST['add'])){
     $remarks = "Added a New Prenatal Referral Record";
     
     require '../require/config.php';
-    $conn->query("INSERT INTO `referral_prenatal` VALUES ('', '$date', '$from', '$to', '$origin', '$destination', '$patient_name', '$weight', '$bp', '$temp', '$age', '$complaints', '$gravida', '$para', '$fh', '$fhb', '$tt', '$given', '$referred_by', '$month', '$year', '$date_time')") or die(mysqli_error());
+    $conn->query("INSERT INTO `referral_prenatal` VALUES ('', '$date', '$from', '$to', '$origin', '$destination', '$patient_name$registered2', '$weight', '$bp', '$temp', '$age', '$complaints', '$gravida', '$para', '$fh', '$fhb', '$tt', '$given', '$referred_by', '$month', '$year', '$date_time')") or die(mysqli_error());
     $conn->query("INSERT INTO `users_activity_log` VALUES('', '$user_id', '$remarks','$date_time')") or die(mysqli_error());
     }
 ?>

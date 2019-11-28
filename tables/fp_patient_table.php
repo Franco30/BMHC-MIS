@@ -4,7 +4,7 @@ if(isset($_POST['show'])){
 ?>
 <table id="fppatienttable" class="table datatable">
     <thead>
-        <tr>
+        <tr class="warning">
             <th><center>Patient Name</center></th>
             <th><center>Age</center></th>
             <th><center>Contact No.</center></th>

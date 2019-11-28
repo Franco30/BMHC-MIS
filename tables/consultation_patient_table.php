@@ -5,7 +5,7 @@ if(isset($_POST['show'])){
 <div class="table-responsive">
 <table id="consultationpatienttable" class="table datatable">
     <thead>
-        <tr>
+        <tr class="warning">
             <th><center>Consultation ID</center></th>
             <th><center>Patient Name</center></th>
             <th>Age</th>

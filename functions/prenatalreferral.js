@@ -2,7 +2,7 @@ $(document).ready(function () {
     showPP();
 
     $(document).on('click', '#addnew', function () {
-        if ($('#date2').val() == "" || $('#from2').val() == "" || $('#to2').val() == "" || $('#origin2').val() == "" || $('#destination2').val() == "" || $('#patient_name2').val() == "" || $('#weight2').val() == "" || $('#bp2').val() == "" || $('#temp2').val() == "" || $('#age2').val() == "" || $('#complaints2').val() == "" || $('#gravida').val() == "" || $('#para').val() == "" || $('#fh').val() == "" || $('#fhb').val() == "" || $('#tt').val() == "" || $('#given').val() == "" || $('#referred_by2').val() == "") {
+        if ($('#date2').val() == "" || $('#from2').val() == "" || $('#to2').val() == "" || $('#origin2').val() == "" || $('#destination2').val() == "" || $('#weight2').val() == "" || $('#bp2').val() == "" || $('#temp2').val() == "" || $('#age2').val() == "" || $('#complaints2').val() == "" || $('#gravida').val() == "" || $('#para').val() == "" || $('#fh').val() == "" || $('#fhb').val() == "" || $('#tt').val() == "" || $('#given').val() == "" || $('#referred_by2').val() == "") {
             $('#modallabel2').slideDown();
             $('#checkfield2').html('<span class="fa fa-exclamation-circle"></span> All fields are required!');
             setTimeout(function () {
@@ -15,6 +15,7 @@ $(document).ready(function () {
             $origin2 = $('#origin2').val();
             $destination2 = $('#destination2').val();
             $patient_name2 = $('#patient_name2').val();
+            $registered2 = $('#registered2').val();
             $weight2 = $('#weight2').val();
             $bp2 = $('#bp2').val();
             $temp2 = $('#temp2').val();
@@ -42,6 +43,7 @@ $(document).ready(function () {
                         origin2: $origin2,
                         destination2: $destination2,
                         patient_name2: $patient_name2,
+                        registered2: $registered2,
                         weight2: $weight2,
                         bp2: $bp2,
                         temp2: $temp2,

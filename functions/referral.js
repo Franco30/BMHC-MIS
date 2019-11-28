@@ -2,7 +2,7 @@ $(document).ready(function () {
     showPatient();
 
     $(document).on('click', '#addnew', function () {
-        if ($('#date').val() == "" || $('#patient_name').val() == "" || $('#weight').val() == "" || $('#bp').val() == "" || $('#temp').val() == "" || $('#age').val() == "" || $('#complaints').val() == "" || $('#from').val() == "" || $('#to').val() == "" || $('#origin').val() == "" || $('#destination').val() == "" || $('#referred_by').val() == "") {
+        if ($('#date').val() == "" || $('#weight').val() == "" || $('#bp').val() == "" || $('#temp').val() == "" || $('#age').val() == "" || $('#complaints').val() == "" || $('#from').val() == "" || $('#to').val() == "" || $('#origin').val() == "" || $('#destination').val() == "" || $('#referred_by').val() == "") {
             $('#modallabel').slideDown();
             $('#checkfield').html('<span class="fa fa-exclamation-circle"></span> All fields are required!');
             setTimeout(function () {
@@ -11,6 +11,7 @@ $(document).ready(function () {
         } else {
             $date = $('#date').val();
             $patient_name = $('#patient_name').val();
+            $registered = $('#registered').val();
             $weight = $('#weight').val();
             $bp = $('#bp').val();
             $temp = $('#temp').val();
@@ -32,6 +33,7 @@ $(document).ready(function () {
                     data: {
                         date: $date,
                         patient_name: $patient_name,
+                        registered: $registered,
                         weight: $weight,
                         bp: $bp,
                         temp: $temp,
