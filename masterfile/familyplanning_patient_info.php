@@ -1,9 +1,9 @@
-				<?php
-	require 'require/config.php';
-			$query = $conn->query("SELECT * FROM `family_planning`, `patient` WHERE `patient`.`patient_id` =  '$_GET[id]' && `family_planning`.`patient_id` = '$_GET[id]' && `family_planning_id` = '$_GET[fp_id]'") or die(mysqli_error());
-			$fetch = $query->fetch_array();
-			$id = $fetch['patient_id'];
-			?>
+<?php
+require 'require/config.php';
+$query = $conn->query("SELECT * FROM `family_planning`, `patient` WHERE `patient`.`patient_id` =  '$_GET[id]' && `family_planning`.`patient_id` = '$_GET[id]' && `family_planning_id` = '$_GET[fp_id]'") or die(mysqli_error());
+$fetch = $query->fetch_array();
+$id = $fetch['patient_id'];
+?>
 <div class="row">
 	<div class="col-md-9">
 		<div class="panel-body">
@@ -335,6 +335,17 @@ while($fetch = $query->fetch_array()){
 					</table>
 					</div>
 				</div>
+<?php
+require 'require/config.php';
+$query = $conn->query("SELECT * FROM `family_planning`, `patient` WHERE `patient`.`patient_id` =  '$_GET[id]' && `family_planning`.`patient_id` = '$_GET[id]' && `family_planning_id` = '$_GET[fp_id]'") or die(mysqli_error());
+$fetch = $query->fetch_array();
+?>				&nbsp;
+				<hr>
+				<h2> <strong>Acknowledgement:</strong></h2><hr>
+				<h6>This is to certify that the Physician/Nurse/Midwife of the clinic has fully explained to me the different methods available in family planning and I freely choose the <u><strong><?php echo $fetch['method_accepted'];?></strong></u> method.</h6> 
+				&emsp;
+				<h6 style="margin-left: 217px;"><u><?php echo $fetch['patient_name'];?></u>&emsp;&emsp;<u><?php echo $fetch['date_time'];?></u></h6>
+				<h6 style="margin-left: 251px;"><strong>Client Name</strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>Date</strong></h6> 
 			</div>
 		</div>
 	</div>
