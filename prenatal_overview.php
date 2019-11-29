@@ -118,9 +118,10 @@
 												</div>
 											</div>
 										</div>
-										<div class="panel-body">
+										<div class="panel-body" style="height:60px">
 											<div class="contact-info">
-
+												<p><small style="font-size:13px;">Age</small><br /><?php echo $fetch['age']?>
+													years old</p>
 											</div>
 										</div>
 									</div>
@@ -128,6 +129,11 @@
 								</div>
 								<div class="row">
 									<div class="col-md-4">
+										<h5><strong>Doctor's Order and Advice:<br><br></strong>
+											<textarea class="form-control" style="color:#444444;resize:none;height:213px;background:#ffffff;" readonly><?php echo $fetch3['doctors_order_advice']?></textarea>
+										</h5>
+									</div>
+									<div class="col-md-5">
 										<h5><strong>Date:
 											</strong><?php echo $fetch3['date']?></h5>
 										<hr style="margin:0px 0 5px 0;">
@@ -160,10 +166,6 @@
 											&nbsp;&nbsp;<strong>Height: </strong><?php echo $fetch3['height']?> cms.
 											&nbsp;&nbsp;<strong>AOG: </strong><?php echo $fetch3['aog']?></h5>
 										<hr style="margin:0px 0 5px 0;">
-									</div>
-									<div class="col-md-5">
-										<h5><strong>Doctor's Order and Advice:<br></strong><?php echo $fetch3['doctors_order_advice']?></h5>
-										<hr style="margin:0px 0 5px 0;">
 										<h5><strong>Presentation: </strong><?php echo $fetch3['presentation']?></h5>
 										<hr style="margin:0px 0 5px 0;">
 										<h5><strong>Complaints: </strong><?php echo $fetch3['complaints']?></h5>
@@ -187,7 +189,7 @@
 							<div class="panel-body">
 								<div class="col-md-3">
 									<div class="panel panel-default">
-										<div class="panel-body profile">
+										<div class="panel-body profile" style="height:185px">
 											<div class="profile-image">
 												<img src="assets/images/patient.ico" alt="John Doe" />
 											</div>
@@ -197,12 +199,13 @@
 												</div>
 												<div class="profile-data-title" style="color:#555252; font-size:12px;">
 													<strong><?php echo $fetch['year']. "0" .$fetch['patient_id']?></strong>
+													<br>
+													<strong>Age: </strong><?php echo $fetch['age']?> years old
 												</div>
 											</div>
 										</div>
 										<div class="panel-body">
 											<div class="contact-info">
-
 											</div>
 										</div>
 									</div>
@@ -210,6 +213,11 @@
 								</div>
 								<div class="row">
 									<div class="col-md-4">
+										<h5><strong>Doctor's Order and Advice:<br><br></strong>
+											<textarea class="form-control" style="color:#444444;resize:none;height:183px;background:#ffffff;" readonly><?php echo $fetch3['doctors_order_advice']?></textarea>
+										</h5>
+									</div>
+									<div class="col-md-5">
 										<h5><strong>Date:
 											</strong><?php echo $fetch3['date']?></h5>
 										<hr style="margin:0px 0 5px 0;">
@@ -224,10 +232,6 @@
 										<h5><strong>Presentation: </strong><?php echo $fetch3['presentation']?></h5>
 										<hr style="margin:0px 0 5px 0;">
 										<h5><strong>Complaints: </strong><?php echo $fetch3['complaints']?></h5>
-										<hr style="margin:0px 0 5px 0;">
-									</div>
-									<div class="col-md-5">
-										<h5><strong>Doctor's Order and Advice:<br></strong><?php echo $fetch3['doctors_order_advice']?></h5>
 										<hr style="margin:0px 0 5px 0;">
 									</div>
 								</div>
