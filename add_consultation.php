@@ -64,7 +64,6 @@
                             <div class="panel-body list-group list-group-contacts scroll" style="height: 470px;">
                                 <div class="panel-body">
                                     <!-- START WIZARD WITH SUBMIT BUTTON -->
-
                                     <div class="block">
                                         <form id="consultationform">
                                             <div class="wizard">

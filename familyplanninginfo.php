@@ -64,7 +64,7 @@
             <div class="page-content-wrap">
 
                 <div class="row print">
-<!--
+                    <!--
                     <div class="col-md-10"></div>
                     <div class="col-md-2">
                         <div class="alert alert-info fade in m-b-15" style="background-color: #7cdda7;color: #3c763d;border-color: #7cdda7;">
@@ -101,6 +101,11 @@
                             <div class="panel panel-primary">
                                 <div class="panel-heading print">
                                     <h3 class="panel-title"><strong>Family Planning Record</strong></h3>
+                                    <div class="btn-group pull-right">
+                                        <div class="pull-left">
+                                            <a href="patient_overview?id=<?php echo $fetch['patient_id'];?>&&patient_name=<?php echo $fetch['patient_name'];?>" class="btn btn-default">Back</a>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="panel-body">
                                     <?php require 'masterfile/familyplanning_patient_info.php'?>

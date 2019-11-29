@@ -35,21 +35,34 @@
             <div class="page-content-wrap">
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="panel panel-primary">
-                            <div class="panel-heading">
-                                <h3 class="panel-title">Prenatal Registration</h3>
+                        <div class="col-md-12">
+                            <div id="alert2" class="alert alert-danger" style="display:none;">
+                                <center><span id="alerttext2"></span></center>
                             </div>
-                            <div class="panel-body">
-                                <?php
+
+                            <div id="alert" class="alert alert-info" style="display:none;">
+                                <center><span id="alerttext"></span></center>
+                            </div>
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">Prenatal Registration</h3>
+                                    <div class="btn-group pull-right">
+                                        <div class="pull-left">
+                                            <button type="button" id="addnew" class="btn btn-success">Save</button>
+                                            <a class="btn btn-danger" href="prenatal">Cancel</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel-body">
+                                    <?php
                                 require 'require/config.php';
 			                    $query = $conn->query("SELECT * FROM `patient` WHERE `patient_id` = '$_GET[patient_id]'") or die(mysqli_error());
                                 $fetch = $query->fetch_array();
                                 date_default_timezone_set('Asia/Manila');
                                 $date=date("F j, Y");
 									?>
-                                <form id="prenatalform">
-                                    <div class="row">
-                                        <div class="col-md-12">
+                                    <form id="prenatalform">
+                                        <div class="row">
                                             <div class="col-md-6">
                                                 <div class="form-row">
                                                     <div class="col-md-6">
@@ -71,7 +84,7 @@
                                                     <div class="col-md-6">
                                                         <div class="form-group" style="margin-left:-10px;margin-right:-10px;">
                                                             <label>Menstrual Hx</label>
-                                                            <input type="text" class="form-control" id="menstrualhx" placeholder="Enter Menstrual Hx" required />
+                                                            <input type="text" class="form-control" id="menstrual_hx" placeholder="Enter Menstrual Hx" required />
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
@@ -99,11 +112,11 @@
                                                 &nbsp;
                                                 <div class="form-group">
                                                     <label>OB-Gyne Hx</label>
-                                                    <textarea class="form-control" spellcheck="false" id="obgynehx<?php echo $fetch['patient_id']?>"></textarea>
+                                                    <textarea class="form-control" spellcheck="false" id="obgynehx"></textarea>
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Past Medical Hx</label>
-                                                    <textarea class="form-control" spellcheck="false" id="pmhx<?php echo $fetch['patient_id']?>"></textarea>
+                                                    <textarea class="form-control" spellcheck="false" id="past_medical_hx"></textarea>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
@@ -111,13 +124,13 @@
                                                     <div class="col-md-6">
                                                         <div class="form-group" style="margin-left:-10px;">
                                                             <label>Phone No.</label>
-                                                            <input type="text" class="form-control mask_cpnumber" id="phonenumber<?php echo $fetch['patient_id']?>" placeholder="Enter Phone No." value="<?php echo $fetch['contact_no']?>" style="color:#444444;" readonly required />
+                                                            <input type="text" class="form-control mask_cpnumber" id="phonenumber" placeholder="Enter Phone No." value="<?php echo $fetch['contact_no']?>" style="color:#444444;" readonly required />
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="form-group" style="margin-left:-10px;margin-right:-10px;">
                                                             <label>Philhealth No.</label>
-                                                            <input type="text" class="form-control" id="philhealth<?php echo $fetch['patient_id']?>" value="<?php echo $fetch['philhealth_no'] ?>" style="color:#444444;" placeholder="Enter Philhealth No." readonly required />
+                                                            <input type="text" class="form-control" id="philhealth" value="<?php echo $fetch['philhealth_no'] ?>" style="color:#444444;" placeholder="Enter Philhealth No." readonly required />
                                                         </div>
                                                     </div>
                                                 </div>
@@ -141,7 +154,7 @@
                                                     <div class="col-md-6">
                                                         <div class="form-group" style="margin-left:-10px;">
                                                             <label>Purok</label>
-                                                            <input type="text" class="form-control" value="<?php echo $fetch['purok'];?>" style="color:#444444;" readonly required />
+                                                            <input type="text" class="form-control" value="<?php echo $fetch['purok'];?>" id="purok" style="color:#444444;" readonly required />
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
@@ -199,7 +212,7 @@
                                                     <div class="col-md-6">
                                                         <div class="form-group" style="margin-left:-10px;margin-right:-10px;">
                                                             <label>TT4</label>
-                                                            <input type="text" class="form-control datepicker" id="tt3" placeholder="Enter Date" required />
+                                                            <input type="text" class="form-control datepicker" id="tt4" placeholder="Enter Date" required />
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
@@ -211,8 +224,8 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <hr>
+                                </div>
+                                <hr>
                                 </form>
                             </div>
                         </div>
@@ -226,7 +239,7 @@
     <audio id="audio-alert" src="audio/alert.mp3" preload="auto"></audio>
     <audio id="audio-fail" src="audio/fail.mp3" preload="auto"></audio>
     <script type="text/javascript" src="js/plugins/jquery/jquery.min.js"></script>
-    <script type="text/javascript" src="functions/crudpatient.js"></script>
+    <script type="text/javascript" src="functions/crudprenatal.js"></script>
     <script type="text/javascript" src="js/plugins/jquery/jquery-ui.min.js"></script>
     <script type="text/javascript" src="js/plugins/bootstrap/bootstrap.min.js"></script>
     <script type='text/javascript' src='js/plugins/icheck/icheck.min.js'></script>

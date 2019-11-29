@@ -3,21 +3,11 @@
     <table id="patientmasterfiletable" class="table datatable" width="100%">
         <thead>
             <tr class="warning">
-                <th>
-                    <center>Consultation No</center>
-                </th>
-                <th>
-                    <center>Patient No</center>
-                </th>
-                <th>
-                    <center>Patient Name</center>
-                </th>
-                <th>
-                    <center>Complaints</center>
-                </th>
-                <th class="print">
-                    <center>Action</center>
-                </th>
+                <th><center>Consultation No</center></th>
+                <th><center>Patient No</center></th>
+                <th><center>Patient Name</center></th>
+                <th><center>Complaints</center></th>
+                <th class="print"><center>Action</center></th>
             </tr>
         </thead>
         <tbody>
@@ -31,18 +21,11 @@ while($fetch = $query->fetch_array()){
     $f2 = $q2->fetch_array();
     ?>
             <tr>
-                <td>
-                    <center><strong><?php echo $fetch['year']?><?php echo "0".$fetch['consultation_id']?></strong></center>
+                <td><center><strong><?php echo $fetch['year']?><?php echo "0".$fetch['consultation_id']?></strong></center></td>
+                <td><center><strong><?php echo $f['year']?><?php echo "0".$fetch['patient_id']?></strong></center>
                 </td>
-                <td>
-                    <center><strong><?php echo $f['year']?><?php echo "0".$fetch['patient_id']?></strong></center>
-                </td>
-                <td>
-                    <center><strong><?php echo $f['patient_name']?></strong></center>
-                </td>
-                <td>
-                    <center><?php echo $fetch['complaints']?></center>
-                </td>
+                <td><center><strong><?php echo $f['patient_name']?></strong></center></td>
+                <td><center><?php echo $fetch['complaints']?></center></td>
                 <td class="print">
                     <center>
                         <?php if($fetch['status'] == 'No Prescription') { ?>

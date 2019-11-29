@@ -100,6 +100,7 @@
 				<!-- begin login-content -->
 				<div class="login-content">
 					<div id="error"></div>
+					<div id="success"></div>
 					<form method="POST" id="login-form" class="margin-bottom-0">
 						<div class="form-group m-b-15">
 							<div id="uname_response"></div>
