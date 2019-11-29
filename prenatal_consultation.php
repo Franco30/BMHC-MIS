@@ -64,8 +64,8 @@ $fetch2 = $query2->fetch_array();
 
                                                     <div class="form-group">
                                                         <label>Date</label>
-                                                        <input type="text" class="form-control" id="patient_id" value="<?php echo $fetch2['patient_id'] ?>" required />
-                                                        <input type="text" class="form-control" id="prenatal_id" value="<?php echo $fetch2['prenatal_id'] ?>" required />
+                                                        <input type="hidden" class="form-control" id="patient_id" value="<?php echo $fetch2['patient_id'] ?>" required />
+                                                        <input type="hidden" class="form-control" id="prenatal_id" value="<?php echo $fetch2['prenatal_id'] ?>" required />
                                                         <input type="text" class="form-control datepicker" id="date" required />
                                                     </div>
 

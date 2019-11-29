@@ -60,7 +60,7 @@
                                     $f = $q->fetch_array();
                                     ?>
                                     <?php if($f['total'] >= 1) { ?>
-                                    <button class="btn btn-primary btn-md" data-toggle="modal" data-target="#add_consultation">Add Patient</button>
+                                    <button class="btn btn-primary btn-md" data-toggle="modal" data-target="#add_consultation">Add Consultation</button>
                                     <?php } else { ?>
                                    <a href="prenatal_consultation?patient_id=<?php echo $fetch2['patient_id']?>&&prenatal_id=<?php echo $fetch3['prenatal_id']?>" class="btn btn-primary"> Add Consultation</a>
                                     <?php } ?> 
@@ -82,7 +82,7 @@
     <audio id="audio-alert" src="audio/alert.mp3" preload="auto"></audio>
     <audio id="audio-fail" src="audio/fail.mp3" preload="auto"></audio>
     <script type="text/javascript" src="js/plugins/jquery/jquery.min.js"></script>
-    <script type="text/javascript" src="functions/crudconsultation.js"></script>
+    <script type="text/javascript" src="functions/crudprenatalconsultation2.js"></script>
     <script type="text/javascript" src="js/plugins/jquery/jquery-ui.min.js"></script>
     <script type="text/javascript" src="js/plugins/bootstrap/bootstrap.min.js"></script>
     <script type='text/javascript' src='js/plugins/icheck/icheck.min.js'></script>
@@ -93,6 +93,7 @@
     <script type="text/javascript" src="js/plugins/bootstrap/bootstrap-timepicker.min.js"></script>
     <script type="text/javascript" src="js/plugins/bootstrap/bootstrap-select.js"></script>
     <script type="text/javascript" src="js/plugins/smartwizard/jquery.smartWizard-2.0.min.js"></script>
+    <script type='text/javascript' src='js/plugins/maskedinput/jquery.maskedinput.min.js'></script>
 
     <script type="text/javascript" src="js/settings.js"></script>
     <script type="text/javascript" src="js/plugins.js"></script>

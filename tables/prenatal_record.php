@@ -17,13 +17,13 @@ while($fetch = $query->fetch_array()){
     $id = $fetch['patient_id'];
     $q = $conn->query("SELECT * FROM `patient` WHERE `patient_id` = '$_GET[patient_id]'") or die(mysqli_error());
     $f = $q->fetch_array();
-    $q2 = $conn->query("SELECT COUNT(*) as total FROM `prenatal_consultation` WHERE `patient_id` = '$id' && `prenatal_id` = '$prenatal_id'") or die(mysqli_error());
+    $q2 = $conn->query("SELECT * FROM `prenatal_consultation` WHERE `patient_id` = '$id' && `prenatal_id` = '$prenatal_id'") or die(mysqli_error());
     $f2 = $q2->fetch_array();
     ?>
             <tr>
                 <td style="width:40%"><center><?php echo $fetch['doctors_order_advice']?></center></td>
                 <td><center><?php echo $fetch['date']?></center></td>
-                <td><center><a href="prenatal_record?patient_id=<?php echo $f['patient_id'];?>&&prenatal_id=<?php echo $prenatal_id?>" class="btn btn-md btn-info">Overview</a></center></td>
+                <td><center><a href="prenatal_overview?patient_id=<?php echo $f['patient_id'];?>&&prenatal_id=<?php echo $prenatal_id?>&&prenatal_consultation_id=<?php echo $fetch['prenatal_consultation_id'] ?>" class="btn btn-md btn-info">Overview</a></center></td>
             </tr>
             <?php
             }
