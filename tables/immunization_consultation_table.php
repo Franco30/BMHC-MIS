@@ -25,7 +25,7 @@ $query = $conn->query("SELECT * FROM `immunization`, `immunization_consultation`
             <td><center><?php echo $fetch['plan_of_action']?></center></td>
             <td><center><?php echo $fetch['remarks']?></center></td>
             <td><center>
-            <a href="immunization_treatment?child_id=<?php echo $fetch['child_id'];?>&&immunization_id=<?php echo $fetch['immunization_id']?>" class="btn btn-sm btn-info"> Overview</a>
+            <a href="immunization_consultation_print?child_id=<?php echo $fetch['child_id'];?>&&immunization_id=<?php echo $fetch['immunization_id']?>&&ic_id=<?php echo $fetch['ic_id'] ?>" class="btn btn-sm btn-info"> Overview</a>
             </center></td>
         </tr>
         <?php

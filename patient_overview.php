@@ -165,57 +165,7 @@
 										<div class="col-md-12">
 											<div class="panel panel-default">
 												<div class="panel-body">
-													<div class="table-responsive">
-														<table id="prenatal" class="table datatable">
-															<thead>
-																<tr>
-																	<th>
-																		<center>Doctor's Order and Advice</center>
-																	</th>
-																	<th>
-																		<center>Date</center>
-																	</th>
-																	<th>
-																		<center>Presentation</center>
-																	</th>
-																	<th>
-																		<center>Complaints</center>
-																	</th>
-																	<th>
-																		<center>Action</center>
-																	</th>
-																</tr>
-															</thead>
-															<tbody>
-																<?php
-															require 'require/config.php';
-								$query = $conn->query("SELECT * FROM `patient` NATURAL JOIN `prenatal` WHERE `patient_id` = '$_GET[id]' ORDER BY prenatal_id DESC") or die(mysqli_error());
-								while($fetch = $query->fetch_array()){
-									?>
-																<tr>
-																	<td>
-																		<center><?php echo $fetch['doctors_advice']?></center>
-																	</td>
-																	<td>
-																		<center><?php echo $fetch['date']?></center>
-																	</td>
-																	<td>
-																		<center><?php echo $fetch['presentation']?></center>
-																	</td>
-																	<td>
-																		<center><?php echo $fetch['complaints']?></center>
-																	</td>
-																	<td>
-																		<center><a class="btn btn-default" href="familyplanninginfo?id=<?php echo $fetch['patient_id'];?>&&patient_name=<?php echo $fetch['patient_name'];?>&&c_id=<?php echo $fetch['consultation_id'];?>">View Detail</a></center>
-																	</td>
-																</tr>
-																<?php
-												}
-												$conn->close();
-													?>
-															</tbody>
-														</table>
-													</div>
+													<?php require 'tables/masterfile_prenatal.php'; ?>
 												</div>
 											</div>
 										</div>

@@ -5,7 +5,7 @@
             <tr class="warning">
                 <th><center>Consultation No</center></th>
                 <th><center>Patient No</center></th>
-                <th><center>Patient Name</center></th>
+                <th><center>Date</center></th>
                 <th><center>Complaints</center></th>
                 <th class="print"><center>Action</center></th>
             </tr>
@@ -24,7 +24,7 @@ while($fetch = $query->fetch_array()){
                 <td><center><strong><?php echo $fetch['year']?><?php echo "0".$fetch['consultation_id']?></strong></center></td>
                 <td><center><strong><?php echo $f['year']?><?php echo "0".$fetch['patient_id']?></strong></center>
                 </td>
-                <td><center><strong><?php echo $f['patient_name']?></strong></center></td>
+                <td><center><strong><?php echo $fetch['date']?></strong></center></td>
                 <td><center><?php echo $fetch['complaints']?></center></td>
                 <td class="print">
                     <center>
