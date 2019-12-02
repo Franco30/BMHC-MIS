@@ -52,9 +52,10 @@
 					<li class="xn-openable">
 						<a href="#"><span class="fa fa-bar-chart"></span> <span class="xn-text">Reports</span></a>
 						<ul>
+							<li><a href="consultation_reports"><span class="fa fa-stethoscope"></span><span class="xn-text">Consultation Report</span></a></li>
 							<li><a href="medication_dispense_table"><span class="fa fa-apple"></span><span class="xn-text">Inventory Report</span></a></li>
 							<li><a href="sample_report"><span class="fa fa-adjust"></span><span class="xn-text">Drill Down Report</span></a></li>
-							<li><a href="patient_report"><span class="fa fa-adjust"></span><span class="xn-text">Patient Report</span></a></li>
+							<li><a href="patient_report"><span class="fa fa-adjust"></span><span class="xn-text">Patient Record Report</span></a></li>
 							<li><a href="sick_forecasting"><span class="fa fa-adjust"></span><span class="xn-text">Sickness Forecasting</span></a></li>
 						</ul>
 					</li>

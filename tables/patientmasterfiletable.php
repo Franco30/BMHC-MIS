@@ -8,6 +8,7 @@ if(isset($_POST['show'])){
         <tr class="warning">
         <th><center>Patient No</center></th>
         <th><center>Patient Name</center></th>
+        <th><center>Gender</center></th>
 		<th><center>Registration Date</center></th>
 		<th class="print"><center>Action</center></th>
         </tr>
@@ -20,6 +21,7 @@ if(isset($_POST['show'])){
         <tr>
             <td><center><strong><?php echo $fetch['year']?><?php echo "0".$fetch['patient_id']?></strong></center></td>
             <td><center><strong><?php echo $fetch['patient_name']?></strong></center></td>
+            <td><center><?php echo $fetch['gender']?></center></td>
             <td><center><?php echo $fetch['year']?></center></td>
             <td class="print"><center>
 <!--                <button data-target="#edit_patient<?php //echo $fetch['patient_id']; ?>" data-toggle="modal" class="btn btn-sm btn-default">Update</button>-->

@@ -55,9 +55,9 @@
 			$query3 = $conn->query("SELECT * FROM `prenatal_consultation` WHERE `prenatal_id` = '$_GET[prenatal_id]' && `patient_id` = '$_GET[patient_id]' && `prenatal_consultation_id` = '$_GET[prenatal_consultation_id]'") or die(mysqli_error());
 			$fetch3 = $query3->fetch_array();
 			?>
-				<li>Transactions</li>
-				<li><a href="prenatal">Prenatal</a></li>
-				<li><a href="prenatal_record?patient_id=<?php echo $fetch['patient_id']?>&&prenatal_id=<?php echo $fetch3['prenatal_id']?>">Prenatal Record</a></li>
+				<li>Data Entry</li>
+				<li><a href="patient_overview?id=<?php echo $fetch['patient_id']?>&&patient_name=<?php echo $fetch['patient_name']?>">Patient Master File</a></li>
+				<li><a href="prenatal_record2?patient_id=<?php echo $fetch['patient_id']?>&&prenatal_id=<?php echo $fetch3['prenatal_id']?>">Prenatal Record</a></li>
 				<li>Prenatal Consultation Overview</li>
 				<li><mark><strong><?php echo $fetch['patient_name']?></strong></mark></li>
 			</ul>
@@ -97,12 +97,12 @@
 								</h4>
 								<div class="btn-group pull-right">
 									<div class="pull-left">
-										<a href="prenatal_record?patient_id=<?php echo $fetch['patient_id']?>&&prenatal_id=<?php echo $fetch3['prenatal_id']?>" class="btn btn-default">Back</a>
+										<a href="prenatal_record2?patient_id=<?php echo $fetch['patient_id']?>&&prenatal_id=<?php echo $fetch3['prenatal_id']?>" class="btn btn-default">Back</a>
 									</div>
 								</div>
 							</div>
 							<div class="panel-body">
-							<?php
+								<?php
 							require 'require/config.php';
 							$q2 = $conn->query("SELECT * FROM `prenatal` WHERE `patient_id` =  '$_GET[patient_id]' && `prenatal_id` = '$_GET[prenatal_id]'") or die(mysqli_error());
 							$f2 = $q2->fetch_array();
@@ -159,11 +159,6 @@
 									<h4 class="panel-title">
 										<strong>Prenatal Consultation</strong>
 									</h4>
-									<div class="btn-group pull-right">
-										<div class="pull-left">
-											<a href="prenatal_record?patient_id=<?php echo $fetch['patient_id']?>&&prenatal_id=<?php echo $fetch3['prenatal_id']?>" class="btn btn-default">Back</a>
-										</div>
-									</div>
 								</div>
 								<div class="panel-body">
 									<div class="col-md-3">
@@ -243,11 +238,6 @@
 									<h4 class="panel-title">
 										<strong>Prenatal Consultation</strong>
 									</h4>
-									<div class="btn-group pull-right">
-										<div class="pull-left">
-											<a href="prenatal_record?patient_id=<?php echo $fetch['patient_id']?>&&prenatal_id=<?php echo $fetch3['prenatal_id']?>" class="btn btn-default">Back</a>
-										</div>
-									</div>
 								</div>
 								<div class="panel-body">
 									<div class="col-md-3">

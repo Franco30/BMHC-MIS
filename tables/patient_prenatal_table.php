@@ -5,8 +5,8 @@
             <tr class="warning">
                 <th><center>Prenatal No</center></th>
                 <th><center>Date</center></th>
-                <th><center>Patient Name</center></th>
                 <th><center>Husband Name</center></th>
+                <th><center>Blood Type</center></th>
                 <th class="print"><center>Action</center></th>
             </tr>
         </thead>
@@ -25,9 +25,11 @@ while($fetch = $query->fetch_array()){
             <tr>
                 <td><center><strong><?php echo $fetch['year']?><?php echo "0".$fetch['prenatal_id']?></strong></center></td>
                 <td><center><strong><?php echo $fetch['date']?></strong></center></td>
-                <td><center><strong><?php echo $f['patient_name']?></strong></center></td>
-                <td><center><strong><?php echo $fetch['husband']?></strong></center></td>
-                <td><center><a href="prenatal_record?patient_id=<?php echo $f['patient_id'];?>&&prenatal_id=<?php echo $prenatal_id?>" class="btn btn-md btn-default">All Records <span class="badge"><?php echo $f2['total']?></span></a></center></td>
+                <td><center><?php echo $fetch['husband']?></center></td>
+                <td><center><?php echo $fetch['bloodtype']?></center></td>
+                <td><center>
+                    <a href="prenatal_record?patient_id=<?php echo $f['patient_id'];?>&&prenatal_id=<?php echo $prenatal_id?>" class="btn btn-md btn-default">All Records <span class="badge"><?php echo $f2['total']?></span></a>
+                </center></td>
             </tr>
             <?php
             }

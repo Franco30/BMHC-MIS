@@ -22,7 +22,7 @@ require 'require/logincheck.php';
     <script type="text/javascript" src="js/plugins/jquery/jquery.min.js"></script>
     <script type="text/javascript" src="js/plugins/jquery/jquery-ui.min.js"></script>
     <?php require 'js/loadcharts/dashboard/dashboardgraphs.php'?>
-    
+
     <script src="js/moment.min.js"></script>
     <script src="js/fullcalendar.min.js"></script>
 
@@ -265,7 +265,89 @@ require 'require/logincheck.php';
                             </div>
                         </div>
                     </div>
-
+                    <div class="row">
+                        <div class="col-md-4">
+                            <!-- NEWS WIDGET -->
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title"><span class="fa fa-archive"></span> <strong>Recent Prenatal Referral</strong></h3>
+                                </div>
+                                <div class="panel-body list-group list-group-contacts scroll" style="height: 288px;">
+                                    <?php
+                            require 'require/config.php';
+                            $query = $conn->query("SELECT * FROM `referral_prenatal` ORDER BY `referral_id` DESC limit 10") or die(mysqli_error());
+                            while($fetch = $query->fetch_array()){
+                            ?>
+                                    <a href="#" class="list-group-item">
+                                        <span class="contacts-title"><?php echo $fetch['patient_name']?></span>
+                                        <p>Referral Date : <?php echo $fetch['referral_date']?></p>
+                                        <p>Complaints : <?php echo $fetch['complaints']?></p>
+                                    </a>
+                                    <?php
+                                }
+                                ?>
+                                </div>
+                                <div class="panel-footer" style="background-color:#fcf8e3;">
+                                    <a href="referral" style="color:#8a6d3b;">See All</a>
+                                </div>
+                                <!-- END NEWS WIDGET -->
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <!-- NEWS WIDGET -->
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title"><span class="fa fa-archive"></span> <strong>Recent Referral</strong></h3>
+                                </div>
+                                <div class="panel-body list-group list-group-contacts scroll" style="height: 288px;">
+                                    <?php
+                            require 'require/config.php';
+                            $query = $conn->query("SELECT * FROM `referral` ORDER BY `referral_id` DESC limit 10") or die(mysqli_error());
+                            while($fetch = $query->fetch_array()){
+                            ?>
+                                    <a href="#" class="list-group-item">
+                                        <span class="contacts-title"><?php echo $fetch['patient_name']?></span>
+                                        <p>Referral Date : <?php echo $fetch['referral_date']?></p>
+                                        <p>Complaints : <?php echo $fetch['complaints']?></p>
+                                    </a>
+                                    <?php
+                                }
+                                ?>
+                                </div>
+                                <div class="panel-footer" style="background-color:#fcf8e3;">
+                                    <a href="referral" style="color:#8a6d3b;">See All</a>
+                                </div>
+                                <!-- END NEWS WIDGET -->
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <!-- NEWS WIDGET -->
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title"><span class="glyphicon glyphicon-list"></span> <strong>User's Activity Log</strong></h3>
+                                </div>
+                                <div class="panel-body list-group list-group-contacts scroll" style="height: 288px;">
+                                    <?php
+                            require 'require/config.php';
+                            $query = $conn->query("SELECT * FROM `users_activity_log`, `users` where users.user_id = users_activity_log.user_id ORDER BY `log_id` DESC limit 10") or die(mysqli_error());
+                            while($fetch = $query->fetch_array()){
+                            ?>
+                                    <a href="#" class="list-group-item">
+                                        <span class="contacts-title"><?php echo $fetch['fullname']?></span>
+                                        <p>Activity : <?php echo $fetch['action']?></p>
+                                        <p>Date and Time : <?php echo $fetch['date_time']?></p>
+                                    </a>
+                                    <?php
+                                }
+                                ?>
+                                </div>
+                                <div class="panel-footer" style="background-color:#fcf8e3;">
+                                    <a href="usersactivity" style="color:#8a6d3b;">See All</a>
+                                </div>
+                                <!-- END NEWS WIDGET -->
+                            </div>
+                        </div>
+                    </div>
                     <div class="row">
                         <div class="col-md-12">
                             <div class="panel panel-primary">
@@ -286,6 +368,140 @@ require 'require/logincheck.php';
                     </div>
 
                     <div class="row">
+                        <div class="col-md-4">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title"><strong>Patient Classification
+                                            - Purok</strong></h3>
+                                </div>
+                                <div class="panel-body">
+                                    <?php
+                                $year = date('Y');
+			                 if(isset($_GET['year']))
+			                     {
+				                $year=$_GET['year'];
+			                         }
+												require 'require/config.php';	
+												$query1 = $conn->query("SELECT COUNT(*) as total FROM `patient` WHERE `purok` = 'Gauzon' && `year` = '$year'") or die(mysqli_error());
+												$fetch1 = $query1->fetch_array();
+                                                $child1 = $conn->query("SELECT COUNT(*) as total FROM `patient_child` WHERE `purok` = 'Gauzon' && `year` = '$year'") or die(mysqli_error());
+												$f1 = $child1->fetch_array();
+                                                $gauzon = $fetch1['total'] + $f1['total'];
+
+												$query2 = $conn->query("SELECT COUNT(*) as total FROM `patient` WHERE `purok` = 'Himaya' && `year` = '$year'") or die(mysqli_error());
+												$fetch2 = $query2->fetch_array();
+                                                $child2 = $conn->query("SELECT COUNT(*) as total FROM `patient_child` WHERE `purok` = 'Himaya' && `year` = '$year'") or die(mysqli_error());
+												$f2 = $child2->fetch_array();
+                                                $himaya = $fetch2['total'] + $f2['total'];            
+                                    
+                                                $query3 = $conn->query("SELECT COUNT(*) as total FROM `patient` WHERE `purok` = 'Kabugwason' && `year` = '$year'") or die(mysqli_error());
+												$fetch3 = $query3->fetch_array();
+                                                $child3 = $conn->query("SELECT COUNT(*) as total FROM `patient_child` WHERE `purok` = 'Kabugwason' && `year` = '$year'") or die(mysqli_error());
+												$f3 = $child3->fetch_array();
+                                                $kabugwason = $fetch3['total'] + $f3['total'];
+                                                
+                                                $query4 = $conn->query("SELECT COUNT(*) as total FROM `patient` WHERE `purok` = 'Kahirup A' && `year` = '$year'") or die(mysqli_error());
+												$fetch4 = $query4->fetch_array();
+                                                $child4 = $conn->query("SELECT COUNT(*) as total FROM `patient_child` WHERE `purok` = 'Kahirup A' && `year` = '$year'") or die(mysqli_error());
+                                                $f4 = $child4->fetch_array();
+                                                $kahirupA = $fetch4['total'] + $f4['total'];
+                                    
+                                                $query5 = $conn->query("SELECT COUNT(*) as total FROM `patient` WHERE `purok` = 'Kahirup B' && `year` = '$year'") or die(mysqli_error());
+												$fetch5 = $query5->fetch_array();
+                                                $child5 = $conn->query("SELECT COUNT(*) as total FROM `patient_child` WHERE `purok` = 'Kahirup B' && `year` = '$year'") or die(mysqli_error());
+                                                $f5 = $child5->fetch_array();
+                                                $kahirupB = $fetch5['total'] + $f5['total'];
+                                                
+                                                $query6 = $conn->query("SELECT COUNT(*) as total FROM `patient` WHERE `purok` = 'Kasilingan' && `year` = '$year'") or die(mysqli_error());
+												$fetch6 = $query6->fetch_array();
+                                                $child6 = $conn->query("SELECT COUNT(*) as total FROM `patient_child` WHERE `purok` = 'Kasilingan' && `year` = '$year'") or die(mysqli_error());
+                                                $f6 = $child6->fetch_array();
+                                                $kasilingan = $fetch6['total'] + $f6['total'];
+                                                
+                                                $query7 = $conn->query("SELECT COUNT(*) as total FROM `patient` WHERE `purok` = 'Katilingban' && `year` = '$year'") or die(mysqli_error());
+												$fetch7 = $query7->fetch_array();
+                                                $child7 = $conn->query("SELECT COUNT(*) as total FROM `patient_child` WHERE `purok` = 'Katilingban' && `year` = '$year'") or die(mysqli_error());
+                                                $f7 = $child7->fetch_array();
+                                                $katilingban = $fetch7['total'] + $f7['total'];
+                                    
+                                                $query8 = $conn->query("SELECT COUNT(*) as total FROM `patient` WHERE `purok` = 'Mabinuligon' && `year` = '$year'") or die(mysqli_error());
+												$fetch8 = $query8->fetch_array();
+                                                $child8 = $conn->query("SELECT COUNT(*) as total FROM `patient_child` WHERE `purok` = 'Mabinuligon' && `year` = '$year'") or die(mysqli_error());
+                                                $f8 = $child8->fetch_array();
+                                                $mabinuligon = $fetch8['total'] + $f8['total'];
+                                    
+                                                $query9 = $conn->query("SELECT COUNT(*) as total FROM `patient` WHERE `purok` = 'Matahum' && `year` = '$year'") or die(mysqli_error());
+												$fetch9 = $query9->fetch_array();
+                                                $child9 = $conn->query("SELECT COUNT(*) as total FROM `patient_child` WHERE `purok` = 'Matahum' && `year` = '$year'") or die(mysqli_error());
+                                                $f9 = $child9->fetch_array();
+                                                $matahum = $fetch9['total'] + $f9['total'];
+                                    
+                                                $query10 = $conn->query("SELECT COUNT(*) as total FROM `patient` WHERE `purok` = 'Paghidaet' && `year` = '$year'") or die(mysqli_error());
+												$fetch10 = $query10->fetch_array();
+                                                $child10 = $conn->query("SELECT COUNT(*) as total FROM `patient_child` WHERE `purok` = 'Paghidaet' && `year` = '$year'") or die(mysqli_error());
+                                                $f10 = $child10->fetch_array();
+                                                $paghidaet = $fetch10['total'] + $f10['total'];
+                                    
+                                                $query11 = $conn->query("SELECT COUNT(*) as total FROM `patient` WHERE `purok` = 'Paglaum' && `year` = '$year'") or die(mysqli_error());
+												$fetch11 = $query11->fetch_array();
+                                                $child11 = $conn->query("SELECT COUNT(*) as total FROM `patient_child` WHERE `purok` = 'Paglaum' && `year` = '$year'") or die(mysqli_error());
+                                                $f11 = $child11->fetch_array();
+                                                $paglaum = $fetch11['total'] + $f11['total'];
+											?>
+                                    <ul class='list-group border-bottom'>
+                                        <li class='list-group-item'><span class='fa fa-home'></span>Prk. Gauzon<span class='badge badge-info'><?php echo $gauzon?></span></li>
+                                        <li class='list-group-item'><span class='fa fa-home'></span>Prk. Himaya<span class='badge badge-info'><?php echo $himaya?></span></li>
+                                        <li class='list-group-item'><span class='fa fa-home'></span>Prk. Kabugwason<span class='badge badge-info'><?php echo $kabugwason?></span></li>
+                                        <li class='list-group-item'><span class='fa fa-home'></span>Prk. Kahirup A<span class='badge badge-info'><?php echo $kahirupA?></span></li>
+                                        <li class='list-group-item'><span class='fa fa-home'></span>Prk. Kahirup B<span class='badge badge-info'><?php echo $kahirupB?></span></li>
+                                        <li class='list-group-item'><span class='fa fa-home'></span>Prk. Kasilingan<span class='badge badge-info'><?php echo $kasilingan?></span></li>
+                                        <li class='list-group-item'><span class='fa fa-home'></span>Prk. Katilingban<span class='badge badge-info'><?php echo $katilingban?></span></li>
+                                        <li class='list-group-item'><span class='fa fa-home'></span>Prk. Mabinuligon<span class='badge badge-info'><?php echo $mabinuligon?></span></li>
+                                        <li class='list-group-item'><span class='fa fa-home'></span>Prk. Matahum<span class='badge badge-info'><?php echo $matahum?></span></li>
+                                        <li class='list-group-item'><span class='fa fa-home'></span>Prk. Paghidaet<span class='badge badge-info'><?php echo $paghidaet?></span></li>
+                                        <li class='list-group-item'><span class='fa fa-home'></span>Prk. Paglaum<span class='badge badge-info'><?php echo $paglaum?></span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title" style="font-size: 15px;"><strong>Patient Classification
+                                            - Type of Treatment</strong></h3>
+                                </div>
+                                <div class="panel-body">
+                                    <?php
+                                $year = date('Y');
+			                 if(isset($_GET['year']))
+			                     {
+				                $year=$_GET['year'];
+			                         }
+												require 'require/config.php';	
+												$query1 = $conn->query("SELECT COUNT(*) as total FROM `family_planning` WHERE `year` = '$year'") or die(mysqli_error());
+												$fetch1 = $query1->fetch_array();
+
+												$query2 = $conn->query("SELECT COUNT(*) as total FROM `immunization` WHERE `year` = '$year'") or die(mysqli_error());
+												$fetch2 = $query2->fetch_array();
+                                                
+                                                $query3 = $conn->query("SELECT COUNT(*) as total FROM `prenatal` WHERE `year` = '$year'") or die(mysqli_error());
+												$fetch3 = $query3->fetch_array();
+                                                
+                                                $query4 = $conn->query("SELECT COUNT(*) as total FROM `consultation` WHERE `year` = '$year'") or die(mysqli_error());
+												$fetch4 = $query4->fetch_array();
+											?>
+                                    <ul class='list-group border-bottom'>
+                                        <li class='list-group-item'><span class='fa fa-user'></span>Family
+                                            Planning<span class='badge badge-info'><?php echo $fetch1['total']?></span></li>
+                                        <li class='list-group-item'><span class='fa fa-user'></span>Immunization<span class='badge badge-info'><?php echo $fetch2['total']?></span></li>
+                                        <li class='list-group-item'><span class='fa fa-user'></span>Prenatal<span class='badge badge-info'><?php echo $fetch3['total']?></span></li>
+                                        <li class='list-group-item'><span class='fa fa-user'></span>Consultation<span class='badge badge-info'><?php echo $fetch4['total']?></span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="col-md-4">
                             <div class="panel panel-primary">
                                 <div class="panel-heading">
@@ -347,43 +563,6 @@ require 'require/logincheck.php';
                                         <li class='list-group-item'><span class='fa fa-child'></span>Children<span class='badge badge-info'><?php echo $sum?></span></li>
                                         <li class='list-group-item'><span class='fa fa-user'></span>Adult<span class='badge badge-info'><?php echo $fetch2['total']?></span></li>
 
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4">
-                            <div class="panel panel-primary">
-                                <div class="panel-heading">
-                                    <h3 class="panel-title" style="font-size: 15px;"><strong>Patient Classification
-                                            - Type of Treatment</strong></h3>
-                                </div>
-                                <div class="panel-body">
-                                    <?php
-                                $year = date('Y');
-			                 if(isset($_GET['year']))
-			                     {
-				                $year=$_GET['year'];
-			                         }
-												require 'require/config.php';	
-												$query1 = $conn->query("SELECT COUNT(*) as total FROM `family_planning` WHERE `year` = '$year'") or die(mysqli_error());
-												$fetch1 = $query1->fetch_array();
-
-												$query2 = $conn->query("SELECT COUNT(*) as total FROM `immunization` WHERE `year` = '$year'") or die(mysqli_error());
-												$fetch2 = $query2->fetch_array();
-                                                
-                                                $query3 = $conn->query("SELECT COUNT(*) as total FROM `prenatal` WHERE `year` = '$year'") or die(mysqli_error());
-												$fetch3 = $query3->fetch_array();
-                                                
-                                                $query4 = $conn->query("SELECT COUNT(*) as total FROM `consultation` WHERE `year` = '$year'") or die(mysqli_error());
-												$fetch4 = $query4->fetch_array();
-											?>
-                                    <ul class='list-group border-bottom'>
-                                        <li class='list-group-item'><span class='fa fa-user'></span>Family
-                                            Planning<span class='badge badge-info'><?php echo $fetch1['total']?></span></li>
-                                        <li class='list-group-item'><span class='fa fa-user'></span>Immunization<span class='badge badge-info'><?php echo $fetch2['total']?></span></li>
-                                        <li class='list-group-item'><span class='fa fa-user'></span>Prenatal<span class='badge badge-info'><?php echo $fetch3['total']?></span></li>
-                                        <li class='list-group-item'><span class='fa fa-user'></span>Consultation<span class='badge badge-info'><?php echo $fetch4['total']?></span></li>
                                     </ul>
                                 </div>
                             </div>

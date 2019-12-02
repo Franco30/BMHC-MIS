@@ -10,6 +10,17 @@
     <link rel="icon" href="assets/images/bmhc.png" type="image/x-icon" />
     <link rel="stylesheet" type="text/css" id="theme" href="css/theme-brown.css" />
     <link rel="stylesheet" type="text/css" href="assets3/vendor/font-awesome/css/font-awesome.min.css" />
+
+<!--
+    <script src="js/tinymce.min.js" referrerpolicy="origin"></script>
+    <script>
+        tinymce.init({
+            selector: 'textarea'
+        });
+
+    </script>
+-->
+
 </head>
 
 <body>

@@ -1,15 +1,15 @@
 $(document).ready(function () {
     showPatient();
     $(document).on('click', '#addnew', function () {
-        if ($('#date').val() == "" || $('#doctors_order_advice').val() == "" || $('#presentation').val() == "" || $('#complaints').val() == "" || $('#lmp').val() == "" || $('#edc').val() == "" || $('#gravida').val() == "" || $('#para').val() == "" || $('#ft').val() == "" || $('#pt').val() == "" || $('#a').val() == "" || $('#lb').val() == "" || $('#fh').val() == "" || $('#fhb').val() == "" || $('#bp').val() == "" || $('#temp').val() == "" || $('#weight').val() == "" || $('#height').val() == "" || $('#aog').val() == "") {
-            
-            $('#alert2').slideDown();
-            $('#alerttext2').html('<span class="fa fa-exclamation-circle"></span> All fields are required!');
-            setTimeout(function () {
-                $('#alert2').fadeOut('slow');
-            }, 3500);
-            
-        } else {
+//        if ($('#date').val() == "" || $('#doctors_order_advice').val() == "" || $('#presentation').val() == "" || $('#complaints').val() == "" || $('#lmp').val() == "" || $('#edc').val() == "" || $('#gravida').val() == "" || $('#para').val() == "" || $('#ft').val() == "" || $('#pt').val() == "" || $('#a').val() == "" || $('#lb').val() == "" || $('#fh').val() == "" || $('#fhb').val() == "" || $('#bp').val() == "" || $('#temp').val() == "" || $('#weight').val() == "" || $('#height').val() == "" || $('#aog').val() == "") {
+//            
+//            $('#alert2').slideDown();
+//            $('#alerttext2').html('<span class="fa fa-exclamation-circle"></span> All fields are required!');
+//            setTimeout(function () {
+//                $('#alert2').fadeOut('slow');
+//            }, 3500);
+//            
+//        } else {
             $patient_id = $('#patient_id').val();
             $prenatal_id = $('#prenatal_id').val();
             $date = $('#date').val();
@@ -31,6 +31,8 @@ $(document).ready(function () {
             $weight = $('#weight').val();
             $height = $('#height').val();
             $aog = $('#aog').val();
+            
+//            var content = tinymce.get("doctors_order_advice").getContent();
 
             if (confirm('Are you sure you want to add this Prenatal Consultation?')) {
                 $.ajax({
@@ -75,7 +77,7 @@ $(document).ready(function () {
                     }
                 });
             }
-        }
+//        }
 
     });
 });

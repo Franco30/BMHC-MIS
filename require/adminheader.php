@@ -94,43 +94,47 @@
 
     <!-- MESSAGES -->
     <li class="xn-icon-button pull-right">
-        <a href="#"><span class="fa fa-comments"></span></a>
-        <div class="informer informer-danger">4</div>
+<?php
+date_default_timezone_set('Asia/Manila');
+$date_today = date('F j, Y');
+require 'require/config.php';
+$q = $conn->query("SELECT COUNT(*) as count from `prenatal_follow_up` WHERE `follow_up_date_time` REGEXP '$date_today' && `follow_up_status` = 'Pending'") or die(mysqli_error());
+$f = $q->fetch_array();
+?>
+<a href="#"><span class="fa fa-comments"></span></a>
+<?php if ($f['count']>0)echo "<div class='informer informer-warning animated infinite pulse' style='animation-duration:.6s;'>".$f['count']."</div>";
+?> 
         <div class="panel panel-primary animated zoomIn xn-drop-left xn-panel-dragging">
             <div class="panel-heading">
-                <h3 class="panel-title"><span class="fa fa-comments"></span> Messages</h3>
+                <h3 class="panel-title">
+                    You have <?php echo $f['count']. " Prenatal Follow-up Visit Today" ?></h3>
                 <div class="pull-right">
-                    <span class="label label-danger">4 new</span>
+                    <span class="label label-warning"><?php echo $f['count']?></span>
                 </div>
             </div>
-            <div class="panel-body list-group list-group-contacts scroll" style="height: 200px;">
+            <div class="panel-body list-group list-group-contacts scroll" style="height: 400px;">
+            <?php 
+            require 'require/config.php';
+            $q = $conn->query("SELECT * FROM `prenatal_follow_up` NATURAL JOIN `patient` WHERE `follow_up_date_time` REGEXP '$date_today'  && `follow_up_status` = 'Pending'") or die(mysqli_error());
+            while($f = $q->fetch_array()){
+            ?>
                 <a href="#" class="list-group-item">
-                    <div class="list-group-status status-online"></div>
-                    <img src="assets/images/users/user2.jpg" class="pull-left" alt="John Doe" />
-                    <span class="contacts-title">John Doe</span>
-                    <p>Praesent placerat tellus id augue condimentum</p>
+                    <img src="assets/images/pending.png" class="pull-left" alt="Folow-up" />
+                    <span class="contacts-title"><?php echo $f['patient_name']?></span>
+                    <p>
+                        <i><?php echo $f['follow_up_date_time']. " - " . $f['remarks']?></i></p>
+                    <p>
+                        <i>&emsp;&emsp;&emsp;&emsp;<span><?php echo $f['purok']." ".$f['street_address']?></span></i>
+                        <!--                        style="color:#fc5454"-->
+                    </p>
                 </a>
-                <a href="#" class="list-group-item">
-                    <div class="list-group-status status-away"></div>
-                    <img src="assets/images/users/user.jpg" class="pull-left" alt="Dmitry Ivaniuk" />
-                    <span class="contacts-title">Dmitry Ivaniuk</span>
-                    <p>Donec risus sapien, sagittis et magna quis</p>
-                </a>
-                <a href="#" class="list-group-item">
-                    <div class="list-group-status status-away"></div>
-                    <img src="assets/images/users/user3.jpg" class="pull-left" alt="Nadia Ali" />
-                    <span class="contacts-title">Nadia Ali</span>
-                    <p>Mauris vel eros ut nunc rhoncus cursus sed</p>
-                </a>
-                <a href="#" class="list-group-item">
-                    <div class="list-group-status status-offline"></div>
-                    <img src="assets/images/users/user6.jpg" class="pull-left" alt="Darth Vader" />
-                    <span class="contacts-title">Darth Vader</span>
-                    <p>I want my money back!</p>
-                </a>
+                <?php
+					}
+					$conn->close();
+				?> 
             </div>
-            <div class="panel-footer text-center">
-                <a href="pages-messages.html">Show all messages</a>
+            <div class="panel-footer text-center" style="background-color:#fcf8e3;">
+                <a href="follow_up_table" class="text-left" style="color:#8a6d3b;">Show all Prenatal Follow-up Visit</a>
             </div>
         </div>
     </li>
@@ -176,9 +180,9 @@
 					}
 					$conn->close();
 				?>
-            </div>
-            <div class="panel-footer text-center">
-                <a href="follow_up_table" class="text-left">Show all Family Planning Follow-up Visit</a>
+            </div> 
+            <div class="panel-footer text-center" style="background-color:#fcf8e3;">
+                <a href="follow_up_table" class="text-left" style="color:#8a6d3b;">Show all Family Planning Follow-up Visit</a>
             </div>
         </div>
     </li>
@@ -219,10 +223,10 @@
 					}
 					$conn->close();
 				?>
-            </div>
-            <div class="panel-footer text-center">
-                <a href="medicine_table" class="text-left">Show all medicines</a> &nbsp;
-                <a href="medication_dispensation" class="text-right">Add Stocks Now</a>
+            </div>      
+            <div class="panel-footer text-center" style="background-color:#fcf8e3;">
+                <a href="medicine_table" class="text-left" style="color:#8a6d3b;">Show all medicines</a> &nbsp;
+                <a href="medication_dispensation" class="text-right" style="color:#8a6d3b;">Add Stocks Now</a>
             </div>
         </div>
     </li>
@@ -275,9 +279,9 @@
 					}
 					$conn->close();
 				?>
-            </div>
-            <div class="panel-footer text-center">
-                <a href="medication_dispensation">Show all Medicine Dispensation</a>
+            </div>     
+            <div class="panel-footer text-center" style="background-color:#fcf8e3;">
+                <a href="medication_dispensation" style="color:#8a6d3b;">Show all Medicine Dispensation</a>
             </div>
         </div>
     </li>
