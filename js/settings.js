@@ -1,4 +1,4 @@
-var site_settings = '<div class="ts-button">' +
+var site_settings = '<div class="ts-button print">' +
     '<span class="fa fa-cogs fa-spin"></span>' +
     '</div>' +
     '<div class="ts-body">' +
