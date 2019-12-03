@@ -16,9 +16,28 @@
     <link rel="stylesheet" type="text/css" id="theme" href="css/theme-brown.css" />
     <link rel="stylesheet" type="text/css" href="assets3/vendor/font-awesome/css/font-awesome.min.css" />
     <!-- EOF CSS INCLUDE -->
+    <link href="assets3/css/invoice-print.min.css" rel="stylesheet" />
     <script type="text/javascript" src="js/plugins/jquery/jquery.min.js"></script>
     <script type="text/javascript" src="js/jquery.canvasjs.min.js"></script>
     <?php require 'js/loadcharts/reports/consultation.php'?>
+    <style type="text/css">
+        @media print {
+            @page {
+                margin: -40px 10px 10px 50px;
+                size: letter;
+            }
+
+            .print {
+                display: none !important;
+            }
+
+            .hidden-header {
+                display: inline !important;
+                margin: 0px 0px 0px 200px;
+            }
+        }
+
+    </style>
 </head>
 
 <body>
@@ -31,7 +50,7 @@
         <div class="page-content">
             <?php require 'require/adminheader.php' ?>
             <!-- START BREADCRUMB -->
-            <ul class="breadcrumb">
+            <ul class="breadcrumb print">
                 <li>Reports</li>
                 <li><a href="services_reports">Services Report</a></li>
                 <li class="active"><strong><mark>Consultation Report</mark></strong></li>
@@ -39,7 +58,7 @@
             <!-- END BREADCRUMB -->
             <!-- PAGE CONTENT WRAPPER -->
             <div class="page-content-wrap">
-                <div class="row">
+                <div class="row print">
                     <div class="col-md-2">
                         <div class="form-group">
                             <select class="form-control select" data-style="btn-primary" id="select-report" name="filterbutton">

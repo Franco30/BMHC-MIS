@@ -15,16 +15,19 @@
     <!-- CSS INCLUDE -->
     <link rel="stylesheet" type="text/css" id="theme" href="css/theme-brown.css" />
     <link rel="stylesheet" type="text/css" href="assets3/vendor/font-awesome/css/font-awesome.min.css" />
-    <script type="text/javascript" src="js/plugins/jquery/jquery.min.js"></script>
+    <link href="assets3/css/invoice-print.min.css" rel="stylesheet" />
+    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
     <script type="text/javascript" src="js/jquery.canvasjs.min.js"></script>
     <?php require 'js/loadcharts/reports/consultation2.php'?>
     <!-- EOF CSS INCLUDE -->
     <style type="text/css">
         @media print {
+/*
             @page {
                 margin: -40px 10px 10px 50px;
                 size: letter;
             }
+*/
 
             .print {
                 display: none !important;
@@ -70,8 +73,9 @@
                             </div>
 
                         </div>
-                        <div class="col-md-12" style="padding-left: 111px;padding-right: 111px;">
+                        <div class="col-md-12">
                             <div class="row print">
+                                <div class="col-md-1"></div>
                                 <div class="col-md-2">
                                     <div class="form-group">
                                         <select id="pyear" class="validate[required] select" data-style="btn-primary" data-live-search="true">
@@ -108,9 +112,9 @@
 ?>
                                         </select>
                                     </div>
-                                    <p><b>Graphical</b></p>
                                 </div>
-                                <div class="col-md-2" style="margin-left: 49px;">
+                                <div class="col-md-1"></div>
+                                <div class="col-md-2">
                                     <div class="form-group">
                                         <select class="form-control select" data-style="btn-primary" id="select-report" name="filterbutton">
                                             <option value="monthly" selected="selected" disabled="disabled">Select Report</option>
@@ -124,7 +128,6 @@
                                         </select>
                                     </div>
                                 </div>
-
                                 <div class="col-md-2">
                                     <!--Month Report Type-->
                                     <div class="form-group monthly barmonth splinemonth4 piemonth dougnutmonth reporttype">
@@ -191,8 +194,8 @@
                                     </div>
                                 </div>
 
-                                <div class="col-md-3"></div>
-                                <div class="col-md-2 print" style="margin-left: 41px;">
+                                <div class="col-md-1"></div>
+                                <div class="col-md-2 print">
                                     <div class="alert alert-info fade in m-b-15" style="background-color: #7cdda7;color: #3c763d;border-color: #7cdda7;">
                                         <strong><i class="fa fa-print"></i> Press P to Print!</strong>
                                         <span class="close" data-dismiss="alert">&times;</span>
@@ -257,7 +260,11 @@
                                         <div id="chartContainer6.1" class="splinemonth3 reporttype" style="width: 100%; height: 300px"></div>
                                         <div id="chartContainer6.2" class="colmonth3 reporttype" style="width: 100%; height: 300px"></div>
                                         <div id="chartContainer6.3" class="stackedareamonth3 reporttype" style="width: 100%; height: 300px"></div>
-
+                                        
+                                        
+                                        <?php require 'reports/consultation_monthly.php'?>
+                                        <?php require 'reports/consultation_quarter.php'?>
+                                        <?php require 'reports/consultation_yearly.php'?>
                                         <?php require 'reports/consultation_type.php'?>
                                         <?php require 'reports/consultation_gender.php'?>
                                         <?php require 'reports/consultation_age.php'?>
