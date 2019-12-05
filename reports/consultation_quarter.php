@@ -1,4 +1,4 @@
-<div class="quarterly barquarter splinequarter piequarter dougnutquarter reporttype">
+<div class="quarterly barquarter splinequarter piequarter dougnutquarter reporttype" style="display: none;">
     <label class="text text-danger ">Per Quarter</label>
     <table id="consultatationtablereport" class="table table-bordered table-condensed nowrap" width="100%">
         <thead>
