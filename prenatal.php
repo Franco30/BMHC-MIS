@@ -65,6 +65,7 @@
         <!-- END PAGE CONTENT -->
     </div>
     <!-- END PAGE CONTAINER -->
+    <?php require 'modals/addpatient.php'?>
     <?php require 'modals/addprenatal.php'?>
     <!-- START PRELOADS -->
     <audio id="audio-alert" src="audio/alert.mp3" preload="auto"></audio>
@@ -79,12 +80,15 @@
     <!-- END PLUGINS -->
 
     <!-- START THIS PAGE PLUGINS-->
-    <script type="text/javascript" src="functions/crudprenatal.js"></script>
+    <script type="text/javascript" src="functions/prenataltable.js"></script>
+    <script type="text/javascript" src="functions/crudpatient_prenatal.js"></script>
     <script type="text/javascript" src="js/plugins/bootstrap/bootstrap-datepicker.js"></script>
     <script type='text/javascript' src='js/plugins/bootstrap/bootstrap-select.js'></script>
     <script type='text/javascript' src='js/plugins/icheck/icheck.min.js'></script>
     <script type="text/javascript" src="js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
     <script type="text/javascript" src="js/plugins/scrolltotop/scrolltopcontrol.js"></script>
+    <script type='text/javascript' src='js/plugins/maskedinput/jquery.maskedinput.min.js'></script>
+    <script type='text/javascript' src='js/plugins/jquery-validation/jquery.validate.js'></script>
     <!-- END THIS PAGE PLUGINS-->
     <script type="text/javascript" src="js/plugins/datatables/jquery.dataTables.min.js"></script>
     <!-- START TEMPLATE -->
@@ -93,7 +97,7 @@
     <script type="text/javascript" src="js/actions.js"></script>
     <!-- END TEMPLATE -->
     <!-- END SCRIPTS -->
-<!--
+    <!--
     <script>
         $.ajaxPrefilter(function(options, originalOptions, jqXHR) {
             options.async = true;
@@ -101,6 +105,53 @@
 
     </script>
 -->
+    <script>
+        $("#birthdate").change(function() {
+            var birthdate = new Date($(this).val());
+            var today = new Date();
+            var age = Math.floor((today - birthdate) / (365.25 * 24 * 60 * 60 * 1000));
+            $('#age').val(age);
+        });
+
+    </script>
+    <script>
+        var date = new Date();
+        $('#birthdate').datepicker({
+            format: 'MM dd, yyyy',
+            language: 'en',
+            startDate: new Date('1900-01-01'),
+            endDate: date
+        });
+
+    </script>
+    <script>
+        function myFunction(textboxid) {
+
+            var input = document.getElementById(textboxid);
+            var word = input.value.split(" ");
+            for (var i = 0; i < word.length; i++) {
+                word[i] = word[i].charAt(0).toUpperCase() + word[i].slice(1).toLowerCase();
+            }
+            input.value = word.join(" ");
+        }
+
+    </script>
+    <script type="text/javascript">
+        $("#patientform").validate({
+            ignore: [],
+            rules: {
+                heights: {
+                    number: true,
+                    maxlength: 10
+                },
+                weights: {
+                    number: true,
+                    maxlength: 10
+                },
+            }
+        });
+
+    </script>
 </body>
 
 </html>

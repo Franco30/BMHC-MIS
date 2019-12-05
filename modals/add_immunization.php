@@ -11,8 +11,8 @@
                 <h4 class="modal-title" id="defModalHead">Register New Patient</h4>
             </div>
             <form id="patientform" method="POST">
-            <div class="modal-body">
-               
+                <div class="modal-body">
+
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
@@ -36,7 +36,7 @@
                             </div>
                         </div>
                     </div>
-                <?php
+                    <?php
                     if(isset($_POST['submit'])) {
                         $child_id = $_POST['child_id'];
 
@@ -44,12 +44,14 @@
 
                     }
                 ?>
-            </div>
-            <div class="modal-footer">
-            <a href="registration_table" class="btn btn-warning">Register</a>
-            <input class="btn btn-info" type="submit" name="submit" value="Proceed" />
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
-            </div>
+                </div>
+                <div class="modal-footer">
+                    <!--                    <a href="registration_table" class="btn btn-warning">Register</a>-->
+                    <button type="button" value="Add New Patient" class="btn btn-warning btn-md" data-toggle="modal" data-target="#new_child_patient" data-dismiss="modal">
+                        <span class="fa fa-plus-circle" data-toggle="tooltip" data-placement="top" title="Add New Patient" style="margin-right: 0px;"></span></button>
+                    <input class="btn btn-info" type="submit" name="submit" value="Proceed" />
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                </div>
             </form>
         </div>
     </div>

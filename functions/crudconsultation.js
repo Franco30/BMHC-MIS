@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    showPatient();
+    showPatientConsultation();
 //    || $('#pefindings').val() == "" || $('#diagnosis').val() == "" || $('#labrequest').val() == ""
     $(document).on('click', '#addnew', function () {
         if ($('#date_today').val() == "" || $('#weight').val() == "" || $('#bp').val() == "" || $('#temp').val() == "" || $('#headfamily').val() == "" || $('#rr').val() == "" || $('#pr').val() == "" || $('#complaints').val() == "") {
@@ -76,7 +76,7 @@ $(document).ready(function () {
     });
 });
 
-function showPatient() {
+function showPatientConsultation() {
     $.ajax({
         url: 'tables/consultation_patient_table.php',
         type: 'POST',
