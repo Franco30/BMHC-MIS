@@ -132,7 +132,7 @@
                                 <div class="col-md-2">
                                     <!--Month Report Type-->
                                     <div class="form-group monthly barmonth splinemonth4 piemonth dougnutmonth reporttype">
-                                        <select class="form-control select" data-style="btn-primary" name="filterbutton">
+                                        <select class="form-control select" data-style="btn-primary" name="filterbutton" style="display: none;">
                                             <option value="monthly" selected="selected" disabled="disabled">Select Chart</option>
                                             <option value="monthly">Column Chart</option>
                                             <option value="barmonth">Bar Chart</option>
@@ -143,7 +143,7 @@
                                     </div>
                                     <!--Quarter Report Type-->
                                     <div class="form-group quarterly barquarter splinequarter piequarter dougnutquarter reporttype">
-                                        <select class="form-control select" data-style="btn-primary" name="filterbutton">
+                                        <select style="display: none;" class="form-control select" data-style="btn-primary" name="filterbutton">
                                             <option value="quarterly" selected="selected" disabled="disabled">Select Chart</option>
                                             <option value="quarterly">Column Chart</option>
                                             <option value="barquarter">Bar Chart</option>
@@ -154,7 +154,7 @@
                                     </div>
                                     <!--Quarter Report Type-->
                                     <div class="form-group yearly baryear splineyear pieyear dougnutyear reporttype">
-                                        <select class="form-control select" data-style="btn-primary" name="filterbutton">
+                                        <select style="display: none;" class="form-control select" data-style="btn-primary" name="filterbutton">
                                             <option value="yearly" selected="selected" disabled="disabled">Select Chart</option>
                                             <option value="yearly">Column Chart</option>
                                             <option value="baryear">Bar Chart</option>
@@ -165,7 +165,7 @@
                                     </div>
                                     <!-- Patient Type Report Month-->
                                     <div class="form-group stackedareamonth stackedcolmonth splinemonth colpatienttype reporttype">
-                                        <select class="form-control select" data-style="btn-primary" name="filterbutton">
+                                        <select style="display: none;" class="form-control select" data-style="btn-primary" name="filterbutton">
                                             <option value="colpatienttype" selected="selected" disabled="disabled">Select Chart</option>
                                             <option value="colpatienttype">Column Chart</option>
                                             <option value="splinemonth">Spline Chart</option>
@@ -175,7 +175,7 @@
                                     </div>
                                     <!-- Patient Gender Report Month-->
                                     <div class="form-group stackedareamonth2 stackedcolmonth2 splinemonth2 colpatientgender reporttype">
-                                        <select class="form-control select" data-style="btn-primary" name="filterbutton">
+                                        <select style="display: none;" class="form-control select" data-style="btn-primary" name="filterbutton">
                                             <option value="colpatientgender" selected="selected" disabled="disabled">Select Chart</option>
                                             <option value="colpatientgender">Column Chart</option>
                                             <option value="splinemonth2">Spline Chart</option>
@@ -185,7 +185,7 @@
                                     </div>
                                     <!-- Patient Age Report Month-->
                                     <div class="form-group stackedareamonth3 colmonth3 splinemonth3 colpatientage reporttype">
-                                        <select class="form-control select" data-style="btn-primary" name="filterbutton">
+                                        <select style="display: none;" class="form-control select" data-style="btn-primary" name="filterbutton">
                                             <option value="colpatientage" selected="selected" disabled="disabled">Select Chart</option>
                                             <option value="colmonth3">Column Chart</option>
                                             <option value="colpatientage">Bar Chart</option>
@@ -195,7 +195,7 @@
                                     </div>
                                     <!-- Patient Purok Report Month-->
                                     <div class="form-group colpatientpurok barpurok splinepurok stackedareapurok reporttype">
-                                        <select class="form-control select" data-style="btn-primary" name="filterbutton">
+                                        <select style="display: none;" class="form-control select" data-style="btn-primary" name="filterbutton">
                                             <option value="colpatientpurok" selected="selected" disabled="disabled">Select Chart</option>
                                             <option value="colpatientpurok">Column Chart</option>
                                             <option value="barpurok">Bar Chart</option>

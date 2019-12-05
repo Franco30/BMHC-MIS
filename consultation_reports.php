@@ -109,7 +109,7 @@
                     </div>
                     <div class="col-md-2">
                         <div class="btn-group pull-right">
-                            <button type="button" class="btn btn-warning monthly quarterly yearly reporttype" onclick="openTabular()">Filter Reports</button>
+                            <button style="display: none;" type="button" class="btn btn-warning monthly quarterly yearly reporttype" onclick="openTabular()">Filter Reports</button>
                         </div>
                     </div>
                 </div>
