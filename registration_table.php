@@ -196,11 +196,11 @@
             rules: {
                 heights: {
                     number: true,
-                    maxlength: 3
+                    maxlength: 10
                 },
                 weights: {
                     number: true,
-                    maxlength: 3
+                    maxlength: 10
                 },
             }
         });

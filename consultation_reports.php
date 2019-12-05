@@ -22,10 +22,12 @@
     <?php require 'js/loadcharts/reports/consultation.php'?>
     <style type="text/css">
         @media print {
+/*
             @page {
                 margin: -40px 10px 10px 50px;
                 size: letter;
             }
+*/
 
             .print {
                 display: none !important;
@@ -151,143 +153,75 @@
                                         ?>
                                             <tr>
                                                 <td><strong>January</strong></td>
-                                                <td>
-                                                    <center><strong><?php echo $fjan['total']?></strong></center>
-                                                </td>
-                                                <td>
-                                                    <center>
-                                                        <button class="btn btn-default btn-sm" data-toggle="modal" data-target="#jan">View Record</button>
-                                                    </center>
+                                                <td><center><strong><?php echo $fjan['total']?></strong></center></td>
+                                                <td><center><button class="btn btn-default btn-sm" data-toggle="modal" data-target="#jan">View Record</button></center>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td><strong>February</strong></td>
-                                                <td>
-                                                    <center><strong><?php echo $ffeb['total']?></strong></center>
-                                                </td>
-                                                <td>
-                                                    <center>
-                                                        <button class="btn btn-default btn-sm" data-toggle="modal" data-target="#feb">View Record</button>
-                                                    </center>
+                                                <td><center><strong><?php echo $ffeb['total']?></strong></center></td>
+                                                <td><center><button class="btn btn-default btn-sm" data-toggle="modal" data-target="#feb">View Record</button></center>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td><strong>March</strong></td>
-                                                <td>
-                                                    <center><strong><?php echo $fmar['total']?></strong></center>
-                                                </td>
-                                                <td>
-                                                    <center>
-                                                        <button class="btn btn-default btn-sm" data-toggle="modal" data-target="#mar">View Record</button>
-                                                    </center>
+                                                <td><center><strong><?php echo $fmar['total']?></strong></center></td>
+                                                <td><center><button class="btn btn-default btn-sm" data-toggle="modal" data-target="#mar">View Record</button></center>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td><strong>April</strong></td>
-                                                <td>
-                                                    <center><strong><?php echo $fapr['total']?></strong></center>
-                                                </td>
-                                                <td>
-                                                    <center>
-                                                        <button class="btn btn-default btn-sm" data-toggle="modal" data-target="#apr">View Record</button>
-                                                    </center>
-                                                </td>
+                                                <td><center><strong><?php echo $fapr['total']?></strong></center></td>
+                                                <td><center><button class="btn btn-default btn-sm" data-toggle="modal" data-target="#apr">View Record</button></center></td>
                                             </tr>
                                             <tr>
                                                 <td><strong>May</strong></td>
-                                                <td>
-                                                    <center><strong><?php echo $fmay['total']?></strong></center>
-                                                </td>
-                                                <td>
-                                                    <center>
-                                                        <button class="btn btn-default btn-sm" data-toggle="modal" data-target="#may">View Record</button>
-                                                    </center>
-                                                </td>
+                                                <td><center><strong><?php echo $fmay['total']?></strong></center></td>
+                                                <td><center><button class="btn btn-default btn-sm" data-toggle="modal" data-target="#may">View Record</button>
+                                                    </center></td>
                                             </tr>
                                             <tr>
                                                 <td><strong>June</strong></td>
-                                                <td>
-                                                    <center><strong><?php echo $fjun['total']?></strong></center>
-                                                </td>
-                                                <td>
-                                                    <center>
-                                                        <button class="btn btn-default btn-sm" data-toggle="modal" data-target="#jun">View Record</button>
-                                                    </center>
+                                                <td><center><strong><?php echo $fjun['total']?></strong></center></td>
+                                                <td><center><button class="btn btn-default btn-sm" data-toggle="modal" data-target="#jun">View Record</button></center>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td><strong>July</strong></td>
-                                                <td>
-                                                    <center><strong><?php echo $fjul['total']?></strong></center>
-                                                </td>
-                                                <td>
-                                                    <center>
-                                                        <button class="btn btn-default btn-sm" data-toggle="modal" data-target="#jul">View Record</button>
-                                                    </center>
-                                                </td>
+                                                <td><center><strong><?php echo $fjul['total']?></strong></center></td>
+                                                <td><center><button class="btn btn-default btn-sm" data-toggle="modal" data-target="#jul">View Record</button>
+                                                    </center></td>
                                             </tr>
                                             <tr>
                                                 <td><strong>August</strong></td>
-                                                <td>
-                                                    <center><strong><?php echo $faug['total']?></strong></center>
-                                                </td>
-                                                <td>
-                                                    <center>
-                                                        <button class="btn btn-default btn-sm" data-toggle="modal" data-target="#aug">View Record</button>
-                                                    </center>
-                                                </td>
+                                                <td><center><strong><?php echo $faug['total']?></strong></center></td>
+                                                <td><center><button class="btn btn-default btn-sm" data-toggle="modal" data-target="#aug">View Record</button>
+                                                    </center></td>
                                             </tr>
                                             <tr>
                                                 <td><strong>September</strong></td>
-                                                <td>
-                                                    <center><strong><?php echo $fsep['total']?></strong></center>
-                                                </td>
-                                                <td>
-                                                    <center>
-                                                        <button class="btn btn-default btn-sm" data-toggle="modal" data-target="#sep">View Record</button>
-                                                    </center>
-                                                </td>
+                                                <td><center><strong><?php echo $fsep['total']?></strong></center></td>
+                                                <td><center><button class="btn btn-default btn-sm" data-toggle="modal" data-target="#sep">View Record</button>
+                                                    </center></td>
                                             </tr>
                                             <tr>
                                                 <td><strong>October</strong></td>
-                                                <td>
-                                                    <center><strong><?php echo $foct['total']?></strong></center>
-                                                </td>
-                                                <td>
-                                                    <center>
-                                                        <button class="btn btn-default btn-sm" data-toggle="modal" data-target="#oct">View Record</button>
-                                                    </center>
-                                                </td>
+                                                <td><center><strong><?php echo $foct['total']?></strong></center></td>
+                                                <td><center><button class="btn btn-default btn-sm" data-toggle="modal" data-target="#oct">View Record</button></center></td>
                                             </tr>
                                             <tr>
                                                 <td><strong>November</strong></td>
-                                                <td>
-                                                    <center><strong><?php echo $fnov['total']?></strong></center>
-                                                </td>
-                                                <td>
-                                                    <center>
-                                                        <button class="btn btn-default btn-sm" data-toggle="modal" data-target="#nov">View Record</button>
-                                                    </center>
-                                                </td>
+                                                <td><center><strong><?php echo $fnov['total']?></strong></center></td>
+                                                <td><center><button class="btn btn-default btn-sm" data-toggle="modal" data-target="#nov">View Record</button></center></td>
                                             </tr>
                                             <tr>
                                                 <td><strong>December</strong></td>
-                                                <td>
-                                                    <center><strong><?php echo $fdec['total']?></strong></center>
-                                                </td>
-                                                <td>
-                                                    <center>
-                                                        <button class="btn btn-default btn-sm" data-toggle="modal" data-target="#dec">View Record</button>
-                                                    </center>
-                                                </td>
+                                                <td><center><strong><?php echo $fdec['total']?></strong></center></td>
+                                                <td><center><button class="btn btn-default btn-sm" data-toggle="modal" data-target="#dec">View Record</button></center></td>
                                             </tr>
                                             <tr class="danger">
-                                                <td>
-                                                    <h3><strong>Grand Total</strong></h3>
-                                                </td>
-                                                <td>
-                                                    <center><strong><span class="label label-danger" style="font-size:15px;"><?php echo $total['total']?></span></strong></center>
-                                                </td>
+                                                <td><h3><strong>Grand Total</strong></h3></td>
+                                                <td><center><strong><span class="label label-danger" style="font-size:15px;"><?php echo $total['total']?></span></strong></center></td>
                                                 <td></td>
                                             </tr>
                                         </tbody>

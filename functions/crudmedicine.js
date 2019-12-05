@@ -38,6 +38,9 @@ $(document).ready(function () {
                             setTimeout(function () {
                                 $('#alert').fadeOut('slow');
                             }, 1500);
+                            $(document).ajaxComplete(function () {
+                                $(document).find('.select').selectpicker();
+                            });
                             showMedicine();
                         }
                     }
@@ -73,7 +76,7 @@ $(document).ready(function () {
                     setTimeout(function () {
                         $('#alert').fadeOut('slow');
                     }, 1500);
-                    
+
                     $(document).ajaxComplete(function () {
                         $(document).find('.select').selectpicker();
                     });

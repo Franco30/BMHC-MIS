@@ -2,10 +2,10 @@ $(document).ready(function () {
     showCPatient();
 
     //check availability of patient name
-
+//|| $('#street_address2').val() == ""
     //add patient ajax
     $(document).on('click', '#addnewchild', function () {
-        if ($('#child_name').val() == "" || $('#gender2').val() == "" || $('#mother_name').val() == "" || $('#mother_education').val() == "" || $('#mother_occupation').val() == "" || $('#father_name').val() == "" || $('#father_education').val() == "" || $('#father_occupation').val() == "" || $('#date_first_seen').val() == "" || $('#birthdate2').val() == "" || $('#birth_weight').val() == "" || $('#place_of_delivery').val() == "" || $('#birth_register_date').val() == "" || $('#purok2').val() == "" || $('#street_address2').val() == "") {
+        if ($('#child_name').val() == "" || $('#gender2').val() == "" || $('#mother_name').val() == "" || $('#mother_education').val() == "" || $('#mother_occupation').val() == "" || $('#father_name').val() == "" || $('#father_education').val() == "" || $('#father_occupation').val() == "" || $('#date_first_seen').val() == "" || $('#birthdate2').val() == "" || $('#birth_weight').val() == "" || $('#place_of_delivery').val() == "" || $('#birth_register_date').val() == "" || $('#purok2').val() == "") {
             $('#modallabel2').slideDown();
             $('#checkfield2').html('<span class="fa fa-exclamation-circle"></span> All fields are required!');
             setTimeout(function () {

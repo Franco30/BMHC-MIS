@@ -2,10 +2,10 @@ $(document).ready(function () {
     showPatient();
 
     //check availability of patient name
-
+//$('#phonenumber').val() == "" ||
     //add patient ajax
     $(document).on('click', '#addnew', function () {
-        if ($('#philhealth').val() == "" || $('#birthtime').val() == "" || $('#birthweight').val() == "" || $('#phonenumber').val() == "" || $('#gravida').val() == "" || $('#para').val() == "" || $('#abortion').val() == "" || $('#mage').val() == "" || $('#fage').val() == "" || $('#placeprenatal').val() == "" || $('#placedelivery').val() == "" || $('#typedelivery').val() == "") {
+        if ($('#philhealth').val() == "" || $('#birthtime').val() == "" || $('#birthweight').val() == "" ||  $('#gravida').val() == "" || $('#para').val() == "" || $('#abortion').val() == "" || $('#mage').val() == "" || $('#fage').val() == "" || $('#placeprenatal').val() == "" || $('#placedelivery').val() == "" || $('#typedelivery').val() == "") {
 
             $('#alert2').slideDown();
             $('#alerttext2').html('<span class="fa fa-exclamation-circle"></span> All fields are required!');

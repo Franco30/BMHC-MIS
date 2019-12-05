@@ -212,10 +212,60 @@
                     ] 
                 });
                 
+                showDefaultText1(chart1, "No Data available");
+                showDefaultText2(chart2, "No Data available");
+                showDefaultText3(chart3, "No Data available");
                 chart1.render();
                 chart2.render();
                 chart3.render();
+                
+                function showDefaultText1(chart1, text) {
 
-                });
+			var isEmpty = !(chart1.options.data[0].dataPoints && chart1.options.data[0].dataPoints.length > 0);
 
+			if (!chart1.options.subtitles)
+				(chart1.options.subtitles = []);
+
+			if (isEmpty)
+				chart1.options.subtitles.push({
+					text: text,
+					verticalAlign: 'center',
+                    fontSize: 20,
+				});
+			else
+				(chart1.options.subtitles = []);
+		}
+                function showDefaultText2(chart2, text) {
+
+			var isEmpty = !(chart2.options.data[0].dataPoints && chart2.options.data[0].dataPoints.length > 0);
+
+			if (!chart2.options.subtitles)
+				(chart2.options.subtitles = []);
+
+			if (isEmpty)
+				chart2.options.subtitles.push({
+					text: text,
+					verticalAlign: 'center',
+                    fontSize: 20,
+				});
+			else
+				(chart2.options.subtitles = []);
+		}
+                function showDefaultText3(chart3, text) {
+
+			var isEmpty = !(chart3.options.data[0].dataPoints && chart3.options.data[0].dataPoints.length > 0);
+
+			if (!chart3.options.subtitles)
+				(chart3.options.subtitles = []);
+
+			if (isEmpty)
+				chart3.options.subtitles.push({
+					text: text,
+					verticalAlign: 'center',
+                    fontSize: 20,
+				});
+			else
+				(chart3.options.subtitles = []);
+		}
+    });
 </script>

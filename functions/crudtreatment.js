@@ -29,10 +29,10 @@ $(document).ready(function () {
             $("#ttype_response").hide();
         }
     });
-
+// || $('#treatment_age').val() == "" || $('#treatment_weight').val() == "" || $('#treatment_height').val() == ""
     //add patient ajax
     $(document).on('click', '#addnew', function () {
-        if ($('#treatment_type').val() == "" || $('#treatment_date').val() == "" || $('#treatment_age').val() == "" || $('#treatment_weight').val() == "" || $('#treatment_height').val() == "") {
+        if ($('#treatment_type').val() == "" || $('#treatment_date').val() == "") {
 
             $('#modallabel').slideDown();
             $('#checkfield').html('<span class="fa fa-exclamation-circle"></span> All fields are required!');

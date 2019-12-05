@@ -95,9 +95,9 @@
                                                                                 <td><center><strong><?php echo $fetch['treatment_type']?></strong></center></td>
                                                                                 <td><center><?php echo $fetch['treatment_date']?></center></td>
                                                                                 <td><center><?php echo $fetch['treatment_age']?></center></td>
-                                                                                <td><center><?php echo $fetch['treatment_weight']?></center></td>
-                                                                                <td><center><?php echo $fetch['treatment_height']?></center></td>
-                                                                                <td><center><?php echo $fetch['treatment_temp']?></center></td>
+                                                                                <td><center><?php echo $fetch['treatment_weight']?> kg.</center></td>
+                                                                                <td><center><?php echo $fetch['treatment_height']?> cm.</center></td>
+                                                                                <td><center><?php echo $fetch['treatment_temp']?> °C</center></td>
                                                                                 <td><center><?php echo $fetch['treatment_remarks']?></center></td>
                                                                             </tr>
                                                                             <?php

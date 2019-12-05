@@ -49,27 +49,27 @@ json_encode($data_points);
 			subtitles: [{
 				text: "Total Dispensed Medicines - Year <?php echo $year?>"
 			}],
-            legend: {
-                cursor: "pointer",
-                itemclick: function (e) {
-                    if (typeof (e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
-                        e.dataSeries.visible = false;
-                    } else {
-                        e.dataSeries.visible = true;
-                    }
-                    e.chart.render();
-                },
-                itemmouseover: function(e) {
-                    e.dataSeries.lineThickness = e.chart.data[e.dataSeriesIndex].lineThickness * 2;
-                    e.dataSeries.markerSize = e.chart.data[e.dataSeriesIndex].markerSize + 2;
-                    e.chart.render();
-                },
-                itemmouseout: function(e) {
-                    e.dataSeries.lineThickness = e.chart.data[e.dataSeriesIndex].lineThickness / 2;
-                    e.dataSeries.markerSize = e.chart.data[e.dataSeriesIndex].markerSize - 2;
-                    e.chart.render();
-                }
-            },
+			legend: {
+				cursor: "pointer",
+				itemclick: function(e) {
+					if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+						e.dataSeries.visible = false;
+					} else {
+						e.dataSeries.visible = true;
+					}
+					e.chart.render();
+				},
+				itemmouseover: function(e) {
+					e.dataSeries.lineThickness = e.chart.data[e.dataSeriesIndex].lineThickness * 2;
+					e.dataSeries.markerSize = e.chart.data[e.dataSeriesIndex].markerSize + 2;
+					e.chart.render();
+				},
+				itemmouseout: function(e) {
+					e.dataSeries.lineThickness = e.chart.data[e.dataSeriesIndex].lineThickness / 2;
+					e.dataSeries.markerSize = e.chart.data[e.dataSeriesIndex].markerSize - 2;
+					e.chart.render();
+				}
+			},
 			axisX: {
 				interval: 1,
 				labelFontColor: "black",
@@ -297,6 +297,23 @@ json_encode($data_points);
 		chart3.render();
 		chart4.render();
 		chart5.render();
+
+//		showDefaultText1(chart1, "No Data available");	   
+//		function showDefaultText1(chart1, text) {
+//
+//			var isEmpty = !(chart1.options.data[0].dataPoints && chart1.options.data[0].dataPoints.length > 0);
+//
+//			if (!chart1.options.subtitles)
+//				(chart1.options.subtitles = []);
+//
+//			if (isEmpty)
+//				chart1.options.subtitles.push({
+//					text: text,
+//					verticalAlign: 'center',
+//				});
+//			else
+//				(chart1.options.subtitles = []);
+//		}
 	});
 
 </script>

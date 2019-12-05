@@ -5,7 +5,7 @@ if(isset($_POST['show'])){
 <div class="table-responsive">
 <table id="usertable" class="table datatable" width="100%">
 <thead>
-        <tr class="info">
+        <tr class="warning">
             <th><center>Complete Name</center></th>
             <th><center>License</center></th>
             <th><center>Position</center></th>

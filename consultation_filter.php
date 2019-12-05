@@ -16,9 +16,10 @@
     <link rel="stylesheet" type="text/css" id="theme" href="css/theme-brown.css" />
     <link rel="stylesheet" type="text/css" href="assets3/vendor/font-awesome/css/font-awesome.min.css" />
     <link href="assets3/css/invoice-print.min.css" rel="stylesheet" />
-    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="js/plugins/jquery/jquery.min.js"></script>
     <script type="text/javascript" src="js/jquery.canvasjs.min.js"></script>
     <?php require 'js/loadcharts/reports/consultation2.php'?>
+    <?php require 'js/loadcharts/reports/consultation3.php'?>
     <!-- EOF CSS INCLUDE -->
     <style type="text/css">
         @media print {
@@ -124,7 +125,7 @@
                                             <option value="colpatienttype">Patient Type</option>
                                             <option value="colpatientgender">Patient Gender</option>
                                             <option value="colpatientage">Patient Age</option>
-
+                                            <option value="colpatientpurok">Patient Purok</option>
                                         </select>
                                     </div>
                                 </div>
@@ -190,6 +191,16 @@
                                             <option value="colpatientage">Bar Chart</option>
                                             <option value="splinemonth3">Spline Chart</option>
                                             <option value="stackedareamonth3">Stacked Area Chart</option>
+                                        </select>
+                                    </div>
+                                    <!-- Patient Purok Report Month-->
+                                    <div class="form-group colpatientpurok barpurok splinepurok stackedareapurok reporttype">
+                                        <select class="form-control select" data-style="btn-primary" name="filterbutton">
+                                            <option value="colpatientpurok" selected="selected" disabled="disabled">Select Chart</option>
+                                            <option value="colpatientpurok">Column Chart</option>
+                                            <option value="barpurok">Bar Chart</option>
+                                            <option value="splinepurok">Spline Chart</option>
+                                            <option value="stackedareapurok">Stacked Area Chart</option>
                                         </select>
                                     </div>
                                 </div>
@@ -260,7 +271,11 @@
                                         <div id="chartContainer6.1" class="splinemonth3 reporttype" style="width: 100%; height: 300px"></div>
                                         <div id="chartContainer6.2" class="colmonth3 reporttype" style="width: 100%; height: 300px"></div>
                                         <div id="chartContainer6.3" class="stackedareamonth3 reporttype" style="width: 100%; height: 300px"></div>
-                                        
+                                        <!-- Patient Purok Report Month-->
+                                        <div id="chartContainer7" class="colpatientpurok reporttype" style="width: 100%; height: 300px"></div>
+                                        <div id="chartContainer7.1" class="barpurok reporttype" style="width: 100%; height: 300px"></div>
+                                        <div id="chartContainer7.2" class="splinepurok reporttype" style="width: 100%; height: 300px"></div>
+                                        <div id="chartContainer7.3" class="stackedareapurok reporttype" style="width: 100%; height: 300px"></div>
                                         
                                         <?php require 'reports/consultation_monthly.php'?>
                                         <?php require 'reports/consultation_quarter.php'?>
@@ -268,6 +283,7 @@
                                         <?php require 'reports/consultation_type.php'?>
                                         <?php require 'reports/consultation_gender.php'?>
                                         <?php require 'reports/consultation_age.php'?>
+                                        <?php require 'reports/consultation_purok.php'?>
                                     </div>
                                 </div>
                             </div>
@@ -280,7 +296,7 @@
         <!-- END PAGE CONTENT -->
     </div>
     <!-- END PAGE CONTAINER -->
-    <?php require 'require/pressp.php'?>
+    
     <!-- START PRELOADS -->
     <audio id="audio-alert" src="audio/alert.mp3" preload="auto"></audio>
     <audio id="audio-fail" src="audio/fail.mp3" preload="auto"></audio>
@@ -341,6 +357,7 @@
         });
 
     </script>
+    <?php require 'require/pressp.php'?>
     <!-- END SCRIPTS -->
 </body>
 

@@ -145,7 +145,7 @@ $f = $q->fetch_array();
         date_default_timezone_set('Asia/Manila');
 		$date_today = date('F j, Y');
         require 'require/config.php';
-		$q = $conn->query("SELECT COUNT(*) as count from `fp_follow_up` WHERE `next_service_date` = '$date_today' && `follow_up_status` = 'Pending'") or die(mysqli_error());
+		$q = $conn->query("SELECT COUNT(*) as count from `fp_follow_up` WHERE `next_service_date` REGEXP '$date_today' && `follow_up_status` = 'Pending'") or die(mysqli_error());
 		$f = $q->fetch_array();
 		?>
         <a href="#"><span class="fa fa-tasks"></span></a>
