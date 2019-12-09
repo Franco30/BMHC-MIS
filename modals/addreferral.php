@@ -27,28 +27,44 @@
                                 <option value="Registered">Registered Patients</option>
                             </select>
                             &nbsp;
-                            <div class="form-group" id="category1">
-                                <label>Patient Name:</label>
-                                <input type="text" class="form-control" id="patient_name" required />
-                            </div>
-
-                            <div class="form-group" id="category2" style="display:none;">
-                                <label>Patient Name:</label>
-                                <select class="form-control select" data-live-search="true" id="registered" required>
-                                    <option value="">Select</option>
-                                    <?php
+                            <div class="form-row">
+                                <div class="col-md-6" id="category1">
+                                    <div class="form-group"  style="margin-left:-10px;">
+                                        <label>Patient Name:</label>
+                                        <input type="text" class="form-control" id="patient_name" required />
+                                    </div>
+                                </div>
+                                <div class="col-md-6" id="category2" style="display:none;">
+                                    <div class="form-group"  style="margin-left:-10px;">
+                                        <label>Patient Name:</label>
+                                        <select class="form-control select" data-live-search="true" id="registered" required>
+                                            <option value="">Select</option>
+                                            <?php
                                     require 'require/config.php';
                                     $query = $conn->query("SELECT * FROM `patient` WHERE `status` = 'Active' ORDER BY `patient_id` DESC") or die(mysqli_error());
 
                                     while($fetch = $query->fetch_array()){
                                     ?>
-                                    <option value="<?php echo $fetch['patient_name'];?>"><?php echo $fetch['patient_name']?></option>
-                                    <?php
+                                            <option value="<?php echo $fetch['patient_name'];?>"><?php echo $fetch['patient_name']?></option>
+                                            <?php
                                     }
                                     $conn->close();
                                     ?>
-                                </select>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group"  style="margin-right:-10px;">
+                                        <label>Gender:</label>
+                                        <select class="form-control select" data-live-search="true" id="gender" required>
+                                            <option value="" selected="selected" disabled="disabled">Select</option>
+                                            <option value="Male">Male</option>
+                                            <option value="Female">Female</option>
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
+                            &nbsp;
                             <div class="form-row">
                                 <div class="col-md-3">
                                     <div class="form-group" style="margin-left:-10px;">

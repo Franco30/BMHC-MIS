@@ -80,7 +80,11 @@ require 'require/logincheck.php';
 			$fetch2 = $q3->fetch_array();
             $q4 = $conn->query("SELECT COUNT(*) as total FROM `consultation` WHERE `year` = '$year' && `date` REGEXP '$date_today'") or die(mysqli_error());
 			$fetch3 = $q4->fetch_array();
-            $grandtotal = $f['total'] + $fetch['total'] + $fetch2['total'] + $fetch3['total'];
+            $q5 = $conn->query("SELECT COUNT(*) as total FROM `referral` WHERE `year` = '$year' && `date_time` REGEXP '$date_today'") or die(mysqli_error());
+			$fetch4 = $q5->fetch_array();
+            $q6 = $conn->query("SELECT COUNT(*) as total FROM `referral_prenatal` WHERE `year` = '$year' && `date_time` REGEXP '$date_today'") or die(mysqli_error());
+			$fetch5 = $q6->fetch_array();
+            $grandtotal = $f['total'] + $fetch['total'] + $fetch2['total'] + $fetch3['total'] + $fetch4['total'] + $fetch5['total'];
 										?>
                                     <div class="widget-title">Family Planning</div>
                                     <div class="widget-subtitle">Patients for Today</div>

@@ -45,10 +45,7 @@ $(document).ready(function () {
                             $(document).find('.select').selectpicker();
                         });
                         $(document).ajaxComplete(function () {
-                            $(document).find('.datepicker').datepicker({
-                                format: 'MM dd, yyyy',
-                                language: 'en'
-                            });
+                            $(document).find('.datepicker').datepicker();
                         });
                         show_follow_up_familyplanning();
                     }
@@ -99,10 +96,7 @@ $(document).ready(function () {
                         $(document).find('.select').selectpicker();
                     });
                     $(document).ajaxComplete(function () {
-                        $(document).find('.datepicker').datepicker({
-                            format: 'MM dd, yyyy',
-                            language: 'en'
-                        });
+                        $(document).find('.datepicker').datepicker();
                     });
                     show_follow_up_familyplanning();
                 }
@@ -188,9 +182,7 @@ $(document).ready(function () {
                         $(document).find('.select').selectpicker();
                     });
                     $(document).ajaxComplete(function () {
-                        $(document).find('.datetimepicker').datetimepicker({
-                            format: 'mm-dd-yyyy LT',
-                        });
+                        $(document).find('.datetimepicker').datetimepicker();
                     });
                     show_follow_up_prenatal();
                 }

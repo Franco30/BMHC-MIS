@@ -53,7 +53,7 @@
                         </div>
                         <div class="panel panel-primary">
                             <div class="panel-heading">
-                                <h3 class="panel-title"><strong>Referral Record</strong></h3>
+                                <h3 class="panel-title"><strong>Referral Record - <?php echo $fetch['patient_name']?></strong></h3>
                                 <div class="btn-group pull-right">
                                     <div class="pull-left">
                                         <a class="btn btn-default" href="referral"><span class="fa fa-undo"></span> Back</a>
@@ -138,10 +138,10 @@
                                             ?>
                                                                 <tr>
                                                                     <td class="warning">
-                                                                        <center><strong>Patient Name</strong></center>
+                                                                        <center><strong>Gender</strong></center>
                                                                     </td>
                                                                     <td>
-                                                                        <center><?php echo $fetch['patient_name']?></center>
+                                                                        <center><?php echo $fetch['gender']?></center>
                                                                     </td>
                                                                 </tr>
                                                                 <tr>

@@ -76,7 +76,7 @@ $fetch = $query->fetch_array();
 							<p style="font-size: 15px;margin-left: 20px;" class="text-justify"><strong>NAME OF PATIENT:</strong>&nbsp;&nbsp;<?php echo $fetch['patient_name']?>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
 
 							<p style="font-size: 15px;margin-left: 20px;" class="text-justify"><strong>WT:</strong>&nbsp;&nbsp;<?php echo $fetch['weight']?> kg.&nbsp;&nbsp;&nbsp;&nbsp; <strong>BP:</strong>&nbsp;&nbsp;<?php echo $fetch['bp']?> mmHg&nbsp;&nbsp;&nbsp;&nbsp;
-								<strong>TEMP:</strong>&nbsp;&nbsp;<?php echo $fetch['temp']?> °C&nbsp;&nbsp;&nbsp;&nbsp; <strong>AGE:</strong>&nbsp;&nbsp;<?php echo $fetch['age']?> yrs. old</p>
+								<strong>TEMP:</strong>&nbsp;&nbsp;<?php echo $fetch['temp']?> °C&nbsp;&nbsp;&nbsp;&nbsp; <strong>AGE:</strong>&nbsp;&nbsp;<?php echo $fetch['age']?> yrs. old&nbsp;&nbsp;&nbsp;&nbsp; <strong>GENDER:</strong>&nbsp;&nbsp;<?php echo $fetch['gender']?></p>
 							<br>
 							<p style="font-size: 15px;margin-left: 20px;" class="text-justify"><strong>COMPLAINTS:</strong>&nbsp;&nbsp;
 								<br>

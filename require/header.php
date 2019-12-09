@@ -117,6 +117,8 @@ $find = $query->fetch_array();
         <a href="#"><span class="fa fa-bar-chart"></span> <span class="xn-text">Reports</span></a>
         <ul>
             <li><a href="services_reports"><span class="fa fa-line-chart"></span><span class="xn-text">Services Report</span></a></li>
+            <li><a href="referral_reports"><span class="fa fa-ambulance"></span><span class="xn-text">Referral Report</span></a></li>
+            <li><a href="follow_up_table_reports"><span class="fa fa-mail-reply-all"></span><span class="xn-text">Follow-up Visit Report</span></a></li>
             <li><a href="medication_dispense_table"><span class="fa fa-apple"></span><span class="xn-text">Inventory Report</span></a></li>
             <li><a href="sample_report"><span class="fa fa-adjust"></span><span class="xn-text">Drill Down Report</span></a></li>
             <li><a href="patient_report"><span class="fa fa-adjust"></span><span class="xn-text">Patient Record Report</span></a></li>
