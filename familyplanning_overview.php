@@ -44,23 +44,25 @@
 			<div class="page-content-wrap">
 
 				<div class="row">
-					<div class="col-md-12">
-						<div class="panel-group accordion">
-							<div class="panel panel-primary">
-								<div class="panel-heading">
-									<h4 class="panel-title">
-										<a href="#accOneColOne">
-											Medical History
-										</a>
-									</h4>
-									<div class="btn-group pull-right">
-										<div class="pull-left">
-											<a href="patient_familyplanning?patient_id=<?php echo $fetch['patient_id']?>" class="btn btn-default btn-md">Back</a>
-										</div>
-									</div>
-								</div>
-								<div class="panel-body panel-body-open" id="accOneColOne">
-									<div class="row">
+					<div class="col-md-12">			
+						<div class="panel panel-default tabs">
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li class="active"><a href="#tab-first" role="tab" data-toggle="tab">Medical History</a></li>
+                                <li><a href="#tab-second" role="tab" data-toggle="tab">Obstetrical History</a></li>
+								<li><a href="#tab-third" role="tab" data-toggle="tab">STI Risks</a></li>
+								<li><a href="#tab-fourth" role="tab" data-toggle="tab">Physical Examination</a></li>
+								<li><a href="#tab-fifth" role="tab" data-toggle="tab">Pelvic Examination</a></li>
+								<li><a href="#tab-sixth" role="tab" data-toggle="tab">Risks for Violence Against Women (VAW)</a></li>
+							<div class="btn-group pull-right">
+							<div class="pull-left">
+							<a href="patient_familyplanning?patient_id=<?php echo $fetch['patient_id']?>" class="btn btn-default btn-md">Back</a>
+							</div>
+							</div>
+                            </ul>
+                            <div class="panel-body">  
+                                    <div class="panel-body tab-content">
+                                        <div class="tab-pane active" id="tab-first">
+                                            <div class="row">
 										<div class="table-responsive">
 											<table class="table table-hover table-bordered">
 											<thead>
@@ -96,22 +98,13 @@ while($fetch = $query->fetch_array()){
 											</tbody>
 										</table>
 										</div>
+                                                
+                                            </div>
+                                        </div>
 
-									</div>
-
-								</div>
-							</div>
-							<div class="panel panel-primary">
-								<div class="panel-heading">
-									<h4 class="panel-title">
-										<a href="#accOneColTwo">
-											Obstetrical History
-										</a>
-									</h4>
-								</div>
-								<div class="panel-body" id="accOneColTwo">
-									<div class="row">
-										<div class="table-responsive">
+                                        <div class="tab-pane" id="tab-second">
+                                            <div class="row">
+                                                  <div class="table-responsive">
 											<table class="table table-hover table-bordered">
 											<thead>
 												<tr class="warning">
@@ -153,20 +146,12 @@ while($fetch = $query->fetch_array()){
 													?>
 											</tbody>
 										</table>
-										</div>
-									</div>
-
-								</div>
-							</div>
-							<div class="panel panel-primary">
-								<div class="panel-heading">
-									<h4 class="panel-title">
-										<a href="#accOneColThree">
-											STI Risks
-										</a>
-									</h4>
-								</div>
-								<div class="panel-body" id="accOneColThree">
+										</div> 
+                                                
+                                            </div>
+                                        </div>
+										
+										<div class="tab-pane" id="tab-third">
 									<div class="row">
 										<div class="table-responsive">
 											<table class="table table-hover table-bordered">
@@ -196,20 +181,11 @@ while($fetch = $query->fetch_array()){
 										</table>
 										</div>
 									</div>
-
-								</div>
-							</div>
-							<div class="panel panel-primary">
-								<div class="panel-heading">
-									<h4 class="panel-title">
-										<a href="#accOneColFour">
-											Physical Examination
-										</a>
-									</h4>
-								</div>
-								<div class="panel-body" id="accOneColFour">
-									<div class="row">
-										<div class="table-responsive">
+                                        </div>
+													
+                                        <div class="tab-pane" id="tab-fourth">
+                                            <div class="row">
+                                                   <div class="table-responsive">
 											<table class="table table-hover table-bordered">
 											<thead>
 												<tr class="warning">
@@ -250,21 +226,13 @@ while($fetch = $query->fetch_array()){
 											</tbody>
 										</table>
 										</div>
-									</div>
-
-								</div>
-							</div>
-							<div class="panel panel-primary">
-								<div class="panel-heading">
-									<h4 class="panel-title">
-										<a href="#accOneColFive">
-											Pelvic Examination
-										</a>
-									</h4>
-								</div>
-								<div class="panel-body" id="accOneColFive">
-									<div class="row">
-										<div class="table-responsive">
+                                                
+                                            </div>
+                                        </div>		
+										
+                                        <div class="tab-pane" id="tab-fifth">
+                                            <div class="row">
+<div class="table-responsive">
 											<table class="table table-hover table-bordered">
 											<thead>
 												<tr class="warning"> 
@@ -303,21 +271,12 @@ while($fetch = $query->fetch_array()){
 											</tbody>
 										</table>
 										</div>
-									</div>
-
-								</div>
-							</div>
-							<div class="panel panel-primary">
-								<div class="panel-heading">
-									<h4 class="panel-title">
-										<a href="#accOneColSix">
-											Risks for Violence Against Women (VAW)
-										</a>
-									</h4>
-								</div>
-								<div class="panel-body" id="accOneColSix">
-									<div class="row">
-										<div class="table-responsive">
+                                            </div>
+                                        </div>
+										
+                                        <div class="tab-pane" id="tab-sixth">
+                                            <div class="row">
+												<div class="table-responsive">
 											<table class="table table-hover table-bordered">
 											<thead>
 												<tr class="warning"> 
@@ -342,12 +301,13 @@ while($fetch = $query->fetch_array()){
 											</tbody>
 										</table>
 										</div>
-									</div>
-
-								</div>
-							</div>
-							
-						</div>
+                                            </div>
+                                        </div>
+										
+                                    </div>
+                                
+                            </div>
+                        </div>
 					</div>
 				</div>
 			</div>

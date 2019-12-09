@@ -52,7 +52,9 @@ function medicinestocks() {
         },
         success: function (response) {
             $('#mStocks').html(response);
-            var table = $('#mstocks').DataTable();
+            var table = $('#mstocks').DataTable({
+                "aaSorting": [[2, 'desc']]
+            });
         }
     });
 }

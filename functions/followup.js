@@ -145,9 +145,7 @@ $(document).ready(function () {
                             $(document).find('.select').selectpicker();
                         });
                         $(document).ajaxComplete(function () {
-                            $(document).find('.datetimepicker').datetimepicker({
-                                format: 'MMMM DD, YYYY LT'
-                            });
+                            $(document).find('.datetimepicker').datetimepicker();
                         });
                         show_follow_up_prenatal();
                     }
@@ -191,7 +189,7 @@ $(document).ready(function () {
                     });
                     $(document).ajaxComplete(function () {
                         $(document).find('.datetimepicker').datetimepicker({
-                            format: 'MMMM DD, YYYY LT',
+                            format: 'mm-dd-yyyy LT',
                         });
                     });
                     show_follow_up_prenatal();
@@ -211,7 +209,9 @@ function show_follow_up_prenatal() {
         },
         success: function (response) {
             $('#prenatalfollowupTable').html(response);
-            var table = $('#followuptable').DataTable();
+            var table = $('#followuptable').DataTable({
+                "aaSorting": [[4, 'desc']]
+            });
         }
     });
 }
@@ -227,7 +227,9 @@ function show_follow_up_familyplanning() {
         },
         success: function (response) {
             $('#fpfollowupTable').html(response);
-            var table = $('#fpfollowuptable').DataTable();
+            var table = $('#fpfollowuptable').DataTable({
+                "aaSorting": [[4, 'desc']]
+            });
         }
     });
 }

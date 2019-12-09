@@ -23,13 +23,13 @@ if(isset($_POST['show'])){
         ?>
         <tr>
             <td><center><strong><?php echo $fetch['year']."0".$fetch['child_id'];?></strong></center></td>
-            <td><center><strong><?php echo $fetch['child_name']?></strong></center></td>
-            <td><center><?php echo $fetch['gender']?></center></td>
+            <td style="width:12%;"><strong><?php echo $fetch['child_name']?></strong></td>
+            <td><?php echo $fetch['gender']?></td>
             <td><center><?php echo $fetch['birthdate']?></center></td>
-            <td><center>Prk. <?php echo $fetch['purok']?></center></td>
-            <td><center><?php echo $fetch['street_address']?></center></td>
-            <td><center><?php echo $fetch['mother_name']?></center></td>
-            <td><center><?php echo $fetch['father_name']?></center></td>
+            <td>Prk. <?php echo $fetch['purok']?></td>
+            <td><?php echo $fetch['street_address']?></td>
+            <td><?php echo $fetch['mother_name']?></td>
+            <td><?php echo $fetch['father_name']?></td>
         </tr>
         <?php
     }

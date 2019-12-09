@@ -37,13 +37,13 @@ if(isset($_POST['show'])){
                     <center><strong><?php echo $fetch1['year']?><?php echo "0".$fetch1['patient_id']?></strong></center>
                 </td>
                 <td>
-                    <center><strong><?php echo $fetch1['patient_name']?></strong></center>
+                    <strong><?php echo $fetch1['patient_name']?></strong>
                 </td>
                 <td>
                     <center><?php echo $fetch1['follow_up_date_time']?></center>
                 </td>
                 <td>
-                    <center><?php echo $fetch1['remarks']?></center>
+                    <?php echo $fetch1['remarks']?>
                 </td>
                 <td>
                     <center>

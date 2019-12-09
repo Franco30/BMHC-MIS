@@ -21,11 +21,13 @@ if(isset($_POST['show'])){
             $f = $q->fetch_array();
         ?>
         <tr>
-            <td><center><strong><?php echo $fetch['patient_name']?></strong></center></td>
+            <td><strong><?php echo $fetch['patient_name']?></strong></td>
             <td><center><?php echo $fetch['age']?> years old</center></td>
             <td><center><?php echo $fetch['birthdate']?></center></td>
-            <td><center>Purok <?php echo $fetch['purok']." ".$fetch['street_address']?></center></td>
-            <td><center><a href="patient_prenatal?patient_id=<?php echo $fetch['patient_id'];?>" class="btn btn-md btn-default">All Records <span class="badge"><?php echo $f['total']?></span></a></center></td>
+            <td>Purok <?php echo $fetch['purok']." ".$fetch['street_address']?></td>
+            <td><center><a href="patient_prenatal?patient_id=<?php echo $fetch['patient_id'];?>" class="btn btn-md btn-default">All Records <span class="badge"><?php echo $f['total']?></span></a>
+                <button type="button" class="btn btn-md btn-info">Edit</button>
+                </center></td>
         </tr>
         <?php
     }

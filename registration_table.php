@@ -101,9 +101,9 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                        <div class="panel-body">
-                                                            <div id="patientTable"></div>
-                                                        </div>
+                                                    <div class="panel-body">
+                                                        <div id="patientTable"></div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -120,9 +120,9 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                        <div class="panel-body">
-                                                            <div id="childpatientTable"></div>
-                                                        </div>
+                                                    <div class="panel-body">
+                                                        <div id="childpatientTable"></div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -171,7 +171,7 @@
     <script>
         var date = new Date();
         $('#birthdate').datepicker({
-            format: 'MM dd, yyyy',
+            format: 'mm-dd-yyyy',
             language: 'en',
             startDate: new Date('1900-01-01'),
             endDate: date

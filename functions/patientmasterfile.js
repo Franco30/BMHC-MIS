@@ -18,58 +18,55 @@ $(document).ready(function () {
         $contact_person = $('#contact_person' + $patient_id).val();
         $emergency_no = $('#emergency_no' + $patient_id).val();
         $status = $('#status' + $patient_id).val();
-//        if (confirm('Are you sure you want to update this patient?')) {
-            $.ajax({
-                type: "POST",
-                url: "action/editpatient.php",
-                cache: false,
-                async: false,
-                data: {
-                    patient_id: $patient_id,
-                    patient_name: $patient_name,
-                    birthdate: $birthdate,
-                    age: $age,
-                    gender: $gender,
-                    civilstatus: $civilstatus,
-                    streetaddress: $streetaddress,
-                    purok: $purok,
-                    height: $height,
-                    weight: $weight,
-                    contact_no: $contact_no,
-                    region_province: $region_province,
-                    occupation: $occupation,
-                    philhealth_no: $philhealth_no,
-                    contact_person: $contact_person,
-                    emergency_no: $emergency_no,
-                    status: $status,
-                    edit: 1,
-                },
-                success: function () {
-                    $('#edit_patient' + $patient_id).modal('hide');
-                    $('#alert').slideDown();
-                    $('#alerttext').text('Successfully updated Patient Profile');
-                    setTimeout(function () {
-                        $('#alert').fadeOut('slow');
-                    }, 1000);
-                    setTimeout(function () {
-                        $('#edit_patient').modal('hide');
-                    }, 2000);
-                    setTimeout(function () {
-                        window.location.href = 'master_file_patient';
-                    }, 2500);
-                    $(document).ajaxComplete(function () {
-                        $(document).find('.select').selectpicker();
-                    });
-                    $(document).ajaxComplete(function () {
-                        $(document).find('.datepicker').datepicker({
-                            format: 'MM dd, yyyy',
-                            language: 'en'
-                        });
-                    });
-                    showPMF();
-                }
-            });
-//        }
+        //        if (confirm('Are you sure you want to update this patient?')) {
+        $.ajax({
+            type: "POST",
+            url: "action/editpatient.php",
+            cache: false,
+            async: false,
+            data: {
+                patient_id: $patient_id,
+                patient_name: $patient_name,
+                birthdate: $birthdate,
+                age: $age,
+                gender: $gender,
+                civilstatus: $civilstatus,
+                streetaddress: $streetaddress,
+                purok: $purok,
+                height: $height,
+                weight: $weight,
+                contact_no: $contact_no,
+                region_province: $region_province,
+                occupation: $occupation,
+                philhealth_no: $philhealth_no,
+                contact_person: $contact_person,
+                emergency_no: $emergency_no,
+                status: $status,
+                edit: 1,
+            },
+            success: function () {
+                $('#edit_patient' + $patient_id).modal('hide');
+                $('#alert').slideDown();
+                $('#alerttext').text('Successfully updated Patient Profile');
+                setTimeout(function () {
+                    $('#alert').fadeOut('slow');
+                }, 1000);
+                setTimeout(function () {
+                    $('#edit_patient').modal('hide');
+                }, 2000);
+                setTimeout(function () {
+                    window.location.href = 'master_file_patient';
+                }, 2500);
+                $(document).ajaxComplete(function () {
+                    $(document).find('.select').selectpicker();
+                });
+                $(document).ajaxComplete(function () {
+                    $(document).find('.datepicker').datepicker();
+                });
+                showPMF();
+            }
+        });
+        //        }
         //                $('form').trigger('reset');
     });
 });
@@ -84,8 +81,10 @@ function showPMF() {
         },
         success: function (response) {
             $('#patientmasterfileTable').html(response);
-            var table = $('#patientmasterfiletable').DataTable();
-        }
+            var table = $('#patientmasterfiletable').DataTable({
+                "aaSorting": [[1, 'asc']]
+            });
+            }
     });
 }
 

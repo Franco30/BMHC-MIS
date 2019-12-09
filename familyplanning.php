@@ -44,7 +44,7 @@
                                 <h3 class="panel-title"><strong>Family Planning Service Registration</strong></h3>
                                 <div class="btn-group pull-right">
                                     <div class="pull-left">
-                                        <button class="btn btn-primary btn-md" data-toggle="modal" data-target="#add_familyplanning">Add Patient</button>
+                                        <button class="btn btn-primary btn-md" data-toggle="modal" data-target="#add_familyplanning">Add</button>
                                     </div>
                                 </div>
                             </div>

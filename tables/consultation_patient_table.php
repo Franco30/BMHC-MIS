@@ -30,17 +30,18 @@ if(isset($_POST['show'])){
         ?>
         <tr>
             <td><center><strong><?php echo  $fetch['year']."".$fetch['consultation_id']?></strong></center></td>
-            <td><center><strong><?php echo $fetch['patient_name']?></strong></center></td>
+            <td><strong><?php echo $fetch['patient_name']?></strong></td>
             <td><center><?php echo $fetch['age']?></center></td>
             <td><center><?php echo $fetch['gender']?></center></td>
             <td><center><?php echo $fetch['contact_no']?></center></td>
-            <td><center><?php echo $fetch['purok']." ".$fetch['street_address'];?></center></td>
+            <td><?php echo $fetch['purok']." ".$fetch['street_address'];?></td>
             <td><center>
             <?php    
             if($f2['status'] == 'No Prescription')
                 echo "<a href='patient_consultation?patient_id=".$fetch['patient_id']."' class='btn btn-md btn-default' data-toggle='tooltip' data-placement='top' title='Prescription Required'>All Records <span class='badge animated infinite pulse' style='animation-duration:.6s;background-color: #E04B4A;'>".$f['total']."</span></a>";
             else echo "<a href='patient_consultation?patient_id=".$fetch['patient_id']."' class='btn btn-md btn-default'>All Records <span class='badge'>".$f['total']."</span></a>";
             ?>    
+            <button type="button" class="btn btn-md btn-info">Edit</button>
                 </center></td>
         </tr>
         <?php

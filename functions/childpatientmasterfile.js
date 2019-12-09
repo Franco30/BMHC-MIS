@@ -51,10 +51,7 @@ $(document).ready(function () {
                         $(document).find('.select').selectpicker();
                     });
                     $(document).ajaxComplete(function () {
-                        $(document).find('.datepicker').datepicker({
-                            format: 'MM dd, yyyy',
-                            language: 'en'
-                        });
+                        $(document).find('.datepicker').datepicker();
                     });
                     showCPMF();
                 }
@@ -73,7 +70,9 @@ function showCPMF() {
         },
         success: function (response) {
             $('#childpatientmasterfileTable').html(response);
-            var table = $('#childpatientmasterfiletable').DataTable();
+            var table = $('#childpatientmasterfiletable').DataTable({
+                "aaSorting": [[1, 'asc']]
+            });
         }
     });
 }

@@ -17,8 +17,6 @@
     <link rel="stylesheet" type="text/css" href="assets3/vendor/font-awesome/css/font-awesome.min.css" />
     <!-- EOF CSS INCLUDE -->
     <script type="text/javascript" src="js/plugins/jquery/jquery.min.js"></script>
-    <script type="text/javascript" src="js/jquery.canvasjs.min.js"></script>
-    <?php require 'js/loadchart/medicine_inventory.php'?>
 </head>
 
 <body>

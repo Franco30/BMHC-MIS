@@ -23,7 +23,7 @@
                                     <option value="#">Select</option>
                                     <?php
 	                $conn = new mysqli("localhost", "root", "", "bmhc") or die(mysqli_error());
-					$query = $conn->query("SELECT * FROM `patient` where `status` = 'Active' && `gender` = 'Female'") or die(mysqli_error());
+					$query = $conn->query("SELECT * FROM `patient` where `status` = 'Active' && `gender` = 'Female' ORDER BY `patient_id` DESC") or die(mysqli_error());
                                     
 					while($fetch = $query->fetch_array()){
                         

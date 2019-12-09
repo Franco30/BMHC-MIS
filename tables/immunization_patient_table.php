@@ -19,16 +19,17 @@ $query = $conn->query("SELECT * FROM `immunization`, `patient_child` WHERE `pati
     while($fetch = $query->fetch_array()){
         ?>
         <tr>
-            <td><center><strong><?php echo $fetch['child_name']?></strong></center></td>
-            <td><center><?php echo $fetch['mother_name']?></center></td>
-            <td><center><?php echo $fetch['father_name']?></center></td>
+            <td><strong><?php echo $fetch['child_name']?></strong></td>
+            <td><?php echo $fetch['mother_name']?></td>
+            <td><?php echo $fetch['father_name']?></td>
             <td><center><?php echo $fetch['gender']?></center></td>
             <td><center><?php echo $fetch['birthdate']?></center></td>
             <td><center>
-            <a href="immunization_treatment?child_id=<?php echo $fetch['child_id'];?>&&immunization_id=<?php echo $fetch['immunization_id']?>" class="btn btn-sm btn-info">
-            <span class="fa fa-heartbeat"></span> Treatment</a>
-            <a href="immunization_consultation?child_id=<?php echo $fetch['child_id'];?>&&immunization_id=<?php echo $fetch['immunization_id']?>" class="btn btn-sm btn-default">
-            <span class="fa fa-stethoscope"></span> Consultation</a>
+            <a href="immunization_treatment?child_id=<?php echo $fetch['child_id'];?>&&immunization_id=<?php echo $fetch['immunization_id']?>" class="btn btn-sm btn-info" data-toggle="tooltip" data-placement="top" title="Treatment">
+            <span class="fa fa-heartbeat" style="margin-right: 0px;"></span></a>
+            <a href="immunization_consultation?child_id=<?php echo $fetch['child_id'];?>&&immunization_id=<?php echo $fetch['immunization_id']?>" class="btn btn-sm btn-default" data-toggle="tooltip" data-placement="top" title="Consultation">
+                <span class="fa fa-stethoscope" style="margin-right: 0px;"></span></a>
+                <button type="button" class="btn btn-sm btn-info">Edit</button>
             </center></td>
         </tr>
         <?php

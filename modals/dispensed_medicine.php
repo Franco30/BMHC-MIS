@@ -16,13 +16,6 @@
             <div class="modal-body">
                 <form id="dispensedform">
                     <fieldset>
-                        <div class="col-md-8" style="margin-left: 150px;">
-                            <div class="panel panel-default">
-                                <div class="panel-body scroll" style="height: 350px;">
-                                    <div id="medicine" style="width: 100%; height: 350px"></div>
-                                </div>
-                            </div>
-                        </div>
                         <div class="col-md-12">
                             <div class="form-row">
                                 <div class="col-md-6">
@@ -45,7 +38,7 @@
                                             <option value="#">Select</option>
                                             <?php
 	                $conn = new mysqli("localhost", "root", "", "bmhc") or die(mysqli_error());
-					$query = $conn->query("SELECT * FROM `medicine`") or die(mysqli_error());
+					$query = $conn->query("SELECT * FROM `medicine` ORDER BY `running_balance`") or die(mysqli_error());
 
 					while($fetch = $query->fetch_array()){
 									?>
@@ -87,12 +80,20 @@
                                 </div>
                             </div>
                         </div>
+                        &nbsp;
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="panel panel-default">
+                                    <div id="medicineTable"></div>
+                                </div>
+                            </div>
+                        </div>
                     </fieldset>
                 </form>
             </div>
             <div class="modal-footer">
                 <button type="button" id="addnew" class="btn btn-success dispense">Save</button>
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
             </div>
         </div>
     </div>

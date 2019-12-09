@@ -102,7 +102,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" value="<?php echo $fetch1['fp_follow_up_id']; ?>" class="btn btn-success edit_fp_follow_up">Save</button>
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
             </div>
         </div>
     </div>

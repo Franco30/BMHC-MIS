@@ -1,5 +1,5 @@
-<?php require 'chartqueries/consultation.php'?>
-<?php require 'chartqueries/consultation_quarterly.php'?>
+<?php require 'chartqueries/familyplanning.php'?>
+<?php require 'chartqueries/familyplanning_quarterly.php'?>
 <script type="text/javascript"> 
     $(document).ready(function(){ 
         CanvasJS.addColorSet("customColorSet", [ 

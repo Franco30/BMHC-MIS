@@ -34,7 +34,7 @@
 			$id = $fetch['patient_id'];
 					?>
                 <li>Reports</li>
-                <li><a href="medication_dispense_table.php">Medicines Dispensed</a></li>
+                <li><a href="medication_dispense_table">Medicines Dispensed</a></li>
                 <li><mark><strong><?php echo $fetch['patient_name'];?></strong></mark></li>
             </ul>
             <!-- END BREADCRUMB -->
@@ -45,6 +45,9 @@
                         <div class="panel panel-primary">
                             <div class="panel-heading">
                                 <h3 class="panel-title"><strong>Medication Dispensation Log</strong></h3>
+                                <div class="btn-group pull-right">
+                                    <a class="btn btn-default" href="medication_dispense_table">Back</a>
+                                </div>
                             </div>
                             <div class="panel-body list-group list-group-contacts scroll" style="height: 470px;">
                                 <div class="panel-body">

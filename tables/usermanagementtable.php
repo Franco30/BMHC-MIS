@@ -11,7 +11,7 @@ if(isset($_POST['show'])){
             <th><center>Position</center></th>
             <th><center>License</center></th>
             <th><center>Username</center></th>
-            <th><center>Password</center></th>
+<!--            <th><center>Password</center></th>-->
             <th><center>Status</center></th>
 <!--            <th><center>Action</center></th>-->
         </tr>
@@ -28,7 +28,7 @@ if(isset($_POST['show'])){
             <td><center><?php echo $fetch['position']?></center></td>
             <td><center><?php echo $fetch['license']?></center></td>
             <td><center><?php echo $fetch['username']?></center></td>
-            <td><center>*************</center></td>
+<!--            <td><center>*************</center></td>-->
             <td><center><?php  if ($fetch['status'] == '1') echo "<span class='badge badge-info'>Active</span>";
                 if ($fetch['status'] == '0') echo "<span class='badge badge-danger'>Inactive</span>";?>
                 </center></td>

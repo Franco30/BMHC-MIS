@@ -1,5 +1,5 @@
-<?php require 'chartqueries/consultation.php'?>
-<?php require 'chartqueries/consultation_quarterly.php'?>
+<?php require 'chartqueries/familyplanning.php'?>
+<?php require 'chartqueries/familyplanning_quarterly.php'?>
 <script type="text/javascript"> 
     $(document).ready(function(){ 
         CanvasJS.addColorSet("customColorSet", [ 
@@ -20,7 +20,7 @@
             animationEnabled: true,
             animationDuration: 1000,
 
-            exportFileName: "Monthly Consultation Count - BMHC", 
+            exportFileName: "Monthly Family Planning Count - BMHC", 
             exportEnabled: true,
             toolTip: {
                 shared: true  
@@ -95,7 +95,7 @@
             panEnabled: true,
             animationEnabled: true,
             animationDuration: 1000,
-            exportFileName: "Quarterly Consultation Count - BMHC", 
+            exportFileName: "Quarterly Family Planning Count - BMHC", 
             exportEnabled: true,
             toolTip: {
                 shared: true  
@@ -165,7 +165,7 @@
             animationEnabled: true,
             animationDuration: 1000,
             colorSet: "customColorSet",
-            exportFileName: "Yearly Patient Count - BMHC", 
+            exportFileName: "Yearly Family Planning Patient Count - BMHC", 
             exportEnabled: true,
             toolTip: {
                 shared: true  

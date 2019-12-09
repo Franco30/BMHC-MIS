@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    showMedicine();
     showDispensedMedicine();
 
     $("#quantity").keyup(function () {
@@ -70,7 +71,14 @@ $(document).ready(function () {
                             setTimeout(function () {
                                 $('#alert').fadeOut('slow');
                             }, 1500);
+                            $("#medicine_name").val('default');
+                            $('#medicine_name').selectpicker('refresh');
+                            $("#purpose").val('default');
+                            $('#purpose').selectpicker('refresh');
+                            $("#received").val('default');
+                            $('#received').selectpicker('refresh');
                             showDispensedMedicine();
+                            showMedicine();
                         }
                     }
 
@@ -93,7 +101,29 @@ function showDispensedMedicine() {
         },
         success: function (response) {
             $('#mdTable').html(response);
-            var table = $('#mdtable').DataTable();
+            var table = $('#mdtable').DataTable({
+                "aaSorting": [[4, 'desc']]
+            });
+        }
+    });
+}
+
+function showMedicine() {
+    $.ajax({
+        url: 'tables/medicinetable.php',
+        type: 'POST',
+        async: false,
+        data: {
+            show: 1
+        },
+        success: function (response) {
+            $('#medicineTable').html(response);
+            var table = $('#medicinetable').DataTable({
+                "aaSorting": [[4, 'desc']]
+            });
+//            $('.mt').dataTable({
+//                "aaSorting": [[4, 'desc']]
+//            });
         }
     });
 }

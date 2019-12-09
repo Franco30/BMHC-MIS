@@ -8,7 +8,8 @@ if(isset($_POST['add'])){
     $year = date("Y", strtotime("+8 HOURS"));
     date_default_timezone_set('Asia/Manila');	
     $time=date("g:i a");
-    $date=date("F j, Y");
+    //$date=date("F j, Y");
+    $date = date("m-d-y"); 
     $month=date("F");
     $date_time=date("F j, Y g:i a");
 
@@ -21,7 +22,7 @@ if(isset($_POST['add'])){
     $md_name =  $fetch1['medicine_name'];
     $remarks = "added $quantity pieces of $md_name to stocks";
 
-   	$conn->query("INSERT INTO `medicine_stocks` VALUES('', '$medicine_name', '$quantity', '$date_time')") or die(mysqli_error());
+   	$conn->query("INSERT INTO `medicine_stocks` VALUES('', '$medicine_name', '$quantity', '$date $time')") or die(mysqli_error());
 	
 	$conn->query("UPDATE `medicine` SET `running_balance` = `running_balance` + '$quantity' WHERE `medicine_id` = '$medicine_name'") or die(mysqli_error());
 	

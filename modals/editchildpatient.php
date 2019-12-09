@@ -135,7 +135,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" value="<?php echo $fetch['child_id']; ?>" class="btn btn-success editchild">Save</button>
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
             </div>
         </div>
     </div>

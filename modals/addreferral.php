@@ -38,7 +38,7 @@
                                     <option value="">Select</option>
                                     <?php
                                     require 'require/config.php';
-                                    $query = $conn->query("SELECT * FROM `patient` WHERE `status` = 'Active'") or die(mysqli_error());
+                                    $query = $conn->query("SELECT * FROM `patient` WHERE `status` = 'Active' ORDER BY `patient_id` DESC") or die(mysqli_error());
 
                                     while($fetch = $query->fetch_array()){
                                     ?>
@@ -58,7 +58,7 @@
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group" style="margin-left:-10px;">
-                                        <label>Blood Pressure:</label>
+                                        <label>BP:</label>
                                         <input type="text" class="mask_bp form-control" id="bp" required />
                                     </div>
                                 </div>
@@ -143,7 +143,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" id="addnew" class="btn btn-success">Save</button>
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
             </div>
         </div>
     </div>

@@ -21,14 +21,16 @@ if(isset($_POST['show'])){
 			while($fetch = $query->fetch_array()){
 											?>
         <tr>
-            <td><center><strong><?php echo $fetch['patient_name'] ?></strong></center></td>
-            <td><center><?php echo $fetch['to_hospital'] ?></center></td>
-            <td style="width:26%;"><center><?php echo $fetch['complaints'] ?></center></td>
-            <td><center><?php echo $fetch['referred_by'] ?></center></td>
+            <td><strong><?php echo $fetch['patient_name'] ?></strong></td>
+            <td><?php echo $fetch['to_hospital'] ?></td>
+            <td style="width:16%;"><?php echo $fetch['complaints'] ?></td>
+            <td><?php echo $fetch['referred_by'] ?></td>
             <td><center><?php echo $fetch['referral_date'] ?></center></td>
             <td><center>
-            <a href="referral_record?referral_id=<?php echo $fetch['referral_id']?>" class="btn btn-sm btn-info">Overview </a>
-            </center></td>
+            <a href="referral_record?referral_id=<?php echo $fetch['referral_id']?>" class="btn btn-sm btn-default">Overview </a>
+            <button type="button" class="btn btn-sm btn-info">Edit</button>
+            </center>
+            </td>
         </tr>
                 <?php
 			}

@@ -81,6 +81,13 @@ function showPatient() {
         success: function (response) {
             $('#patientTable').html(response);
             var table = $('#patienttable').DataTable();
+            $(document).ready(function () {
+//                $('#patienttable').DataTable({
+//                    order: [
+//                    [1, 'desc']
+//                ]
+//                });
+            });
         }
     });
 }

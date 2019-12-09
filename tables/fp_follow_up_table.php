@@ -37,17 +37,17 @@ if(isset($_POST['show'])){
                     <center><strong><?php echo $fetch1['year']?><?php echo "0".$fetch1['patient_id']?></strong></center>
                 </td>
                 <td>
-                    <center><strong><?php echo $fetch1['patient_name']?></strong></center>
+                    <strong><?php echo $fetch1['patient_name']?></strong>
                 </td>
                 <td>
-                    <center><?php echo $fetch1['remarks']?></center>
+                    <?php echo $fetch1['remarks']?>
                 </td>
                 <td>
                     <center><?php echo $fetch1['next_service_date']?></center>
                 </td>
                 <td>
                     <center>
-                <?php 
+                        <?php 
                 if ($fetch1['follow_up_status'] == 'Pending')echo "<span class='badge badge-danger animated infinite pulse' style='animation-duration:.8s;'>Pending</span>";
 				if ($fetch1['follow_up_status'] == 'Done')echo "<span class='badge badge-info'>Done</span>";
                 if ($fetch1['follow_up_status'] == 'Cancelled')echo "<span class='badge badge-warning'>Cancelled</span>";

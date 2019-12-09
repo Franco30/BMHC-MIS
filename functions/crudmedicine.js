@@ -97,7 +97,9 @@ function showMedicine() {
         },
         success: function (response) {
             $('#medicineTable').html(response);
-            var table = $('#medicinetable').DataTable();
+            var table = $('#medicinetable').DataTable({
+                "aaSorting": [[4, 'desc']]
+            });
         }
     });
 }

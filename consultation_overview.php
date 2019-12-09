@@ -45,22 +45,20 @@
 
 				<div class="row">
 					<div class="col-md-12">
-						<div class="panel-group accordion">
-							<div class="panel panel-primary">
-								<div class="panel-heading">
-									<h4 class="panel-title">
-										<a href="#accOneColOne">
-											Consultation
-										</a>
-									</h4>
+						<div class="panel panel-default tabs">
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li class="active"><a href="#tab-first" role="tab" data-toggle="tab">Consultation</a></li>
+                                <li><a href="#tab-second" role="tab" data-toggle="tab">Treatment</a></li>
 									<div class="btn-group pull-right">
 										<div class="pull-left">
 											<a href="patient_overview?id=<?php echo $fetch['patient_id']?>&&patient_name=<?php echo $fetch['patient_name'] ?>" class="btn btn-default btn-md">Back</a>
 										</div>
 									</div>
-								</div>
-								<div class="panel-body panel-body-open" id="accOneColOne">
-									<div class="row">
+                            </ul>
+                            <div class="panel-body">  
+                                    <div class="panel-body tab-content">
+                                        <div class="tab-pane active" id="tab-first">
+                                            <div class="row">
 										<div class="table-responsive">
 											<table class="table table-hover table-bordered">
 											<thead>
@@ -103,23 +101,12 @@
 											?>
 											</tbody>
 										</table>
-										</div>
-
-									</div>
-
-								</div>
-							</div>
-							<div class="panel panel-primary">
-								<div class="panel-heading">
-									<h4 class="panel-title">
-										<a href="#accOneColTwo">
-											Treatment
-										</a>
-									</h4>
-								</div>
-								<div class="panel-body" id="accOneColTwo">
-									<div class="row">
-										<div class="table-responsive">
+										</div> 
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane" id="tab-second">
+                                            <div class="row">
+                                 				<div class="table-responsive">
 											<table class="table table-hover table-bordered">
 											<thead>
 												<tr class="warning">
@@ -162,12 +149,12 @@
 											</tbody>
 										</table>
 										</div>
-									</div>
-
-								</div>
-							</div>
-
-						</div>
+                                                
+                                            </div>
+                                        </div>
+                                
+                            </div>
+                        </div>
 					</div>
 				</div>
 			</div>

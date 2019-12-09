@@ -5,9 +5,7 @@
                 // Bootstrap datetimepicker
                 var feDateTimepicker = function () {
                     if ($(".datetimepicker").length > 0) {
-                        $(".datetimepicker").datetimepicker({
-                            format: 'MMMM DD, YYYY LT'
-                        });
+                        $(".datetimepicker").datetimepicker();
 
                         $("#dp-2,#dp-3,#dp-4").datetimepicker(); // Sample
                     }
@@ -17,11 +15,12 @@
                 // Bootstrap datepicker
                 var feDatepicker = function () {
                     if ($(".datepicker").length > 0) {
-                        $(".datepicker").datepicker({
-                            //format: 'yyyy-mm-dd'
-                            format: 'MM d, yyyy',
-                            language: 'en'
-                        });
+                        $(".datepicker").datepicker();
+//                        {
+//                            //format: 'yyyy-mm-dd'
+//                            format: 'mm-dd-yyyy',
+//                            language: 'en'
+//                        }
                         $("#dp-2,#dp-3,#dp-4").datepicker(); // Sample
                     }
 

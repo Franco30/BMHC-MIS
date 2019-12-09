@@ -69,34 +69,36 @@ require 'require/logincheck.php';
 			{
 				$year=$_GET['year'];
 			}
+            date_default_timezone_set('Asia/Manila');
+		    $date_today = date('F j, Y');
 			require 'require/config.php';
-			$q = $conn->query("SELECT COUNT(*) as total FROM `family_planning`, `patient` WHERE `family_planning`.`patient_id` = `patient`.`patient_id` && `family_planning`.`year` = '$year'") or die(mysqli_error());
+			$q = $conn->query("SELECT COUNT(*) as total FROM `family_planning` WHERE `year` = '$year' && `date_time` REGEXP '$date_today'") or die(mysqli_error());
 			$f = $q->fetch_array();
-			$q2 = $conn->query("SELECT COUNT(*) as total FROM `prenatal` WHERE `year` = '$year'") or die(mysqli_error());
+			$q2 = $conn->query("SELECT COUNT(*) as total FROM `prenatal` WHERE `year` = '$year' && `date` REGEXP '$date_today'") or die(mysqli_error());
 			$fetch = $q2->fetch_array();
-			$q3 = $conn->query("SELECT COUNT(*) as total FROM `immunization` WHERE `year` = '$year'") or die(mysqli_error());
+			$q3 = $conn->query("SELECT COUNT(*) as total FROM `immunization` WHERE `year` = '$year' && `date_time` REGEXP '$date_today'") or die(mysqli_error());
 			$fetch2 = $q3->fetch_array();
-            $q4 = $conn->query("SELECT COUNT(*) as total FROM `consultation` WHERE `year` = '$year'") or die(mysqli_error());
+            $q4 = $conn->query("SELECT COUNT(*) as total FROM `consultation` WHERE `year` = '$year' && `date` REGEXP '$date_today'") or die(mysqli_error());
 			$fetch3 = $q4->fetch_array();
-
+            $grandtotal = $f['total'] + $fetch['total'] + $fetch2['total'] + $fetch3['total'];
 										?>
                                     <div class="widget-title">Family Planning</div>
-                                    <div class="widget-subtitle">Patients</div>
+                                    <div class="widget-subtitle">Patients for Today</div>
                                     <div class="widget-int"><?php echo $f['total']?></div>
                                 </div>
                                 <div>
                                     <div class="widget-title">Prenatal</div>
-                                    <div class="widget-subtitle">Patients</div>
+                                    <div class="widget-subtitle">Patients for Today</div>
                                     <div class="widget-int"><?php echo $fetch['total']?></div>
                                 </div>
                                 <div>
                                     <div class="widget-title">Immunization</div>
-                                    <div class="widget-subtitle">Patients</div>
+                                    <div class="widget-subtitle">Patients for Today</div>
                                     <div class="widget-int"><?php echo $fetch2['total']?></div>
                                 </div>
                                 <div>
                                     <div class="widget-title">Consultation</div>
-                                    <div class="widget-subtitle">Patients</div>
+                                    <div class="widget-subtitle">Patients for Today</div>
                                     <div class="widget-int"><?php echo $fetch3['total']?></div>
                                 </div>
                             </div>
@@ -131,10 +133,10 @@ require 'require/logincheck.php';
                     $f2 = $q2->fetch_array();
                     $sum = $fetch['total'] + $f2['total'];
 ?>
-                                <div class="widget-int num-count counter" data-count="<?php echo $sum?>">0
+                                <div class="widget-int num-count counter" data-count="<?php echo $grandtotal?>">0
                                 </div>
-                                <div class="widget-title">Total Patients</div>
-                                <div class="widget-subtitle">Registered - Year <?php echo $year;?></div>
+                                <div class="widget-title">Daily Patients</div>
+                                <div class="widget-subtitle">Catered in Transactions</div>
                             </div>
                             <div class="widget-controls">
                                 <a href="#" class="widget-control-right widget-remove" data-toggle="tooltip" data-placement="top" title="Remove Widget"><span class="fa fa-times"></span></a>

@@ -73,6 +73,7 @@ json_encode($data_points);
 			axisX: {
 				interval: 1,
 				labelFontColor: "black",
+				labelFontSize: 8,
 			},
 			axisY: {
 				//title: "Stocks Remaining", 

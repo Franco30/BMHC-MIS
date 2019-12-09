@@ -31,7 +31,7 @@ if(isset($_POST['add'])){
     $remarks = "Added $child_name to Immunization";
 
     require '../require/config.php';
-    $conn->query("INSERT INTO `immunization` VALUES('', '$child_id', '$philhealth', '$birthtime', '$birthweight', '$phonenumber', '$gravida', '$para', '$abortion', '$mage', '$fage', '$placeprenatal', '$placedelivery', '$ypedelivery', 'Registered', '$month', '$year')") or die(mysqli_error());
+    $conn->query("INSERT INTO `immunization` VALUES('', '$child_id', '$philhealth', '$birthtime', '$birthweight', '$phonenumber', '$gravida', '$para', '$abortion', '$mage', '$fage', '$placeprenatal', '$placedelivery', '$ypedelivery', 'Registered', '$month', '$year', '$date_time')") or die(mysqli_error());
     
     $conn->query("UPDATE `patient_child` SET `status` = 'Registered Immunization' WHERE `child_id` = '$child_id'") or die(mysqli_error());
     
