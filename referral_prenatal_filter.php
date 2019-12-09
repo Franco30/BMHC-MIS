@@ -18,8 +18,8 @@
     <link href="assets3/css/invoice-print.min.css" rel="stylesheet" />
     <script type="text/javascript" src="js/plugins/jquery/jquery.min.js"></script>
     <script type="text/javascript" src="js/jquery.canvasjs.min.js"></script>
-    <?php require 'js/loadcharts/reports/referral2.php'?>
-    <?php require 'js/loadcharts/reports/referral3.php'?>
+    <?php require 'js/loadcharts/reports/referral_prenatal2.php'?>
+    <?php require 'js/loadcharts/reports/referral_prenatal3.php'?>
     <!-- EOF CSS INCLUDE -->
     <style type="text/css">
         @media print {
@@ -54,8 +54,8 @@
                 <li><strong><mark><?php echo $find['fullname']; ?></mark></strong></li>
                 &nbsp;-
                 <li>Referral Reports</li>
-                <li>Referral Reports</li>
-                <li class="active"><mark><strong>Referral Filtered Reports</strong></mark></li>
+                <li>Referral Prenatal Reports</li>
+                <li class="active"><mark><strong>Referral Prenatal Filtered Reports</strong></mark></li>
             </ul>
             <!-- END BREADCRUMB -->
 
@@ -122,8 +122,6 @@
                                             <option value="monthly">Monthly</option>
                                             <option value="quarterly">Quarterly</option>
                                             <option value="yearly">Yearly</option>
-                                            <option value="colpatienttype">Patient Type</option>
-                                            <option value="colpatientgender">Patient Gender</option>
                                             <option value="colpatientage">Patient Age</option>
                                         </select>
                                     </div>
@@ -160,26 +158,6 @@
                                             <option value="splineyear">Spline Chart</option>
                                             <option value="pieyear">Pie Chart</option>
                                             <option value="dougnutyear">Doughnut Chart</option>
-                                        </select>
-                                    </div>
-                                    <!-- Patient Type Report Month-->
-                                    <div class="form-group stackedareamonth stackedcolmonth splinemonth colpatienttype reporttype">
-                                        <select style="display: none;" class="form-control select" data-style="btn-primary" name="filterbutton">
-                                            <option value="colpatienttype" selected="selected" disabled="disabled">Select Chart</option>
-                                            <option value="colpatienttype">Column Chart</option>
-                                            <option value="splinemonth">Spline Chart</option>
-                                            <option value="stackedcolmonth">Stacked Column Chart</option>
-                                            <option value="stackedareamonth">Stacked Area Chart</option>
-                                        </select>
-                                    </div>
-                                    <!-- Patient Gender Report Month-->
-                                    <div class="form-group stackedareamonth2 stackedcolmonth2 splinemonth2 colpatientgender reporttype">
-                                        <select style="display: none;" class="form-control select" data-style="btn-primary" name="filterbutton">
-                                            <option value="colpatientgender" selected="selected" disabled="disabled">Select Chart</option>
-                                            <option value="colpatientgender">Column Chart</option>
-                                            <option value="splinemonth2">Spline Chart</option>
-                                            <option value="stackedcolmonth2">Stacked Column Chart</option>
-                                            <option value="stackedareamonth2">Stacked Area Chart</option>
                                         </select>
                                     </div>
                                     <!-- Patient Age Report Month-->
@@ -245,28 +223,16 @@
                                         <div id="chartContainer3.2" class="splineyear reporttype" style="width: 100%; height: 300px"></div>
                                         <div id="chartContainer3.3" class="pieyear reporttype" style="width: 100%; height: 300px"></div>
                                         <div id="chartContainer3.4" class="dougnutyear reporttype" style="width: 100%; height: 300px"></div>
-                                        <!-- Patient Type Report Month-->
-                                        <div id="chartContainer4" class="colpatienttype reporttype" style="width: 100%; height: 300px"></div>
-                                        <div id="chartContainer4.1" class="splinemonth reporttype" style="width: 100%; height: 300px"></div>
-                                        <div id="chartContainer4.2" class="stackedcolmonth reporttype" style="width: 100%; height: 300px"></div>
-                                        <div id="chartContainer4.3" class="stackedareamonth reporttype" style="width: 100%; height: 300px"></div>
-                                        <!-- Patient Gender Report Month-->
-                                        <div id="chartContainer5" class="colpatientgender reporttype" style="width: 100%; height: 300px"></div>
-                                        <div id="chartContainer5.1" class="splinemonth2 reporttype" style="width: 100%; height: 300px"></div>
-                                        <div id="chartContainer5.2" class="stackedcolmonth2 reporttype" style="width: 100%; height: 300px"></div>
-                                        <div id="chartContainer5.3" class="stackedareamonth2 reporttype" style="width: 100%; height: 300px"></div>
                                         <!-- Patient Age Report Month-->
                                         <div id="chartContainer6" class="colpatientage reporttype" style="width: 100%; height: 300px"></div>
                                         <div id="chartContainer6.1" class="splinemonth3 reporttype" style="width: 100%; height: 300px"></div>
                                         <div id="chartContainer6.2" class="colmonth3 reporttype" style="width: 100%; height: 300px"></div>
                                         <div id="chartContainer6.3" class="stackedareamonth3 reporttype" style="width: 100%; height: 300px"></div>
                                         
-                                        <?php require 'reports/referral_monthly.php'?>
-                                        <?php require 'reports/referral_quarter.php'?>
-                                        <?php require 'reports/referral_yearly.php'?>
-                                        <?php require 'reports/referral_type.php'?>
-                                        <?php require 'reports/referral_gender.php'?>
-                                        <?php require 'reports/referral_age.php'?>
+                                        <?php require 'reports/referral_prenatal_monthly.php'?>
+                                        <?php require 'reports/referral_prenatal_quarter.php'?>
+                                        <?php require 'reports/referral_prenatal_yearly.php'?>
+                                        <?php require 'reports/referral_prenatal_age.php'?>
                                     </div>
                                 </div>
                             </div>
@@ -326,7 +292,7 @@
         $(document).ready(function() {
             $("#pyear").on('change', function() {
                 var year = $(this).val();
-                window.location = 'referral_filter?year=' + year;
+                window.location = 'referral_prenatal_filter?year=' + year;
             });
         });
 

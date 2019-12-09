@@ -1,5 +1,5 @@
-<?php require 'chartqueries/referral.php'?>
-<?php require 'chartqueries/referral_quarterly.php'?>
+<?php require 'chartqueries/referral_prenatal.php'?>
+<?php require 'chartqueries/referral_prenatal_quarterly.php'?>
 <script type="text/javascript"> 
     $(document).ready(function(){ 
         CanvasJS.addColorSet("customColorSet", [ 
@@ -252,7 +252,7 @@
             animationEnabled: true,
             animationDuration: 1000,
 
-            exportFileName: "Monthly Consultation Count - BMHC", 
+            exportFileName: "Monthly Referral Count - BMHC", 
             exportEnabled: true,
             toolTip: {
                 shared: true  
@@ -404,7 +404,7 @@
             panEnabled: true,
             animationEnabled: true,
             animationDuration: 1000,
-            exportFileName: "Quarterly Referral Count - BMHC", 
+            exportFileName: "Quarterly Consultation Count - BMHC", 
             exportEnabled: true,
             toolTip: {
                 shared: true  
