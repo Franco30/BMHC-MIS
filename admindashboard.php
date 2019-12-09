@@ -279,7 +279,12 @@ require 'require/logincheck.php';
                                     <h3 class="panel-title"><span class="fa fa-archive"></span> <strong>Recent Prenatal Referral</strong></h3>
                                 </div>
                                 <div class="panel-body list-group list-group-contacts scroll" style="height: 288px;">
-                                    <?php
+                                <?php
+                                $year = date('Y');
+                                if(isset($_GET['year']))
+                                {
+                                $year=$_GET['year'];
+                                }
                             require 'require/config.php';
                             $query = $conn->query("SELECT * FROM `referral_prenatal` ORDER BY `referral_id` DESC limit 10") or die(mysqli_error());
                             while($fetch = $query->fetch_array()){
@@ -306,7 +311,12 @@ require 'require/logincheck.php';
                                     <h3 class="panel-title"><span class="fa fa-archive"></span> <strong>Recent Referral</strong></h3>
                                 </div>
                                 <div class="panel-body list-group list-group-contacts scroll" style="height: 288px;">
-                                    <?php
+                                <?php
+                                $year = date('Y');
+                                if(isset($_GET['year']))
+                                {
+                                $year=$_GET['year'];
+                                }
                             require 'require/config.php';
                             $query = $conn->query("SELECT * FROM `referral` ORDER BY `referral_id` DESC limit 10") or die(mysqli_error());
                             while($fetch = $query->fetch_array()){
@@ -334,6 +344,11 @@ require 'require/logincheck.php';
                                 </div>
                                 <div class="panel-body list-group list-group-contacts scroll" style="height: 288px;">
                                     <?php
+                                    $year = date('Y');
+                                    if(isset($_GET['year']))
+                                    {
+                                    $year=$_GET['year'];
+                                    }
                             require 'require/config.php';
                             $query = $conn->query("SELECT * FROM `users_activity_log`, `users` where users.user_id = users_activity_log.user_id ORDER BY `log_id` DESC limit 10") or die(mysqli_error());
                             while($fetch = $query->fetch_array()){

@@ -120,9 +120,9 @@ $find = $query->fetch_array();
             <li><a href="referral_reports"><span class="fa fa-ambulance"></span><span class="xn-text">Referral Report</span></a></li>
             <li><a href="follow_up_table_reports"><span class="fa fa-mail-reply-all"></span><span class="xn-text">Follow-up Visit Report</span></a></li>
             <li><a href="medication_dispense_table"><span class="fa fa-apple"></span><span class="xn-text">Inventory Report</span></a></li>
-            <li><a href="sample_report"><span class="fa fa-adjust"></span><span class="xn-text">Drill Down Report</span></a></li>
-            <li><a href="patient_report"><span class="fa fa-adjust"></span><span class="xn-text">Patient Record Report</span></a></li>
-            <li><a href="sick_forecasting"><span class="fa fa-adjust"></span><span class="xn-text">Sickness Forecasting</span></a></li>
+<!--            <li><a href="sample_report"><span class="fa fa-adjust"></span><span class="xn-text">Drill Down Report</span></a></li>-->
+            <li><a href="patient_reports"><span class="fa fa-user"></span><span class="xn-text">Patient Record Report</span></a></li>
+<!--            <li><a href="sick_forecasting"><span class="fa fa-adjust"></span><span class="xn-text">Sickness Forecasting</span></a></li>-->
         </ul>
     </li>
     <li class="xn-openable">
