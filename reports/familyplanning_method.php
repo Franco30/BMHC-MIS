@@ -102,7 +102,7 @@ $query = $conn->query("SELECT count(*) as total FROM `family_planning` where `ye
 $fetch = $query->fetch_array();
 ?>
 <hr>
-<h4>Total Consultation for the Year <?php echo $year. ' : <strong> ' .$fetch['total'].' Patients</strong>'?></h4> <hr>
+<h4>Total Family Planning for the Year <?php echo $year. ' : <strong> ' .$fetch['total'].' Patients</strong>'?></h4> <hr>
 <small>Approved By:</small>
 <br><br>
 <h3><?php echo $find['fullname']?></h3>

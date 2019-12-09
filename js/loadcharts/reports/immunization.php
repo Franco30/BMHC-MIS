@@ -1,5 +1,5 @@
-<?php require 'chartqueries/prenatal.php'?>
-<?php require 'chartqueries/consultation_quarterly.php'?>
+<?php require 'chartqueries/immunization.php'?>
+<?php require 'chartqueries/immunization_quarterly.php'?>
 <script type="text/javascript"> 
     $(document).ready(function(){ 
         CanvasJS.addColorSet("customColorSet", [ 
@@ -20,7 +20,7 @@
             animationEnabled: true,
             animationDuration: 1000,
 
-            exportFileName: "Monthly Consultation Count - BMHC", 
+            exportFileName: "Monthly Immunization Count - BMHC", 
             exportEnabled: true,
             toolTip: {
                 shared: true  
@@ -211,10 +211,9 @@
                 }
                     ] 
                 });
-                
+
                 chart1.render();
                 chart2.render();
                 chart3.render();
-                
     });
 </script>

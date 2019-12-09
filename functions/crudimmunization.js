@@ -16,6 +16,10 @@ $(document).ready(function () {
         } else {
 
             $child_id = $('#child_id').val();
+            
+            $purok = $('#purok').val();
+            $gender = $('#gender').val();
+            
             $philhealth = $('#philhealth').val();
             $birthtime = $('#birthtime').val();
             $birthweight = $('#birthweight').val();
@@ -37,6 +41,8 @@ $(document).ready(function () {
                     async: false,
                     data: {
                         child_id: $child_id,
+                        purok: $purok,
+                        gender: $gender,
                         philhealth: $philhealth,
                         birthtime: $birthtime,
                         birthweight: $birthweight,

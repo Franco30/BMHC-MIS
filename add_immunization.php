@@ -93,6 +93,7 @@
                                             <div class="form-group">
                                                 <label>Purok</label>
                                                 <input type="text" class="form-control" id="purok" value="<?php echo $fetch['purok'];?>" style="color:#444444;" readonly required />
+                                                <input type="hidden" class="form-control" id="gender" value="<?php echo $fetch['gender'];?>" style="color:#444444;" readonly required />
                                             </div>
                                             <div class="form-group">
                                                 <label>Street Address</label>

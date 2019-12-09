@@ -19,7 +19,7 @@
     <link href="assets3/css/invoice-print.min.css" rel="stylesheet" />
     <script type="text/javascript" src="js/plugins/jquery/jquery.min.js"></script>
     <script type="text/javascript" src="js/jquery.canvasjs.min.js"></script>
-    <?php require 'js/loadcharts/reports/prenatal.php'?>
+    <?php require 'js/loadcharts/reports/immunization.php'?>
     <style type="text/css">
         @media print {
 /*
@@ -55,7 +55,7 @@
             <ul class="breadcrumb print">
                 <li>Reports</li>
                 <li><a href="services_reports">Services Report</a></li>
-                <li class="active"><strong><mark>Prenatal Report</mark></strong></li>
+                <li class="active"><strong><mark>Immunization Report</mark></strong></li>
             </ul>
             <!-- END BREADCRUMB -->
             <!-- PAGE CONTENT WRAPPER -->
@@ -140,7 +140,7 @@
                                             <tr class="warning">
                                                 <th>Month</th>
                                                 <th>
-                                                    <center>Number of Prenatal Patients per Month</center>
+                                                    <center>Number of Child Patients Immunized per Month</center>
                                                 </th>
                                                 <th>
                                                     <center>View Patients</center>
@@ -149,7 +149,7 @@
                                         </thead>
                                         <tbody>
                                             <?php
-                                            require 'chartqueries/prenatal.php';
+                                            require 'chartqueries/immunization.php';
                                         ?>
                                             <tr>
                                                 <td><strong>January</strong></td>
@@ -283,7 +283,7 @@
         $(document).ready(function() {
             $("#pyear").on('change', function() {
                 var year = $(this).val();
-                window.location = 'prenatal_reports?year=' + year;
+                window.location = 'immunization_reports?year=' + year;
             });
         });
 
@@ -291,7 +291,7 @@
 
     <script>
         function openTabular() {
-            window.open("prenatal_filter");
+            window.open("immunization_filter");
         }
 
     </script>
@@ -307,7 +307,7 @@
     </script>
     <!-- END TEMPLATE -->
     <!-- END SCRIPTS -->
-    <?php require 'reports/tabular_prenatal.php'?>
+    <?php require 'reports/tabular_immunization.php'?>
 </body>
 
 </html>

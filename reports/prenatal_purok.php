@@ -1,6 +1,6 @@
 <div class="colpatientpurok barpurok splinepurok stackedareapurok reporttype" style="display: none;">
     <label class="text text-danger ">By Purok</label>
-    <table id="family_planningmonthlytable" class="table table-bordered table-condensed nowrap" width="100%">
+    <table id="prenatalmonthlytable" class="table table-bordered table-condensed nowrap" width="100%">
         <thead>
             <tr class="warning">
                 <th>Name of Purok</th>
@@ -16,9 +16,9 @@
             {
                 $year=$_GET['year'];
             }
-            $query1 = $conn->query("SELECT count(*) as bypurok FROM `family_planning` where `year` = '$year'") or die(mysqli_error());
+            $query1 = $conn->query("SELECT count(*) as bypurok FROM `prenatal` where `year` = '$year'") or die(mysqli_error());
             $fetch1 = $query1->fetch_array();
-            $query = $conn->query("SELECT purok, count(*) as count FROM `family_planning` where `year` = '$year' group by purok order by count DESC") or die(mysqli_error());
+            $query = $conn->query("SELECT purok, count(*) as count FROM `prenatal` where `year` = '$year' group by purok order by count DESC") or die(mysqli_error());
             while($fetch = $query->fetch_array()){
                 $bypurok = ($fetch['count']/$fetch1['bypurok']) * 100;
             ?>
@@ -42,11 +42,11 @@ if(isset($_GET['year']))
 }
 $query = $conn->query("SELECT * FROM `users` WHERE `user_id` = $_SESSION[user_id]") or die(mysqli_error());
 $find = $query->fetch_array();
-$query = $conn->query("SELECT count(*) as total FROM `family_planning` where `year` = '$year'") or die(mysqli_error());
+$query = $conn->query("SELECT count(*) as total FROM `prenatal` where `year` = '$year'") or die(mysqli_error());
 $fetch = $query->fetch_array();
 ?>
 <hr>
-<h4>Total Family Planning for the Year <?php echo $year. ' : <strong> ' .$fetch['total'].' Patients</strong>'?></h4> <hr>
+<h4>Total Prenatal for the Year <?php echo $year. ' : <strong> ' .$fetch['total'].' Patients</strong>'?></h4> <hr>
 <small>Approved By:</small>
 <br><br>
 <h3><?php echo $find['fullname']?></h3>
