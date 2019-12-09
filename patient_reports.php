@@ -69,7 +69,7 @@
                                 </div>
                             </div>
                             <div class="col-md-3">
-                                <div class="widget widget-primary widget-item-icon" onclick="location.href='patientchild';" style="cursor:pointer;">
+                                <div class="widget widget-primary widget-item-icon" onclick="location.href='child';" style="cursor:pointer;">
                                     <div class="widget-item-left">
                                         <span class="fa fa-users"></span>
                                     </div>
