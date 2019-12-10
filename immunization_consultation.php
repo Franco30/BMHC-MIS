@@ -55,6 +55,7 @@
                                 <div class="btn-group pull-right">
                                     <div class="pull-left">
                                         <button class="btn btn-primary btn-md" data-toggle="modal" data-target="#add_consultation">Add Consultation</button>
+                                        <a href="immunization_table" class="btn btn-default">Back</a>
                                     </div>
                                 </div>
                             </div>

@@ -27,7 +27,7 @@
             <?php require 'require/adminheader.php' ?>
             <!-- START BREADCRUMB -->
             <ul class="breadcrumb">
-            <?php
+                <?php
 	       require 'require/config.php';
             $query2 = $conn->query("SELECT * FROM `patient` WHERE `patient_id` = '$_GET[patient_id]'") or die(mysqli_error());
 			$fetch2 = $query2->fetch_array();
@@ -51,7 +51,7 @@
                                 <h3 class="panel-title"><strong>Prenatal Record / <?php echo $fetch2['patient_name']?></strong></h3>
                                 <div class="btn-group pull-right">
                                     <div class="pull-left">
-
+                                        <a href="prenatal" class="btn btn-default">Back</a>
                                     </div>
                                 </div>
                             </div>

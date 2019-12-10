@@ -55,6 +55,11 @@
                                 </li>
                                 <li><a href="#tab-second" role="tab" data-toggle="tab">Treatment 2</a>
                                 </li>
+                                <div class="btn-group pull-right">
+                                    <div class="pull-left">
+                                        <a href="immunization_table" class="btn btn-default">Back</a>
+                                    </div>
+                                </div>
                             </ul>
                             <div class="panel-body list-group list-group-contacts scroll" style="height: 470px;">
                                 <form id="immunizationform">

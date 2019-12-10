@@ -90,6 +90,11 @@
 								<li><a href="#tab-third" role="tab" data-toggle="tab">Family Planning</a></li>
 								<?php } ?>
 								<li><a href="#tab-fourth" role="tab" data-toggle="tab">Consultation</a></li>
+								<div class="btn-group pull-right">
+									<div class="pull-left">
+										<a href="master_file_patient" class="btn btn-default">Back</a>
+									</div>
+								</div>
 							</ul>
 							<div class="panel-body tab-content">
 								<div class="tab-pane active" id="tab-first">

@@ -64,6 +64,7 @@
                                     <?php } else { ?>
                                    <a href="prenatal_consultation?patient_id=<?php echo $fetch2['patient_id']?>&&prenatal_id=<?php echo $fetch3['prenatal_id']?>" class="btn btn-primary"> Add Consultation</a>
                                     <?php } ?> 
+                                    <a href="patient_prenatal?patient_id=<?php echo $fetch2['patient_id']?>" class="btn btn-default">Back</a>
                                     </div>
                                 </div>
                             </div>

@@ -50,7 +50,7 @@
                                 <h3 class="panel-title"><strong>Consultation / <?php echo $fetch2['patient_name']?></strong></h3>
                                 <div class="btn-group pull-right">
                                     <div class="pull-left">
-
+                                    <a href="consultation" class="btn btn-default">Back</a>
                                     </div>
                                 </div>
                             </div>

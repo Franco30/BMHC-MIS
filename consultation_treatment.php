@@ -55,6 +55,7 @@
                                     <div class="pull-left">
                                         <a href="prescription_print?patient_id=<?php echo $f2['patient_id']?>&&consultation_id=<?php echo $f2['consultation_id']?>" class="btn btn-md btn-info"><span class="glyphicon glyphicon-print"></span> Preview</a>
                                         <button class="btn btn-primary btn-md" data-toggle="modal" data-target="#add_prescription">Add Prescription</button>
+                                        <a href="patient_consultation?patient_id=<?php echo $fetch['patient_id']?>" class="btn btn-default">Back</a>
                                     </div>
                                 </div>
                             </div>
