@@ -41,7 +41,6 @@ if(isset($_POST['show'])){
                 echo "<a href='patient_consultation?patient_id=".$fetch['patient_id']."' class='btn btn-md btn-default' data-toggle='tooltip' data-placement='top' title='Prescription Required'>All Records <span class='badge animated infinite pulse' style='animation-duration:.6s;background-color: #E04B4A;'>".$f['total']."</span></a>";
             else echo "<a href='patient_consultation?patient_id=".$fetch['patient_id']."' class='btn btn-md btn-default'>All Records <span class='badge'>".$f['total']."</span></a>";
             ?>    
-            <button type="button" class="btn btn-md btn-info">Edit</button>
                 </center></td>
         </tr>
         <?php

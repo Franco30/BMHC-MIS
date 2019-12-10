@@ -1,0 +1,250 @@
+<?php require_once 'require/logincheck.php'?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>BMHC-MIS</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="icon" href="assets/images/bmhc.png" type="image/x-icon" />
+
+    <link rel="stylesheet" type="text/css" id="theme" href="css/theme-brown.css" />
+
+    <link rel="stylesheet" type="text/css" href="assets3/vendor/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="assets2/plugins/bootstrap-eonasdan-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
+</head>
+
+<body>
+    <!-- START PAGE CONTAINER -->
+    <div class="page-container page-navigation-top-fixed">
+        <!-- START PAGE SIDEBAR -->
+        <?php require 'require/adminsidebar.php' ?>
+        <!-- END PAGE SIDEBAR -->
+        <!-- PAGE CONTENT -->
+        <div class="page-content">
+            <?php require 'require/adminheader.php' ?>
+            <!-- START BREADCRUMB -->
+            <ul class="breadcrumb">
+                <?php
+                require 'require/config.php';
+                $query = $conn->query("SELECT * FROM `patient` WHERE `patient_id` = '$_GET[patient_id]'") or die(mysqli_error());
+                $fetch = $query->fetch_array();
+                $query2 = $conn->query("SELECT * FROM `family_planning` WHERE `patient_id` = '$_GET[patient_id]' && `family_planning_id` = '$_GET[family_planning_id]'") or die(mysqli_error());
+                $fetch2 = $query2->fetch_array();
+                date_default_timezone_set('Asia/Manila');
+                $date=date("F j, Y");
+                ?>
+                <li>Transaction</li>
+                <li>Family Planning Service Registration</li>
+                <li><mark><strong><?php echo $fetch['patient_name'];?></strong></mark></li>
+            </ul>
+            <!-- END BREADCRUMB -->
+            <!-- PAGE CONTENT WRAPPER -->
+            <div class="page-content-wrap">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div id="alert" class="alert alert-info" style="display:none;">
+                            <center><span id="alerttext"></span></center>
+                        </div>
+                        <div id="alert2" class="alert alert-danger" style="display:none;">
+                            <center><span id="alerttext2"></span></center>
+                        </div>
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Edit Family Planning </h3>
+                                <div class="btn-group pull-right">
+                                    <div class="pull-left">
+                                        <button type="button" class="updatefp btn btn-success" value="<?php echo $fetch2['family_planning_id'] ?>"><span class="fa fa-check"></span>Save</button>
+                                        <a href="patient_familyplanning?patient_id=<?php echo $fetch['patient_id'];?>" class="btn btn-danger"><span class="fa fa-times"></span>Cancel</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel-body">
+                                <form id="familyplanningform">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Patient Name</label>
+                                                    <input type="hidden" id="patient_id" class="form-control" value="<?php echo $fetch['patient_id'];?>" style="color:#444444;" readonly required />
+                                                    <input type="text" class="form-control" value="<?php echo $fetch['patient_name'];?>" style="color:#444444;" readonly required />
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Type of Acceptor</label>
+                                                    <input type="text" class="form-control" value="<?php echo $fetch2['type_of_acceptor'];?>" style="color:#444444;" readonly required />
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Date of Birth</label>
+                                                    <input type="text" class="form-control" id="birthdate" value="<?php echo $fetch['birthdate'];?>" placeholder="Enter Date of Birth" style="color:#444444;" readonly required />
+                                                </div>
+                                                <div class="form-row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group" style="margin-left:-10px;">
+                                                            <label>Highest Education</label>
+                                                            <input type="text" class="form-control" id="patient_education<?php echo $fetch2['family_planning_id'] ?>" placeholder="Enter highest Education" value="<?php echo $fetch2['patient_highest_education'] ?>" required />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group" style="margin-right:-10px;">
+                                                            <label>Occupation</label>
+                                                            <input type="text" class="form-control" id="occupation" placeholder="Enter Occupation" value="<?php echo $fetch['occupation'];?>" style="color:#444444;" readonly required />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                &nbsp;
+                                                <div class="form-group">
+                                                    <label>Spouse Name</label>
+                                                    <input type="text" class="form-control" id="spouse_name<?php echo $fetch2['family_planning_id'] ?>" value="<?php echo $fetch2['spouse_name'] ?>" placeholder="Enter Complete Spouse Name" required />
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Spouse Date of Birth</label>
+                                                    <input type="text" class="form-control datepicker" id="spouse_birthdate<?php echo $fetch2['family_planning_id'] ?>" value="<?php echo $fetch2['spouse_birthdate'] ?>" placeholder="Enter Date of Birth" required />
+                                                </div>
+                                                <div class="form-row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group" style="margin-left:-10px;">
+                                                            <label>Spouse Highest Education</label>
+                                                            <input type="text" class="form-control" id="spouse_education<?php echo $fetch2['family_planning_id'] ?>" value="<?php echo $fetch2['spouse_highest_education'] ?>" placeholder="Enter highest Education" required />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group" style="margin-right:-10px;">
+                                                            <label>Spouse Occupation</label>
+                                                            <input type="text" class="form-control" id="spouse_occupation<?php echo $fetch2['family_planning_id'] ?>" value="<?php echo $fetch2['spouse_occupation'] ?>" placeholder="Enter Occupation" required />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                &nbsp;
+                                                <div class="form-group">
+                                                    <label>Average Monthly Income</label>
+                                                    <input type="number" class="form-control" id="monthly_income<?php echo $fetch2['family_planning_id'] ?>" value="<?php echo $fetch2['average_monthly_income'] ?>" placeholder="Enter Average Monthly Income" required />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Previosly Used Method</label>
+<!--                                                    <input type="text" class="tagsinput" id="prevmethod" placeholder="Enter Previosly Used Method" required />-->
+                                                    <select class="form-control select" data-live-search="true" style="display: none;" id="prevmethod<?php echo $fetch2['family_planning_id'] ?>">
+                                                        <option value="<?php echo $fetch2['prev_used_method'] ?>"><?php echo $fetch2['prev_used_method'] ?></option>
+                                                        <option value="None">None</option>
+                                                        <option value="COC">COC</option>
+                                                        <option value="Condom">Condom</option>
+                                                        <option value="IUD">IUD</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Date and Time</label>
+                                                    <input type="text" class="form-control datetimepicker" id="datetime<?php echo $fetch2['family_planning_id'] ?>" value="<?php echo $fetch2['date_time'] ?>" placeholder="Enter Date and Time Today" required />
+                                                </div>
+                                                <!--
+                                                                <div class="form-row">
+                                                                    <div class="col-md-6">
+                                                                        <div class="form-group" style="margin-left:-10px;">
+                                                                            <label>Date</label>
+                                                                            <input type="text" class="form-control datepicker" id="date<?php //echo $fetch['patient_id'];?>" placeholder="Enter Date Today" required />
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        <div class="form-group" style="margin-right:-10px;">
+                                                                            <label>Time</label>
+                                                                            <div class="input-group bootstrap-timepicker">
+                                                                                <input type="text" class="form-control timepicker" id="time" placeholder="Enter Time Today" required />
+                                                                                <span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                &nbsp;
+-->
+                                                <div class="form-group">
+                                                    <label>Purok</label>
+                                                    <input type="text" class="form-control" id="purok" value="<?php echo $fetch['purok'];?>" style="color:#444444;" readonly required />
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Street Address</label>
+                                                    <textarea style="color:#444444;" class="form-control" spellcheck="false" id="streetaddress" value="<?php echo $fetch['patient_id'];?>" readonly><?php echo $fetch['street_address'];?></textarea>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Province</label>
+                                                    <textarea style="color:#444444;" class="form-control" spellcheck="false" id="streetaddress" value="<?php echo $fetch['patient_id'];?>" readonly><?php echo $fetch['region_province'];?></textarea>
+                                                </div>
+
+                                                <div class="form-row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group" style="margin-left:-10px;">
+                                                            <label>No. of Living Children</label>
+                                                            <input type="number" class="form-control" id="no_living_children<?php echo $fetch2['family_planning_id'] ?>" value="<?php echo $fetch2['no_of_living_children'] ?>" placeholder="Enter No. of Living Children" required />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group" style="margin-right:-10px;">
+                                                            <label>Plan More Children</label>
+                                                            <select class="form-control select" style="display: none;" id="planmorechildren<?php echo $fetch2['family_planning_id'] ?>">
+                                                                <option value="<?php echo $fetch2['plan_more_children'] ?>"><?php echo $fetch2['plan_more_children'] ?></option>
+                                                                <option>No</option>
+                                                                <option>Yes</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                &nbsp;
+                                                <div class="form-group">
+                                                    <label>Reason for Practicing FP</label>
+                                                    <textarea class="form-control" spellcheck="false" id="reason<?php echo $fetch2['family_planning_id'] ?>"><?php echo $fetch2['reason_for_practicing_fp'] ?></textarea>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label>Method Accepted</label>
+                                                    <select multiple class="form-control select" data-live-search="true" style="display: none;" id="method_accepted" name="method_accepted[]">
+                                                        <option selected="selected" value="<?php echo $fetch2['method_accepted'] ?>"><?php echo $fetch2['method_accepted'] ?></option>
+                                                        <option value="COC">COC</option>
+                                                        <option value="Condom">Condom</option>
+                                                        <option value="IUD">IUD</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END PAGE CONTENT WRAPPER -->
+    </div>
+    <!-- END PAGE CONTENT -->
+    <audio id="audio-alert" src="audio/alert.mp3" preload="auto"></audio>
+    <audio id="audio-fail" src="audio/fail.mp3" preload="auto"></audio>
+    <script type="text/javascript" src="js/plugins/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="functions/crudfamilyplanning.js"></script>
+    <script type="text/javascript" src="js/plugins/jquery/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/plugins/bootstrap/bootstrap.min.js"></script>
+    <script type='text/javascript' src='js/plugins/icheck/icheck.min.js'></script>
+    <script type="text/javascript" src="js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
+    <script type="text/javascript" src="js/plugins/scrolltotop/scrolltopcontrol.js"></script>
+    <script type="text/javascript" src="js/moment.min.js"></script>
+    <script type="text/javascript" src="assets2/plugins/bootstrap-eonasdan-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+    <script type="text/javascript" src="js/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="js/plugins/bootstrap/bootstrap-datepicker.js"></script>
+    <script type="text/javascript" src="js/plugins/bootstrap/bootstrap-timepicker.min.js"></script>
+    <script type="text/javascript" src="js/plugins/bootstrap/bootstrap-select.js"></script>
+    <script type="text/javascript" src="js/plugins/smartwizard/jquery.smartWizard-2.0.min.js"></script>
+    <script type="text/javascript" src="js/plugins/tagsinput/jquery.tagsinput.min.js"></script>
+
+    <script type="text/javascript" src="js/settings.js"></script>
+    <script type="text/javascript" src="js/plugins.js"></script>
+    <script type="text/javascript" src="js/actions.js"></script>
+
+    <!-- END THIS PAGE PLUGINS -->
+
+
+
+</body>
+
+</html>

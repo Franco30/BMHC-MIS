@@ -74,6 +74,58 @@ $(document).ready(function () {
         }
 
     });
+    
+    $(document).on('click', '.updateconsultation', function () {
+        $patient_id = $('#patient_id').val();
+        $consultation_id = $(this).val();
+        $date_today = $('#date_today' + $consultation_id).val();
+        $weight = $('#weight' + $consultation_id).val();
+        $height = $('#height' + $consultation_id).val();
+        $bp = $('#bp' + $consultation_id).val();
+        $temp = $('#temp' + $consultation_id).val();
+        $headfamily = $('#headfamily' + $consultation_id).val();
+        $rr = $('#rr' + $consultation_id).val();
+        $pr = $('#pr' + $consultation_id).val();
+        $complaints = $('#complaints' + $consultation_id).val();
+        $pefindings = $('#pefindings' + $consultation_id).val();
+        $diagnosis = $('#diagnosis' + $consultation_id).val();
+        $labrequest = $('#labrequest' + $consultation_id).val();
+
+        if (confirm('Are you sure you want to edit this Consultation?')) {
+            $.ajax({
+                type: "POST",
+                url: "action/editconsultation.php",
+                cache: false,
+                async: false,
+                data: {
+                    consultation_id: $consultation_id,
+                    date_today: $date_today,
+                    weight: $weight,
+                    height: $height,
+                    bp: $bp,
+                    temp: $temp,
+                    headfamily: $headfamily,
+                    rr: $rr,
+                    pr: $pr,
+                    complaints: $complaints,
+                    pefindings: $pefindings,
+                    diagnosis: $diagnosis,
+                    labrequest: $labrequest,
+                    edit: 1,
+                },
+                success: function () {
+                    $('#alert').slideDown();
+                    $('#alerttext').text('Successfully updated Consultation Form');
+                    setTimeout(function () {
+                        $('#alert').fadeOut('slow');
+                    }, 1500);
+                    setTimeout(function () {
+                        window.location.href = 'patient_consultation?patient_id=' + $patient_id;
+                    }, 2500);
+                }
+            });
+        }
+    });
 });
 
 function showPatientConsultation() {

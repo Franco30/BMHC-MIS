@@ -27,8 +27,19 @@
             <?php require 'require/adminheader.php' ?>
             <!-- START BREADCRUMB -->
             <ul class="breadcrumb">
+            <?php
+            require 'require/config.php';
+            $query = $conn->query("SELECT * FROM `patient` WHERE `patient_id` = '$_GET[patient_id]'") or die(mysqli_error());
+            $fetch = $query->fetch_array();
+            $query2 = $conn->query("SELECT * FROM `prenatal` WHERE `patient_id` = '$_GET[patient_id]' && `prenatal_id` = '$_GET[prenatal_id]'") or die(mysqli_error());
+            $fetch2 = $query2->fetch_array();
+            date_default_timezone_set('Asia/Manila');
+            $date=date("F j, Y");
+            ?>
                 <li>Transactions</li>
-                <li><mark><strong>Prenatal Registration</strong></mark></li>
+                <li><a href="prenatal">Prenatal</a></li>
+                <li>Edit Prenatal</li>
+                <li><mark><strong><?php echo $fetch['patient_name'];?></strong></mark></li>
             </ul>
             <!-- END BREADCRUMB -->
             <!-- PAGE CONTENT WRAPPER -->
@@ -45,10 +56,10 @@
                             </div>
                             <div class="panel panel-primary">
                                 <div class="panel-heading">
-                                    <h3 class="panel-title">Prenatal Registration</h3>
+                                    <h3 class="panel-title">Edit Prenatal</h3>
                                     <div class="btn-group pull-right">
                                         <div class="pull-left">
-                                            <button type="button" id="addnew" class="btn btn-success">Save</button>
+                                            <button type="button" class="updateprenatal btn btn-success" value="<?php echo $fetch2['prenatal_id'];?>">Save</button>
                                             <a class="btn btn-danger" href="prenatal">Cancel</a>
                                         </div>
                                     </div>
@@ -58,6 +69,8 @@
                                 require 'require/config.php';
 			                    $query = $conn->query("SELECT * FROM `patient` WHERE `patient_id` = '$_GET[patient_id]'") or die(mysqli_error());
                                 $fetch = $query->fetch_array();
+                                $query2 = $conn->query("SELECT * FROM `prenatal` WHERE `patient_id` = '$_GET[patient_id]' && `prenatal_id` = '$_GET[prenatal_id]'") or die(mysqli_error());
+                                $fetch2 = $query2->fetch_array();
                                 date_default_timezone_set('Asia/Manila');
                                 $date=date("F j, Y");
 									?>
@@ -84,13 +97,13 @@
                                                     <div class="col-md-6">
                                                         <div class="form-group" style="margin-left:-10px;margin-right:-10px;">
                                                             <label>Menstrual Hx</label>
-                                                            <input type="text" class="form-control" id="menstrual_hx" placeholder="Enter Menstrual Hx" required />
+                                                            <input type="text" class="form-control" id="menstrual_hx<?php echo $fetch2['prenatal_id'];?>" placeholder="Enter Menstrual Hx" value="<?php echo $fetch2['menstrual_hx'];?>" required />
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="form-group" style="margin-right:-10px;">
                                                             <label>Menarch</label>
-                                                            <input type="text" class="form-control" id="menarch" placeholder="Enter Menarch" required />
+                                                            <input type="text" class="form-control" id="menarch<?php echo $fetch2['prenatal_id'];?>" value="<?php echo $fetch2['menarch'];?>" placeholder="Enter Menarch" required />
                                                         </div>
                                                     </div>
                                                 </div>
@@ -99,24 +112,24 @@
                                                     <div class="col-md-6">
                                                         <div class="form-group" style="margin-left:-10px;margin-right:-10px;">
                                                             <label>Flow</label>
-                                                            <input type="text" class="form-control" id="flow" placeholder="Enter Flow" required />
+                                                            <input type="text" class="form-control" id="flow<?php echo $fetch2['prenatal_id'];?>" value="<?php echo $fetch2['flow'];?>" placeholder="Enter Flow" required />
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="form-group" style="margin-right:-10px;">
                                                             <label>Dysmenorrhea</label>
-                                                            <input type="text" class="form-control" id="dysmenorrhea" placeholder="Enter Dysmenorrhea" required />
+                                                            <input type="text" class="form-control" id="dysmenorrhea<?php echo $fetch2['prenatal_id'];?>" value="<?php echo $fetch2['dysmenorrhea'];?>" placeholder="Enter Dysmenorrhea" required />
                                                         </div>
                                                     </div>
                                                 </div>
                                                 &nbsp;
                                                 <div class="form-group">
                                                     <label>OB-Gyne Hx</label>
-                                                    <textarea class="form-control" spellcheck="false" id="obgynehx"></textarea>
+                                                    <textarea class="form-control" spellcheck="false" id="obgynehx<?php echo $fetch2['prenatal_id'];?>"><?php echo $fetch2['obgynehx'];?></textarea>
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Past Medical Hx</label>
-                                                    <textarea class="form-control" spellcheck="false" id="past_medical_hx"></textarea>
+                                                    <textarea class="form-control" spellcheck="false" id="past_medical_hx<?php echo $fetch2['prenatal_id'];?>"><?php echo $fetch2['past_medical_hx'];?></textarea>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
@@ -139,13 +152,13 @@
                                                     <div class="col-md-6">
                                                         <div class="form-group" style="margin-left:-10px;">
                                                             <label>Date Today</label>
-                                                            <input type="text" class="form-control datepicker" id="date" required />
+                                                            <input type="text" class="form-control datepicker" id="date<?php echo $fetch2['prenatal_id'];?>" value="<?php echo $fetch2['date'];?>" required />
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="form-group" style="margin-left:-10px;margin-left:-10px;">
                                                             <label>Name of Husband</label>
-                                                            <input type="text" class="form-control" id="husband" placeholder="Enter Name of Husband" required />
+                                                            <input type="text" class="form-control" id="husband<?php echo $fetch2['prenatal_id'];?>" value="<?php echo $fetch2['husband'];?>" placeholder="Enter Name of Husband" required />
                                                         </div>
                                                     </div>
                                                 </div>
@@ -169,19 +182,19 @@
                                                     <div class="col-md-4">
                                                         <div class="form-group" style="margin-left:-10px;">
                                                             <label>Cycle</label>
-                                                            <input type="text" class="form-control" id="cycle" placeholder="Enter Cycle" required />
+                                                            <input type="text" class="form-control" id="cycle<?php echo $fetch2['prenatal_id'];?>" value="<?php echo $fetch2['cycle'];?>" placeholder="Enter Cycle" required />
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4">
                                                         <div class="form-group" style="margin-left:-10px;margin-right:-10px;">
                                                             <label>Duration</label>
-                                                            <input type="text" class="form-control" id="duration" placeholder="Enter Duration" required />
+                                                            <input type="text" class="form-control" id="duration<?php echo $fetch2['prenatal_id'];?>" value="<?php echo $fetch2['duration'];?>" placeholder="Enter Duration" required />
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4">
                                                         <div class="form-group" style="margin-right:-10px;">
                                                             <label>Blood Type</label>
-                                                            <input type="text" class="form-control" id="bloodtype" placeholder="Enter Blood Type" required />
+                                                            <input type="text" class="form-control" id="bloodtype<?php echo $fetch2['prenatal_id'];?>" value="<?php echo $fetch2['bloodtype'];?>" placeholder="Enter Blood Type" required />
                                                         </div>
                                                     </div>
                                                 </div>
@@ -191,19 +204,19 @@
                                                     <div class="col-md-4">
                                                         <div class="form-group" style="margin-left:-10px;">
                                                             <label>TT1</label>
-                                                            <input type="text" class="form-control datepicker" id="tt1" placeholder="Enter Date" required />
+                                                            <input type="text" class="form-control datepicker" id="tt1<?php echo $fetch2['prenatal_id'];?>" value="<?php echo $fetch2['tt1'];?>" placeholder="Enter Date" required />
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4">
                                                         <div class="form-group" style="margin-right:-10px;margin-left:-10px;">
                                                             <label>TT2</label>
-                                                            <input type="text" class="form-control datepicker" id="tt2" placeholder="Enter Date" required />
+                                                            <input type="text" class="form-control datepicker" id="tt2<?php echo $fetch2['prenatal_id'];?>" value="<?php echo $fetch2['tt2'];?>" placeholder="Enter Date" required />
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4">
                                                         <div class="form-group" style="margin-right:-10px;">
                                                             <label>TT3</label>
-                                                            <input type="text" class="form-control datepicker" id="tt3" placeholder="Enter Date" required />
+                                                            <input type="text" class="form-control datepicker" id="tt3<?php echo $fetch2['prenatal_id'];?>" value="<?php echo $fetch2['tt3'];?>" placeholder="Enter Date" required />
                                                         </div>
                                                     </div>
                                                 </div>
@@ -212,13 +225,13 @@
                                                     <div class="col-md-6">
                                                         <div class="form-group" style="margin-left:-10px;margin-right:-10px;">
                                                             <label>TT4</label>
-                                                            <input type="text" class="form-control datepicker" id="tt4" placeholder="Enter Date" required />
+                                                            <input type="text" class="form-control datepicker" id="tt4<?php echo $fetch2['prenatal_id'];?>" value="<?php echo $fetch2['tt4'];?>" placeholder="Enter Date" required />
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="form-group" style="margin-right:-10px;">
                                                             <label>TT5</label>
-                                                            <input type="text" class="form-control datepicker" id="tt5" placeholder="Enter Date" required />
+                                                            <input type="text" class="form-control datepicker" id="tt5<?php echo $fetch2['prenatal_id'];?>" value="<?php echo $fetch2['tt5'];?>" placeholder="Enter Date" required />
                                                         </div>
                                                     </div>
                                                 </div>

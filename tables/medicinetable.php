@@ -18,11 +18,11 @@ if(isset($_POST['show'])){
 	        require '../require/config.php';
 			$query = $conn->query("SELECT * FROM `medicine` ORDER BY `medicine_id` DESC") or die(mysqli_error());
 			while($fetch = $query->fetch_array()){
-											?>
+            ?>
         <tr>
-            <td style="width:28%;"><center><?php echo $fetch['medicine_name']?></center></td>
-            <td><center><?php echo $fetch['medicine_type']?></center></td>
-            <td><center><?php echo $fetch['medicine_category']?></center></td>
+            <td style="width:28%;"><?php echo $fetch['medicine_name']?></td>
+            <td><?php echo $fetch['medicine_type']?></td>
+            <td><?php echo $fetch['medicine_category']?></td>
             <td><center><?php if ($fetch['running_balance']<=15) 
 												echo "<span style='color:red'>".$fetch['running_balance']."</span>"; if ($fetch['running_balance']>=16) 
 												echo "<span>".$fetch['running_balance']."</span>"; ?> <?php if($fetch['running_balance'] > 1){ ?> pcs.<?php } else { ?> 

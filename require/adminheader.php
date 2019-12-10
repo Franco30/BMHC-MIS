@@ -96,20 +96,21 @@
     <li class="xn-icon-button pull-right">
 <?php
 date_default_timezone_set('Asia/Manila');
-$date_today = date('F j, Y');
+//$date_today = date('F j, Y');
+$date_today = date('m/d/Y');
 require 'require/config.php';
 $q = $conn->query("SELECT COUNT(*) as count from `prenatal_follow_up` WHERE `follow_up_date_time` REGEXP '$date_today' && `follow_up_status` = 'Pending'") or die(mysqli_error());
 $f = $q->fetch_array();
 ?>
 <a href="#"><span class="fa fa-comments"></span></a>
-<?php if ($f['count']>0)echo "<div class='informer informer-warning animated infinite pulse' style='animation-duration:.6s;'>".$f['count']."</div>";
+<?php if ($f['count']>0)echo "<div class='informer informer-danger animated infinite pulse' style='animation-duration:.6s;'>".$f['count']."</div>";
 ?> 
         <div class="panel panel-primary animated zoomIn xn-drop-left xn-panel-dragging">
             <div class="panel-heading">
                 <h3 class="panel-title">
                     You have <?php echo $f['count']. " Prenatal Follow-up Visit Today" ?></h3>
                 <div class="pull-right">
-                    <span class="label label-warning"><?php echo $f['count']?></span>
+                    <span class="label label-danger"><?php echo $f['count']?></span>
                 </div>
             </div>
             <div class="panel-body list-group list-group-contacts scroll" style="height: 400px;">
@@ -143,13 +144,14 @@ $f = $q->fetch_array();
     <li class="xn-icon-button pull-right">
         <?php
         date_default_timezone_set('Asia/Manila');
-		$date_today = date('F j, Y');
+        $date_today = date('m/d/Y');
+		//$date_today = date('F j, Y');
         require 'require/config.php';
 		$q = $conn->query("SELECT COUNT(*) as count from `fp_follow_up` WHERE `next_service_date` REGEXP '$date_today' && `follow_up_status` = 'Pending'") or die(mysqli_error());
 		$f = $q->fetch_array();
 		?>
         <a href="#"><span class="fa fa-tasks"></span></a>
-        <?php if ($f['count']>0)echo "<div class='informer informer-warning animated infinite pulse' style='animation-duration:.6s;'>".$f['count']."</div>";
+        <?php if ($f['count']>0)echo "<div class='informer informer-danger animated infinite pulse' style='animation-duration:.6s;'>".$f['count']."</div>";
 		?>
 
         <div class="panel panel-primary animated zoomIn xn-drop-left xn-panel-dragging">
@@ -157,13 +159,13 @@ $f = $q->fetch_array();
                 <h3 class="panel-title">
                     You have <?php echo $f['count']. " Family Planning Follow-up Visit Today" ?></h3>
                 <div class="pull-right">
-                    <span class="label label-warning"><?php echo $f['count']?></span>
+                    <span class="label label-danger"><?php echo $f['count']?></span>
                 </div>
             </div>
             <div class="panel-body list-group list-group-contacts scroll" style="height: 400px;">
                 <?php 
 					require 'require/config.php';
-					$q = $conn->query("SELECT * FROM `fp_follow_up` NATURAL JOIN `patient` WHERE `next_service_date` = '$date_today'  && `follow_up_status` = 'Pending'") or die(mysqli_error());
+					$q = $conn->query("SELECT * FROM `fp_follow_up` NATURAL JOIN `patient` WHERE `next_service_date` REGEXP '$date_today'  && `follow_up_status` = 'Pending'") or die(mysqli_error());
 					while($f = $q->fetch_array()){
 				?>
                 <a href="#" class="list-group-item">

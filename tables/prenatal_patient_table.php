@@ -26,7 +26,6 @@ if(isset($_POST['show'])){
             <td><center><?php echo $fetch['birthdate']?></center></td>
             <td>Purok <?php echo $fetch['purok']." ".$fetch['street_address']?></td>
             <td><center><a href="patient_prenatal?patient_id=<?php echo $fetch['patient_id'];?>" class="btn btn-md btn-default">All Records <span class="badge"><?php echo $f['total']?></span></a>
-                <button type="button" class="btn btn-md btn-info">Edit</button>
                 </center></td>
         </tr>
         <?php

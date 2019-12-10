@@ -159,11 +159,6 @@
 									<h4 class="panel-title">
 										<strong>Prenatal Consultation</strong>
 									</h4>
-									<div class="btn-group pull-right">
-										<div class="pull-left">
-											<a href="prenatal_record?patient_id=<?php echo $fetch['patient_id']?>&&prenatal_id=<?php echo $fetch3['prenatal_id']?>" class="btn btn-default">Back</a>
-										</div>
-									</div>
 								</div>
 								<div class="panel-body">
 									<div class="col-md-3">
@@ -243,11 +238,6 @@
 									<h4 class="panel-title">
 										<strong>Prenatal Consultation</strong>
 									</h4>
-									<div class="btn-group pull-right">
-										<div class="pull-left">
-											<a href="prenatal_record?patient_id=<?php echo $fetch['patient_id']?>&&prenatal_id=<?php echo $fetch3['prenatal_id']?>" class="btn btn-default">Back</a>
-										</div>
-									</div>
 								</div>
 								<div class="panel-body">
 									<div class="col-md-3">

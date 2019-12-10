@@ -31,11 +31,15 @@
             require 'require/config.php';
             $query = $conn->query("SELECT * FROM `patient_child` WHERE `child_id` = '$_GET[child_id]'") or die(mysqli_error());
             $fetch = $query->fetch_array();
+            $query2 = $conn->query("SELECT * FROM `immunization` WHERE `child_id` = '$_GET[child_id]' && `immunization_id` = '$_GET[immunization_id]'") or die(mysqli_error());
+            $fetch2 = $query2->fetch_array();
             date_default_timezone_set('Asia/Manila');
             $date=date("F j, Y");
             ?>
                 <li>Transactions</li>
-                <li><mark><strong>Immunization Service Registration</strong></mark></li>
+                <li>Immunization</li>
+                <li>Edit Immunization</li>
+                <li><mark><strong><?php echo $fetch['child_name'];?></strong></mark></li>
             </ul>
             <!-- END BREADCRUMB -->
             <!-- PAGE CONTENT WRAPPER -->
@@ -52,10 +56,10 @@
 
                         <div class="panel panel-primary">
                             <div class="panel-heading">
-                                <h3 class="panel-title">Immunization Patient Registration</h3>
+                                <h3 class="panel-title">Edit Immunization</h3>
                                 <div class="btn-group pull-right">
                                     <div class="pull-left">
-                                        <button type="button" id="addnew" class="btn btn-success">Save</button>
+                                        <button type="button" class="updateimmunization btn btn-success" value="<?php echo $fetch2['immunization_id'];?>">Save</button>
                                         <a class="btn btn-danger" href="immunization_table">Cancel</a>
                                     </div>
                                 </div>
@@ -79,13 +83,13 @@
                                                 <div class="col-md-4">
                                                     <div class="form-group" style="margin-right:-10px;margin-left:-10px;">
                                                         <label>Time of Birth</label>
-                                                        <input type="text" id="birthtime" class="form-control timepicker" required />
+                                                        <input type="text" id="birthtime<?php echo $fetch2['immunization_id'];?>" value="<?php echo $fetch2['birthtime'];?>" class="form-control timepicker" required />
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4">
                                                     <div class="form-group" style="margin-right:-10px;">
                                                         <label>Birth Weight</label>
-                                                        <input type="text" class="form-control" id="birthweight" placeholder="Enter Weight" required />
+                                                        <input type="text" class="form-control" id="birthweight<?php echo $fetch2['immunization_id'];?>" value="<?php echo $fetch2['birth_weight'];?>" placeholder="Enter Weight" required />
                                                     </div>
                                                 </div>
                                             </div>
@@ -103,19 +107,19 @@
                                                 <div class="col-md-4">
                                                     <div class="form-group" style="margin-left:-10px;">
                                                         <label>Gravida</label>
-                                                        <input type="number" class="form-control" id="gravida" placeholder="No. of pregnancy" required />
+                                                        <input type="number" class="form-control" id="gravida<?php echo $fetch2['immunization_id'];?>" value="<?php echo $fetch2['gravida'];?>" placeholder="No. of pregnancy" required />
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4">
                                                     <div class="form-group" style="margin-right:-10px;margin-left:-10px;">
                                                         <label>Para</label>
-                                                        <input type="number" class="form-control" id="para" placeholder="No. of child alive" required />
+                                                        <input type="number" class="form-control" id="para<?php echo $fetch2['immunization_id'];?>" value="<?php echo $fetch2['para'];?>" placeholder="No. of child alive" required />
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4">
                                                     <div class="form-group" style="margin-right:-10px;">
                                                         <label>Abortion</label>
-                                                        <input type="number" class="form-control" id="abortion" placeholder="No. of child aborted" required />
+                                                        <input type="number" class="form-control" id="abortion<?php echo $fetch2['immunization_id'];?>" value="<?php echo $fetch2['abortion'];?>" placeholder="No. of child aborted" required />
                                                     </div>
                                                 </div>
                                             </div>
@@ -126,13 +130,13 @@
                                                 <div class="col-md-6">
                                                     <div class="form-group" style="margin-left:-10px;margin5-right:-10px">
                                                         <label>Phone No.</label>
-                                                        <input type="text" class="mask_cpnumber form-control" id="phonenumber" placeholder="Enter Phone No." required />
+                                                        <input type="text" class="mask_cpnumber form-control" id="phonenumber<?php echo $fetch2['immunization_id'];?>" value="<?php echo $fetch2['cp_no'];?>" placeholder="Enter Phone No." required />
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group" style="margin-right:-10px;margin-left:-10px">
                                                         <label>Philhealth No.</label>
-                                                        <input type="text" class="mask_philhealth form-control" id="philhealth" placeholder="Enter Philhealth No." required />
+                                                        <input type="text" class="mask_philhealth form-control" id="philhealth<?php echo $fetch2['immunization_id'];?>" value="<?php echo $fetch2['philhealth_no'];?>" placeholder="Enter Philhealth No." required />
                                                     </div>
                                                 </div>
                                             </div>
@@ -145,7 +149,7 @@
                                                 <div class="col-md-6">
                                                     <div class="form-group" style="margin-left:-10px;">
                                                         <label>Age</label>
-                                                        <input type="text" class="form-control" id="mage" placeholder="Enter Mother's age" required />
+                                                        <input type="text" class="form-control" id="mage<?php echo $fetch2['immunization_id'];?>" value="<?php echo $fetch2['mother_age'];?>" placeholder="Enter Mother's age" required />
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
@@ -164,7 +168,7 @@
                                                 <div class="col-md-6">
                                                     <div class="form-group" style="margin-left:-10px;">
                                                         <label>Age</label>
-                                                        <input type="text" class="form-control" id="fage" placeholder="Enter Father's age" required />
+                                                        <input type="text" class="form-control" id="fage<?php echo $fetch2['immunization_id'];?>" value="<?php echo $fetch2['father_age'];?>" placeholder="Enter Father's age" required />
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
@@ -179,19 +183,19 @@
                                                 <div class="col-md-4">
                                                     <div class="form-group" style="margin-left:-10px;">
                                                         <label>Place of Prenatal</label>
-                                                        <input type="text" class="form-control" id="placeprenatal" placeholder="Enter Place of Prenatal" required />
+                                                        <input type="text" class="form-control" id="placeprenatal<?php echo $fetch2['immunization_id'];?>" value="<?php echo $fetch2['place_of_prenatal'];?>" placeholder="Enter Place of Prenatal" required />
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4">
                                                     <div class="form-group" style="margin-right:-10px;margin-left:-10px;">
                                                         <label>Place of Delivery</label>
-                                                        <input type="text" class="form-control" id="placedelivery" placeholder="Enter Place of Delivery" required />
+                                                        <input type="text" class="form-control" id="placedelivery<?php echo $fetch2['immunization_id'];?>" value="<?php echo $fetch2['place_of_delivery'];?>" placeholder="Enter Place of Delivery" required />
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4">
                                                     <div class="form-group" style="margin-right:-10px;">
                                                         <label>Type of Delivery</label>
-                                                        <input type="text" class="form-control" id="typedelivery" placeholder="Enter Type of Delivery" required />
+                                                        <input type="text" class="form-control" id="typedelivery<?php echo $fetch2['immunization_id'];?>" value="<?php echo $fetch2['type_of_delivery'];?>" placeholder="Enter Type of Delivery" required />
                                                     </div>
                                                 </div>
                                             </div>

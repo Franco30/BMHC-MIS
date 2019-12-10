@@ -70,6 +70,67 @@ $(document).ready(function () {
         }
 
     });
+    
+    $(document).on('click', '.updateprenatal', function () {
+        $patient_id = $('#patient_id').val();
+        $prenatal_id = $(this).val();
+        $date = $('#date' + $prenatal_id).val();
+        $husband = $('#husband' + $prenatal_id).val();
+        $menstrual_hx = $('#menstrual_hx' + $prenatal_id).val();
+        $menarch = $('#menarch' + $prenatal_id).val();
+        $cycle = $('#cycle' + $prenatal_id).val();
+        $flow = $('#flow' + $prenatal_id).val();
+        $duration = $('#duration' + $prenatal_id).val();
+        $dysmenorrhea = $('#dysmenorrhea' + $prenatal_id).val();
+        $obgynehx = $('#obgynehx' + $prenatal_id).val();
+        $past_medical_hx = $('#past_medical_hx' + $prenatal_id).val();
+        $bloodtype = $('#bloodtype' + $prenatal_id).val();
+        $tt1 = $('#tt1' + $prenatal_id).val();
+        $tt2 = $('#tt2' + $prenatal_id).val();
+        $tt3 = $('#tt3' + $prenatal_id).val();
+        $tt4 = $('#tt4' + $prenatal_id).val();
+        $tt5 = $('#tt5' + $prenatal_id).val();
+
+        if (confirm('Are you sure you want to edit this Prenatal?')) {
+            $.ajax({
+                type: "POST",
+                url: "action/editprenatal.php",
+                cache: false,
+                async: false,
+                data: {
+                    prenatal_id: $prenatal_id,
+                    date: $date,
+                    husband: $husband,
+                    menstrual_hx: $menstrual_hx,
+                    menarch: $menarch,
+                    cycle: $cycle,
+                    flow: $flow,
+                    duration: $duration,
+                    dysmenorrhea: $dysmenorrhea,
+                    obgynehx: $obgynehx,
+                    past_medical_hx: $past_medical_hx,
+                    bloodtype: $bloodtype,
+                    tt1: $tt1,
+                    tt2: $tt2,
+                    tt3: $tt3,
+                    tt4: $tt4,
+                    tt5: $tt5,
+                    edit: 1,
+                },
+                success: function () {
+                    $('#alert').slideDown();
+                    $('#alerttext').text('Successfully updated Prenatal Form');
+                    setTimeout(function () {
+                        $('#alert').fadeOut('slow');
+                    }, 1500);
+                    $('form').trigger('reset');
+                    setTimeout(function () {
+                        window.location.href = 'patient_prenatal?patient_id=' + $patient_id;
+                    }, 2500);
+                }
+            });
+        }
+    });
 });
 
 function showPatient() {

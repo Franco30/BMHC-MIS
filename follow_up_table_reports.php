@@ -85,7 +85,14 @@
 													<td><center><?php echo $fetch['contact_no']?></center></td>
 													<td><center>Prk. <?php echo $fetch['purok']." ".$fetch['street_address']?></center></td>
 													<td><center><?php echo $fetch['follow_up_date_time']?></center></td>
-                                                    <td><center><?php echo $fetch['follow_up_status']?></center></td>
+                                                    <td>
+                                                    <center>
+                                                        <?php 
+                                                    if ($fetch['follow_up_status'] == 'Pending')echo "<span class='badge badge-danger animated infinite pulse' style='animation-duration:.8s;'>Pending</span>";
+                                                    if ($fetch['follow_up_status'] == 'Done')echo "<span class='badge badge-info'>Done</span>";
+                                                    if ($fetch['follow_up_status'] == 'Cancelled')echo "<span class='badge badge-warning'>Cancelled</span>";
+                                                ?></center>
+                                                </td>
 												</tr>
 												<?php
 										}
@@ -136,7 +143,14 @@
 													<td><center><?php echo $fetch['contact_no']?></center></td>
 													<td><center>Prk. <?php echo $fetch['purok']." ".$fetch['street_address']?></center></td>
 													<td><center><?php echo $fetch['next_service_date']?></center></td>
-                                                    <td><center><?php echo $fetch['follow_up_status']?></center></td>
+                                                    <td>
+                                                    <center>
+                                                        <?php 
+                                                    if ($fetch['follow_up_status'] == 'Pending')echo "<span class='badge badge-danger animated infinite pulse' style='animation-duration:.8s;'>Pending</span>";
+                                                    if ($fetch['follow_up_status'] == 'Done')echo "<span class='badge badge-info'>Done</span>";
+                                                    if ($fetch['follow_up_status'] == 'Cancelled')echo "<span class='badge badge-warning'>Cancelled</span>";
+                                                ?></center>
+                                                </td>
 												</tr>
 												<?php
 										}

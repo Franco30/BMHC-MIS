@@ -22,7 +22,7 @@
         animationEnabled: true,
         animationDuration: 1000,
 
-        exportFileName: "Male and Female Consultation - BMHC", 
+        exportFileName: "Male and Female Immunization - BMHC", 
         exportEnabled: true,
         toolTip: {
             shared: true  
@@ -33,7 +33,7 @@
         },
         subtitles:[
             {
-                text: "Male and Female Consultation - Year <?php echo $year?>"
+                text: "Male and Female Immunization - Year <?php echo $year?>"
             }
         ],
         legend: {
@@ -122,7 +122,7 @@
         animationEnabled: true,
         animationDuration: 1000,
 
-        exportFileName: "Male and Female Consultation - BMHC", 
+        exportFileName: "Male and Female Immunization - BMHC", 
         exportEnabled: true,
         toolTip: {
             shared: true  
@@ -133,7 +133,7 @@
         },
         subtitles:[
             {
-                text: "Male and Female Consultation - Year <?php echo $year?>"
+                text: "Male and Female Immunization - Year <?php echo $year?>"
             }
         ],
         legend: {
@@ -222,7 +222,7 @@
         animationEnabled: true,
         animationDuration: 1000,
 
-        exportFileName: "Male and Female Consultation - BMHC", 
+        exportFileName: "Male and Female Immunization - BMHC", 
         exportEnabled: true,
         toolTip: {
             shared: true  
@@ -233,7 +233,7 @@
         },
         subtitles:[
             {
-                text: "Male and Female Consultation - Year <?php echo $year?>"
+                text: "Male and Female Immunization - Year <?php echo $year?>"
             }
         ],
         legend: {
@@ -320,7 +320,7 @@
         animationEnabled: true,
         animationDuration: 1000,
 
-        exportFileName: "Male and Female Consultation - BMHC", 
+        exportFileName: "Male and Female Immunization - BMHC", 
         exportEnabled: true,
         toolTip: {
             shared: true  
@@ -331,7 +331,7 @@
         },
         subtitles:[
             {
-                text: "Male and Female Consultation - Year <?php echo $year?>"
+                text: "Male and Female Immunization - Year <?php echo $year?>"
             }
         ],
         legend: {
@@ -418,7 +418,7 @@
             animationEnabled: true,
             animationDuration: 1000,
 
-            exportFileName: "Monthly Consultation Count - BMHC", 
+            exportFileName: "Monthly Immunization Count - BMHC", 
             exportEnabled: true,
             toolTip: {
                 shared: true  

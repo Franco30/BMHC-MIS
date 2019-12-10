@@ -32,8 +32,10 @@ while($fetch = $query->fetch_array()){
                         <a href="consultation_treatment?patient_id=<?php echo $fetch['patient_id']?>&&consultation_id=<?php echo $f2['consultation_id'] ?>" class="btn btn-md btn-danger"><span class="fa fa-medkit animated infinite pulse"></span> Prescription</a>
                         <?php } else { ?>
 <!--                        <a href="#" class="btn btn-md btn-default"><span class="fa fa-medkit"></span></a>-->
-                        <a href="consultation_treatment?patient_id=<?php echo $fetch['patient_id']?>&&consultation_id=<?php echo $fetch['consultation_id'] ?>" class="btn btn-md btn-default"><span class="fa fa-medkit"></span> Prescription</a>
-                        <a href="consultation_print?patient_id=<?php echo $fetch['patient_id']?>&&consultation_id=<?php echo $fetch['consultation_id']?>" class="btn btn-md btn-info"><span class="glyphicon glyphicon-print"></span> Preview</a> <?php } ?>
+                        <a href="consultation_treatment?patient_id=<?php echo $fetch['patient_id']?>&&consultation_id=<?php echo $fetch['consultation_id'] ?>" class="btn btn-md btn-default" data-toggle="tooltip" data-placement="top" title="Prescription"><span class="fa fa-medkit" style="margin-right: 0px;"></span></a>
+                        <a href="consultation_print?patient_id=<?php echo $fetch['patient_id']?>&&consultation_id=<?php echo $fetch['consultation_id']?>" class="btn btn-md btn-success" data-toggle="tooltip" data-placement="top" title="Preview"><span class="glyphicon glyphicon-print" style="margin-right: 0px;"></span></a> <?php } ?>
+                        
+                        <a href="edit_consultation?consultation_id=<?php echo $fetch['consultation_id'] ?>&&patient_id=<?php echo $fetch['patient_id'] ?>" class="btn btn-md btn-info">Edit</a>
                     </center>
                 </td>
             </tr>

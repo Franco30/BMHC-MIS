@@ -29,7 +29,7 @@ $query = $conn->query("SELECT * FROM `immunization`, `patient_child` WHERE `pati
             <span class="fa fa-heartbeat" style="margin-right: 0px;"></span></a>
             <a href="immunization_consultation?child_id=<?php echo $fetch['child_id'];?>&&immunization_id=<?php echo $fetch['immunization_id']?>" class="btn btn-sm btn-default" data-toggle="tooltip" data-placement="top" title="Consultation">
                 <span class="fa fa-stethoscope" style="margin-right: 0px;"></span></a>
-                <button type="button" class="btn btn-sm btn-info">Edit</button>
+            <a href="edit_immunization?immunization_id=<?php echo $fetch['immunization_id'] ?>&&child_id=<?php echo $fetch['child_id'] ?>" class="btn btn-sm btn-info">Edit</a>
             </center></td>
         </tr>
         <?php

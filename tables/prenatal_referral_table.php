@@ -27,8 +27,9 @@ if(isset($_POST['show'])){
             <td><center><?php echo $fetch['referral_date'] ?></center></td>
             <td><center>
             <a href="referral_prenatal_record?referral_id=<?php echo $fetch['referral_id']?>" class="btn btn-sm btn-default">Overview </a>
-            <button type="button" class="btn btn-sm btn-info">Edit</button>
-                </center>
+            <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#editprenatalreferral<?php echo $fetch['referral_id']?>">Edit</button>
+            </center>
+           <?php require ('../modals/editprenatalreferral.php'); ?>
             </td>
         </tr>
                 <?php

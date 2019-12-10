@@ -25,10 +25,11 @@ while($fetch = $query->fetch_array()){
             <tr>
                 <td><center><strong><?php echo $fetch['year']?><?php echo "0".$fetch['prenatal_id']?></strong></center></td>
                 <td><center><strong><?php echo $fetch['date']?></strong></center></td>
-                <td><center><?php echo $fetch['husband']?></center></td>
+                <td><?php echo $fetch['husband']?></td>
                 <td><center><?php echo $fetch['bloodtype']?></center></td>
                 <td><center>
                     <a href="prenatal_record?patient_id=<?php echo $f['patient_id'];?>&&prenatal_id=<?php echo $prenatal_id?>" class="btn btn-md btn-default">All Records <span class="badge"><?php echo $f2['total']?></span></a>
+                    <a href="edit_prenatal?prenatal_id=<?php echo $fetch['prenatal_id'] ?>&&patient_id=<?php echo $fetch['patient_id'] ?>" class="btn btn-md btn-info">Edit</a>
                 </center></td>
             </tr>
             <?php

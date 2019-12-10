@@ -74,6 +74,57 @@ $(document).ready(function () {
         }
 
     });
+    
+    $(document).on('click', '.updateimmunization', function () {
+        $immunization_id = $(this).val();
+        $philhealth = $('#philhealth' + $immunization_id).val();
+        $birthtime = $('#birthtime' + $immunization_id).val();
+        $birthweight = $('#birthweight' + $immunization_id).val();
+        $phonenumber = $('#phonenumber' + $immunization_id).val();
+        $gravida = $('#gravida' + $immunization_id).val();
+        $para = $('#para' + $immunization_id).val();
+        $abortion = $('#abortion' + $immunization_id).val();
+        $mage = $('#mage' + $immunization_id).val();
+        $fage = $('#fage' + $immunization_id).val();
+        $placeprenatal = $('#placeprenatal' + $immunization_id).val();
+        $placedelivery = $('#placedelivery' + $immunization_id).val();
+        $typedelivery = $('#typedelivery' + $immunization_id).val();
+
+        if (confirm('Are you sure you want to edit this Immunization Form?')) {
+            $.ajax({
+                type: "POST",
+                url: "action/editimmunization.php",
+                cache: false,
+                async: false,
+                data: {
+                    immunization_id: $immunization_id,
+                    philhealth: $philhealth,
+                    birthtime: $birthtime,
+                    birthweight: $birthweight,
+                    phonenumber: $phonenumber,
+                    gravida: $gravida,
+                    para: $para,
+                    abortion: $abortion,
+                    mage: $mage,
+                    fage: $fage,
+                    placeprenatal: $placeprenatal,
+                    placedelivery: $placedelivery,
+                    typedelivery: $typedelivery,
+                    edit: 1,
+                },
+                success: function () {
+                    $('#alert').slideDown();
+                    $('#alerttext').text('Successfully updated Immunization Form');
+                    setTimeout(function () {
+                        $('#alert').fadeOut('slow');
+                    }, 1500);
+                    setTimeout(function () {
+                        window.location.href = 'immunization_table';
+                    }, 2500);
+                }
+            });
+        }
+    });
 });
 
 function showPatient() {

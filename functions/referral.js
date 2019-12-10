@@ -60,10 +60,7 @@ $(document).ready(function () {
                             $(document).find('.select').selectpicker();
                         });
                         $(document).ajaxComplete(function () {
-                            $(document).find('.datepicker').datepicker({
-                                format: 'MM dd, yyyy',
-                                language: 'en'
-                            });
+                            $(document).find('.datepicker').datepicker();
                         });
                         showPatient();
                     }
@@ -73,6 +70,65 @@ $(document).ready(function () {
             $('form').trigger('reset');
         }
 
+    });
+    
+    $(document).on('click', '.updatereferral', function () {
+        
+        $referral_id = $(this).val();
+        $date = $('#date' + $referral_id).val();
+        $patient_name = $('#patient_name' + $referral_id).val();
+        $gender = $('#gender' + $referral_id).val();
+        $weight = $('#weight' + $referral_id).val();
+        $bp = $('#bp' + $referral_id).val();
+        $temp = $('#temp' + $referral_id).val();
+        $age = $('#age' + $referral_id).val();
+        $complaints = $('#complaints' + $referral_id).val();
+        $to = $('#to' + $referral_id).val();
+        $destination = $('#destination' + $referral_id).val();
+        $referred_by = $('#referred_by' + $referral_id).val();
+
+        if (confirm('Are you sure you want to edit this Referral Form?')) {
+            $.ajax({
+                type: "POST",
+                url: "action/editreferral.php",
+                cache: false,
+                async: false,
+                data: {
+                    referral_id: $referral_id,
+                    date: $date,
+                    patient_name: $patient_name,
+                    gender: $gender,
+                    weight: $weight,
+                    bp: $bp,
+                    temp: $temp,
+                    age: $age,
+                    complaints: $complaints,
+                    to: $to,
+                    destination: $destination,
+                    referred_by: $referred_by,
+                    edit: 1,
+                },
+                success: function () {
+                    console.log($referred_by);
+                    $('#alert').slideDown();
+                    $('#alerttext').text('Successfully updated Referral Record');
+                    setTimeout(function () {
+                        $('#alert').fadeOut('slow');
+                    }, 1500);
+                    $(document).ajaxComplete(function () {
+                        $(document).find('.select').selectpicker();
+                    });
+                    $(document).ajaxComplete(function () {
+                        $(document).find('.datepicker').datepicker();
+                    });
+                    $(document).ajaxComplete(function () {
+                        $(document).find('.mask_bp').mask('999/99');
+                        $(document).find('.mask_temp').mask('99.9');
+                    });
+                    showPatient();
+                }
+            });
+        }
     });
 });
 

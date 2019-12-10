@@ -21,7 +21,7 @@ while($fetch = $query->fetch_array()){
     $f2 = $q2->fetch_array();
     ?>
             <tr>
-                <td style="width:40%"><center><?php echo $fetch['doctors_order_advice']?></center></td>
+                <td style="width:40%"><?php echo $fetch['doctors_order_advice']?></td>
                 <td><center><?php echo $fetch['date']?></center></td>
                 <td><center><a href="prenatal_overview?patient_id=<?php echo $f['patient_id'];?>&&prenatal_id=<?php echo $prenatal_id?>&&prenatal_consultation_id=<?php echo $fetch['prenatal_consultation_id'] ?>" class="btn btn-md btn-info">Overview</a></center></td>
             </tr>
