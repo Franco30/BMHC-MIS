@@ -20,10 +20,11 @@
     <script type="text/javascript" src="js/jquery.canvasjs.min.js"></script>
     <?php require 'js/loadcharts/reports/patient2.php'?>
     <?php require 'js/loadcharts/reports/patient3.php'?>
+    <?php require 'js/loadcharts/reports/patientreport.php'?>
     <!-- EOF CSS INCLUDE -->
     <style type="text/css">
         @media print {
-/*
+            /*
             @page {
                 margin: -40px 10px 10px 50px;
                 size: letter;
@@ -125,6 +126,7 @@
                                             <option value="colpatientgender">Patient Gender</option>
                                             <option value="colpatientage">Patient Age</option>
                                             <option value="colpatientpurok">Patient Purok</option>
+                                            <option value="drilldown">Patient Status</option>
                                         </select>
                                     </div>
                                 </div>
@@ -275,7 +277,11 @@
                                         <div id="chartContainer7.1" class="barpurok reporttype" style="width: 100%; height: 300px"></div>
                                         <div id="chartContainer7.2" class="splinepurok reporttype" style="width: 100%; height: 300px"></div>
                                         <div id="chartContainer7.3" class="stackedareapurok reporttype" style="width: 100%; height: 300px"></div>
-                                        
+                                        <div id="chartContainer" class="drilldown reporttype" style="width: 100%; height: 310px"></div>
+                                        <div class="pull-right">
+                                            <button class="btn btn-info invisible" id="backButton"><span class="fa fa-arrow-circle-left"></span> Back</button>
+<!--                                            style="margin: -51px;margin-right: 0px;margin-top: -771px;"-->
+                                        </div>
                                         <?php require 'reports/patient_monthly.php'?>
                                         <?php require 'reports/patient_quarter.php'?>
                                         <?php require 'reports/patient_yearly.php'?>
@@ -283,6 +289,7 @@
                                         <?php require 'reports/patient_gender.php'?>
                                         <?php require 'reports/patient_age.php'?>
                                         <?php require 'reports/patient_purok.php'?>
+                                        <?php require 'reports/patient_status.php'?>
                                     </div>
                                 </div>
                             </div>
@@ -295,7 +302,7 @@
         <!-- END PAGE CONTENT -->
     </div>
     <!-- END PAGE CONTAINER -->
-    
+
     <!-- START PRELOADS -->
     <audio id="audio-alert" src="audio/alert.mp3" preload="auto"></audio>
     <audio id="audio-fail" src="audio/fail.mp3" preload="auto"></audio>

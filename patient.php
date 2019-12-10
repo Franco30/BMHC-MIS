@@ -40,6 +40,29 @@
         }
 
     </style>
+<!--
+    <style>
+        #backButton {
+            /*
+            border-radius: 4px;
+            padding: 6px;
+            border: none;
+            font-size: 16px;
+            background-color: #2eacd1;
+            color: white;
+*/
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+
+        .invisible {
+            display: none;
+        }
+
+    </style>
+-->
 </head>
 
 <body>
