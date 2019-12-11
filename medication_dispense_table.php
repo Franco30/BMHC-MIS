@@ -100,8 +100,13 @@
                                         </thead>
                                         <tbody>
                                             <?php
-												require 'require/config.php';
-												$query = $conn->query("SELECT * FROM `patient` ORDER BY `patient_id` DESC") or die(mysqli_error());
+                                                $year = date('Y');
+                                                if(isset($_GET['year']))
+                                                {
+                                                $year=$_GET['year'];
+                                                }
+                                                require 'require/config.php';
+												$query = $conn->query("SELECT * FROM `patient` WHERE `year` = '$year' ORDER BY `patient_id` DESC") or die(mysqli_error());
 												while($fetch = $query->fetch_array()){
 												?>
                                             <tr>

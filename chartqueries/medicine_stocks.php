@@ -1,4 +1,10 @@
 <?php
+$year = date('Y');
+if(isset($_GET['year']))
+{
+$year=$_GET['year'];
+}
+require 'require/config.php';
 $res = $conn->query("SELECT * FROM `medicine` GROUP BY medicine_name") or die(mysqli_error());
 $data_points = array();
 while($result = $res->fetch_array()){
