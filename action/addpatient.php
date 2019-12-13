@@ -23,10 +23,11 @@ if(isset($_POST['add'])){
     date_default_timezone_set('Asia/Manila');
     $month = date("M", strtotime("+8 HOURS"));
     $date_time=date("F j, Y - g:i a");
+    $today = date("m/d/Y"); 
     $remarks = "Registered $patient_name as new Patient";
 
     require '../require/config.php';
-    $conn->query("INSERT INTO `patient` VALUES('', '$patient_name', '$civilstatus', '$age', '$gender', '$streetaddress, Mansilingan', '$purok', '$birthdate', '$height', '$weight', '$contact_no', '$region_province', '$occupation', '$philhealth_no', '$contact_person', '$emergency_no', 'Active', '$month', '$year')") or die(mysqli_error());
+    $conn->query("INSERT INTO `patient` VALUES('', '$patient_name', '$civilstatus', '$age', '$gender', '$streetaddress, Mansilingan', '$purok', '$birthdate', '$height', '$weight', '$contact_no', '$region_province', '$occupation', '$philhealth_no', '$contact_person', '$emergency_no', 'Active', '$month', '$year', '$today')") or die(mysqli_error());
     $conn->query("INSERT INTO `users_activity_log` VALUES('', '$user_id', '$remarks','$date_time')") or die(mysqli_error());
 }
 ?>
