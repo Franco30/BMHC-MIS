@@ -19,7 +19,7 @@ $q = $conn->query("SELECT * FROM `patient` WHERE `patient_id` = '$_GET[id]'") or
 $f = $q->fetch_array();
 ?>
             <tr>
-                <td><center><strong><?php echo $fetch['date']?></strong></center></td>
+                <td><center><strong><?php echo $fetch['consultation_date']?></strong></center></td>
                 <td><center><?php echo $fetch['complaints']?></center></td>
                 <td><center><?php echo $fetch['pe_findings']?></center></td>
                 <td><center><?php echo $fetch['diagnosis']?></center></td>

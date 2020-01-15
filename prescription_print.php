@@ -75,7 +75,7 @@ $fetch = $query->fetch_array();
 								<h6 style="font-size:25px;"><strong>PRESCRIPTION PAD</strong></h6>
 							</center>
 							<br>
-							<p style="font-size: 14px;margin-left: 20px;" class="text-justify"><strong>PATIENT NAME:</strong>&nbsp;&nbsp;<?php echo $fetch2['patient_name']?>&emsp;&emsp;<strong>AGE:</strong>&nbsp;&nbsp;<?php echo $fetch2['age']?>&emsp;&emsp;<strong>GENDER:</strong>&nbsp;&nbsp;<?php echo $fetch2['gender']?>&emsp;&emsp;<strong>AGE:</strong>&nbsp;&nbsp;<?php echo $fetch2['age']?>&emsp;&emsp;<strong>DATE:</strong>&nbsp;&nbsp;<?php echo $fetch['date']?></p>
+							<p style="font-size: 14px;margin-left: 20px;" class="text-justify"><strong>PATIENT NAME:</strong>&nbsp;&nbsp;<?php echo $fetch2['patient_name']?>&emsp;&emsp;<strong>AGE:</strong>&nbsp;&nbsp;<?php echo $fetch2['age']?>&emsp;&emsp;<strong>GENDER:</strong>&nbsp;&nbsp;<?php echo $fetch2['gender']?>&emsp;&emsp;<strong>AGE:</strong>&nbsp;&nbsp;<?php echo $fetch2['age']?>&emsp;&emsp;<strong>DATE:</strong>&nbsp;&nbsp;<?php echo $fetch['consultation_date']?></p>
 
 							<br>
 

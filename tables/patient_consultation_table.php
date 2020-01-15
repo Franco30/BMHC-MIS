@@ -24,7 +24,7 @@ while($fetch = $query->fetch_array()){
                 <td><center><strong><?php echo $fetch['year']?><?php echo "0".$fetch['consultation_id']?></strong></center></td>
                 <td><center><strong><?php echo $f['year']?><?php echo "0".$fetch['patient_id']?></strong></center>
                 </td>
-                <td><center><strong><?php echo $fetch['date']?></strong></center></td>
+                <td><center><strong><?php echo $fetch['consultation_date']?></strong></center></td>
                 <td><center><?php echo $fetch['complaints']?></center></td>
                 <td class="print">
                     <center>

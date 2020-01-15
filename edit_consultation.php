@@ -104,7 +104,7 @@
                                                             <div class="col-md-6">
                                                                 <div class="form-group" style="margin-left:-10px;">
                                                                     <label>Date</label>
-                                                                    <input type="text" class="form-control datepicker" id="date_today<?php echo $fetch2['consultation_id']; ?>" value="<?php echo $fetch2['date']; ?>" placeholder="Enter Date Today" required />
+                                                                    <input type="text" class="form-control datepicker" id="date_today<?php echo $fetch2['consultation_id']; ?>" value="<?php echo $fetch2['consultation_date']; ?>" placeholder="Enter Date Today" required />
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-6">

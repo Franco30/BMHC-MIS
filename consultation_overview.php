@@ -83,7 +83,7 @@
 											while($fetch = $query->fetch_array()){
 											?>
 												<tr>
-													<td><center><?php echo $fetch['date']?></center></td>
+													<td><center><?php echo $fetch['consultation_date']?></center></td>
 													<td><center><?php echo $fetch['head_of_the_family']?></center></td>
 													<td><center><?php echo $fetch['weight']?></center></td>
 													<td><center><?php echo $fetch['bp']?></center></td>

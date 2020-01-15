@@ -37,7 +37,7 @@ if(isset($_POST['edit'])){
 
     require '../require/config.php';
 //    $C = substr($C, 0, -2);
-    $conn->query("UPDATE `consultation` SET `date` = '$date_today', `head_of_the_family` = '$headfamily', `weight` = '$weight', `height` = '$height', `bp` = '$bp', `temp` = '$temp', `rr` = '$rr', `pr` = '$pr', `complaints` = '$complaints', `pe_findings` = '$pefindings', `diagnosis` = '$diagnosis', `lab_request` = '$labrequest' WHERE `consultation`.`consultation_id` = '$consultation_id'") or die(mysqli_error());
+    $conn->query("UPDATE `consultation` SET `consultation_date` = '$date_today', `head_of_the_family` = '$headfamily', `weight` = '$weight', `height` = '$height', `bp` = '$bp', `temp` = '$temp', `rr` = '$rr', `pr` = '$pr', `complaints` = '$complaints', `pe_findings` = '$pefindings', `diagnosis` = '$diagnosis', `lab_request` = '$labrequest' WHERE `consultation`.`consultation_id` = '$consultation_id'") or die(mysqli_error());
     $conn->query("INSERT INTO `users_activity_log` VALUES('', '$user_id', '$remarks','$date_time')") or die(mysqli_error());
     }
 ?>

@@ -74,7 +74,7 @@ $fetch = $query->fetch_array();
 								<h6 style="font-size:25px;"><strong>CONSULTATION</strong></h6>
 							</center>
 							<br>
-							<p style="font-size: 14px;margin-left: 20px;" class="text-justify"><strong>DATE:</strong>&nbsp;&nbsp;<?php echo $fetch['date']?>&emsp;<strong>PHILHEALTH#:</strong>&nbsp;&nbsp;<?php echo $fetch2['philhealth_no']?></p>
+							<p style="font-size: 14px;margin-left: 20px;" class="text-justify"><strong>DATE:</strong>&nbsp;&nbsp;<?php echo $fetch['consultation_date']?>&emsp;<strong>PHILHEALTH#:</strong>&nbsp;&nbsp;<?php echo $fetch2['philhealth_no']?></p>
 							<p style="font-size: 14px;margin-left: 20px;" class="text-justify"><strong>PATIENT NAME:</strong>&nbsp;&nbsp;<?php echo $fetch2['patient_name']?>&emsp;&emsp;<strong>BIRTH DATE:</strong>&nbsp;&nbsp;<?php echo $fetch2['birthdate']?>&emsp;&emsp;<strong>GENDER:</strong>&nbsp;&nbsp;<?php echo $fetch2['gender']?>&emsp;&emsp;<strong>AGE:</strong>&nbsp;&nbsp;<?php echo $fetch2['age']?></p>
 
 							<p style="font-size: 14px;margin-left: 20px;" class="text-justify"><strong>HEAD OF THE FAMILY:</strong>&nbsp;&nbsp;<?php echo $fetch['head_of_the_family']?>&emsp;&emsp;<strong>ADDRESS:</strong>&nbsp;&nbsp;<?php echo $fetch2['purok']." ".$fetch2['street_address']?></p>
