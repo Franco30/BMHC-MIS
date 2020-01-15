@@ -41,11 +41,11 @@ $date=date("F j, Y, g:i a");
 
 $time=date("g:i a");
 $date2=date("F j, Y");
-
+$today = date("m/d/Y"); 
 $user_id=$_SESSION['user_id'];
 $remarks = "Successfully Backup the database";
 
-$connection->query("INSERT INTO `db_backup` VALUES('', '$user_id', 'Export', '$date2', '$time', 'Successfully Exported Database')") or die(mysqli_error());
+$connection->query("INSERT INTO `db_backup` VALUES('', '$user_id', 'Export', '$today', '$time', 'Successfully Exported Database')") or die(mysqli_error());
 
 $connection->query("INSERT INTO `users_activity_log` VALUES('', '$user_id', '$remarks','$date')") or die(mysqli_error());
 $connection->close();
