@@ -315,7 +315,7 @@
                                                             <table class="table table-hover table-bordered">
                                                                 <thead>
                                                                     <tr class="warning">
-                                                                        <th>Patient No</th>
+                                                                        <th><center>Patient No</center></th>
                                                                         <th>
                                                                             <center>Patient Name</center>
                                                                         </th>
@@ -335,7 +335,7 @@
                                                                         </td>
                                                                         <td><strong><?php echo $fetch['patient_name']?></strong></td>
                                                                         <td>
-                                                                            <center><?php echo $fetch['date']?></center>
+                                                                            <center><?php echo $fetch['consultation_date']?></center>
                                                                         </td>
                                                                     </tr>
                                                                     <?php
