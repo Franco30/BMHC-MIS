@@ -78,7 +78,7 @@ require 'require/logincheck.php';
 			$fetch = $q2->fetch_array();
 			$q3 = $conn->query("SELECT COUNT(*) as total FROM `immunization` WHERE `year` = '$year' && `date_time` REGEXP '$date_today'") or die(mysqli_error());
 			$fetch2 = $q3->fetch_array();
-            $q4 = $conn->query("SELECT COUNT(*) as total FROM `consultation` WHERE `year` = '$year' && `date` REGEXP '$date_today'") or die(mysqli_error());
+            $q4 = $conn->query("SELECT COUNT(*) as total FROM `consultation` WHERE `year` = '$year' && `consultation_date` REGEXP '$date_today'") or die(mysqli_error());
 			$fetch3 = $q4->fetch_array();
             $q5 = $conn->query("SELECT COUNT(*) as total FROM `referral` WHERE `year` = '$year' && `date_time` REGEXP '$date_today'") or die(mysqli_error());
 			$fetch4 = $q5->fetch_array();
