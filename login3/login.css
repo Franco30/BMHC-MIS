@@ -250,3 +250,176 @@ footer a {
     color: #3c97bf;
     text-decoration: none;
 }
+
+@media only screen and (max-width: 599px) {
+    label.label-login {
+        cursor: pointer;
+        color: #fff;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        min-width: 150px;
+        border: 1px solid #fff;
+        padding: 10px;
+        border-radius: 500px;
+        text-align: center;
+        font-size: 12px;
+        font-weight: bold;
+    }
+    #hide:checked~#main_landing_content_mobile {
+        display: none;
+    }
+    .form-container {
+        transition: none;
+    }
+    .pltrades-logo-top {
+        display: none;
+    }
+    .overlay-container {
+        display: none;
+    }
+    .sign-in-container {
+        width: 100%;
+    }
+    .custom-login-form {
+        overflow-y: scroll;
+        overflow-x: hidden;
+        height: 100%;
+        display: block;
+    }
+    .sign-up-container {
+        width: 100%;
+        overflow-y: scroll !important;
+        overflow-x: hidden !important;
+    }
+    .container.right-panel-active .sign-up-container {
+        transform: translateX(0%);
+        opacity: 1;
+        z-index: 5;
+        animation: none;
+    }
+    button {
+        padding: 12px 12px;
+        min-width: 150px;
+        width: 100%;
+    }
+    .have_account {
+        margin-top: 13px;
+        font-size: 12px;
+        color: #00695c;
+        font-weight: bold;
+    }
+    form {
+        padding: 20px 20px;
+    }
+    .button-container {
+        width: 100% !important;
+        padding: 10px 0px;
+    }
+    .facebook-button-container {
+        width: 100%;
+    }
+    .main_landing_content {
+        z-index: 3;
+        border-radius: 0px;
+        position: relative;
+        background-size: cover;
+        background: #00695c;
+        background-image: linear-gradient(to right, #017464, rgba(4, 124, 68, 0.73));
+        height: 100%;
+    }
+    .showLogin {
+        background-color: transparent;
+        border: 1px solid #fff;
+        color: #fff;
+    }
+    .main_landing_text {
+        padding: 10px 20px;
+        color: #fff;
+    }
+    .main_page_buttons {
+        padding: 20px
+    }
+    .h1 {
+        font-size: 30px;
+        font-weight: 600;
+        letter-spacing: 5px;
+        text-shadow: 1px 1px 1px #444;
+    }
+    .get-started-container {
+        border-radius: 500px;
+        min-width: 200px;
+        padding: 20px;
+    }
+    .get-started-button {
+        border: 1px solid #fff;
+        background-color: transparent;
+    }
+    .pltrades-logo-mobile {
+        padding: 20px;
+    }
+    .have_account_web {
+        display: none;
+    }
+    footer {
+        position: 100%;
+    }
+    
+    .alert.alert-danger {
+    background: #fcd0cd;
+    color: #7a221b;
+    width: 445px;
+    }
+    
+    .alert.alert-success {
+    background: #bfe5e1;
+    color: #004b44;
+    width: 445px;
+    }
+    
+}
+
+
+/* for big resolutions */
+
+@media only screen and (min-width: 600px) {
+    .main_landing_content {
+        display: none;
+    }
+    .ghostshow {
+        display: none;
+    }
+    .pltrades-logo-mobile {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    form {
+        padding: 20px;
+    }
+    .overlay-panel {
+        padding: 20px
+    }
+    
+}
+
+
+.w-100 {
+    width: 100% !important;
+}
+
+.loginSideContent {
+    color: #fff;
+    /* max-width: 440px; */
+    width: 100%;
+    padding: 0 16px;
+    position: relative;
+}
+
+.loginContentItem {
+    display: flex;
+    font-size: 24px !important;
+    font-weight: bold;
+    line-height: 25px;
+    margin: 48px auto;
+}

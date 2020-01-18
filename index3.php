@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="login3/login.css">
     
 	<style>
-/*
 		.field-icon {
 			float: right;
 			margin-right: -535px;
@@ -21,8 +20,8 @@
 			position: relative;
 			z-index: 2;
 		}
-*/
         
+/*
         .field-icon {
 			float: right;
 			margin-right: 9px;
@@ -30,6 +29,7 @@
 			position: relative;
 			z-index: 2;
 		}
+*/
 
 		.container {
 			padding-top: 50px;
@@ -52,6 +52,8 @@
                 </div> <br>
                 <h1 style="color:#000000">BMHC-MIS</h1>
                 <br>
+                <div id="error"></div>
+                <div id="success"></div>
                 <div id="uname_response"></div>
                 <input type="text" placeholder="Username" id="username" name="username" required />
                 <input type="password" placeholder="Password" name="password" id="password" required />
