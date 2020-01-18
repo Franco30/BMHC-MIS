@@ -70,11 +70,12 @@ require 'require/logincheck.php';
 				$year=$_GET['year'];
 			}
             date_default_timezone_set('Asia/Manila');
-		    $date_today = date('F j, Y');
+//		    $date_today = date('F j, Y');
+            $date_today = date('Y-m-d');
 			require 'require/config.php';
 			$q = $conn->query("SELECT COUNT(*) as total FROM `family_planning` WHERE `year` = '$year' && `date_time` REGEXP '$date_today'") or die(mysqli_error());
 			$f = $q->fetch_array();
-			$q2 = $conn->query("SELECT COUNT(*) as total FROM `prenatal` WHERE `year` = '$year' && `date` REGEXP '$date_today'") or die(mysqli_error());
+			$q2 = $conn->query("SELECT COUNT(*) as total FROM `prenatal` WHERE `year` = '$year' && `prenatal_date` REGEXP '$date_today'") or die(mysqli_error());
 			$fetch = $q2->fetch_array();
 			$q3 = $conn->query("SELECT COUNT(*) as total FROM `immunization` WHERE `year` = '$year' && `date_time` REGEXP '$date_today'") or die(mysqli_error());
 			$fetch2 = $q3->fetch_array();
@@ -221,46 +222,37 @@ require 'require/logincheck.php';
                                     <div class="form-row">
                                         <div class="col-md-2">
                                             <div class="form-group" style="margin-left:-10px">
-                                                <select class="form-control select" data-style="btn-primary" id="pyear">
-                                                    <option selected disabled>Select Year</option>
-                                                    <option value="<?php 
-                                                                    if(isset($_GET['year']))
-                                                                    {
-                                                                        $value=$_GET['year']; 
-                                                                        echo $value;
-                                                                     }
-                                                                    else
-                                                                    {
-                                                                        echo date('Y');
-                                                                    }
-                                                                ?>">
-                                                        <?php 
-                                                                            if(isset($_GET['year']))
-                                                                            {
-                                                                                $value=$_GET['year']; 
-                                                                                echo $value;
-                                                                             }
-                                                                            else
-                                                                            {
-                                                                                echo date('Y');
-                                                                            }
-                                                                    ?>
-                                                    </option>
-
-                                                    <?php
-                                                    require 'require/config.php';
-                                                    $query = $conn->query("SELECT * FROM `patient` group by year") or die(mysqli_error());
-
-                                                    while($fetch = $query->fetch_array())
-                                                 {
-                                                        ?>
-                                                    <option value="<?php echo $fetch['year'];?>">
-                                                        <?php echo $fetch['year']?>
-                                                    </option>
-                                                    <?php
+                                                <select id="pyear" class="validate[required] select" data-style="btn-primary" data-live-search="true">
+                                                <option value="<?php 
+                                                               if(isset($_GET['year'])){
+                                                                   $value=$_GET['year']; 
+                                                                   echo $value;
+                                                               }
+                                                               else{
+                                                                   echo date('Y');
+                                                               }
+                                                               ?>">
+                                                    <?php 
+                                                    if(isset($_GET['year']))
+                                                    {
+                                                        $value=$_GET['year']; 
+                                                        echo $value;
+                                                    }
+                                                    else
+                                                    {
+                                                        echo date('Y');
+                                                    }
+                                                    ?>
+                                                </option>
+                                                <?php 
+                                                $earliest_year = 1950;
+                                                foreach (range(date('Y'), $earliest_year) as $x) {
+                                                ?>
+                                                <option value="<?php echo $x ?>"><?php echo $x ?></option>
+                                                <?php
                                                 }
-                                                 ?>
-                                                </select>
+                                                ?>
+                                            </select>
                                             </div>
                                         </div>
                                     </div>

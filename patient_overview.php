@@ -160,6 +160,11 @@
 												<h5><strong>Emergency No: </strong><?php echo $fetch['emergency_no']?>
 												</h5>
 												<hr style="margin:0px 0 5px 0;">
+												<h5><strong>Status: </strong><?php if ($fetch['status'] === "Active")echo "<span class='badge badge-success'>Active</span>";
+												if ($fetch['status'] === "Deceased")echo "<span class='badge badge-default'>Deceased</span>"
+													?>
+												</h5>
+												<hr style="margin:0px 0 5px 0;">
 											</div>
 										</div>
 									</div>
