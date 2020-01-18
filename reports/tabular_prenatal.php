@@ -29,7 +29,7 @@
                             <tr>
                                 <td><center><strong><mark><?php echo $fetch2['year']. "0" .$fetch2['patient_id']?></mark></strong></center></td>
                                 <td><center><?php echo $fetch['patient_name']?></center></td>
-                                <td><center><?php echo $fetch2['date']?></center></td>
+                                <td><center><?php echo $fetch2['prenatal_date']?></center></td>
                             </tr>
                             <?php
                     }
@@ -76,7 +76,7 @@
                             <tr>
                                 <td><center><strong><mark><?php echo $fetch2['year']. "0" .$fetch2['patient_id']?></mark></strong></center></td>
                                 <td><center><?php echo $fetch['patient_name']?></center></td>
-                                <td><center><?php echo $fetch2['date']?></center></td>
+                                <td><center><?php echo $fetch2['prenatal_date']?></center></td>
                             </tr>
                             <?php
                     }
@@ -123,7 +123,7 @@
                             <tr>
                                 <td><center><strong><mark><?php echo $fetch2['year']. "0" .$fetch2['patient_id']?></mark></strong></center></td>
                                 <td><center><?php echo $fetch['patient_name']?></center></td>
-                                <td><center><?php echo $fetch2['date']?></center></td>
+                                <td><center><?php echo $fetch2['prenatal_date']?></center></td>
                             </tr>
                             <?php
                     }
@@ -170,7 +170,7 @@
                             <tr>
                                 <td><center><strong><mark><?php echo $fetch2['year']. "0" .$fetch2['patient_id']?></mark></strong></center></td>
                                 <td><center><?php echo $fetch['patient_name']?></center></td>
-                                <td><center><?php echo $fetch2['date']?></center></td>
+                                <td><center><?php echo $fetch2['prenatal_date']?></center></td>
                             </tr>
                             <?php
                     }
@@ -217,7 +217,7 @@
                             <tr>
                                 <td><center><strong><mark><?php echo $fetch2['year']. "0" .$fetch2['patient_id']?></mark></strong></center></td>
                                 <td><center><?php echo $fetch['patient_name']?></center></td>
-                                <td><center><?php echo $fetch2['date']?></center></td>
+                                <td><center><?php echo $fetch2['prenatal_date']?></center></td>
                             </tr>
                             <?php
                     }
@@ -264,7 +264,7 @@
                             <tr>
                                 <td><center><strong><mark><?php echo $fetch2['year']. "0" .$fetch2['patient_id']?></mark></strong></center></td>
                                 <td><center><?php echo $fetch['patient_name']?></center></td>
-                                <td><center><?php echo $fetch2['date']?></center></td>
+                                <td><center><?php echo $fetch2['prenatal_date']?></center></td>
                             </tr>
                             <?php
                     }
@@ -311,7 +311,7 @@
                             <tr>
                                 <td><center><strong><mark><?php echo $fetch2['year']. "0" .$fetch2['patient_id']?></mark></strong></center></td>
                                 <td><center><?php echo $fetch['patient_name']?></center></td>
-                                <td><center><?php echo $fetch2['date']?></center></td>
+                                <td><center><?php echo $fetch2['prenatal_date']?></center></td>
                             </tr>
                             <?php
                     }
@@ -358,7 +358,7 @@
                             <tr>
                                 <td><center><strong><mark><?php echo $fetch2['year']. "0" .$fetch2['patient_id']?></mark></strong></center></td>
                                 <td><center><?php echo $fetch['patient_name']?></center></td>
-                                <td><center><?php echo $fetch2['date']?></center></td>
+                                <td><center><?php echo $fetch2['prenatal_date']?></center></td>
                             </tr>
                             <?php
                     }
@@ -405,7 +405,7 @@
                             <tr>
                                 <td><center><strong><mark><?php echo $fetch2['year']. "0" .$fetch2['patient_id']?></mark></strong></center></td>
                                 <td><center><?php echo $fetch['patient_name']?></center></td>
-                                <td><center><?php echo $fetch2['date']?></center></td>
+                                <td><center><?php echo $fetch2['prenatal_date']?></center></td>
                             </tr>
                             <?php
                     }
@@ -452,7 +452,7 @@
                             <tr>
                                 <td><center><strong><mark><?php echo $fetch2['year']. "0" .$fetch2['patient_id']?></mark></strong></center></td>
                                 <td><center><?php echo $fetch['patient_name']?></center></td>
-                                <td><center><?php echo $fetch2['date']?></center></td>
+                                <td><center><?php echo $fetch2['prenatal_date']?></center></td>
                             </tr>
                             <?php
                     }
@@ -499,7 +499,7 @@
                             <tr>
                                 <td><center><strong><mark><?php echo $fetch2['year']. "0" .$fetch2['patient_id']?></mark></strong></center></td>
                                 <td><center><?php echo $fetch['patient_name']?></center></td>
-                                <td><center><?php echo $fetch2['date']?></center></td>
+                                <td><center><?php echo $fetch2['prenatal_date']?></center></td>
                             </tr>
                             <?php
                     }
@@ -546,7 +546,7 @@
                             <tr>
                                 <td><center><strong><mark><?php echo $fetch2['year']. "0" .$fetch2['patient_id']?></mark></strong></center></td>
                                 <td><center><?php echo $fetch['patient_name']?></center></td>
-                                <td><center><?php echo $fetch2['date']?></center></td>
+                                <td><center><?php echo $fetch2['prenatal_date']?></center></td>
                             </tr>
                             <?php
                     }
