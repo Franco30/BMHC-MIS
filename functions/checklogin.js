@@ -63,8 +63,8 @@ $(document).ready(function () {
                     $("#success").fadeIn(1000, function () {
                         $("#success").html('<div class="alert alert-green"> <span class="fa fa-check-circle"></span>&nbsp; ' + response + '</div>');
                     });
-//                    $("#login").html('<img src="action/ajax-loader3.gif" /> &nbsp; Signing In ...');
-//                    setTimeout(' window.location.href = "admindashboard"; ', 1000);
+                    $("#login").html('<img src="action/ajax-loader3.gif" /> &nbsp; Signing In ...');
+                    setTimeout(' window.location.href = "admindashboard"; ', 1000);
                 } else {
                     $("#error").fadeIn(1000, function () {
                         $("#error").html('<div class="alert alert-danger"> <span class="fa fa-exclamation-circle"></span> &nbsp; ' + response + '!</div>');
