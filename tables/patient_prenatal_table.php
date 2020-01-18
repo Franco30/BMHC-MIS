@@ -24,7 +24,7 @@ while($fetch = $query->fetch_array()){
     ?>
             <tr>
                 <td><center><strong><?php echo $fetch['year']?><?php echo "0".$fetch['prenatal_id']?></strong></center></td>
-                <td><center><strong><?php echo $fetch['date']?></strong></center></td>
+                <td><center><strong><?php echo $fetch['prenatal_date']?></strong></center></td>
                 <td><?php echo $fetch['husband']?></td>
                 <td><center><?php echo $fetch['bloodtype']?></center></td>
                 <td><center>

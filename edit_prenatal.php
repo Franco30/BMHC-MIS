@@ -152,7 +152,7 @@
                                                     <div class="col-md-6">
                                                         <div class="form-group" style="margin-left:-10px;">
                                                             <label>Date Today</label>
-                                                            <input type="text" class="form-control datepicker" id="date<?php echo $fetch2['prenatal_id'];?>" value="<?php echo $fetch2['date'];?>" required />
+                                                            <input type="text" class="form-control datepicker" id="date<?php echo $fetch2['prenatal_id'];?>" value="<?php echo $fetch2['prenatal_date'];?>" required />
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">

@@ -35,7 +35,7 @@ if(isset($_POST['edit'])){
     $remarks = "Edited $patient_name Prenatal Form";
 
     require '../require/config.php';
-    $conn->query("UPDATE `prenatal` SET `husband` = '$husband', `date` = '$date', `menstrual_hx` = '$menstrual_hx', `menarch` = '$menarch', `cycle` = '$cycle', `flow` = '$flow', `duration` = '$duration', `dysmenorrhea` = '$dysmenorrhea', `obgynehx` = '$obgynehx', `past_medical_hx` = '$past_medical_hx', `bloodtype` = '$bloodtype', `tt1` = '$tt1', `tt2` = '$tt2', `tt3` = '$tt3', `tt4` = '$tt4', `tt5` = '$tt5' WHERE `prenatal`.`prenatal_id` = '$prenatal_id'") or die(mysqli_error());
+    $conn->query("UPDATE `prenatal` SET `husband` = '$husband', `prenatal_date` = '$date', `menstrual_hx` = '$menstrual_hx', `menarch` = '$menarch', `cycle` = '$cycle', `flow` = '$flow', `duration` = '$duration', `dysmenorrhea` = '$dysmenorrhea', `obgynehx` = '$obgynehx', `past_medical_hx` = '$past_medical_hx', `bloodtype` = '$bloodtype', `tt1` = '$tt1', `tt2` = '$tt2', `tt3` = '$tt3', `tt4` = '$tt4', `tt5` = '$tt5' WHERE `prenatal`.`prenatal_id` = '$prenatal_id'") or die(mysqli_error());
     $conn->query("INSERT INTO `users_activity_log` VALUES('', '$user_id', '$remarks','$date_time')") or die(mysqli_error());
     }
 ?>
