@@ -44,7 +44,7 @@
                 </div>
 -->
                 <br>
-                <div class="form-row">
+                <div class="form-row shit">
                     <div class="col-md-4">
                         <!-- CONTACT ITEM -->
                         <div class="panel panel-default" style="border-radius: 20px;">

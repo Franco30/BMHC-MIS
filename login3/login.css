@@ -274,6 +274,11 @@ width: 579px;
 }
 
 @media only screen and (max-width: 414px) {
+    
+    .shit {
+        display: none;
+    }
+    
     label.label-login {
         cursor: pointer;
         color: #fff;
