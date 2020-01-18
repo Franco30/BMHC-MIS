@@ -314,9 +314,11 @@
                                                                     <?php
                                         $query = $conn->query("SELECT * FROM `prenatal`, `patient` WHERE `patient`.`patient_id` = `prenatal`.`patient_id` order by `prenatal_id` DESC LIMIT 16") or die(mysqli_error());
                                         while($fetch = $query->fetch_array()){
+                                        $query2 = $conn->query("SELECT * FROM `prenatal`, `patient` WHERE `patient`.`patient_id` = `prenatal`.`patient_id` order by `prenatal_id` DESC LIMIT 16") or die(mysqli_error());
                                     ?>
+                                        
                                                                     <tr>
-                                                                        <td><strong><center><?php echo $fetch['prenatal_id']?></center></strong></td>
+                                                                        <td><strong><center><?php echo $fetch['year']."".$fetch['prenatal_id']?></center></strong></td>
                                                                         <td><strong><?php echo $fetch['patient_name']?></strong></td>
                                                                         <td><strong><center><?php echo date("m/d/Y", strtotime($fetch['prenatal_date']))?></center></strong></td>
                                                                     </tr>
