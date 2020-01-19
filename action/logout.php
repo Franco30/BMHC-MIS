@@ -13,6 +13,7 @@ echo '<meta http-equiv="refresh" content="2;url=../index">';
 <head>
     <title>BMHC-MIS</title>
     <link rel="icon" href="../assets/images/bmhc.png" type="image/x-icon" />
+<!--
     <style>
         @-webkit-keyframes spin {
             0% {
@@ -95,18 +96,49 @@ echo '<meta http-equiv="refresh" content="2;url=../index">';
             animation: spin 1.5s linear infinite
         }
     </style>
+-->
+    <style>
+
+    .spinner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1003;
+    overflow: hidden
+        }
+        
+    .logo {
+        
+    display: block;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    width: 500px;
+    margin: -162px 0 0 -242px;
+        }
+        
+    </style>
 </head>
 
 <body>
     <div id="nb-global-spinner" class="spinner">
+        <img src="../assets/images/BMHC-Logo.gif" class="logo"/>
         <div class="blob blob-0"></div>
         <div class="blob blob-1"></div>
         <div class="blob blob-2"></div>
         <div class="blob blob-3"></div>
         <div class="blob blob-4"></div>
         <div class="blob blob-5"></div>
-        
     </div>
+<!--
+    <div class="row">
+    <div class="col-md-12">
+        <img src="../assets/images/BMHC-Logo.gif" class="logo"/>
+        </div>
+    </div>
+-->
 </body>
 
 </html>
