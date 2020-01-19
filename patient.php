@@ -305,28 +305,18 @@
                                     </div>
                                 </div>
 
-                                <div class="tab-pane" id="tab-second">
+                            <div class="tab-pane" id="tab-second">
                                     <div class="row">
                                         <div class="panel panel-primary">
                                             <div class="panel-heading">
-                                                <h3 class="panel-title"><strong>Date Range tabular Report</strong></h3>
+                                                <h3 class="panel-title"><strong>Date Range Tabular Report</strong></h3>
                                                 <div class="btn-group pull-right">
-                                                    <div class="form-row">
-                                                        <div class="col-md-5">
-                                                            <div class="form-group" style="margin-left:-10px;">
-                                                                <input type="text" id="From" class="form-control datepicker" placeholder="From Date" />
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-5">
-                                                            <div class="form-group" style="margin-left:-10px;">
-                                                                <input type="text" id="to" class="form-control datepicker" placeholder="To Date" />
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-1">
-                                                            <div class="form-group">
-                                                                <input type="button" id="range" value="Range" class="btn btn-success" />
-                                                            </div>
-                                                        </div>
+                                                    <div class="form-inline">
+                                                        <form id="prenataldaterange">
+                                                        <input type="text" class="form-control datepicker" placeholder="Start" id="date1" />
+                                                        <input type="text" class="form-control datepicker" placeholder="End" id="date2" />
+                                                        <button style="margin-left: 6px;" type="button" class="btn btn-success" id="btn_search"><span class="glyphicon glyphicon-search" style="margin-right: 0px;"></span></button> <button type="button" id="reset" class="btn btn-info"><span class="glyphicon glyphicon-refresh" style="margin-right: 0px;"><span></span></span></button>
+                                                        </form>
                                                     </div>
                                                 </div>
                                             </div>
@@ -334,40 +324,31 @@
                                                 <div class="panel-body panel-body-table">
                                                     <div id="patient_daterange">
                                                         <div class="table-responsive">
-                                                            <table class="table table-hover table-bordered">
+                                                            <table class="table table-bordered">
                                                                 <thead>
                                                                     <tr class="warning">
-                                                                        <th>Patient No</th>
-                                                                        <th>
-                                                                            <center>Patient Name</center>
-                                                                        </th>
-                                                                        <th>
-                                                                            <center>Date</center>
-                                                                        </th>
+                                                                        <th><center>Patient No</center></th>
+                                                                        <th><center>Patient Name</center></th>
+                                                                        <th><center>Date</center></th>
                                                                     </tr>
                                                                 </thead>
-                                                                <tbody>
+                                                                <tbody id="load_data">
                                                                     <?php
                                             $query = $conn->query("SELECT * FROM `patient` order by `patient_id` DESC LIMIT 16") or die(mysqli_error());
                                             while($fetch = $query->fetch_array()){
-                                                ?>
+                                    ?>
                                                                     <tr>
-                                                                        <td>
-                                                                            <center><strong><?php echo $fetch['year']."0".$fetch['patient_id'];?></strong></center>
-                                                                        </td>
+                                                                        <td><strong><center><?php echo $fetch['year']."".$fetch['patient_id']?></center></strong></td>
                                                                         <td><strong><?php echo $fetch['patient_name']?></strong></td>
-                                                                        <td>
-                                                                            <center><?php echo $fetch['date']?></center>
-                                                                        </td>
+                                                                        <td><strong><center><?php echo date("m/d/Y", strtotime($fetch['date']))?></center></strong></td>
                                                                     </tr>
                                                                     <?php
-                                                                    }
-                                                                    $conn->close();
-                                                                    ?>
+                                        }
+                                    ?>
                                                                 </tbody>
                                                             </table>
                                                         </div>
-                                                    </div>
+                                                        </div>
                                                 </div>
                                             </div>
                                         </div>
