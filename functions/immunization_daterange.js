@@ -17,7 +17,7 @@ $(document).ready(function () {
 			setTimeout(function () {
 				$loader.remove();
 				$.ajax({
-					url: 'tables/familyplanning_daterange.php',
+					url: 'tables/immunization_daterange.php',
 					type: 'POST',
 					data: {
 						date1: $date1,

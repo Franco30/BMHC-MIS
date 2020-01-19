@@ -305,9 +305,9 @@
                                                             <table class="table table-bordered">
                                                                 <thead>
                                                                     <tr class="warning">
-                                                                        <th>Consultation No</th>
-                                                                        <th>Patient Name</th>
-                                                                        <th>Date</th>
+                                                                        <th><center>Consultation No</center></th>
+                                                                        <th><center>Patient Name</center></th>
+                                                                        <th><center>Date</center></th>
                                                                     </tr>
                                                                 </thead>
                                                                 <tbody id="load_data">
@@ -316,7 +316,7 @@
                                         while($fetch = $query->fetch_array()){
                                     ?>
                                                                     <tr>
-                                                                        <td><strong><center><?php echo $fetch['year']."".$fetch['consultation_id']?></center></strong></td>
+                                                                        <td><strong><center><?php echo $fetch['consultation_id']?></center></strong></td>
                                                                         <td><strong><?php echo $fetch['patient_name']?></strong></td>
                                                                         <td><strong><center><?php echo date("m/d/Y", strtotime($fetch['consultation_date']))?></center></strong></td>
                                                                     </tr>

@@ -23,7 +23,7 @@ if(isset($_POST['add'])){
     $year = date("Y", strtotime("+8 HOURS"));
     date_default_timezone_set('Asia/Manila');
     $month = date("M", strtotime("+8 HOURS"));
-    $date_time=date("F j, Y - g:i a");
+    $date_time=date("Y-m-d");
     
     require '../require/config.php';
     $query = $conn->query("SELECT * FROM `patient_child` WHERE `child_id` = '$child_id'") or die(mysqli_error());

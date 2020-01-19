@@ -305,20 +305,19 @@
                                                             <table class="table table-bordered">
                                                                 <thead>
                                                                     <tr class="warning">
-                                                                        <th>Prenatal No</th>
-                                                                        <th>Patient Name</th>
-                                                                        <th>Date</th>
+                                                                        <th><center>Prenatal No</center></th>
+                                                                        <th><center>Patient Name</center></th>
+                                                                        <th><center>Date</center></th>
                                                                     </tr>
                                                                 </thead>
                                                                 <tbody id="load_data">
                                                                     <?php
                                         $query = $conn->query("SELECT * FROM `prenatal`, `patient` WHERE `patient`.`patient_id` = `prenatal`.`patient_id` order by `prenatal_id` DESC LIMIT 16") or die(mysqli_error());
                                         while($fetch = $query->fetch_array()){
-                                        $query2 = $conn->query("SELECT * FROM `prenatal`, `patient` WHERE `patient`.`patient_id` = `prenatal`.`patient_id` order by `prenatal_id` DESC LIMIT 16") or die(mysqli_error());
                                     ?>
                                         
                                                                     <tr>
-                                                                        <td><strong><center><?php echo $fetch['year']."".$fetch['prenatal_id']?></center></strong></td>
+                                                                        <td><strong><center><?php echo $fetch['prenatal_id']?></center></strong></td>
                                                                         <td><strong><?php echo $fetch['patient_name']?></strong></td>
                                                                         <td><strong><center><?php echo date("m/d/Y", strtotime($fetch['prenatal_date']))?></center></strong></td>
                                                                     </tr>
