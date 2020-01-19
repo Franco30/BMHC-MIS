@@ -1,39 +1,38 @@
 $(document).ready(function () {
-    //    $.datepicker.setDefaults({
-    //        dateFormat: 'mm-dd-yy'
-    //    });
-//    $(function () {
-//        $("#From").datepicker({
-//            format: 'mm-dd-yyyy',
-//            language: 'en'
-//        });
-//        $("#to").datepicker({
-//            format: 'mm-dd-yyyy',
-//            language: 'en'
-//        });
-//    });
-    $('#range').click(function () {
-        var From = $('#From').val();
-        var to = $('#to').val();
-        if (From != '' && to != '') {
-            $.ajax({
-                url: "tables/child_daterange.php",
-                method: "POST",
-                data: {
-                    From: From,
-                    to: to
-                },
-                success: function (data) {
-                    $('#child_daterange').html(data);
-                }
-            });
-        } else {
-            //					alert("Please Select the Date");
-            $('#alert').slideDown();
-            $('#checkfield').html('<span class="fa fa-exclamation-circle"></span> Please Select the Date');
-            setTimeout(function () {
-                $('#alert').fadeOut('slow');
-            }, 3500);
-        }
-    });
+	$('#date1').datepicker();
+	$('#date2').datepicker();
+	$('#btn_search').on('click', function () {
+		if ($('#date1').val() == "" || $('#date2').val() == "") {
+			$('#alert').slideDown();
+			$('#checkfield').html('<span class="fa fa-exclamation-circle"></span> Please Select the Date');
+			setTimeout(function () {
+				$('#alert').fadeOut('slow');
+			}, 3500);
+		} else {
+			$date1 = $('#date1').val();
+			$date2 = $('#date2').val();
+			$('#load_data').empty();
+			$loader = $('<tr ><td colspan = "4"><center>Searching....</center></td></tr>');
+			$loader.appendTo('#load_data');
+			setTimeout(function () {
+				$loader.remove();
+				$.ajax({
+					url: 'tables/child_daterange.php',
+					type: 'POST',
+					data: {
+						date1: $date1,
+						date2: $date2
+					},
+					success: function (res) {
+						$('#load_data').html(res);
+					}
+				});
+			}, 3000);
+		}
+	});
+
+	$('#reset').on('click', function () {
+		location.reload();
+//		$("#prenataldaterange")[0].reset();
+	});
 });
