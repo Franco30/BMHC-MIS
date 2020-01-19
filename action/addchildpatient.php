@@ -23,7 +23,7 @@ if(isset($_POST['add'])){
     date_default_timezone_set('Asia/Manila');
     $month = date("M", strtotime("+8 HOURS"));
     $date_time=date("F j, Y - g:i a");
-    $today = date("m/d/Y"); 
+    $today = date("Y-m-d"); 
     $remarks = "Registered $child_name as new Child Patient";
 
     require '../require/config.php';
