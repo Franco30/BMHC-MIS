@@ -4,7 +4,7 @@ session_start();
 <?php
 unset($_SESSION['user_id']);
 
-//echo '<meta http-equiv="refresh" content="2;url=../index">';
+echo '<meta http-equiv="refresh" content="2;url=../index">';
 //echo '<i>Logging out. Please wait...</i>';
 ?>
 

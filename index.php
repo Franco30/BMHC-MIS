@@ -2,6 +2,7 @@
 
 <head>
     <meta charset="utf-8" />
+    <meta name="theme-color" content="#E91E63" />
     <title>BMHC-MIS</title>
     <link rel="icon" href="assets/images/bmhc.png" type="image/x-icon" />
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
