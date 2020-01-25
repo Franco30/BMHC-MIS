@@ -56,7 +56,7 @@
             <!-- START BREADCRUMB -->
             <ul class="breadcrumb print">
                 <li>Reports</li>
-                <li><a href="services_reports">Referral Report</a></li>
+                <li><a href="referral_reports">Referral Report</a></li>
                 <li class="active"><strong><mark>Referral Prenatal Report</mark></strong></li>
             </ul>
             <!-- END BREADCRUMB -->

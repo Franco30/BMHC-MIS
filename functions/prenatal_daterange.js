@@ -31,8 +31,19 @@ $(document).ready(function () {
 		}
 	});
 
-	$('#reset').on('click', function () {
-		location.reload();
-//		$("#prenataldaterange")[0].reset();
+$('#reset').on('click', function () {
+//		location.reload();
+				setTimeout(function () {
+
+				$.ajax({
+					url: 'tables/prenatal_get_all.php',
+					type: 'GET',
+					success: function (res) {
+						$('#load_data').html(res);
+					}
+				});
+			}, 500);
+			$('#date1').val('');
+			$('#date2').val('');
 	});
 });
