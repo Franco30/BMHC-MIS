@@ -2,23 +2,24 @@
 require '../require/logincheck.php';
 
 if(isset($_POST['edit'])){
-    $patient_id = $_POST['patient_id'];
-    $patient_name = $_POST['patient_name'];
-    $birthdate = $_POST['birthdate'];
-    $age = $_POST['age'];
-    $gender = $_POST['gender'];
-    $civilstatus = $_POST['civilstatus'];
-    $streetaddress = $_POST['streetaddress'];
-    $purok = $_POST['purok'];
-    $height = $_POST['height'];
-    $weight = $_POST['weight'];
-    $contact_no = $_POST['contact_no'];
-    $region_province = $_POST['region_province'];
-    $occupation = $_POST['occupation'];
-    $philhealth_no = $_POST['philhealth_no'];
-    $contact_person = $_POST['contact_person'];
-    $emergency_no = $_POST['emergency_no'];
-    $status = $_POST['status'];
+    require '../require/config.php';
+    $patient_id = $conn -> real_escape_string($_POST['patient_id']);
+    $patient_name = $conn -> real_escape_string($_POST['patient_name']);
+    $birthdate = $conn -> real_escape_string($_POST['birthdate']);
+    $age = $conn -> real_escape_string($_POST['age']);
+    $gender = $conn -> real_escape_string($_POST['gender']);
+    $civilstatus = $conn -> real_escape_string($_POST['civilstatus']);
+    $streetaddress = $conn -> real_escape_string($_POST['streetaddress']);
+    $purok = $conn -> real_escape_string($_POST['purok']);
+    $height = $conn -> real_escape_string($_POST['height']);
+    $weight = $conn -> real_escape_string($_POST['weight']);
+    $contact_no = $conn -> real_escape_string($_POST['contact_no']);
+    $region_province = $conn -> real_escape_string($_POST['region_province']);
+    $occupation = $conn -> real_escape_string($_POST['occupation']);
+    $philhealth_no = $conn -> real_escape_string($_POST['philhealth_no']);
+    $contact_person = $conn -> real_escape_string($_POST['contact_person']);
+    $emergency_no = $conn -> real_escape_string($_POST['emergency_no']);
+    $status = $conn -> real_escape_string($_POST['status']);
     
     $user_id=$_SESSION['user_id'];
     $year = date("Y", strtotime("+8 HOURS"));

@@ -217,7 +217,7 @@
                                                                         <option value="Open sores anywhere in genital area">Open sores anywhere in genital area
                                                                         </option>
                                                                         <option value="Pus corning from penis">Pus corning from penis</option>
-                                                                        <option value=">Swollen testicles or penis">Swollen testicles or penis</option>
+                                                                        <option value="Swollen testicles or penis">Swollen testicles or penis</option>
                                                                         <option value="Treated for STIs in the past">Treated for STIs in the past
                                                                         </option>
                                                                     </select>

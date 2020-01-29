@@ -1,6 +1,7 @@
 <?php
+require '../require/config.php';
 
-$fullname = $_POST['fullname'];
+$fullname = $conn -> real_escape_string($_POST['fullname']);
 
 require '../require/config.php';
 

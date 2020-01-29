@@ -3,11 +3,13 @@ require '../require/logincheck.php';
 
 if(isset($_POST['add'])){
     
-    $child_id = $_POST['child_id'];
-    $ebf = $_POST['ebf'];
-    $mf = $_POST['mf'];
-    $bff = $_POST['bff'];
-    $tof_date = $_POST['date'];
+    require '../require/config.php';
+    
+    $child_id = $conn -> real_escape_string($_POST['child_id']);
+    $ebf = $conn -> real_escape_string($_POST['ebf']);
+    $mf = $conn -> real_escape_string($_POST['mf']);
+    $bff = $conn -> real_escape_string($_POST['bff']);
+    $tof_date = $conn -> real_escape_string($_POST['date']);
     
     $user_id=$_SESSION['user_id'];
     $year = date("Y", strtotime("+8 HOURS"));

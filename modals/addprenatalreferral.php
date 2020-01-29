@@ -2,8 +2,8 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <center>
-                <div id="modallabel2" class="alert alert-danger" style="display:none;">
-                    <center><span id="checkfield2"></span></center>
+                <div id="modallabel3" class="alert alert-danger" style="display:none;">
+                    <center><span id="checkfield3"></span></center>
                 </div>
             </center>
             <div class="modal-header">
@@ -192,7 +192,7 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" id="addnew" class="btn btn-success">Save</button>
+                <button type="button" id="addnew2" class="btn btn-success">Save</button>
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
             </div>
         </div>

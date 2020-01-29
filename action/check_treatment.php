@@ -1,6 +1,8 @@
 <?php
-$child_id = $_POST['child_id'];
-$treatment_type = $_POST['treatment_type'];
+require '../require/config.php';
+
+$child_id = $conn -> real_escape_string($_POST['child_id']);
+$treatment_type = $conn -> real_escape_string($_POST['treatment_type']);
 
 require '../require/config.php';
 

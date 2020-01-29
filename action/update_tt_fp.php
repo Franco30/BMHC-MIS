@@ -2,13 +2,13 @@
 require '../require/logincheck.php';
 
 if(isset($_POST['edit'])){
-    
-    $tetanus_toxoid_fp_id = $_POST['tetanus_toxoid_fp_id'];
-    $uid = $_POST['uid'];
-    $btl = $_POST['btl'];
-    $one_year = $_POST['one_year'];
-    $vit_a = $_POST['vit_a'];
-    $feso4 = $_POST['feso4'];
+    require '../require/config.php';
+    $tetanus_toxoid_fp_id = $conn -> real_escape_string($_POST['tetanus_toxoid_fp_id']);
+    $uid = $conn -> real_escape_string($_POST['uid']);
+    $btl = $conn -> real_escape_string($_POST['btl']);
+    $one_year = $conn -> real_escape_string($_POST['one_year']);
+    $vit_a = $conn -> real_escape_string($_POST['vit_a']);
+    $feso4 = $conn -> real_escape_string($_POST['feso4']);
     
 
     require '../require/config.php';

@@ -3,9 +3,11 @@ require '../require/logincheck.php';
 
 if(isset($_POST['add'])){
     
-    $patient2 = $_POST['patient2'];
-    $follow_up_date_time = $_POST['follow_up_date_time'];
-    $remarks3 = $_POST['remarks3'];
+    require '../require/config.php';
+     
+    $patient2 = $conn -> real_escape_string($_POST['patient2']);
+    $follow_up_date_time = $conn -> real_escape_string($_POST['follow_up_date_time']);
+    $remarks3 = $conn -> real_escape_string($_POST['remarks3']);
     
     $user_id=$_SESSION['user_id'];
     $year = date("Y", strtotime("+8 HOURS"));

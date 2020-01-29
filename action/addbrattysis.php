@@ -3,10 +3,12 @@ require '../require/logincheck.php';
 
 if(isset($_POST['add'])){
     
-    $child_id = $_POST['child_id'];
-    $name = $_POST['name'];
-    $gender = $_POST['gender'];
-    $birthdate = $_POST['birthdate'];
+    require '../require/config.php';
+
+    $child_id = $conn -> real_escape_string($_POST['child_id']);
+    $name = $conn -> real_escape_string($_POST['name']);
+    $gender = $conn -> real_escape_string($_POST['gender']);
+    $birthdate = $conn -> real_escape_string($_POST['birthdate']);
 
     $user_id=$_SESSION['user_id'];
     $year = date("Y", strtotime("+8 HOURS"));

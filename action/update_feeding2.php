@@ -2,13 +2,13 @@
 require '../require/logincheck.php';
 
 if(isset($_POST['edit'])){
-    
-    $type_of_feeding_2_id = $_POST['type_of_feeding_2_id'];
-    $vit_a = $_POST['vit_a'];
-    $six_months = $_POST['six_months'];
-    $one_year = $_POST['one_year'];
-    $nbs = $_POST['nbs'];
-    $vit_k = $_POST['vit_k'];
+    require '../require/config.php';
+    $type_of_feeding_2_id = $conn -> real_escape_string($_POST['type_of_feeding_2_id']);
+    $vit_a = $conn -> real_escape_string($_POST['vit_a']);
+    $six_months = $conn -> real_escape_string($_POST['six_months']);
+    $one_year = $conn -> real_escape_string($_POST['one_year']);
+    $nbs = $conn -> real_escape_string($_POST['nbs']);
+    $vit_k = $conn -> real_escape_string($_POST['vit_k']);
 
     require '../require/config.php';
 

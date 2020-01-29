@@ -89,7 +89,7 @@
                                             <?php if($fetch['status'] == 'No Assessment') { ?>
                                             <a href="familyplanning_assessment?patient_id=<?php echo $fetch['patient_id']?>&&family_planning_id=<?php echo $fetch['family_planning_id']?>" class="btn btn-md btn-danger"><span class="fa fa-stethoscope animated infinite pulse"></span> Assessment</a>
                                             <?php } else { ?>
-                                            <a class="btn btn-md btn-default" href="familyplanning_overview?patient_id=<?php echo $f['patient_id'];?>&&family_planning_id=<?php echo $f3['family_planning_id'];?>">Overview</a>
+                                            <a class="btn btn-md btn-default" href="familyplanning_overview?patient_id=<?php echo $f['patient_id'];?>&&family_planning_id=<?php echo $fetch['family_planning_id'];?>">Overview</a>
                                              <?php } ?>
                                             <a href="edit_familyplanning?family_planning_id=<?php echo $fetch['family_planning_id'] ?>&&patient_id=<?php echo $fetch['patient_id'] ?>" class="btn btn-md btn-info">Edit</a>
                                                 </center>

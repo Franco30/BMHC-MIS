@@ -2,18 +2,19 @@
 require '../require/logincheck.php';
 
 if(isset($_POST['add'])){
+    require '../require/config.php';
     
-    $patient_id = $_POST['patient_id'];
-    $prenatal_id = $_POST['prenatal_id'];
-    $date = $_POST['date'];
-    $doctors_order_advice = $_POST['doctors_order_advice'];
-    $presentation = $_POST['presentation'];
-    $complaints = $_POST['complaints'];
-    $fh = $_POST['fh'];
-    $fhb = $_POST['fhb'];
-    $bp = $_POST['bp'];
-    $weight = $_POST['weight'];
-    $aog = $_POST['aog'];
+    $patient_id = $conn -> real_escape_string($_POST['patient_id']);
+    $prenatal_id = $conn -> real_escape_string($_POST['prenatal_id']);
+    $date = $conn -> real_escape_string($_POST['date']);
+    $doctors_order_advice = $conn -> real_escape_string($_POST['doctors_order_advice']);
+    $presentation = $conn -> real_escape_string($_POST['presentation']);
+    $complaints = $conn -> real_escape_string($_POST['complaints']);
+    $fh = $conn -> real_escape_string($_POST['fh']);
+    $fhb = $conn -> real_escape_string($_POST['fhb']);
+    $bp = $conn -> real_escape_string($_POST['bp']);
+    $weight = $conn -> real_escape_string($_POST['weight']);
+    $aog = $conn -> real_escape_string($_POST['aog']);
     
     $user_id=$_SESSION['user_id'];
     $year = date("Y", strtotime("+8 HOURS"));

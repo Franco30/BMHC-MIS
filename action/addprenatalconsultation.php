@@ -2,28 +2,29 @@
 require '../require/logincheck.php';
 
 if(isset($_POST['add'])){
+    require '../require/config.php';
     
-    $patient_id = $_POST['patient_id'];
-    $prenatal_id = $_POST['prenatal_id'];
-    $date = $_POST['date'];
-    $doctors_order_advice = $_POST['doctors_order_advice'];
-    $presentation = $_POST['presentation'];
-    $complaints = $_POST['complaints'];
-    $lmp = $_POST['lmp'];
-    $edc = $_POST['edc'];
-    $gravida = $_POST['gravida'];
-    $para = $_POST['para'];
-    $ft = $_POST['ft'];
-    $pt = $_POST['pt'];
-    $a = $_POST['a'];
-    $lb = $_POST['lb'];
-    $fh = $_POST['fh'];
-    $fhb = $_POST['fhb'];
-    $bp = $_POST['bp'];
-    $temp = $_POST['temp'];
-    $weight = $_POST['weight'];
-    $height = $_POST['height'];
-    $aog = $_POST['aog'];
+    $patient_id = $conn -> real_escape_string($_POST['patient_id']);
+    $prenatal_id = $conn -> real_escape_string($_POST['prenatal_id']);
+    $date = $conn -> real_escape_string($_POST['date']);
+    $doctors_order_advice = $conn -> real_escape_string($_POST['doctors_order_advice']);
+    $presentation = $conn -> real_escape_string($_POST['presentation']);
+    $complaints = $conn -> real_escape_string($_POST['complaints']);
+    $lmp = $conn -> real_escape_string($_POST['lmp']);
+    $edc = $conn -> real_escape_string($_POST['edc']);
+    $gravida = $conn -> real_escape_string($_POST['gravida']);
+    $para = $conn -> real_escape_string($_POST['para']);
+    $ft = $conn -> real_escape_string($_POST['ft']);
+    $pt = $conn -> real_escape_string($_POST['pt']);
+    $a = $conn -> real_escape_string($_POST['a']);
+    $lb = $conn -> real_escape_string($_POST['lb']);
+    $fh = $conn -> real_escape_string($_POST['fh']);
+    $fhb = $conn -> real_escape_string($_POST['fhb']);
+    $bp = $conn -> real_escape_string($_POST['bp']);
+    $temp = $conn -> real_escape_string($_POST['temp']);
+    $weight = $conn -> real_escape_string($_POST['weight']);
+    $height = $conn -> real_escape_string($_POST['height']);
+    $aog = $conn -> real_escape_string($_POST['aog']);
     
     $user_id=$_SESSION['user_id'];
     $year = date("Y", strtotime("+8 HOURS"));

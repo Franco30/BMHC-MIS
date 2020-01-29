@@ -1,6 +1,6 @@
 <?php
 require '../require/config.php';
-$password = $_POST['password'];
+$password = $conn -> real_escape_string($_POST['password']);
 
 $pass = mysqli_real_escape_string($conn,$password);
     

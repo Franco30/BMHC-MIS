@@ -1,12 +1,12 @@
 $(document).ready(function () {
     showPP();
 
-    $(document).on('click', '#addnew', function () {
+    $(document).on('click', '#addnew2', function () {
         if ($('#date2').val() == "" || $('#from2').val() == "" || $('#to2').val() == "" || $('#origin2').val() == "" || $('#destination2').val() == "" || $('#weight2').val() == "" || $('#bp2').val() == "" || $('#temp2').val() == "" || $('#age2').val() == "" || $('#complaints2').val() == "" || $('#gravida').val() == "" || $('#para').val() == "" || $('#fh').val() == "" || $('#fhb').val() == "" || $('#tt').val() == "" || $('#given').val() == "" || $('#referred_by2').val() == "") {
-            $('#modallabel2').slideDown();
-            $('#checkfield2').html('<span class="fa fa-exclamation-circle"></span> All fields are required!');
+            $('#modallabel3').slideDown();
+            $('#checkfield3').html('<span class="fa fa-exclamation-circle"></span> All fields are required!');
             setTimeout(function () {
-                $('#modallabel2').fadeOut('slow');
+                $('#modallabel3').fadeOut('slow');
             }, 3500);
         } else {
             $date2 = $('#date2').val();

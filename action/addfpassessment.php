@@ -2,9 +2,9 @@
 require '../require/logincheck.php';
 
 if(isset($_POST['add'])){
-    
-    $patient_id = $_POST['patient_id'];
-    $family_planning_id = $_POST['family_planning_id'];
+    require '../require/config.php';
+    $patient_id = $conn -> real_escape_string($_POST['patient_id']);
+    $family_planning_id = $conn -> real_escape_string($_POST['family_planning_id']);
     
     //Medical History
     $HEENT = $_POST['heent'];
@@ -61,28 +61,28 @@ if(isset($_POST['add'])){
     $formen = substr($formen, 0, -2);
     
     //Obstetrical History
-    $dateoflastdelivery = $_POST['dateoflastdelivery'];
-    $typeoflastdelivery = $_POST['typeoflastdelivery'];
-    $pregnancies = $_POST['pregnancies'];
-    $fullterm = $_POST['fullterm'];
-    $premature = $_POST['premature'];
-    $abortions = $_POST['abortions'];
-    $livingchildren = $_POST['livingchildren'];
-    $pastmenstrualperiod = $_POST['pastmenstrualperiod'];
-    $lastmenstrualperiod = $_POST['lastmenstrualperiod'];
+    $dateoflastdelivery = $conn -> real_escape_string($_POST['dateoflastdelivery']);
+    $typeoflastdelivery = $conn -> real_escape_string($_POST['typeoflastdelivery']);
+    $pregnancies = $conn -> real_escape_string($_POST['pregnancies']);
+    $fullterm = $conn -> real_escape_string($_POST['fullterm']);
+    $premature = $conn -> real_escape_string($_POST['premature']);
+    $abortions = $conn -> real_escape_string($_POST['abortions']);
+    $livingchildren = $conn -> real_escape_string($_POST['livingchildren']);
+    $pastmenstrualperiod = $conn -> real_escape_string($_POST['pastmenstrualperiod']);
+    $lastmenstrualperiod = $conn -> real_escape_string($_POST['lastmenstrualperiod']);
     $HISTORY2 = $_POST['history2'];
     $history2 = "";
     foreach($HISTORY2 as $value) {
         $history2 .= $value . ", ";  
     }
     $history2 = substr($history2, 0, -2);
-    $dcmenstrualbleeding = $_POST['dcmenstrualbleeding'];
+    $dcmenstrualbleeding = $conn -> real_escape_string($_POST['dcmenstrualbleeding']);
     
     //Physical Examination
-    $bp = $_POST['bp'];
-    $weight = $_POST['weight'];
-    $height = $_POST['height'];
-    $pr = $_POST['pr'];
+    $bp = $conn -> real_escape_string($_POST['bp']);
+    $weight = $conn -> real_escape_string($_POST['weight']);
+    $height = $conn -> real_escape_string($_POST['height']);
+    $pr = $conn -> real_escape_string($_POST['pr']);
     $CONJUNCTIVA = $_POST['conjuntiva'];
     $conjuntiva = "";
     foreach($CONJUNCTIVA as $value) {
@@ -173,7 +173,9 @@ if(isset($_POST['add'])){
         $risks .= $value . ", ";  
     }
     $risks2 = substr($risks, 0, -2);
-    $referredrisks = $_POST['referredrisks']. ' - ' .$_POST['risksothers'];
+    $risgo = $conn -> real_escape_string($_POST['referredrisks']);
+    $risgoothers = $conn -> real_escape_string($_POST['risksothers']);
+    $referredrisks = $risgo. ' - ' .$risgoothers;
     
     $user_id=$_SESSION['user_id'];
     $year = date("Y", strtotime("+8 HOURS"));

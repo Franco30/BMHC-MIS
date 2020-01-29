@@ -2,15 +2,16 @@
 require '../require/logincheck.php';
 
 if(isset($_POST['add'])){
+    require '../require/config.php';
     
-    $child_id = $_POST['child_id'];
-    $treatment_type = $_POST['treatment_type'];
-    $treatment_date = $_POST['treatment_date'];
-    $treatment_age = $_POST['treatment_age'];
-    $treatment_weight = $_POST['treatment_weight'];
-    $treatment_height = $_POST['treatment_height'];
-    $treatment_temp = $_POST['treatment_temp'];
-    $treatment_remarks = $_POST['treatment_remarks'];
+    $child_id = $conn -> real_escape_string($_POST['child_id']);
+    $treatment_type = $conn -> real_escape_string($_POST['treatment_type']);
+    $treatment_date = $conn -> real_escape_string($_POST['treatment_date']);
+    $treatment_age = $conn -> real_escape_string($_POST['treatment_age']);
+    $treatment_weight = $conn -> real_escape_string($_POST['treatment_weight']);
+    $treatment_height = $conn -> real_escape_string($_POST['treatment_height']);
+    $treatment_temp = $conn -> real_escape_string($_POST['treatment_temp']);
+    $treatment_remarks = $conn -> real_escape_string($_POST['treatment_remarks']);
     
     $user_id=$_SESSION['user_id'];
     $year = date("Y", strtotime("+8 HOURS"));

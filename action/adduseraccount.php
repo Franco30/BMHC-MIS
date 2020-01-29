@@ -6,11 +6,14 @@ require '../require/logincheck.php';
 // after ma post ang mga fields nga gn typan, ma query dayun nga insert to 'user' nga table.
 
 if(isset($_POST['add'])){
-    $fullname = $_POST['fullname'];
-    $license = $_POST['license'];
-    $position = $_POST['position'];
-    $username = $_POST['username'];
-    $password = $_POST['password'];
+
+    require '../require/config.php';
+    
+    $fullname = $conn -> real_escape_string($_POST['fullname']);
+    $license = $conn -> real_escape_string($_POST['license']);
+    $position = $conn -> real_escape_string($_POST['position']);
+    $username = $conn -> real_escape_string($_POST['username']);
+    $password = $conn -> real_escape_string($_POST['password']);
     date_default_timezone_set('Asia/Manila');
     $date=date("F j, Y");
     $time=date('g:i a');

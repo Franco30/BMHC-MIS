@@ -2,14 +2,15 @@
 require '../require/logincheck.php';
 
 if(isset($_POST['add'])){
+    require '../require/config.php';
     
-    $patient = $_POST['patient'];
-    $date_given = $_POST['date_given'];
-    $method = $_POST['method'];
-    $units = $_POST['units'];
-    $remarks2 = $_POST['remarks2'];
-    $provider = $_POST['provider'];
-    $next_service_date = $_POST['next_service_date'];
+    $patient = $conn -> real_escape_string($_POST['patient']);
+    $date_given = $conn -> real_escape_string($_POST['date_given']);
+    $method = $conn -> real_escape_string($_POST['method']);
+    $units = $conn -> real_escape_string($_POST['units']);
+    $remarks2 = $conn -> real_escape_string($_POST['remarks2']);
+    $provider = $conn -> real_escape_string($_POST['provider']);
+    $next_service_date = $conn -> real_escape_string($_POST['next_service_date']);
     
     $user_id=$_SESSION['user_id'];
     $year = date("Y", strtotime("+8 HOURS"));

@@ -2,12 +2,12 @@
 require '../require/logincheck.php';
 
 if(isset($_POST['edit'])){
-    
-    $follow_up_id = $_POST['follow_up_id'];
-    $patient2 = $_POST['patient2'];
-    $follow_up_date_time2 = $_POST['follow_up_date_time2'];
-    $remarks = $_POST['remarks'];
-    $status2 = $_POST['status2'];
+    require '../require/config.php';
+    $follow_up_id = $conn -> real_escape_string($_POST['follow_up_id']);
+    $patient2 = $conn -> real_escape_string($_POST['patient2']);
+    $follow_up_date_time2 = $conn -> real_escape_string($_POST['follow_up_date_time2']);
+    $remarks = $conn -> real_escape_string($_POST['remarks']);
+    $status2 = $conn -> real_escape_string($_POST['status2']);
 
     $user_id=$_SESSION['user_id'];
     $year = date("Y", strtotime("+8 HOURS"));

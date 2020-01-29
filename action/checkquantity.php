@@ -1,6 +1,8 @@
 <?php
-$quantity = $_POST['quantity'];
-$medicine_name = $_POST['medicine_name'];
+require '../require/config.php';
+
+$quantity = $conn -> real_escape_string($_POST['quantity']);
+$medicine_name = $conn -> real_escape_string($_POST['medicine_name']);
 
 require '../require/config.php';
 

@@ -3,10 +3,10 @@ $(document).ready(function () {
 
     $(document).on('click', '#addnew', function () {
         if ($('#date').val() == "" || $('#weight').val() == "" || $('#bp').val() == "" || $('#temp').val() == "" || $('#age').val() == "" || $('#complaints').val() == "" || $('#from').val() == "" || $('#to').val() == "" || $('#origin').val() == "" || $('#destination').val() == "" || $('#referred_by').val() == "" || $('#gender').val() == "") {
-            $('#modallabel').slideDown();
-            $('#checkfield').html('<span class="fa fa-exclamation-circle"></span> All fields are required!');
+            $('#modallabel33').slideDown();
+            $('#checkfield33').html('<span class="fa fa-exclamation-circle"></span> All fields are required!');
             setTimeout(function () {
-                $('#modallabel').fadeOut('slow');
+                $('#modallabel33').fadeOut('slow');
             }, 3500);
         } else {
             $date = $('#date').val();

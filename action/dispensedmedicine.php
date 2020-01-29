@@ -2,10 +2,12 @@
 require '../require/logincheck.php';
 
 if(isset($_POST['add'])){
-    $purpose = $_POST['purpose'];
-    $medicine_name = $_POST['medicine_name'];
-    $quantity = $_POST['quantity'];
-    $received = $_POST['received'];
+    require '../require/config.php';
+    
+    $purpose = $conn -> real_escape_string($_POST['purpose']);
+    $medicine_name = $conn -> real_escape_string($_POST['medicine_name']);
+    $quantity = $conn -> real_escape_string($_POST['quantity']);
+    $received = $conn -> real_escape_string($_POST['received']);
 
     $user_id=$_SESSION['user_id'];
     $year = date("Y", strtotime("+8 HOURS"));

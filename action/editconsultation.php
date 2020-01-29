@@ -2,20 +2,20 @@
 require '../require/logincheck.php';
 
 if(isset($_POST['edit'])){
-    
-    $consultation_id = $_POST['consultation_id'];
-    $date_today = $_POST['date_today'];
-    $weight = $_POST['weight'];
-    $height = $_POST['height'];
-    $temp = $_POST['temp'];
-    $headfamily = $_POST['headfamily'];
-    $bp = $_POST['bp'];
-    $rr = $_POST['rr'];
-    $pr = $_POST['pr'];
-    $complaints = $_POST['complaints'];
-    $pefindings = $_POST['pefindings'];
-    $diagnosis = $_POST['diagnosis'];
-    $labrequest = $_POST['labrequest'];
+    require '../require/config.php';
+    $consultation_id = $conn -> real_escape_string($_POST['consultation_id']);
+    $date_today = $conn -> real_escape_string($_POST['date_today']);
+    $weight = $conn -> real_escape_string($_POST['weight']);
+    $height = $conn -> real_escape_string($_POST['height']);
+    $temp = $conn -> real_escape_string($_POST['temp']);
+    $headfamily = $conn -> real_escape_string($_POST['headfamily']);
+    $bp = $conn -> real_escape_string($_POST['bp']);
+    $rr = $conn -> real_escape_string($_POST['rr']);
+    $pr = $conn -> real_escape_string($_POST['pr']);
+    $complaints = $conn -> real_escape_string($_POST['complaints']);
+    $pefindings = $conn -> real_escape_string($_POST['pefindings']);
+    $diagnosis = $conn -> real_escape_string($_POST['diagnosis']);
+    $labrequest = $conn -> real_escape_string($_POST['labrequest']);
     
 //        $C = "";
 //    foreach($complaints as $value) {

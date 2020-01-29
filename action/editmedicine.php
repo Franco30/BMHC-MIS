@@ -2,10 +2,11 @@
 require '../require/logincheck.php';
 
 if(isset($_POST['edit'])){
-    $medicine_id = $_POST['medicine_id'];
-    $medicine_name = $_POST['medicine_name'];
-    $medicine_type = $_POST['medicine_type'];
-    $medicine_category = $_POST['medicine_category'];
+	require '../require/config.php';
+    $medicine_id = $conn -> real_escape_string($_POST['medicine_id']);
+    $medicine_name = $conn -> real_escape_string($_POST['medicine_name']);
+    $medicine_type = $conn -> real_escape_string($_POST['medicine_type']);
+    $medicine_category = $conn -> real_escape_string($_POST['medicine_category']);
 
     require '../require/config.php';
 

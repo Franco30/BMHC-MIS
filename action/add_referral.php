@@ -3,20 +3,22 @@ require '../require/logincheck.php';
 
 if(isset($_POST['add'])){
 
-    $date = $_POST['date'];
-    $patient_name = $_POST['patient_name'];
-    $registered = $_POST['registered'];
-    $gender = $_POST['gender'];
-    $weight = $_POST['weight'];
-    $bp = $_POST['bp'];
-    $temp = $_POST['temp'];
-    $age = $_POST['age'];
-    $complaints = $_POST['complaints'];
-    $from = $_POST['from'];
-    $to = $_POST['to'];
-    $origin = $_POST['origin'];
-    $destination = $_POST['destination'];
-    $referred_by = $_POST['referred_by'];
+    require '../require/config.php';
+     
+    $date = $conn -> real_escape_string($_POST['date']);
+    $patient_name = $conn -> real_escape_string($_POST['patient_name']);
+    $registered = $conn -> real_escape_string($_POST['registered']);
+    $gender = $conn -> real_escape_string($_POST['gender']);
+    $weight = $conn -> real_escape_string($_POST['weight']);
+    $bp = $conn -> real_escape_string($_POST['bp']);
+    $temp = $conn -> real_escape_string($_POST['temp']);
+    $age = $conn -> real_escape_string($_POST['age']);
+    $complaints = $conn -> real_escape_string($_POST['complaints']);
+    $from = $conn -> real_escape_string($_POST['from']);
+    $to = $conn -> real_escape_string($_POST['to']);
+    $origin = $conn -> real_escape_string($_POST['origin']);
+    $destination = $conn -> real_escape_string($_POST['destination']);
+    $referred_by = $conn -> real_escape_string($_POST['referred_by']);
     
     $user_id=$_SESSION['user_id'];
     $year = date("Y", strtotime("+8 HOURS"));

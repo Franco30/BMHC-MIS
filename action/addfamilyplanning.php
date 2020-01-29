@@ -3,21 +3,23 @@ require '../require/logincheck.php';
 
 if(isset($_POST['add'])){
     
-    $patient_id = $_POST['patient_id'];
-    $type_of_acceptor = $_POST['type_of_acceptor'];
-    $prevmethod = $_POST['prevmethod'];
-    $datetime = $_POST['datetime'];
-    $patient_education = $_POST['patient_education'];
-    $spouse_name = $_POST['spouse_name'];
-    $spouse_birthdate = $_POST['spouse_birthdate'];
-    $spouse_education = $_POST['spouse_education'];
-    $spouse_occupation = $_POST['spouse_occupation'];
-    $monthly_income = $_POST['monthly_income'];
-    $no_living_children = $_POST['no_living_children'];
-    $planmorechildren = $_POST['planmorechildren'];
-    $reason = $_POST['reason'];
+    require '../require/config.php';
+    
+    $patient_id = $conn -> real_escape_string($_POST['patient_id']);
+    $type_of_acceptor = $conn -> real_escape_string($_POST['type_of_acceptor']);
+    $prevmethod = $conn -> real_escape_string($_POST['prevmethod']);
+    $datetime = $conn -> real_escape_string($_POST['datetime']);
+    $patient_education = $conn -> real_escape_string($_POST['patient_education']);
+    $spouse_name = $conn -> real_escape_string($_POST['spouse_name']);
+    $spouse_birthdate = $conn -> real_escape_string($_POST['spouse_birthdate']);
+    $spouse_education = $conn -> real_escape_string($_POST['spouse_education']);
+    $spouse_occupation = $conn -> real_escape_string($_POST['spouse_occupation']);
+    $monthly_income = $conn -> real_escape_string($_POST['monthly_income']);
+    $no_living_children = $conn -> real_escape_string($_POST['no_living_children']);
+    $planmorechildren = $conn -> real_escape_string($_POST['planmorechildren']);
+    $reason = $conn -> real_escape_string($_POST['reason']);
     $method_accepted = $_POST['method_accepted'];
-    $purok = $_POST['purok'];
+    $purok = $conn -> real_escape_string($_POST['purok']);
     $MA = "";
     foreach($method_accepted as $value) {
         $MA .= $value . ", ";  

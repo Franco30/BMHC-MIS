@@ -2,12 +2,13 @@
 require '../require/logincheck.php';
 
 if(isset($_POST['edit'])){
-    $user_id = $_POST['user_id'];
-    $fullname = $_POST['fullname'];
-    $license = $_POST['license'];
-    $position = $_POST['position'];
-    $username = $_POST['username'];
-    $password = $_POST['password'];
+    require '../require/config.php';
+    $user_id = $conn -> real_escape_string($_POST['user_id']);
+    $fullname = $conn -> real_escape_string($_POST['fullname']);
+    $license = $conn -> real_escape_string($_POST['license']);
+    $position = $conn -> real_escape_string($_POST['position']);
+    $username = $conn -> real_escape_string($_POST['username']);
+    $password = $conn -> real_escape_string($_POST['password']);
 
     $userid=$_SESSION['user_id'];
     date_default_timezone_set('Asia/Manila');

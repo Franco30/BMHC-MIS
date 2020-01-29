@@ -2,21 +2,24 @@
 require '../require/logincheck.php';
 
 if(isset($_POST['add'])){
-    $child_name = $_POST['child_name'];
-    $gender2 = $_POST['gender2'];
-    $mother_name = $_POST['mother_name'];
-    $mother_education = $_POST['mother_education'];
-    $mother_occupation = $_POST['mother_occupation'];
-    $father_name = $_POST['father_name'];
-    $father_education = $_POST['father_education'];
-    $father_occupation = $_POST['father_occupation'];
-    $date_first_seen = $_POST['date_first_seen'];
-    $birthdate2 = $_POST['birthdate2'];
-    $birth_weight = $_POST['birth_weight'];
-    $place_of_delivery = $_POST['place_of_delivery'];
-    $birth_register_date = $_POST['birth_register_date'];
-    $purok2 = $_POST['purok2'];
-    $street_address2 = $_POST['street_address2'];
+
+    require '../require/config.php';
+    
+    $child_name = $conn -> real_escape_string($_POST['child_name']);
+    $gender2 = $conn -> real_escape_string($_POST['gender2']);
+    $mother_name = $conn -> real_escape_string($_POST['mother_name']);
+    $mother_education = $conn -> real_escape_string($_POST['mother_education']);
+    $mother_occupation = $conn -> real_escape_string($_POST['mother_occupation']);
+    $father_name = $conn -> real_escape_string($_POST['father_name']);
+    $father_education = $conn -> real_escape_string($_POST['father_education']);
+    $father_occupation = $conn -> real_escape_string($_POST['father_occupation']);
+    $date_first_seen = $conn -> real_escape_string($_POST['date_first_seen']);
+    $birthdate2 = $conn -> real_escape_string($_POST['birthdate2']);
+    $birth_weight = $conn -> real_escape_string($_POST['birth_weight']);
+    $place_of_delivery = $conn -> real_escape_string($_POST['place_of_delivery']);
+    $birth_register_date = $conn -> real_escape_string($_POST['birth_register_date']);
+    $purok2 = $conn -> real_escape_string($_POST['purok2']);
+    $street_address2 = $conn -> real_escape_string($_POST['street_address2']);
 
     $user_id=$_SESSION['user_id'];
     $year = date("Y", strtotime("+8 HOURS"));

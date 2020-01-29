@@ -1,8 +1,10 @@
 <?php
 require '../require/logincheck.php';
 if(isset($_POST['add'])){
-	$medicine_name = $_POST['med_name'];
-    $quantity = $_POST['quantity2'];
+    require '../require/config.php';
+    
+	$medicine_name = $conn -> real_escape_string($_POST['med_name']);
+    $quantity = $conn -> real_escape_string($_POST['quantity2']);
 
     $user_id=$_SESSION['user_id'];
     $year = date("Y", strtotime("+8 HOURS"));

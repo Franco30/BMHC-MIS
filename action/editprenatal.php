@@ -2,24 +2,24 @@
 require '../require/logincheck.php';
 
 if(isset($_POST['edit'])){
-    
-    $prenatal_id = $_POST['prenatal_id'];
-    $husband = $_POST['husband'];
-    $date = $_POST['date'];
-    $menstrual_hx = $_POST['menstrual_hx'];
-    $menarch = $_POST['menarch'];
-    $cycle = $_POST['cycle'];
-    $flow = $_POST['flow'];
-    $duration = $_POST['duration'];
-    $dysmenorrhea = $_POST['dysmenorrhea'];
-    $obgynehx = $_POST['obgynehx'];
-    $past_medical_hx = $_POST['past_medical_hx'];
-    $bloodtype = $_POST['bloodtype'];
-    $tt1 = $_POST['tt1'];
-    $tt2 = $_POST['tt2'];
-    $tt3 = $_POST['tt3'];
-    $tt4 = $_POST['tt4'];
-    $tt5 = $_POST['tt5'];
+    require '../require/config.php';
+    $prenatal_id = $conn -> real_escape_string($_POST['prenatal_id']);
+    $husband = $conn -> real_escape_string($_POST['husband']);
+    $date = $conn -> real_escape_string($_POST['date']);
+    $menstrual_hx = $conn -> real_escape_string($_POST['menstrual_hx']);
+    $menarch = $conn -> real_escape_string($_POST['menarch']);
+    $cycle = $conn -> real_escape_string($_POST['cycle']);
+    $flow = $conn -> real_escape_string($_POST['flow']);
+    $duration = $conn -> real_escape_string($_POST['duration']);
+    $dysmenorrhea = $conn -> real_escape_string($_POST['dysmenorrhea']);
+    $obgynehx = $conn -> real_escape_string($_POST['obgynehx']);
+    $past_medical_hx = $conn -> real_escape_string($_POST['past_medical_hx']);
+    $bloodtype = $conn -> real_escape_string($_POST['bloodtype']);
+    $tt1 = $conn -> real_escape_string($_POST['tt1']);
+    $tt2 = $conn -> real_escape_string($_POST['tt2']);
+    $tt3 = $conn -> real_escape_string($_POST['tt3']);
+    $tt4 = $conn -> real_escape_string($_POST['tt4']);
+    $tt5 = $conn -> real_escape_string($_POST['tt5']);
     
     $user_id=$_SESSION['user_id'];
     $year = date("Y", strtotime("+8 HOURS"));

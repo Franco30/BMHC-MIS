@@ -2,8 +2,8 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <center>
-                <div id="modallabel" class="alert alert-danger" style="display:none;">
-                    <center><span id="checkfield"></span></center>
+                <div id="modallabel33" class="alert alert-danger" style="display:none;">
+                    <center><span id="checkfield33"></span></center>
                 </div>
             </center>
             <div class="modal-header">
