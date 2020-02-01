@@ -143,14 +143,14 @@ while($fetch = $query->fetch_array()){
 
 
 							<br><br><br><br>
-							<h6 class="text-center" style="margin-left:269px">
+							<h6 class="text-center" style="margin-left:240px">
 								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
 								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
 								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
 								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
 								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
 								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<u style="font-size: 17px;"><?php echo  $fetch4['fullname'] ?>, M.D.</u></h6>
-							<p class="text-center" style="margin-left:269px">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+							<p class="text-center" style="margin-left:234px">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
 								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
 								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
 								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;

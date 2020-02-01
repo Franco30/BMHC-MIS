@@ -14,7 +14,8 @@ if(isset($_POST['add'])){
     $bp = $conn -> real_escape_string($_POST['bp']);
     $rr = $conn -> real_escape_string($_POST['rr']);
     $pr = $conn -> real_escape_string($_POST['pr']);
-    $complaints = $conn -> real_escape_string($_POST['complaints']);
+    $complaints = $_POST['complaints'];
+    $complaints_description = $conn -> real_escape_string($_POST['complaints_description']);
     $pefindings = $conn -> real_escape_string($_POST['pefindings']);
     $diagnosis = $conn -> real_escape_string($_POST['diagnosis']);
     $labrequest = $conn -> real_escape_string($_POST['labrequest']);
@@ -22,11 +23,11 @@ if(isset($_POST['add'])){
     $gender = $conn -> real_escape_string($_POST['gender']);
     $age = $conn -> real_escape_string($_POST['age']);
     
-//        $C = "";
-//    foreach($complaints as $value) {
-//        $C .= $value . ", ";  
-//    }
-    
+       $C = "";
+   foreach($complaints as $value) {
+       $C .= $value . ", ";  
+   }
+       $CC = substr($C, 0, -2);
     $user_id=$_SESSION['user_id'];
     $year = date("Y", strtotime("+8 HOURS"));
     date_default_timezone_set('Asia/Manila');
@@ -41,8 +42,7 @@ if(isset($_POST['add'])){
     $remarks = "Added $patient_name to Consultation";
 
     require '../require/config.php';
-//    $C = substr($C, 0, -2);
-    $conn->query("INSERT INTO `consultation` VALUES('', '$patient_id', '$date_today', '$headfamily', '$weight', '$height', '$bp', '$temp', '$rr', '$pr', '$complaints', '$pefindings', '$diagnosis', '$labrequest', '$age', '$gender', '$purok', '$month', '$year', 'No Prescription', '$date_time')") or die(mysqli_error());
+    $conn->query("INSERT INTO `consultation` VALUES('', '$patient_id', '$date_today', '$headfamily', '$weight', '$height', '$bp', '$temp', '$rr', '$pr', '$CC', $complaints_description, '$pefindings', '$diagnosis', '$labrequest', '$age', '$gender', '$purok', '$month', '$year', 'No Prescription', '$date_time')") or die(mysqli_error());
     $conn->query("INSERT INTO `users_activity_log` VALUES('', '$user_id', '$remarks','$date_time')") or die(mysqli_error());
     }
 ?>

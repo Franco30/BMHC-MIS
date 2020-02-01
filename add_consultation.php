@@ -16,6 +16,7 @@
     <link rel="stylesheet" type="text/css" id="theme" href="css/theme-brown.css" />
     <link rel="stylesheet" type="text/css" href="assets3/vendor/font-awesome/css/font-awesome.min.css" />
 
+
 </head>
 
 <body>
@@ -221,17 +222,19 @@
                                                         <h5 style="font-size: 12px;font-weight: bold;">S</h5>
                                                         <div class="form-group">
                                                             <label>Complaints:</label>
-                                                            <textarea class="form-control" spellcheck="false" id="complaints"></textarea>
-                                                            <!--
-                                                            <select multiple class="form-control select" data-live-search="true" style="display: none;" id="complaints" name="complaints[]">
-                                                                <option value="">Select</option>
-                                                                <option value="Fever">Fever</option>
-                                                                <option value="Colds">Colds</option>
-                                                                <option value="Headache">Headache</option>
-                                                                <option value="Allergy">Allergy</option>
-                                                                <option value="Cough">Cough</option>
+                                                            <select multiple class="form-control select selection" data-live-search="true" style="display: none;" id="complaints" name="complaints[]">
+                                                            <option value="Allergy">Allergy</option>
+                                                            <option value="Colds and Flu">Colds and Flu</option>
+                                                            <option value="Conjunctivitis">Conjunctivitis</option>
+                                                            <option value="Diarrhea">Diarrhea</option>
+                                                            <option value="Fever">Fever</option>
+                                                            <option value="Headache">Headache</option>
+                                                            <option value="Stomach Ache">Stomach Ache</option>
+                                                            <option value="Others">Others</option>
                                                             </select>
--->
+                                                            &nbsp;<br>
+                                                            <label>Description:</label>
+                                                            <textarea class="form-control" spellcheck="false" id="complaints_description"></textarea>                
                                                         </div>
 
                                                         <h5 style="font-size: 12px;font-weight: bold;">O:</h5>
@@ -297,6 +300,7 @@
     <script type="text/javascript" src="js/actions.js"></script>
 
     <!-- END THIS PAGE PLUGINS -->
+
     <!--
     <script>
         $.ajaxPrefilter(function(options, originalOptions, jqXHR) {

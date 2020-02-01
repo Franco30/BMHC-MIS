@@ -221,19 +221,25 @@
                                                     <div class="col-md-6">
 
                                                         <h5 style="font-size: 12px;font-weight: bold;">S</h5>
-                                                        <div class="form-group">
+                                                        <div class="form-group">                 
                                                             <label>Complaints:</label>
-                                                            <textarea class="form-control" spellcheck="false" id="complaints<?php echo $fetch2['consultation_id']; ?>"><?php echo $fetch2['complaints']; ?></textarea>
-                                                            <!--
-                                                            <select multiple class="form-control select" data-live-search="true" style="display: none;" id="complaints" name="complaints[]">
-                                                                <option value="">Select</option>
-                                                                <option value="Fever">Fever</option>
-                                                                <option value="Colds">Colds</option>
-                                                                <option value="Headache">Headache</option>
-                                                                <option value="Allergy">Allergy</option>
-                                                                <option value="Cough">Cough</option>
+                                                            <select multiple class="form-control select selection" data-live-search="true" style="display: none;" id="complaints" name="complaints[]">
+                                                            <option selected value="<?php echo $fetch2['complaints'] ?>">
+                                                                <?php echo $fetch2['complaints'] ?>
+                                                            </option>
+                                                            <option value="Allergy">Allergy</option>
+                                                            <option value="Colds and Flu">Colds and Flu</option>
+                                                            <option value="Conjunctivitis">Conjunctivitis</option>
+                                                            <option value="Diarrhea">Diarrhea</option>
+                                                            <option value="Fever">Fever</option>
+                                                            <option value="Headache">Headache</option>
+                                                            <option value="Stomach Ache">Stomach Ache</option>
+                                                            <option value="Others">Others</option>
                                                             </select>
--->
+                                                            &nbsp;<br>
+                                                            <label>Description:</label>
+                                                            <textarea class="form-control" spellcheck="false" id="complaints_description<?php echo $fetch2['consultation_id']; ?>"><?php echo $fetch2['complaints_description']; ?></textarea> 
+
                                                         </div>
 
                                                         <h5 style="font-size: 12px;font-weight: bold;">O:</h5>

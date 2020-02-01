@@ -12,15 +12,17 @@ if(isset($_POST['edit'])){
     $bp = $conn -> real_escape_string($_POST['bp']);
     $rr = $conn -> real_escape_string($_POST['rr']);
     $pr = $conn -> real_escape_string($_POST['pr']);
-    $complaints = $conn -> real_escape_string($_POST['complaints']);
+    $complaints_description = $conn -> real_escape_string($_POST['complaints_description']);
+    $complaints = $_POST['complaints'];
     $pefindings = $conn -> real_escape_string($_POST['pefindings']);
     $diagnosis = $conn -> real_escape_string($_POST['diagnosis']);
     $labrequest = $conn -> real_escape_string($_POST['labrequest']);
     
-//        $C = "";
-//    foreach($complaints as $value) {
-//        $C .= $value . ", ";  
-//    }
+       $C = "";
+   foreach($complaints as $value) {
+       $C .= $value . ", ";  
+   }
+   $C = substr($C, 0, -2);
     
     $user_id=$_SESSION['user_id'];
     $year = date("Y", strtotime("+8 HOURS"));
@@ -36,8 +38,8 @@ if(isset($_POST['edit'])){
     $remarks = "Edited $patient_name Consultation Form";
 
     require '../require/config.php';
-//    $C = substr($C, 0, -2);
-    $conn->query("UPDATE `consultation` SET `consultation_date` = '$date_today', `head_of_the_family` = '$headfamily', `weight` = '$weight', `height` = '$height', `bp` = '$bp', `temp` = '$temp', `rr` = '$rr', `pr` = '$pr', `complaints` = '$complaints', `pe_findings` = '$pefindings', `diagnosis` = '$diagnosis', `lab_request` = '$labrequest' WHERE `consultation`.`consultation_id` = '$consultation_id'") or die(mysqli_error());
+
+    $conn->query("UPDATE `consultation` SET `consultation_date` = '$date_today', `head_of_the_family` = '$headfamily', `weight` = '$weight', `height` = '$height', `bp` = '$bp', `temp` = '$temp', `rr` = '$rr', `pr` = '$pr', `complaints` = '$C', `complaints_description` = '$complaints_description', `pe_findings` = '$pefindings', `diagnosis` = '$diagnosis', `lab_request` = '$labrequest' WHERE `consultation`.`consultation_id` = '$consultation_id'") or die(mysqli_error());
     $conn->query("INSERT INTO `users_activity_log` VALUES('', '$user_id', '$remarks','$date_time')") or die(mysqli_error());
     }
 ?>

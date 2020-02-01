@@ -18,7 +18,7 @@ $(document).ready(function () {
             $headfamily = $('#headfamily').val();
             $rr = $('#rr').val();
             $pr = $('#pr').val();
-            $complaints = $('#complaints').val();
+            $complaints_description = $('#complaints_description').val();
             $pefindings = $('#pefindings').val();
             $diagnosis = $('#diagnosis').val();
             $labrequest = $('#labrequest').val();
@@ -26,11 +26,11 @@ $(document).ready(function () {
             $gender = $('#gender').val();
             $age = $('#age').val();
 
-//            var complaints = [];
-//
-//            $('#complaints option:selected').each(function (i) {
-//                complaints[i] = $(this).val();
-//            });
+           var complaints = [];
+
+           $('#complaints option:selected').each(function (i) {
+               complaints[i] = $(this).val();
+           });
 
             if (confirm('Are you sure you want to add this patient?')) {
                 $.ajax({
@@ -48,7 +48,8 @@ $(document).ready(function () {
                         headfamily: $headfamily,
                         rr: $rr,
                         pr: $pr,
-                        complaints: $complaints,
+                        complaints: complaints,
+                        complaints_description: $complaints_description,
                         pefindings: $pefindings,
                         diagnosis: $diagnosis,
                         labrequest: $labrequest,
@@ -64,9 +65,27 @@ $(document).ready(function () {
                         setTimeout(function () {
                             $('#alert').fadeOut('slow');
                         }, 1500);
-                        setTimeout(function () {
-                            window.location.href = 'consultation';
-                        }, 2500);
+                        console.log($patient_id);
+                        console.log($date_today);
+                        console.log($weight);
+                        console.log($height);
+                        console.log($bp);
+                        console.log($temp);
+                        console.log($headfamily);
+                        console.log($rr);
+                        console.log($pr);
+                        console.log(complaints);
+                        console.log($complaints_description);
+                        console.log($pefindings);
+                         console.log($diagnosis);
+                        console.log($labrequest);
+                        console.log($purok);
+                         console.log($gender);
+                        console.log($age);
+                        console.log($weight);
+//                        setTimeout(function () {
+//                            window.location.href = 'consultation';
+//                        }, 2500);
                     }
                 });
             }
@@ -86,10 +105,15 @@ $(document).ready(function () {
         $headfamily = $('#headfamily' + $consultation_id).val();
         $rr = $('#rr' + $consultation_id).val();
         $pr = $('#pr' + $consultation_id).val();
-        $complaints = $('#complaints' + $consultation_id).val();
+        $complaints_description = $('#complaints_description' + $consultation_id).val();
         $pefindings = $('#pefindings' + $consultation_id).val();
         $diagnosis = $('#diagnosis' + $consultation_id).val();
         $labrequest = $('#labrequest' + $consultation_id).val();
+           var complaints = [];
+
+           $('#complaints option:selected').each(function (i) {
+               complaints[i] = $(this).val();
+           });
 
         if (confirm('Are you sure you want to edit this Consultation?')) {
             $.ajax({
@@ -107,7 +131,8 @@ $(document).ready(function () {
                     headfamily: $headfamily,
                     rr: $rr,
                     pr: $pr,
-                    complaints: $complaints,
+                    complaints: complaints,
+                    complaints_description: $complaints_description,
                     pefindings: $pefindings,
                     diagnosis: $diagnosis,
                     labrequest: $labrequest,
