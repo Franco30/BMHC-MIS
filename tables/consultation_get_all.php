@@ -13,6 +13,7 @@ if($check > 0){
 	<tr>
 		<td><strong><center><?php echo $fetch['consultation_id']?></center></strong></td>
 		<td><strong><?php echo $fetch['patient_name']?></strong></td>
+		<td><strong><?php echo $fetch['complaints']?></strong></td>
 		<td><strong><center><?php echo date("m/d/Y", strtotime($fetch['consultation_date']))?></center></strong></td>
 	</tr>
 	<?php

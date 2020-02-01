@@ -29,7 +29,7 @@
             },
             subtitles:[
                 {
-                    text: "Sick Forecasting Monthly Count - Year <?php echo $year?>"
+                    text: "Sickness Forecasting Monthly Count - Year <?php echo $year?>"
                 }
             ],
             legend: {
@@ -254,7 +254,7 @@
             },
             subtitles:[
                 {
-                    text: "Sick Forecasting Monthly Count - Year <?php echo $year?>"
+                    text: "Sickness Forecasting Monthly Count - Year <?php echo $year?>"
                 }
             ],
             legend: {
@@ -479,7 +479,7 @@
             },
             subtitles:[
                 {
-                    text: "Sick Forecasting Monthly Count - Year <?php echo $year?>"
+                    text: "Sickness Forecasting Monthly Count - Year <?php echo $year?>"
                 }
             ],
             legend: {

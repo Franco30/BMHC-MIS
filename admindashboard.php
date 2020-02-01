@@ -23,11 +23,28 @@ require 'require/logincheck.php';
     <script src="js/jquery.canvasjs.min.js"></script>
     <script type="text/javascript" src="js/plugins/jquery/jquery.min.js"></script>
     <script type="text/javascript" src="js/plugins/jquery/jquery-ui.min.js"></script>
-    <?php require 'js/loadcharts/dashboard/dashboardgraphs.php'?>
+    <?php require 'js/loadcharts/reports/sickforecasting.php'?>
 
     <script src="js/moment.min.js"></script>
     <script src="js/fullcalendar.min.js"></script>
 
+        <script type="text/javascript">
+        $(document).ready(function() {
+            $("select").change(function() {
+                $(this).find("option:selected").each(function() {
+                    var optionValue = $(this).attr("value");
+                    if (optionValue) {
+                        $(".reporttype").not("." + optionValue).hide();
+                        $("." + optionValue).show();
+                    } else {
+                        $(".reporttype").hide();
+                    }
+                });
+            }).change();
+        });
+
+    </script>
+    
     <script>
         $(document).ready(function() {
             $("#pyear").on('change', function() {
@@ -258,9 +275,21 @@ require 'require/logincheck.php';
                                             </div>
                                         </div>
                                     </div>
+                                                                    <div class="btn-group pull-right" style="margin-right: 10px;">
+                                    <div class="pull-left">
+                                        <select class="form-control select" data-style="btn-primary" data-live-search="true" id="select-report" name="filterbutton">
+                                            <option disabled="disabled">Select Chart Type</option>
+                                            <option value="colmonth">Column Chart</option>
+                                            <option value="linemonth">Line Chart</option>
+                                            <option value="stackmonth">Stack Column Chart</option>
+                                        </select>
+                                    </div>
+                                </div>
                                 </div>
                                 <div class="panel-body">
-                                    <div id="chartContainer1" style="width: 100%; height: 300px;"></div>
+                                    <div id="chartContainer1" class="colmonth reporttype" style="width: 100%; height: 300px;"></div>
+                                    <div id="chartContainer2" class="linemonth reporttype" style="width: 100%; height: 300px;"></div>
+                                    <div id="chartContainer3" class="stackmonth reporttype" style="width: 100%; height: 300px;"></div>
                                 </div>
                             </div>
                         </div>
@@ -618,6 +647,8 @@ require 'require/logincheck.php';
     <script type="text/javascript" src="js/actions.js"></script>
 
     <!-- END TEMPLATE -->
+    
+    
     <script>
         $('.counter').each(function() {
             var $this = $(this),

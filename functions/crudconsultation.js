@@ -65,27 +65,9 @@ $(document).ready(function () {
                         setTimeout(function () {
                             $('#alert').fadeOut('slow');
                         }, 1500);
-                        console.log($patient_id);
-                        console.log($date_today);
-                        console.log($weight);
-                        console.log($height);
-                        console.log($bp);
-                        console.log($temp);
-                        console.log($headfamily);
-                        console.log($rr);
-                        console.log($pr);
-                        console.log(complaints);
-                        console.log($complaints_description);
-                        console.log($pefindings);
-                         console.log($diagnosis);
-                        console.log($labrequest);
-                        console.log($purok);
-                         console.log($gender);
-                        console.log($age);
-                        console.log($weight);
-//                        setTimeout(function () {
-//                            window.location.href = 'consultation';
-//                        }, 2500);
+                        setTimeout(function () {
+                            window.location.href = 'consultation';
+                        }, 2500);
                     }
                 });
             }

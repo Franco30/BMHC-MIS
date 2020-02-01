@@ -309,6 +309,7 @@
                                                                     <tr class="warning">
                                                                         <th><center>Consultation No</center></th>
                                                                         <th><center>Patient Name</center></th>
+                                                                        <th><center>Complaints</center></th>
                                                                         <th><center>Date</center></th>
                                                                     </tr>
                                                                 </thead>
@@ -320,6 +321,7 @@
                                                                     <tr>
                                                                         <td><strong><center><?php echo $fetch['consultation_id']?></center></strong></td>
                                                                         <td><strong><?php echo $fetch['patient_name']?></strong></td>
+                                                                        <td><strong><?php echo $fetch['complaints']?></strong></td>
                                                                         <td><strong><center><?php echo date("m/d/Y", strtotime($fetch['consultation_date']))?></center></strong></td>
                                                                     </tr>
                                                                     <?php
