@@ -12,7 +12,7 @@
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                 <h4 class="modal-title" id="defModalHead">New Consultation</h4>
             </div>
-            <form id="patientform" method="POST">
+            <form id="consultationform" method="POST">
                 <div class="modal-body">
 
                     <div class="row">
