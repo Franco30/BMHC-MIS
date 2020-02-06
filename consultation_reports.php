@@ -113,12 +113,37 @@
                         </div>
                     </div>
                 </div>
+                
+                <div class="col-md-2 print monthly quarterly yearly reporttype">
+                    <div class="alert alert-info fade in m-b-15" style="background-color: #7cdda7;color: #3c763d;border-color: #7cdda7;">
+                        <strong><i class="fa fa-print"></i> Press P to Print!</strong>
+                        <span class="close" data-dismiss="alert">&times;</span>
+                    </div>
+                </div>
 
+                <div class="row">
+                    <label class="hidden-header" style="display:none;">
+                        <br>
+                        <center><img src="assets/images/bmhclogo.png" style="width:131px;height:100px; padding: 10px; margin:0px 0px 0px -10px;" alt="bmhclogo" /></center>
+                        <!--                        <img src="assets/images/bmhc.png" style="width:131px;height:100px; padding: -10px; margin:0px 0px 0px -10px;" alt="drrmopicture" />-->
+                        <h3 style="margin: 0px 0px 0px 10px">
+                            <center>Barangay Mansilingan Health Center</center>
+                        </h3>
+                        <h4 style="margin: 0px 0px 0px 10px">
+                            <center>Brgy. Mansilingan 6100 Bacolod City</center>
+                        </h4>
+                        <h4 style="margin: 0px 0px 0px 10px">
+                            <center>(034) 434-4098</center>
+                        </h4>
+                        <br>
+                    </label>
+                </div>
+                
                 <div class="row">
                     <div class="col-md-12">
                         <div class="panel panel-default">
                             <div class="panel-body">
-                                <span id="shit">Choose from the given Graphical Report above.</span>
+                                <span id="shit" class="print">Choose from the given Graphical Report above.</span>
                                 <div id="chartContainer1" class="monthly reporttype" style="width: 100%; height: 300px"></div>
                                 <div id="chartContainer2" class="quarterly reporttype" style="width: 100%; height: 300px"></div>
                                 <div id="chartContainer3" class="yearly reporttype" style="width: 100%; height: 300px"></div>
@@ -293,9 +318,9 @@
                                                 <div class="btn-group pull-right">
                                                     <div class="form-inline">
                                                         <form id="prenataldaterange">
-                                                        <input type="text" class="form-control datepicker" placeholder="Start" id="date1" />
-                                                        <input type="text" class="form-control datepicker" placeholder="End" id="date2" />
-                                                        <button style="margin-left: 6px;" type="button" class="btn btn-success" id="btn_search"><span class="glyphicon glyphicon-search" style="margin-right: 0px;"></span></button> <button type="button" id="reset" class="btn btn-info"><span class="glyphicon glyphicon-refresh" style="margin-right: 0px;"><span></span></span></button>
+                                                        <input type="text" class="form-control datepicker print" placeholder="Start" id="date1" />
+                                                        <input type="text" class="form-control datepicker print" placeholder="End" id="date2" />
+                                                        <button style="margin-left: 6px;" type="button" class="btn btn-success print" id="btn_search"><span class="glyphicon glyphicon-search print" style="margin-right: 0px;"></span></button> <button type="button" id="reset" class="btn btn-info print"><span class="glyphicon glyphicon-refresh" style="margin-right: 0px;"><span></span></span></button>
                                                         </form>
                                                     </div>
                                                 </div>
@@ -419,6 +444,7 @@
     <!-- END TEMPLATE -->
     <!-- END SCRIPTS -->
     <?php require 'reports/tabular_consultation.php'?>
+    <?php require 'require/pressp.php'?>
 </body>
 
 </html>

@@ -16,8 +16,10 @@
 
     <!-- CSS INCLUDE -->
     <link rel="stylesheet" type="text/css" id="theme" href="css/theme-brown.css" />
+<!--
     <link rel="stylesheet" type="text/css" href="assets3/vendor/font-awesome/css/font-awesome.min.css" />
     <link href="assets3/css/invoice-print.min.css" rel="stylesheet" />
+-->
     <script type="text/javascript" src="js/plugins/jquery/jquery.min.js"></script>
     <script type="text/javascript" src="js/jquery.canvasjs.min.js"></script>
     <?php require 'js/loadcharts/reports/consultation2.php'?>

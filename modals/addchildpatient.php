@@ -11,7 +11,7 @@
                 <h4 class="modal-title" id="defModalHead">New Child Patient</h4>
             </div>
             <div class="modal-body">
-                <form id="patientform">
+                <form id="patientchildform">
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">

@@ -113,11 +113,37 @@
                     </div>
                 </div>
 
+                <div class="col-md-2 print monthly quarterly yearly reporttype">
+                    <div class="alert alert-info fade in m-b-15" style="background-color: #7cdda7;color: #3c763d;border-color: #7cdda7;">
+                        <strong><i class="fa fa-print"></i> Press P to Print!</strong>
+                        <span class="close" data-dismiss="alert">&times;</span>
+                    </div>
+                </div>
+                <?php require 'require/pressp.php'?>
+                
+                <div class="row">
+                    <label class="hidden-header" style="display:none;">
+                        <br>
+                        <center><img src="assets/images/bmhclogo.png" style="width:131px;height:100px; padding: 10px; margin:0px 0px 0px -10px;" alt="bmhclogo" /></center>
+                        <!--                        <img src="assets/images/bmhc.png" style="width:131px;height:100px; padding: -10px; margin:0px 0px 0px -10px;" alt="drrmopicture" />-->
+                        <h3 style="margin: 0px 0px 0px 10px">
+                            <center>Barangay Mansilingan Health Center</center>
+                        </h3>
+                        <h4 style="margin: 0px 0px 0px 10px">
+                            <center>Brgy. Mansilingan 6100 Bacolod City</center>
+                        </h4>
+                        <h4 style="margin: 0px 0px 0px 10px">
+                            <center>(034) 434-4098</center>
+                        </h4>
+                        <br>
+                    </label>
+                </div>
+                
                 <div class="row">
                     <div class="col-md-12">
                         <div class="panel panel-default">
                             <div class="panel-body">
-                                <span id="shit">Choose from the given Graphical Report above.</span>
+                                <span id="shit" class="print">Choose from the given Graphical Report above.</span>
                                 <div id="chartContainer1" class="monthly reporttype" style="width: 100%; height: 300px"></div>
                                 <div id="chartContainer2" class="quarterly reporttype" style="width: 100%; height: 300px"></div>
                                 <div id="chartContainer3" class="yearly reporttype" style="width: 100%; height: 300px"></div>
@@ -290,7 +316,7 @@
                                             <div class="panel-heading">
                                                 <h3 class="panel-title"><strong>Date Range Tabular Report</strong></h3>
                                                 <div class="btn-group pull-right">
-                                                    <div class="form-inline">
+                                                    <div class="form-inline print">
                                                         <form id="prenataldaterange">
                                                         <input type="text" class="form-control datepicker" placeholder="Start" id="date1" />
                                                         <input type="text" class="form-control datepicker" placeholder="End" id="date2" />

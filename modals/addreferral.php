@@ -13,7 +13,7 @@
                 </center>
             </div>
             <div class="modal-body">
-                <form id="prenatalreferralform">
+                <form id="referralforms">
 
                     <div class="row">
                         <div class="col-md-6">
