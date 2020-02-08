@@ -30,6 +30,9 @@ $(document).ready(function () {
                             $('#alert2').fadeOut('slow');
                         }, 1500);
                         medicinestocks();
+                        setTimeout(function () {
+                            window.location.href = 'medication_dispensation';
+                        }, 2500);
 
                     }
 

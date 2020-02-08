@@ -80,6 +80,9 @@ $(document).ready(function () {
                             $('#received').selectpicker('refresh');
                             showDispensedMedicine();
                             showMedicine();
+                            setTimeout(function () {
+                                window.location.href = 'medication_dispensation';
+                            }, 1500);
                         }
                     }
 
@@ -122,9 +125,9 @@ function showMedicine() {
             var table = $('#medicinetable').DataTable({
                 "aaSorting": [[4, 'desc']]
             });
-//            $('.mt').dataTable({
-//                "aaSorting": [[4, 'desc']]
-//            });
+            //            $('.mt').dataTable({
+            //                "aaSorting": [[4, 'desc']]
+            //            });
         }
     });
 }
@@ -142,9 +145,9 @@ function showMedicine2() {
             var table = $('#medicinetable3').DataTable({
                 "aaSorting": [[4, 'desc']]
             });
-//            $('.mt').dataTable({
-//                "aaSorting": [[4, 'desc']]
-//            });
+            //            $('.mt').dataTable({
+            //                "aaSorting": [[4, 'desc']]
+            //            });
         }
     });
 }
