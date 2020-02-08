@@ -182,11 +182,11 @@
                         </div>
                         <div class="panel panel-default tabs">
                             <ul class="nav nav-tabs" role="tablist">
-                                <li class="active"><a href="#tab-first" role="tab" data-toggle="tab">Tabular Report</a></li>
-                                <li><a href="#tab-second" role="tab" data-toggle="tab">Date Range tabular Report</a></li>
+                                <li class="active"><a href="#tab-first" role="tab" data-toggle="tab">Monthly Cases per Month</a></li>
+                                <li><a href="#tab-second" role="tab" data-toggle="tab">Date Range </a></li>
+                                <li><a href="#tab-third" role="tab" data-toggle="tab">Individual Patient Record</a></li>
                             </ul>
                             <div class="panel-body tab-content">
-
                                 <div class="tab-pane active" id="tab-first">
                                     <div class="row">
                                         <div class="panel panel-primary">
@@ -382,6 +382,21 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="tab-pane" id="tab-third">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="panel panel-default">
+                                                <!-- style="height: 470px;"-->
+                                                <div class="panel-body list-group list-group-contacts scroll">
+                                                    <div class="panel-body">
+                                                        <div id="patientmasterfileTable2"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -407,12 +422,15 @@
     <!-- END PLUGINS -->
 
     <!-- START THIS PAGE PLUGINS-->
+        <script type="text/javascript" src="functions/patientmasterfile.js"></script>
     <script type='text/javascript' src='js/plugins/icheck/icheck.min.js'></script>
     <script type="text/javascript" src="js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
     <script type="text/javascript" src="js/plugins/scrolltotop/scrolltopcontrol.js"></script>
     <script type='text/javascript' src='js/plugins/bootstrap/bootstrap-select.js'></script>
     <script type="text/javascript" src="js/plugins/datatables/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="js/plugins/bootstrap/bootstrap-datepicker.js"></script>
+    <script type='text/javascript' src='js/plugins/maskedinput/jquery.maskedinput.min.js'></script>
+
     <!-- END THIS PAGE PLUGINS-->
     <!-- START TEMPLATE -->
     <script type="text/javascript" src="js/settings.js"></script>
