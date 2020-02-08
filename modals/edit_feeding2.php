@@ -55,7 +55,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="edit_feeding2 btn btn-success" value="<?php echo $fetch2['type_of_feeding_2_id']; ?>">Save</button>
-                <button type="button" class="btn btn-danger" data-dismiss="modal" id="cancel3">Cancel</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal" id="cancel3">Close</button>
             </div>
         </div>
     </div>

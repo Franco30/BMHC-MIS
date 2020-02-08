@@ -50,7 +50,7 @@
                     <button type="button" value="Add New Patient" class="btn btn-warning btn-md" data-toggle="modal" data-target="#new_child_patient" data-dismiss="modal">
                         <span class="fa fa-plus-circle" data-toggle="tooltip" data-placement="top" title="Add New Patient" style="margin-right: 0px;"></span></button>
                     <input class="btn btn-info" type="submit" name="submit" value="Proceed" />
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                 </div>
             </form>
         </div>

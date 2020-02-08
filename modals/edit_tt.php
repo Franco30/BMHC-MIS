@@ -61,7 +61,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="edit_tt btn btn-success" value="<?php echo $fetch['tetanus_toxoid_id']; ?>">Save</button>
-                <button type="button" class="btn btn-danger" data-dismiss="modal" id="cancel4">Cancel</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal" id="cancel4">Close</button>
             </div>
         </div>
     </div>

@@ -99,7 +99,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-success" id="addnew">Save</button>
-                    <button type="button" class="btn btn-danger" data-dismiss="modal" id="cancel2">Cancel</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal" id="cancel2">Close</button>
                 </div>
             </form>
         </div>
