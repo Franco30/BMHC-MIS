@@ -405,7 +405,6 @@
             </div>
             <!-- END PAGE CONTENT -->
         </div>
-    </div>
     <!-- END PAGE CONTAINER -->
 
     <!-- START PRELOADS -->
@@ -422,7 +421,7 @@
     <!-- END PLUGINS -->
 
     <!-- START THIS PAGE PLUGINS-->
-        <script type="text/javascript" src="functions/patientmasterfile.js"></script>
+    <script type="text/javascript" src="functions/patientmasterfile.js"></script>
     <script type='text/javascript' src='js/plugins/icheck/icheck.min.js'></script>
     <script type="text/javascript" src="js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
     <script type="text/javascript" src="js/plugins/scrolltotop/scrolltopcontrol.js"></script>
