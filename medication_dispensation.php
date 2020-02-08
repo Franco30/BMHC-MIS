@@ -50,7 +50,7 @@
                         <div class="panel panel-default tabs">
                             <ul class="nav nav-tabs" role="tablist">
                                 <li class="active"><a href="#tab-first" role="tab" data-toggle="tab">Medication Dispensation Log</a></li>
-                                <li><a href="#tab-second" role="tab" data-toggle="tab">Medicine Stockin List</a></li>
+                                <li><a href="#tab-second" role="tab" data-toggle="tab">Add Stocks</a></li>
                                 <!--
                                 <div class="btn-group pull-right">
                                     <div class="pull-left">
