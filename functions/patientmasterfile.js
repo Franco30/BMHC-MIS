@@ -1,5 +1,6 @@
 $(document).ready(function () {
     showPMF();
+    showPMF2();
     $(document).on('click', '.updatepatient', function () {
         $patient_id = $(this).val();
         $patient_name = $('#patient_name' + $patient_id).val();
@@ -81,6 +82,23 @@ function showPMF() {
         },
         success: function (response) {
             $('#patientmasterfileTable').html(response);
+            var table = $('#patientmasterfiletable').DataTable({
+                "aaSorting": [[1, 'asc']]
+            });
+            }
+    });
+}
+
+function showPMF2() {
+    $.ajax({
+        url: 'tables/patientmasterfiletable2.php',
+        type: 'POST',
+        async: false,
+        data: {
+            show: 1
+        },
+        success: function (response) {
+            $('#patientmasterfileTable2').html(response);
             var table = $('#patientmasterfiletable').DataTable({
                 "aaSorting": [[1, 'asc']]
             });
