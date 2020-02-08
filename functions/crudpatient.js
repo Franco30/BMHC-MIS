@@ -5,7 +5,7 @@ $(document).ready(function () {
 
     //add patient ajax
     $(document).on('click', '#addnew', function () {
-        if ($('#patient_name').val() == "" || $('#age').val() == "" || $('#gender').val() == "" || $('#civilstatus').val() == "" || $('#birthdate').val() == "" || $('#purok').val() == "" || $('#height').val() == "" || $('#weight').val() == "" || $('#contact_no').val() == "" || $('#region_province').val() == "" || $('#streetaddress').val() == "" || $('#occupation').val() == "" || $('#philhealth_no').val() == "" || $('#contact_person').val() == "" || $('#emergency_no').val() == "") {
+        if ($('#patient_name').val() == "" || $('#age').val() == "" || $('#gender').val() == "" || $('#civilstatus').val() == "" || $('#birthdate').val() == "" || $('#purok').val() == "" || $('#height').val() == "" || $('#weight').val() == "" || $('#contact_no').val() == "" || $('#region_province').val() == "" || $('#streetaddress').val() == "" || $('#philhealth_no').val() == "" || $('#contact_person').val() == "" || $('#emergency_no').val() == "") {
             $('#modallabel').slideDown();
             $('#checkfield').html('<span class="fa fa-exclamation-circle"></span> All fields are required!');
             setTimeout(function () {
