@@ -99,7 +99,7 @@ function showPMF2() {
         },
         success: function (response) {
             $('#patientmasterfileTable2').html(response);
-            var table = $('#patientmasterfiletable').DataTable({
+            var table = $('#patientmasterfiletable2').DataTable({
                 "aaSorting": [[1, 'asc']]
             });
             }

@@ -3,7 +3,7 @@ require '../require/config.php';
 if(isset($_POST['show'])){
 ?>
 <div class="table-responsive">
-<table id="patientmasterfiletable" class="table datatable" width="100%">
+<table id="patientmasterfiletable2" class="table datatable" width="100%">
     <thead>
         <tr class="warning">
         <th><center>Patient No</center></th>
@@ -22,11 +22,10 @@ if(isset($_POST['show'])){
             <td><center><strong><?php echo $fetch['year']?><?php echo "0".$fetch['patient_id']?></strong></center></td>
             <td><strong><?php echo $fetch['patient_name']?></strong></td>
             <td><?php echo $fetch['gender']?></td>
-            <td><center><?php echo $fetch['year']?></center></td>
+            <td><center><?php echo $fetch['date']?></center></td>
             <td class="print"><center>                
-                <a href="patient_overview_overall_reports" class="btn btn-sm btn-info">Overview</a>
+                <a href="patient_overview_overall_reports?patient_id=<?php echo $fetch['patient_id']?>" class="btn btn-sm btn-info">Overview</a>
                 </center>
-                <?php require('../modals/edit_patient.php'); ?>
             </td>
         </tr>
         <?php
