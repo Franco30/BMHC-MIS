@@ -106,7 +106,7 @@
     <script>
         var date = new Date();
         $('#birthdate').datepicker({
-            format: 'MM dd, yyyy',
+            format: 'yyyy-mm-dd',
             language: 'en',
             startDate: new Date('1900-01-01'),
             endDate: date

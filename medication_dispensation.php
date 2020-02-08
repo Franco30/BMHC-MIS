@@ -143,7 +143,8 @@
         date.setDate(date.getDate());
 
         $('#date').datepicker({
-            startDate: date
+            startDate: date,
+            format: 'yyyy-mm-dd'
         });
 
     </script>

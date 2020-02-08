@@ -1,5 +1,6 @@
 $(document).ready(function () {
     showMedicine();
+    showMedicine2();
     showDispensedMedicine();
 
     $("#quantity").keyup(function () {
@@ -110,7 +111,7 @@ function showDispensedMedicine() {
 
 function showMedicine() {
     $.ajax({
-        url: 'tables/medicinetable.php',
+        url: 'tables/medicine_table2.php',
         type: 'POST',
         async: false,
         data: {
@@ -119,6 +120,26 @@ function showMedicine() {
         success: function (response) {
             $('#medicineTable').html(response);
             var table = $('#medicinetable').DataTable({
+                "aaSorting": [[4, 'desc']]
+            });
+//            $('.mt').dataTable({
+//                "aaSorting": [[4, 'desc']]
+//            });
+        }
+    });
+}
+
+function showMedicine2() {
+    $.ajax({
+        url: 'tables/medicinetable3.php',
+        type: 'POST',
+        async: false,
+        data: {
+            show: 1
+        },
+        success: function (response) {
+            $('#medicineTable3').html(response);
+            var table = $('#medicinetable3').DataTable({
                 "aaSorting": [[4, 'desc']]
             });
 //            $('.mt').dataTable({

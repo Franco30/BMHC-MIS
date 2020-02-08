@@ -11,7 +11,7 @@ if(isset($_POST['add'])){
     date_default_timezone_set('Asia/Manila');	
     $time=date("g:i a");
     //$date=date("F j, Y");
-    $date = date("m-d-y"); 
+    $date = date("yy-m-d"); 
     $month=date("F");
     $date_time=date("F j, Y g:i a");
 
