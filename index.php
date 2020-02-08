@@ -76,7 +76,7 @@
                                 </div>
                                 <div class="profile-data">
                                     <h1 style="color:#000000;font-size: 12px;">Jesse Franco Latosa</h1>
-                                    <span>Head Programmer</span>
+                                    <span>Lead Programmer</span>
                                 </div>
                             </div>
                             <div class="panel-body" style="background-color: #E91E63;color: white;">

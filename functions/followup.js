@@ -45,7 +45,10 @@ $(document).ready(function () {
                             $(document).find('.select').selectpicker();
                         });
                         $(document).ajaxComplete(function () {
-                            $(document).find('.datepicker').datepicker();
+                            $(document).find('.datepicker').datepicker({
+                            format: 'yyyy-mm-dd',
+                            language: 'en'
+                        });
                         });
                         show_follow_up_familyplanning();
                     }
@@ -96,7 +99,10 @@ $(document).ready(function () {
                         $(document).find('.select').selectpicker();
                     });
                     $(document).ajaxComplete(function () {
-                        $(document).find('.datepicker').datepicker();
+                        $(document).find('.datepicker').datepicker({
+                            format: 'yyyy-mm-dd',
+                            language: 'en'
+                        });
                     });
                     show_follow_up_familyplanning();
                 }
@@ -139,7 +145,9 @@ $(document).ready(function () {
                             $(document).find('.select').selectpicker();
                         });
                         $(document).ajaxComplete(function () {
-                            $(document).find('.datetimepicker').datetimepicker();
+                            $(document).find(".datetimepicker").datetimepicker({
+                                format: 'YYYY/MM/DD LT',
+                            });
                         });
                         show_follow_up_prenatal();
                     }
@@ -182,7 +190,9 @@ $(document).ready(function () {
                         $(document).find('.select').selectpicker();
                     });
                     $(document).ajaxComplete(function () {
-                        $(document).find('.datetimepicker').datetimepicker();
+                        $(document).find(".datetimepicker").datetimepicker({
+                                format: 'YYYY/MM/DD LT',
+                            });
                     });
                     show_follow_up_prenatal();
                 }
