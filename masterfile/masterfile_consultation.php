@@ -24,7 +24,7 @@ $f = $q->fetch_array();
                 <td><center><?php echo $fetch['pe_findings']?></center></td>
                 <td><center><?php echo $fetch['diagnosis']?></center></td>
                 <td><center><?php echo $fetch['lab_request']?></center></td>
-                <td class="print"><center><a class="btn btn-info" href="consultation_overview?patient_id=<?php echo $f['patient_id'];?>&&consultation_id=<?php echo $fetch['consultation_id'];?>">Overview</a></center></td>
+                <td class="print"><center><a class="btn btn-default" href="consultation_overview?patient_id=<?php echo $f['patient_id'];?>&&consultation_id=<?php echo $fetch['consultation_id'];?>">Overview</a></center></td>
             </tr>
             <?php
             }

@@ -84,7 +84,13 @@
 						<br>
 					</label>
 				</div>
-
+                <div class="col-md-2 print">
+                    <div class="alert alert-info fade in m-b-15" style="background-color: #7cdda7;color: #3c763d;border-color: #7cdda7;">
+                        <strong><i class="fa fa-print"></i> Press P to Print!</strong>
+                        <span class="close" data-dismiss="alert">&times;</span>
+                    </div>
+                </div>
+                <?php require 'require/pressp.php'?>
 				<div class="row">
 					<div class="col-md-12">
 						<?php
@@ -99,7 +105,7 @@
 								</h4>
 								<div class="btn-group pull-right">
 									<div class="pull-left">
-										<a href="prenatal_record2?patient_id=<?php echo $fetch['patient_id']?>&&prenatal_id=<?php echo $fetch3['prenatal_id']?>" class="btn btn-default">Back</a>
+										<a href="prenatal_record2?patient_id=<?php echo $fetch['patient_id']?>&&prenatal_id=<?php echo $fetch3['prenatal_id']?>" class="btn btn-default print">Back</a>
 									</div>
 								</div>
 							</div>

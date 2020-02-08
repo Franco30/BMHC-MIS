@@ -181,7 +181,7 @@
                             <center><span id="checkfield"></span></center>
                         </div>
                         <div class="panel panel-default tabs">
-                            <ul class="nav nav-tabs" role="tablist">
+                            <ul class="nav nav-tabs print" role="tablist">
                                 <li class="active"><a href="#tab-first" role="tab" data-toggle="tab">Monthly Cases per Month</a></li>
                                 <li><a href="#tab-second" role="tab" data-toggle="tab">Date Range </a></li>
                                 <li><a href="#tab-third" role="tab" data-toggle="tab">Individual Patient Record</a></li>

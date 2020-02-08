@@ -99,7 +99,7 @@ while($fetch = $query->fetch_array()){
 				<h4>Results</h4>
 				<div class="panel-body panel-body-table">
 					<div class="table-responsive">
-					<table class="table table-bordered" style="max-width: 300%;width: 200%;">
+					<table class="table table-hover table-bordered">
 						<thead>
 							<tr class="warning">
 								<th><center>Number of pregnancies</center></th>
