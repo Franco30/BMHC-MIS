@@ -15,7 +15,24 @@
 
 	<link rel="stylesheet" type="text/css" id="theme" href="css/theme-brown.css" />
 	<link rel="stylesheet" type="text/css" href="assets3/vendor/font-awesome/css/font-awesome.min.css" />
+	<link href="assets3/css/invoice-print.min.css" rel="stylesheet" />
+	<style type="text/css">
+		@media print {
+			@page {
+				margin: -40px 10px 10px 50px;
+				size: letter;
+			}
 
+			.print {
+				display: none !important;
+			}
+
+			.hidden-header {
+				display: inline !important;
+				margin: 0px 0px 0px 200px;
+			}
+		}
+	</style>
 </head>
 
 <body>
@@ -28,7 +45,7 @@
 		<div class="page-content">
 			<?php require 'require/adminheader.php' ?>
 			<!-- START BREADCRUMB -->
-			<ul class="breadcrumb">
+			<ul class="breadcrumb print">
 				<?php
 	       require 'require/config.php';
             $query = $conn->query("SELECT * FROM `patient` WHERE `patient_id` = '$_GET[patient_id]'") or die(mysqli_error());
@@ -44,124 +61,55 @@
 			<!-- END BREADCRUMB -->
 			<!-- PAGE CONTENT WRAPPER -->
 			<div class="page-content-wrap">
-
 				<div class="row">
-					<div class="col-md-12">
-						<div class="panel panel-default tabs">
-                            <ul class="nav nav-tabs" role="tablist">
-                                <li class="active"><a href="#tab-first" role="tab" data-toggle="tab">Consultation</a></li>
-                                <li><a href="#tab-second" role="tab" data-toggle="tab">Treatment</a></li>
+					<label class="hidden-header" style="display:none;">
+						<br>
+						<center><img src="assets/images/bmhclogo.png" style="width:131px;height:100px; padding: 10px; margin:0px 0px 0px -10px;" alt="drrmopicture" /></center>
+						<!--                        <img src="assets/images/bmhc.png" style="width:131px;height:100px; padding: -10px; margin:0px 0px 0px -10px;" alt="drrmopicture" />-->
+						<h3 style="margin: 0px 0px 0px 10px">
+							<center>Barangay Mansilingan Health Center</center>
+						</h3>
+						<h4 style="margin: 0px 0px 0px 10px">
+							<center>2nd Floor, Old City Hall, Luzuriaga St., Bacolod City 6100, Negros Occidental</center>
+						</h4>
+						<h4 style="margin: 0px 0px 0px 10px;">
+							<center>432-3879</center>
+						</h4>
+						<br>
+					</label>
+				</div>
+                <div class="col-md-2 print">
+                    <div class="alert alert-info fade in m-b-15" style="background-color: #7cdda7;color: #3c763d;border-color: #7cdda7;">
+                        <strong><i class="fa fa-print"></i> Press P to Print!</strong>
+                        <span class="close" data-dismiss="alert">&times;</span>
+                    </div>
+                </div>
+                <?php require 'require/pressp.php'?>
+				<div class="row">
+					<div class="invoice">
+						<div class="col-md-12">
+							<div id="alert" class="alert alert-info" style="display:none;">
+								<center><span id="alerttext"></span></center>
+							</div>
+							<div class="panel panel-primary">
+								<div class="panel-heading print">
+									<h3 class="panel-title"><strong><?php echo $fetch['patient_name']; ?></strong></h3>
 									<div class="btn-group pull-right">
 										<div class="pull-left">
 											<a href="patient_overview?id=<?php echo $fetch['patient_id']?>&&patient_name=<?php echo $fetch['patient_name'] ?>" class="btn btn-default btn-md">Back</a>
 										</div>
 									</div>
-                            </ul>
-                            <div class="panel-body">  
-                                    <div class="panel-body tab-content">
-                                        <div class="tab-pane active" id="tab-first">
-                                            <div class="row">
-										<div class="table-responsive">
-											<table class="table table-hover table-bordered">
-											<thead>
-												<tr class="warning">
-													<th><center>Consultation Date</center></th>
-													<th><center>Head of the Family</center></th>
-													<th><center>Weight</center></th>
-													<th><center>Blood Pressure</center></th>
-													<th><center>Temperature</center></th>
-													<th><center>Respiratory Rate</center></th>
-													<th><center>Pulse Rate</center></th>
-													<th><center>Complaints</center></th>
-													<th><center>Pertinent P.E Findings</center></th>
-													<th><center>Diagnosis</center></th>
-													<th><center>Laboratory Request</center></th>
-												</tr>
-											</thead>
-											<tbody>
-											<?php
-											require 'require/config.php';
-											$query = $conn->query("SELECT * FROM `consultation` WHERE `patient_id` = '$_GET[patient_id]' && `consultation_id` = '$_GET[consultation_id]' ORDER BY `consultation_id` DESC") or die(mysqli_error());
-											while($fetch = $query->fetch_array()){
-											?>
-												<tr>
-													<td><center><?php echo $fetch['consultation_date']?></center></td>
-													<td><center><?php echo $fetch['head_of_the_family']?></center></td>
-													<td><center><?php echo $fetch['weight']?></center></td>
-													<td><center><?php echo $fetch['bp']?></center></td>
-													<td><center><?php echo $fetch['temp']?></center></td>
-													<td><center><?php echo $fetch['rr']?></center></td>
-													<td><center><?php echo $fetch['pr']?></center></td>
-													<td><center><?php echo $fetch['complaints']?></center></td>
-													<td><center><?php echo $fetch['pe_findings']?></center></td>
-													<td><center><?php echo $fetch['diagnosis']?></center></td>
-													<td><center><?php echo $fetch['lab_request']?></center></td>
-												</tr>
-											<?php
-											}
-											$conn->close();
-											?>
-											</tbody>
-										</table>
-										</div> 
-                                            </div>
-                                        </div>
-                                        <div class="tab-pane" id="tab-second">
-                                            <div class="row">
-                                 				<div class="table-responsive">
-											<table class="table table-hover table-bordered">
-											<thead>
-												<tr class="warning">
-													<th><center>Medicine Category</center></th>
-													<th><center>Medication & Dosage</center></th>
-													<th><center>6 <br> (AM)</center></th>
-													<th><center>8 <br> (AM)</center></th>
-													<th><center>12 <br> (NN)</center></th>
-													<th><center>2 <br> (PM)</center></th>
-													<th><center>4 <br> (PM)</center></th>
-													<th><center>6 <br> (PM)</center></th>
-													<th><center>8 <br> (PM)</center></th>
-													<th><center>Quantity</center></th>
-													<th><center>Recommendation</center></th>
-												</tr>
-											</thead>
-											<tbody>
-												<?php
-													require 'require/config.php';
-													$query = $conn->query("SELECT * FROM `consultation_prescription` WHERE `patient_id` = '$_GET[patient_id]' && `consultation_id` = '$_GET[consultation_id]' ORDER BY `consultation_id` DESC") or die(mysqli_error());
-													while($fetch = $query->fetch_array()){
-													?>
-												<tr>
-													<td><center><?php echo $fetch['medicine_category']?></center></td>
-													<td><center><?php echo $fetch['medname']?></center></td>
-													<td style="font-weight: bold;"><center><?php echo $fetch['6am']?></center></td>
-													<td style="font-weight: bold;"><center><?php echo $fetch['8am']?></center></td>
-													<td style="font-weight: bold;"><center><?php echo $fetch['12nn']?></center></td>
-													<td style="font-weight: bold;"><center><?php echo $fetch['2pm']?></center></td>
-													<td style="font-weight: bold;"><center><?php echo $fetch['4pm']?></center></td>
-													<td style="font-weight: bold;"><center><?php echo $fetch['6pm']?></center></td>
-													<td style="font-weight: bold;"><center><?php echo $fetch['8pm']?></center></td>
-													<td style="font-weight: bold;"><center><?php echo $fetch['qty']?></center></td>
-													<td style="font-weight: bold;"><center><?php echo $fetch['recommendation']?></center></td>
-												</tr>
-												<?php
-													}
-													$conn->close();
-													?>
-											</tbody>
-										</table>
-										</div>
-                                                
-                                            </div>
-                                        </div>
-                                
-                            </div>
-                        </div>
+								</div>
+								<div class="panel-body">
+									<?php require 'masterfile/consultation_overview.php'?>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
-			</div>
 		</div>
 		<!-- END PAGE CONTENT WRAPPER -->
+	</div>
 	</div>
 	<!-- END PAGE CONTENT -->
 	<audio id="audio-alert" src="audio/alert.mp3" preload="auto"></audio>
@@ -177,11 +125,22 @@
 	<script type="text/javascript" src="js/plugins/bootstrap/bootstrap-timepicker.min.js"></script>
 	<script type="text/javascript" src="js/plugins/bootstrap/bootstrap-select.js"></script>
 	<script type="text/javascript" src="js/plugins/smartwizard/jquery.smartWizard-2.0.min.js"></script>
+	<script type="text/javascript" src="js/plugins/tocify/jquery.tocify.min.js"></script>
 
 	<script type="text/javascript" src="js/settings.js"></script>
 	<script type="text/javascript" src="js/plugins.js"></script>
 	<script type="text/javascript" src="js/actions.js"></script>
+	<script>
+		$(function() {
+			var toc = $("#tocify").tocify({
+				context: ".tocify-content",
+				showEffect: "fadeIn",
+				extendPage: false,
+				selectors: "h2, h3, h4"
+			});
+		});
 
+	</script>
 	<!-- END THIS PAGE PLUGINS -->
 
 

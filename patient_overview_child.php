@@ -17,6 +17,24 @@
 	<!-- CSS INCLUDE -->
 	<link rel="stylesheet" type="text/css" id="theme" href="css/theme-brown.css" />
 	<link rel="stylesheet" type="text/css" href="assets3/vendor/font-awesome/css/font-awesome.min.css" />
+	<link href="assets3/css/invoice-print.min.css" rel="stylesheet" />
+	<style type="text/css">
+		@media print {
+			@page {
+				margin: -40px 10px 10px 50px;
+				size: letter;
+			}
+
+			.print {
+				display: none !important;
+			}
+
+			.hidden-header {
+				display: inline !important;
+				margin: 0px 0px 0px 200px;
+			}
+		}
+	</style>
 	<!-- EOF CSS INCLUDE -->
 </head>
 
@@ -30,7 +48,7 @@
 		<div class="page-content">
 			<?php require 'require/adminheader.php' ?>
 			<!-- START BREADCRUMB -->
-			<ul class="breadcrumb">
+			<ul class="breadcrumb print">
 				<?php
 			require 'require/config.php';
 			$query = $conn->query("SELECT * FROM `patient_child` WHERE `child_id` = '$_GET[child_id]'") or die(mysqli_error());
@@ -45,14 +63,35 @@
 			<!-- PAGE CONTENT WRAPPER -->
 			<div class="page-content-wrap">
 				<div class="row">
+					<label class="hidden-header" style="display:none;">
+						<br>
+						<center><img src="assets/images/bmhclogo.png" style="width:131px;height:100px; padding: 10px; margin:0px 0px 0px -10px;" alt="drrmopicture" /></center>
+						<!--                        <img src="assets/images/bmhc.png" style="width:131px;height:100px; padding: -10px; margin:0px 0px 0px -10px;" alt="drrmopicture" />-->
+						<h3 style="margin: 0px 0px 0px 10px">
+							<center>Barangay Mansilingan Health Center</center>
+						</h3>
+						<h4 style="margin: 0px 0px 0px 10px">
+							<center>2nd Floor, Old City Hall, Luzuriaga St., Bacolod City 6100, Negros Occidental</center>
+						</h4>
+						<h4 style="margin: 0px 0px 0px 10px;">
+							<center>432-3879</center>
+						</h4>
+						<br>
+					</label>
+				</div>
+                <div class="col-md-2 print">
+                    <div class="alert alert-info fade in m-b-15" style="background-color: #7cdda7;color: #3c763d;border-color: #7cdda7;">
+                        <strong><i class="fa fa-print"></i> Press P to Print!</strong>
+                        <span class="close" data-dismiss="alert">&times;</span>
+                    </div>
+                </div>
+                <?php require 'require/pressp.php'?>
+				<div class="row">
 					<div class="col-md-12">
-						<div id="alert" class="alert alert-info" style="display:none;">
-							<center><span id="alerttext"></span></center>
-						</div>
 						<div class="panel panel-default">
 							<div class="panel-body">
 						<div class="panel panel-default tabs">
-							<ul class="nav nav-tabs" role="tablist">
+							<ul class="nav nav-tabs print" role="tablist">
 								<li class="active"><a href="#tab-first" role="tab" data-toggle="tab">Patient Info</a></li>
 								<?php if($fetch['status'] == 'Registered Immunization') { ?>
 								<li><a href="#tab-second" role="tab" data-toggle="tab">Immunization</a></li>
@@ -60,7 +99,7 @@
 							</ul>
 							<div class="panel-body tab-content">
 								<div class="tab-pane active" id="tab-first">
-									<div class="panel-body scroll" style="height: 430px;">
+									<div class="panel-body">
 										<div class="row">
 											<div class="col-md-3">
 												<div class="panel panel-default">
@@ -118,7 +157,7 @@
 												<div class="panel-heading">
 													<div class="btn-group pull-right">
 														<div class="pull-left">
-															<button class="btn btn-info btn-md" data-toggle="modal" data-target="#add_brattysis">Add Brother and Sister</button>
+															<button class="btn btn-info btn-md print" data-toggle="modal" data-target="#add_brattysis">Add Brother and Sister</button>
 														</div>
 													</div>
 												</div>

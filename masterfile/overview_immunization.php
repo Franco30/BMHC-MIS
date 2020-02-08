@@ -275,7 +275,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-md-3" style="position: relative;">
+					<div class="col-md-3 print" style="position: relative;">
 						<div id="tocify"></div>
 					</div>
 				

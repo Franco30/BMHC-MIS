@@ -161,6 +161,7 @@
                             <ul class="nav nav-tabs" role="tablist">
                                 <li class="active"><a href="#tab-first" role="tab" data-toggle="tab">Tabular Report</a></li>
                                 <li><a href="#tab-second" role="tab" data-toggle="tab">Date Range tabular Report</a></li>
+                                <li><a href="#tab-third" role="tab" data-toggle="tab">Individual Child Patient Record</a></li>
                             </ul>
                             <div class="panel-body tab-content">
 
@@ -359,6 +360,21 @@
                                         </div>
                                     </div>
                                 </div>
+                                
+                                <div class="tab-pane" id="tab-third">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="panel panel-default">
+                                                <!-- style="height: 470px;"-->
+                                                <div class="panel-body list-group list-group-contacts scroll">
+                                                    <div class="panel-body">
+                                                        <div id="childpatientmasterfileTable2"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </div>
                             </div>
                         </div>
                     </div>
@@ -380,6 +396,7 @@
     <script type="text/javascript" src="js/plugins/jquery/jquery.min.js"></script>
     <script type="text/javascript" src="js/plugins/jquery/jquery-ui.min.js"></script>
     <script type="text/javascript" src="js/plugins/bootstrap/bootstrap.min.js"></script>
+    <script type="text/javascript" src="functions/childpatientmasterfile.js"></script>
     <script type="text/javascript" src="functions/child_daterange.js"></script>
     <!-- END PLUGINS -->
 

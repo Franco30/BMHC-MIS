@@ -1,5 +1,6 @@
 $(document).ready(function () {
     showCPMF();
+    showCPMF2();
     $(document).on('click', '.editchild', function () {
         $child_id = $(this).val();
         $child_name = $('#child_name' + $child_id).val();
@@ -71,6 +72,23 @@ function showCPMF() {
         success: function (response) {
             $('#childpatientmasterfileTable').html(response);
             var table = $('#childpatientmasterfiletable').DataTable({
+                "aaSorting": [[1, 'asc']]
+            });
+        }
+    });
+}
+
+function showCPMF2() {
+    $.ajax({
+        url: 'tables/childpatientmasterfiletable2.php',
+        type: 'POST',
+        async: false,
+        data: {
+            show: 1
+        },
+        success: function (response) {
+            $('#childpatientmasterfileTable2').html(response);
+            var table = $('#childpatientmasterfiletable2').DataTable({
                 "aaSorting": [[1, 'asc']]
             });
         }
