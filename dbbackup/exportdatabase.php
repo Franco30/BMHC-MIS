@@ -37,11 +37,11 @@ $handle = fopen('bmhc'.date('F-j-Y-g-i-a').'.sql','w+');
 fwrite($handle, $return);
 fclose($handle);
 date_default_timezone_set('Asia/Manila');
-$date=date("F j, Y, g:i a");
+$date=date("yy-m-d, g:i a");
 
 $time=date("g:i a");
 $date2=date("F j, Y");
-$today = date("m/d/Y"); 
+$today = date("yy-m-d"); 
 $user_id=$_SESSION['user_id'];
 $remarks = "Successfully Backup the database";
 
