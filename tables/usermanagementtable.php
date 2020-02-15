@@ -13,7 +13,7 @@ if(isset($_POST['show'])){
             <th><center>Username</center></th>
 <!--            <th><center>Password</center></th>-->
             <th><center>Status</center></th>
-<!--            <th><center>Action</center></th>-->
+            <th><center>Action</center></th>
         </tr>
     </thead>
     <tbody>
@@ -32,14 +32,12 @@ if(isset($_POST['show'])){
             <td><center><?php  if ($fetch['status'] == '1') echo "<span class='badge badge-info'>Active</span>";
                 if ($fetch['status'] == '0') echo "<span class='badge badge-danger'>Inactive</span>";?>
                 </center></td>
-<!--
             <td>
             <center>
-                <button data-target="#edituser<?php //echo $fetch['user_id']; ?>" data-toggle="modal" class="btn btn-sm btn-info"><span class="fa fa-edit"></span> UPDATE</button>
+                <button data-target="#edituser<?php echo $fetch['user_id']; ?>" data-toggle="modal" class="btn btn-sm btn-info"><span class="fa fa-edit"></span> UPDATE</button>
             </center>
                 <?php require('../modals/edituser.php'); ?>
             </td>
--->
         </tr>
         <?php
     }
