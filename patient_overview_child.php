@@ -54,6 +54,8 @@
 			$query = $conn->query("SELECT * FROM `patient_child` WHERE `child_id` = '$_GET[child_id]'") or die(mysqli_error());
 			$fetch = $query->fetch_array();
 			$id = $fetch['child_id'];
+			$query2 = $conn->query("SELECT * FROM `immunization` WHERE `child_id` = '$_GET[child_id]'") or die(mysqli_error());
+			$fetch2 = $query2->fetch_array();
 					?>
 				<li>Data Entry</li>
 				<li><a href="master_file_patient">Patient Master File</a></li>
@@ -95,6 +97,11 @@
 								<li class="active"><a href="#tab-first" role="tab" data-toggle="tab">Patient Info</a></li>
 								<?php if($fetch['status'] == 'Registered Immunization') { ?>
 								<li><a href="#tab-second" role="tab" data-toggle="tab">Immunization</a></li>
+								<div class="btn-group pull-right">
+                                    <div class="pull-left">
+										<h3><strong><?php echo $fetch2['status'];?></strong></h3>
+                                    </div>
+                                </div>
 								<?php } ?>
 							</ul>
 							<div class="panel-body tab-content">
