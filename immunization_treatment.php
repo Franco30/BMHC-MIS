@@ -59,6 +59,7 @@
                                 </li>
                                 <div class="btn-group pull-right">
                                     <div class="pull-left">
+                                        <button class="btn btn-danger" data-toggle="modal" data-target="#end_treatment<?php echo $f2['immunization_id'];?>">End Treatment</button>
                                         <a href="immunization_table" class="btn btn-default">Back</a>
                                     </div>
                                 </div>
@@ -167,6 +168,7 @@
     </div>
     <?php require 'modals/add_feeding.php'; ?>
     <?php require 'modals/add_treatment.php'; ?>
+    <?php require 'modals/end_treatment.php'; ?>
     <!-- END PAGE CONTENT -->
     <audio id="audio-alert" src="audio/alert.mp3" preload="auto"></audio>
     <audio id="audio-fail" src="audio/fail.mp3" preload="auto"></audio>
@@ -176,6 +178,7 @@
     <script type="text/javascript" src="functions/crudfeeding2.js"></script>
     <script type="text/javascript" src="functions/crudtetanustoxoid.js"></script>
     <script type="text/javascript" src="functions/crudttfp.js"></script>
+    <script type="text/javascript" src="functions/endtreatment.js"></script>
     <script type="text/javascript" src="js/plugins/jquery/jquery-ui.min.js"></script>
     <script type="text/javascript" src="js/plugins/bootstrap/bootstrap.min.js"></script>
     <script type='text/javascript' src='js/plugins/icheck/icheck.min.js'></script>

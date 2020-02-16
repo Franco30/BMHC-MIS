@@ -15,7 +15,7 @@ if(isset($_POST['show'])){
     </thead>
     <tbody>
         <?php
-$query = $conn->query("SELECT * FROM `immunization`, `patient_child` WHERE `patient_child`.`child_id` = `immunization`.`child_id`") or die(mysqli_error());
+$query = $conn->query("SELECT * FROM `immunization`, `patient_child` WHERE `patient_child`.`child_id` = `immunization`.`child_id` && immunization.status = 'Currently in Treatment'") or die(mysqli_error());
     while($fetch = $query->fetch_array()){
         ?>
         <tr>

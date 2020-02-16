@@ -29,6 +29,7 @@ $(document).ready(function () {
             $("#ttype_response").hide();
         }
     });
+    
 // || $('#treatment_age').val() == "" || $('#treatment_weight').val() == "" || $('#treatment_height').val() == ""
     //add patient ajax
     $(document).on('click', '#addnew', function () {
