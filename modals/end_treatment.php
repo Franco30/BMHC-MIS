@@ -18,8 +18,8 @@ while($fetch = $query->fetch_array()){
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <div class="col-md-12">
-                                        <input type="text" class="form-control" name="child_id333" value="<?php echo $f2['child_id'];?>" required/>
-                                        <input type="text" class="form-control" name="immunization_id333" value="<?php echo $f2['immunization_id'];?>" required/>
+                                        <input type="hidden" class="form-control" name="child_id333" value="<?php echo $f2['child_id'];?>" required/>
+                                        <input type="hidden" class="form-control" name="immunization_id333" value="<?php echo $f2['immunization_id'];?>" required/>
                                         <label class="check"><input type="radio" class="iradio" name="status" value ="Treatment Completed" required/> Treatment Completed</label>
                                     </div>
                                     <div class="col-md-12">                                    
