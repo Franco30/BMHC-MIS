@@ -33,9 +33,10 @@ if($_FILES['database']['name'] != '')
             date_default_timezone_set('Asia/Manila');
             $date=date("F j, Y");
             $time=date("g:i a");
+            $today = date("yy-m-d");
             $conn = new mysqli("localhost", "root", "", "bmhc") or die(mysqli_error());
 
-            $conn->query("INSERT INTO `db_backup` VALUES('', '', 'Import', '$date', '$time', 'Successfully Imported Database')") or die(mysqli_error());
+            $conn->query("INSERT INTO `db_backup` VALUES('', '', 'Import', '$today', '$time', 'Successfully Imported Database')") or die(mysqli_error());
             $conn->close();
         }
     }
