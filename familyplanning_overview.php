@@ -88,7 +88,7 @@
                                     <h3 class="panel-title"><strong>Family Planning Record</strong></h3>
                                     <div class="btn-group pull-right">
                                         <div class="pull-left">
-                                            <a href="patient_overview?id=<?php echo $fetch['patient_id'];?>&&patient_name=<?php echo $fetch['patient_name'];?>" class="btn btn-default">Back</a>
+                                            <a href="patient_familyplanning?patient_id=<?php echo $fetch['patient_id']?>" class="btn btn-default">Back</a>
                                         </div>
                                     </div>
                                 </div>

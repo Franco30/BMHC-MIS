@@ -145,7 +145,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
-                                                        <div class="form-group" style="margin-left:-10px;margin-left:-10px;">
+                                                        <div class="form-group" style="margin-left:-10px;margin-right:-10px;">
                                                             <label>Name of Husband</label>
                                                             <input type="text" class="form-control" id="husband" placeholder="Enter Name of Husband" required />
                                                         </div>
