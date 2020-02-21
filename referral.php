@@ -165,17 +165,17 @@
                 switch (patientcategory2) {
 
                     case 'Registered2':
-                        document.getElementById("category3").style.display = "none";
-                        document.getElementById("category4").style.display = "block";
+                        document.getElementById("category33").style.display = "none";
+                        document.getElementById("category44").style.display = "block";
                         break;
 
                     case 'Unregistered2':
-                        document.getElementById("category4").style.display = "none";
-                        document.getElementById("category3").style.display = "block";
+                        document.getElementById("category44").style.display = "none";
+                        document.getElementById("category33").style.display = "block";
                         break;
 
                     default:
-                        document.getElementById("category4").style.display = "none";
+                        document.getElementById("category44").style.display = "none";
                 }
             });
         });

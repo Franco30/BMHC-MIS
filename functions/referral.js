@@ -143,7 +143,9 @@ function showPatient() {
         },
         success: function (response) {
             $('#referralpatientTable').html(response);
-            var table = $('#referralpatienttable').DataTable();
+            var table = $('#referralpatienttable').DataTable({
+                "aaSorting": [[4, 'desc']]
+            });
         }
     });
 }

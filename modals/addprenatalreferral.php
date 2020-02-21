@@ -13,7 +13,7 @@
                 </center>
             </div>
             <div class="modal-body">
-                <form id="prenatalreferralform">
+                <form id="prenatalreferralforms">
 
                     <div class="row">
                         <div class="col-md-6">
@@ -27,12 +27,12 @@
                                 <option value="Registered2">Registered Patients</option>
                             </select>
                             &nbsp;
-                            <div class="form-group" id="category3">
+                            <div class="form-group" id="category33">
                                 <label>Patient Name:</label>
                                 <input type="text" class="form-control" id="patient_name2" required />
                             </div>
 
-                            <div class="form-group" id="category4" style="display:none;">
+                            <div class="form-group" id="category44" style="display:none;">
                                 <label>Patient Name:</label>
                                 <select class="form-control select" data-live-search="true" id="registered2" required>
                                     <option value="">Select</option>

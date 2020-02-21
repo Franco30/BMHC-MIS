@@ -166,7 +166,9 @@ function showPP() {
         },
         success: function (response) {
             $('#prenatalreferralpatientTable').html(response);
-            var table = $('#prenatalreferralpatienttable').DataTable();
+            var table = $('#prenatalreferralpatienttable').DataTable({
+                "aaSorting": [[4, 'desc']]
+            });
         }
     });
 }
