@@ -88,9 +88,19 @@ $(document).ready(function () {
 
                 });
             }
-            $('form').trigger('reset');
+        $('#purpose').selectpicker('refresh');
+        $('#medicine_name').selectpicker('refresh');
+        $('#received').selectpicker('refresh');
+        $('form').trigger('reset');
         }
 
+    });
+    
+    $(document).on('click', '#cancel', function () {
+        $('#purpose').selectpicker('refresh');
+        $("#medicine_name").selectpicker('refresh');
+        $('#received').selectpicker('refresh');
+        $('form').trigger('reset');
     });
 
 });

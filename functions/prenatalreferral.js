@@ -85,6 +85,14 @@ $(document).ready(function () {
 
     });
 
+    $(document).on('click', '#cancel2', function () {
+        $('form').trigger('reset');
+        $('#referred_by2').selectpicker('refresh');
+        $('#patientcategory2').selectpicker('refresh');
+        $('#registered2').selectpicker('refresh');
+        $('#tt').selectpicker('refresh');
+    });
+    
     $(document).on('click', '.updateprenatalreferral', function () {
 
         $referral_id2 = $(this).val();

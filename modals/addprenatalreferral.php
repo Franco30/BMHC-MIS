@@ -192,6 +192,7 @@
                 </form>
             </div>
             <div class="modal-footer">
+                <button type="button" class="btn btn-warning" id="cancel2">Reset</button>
                 <button type="button" id="addnew2" class="btn btn-success">Save</button>
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
             </div>

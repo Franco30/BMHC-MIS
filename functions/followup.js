@@ -46,9 +46,9 @@ $(document).ready(function () {
                         });
                         $(document).ajaxComplete(function () {
                             $(document).find('.datepicker').datepicker({
-                            format: 'yyyy-mm-dd',
-                            language: 'en'
-                        });
+                                format: 'yyyy-mm-dd',
+                                language: 'en'
+                            });
                         });
                         show_follow_up_familyplanning();
                     }
@@ -56,8 +56,18 @@ $(document).ready(function () {
                 });
             }
             $('form').trigger('reset');
+            $('#patient').selectpicker('refresh');
+            $('#method').selectpicker('refresh');
+            $('#provider').selectpicker('refresh');
         }
 
+    });
+
+    $(document).on('click', '#cancel', function () {
+        $('#patient').selectpicker('refresh');
+        $('form').trigger('reset');
+        $('#method').selectpicker('refresh');
+        $('#provider').selectpicker('refresh');
     });
 
     $(document).on('click', '.edit_fp_follow_up', function () {
@@ -108,6 +118,11 @@ $(document).ready(function () {
                 }
             });
         }
+    });
+
+    $(document).on('click', '#cancel22', function () {
+        $('#patient2').selectpicker('refresh');
+        $('form').trigger('reset');
     });
 
     $(document).on('click', '#add_prenatal_follow_up', function () {
@@ -191,8 +206,8 @@ $(document).ready(function () {
                     });
                     $(document).ajaxComplete(function () {
                         $(document).find(".datetimepicker").datetimepicker({
-                                format: 'YYYY/MM/DD LT',
-                            });
+                            format: 'YYYY/MM/DD LT',
+                        });
                     });
                     show_follow_up_prenatal();
                 }

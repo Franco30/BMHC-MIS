@@ -56,7 +56,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" id="add_prenatal_follow_up" class="btn btn-success">Save</button>
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-danger" id="cancel22" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>

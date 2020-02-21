@@ -69,6 +69,12 @@ $(document).ready(function () {
     });
 });
 
+    $(document).on('click', '#cancel2', function () {
+            $('#purok2').selectpicker('refresh');
+            $('form').trigger('reset');
+            $('#gender2').selectpicker('refresh');
+    });
+
 function showCPatient() {
     $.ajax({
         url: 'tables/childpatienttable.php',

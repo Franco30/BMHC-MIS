@@ -65,10 +65,20 @@ $(document).ready(function () {
                 });
             }
             $('form').trigger('reset');
+            $('#gender').selectpicker('refresh');
+            $('#civilstatus').selectpicker('refresh');
+            $('#purok').selectpicker('refresh');
         }
 
     });
 });
+
+    $(document).on('click', '#cancel', function () {
+            $('#purok').selectpicker('refresh');
+            $('form').trigger('reset');
+            $('#gender').selectpicker('refresh');
+            $('#civilstatus').selectpicker('refresh');
+    });
 
 function showPatient() {
     $.ajax({

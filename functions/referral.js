@@ -23,7 +23,7 @@ $(document).ready(function () {
             $origin = $('#origin').val();
             $destination = $('#destination').val();
             $referred_by = $('#referred_by').val();
-//            $designation = $('#designation').val();
+            //            $designation = $('#designation').val();
 
             if (confirm('Are you sure you want to add this new Referral?')) {
                 $.ajax({
@@ -46,7 +46,7 @@ $(document).ready(function () {
                         origin: $origin,
                         destination: $destination,
                         referred_by: $referred_by,
-//                        designation: $designation,
+                        //                        designation: $designation,
                         add: 1,
                     },
                     success: function () {
@@ -71,9 +71,17 @@ $(document).ready(function () {
         }
 
     });
-    
+
+    $(document).on('click', '#cancel', function () {
+        $('form').trigger('reset');
+        $('#referred_by').selectpicker('refresh');
+        $('#gender').selectpicker('refresh');
+        $('#registered').selectpicker('refresh');
+        $('#patientcategory').selectpicker('refresh');
+    });
+
     $(document).on('click', '.updatereferral', function () {
-        
+
         $referral_id = $(this).val();
         $date = $('#date' + $referral_id).val();
         $patient_name = $('#patient_name' + $referral_id).val();
