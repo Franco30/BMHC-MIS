@@ -2,8 +2,12 @@ $(document).ready(function () {
     showCPMF();
     showCPMF2();
     $(document).on('click', '.editchild', function () {
+        $(document).ajaxComplete(function () {
             $(document).find('.select').selectpicker();
+        });
+        $(document).ajaxComplete(function () {
             $(document).find('.datepicker').datepicker();
+        });
         $child_id = $(this).val();
         $child_name = $('#child_name' + $child_id).val();
         $gender2 = $('#gender2' + $child_id).val();
