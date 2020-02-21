@@ -2,6 +2,8 @@ $(document).ready(function () {
     showCPMF();
     showCPMF2();
     $(document).on('click', '.editchild', function () {
+            $(document).find('.select').selectpicker();
+            $(document).find('.datepicker').datepicker();
         $child_id = $(this).val();
         $child_name = $('#child_name' + $child_id).val();
         $gender2 = $('#gender2' + $child_id).val();
@@ -42,7 +44,7 @@ $(document).ready(function () {
                     edit: 1,
                 },
                 success: function () {
-                    $('#edit_child_patient'+ $child_id).modal('hide');
+                    $('#edit_child_patient' + $child_id).modal('hide');
                     $('#alert').slideDown();
                     $('#alerttext').text('Successfully updated Patient');
                     setTimeout(function () {

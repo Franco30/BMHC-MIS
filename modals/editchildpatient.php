@@ -22,7 +22,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group" style="margin-left:-10px;">
                                         <label>Gender</label>
-                                        <select class="form-control select" style="display: none;" id="gender2<?php echo $fetch['child_id']; ?>">
+                                        <select class="form-control select" id="gender2<?php echo $fetch['child_id']; ?>">
                                             <option value="<?php echo $fetch['gender']; ?>"><?php echo $fetch['gender']; ?></option>
                                             <option value="Male">Male</option>
                                             <option value="Female">Female</option>
@@ -54,7 +54,7 @@
                             &nbsp;
                             <div class="form-group">
                                 <label>Purok</label>
-                                <select class="form-control select" data-live-search="true" style="display: none;" id="purok2<?php echo $fetch['child_id']; ?>">
+                                <select class="form-control select" data-live-search="true" id="purok2<?php echo $fetch['child_id']; ?>">
                                     <option value="<?php echo $fetch['purok']; ?>"><?php echo $fetch['purok']; ?></option>
                                     <option value="Gauzon">Prk. Gauzon</option>
                                     <option value="Himaya">Prk. Himaya</option>
