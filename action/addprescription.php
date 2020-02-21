@@ -7,15 +7,15 @@ if(isset($_POST['add'])){
     $consultation_id = $conn -> real_escape_string($_POST['consultation_id']);
     $patient_id = $conn -> real_escape_string($_POST['patient_id']);
     //$medicine_category = $conn -> real_escape_string($_POST['medicine_category']);
-    $medname = $conn -> real_escape_string($_POST['medname']);
-    $sixam = $conn -> real_escape_string($_POST['sixam']);
-    $eightam = $conn -> real_escape_string($_POST['eightam']);
-    $twelvenoon = $conn -> real_escape_string($_POST['twelvenoon']);
-    $twopm = $conn -> real_escape_string($_POST['twopm']);
-    $fourpm = $conn -> real_escape_string($_POST['fourpm']);
-    $sixpm = $conn -> real_escape_string($_POST['sixpm']);
-    $eightpm = $conn -> real_escape_string($_POST['eightpm']);
-    $qty = $conn -> real_escape_string($_POST['qty']);
+    $medname = $_POST['medname'];
+    $sixam = $_POST['sixam'];
+    $eightam = $_POST['eightam'];
+    $twelvenoon = $_POST['twelvenoon'];
+    $twopm = $_POST['twopm'];
+    $fourpm = $_POST['fourpm'];
+    $sixpm = $_POST['sixpm'];
+    $eightpm = $_POST['eightpm'];
+    $qty = $_POST['qty'];
     $recommendation = $conn -> real_escape_string($_POST['recommendation']);
     
     $user_id=$_SESSION['user_id'];
