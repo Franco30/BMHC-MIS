@@ -25,7 +25,7 @@ while($fetch = $query->fetch_array()){
                 <td><center><strong><?php echo $f['year']?><?php echo "0".$fetch['patient_id']?></strong></center>
                 </td>
                 <td><center><strong><?php echo $fetch['consultation_date']?></strong></center></td>
-                <td><center><?php echo $fetch['complaints']?></center></td>
+                <td><?php echo $fetch['complaints']?></td>
                 <td class="print">
                     <center>
                         <?php if($fetch['status'] == 'No Prescription') { ?>

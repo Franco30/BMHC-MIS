@@ -25,7 +25,7 @@ if(isset($_POST['show'])){
         ?>
         <tr>
             <td>
-                <center><strong><?php echo $fetch['medicine_name']?></strong></center>
+               <strong><?php echo $fetch['medicine_name']?></strong>
             </td>
             <td>
                 <center><?php echo $fetch['quantity']?></center>

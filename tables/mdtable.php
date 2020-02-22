@@ -30,13 +30,13 @@ if(isset($_POST['show'])){
 		?>
         <tr>
             <td>
-                <center><strong><?php echo $fetch['patient_name']?></strong></center>
+                <strong><?php echo $fetch['patient_name']?></strong>
             </td>
             <td>
-                <center><?php echo $fetch['purpose']?></center>
+                <?php echo $fetch['purpose']?>
             </td>
             <td>
-                <center><?php echo $fetch['medicine_name']?></center>
+                <?php echo $fetch['medicine_name']?>
             </td>
             <td>
                 <center><?php echo $fetch['quantity']?></center>
