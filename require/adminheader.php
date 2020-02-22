@@ -97,7 +97,8 @@
 <?php
 date_default_timezone_set('Asia/Manila');
 //$date_today = date('F j, Y');
-$date_today = date('m/d/Y');
+//$date_today = date('m/d/Y');
+$date_today = date("yy-m-d");
 require 'require/config.php';
 $q = $conn->query("SELECT COUNT(*) as count from `prenatal_follow_up` WHERE `follow_up_date_time` REGEXP '$date_today' && `follow_up_status` = 'Pending'") or die(mysqli_error());
 $f = $q->fetch_array();
@@ -144,7 +145,8 @@ $f = $q->fetch_array();
     <li class="xn-icon-button pull-right">
         <?php
         date_default_timezone_set('Asia/Manila');
-        $date_today = date('m/d/Y');
+        //$date_today = date('m/d/Y');
+        $date_today = date("yy-m-d");
 		//$date_today = date('F j, Y');
         require 'require/config.php';
 		$q = $conn->query("SELECT COUNT(*) as count from `fp_follow_up` WHERE `next_service_date` REGEXP '$date_today' && `follow_up_status` = 'Pending'") or die(mysqli_error());
@@ -236,7 +238,8 @@ $f = $q->fetch_array();
     <li class="xn-icon-button pull-right">
         <?php
 		date_default_timezone_set('Asia/Manila');
-		$date_today = date('F j, Y');
+		//$date_today = date('F j, Y');
+        $date_today = date("yy-m-d");
 		require 'require/config.php';
 		$query = $conn->query("SELECT * FROM `medication_dispensation` ORDER BY `dispensation_id` DESC") or die(mysqli_error());
 		$fetch = $query->fetch_array();

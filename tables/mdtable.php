@@ -18,7 +18,7 @@ if(isset($_POST['show'])){
                 <center>Quantity</center>
             </th>
             <th>
-                <center>Date and TIme</center>
+                <center>Date and Time</center>
             </th>
         </tr>
     </thead>
