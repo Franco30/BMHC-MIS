@@ -297,7 +297,7 @@
                                         <div id="chartContainer7.3" class="stackedareapurok reporttype" style="width: 100%; height: 300px"></div>
                                         <div id="chartContainer" class="drilldown reporttype" style="width: 100%; height: 310px"></div>
                                         <div class="pull-right">
-                                            <button class="btn btn-info invisible" id="backButton"><span class="fa fa-arrow-circle-left"></span> Back</button>
+                                            <button class="btn btn-info invisible print" id="backButton"><span class="fa fa-arrow-circle-left"></span> Back</button>
 <!--                                            style="margin: -51px;margin-right: 0px;margin-top: -771px;"-->
                                         </div>
                                         <?php require 'reports/patient_monthly.php'?>

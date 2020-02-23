@@ -206,7 +206,7 @@
                     toolTipContent: "{label} <br/> {y}", 
                     indexLabel: "{y}", 
                     showInLegend: true,
-                    legendText: "{label}",
+                    legendText: "Patients per Year",
                     dataPoints: <?php echo json_encode($data_points3); ?>
                 }
                     ] 

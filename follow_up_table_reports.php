@@ -76,16 +76,16 @@
 											<tbody>
 												<?php
 	                                   //$month = date("M", strtotime("+8 HOURS"));
-                                       $month = date("m", strtotime("+8 HOURS")); 
+                                       $month = date("Y-m", strtotime("+8 HOURS")); 
 										require 'require/config.php';
 										$query = $conn->query("SELECT * FROM `prenatal_follow_up`, `patient` where patient.patient_id = prenatal_follow_up.patient_id && patient.status = 'Active' && follow_up_date_time REGEXP '$month' group by patient_name") or die(mysqli_error());
 										while($fetch = $query->fetch_array()){
 												?>                                      
 												<tr>
 													<td><center><strong><?php echo $fetch['year']."0".$fetch['patient_id']?></strong></center></td>
-													<td><center><strong><?php echo $fetch['patient_name']?></strong></center></td>
+													<td><strong><?php echo $fetch['patient_name']?></strong></td>
 													<td><center><?php echo $fetch['contact_no']?></center></td>
-													<td><center>Prk. <?php echo $fetch['purok']." ".$fetch['street_address']?></center></td>
+													<td>Prk. <?php echo $fetch['purok']." ".$fetch['street_address']?></td>
 													<td><center><?php echo $fetch['follow_up_date_time']?></center></td>
                                                     <td>
                                                     <center>
@@ -134,16 +134,16 @@
 											<tbody>
 												<?php
 	                                   //$month = date("M", strtotime("+8 HOURS"));
-                                       $month = date("m", strtotime("+8 HOURS")); 
+                                       $month = date("Y-m", strtotime("+8 HOURS")); 
 										require 'require/config.php';
-										$query = $conn->query("SELECT * FROM `fp_follow_up`, `patient` where patient.patient_id = fp_follow_up.patient_id && patient.status = 'Active' && next_service_date REGEXP '$month' group by patient_name") or die(mysqli_error());
+										$query = $conn->query("SELECT * FROM `fp_follow_up`, `patient` where patient.patient_id = fp_follow_up.patient_id && patient.status = 'Active' && `fp_follow_up`.`next_service_date` REGEXP '$month' group by patient_name") or die(mysqli_error());
 										while($fetch = $query->fetch_array()){
 												?>                                      
 												<tr>
 													<td><center><strong><?php echo $fetch['year']."0".$fetch['patient_id']?></strong></center></td>
-													<td><center><strong><?php echo $fetch['patient_name']?></strong></center></td>
+													<td><strong><?php echo $fetch['patient_name']?></strong></td>
 													<td><center><?php echo $fetch['contact_no']?></center></td>
-													<td><center>Prk. <?php echo $fetch['purok']." ".$fetch['street_address']?></center></td>
+													<td>Prk. <?php echo $fetch['purok']." ".$fetch['street_address']?></td>
 													<td><center><?php echo $fetch['next_service_date']?></center></td>
                                                     <td>
                                                     <center>

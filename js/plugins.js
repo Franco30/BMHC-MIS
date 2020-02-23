@@ -6,7 +6,7 @@
                 var feDateTimepicker = function () {
                     if ($(".datetimepicker").length > 0) {
                         $(".datetimepicker").datetimepicker({
-                               format:'YYYY/MM/DD LT',
+                               format:'YYYY-MM-DD LT',
                         });
 
                         $("#dp-2,#dp-3,#dp-4").datetimepicker(); // Sample

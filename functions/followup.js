@@ -161,7 +161,7 @@ $(document).ready(function () {
                         });
                         $(document).ajaxComplete(function () {
                             $(document).find(".datetimepicker").datetimepicker({
-                                format: 'YYYY/MM/DD LT',
+                                format: 'YYYY-MM-DD LT',
                             });
                         });
                         show_follow_up_prenatal();
@@ -206,7 +206,7 @@ $(document).ready(function () {
                     });
                     $(document).ajaxComplete(function () {
                         $(document).find(".datetimepicker").datetimepicker({
-                            format: 'YYYY/MM/DD LT',
+                            format: 'YYYY-MM-DD LT',
                         });
                     });
                     show_follow_up_prenatal();

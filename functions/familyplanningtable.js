@@ -12,7 +12,9 @@ function showFPPatient() {
         },
         success: function (response) {
             $('#fppatientTable').html(response);
-            var table = $('#fppatienttable').DataTable();
+            var table = $('#fppatienttable').DataTable({
+                "aaSorting": [[4, 'asc']]
+            });
         }
     });
 }

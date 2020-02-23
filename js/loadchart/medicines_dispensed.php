@@ -124,6 +124,7 @@ json_encode($data_points);
 				gridDashType: "dot",
 				gridThickness: 1,
 				labelFontColor: "black",
+				labelFontSize: 10,
 				crosshair: {
 					enabled: true
 				}
@@ -137,6 +138,7 @@ json_encode($data_points);
 			},
 			data: [{
 				type: "pie",
+				indexLabelFontSize: 10,
 				startAngle: 240,
 				radius: 100,
 				toolTipContent: "{label} <br/> {y} pcs.",
@@ -180,6 +182,7 @@ json_encode($data_points);
 			axisX: {
 				interval: 1,
 				labelFontColor: "black",
+				labelFontSize: 8,
 			},
 			axisY: {
 				//title: "Stocks Remaining", 
@@ -228,6 +231,7 @@ json_encode($data_points);
 			axisX: {
 				interval: 1,
 				labelFontColor: "black",
+				labelFontSize: 8,
 			},
 			axisY: {
 				//title: "Stocks Remaining", 
@@ -235,12 +239,13 @@ json_encode($data_points);
 			},
 			data: [{
 				type: "line",
+				lineColor:"#22a6b3",
 				indexLabel: "{y} pcs.",
 				toolTipContent: "{label} <br/> {y} pcs.",
 				//legendText: "<?php echo $f1['medicine_name']?>",
 				//					name: "Total Patients this year",
-				dataPoints: <?php echo json_encode($data_points); ?>
-			}]
+				dataPoints: <?php echo json_encode($data_points); ?>, markerColor: "#22a6b3"
+			}],
 		});
 		var chart5 = new CanvasJS.Chart("chartContainer6", {
 			theme: "light2",
@@ -283,6 +288,7 @@ json_encode($data_points);
 			},
 			data: [{
 				type: "doughnut",
+				indexLabelFontSize: 10,
 				startAngle: 240,
 				radius: 100,
 				indexLabel: "{label} {y} pcs.",
