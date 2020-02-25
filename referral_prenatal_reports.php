@@ -169,7 +169,7 @@
                             <center><span id="checkfield"></span></center>
                         </div>
                         <div class="panel panel-default tabs">
-                            <ul class="nav nav-tabs" role="tablist">
+                            <ul class="nav nav-tabs print" role="tablist">
                                 <li class="active"><a href="#tab-first" role="tab" data-toggle="tab">Tabular Report</a></li>
                                 <li><a href="#tab-second" role="tab" data-toggle="tab">Date Range tabular Report</a></li>
                             </ul>
@@ -331,7 +331,7 @@
                                                         <form id="prenataldaterange">
                                                         <input type="text" class="form-control datepicker" placeholder="Start" id="date1" />
                                                         <input type="text" class="form-control datepicker" placeholder="End" id="date2" />
-                                                        <button style="margin-left: 6px;" type="button" class="btn btn-success" id="btn_search"><span class="glyphicon glyphicon-search print" style="margin-right: 0px;"></span></button> <button type="button" id="reset" class="btn btn-info print"><span class="glyphicon glyphicon-refresh" style="margin-right: 0px;"><span></span></span></button>
+                                                        <button style="margin-left: 6px;" type="button" class="btn btn-success print" id="btn_search"><span class="glyphicon glyphicon-search print" style="margin-right: 0px;"></span></button> <button type="button" id="reset" class="btn btn-info print"><span class="glyphicon glyphicon-refresh" style="margin-right: 0px;"><span></span></span></button>
                                                         </form>
                                                     </div>
                                                 </div>
