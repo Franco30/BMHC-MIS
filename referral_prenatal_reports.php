@@ -62,6 +62,16 @@
             <!-- END BREADCRUMB -->
             <!-- PAGE CONTENT WRAPPER -->
             <div class="page-content-wrap">
+                <div class="row">
+                    <div class="col-md-1"></div>
+                    <?php
+                        date_default_timezone_set('Asia/Manila');
+                        $date=date("F j, Y");
+                    ?>
+                    <div class="col-md-3">
+                        <h6 style="float:right; display:none;" class="hidden-header"><?php echo $date?></h6>
+                    </div>
+                </div>
                 <div class="row print">
                     <div class="col-md-2">
                         <div class="form-group">
@@ -317,16 +327,16 @@
                                             <div class="panel-heading">
                                                 <h3 class="panel-title"><strong>Date Range Tabular Report</strong></h3>
                                                 <div class="btn-group pull-right">
-                                                    <div class="form-inline print">
+                                                    <div class="form-inline">
                                                         <form id="prenataldaterange">
                                                         <input type="text" class="form-control datepicker" placeholder="Start" id="date1" />
                                                         <input type="text" class="form-control datepicker" placeholder="End" id="date2" />
-                                                        <button style="margin-left: 6px;" type="button" class="btn btn-success" id="btn_search"><span class="glyphicon glyphicon-search" style="margin-right: 0px;"></span></button> <button type="button" id="reset" class="btn btn-info"><span class="glyphicon glyphicon-refresh" style="margin-right: 0px;"><span></span></span></button>
+                                                        <button style="margin-left: 6px;" type="button" class="btn btn-success" id="btn_search"><span class="glyphicon glyphicon-search print" style="margin-right: 0px;"></span></button> <button type="button" id="reset" class="btn btn-info print"><span class="glyphicon glyphicon-refresh" style="margin-right: 0px;"><span></span></span></button>
                                                         </form>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="panel-body list-group list-group-contacts scroll" style="height: 595px;">
+                                            <div class="panel-body list-group list-group-contacts">
                                                 <div class="panel-body panel-body-table">
                                                     <div id="patient_daterange">
                                                         <div class="table-responsive">
@@ -360,6 +370,24 @@
                                         </div>
                                     </div>
                                 </div>
+                                                <?php
+                require 'require/config.php';
+                $year = date('Y');
+                if(isset($_GET['year']))
+                {
+                    $year=$_GET['year'];
+                }
+                $query = $conn->query("SELECT * FROM `users` WHERE `user_id` = $_SESSION[user_id]") or die(mysqli_error());
+                $find = $query->fetch_array();
+                $query = $conn->query("SELECT count(*) as total FROM `referral_prenatal` where `year` = '$year'") or die(mysqli_error());
+                $fetch = $query->fetch_array();
+                ?>
+                <hr style="margin-top: 0px;">
+                <h4>Total Prenatal Referral for the Year <?php echo $year. ' : <strong> ' .$fetch['total'].' Patients</strong>'?></h4> <hr>
+                <small>Approved By:</small>
+                <br><br>
+                <h3><?php echo $find['fullname']?></h3>
+                <small><?php echo $find['position']?></small>
                             </div>
                         </div>
                     </div>

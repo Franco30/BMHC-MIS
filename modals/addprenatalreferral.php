@@ -39,7 +39,7 @@
                                     <?php
                                     require 'require/config.php';
                                     $query = $conn->query("SELECT * FROM `patient` WHERE `status` = 'Active' && `gender` = 'Female' ORDER BY `patient_id` DESC") or die(mysqli_error());
-
+                                    
                                     while($fetch = $query->fetch_array()){
                                     ?>
                                     <option value="<?php echo $fetch['patient_name'];?>"><?php echo $fetch['patient_name']?></option>

@@ -62,6 +62,16 @@
             <!-- END BREADCRUMB -->
             <!-- PAGE CONTENT WRAPPER -->
             <div class="page-content-wrap">
+                <div class="row">
+                    <div class="col-md-1"></div>
+                    <?php
+                        date_default_timezone_set('Asia/Manila');
+                        $date=date("F j, Y");
+                    ?>
+                    <div class="col-md-3">
+                        <h6 style="float:right; display:none;" class="hidden-header"><?php echo $date?></h6>
+                    </div>
+                </div>
                 <div class="row print">
                     <div class="col-md-2">
                         <div class="form-group">
@@ -120,7 +130,6 @@
                         <span class="close" data-dismiss="alert">&times;</span>
                     </div>
                 </div>
-
                 <div class="row">
                     <label class="hidden-header" style="display:none;">
                         <br>
@@ -158,7 +167,7 @@
                             <center><span id="checkfield"></span></center>
                         </div>
                         <div class="panel panel-default tabs">
-                            <ul class="nav nav-tabs" role="tablist">
+                            <ul class="nav nav-tabs print" role="tablist">
                                 <li class="active"><a href="#tab-first" role="tab" data-toggle="tab">Tabular Report</a></li>
                                 <li><a href="#tab-second" role="tab" data-toggle="tab">Date Range tabular Report</a></li>
                             </ul>
@@ -361,6 +370,24 @@
                                         </div>
                                     </div>
                                 </div>
+                <?php
+                require 'require/config.php';
+                $year = date('Y');
+                if(isset($_GET['year']))
+                {
+                    $year=$_GET['year'];
+                }
+                $query = $conn->query("SELECT * FROM `users` WHERE `user_id` = $_SESSION[user_id]") or die(mysqli_error());
+                $find = $query->fetch_array();
+                $query = $conn->query("SELECT count(*) as total FROM `consultation` where `year` = '$year'") or die(mysqli_error());
+                $fetch = $query->fetch_array();
+                ?>
+                <hr style="margin-top: 0px;">
+                <h4>Total Consultation for the Year <?php echo $year. ' : <strong> ' .$fetch['total'].' Patients</strong>'?></h4> <hr>
+                <small>Approved By:</small>
+                <br><br>
+                <h3><?php echo $find['fullname']?></h3>
+                <small><?php echo $find['position']?></small>
                             </div>
                         </div>
                     </div>

@@ -18,11 +18,32 @@
     <link rel="stylesheet" type="text/css" id="theme" href="css/theme-brown.css" />
     <link rel="stylesheet" type="text/css" href="assets3/vendor/font-awesome/css/font-awesome.min.css" />
     <!-- EOF CSS INCLUDE -->
+    <link href="assets3/css/invoice-print.min.css" rel="stylesheet" />
     <script type="text/javascript" src="js/plugins/jquery/jquery.min.js"></script>
     <script type="text/javascript" src="js/plugins/jquery/jquery-ui.min.js"></script>
     <script type="text/javascript" src="js/jquery.canvasjs.min.js"></script>
     <?php require 'js/loadchart/medicines_dispensed.php'?>
     <?php require 'js/loadcharts/reports/reportsinventory.php'?>
+        <style type="text/css">
+        @media print {
+/*
+            @page {
+                margin: -40px 10px 10px 50px;
+                size: letter;
+            }
+*/
+
+            .print {
+                display: none !important;
+            }
+
+            .hidden-header {
+                display: inline !important;
+                margin: 0px 0px 0px 200px;
+            }
+        }
+
+    </style>
 </head>
 
 <body>
@@ -35,14 +56,30 @@
         <div class="page-content">
             <?php require 'require/adminheader.php' ?>
             <!-- START BREADCRUMB -->
-            <ul class="breadcrumb">
+            <ul class="breadcrumb print">
                 <li>Reports</li>
                 <li class="active"><strong><mark>Inventory Report</mark></strong></li>
             </ul>
             <!-- END BREADCRUMB -->
             <!-- PAGE CONTENT WRAPPER -->
             <div class="page-content-wrap">
-
+                <div class="row">
+                    <label class="hidden-header" style="display:none;">
+                        <br>
+                        <center><img src="assets/images/bmhclogo.png" style="width:131px;height:100px; padding: 10px; margin:0px 0px 0px -10px;" alt="bmhclogo" /></center>
+                        <!--                        <img src="assets/images/bmhc.png" style="width:131px;height:100px; padding: -10px; margin:0px 0px 0px -10px;" alt="drrmopicture" />-->
+                        <h3 style="margin: 0px 0px 0px 10px">
+                            <center>Barangay Mansilingan Health Center</center>
+                        </h3>
+                        <h4 style="margin: 0px 0px 0px 10px">
+                            <center>Brgy. Mansilingan 6100 Bacolod City</center>
+                        </h4>
+                        <h4 style="margin: 0px 0px 0px 10px">
+                            <center>(034) 434-4098</center>
+                        </h4>
+                        <br>
+                    </label>
+                </div>
                 <div class="row">
 
                     <div class="col-md-4">
@@ -51,7 +88,7 @@
                             <div class="panel-heading">
                                 <h3 class="panel-title"><strong>Medicine Current Stocks</strong></h3>
                             </div>
-                            <div class="panel-body list-group list-group-contacts scroll" style="height: 288px;">
+                            <div class="panel-body list-group list-group-contacts scroll print" style="height: 288px;">
                                 <?php
                             require 'require/config.php';
                             $query = $conn->query("SELECT * FROM `medicine` order by `running_balance` ASC") or die(mysqli_error());
@@ -87,17 +124,17 @@
                     </div>
 
                     <div class="col-md-4">
-                        <div class="panel panel-primary">
+                        <div class="panel panel-primary print">
                             <div class="panel-heading">
                                 <h3 class="panel-title" style="font-size: 15px;"><strong>Patients Medication Dispensation Reports</strong></h3>
                             </div>
-                            <div class="panel-body list-group list-group-contacts scroll" style="height: 470px;">
+                            <div class="panel-body list-group list-group-contacts scroll print" style="height: 470px;">
                                 <div class="panel-body">
                                     <table class="table datatable">
                                         <thead>
                                             <tr>
                                                 <th>Name</th>
-                                                <th>Action</th>
+                                                <th class="print">Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -113,7 +150,7 @@
 												?>
                                             <tr>
                                                 <td><?php echo $fetch['patient_name']?></td>
-                                                <td>
+                                                <td class="print">
                                                     <a href="dispensation_reports?id=<?php echo $fetch['patient_id']?>&patient_name=<?php echo $fetch['patient_name']?>" class="btn btn-sm btn-default">View</a>
                                                 </td>
                                             </tr>
@@ -129,12 +166,12 @@
                     </div>
                     <div class="col-md-8">
                         <div class="panel panel-primary">
-                            <div class="panel-heading">
+                            <div class="panel-heading print">
                                 <?php require 'require/select_year.php'?>
-                                <div class="btn-group pull-left">
+                                <div class="btn-group pull-left print">
                                     <div class="pull-left">
                                         <!-- Chart Type Monthly -->
-                                        <select class="form-control select" data-style="btn-primary" data-live-search="true" id="select-report" name="filterbutton">
+                                        <select class="form-control select print" data-style="btn-primary" data-live-search="true" id="select-report" name="filterbutton">
                                             <option disabled="disabled">Select Chart Type</option>
                                             <option value="colmonth">Column Chart</option>
                                             <option value="piemonth">Pie Chart</option>
