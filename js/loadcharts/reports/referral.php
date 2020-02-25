@@ -31,7 +31,7 @@
             },
             subtitles:[
                 {
-                    text: "Monthly Patient Count - Year <?php echo $year?>"
+                    text: "Referral Monthly Patient Count - Year <?php echo $year?>"
                 }
             ],
             legend: {
@@ -106,7 +106,7 @@
             },
             subtitles:[
                 {
-                    text: "Quarterly Patient Count - Year <?php echo $year?>"
+                    text: "Referral Quarterly Patient Count - Year <?php echo $year?>"
                 }
             ],
             legend: {
@@ -176,7 +176,7 @@
             },
             subtitles:[
                 {
-                    text: "Yearly Patient Count <?php echo $year?>"
+                    text: "Quarterly Yearly Patient Count <?php echo $year?>"
                 }
             ],
             legend: {

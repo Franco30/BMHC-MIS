@@ -33,7 +33,7 @@
         },
         subtitles:[
             {
-                text: "Children and Adult Consultation Count - Year <?php echo $year?>"
+                text: "Children and Adult Patient Count - Year <?php echo $year?>"
             }
         ],
         legend: {
@@ -133,7 +133,7 @@
         },
         subtitles:[
             {
-                text: "Children and Adult Consultation Count - Year <?php echo $year?>"
+                text: "Children and Adult Patient Count - Year <?php echo $year?>"
             }
         ],
         legend: {
@@ -233,7 +233,7 @@
         },
         subtitles:[
             {
-                text: "Children and Adult Consultation Count - Year <?php echo $year?>"
+                text: "Children and Adult Patient Count - Year <?php echo $year?>"
             }
         ],
         legend: {
@@ -331,7 +331,7 @@
         },
         subtitles:[
             {
-                text: "Children and Adult Consultation Count - Year <?php echo $year?>"
+                text: "Children and Adult Patient Count - Year <?php echo $year?>"
             }
         ],
         legend: {
@@ -1121,7 +1121,7 @@
             },
             subtitles:[
                 {
-                    text: "Monthly Purok Count - Year <?php echo $year?>"
+                    text: "Monthly Patient Purok Count - Year <?php echo $year?>"
                 }
             ],
             legend: {
@@ -1186,7 +1186,7 @@
             animationEnabled: true,
             animationDuration: 1000,
 
-            exportFileName: "Monthly Purok Count - BMHC", 
+            exportFileName: "Monthly Patient Purok Count - BMHC", 
             exportEnabled: true,
             toolTip: {
                 shared: true  
@@ -1197,7 +1197,7 @@
             },
             subtitles:[
                 {
-                    text: "Monthly Purok Count - Year <?php echo $year?>"
+                    text: "Monthly Patient Purok Count - Year <?php echo $year?>"
                 }
             ],
             legend: {
@@ -1262,7 +1262,7 @@
             animationEnabled: true,
             animationDuration: 1000,
 
-            exportFileName: "Monthly Purok Count - BMHC", 
+            exportFileName: "Monthly Patient Purok Count - BMHC", 
             exportEnabled: true,
             toolTip: {
                 shared: true  
@@ -1273,7 +1273,7 @@
             },
             subtitles:[
                 {
-                    text: "Monthly Purok Count - Year <?php echo $year?>"
+                    text: "Monthly Patient Purok Count - Year <?php echo $year?>"
                 }
             ],
             legend: {
@@ -1339,7 +1339,7 @@
             animationEnabled: true,
             animationDuration: 1000,
 
-            exportFileName: "Monthly Purok Count - BMHC", 
+            exportFileName: "Monthly Patient Purok Count - BMHC", 
             exportEnabled: true,
             toolTip: {
                 shared: true  
@@ -1350,7 +1350,7 @@
             },
             subtitles:[
                 {
-                    text: "Monthly Purok Count - Year <?php echo $year?>"
+                    text: "Monthly Patient Purok Count - Year <?php echo $year?>"
                 }
             ],
             legend: {

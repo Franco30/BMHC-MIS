@@ -20,7 +20,7 @@
             animationEnabled: true,
             animationDuration: 1000,
 
-            exportFileName: "Monthly Patient Count - BMHC", 
+            exportFileName: "Child Patient Monthly Count - BMHC", 
             exportEnabled: true,
             toolTip: {
                 shared: true  
@@ -31,7 +31,7 @@
             },
             subtitles:[
                 {
-                    text: "Monthly Patient Count - Year <?php echo $year?>"
+                    text: "Child Patient Monthly Count - Year <?php echo $year?>"
                 }
             ],
             legend: {
@@ -95,7 +95,7 @@
             panEnabled: true,
             animationEnabled: true,
             animationDuration: 1000,
-            exportFileName: "Quarterly Patient Count - BMHC", 
+            exportFileName: "Child Patient Quarterly Count - BMHC", 
             exportEnabled: true,
             toolTip: {
                 shared: true  
@@ -106,7 +106,7 @@
             },
             subtitles:[
                 {
-                    text: "Quarterly Patient Count - Year <?php echo $year?>"
+                    text: "Child Patient Quarterly Count - Year <?php echo $year?>"
                 }
             ],
             legend: {
@@ -165,7 +165,7 @@
             animationEnabled: true,
             animationDuration: 1000,
             colorSet: "customColorSet",
-            exportFileName: "Yearly Patient Count - BMHC", 
+            exportFileName: "Child Patient Yearly Count - BMHC", 
             exportEnabled: true,
             toolTip: {
                 shared: true  
@@ -176,7 +176,7 @@
             },
             subtitles:[
                 {
-                    text: "Yearly Patient Count <?php echo $year?>"
+                    text: "Child Patient Yearly Count <?php echo $year?>"
                 }
             ],
             legend: {

@@ -516,7 +516,7 @@
             },
             subtitles:[
                 {
-                    text: "Monthly Purok Count - Year <?php echo $year?>"
+                    text: "Family Planning Monthly Purok Count - Year <?php echo $year?>"
                 }
             ],
             legend: {
@@ -581,7 +581,7 @@
             animationEnabled: true,
             animationDuration: 1000,
 
-            exportFileName: "Monthly Purok Count - BMHC", 
+            exportFileName: "Family Planning Monthly Purok Count - BMHC", 
             exportEnabled: true,
             toolTip: {
                 shared: true  
@@ -592,7 +592,7 @@
             },
             subtitles:[
                 {
-                    text: "Monthly Purok Count - Year <?php echo $year?>"
+                    text: "Family Planning Monthly Purok Count - Year <?php echo $year?>"
                 }
             ],
             legend: {
@@ -657,7 +657,7 @@
             animationEnabled: true,
             animationDuration: 1000,
 
-            exportFileName: "Monthly Purok Count - BMHC", 
+            exportFileName: "Family Planning Monthly Purok Count - BMHC", 
             exportEnabled: true,
             toolTip: {
                 shared: true  
@@ -668,7 +668,7 @@
             },
             subtitles:[
                 {
-                    text: "Monthly Purok Count - Year <?php echo $year?>"
+                    text: "Family Planning Monthly Purok Count - Year <?php echo $year?>"
                 }
             ],
             legend: {
@@ -734,7 +734,7 @@
             animationEnabled: true,
             animationDuration: 1000,
 
-            exportFileName: "Monthly Purok Count - BMHC", 
+            exportFileName: "Family Planning Monthly Purok Count - BMHC", 
             exportEnabled: true,
             toolTip: {
                 shared: true  
@@ -745,7 +745,7 @@
             },
             subtitles:[
                 {
-                    text: "Monthly Purok Count - Year <?php echo $year?>"
+                    text: "Family Planning Monthly Purok Count - Year <?php echo $year?>"
                 }
             ],
             legend: {

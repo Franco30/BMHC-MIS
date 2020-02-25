@@ -168,8 +168,8 @@
                         </div>
                         <div class="panel panel-default tabs">
                             <ul class="nav nav-tabs print" role="tablist">
-                                <li class="active"><a href="#tab-first" role="tab" data-toggle="tab">Tabular Report</a></li>
-                                <li><a href="#tab-second" role="tab" data-toggle="tab">Date Range tabular Report</a></li>
+                                <li class="active"><a href="#tab-first" role="tab" data-toggle="tab">Consultation Tabular Report</a></li>
+                                <li><a href="#tab-second" role="tab" data-toggle="tab">Consultation Date Range tabular Report</a></li>
                             </ul>
                             <div class="panel-body tab-content">
 
@@ -177,7 +177,7 @@
                                     <div class="row">
                                         <div class="panel panel-primary">
                                             <div class="panel-heading">
-                                                <h3 class="panel-title"><strong>Tabular Report</strong></h3>
+                                                <h3 class="panel-title"><strong>Consultation Tabular Report</strong></h3>
                                             </div>
                                             <div class="panel-body list-group list-group-contacts scroll" style="height: 595px;">
                                                 <div class="panel-body panel-body-table">
@@ -323,7 +323,7 @@
                                     <div class="row">
                                         <div class="panel panel-primary">
                                             <div class="panel-heading">
-                                                <h3 class="panel-title"><strong>Date Range Tabular Report</strong></h3>
+                                                <h3 class="panel-title"><strong>Consultation Date Range Tabular Report</strong></h3>
                                                 <div class="btn-group pull-right">
                                                     <div class="form-inline">
                                                         <form id="prenataldaterange">

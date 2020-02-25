@@ -169,8 +169,8 @@
                     </div>
                         <div class="panel panel-default tabs">
                             <ul class="nav nav-tabs print" role="tablist">
-                                <li class="active"><a href="#tab-first" role="tab" data-toggle="tab">Tabular Report</a></li>
-                                <li><a href="#tab-second" role="tab" data-toggle="tab">Date Range tabular Report</a></li>
+                                <li class="active"><a href="#tab-first" role="tab" data-toggle="tab">Child Patient Tabular Report</a></li>
+                                <li><a href="#tab-second" role="tab" data-toggle="tab">Child Patient Date Range tabular Report</a></li>
                                 <li><a href="#tab-third" role="tab" data-toggle="tab">Individual Child Patient Record</a></li>
                             </ul>
                             <div class="panel-body tab-content">
@@ -179,7 +179,7 @@
                                     <div class="row">
                                         <div class="panel panel-primary">
                                             <div class="panel-heading">
-                                                <h3 class="panel-title"><strong>Tabular Report</strong></h3>
+                                                <h3 class="panel-title"><strong>Child Patient Tabular Report</strong></h3>
                                             </div>
                                             <div class="panel-body list-group list-group-contacts scroll" style="height: 595px;">
                                                 <div class="panel-body panel-body-table">

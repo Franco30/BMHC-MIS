@@ -169,9 +169,9 @@
                             <center><span id="checkfield"></span></center>
                         </div>
                         <div class="panel panel-default tabs">
-                            <ul class="nav nav-tabs" role="tablist">
-                                <li class="active"><a href="#tab-first" role="tab" data-toggle="tab">Tabular Report</a></li>
-                                <li><a href="#tab-second" role="tab" data-toggle="tab">Date Range tabular Report</a></li>
+                            <ul class="nav nav-tabs print" role="tablist">
+                                <li class="active"><a href="#tab-first" role="tab" data-toggle="tab">Immunization Tabular Report</a></li>
+                                <li><a href="#tab-second" role="tab" data-toggle="tab">Immunization Date Range tabular Report</a></li>
                             </ul>
                             <div class="panel-body tab-content">
 
@@ -179,7 +179,7 @@
                                     <div class="row">
                                         <div class="panel panel-primary">
                                             <div class="panel-heading">
-                                                <h3 class="panel-title"><strong>Tabular Report</strong></h3>
+                                                <h3 class="panel-title"><strong>Immunization Tabular Report</strong></h3>
                                             </div>
                                             <div class="panel-body list-group list-group-contacts scroll" style="height: 595px;">
                                                 <div class="panel-body panel-body-table">
@@ -325,13 +325,13 @@
                                     <div class="row">
                                         <div class="panel panel-primary">
                                             <div class="panel-heading">
-                                                <h3 class="panel-title"><strong>Date Range tabular Report</strong></h3>
+                                                <h3 class="panel-title"><strong>Immunization Date Range tabular Report</strong></h3>
                                                 <div class="btn-group pull-right">
-                                                    <div class="form-inline print">
+                                                    <div class="form-inline">
                                                         <form id="prenataldaterange">
                                                         <input type="text" class="form-control datepicker" placeholder="Start" id="date1" />
                                                         <input type="text" class="form-control datepicker" placeholder="End" id="date2" />
-                                                        <button style="margin-left: 6px;" type="button" class="btn btn-success" id="btn_search"><span class="glyphicon glyphicon-search print" style="margin-right: 0px;"></span></button> <button type="button" id="reset" class="btn btn-info print"><span class="glyphicon glyphicon-refresh" style="margin-right: 0px;"><span></span></span></button>
+                                                        <button style="margin-left: 6px;" type="button" class="btn btn-success print" id="btn_search"><span class="glyphicon glyphicon-search print" style="margin-right: 0px;"></span></button> <button type="button" id="reset" class="btn btn-info print"><span class="glyphicon glyphicon-refresh" style="margin-right: 0px;"><span></span></span></button>
                                                         </form>
                                                     </div>
                                                 </div>

@@ -31,7 +31,7 @@
             },
             subtitles:[
                 {
-                    text: "Monthly Patient Count - Year <?php echo $year?>"
+                    text: "Immunization Monthly Patient Count - Year <?php echo $year?>"
                 }
             ],
             legend: {
@@ -106,7 +106,7 @@
             },
             subtitles:[
                 {
-                    text: "Quarterly Patient Count - Year <?php echo $year?>"
+                    text: "Immunization Quarterly Patient Count - Year <?php echo $year?>"
                 }
             ],
             legend: {
@@ -165,7 +165,7 @@
             animationEnabled: true,
             animationDuration: 1000,
             colorSet: "customColorSet",
-            exportFileName: "Yearly Patient Count - BMHC", 
+            exportFileName: "Immunization Yearly Patient Count - BMHC", 
             exportEnabled: true,
             toolTip: {
                 shared: true  
@@ -176,7 +176,7 @@
             },
             subtitles:[
                 {
-                    text: "Yearly Patient Count <?php echo $year?>"
+                    text: "Immunization Yearly Patient Count <?php echo $year?>"
                 }
             ],
             legend: {
