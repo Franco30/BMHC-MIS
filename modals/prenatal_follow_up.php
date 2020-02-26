@@ -36,7 +36,7 @@
                                 <div class="form-group" style="margin-left:-10px;">
                                     <label>Date and Time</label>
                                     <div class="input-group date">
-                                        <input type="text" class="form-control datetimepicker" id="follow_up_date_time" required/>
+                                        <input type="text" class="form-control datetimepicker2" id="follow_up_date_time" required/>
                                         <div class="input-group-addon">
                                             <i class="fa fa-calendar"></i>
                                         </div>

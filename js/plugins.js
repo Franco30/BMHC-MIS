@@ -14,6 +14,15 @@
 
                 } // END Bootstrap datetimepicker
 
+                 var feDateTimepicker2 = function () {
+                    if ($(".datetimepicker2").length > 0) {
+                        $(".datetimepicker2").datetimepicker();
+
+                        $("#dp-2,#dp-3,#dp-4").datetimepicker(); // Sample
+                    }
+
+                }
+                
                 // Bootstrap datepicker
                 var feDatepicker = function () {
                     if ($(".datepicker").length > 0) {
@@ -197,6 +206,7 @@
                 return { // Init all form element features
                     init: function () {
                         feDateTimepicker();
+                        feDateTimepicker2();
                         feDatepicker();
                         feDatepicker();
                         feTimepicker();
