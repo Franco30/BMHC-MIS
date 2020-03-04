@@ -185,12 +185,14 @@
 
     </script>
     <script type="text/javascript">
-    // Set the cursor ASAP to "Wait"
-    document.body.style.cursor='progress';
+        // Set the cursor ASAP to "Wait"
+        document.body.style.cursor = 'progress';
 
-    // When the window has finished loading, set it back to default...
-    window.onload=function(){document.body.style.cursor='default';}
-</script>
+        // When the window has finished loading, set it back to default...
+        window.onload = function() {
+            document.body.style.cursor = 'default';
+        }
+    </script>
 </body>
 
 </html>

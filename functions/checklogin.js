@@ -55,6 +55,7 @@ $(document).ready(function () {
             beforeSend: function () {
                 $("#error").fadeOut();
 //                $("#login").html('<img src="action/ajax-loader3.gif" /> &nbsp; Signing In ...');
+                $("#success").html('<div class="bar"><div></div></div>');
                 $("#login").html('Signing In ...');
             },
             success: function (response) {
@@ -76,6 +77,9 @@ $(document).ready(function () {
                     $("#error").fadeIn(1000, function () {
                         $("#error").html('<div class="alert alert-danger"> <span class="fa fa-exclamation-circle"></span> &nbsp; ' + response + '!</div>');
                         $("#login").html('<span class="glyphicon glyphicon-log-in"></span> &nbsp; Sign me in');
+                        $("#success").fadeOut(5, function () {
+                        $("#success").html('<div class="bar"><div></div></div>');
+                    });
                     });
                 }
             }
