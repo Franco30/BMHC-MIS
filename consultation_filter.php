@@ -16,10 +16,8 @@
 
     <!-- CSS INCLUDE -->
     <link rel="stylesheet" type="text/css" id="theme" href="css/theme-brown.css" />
-<!--
     <link rel="stylesheet" type="text/css" href="assets3/vendor/font-awesome/css/font-awesome.min.css" />
     <link href="assets3/css/invoice-print.min.css" rel="stylesheet" />
--->
     <script type="text/javascript" src="js/plugins/jquery/jquery.min.js"></script>
     <script type="text/javascript" src="js/jquery.canvasjs.min.js"></script>
     <?php require 'js/loadcharts/reports/consultation2.php'?>
@@ -128,6 +126,15 @@
                                             <option value="colpatientgender">Patient Gender</option>
                                             <option value="colpatientage">Patient Age</option>
                                             <option value="colpatientpurok">Patient Purok</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <select class="form-control select" data-style="btn-primary" id="select-report" name="filterbutton">
+                                            <option value="monthly" selected="selected" disabled="disabled">Select Report Type</option>
+                                            <option value="graphical">Graphical</option>
+                                            <option value="tabular">Tabular</option>
                                         </select>
                                     </div>
                                 </div>

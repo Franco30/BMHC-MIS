@@ -24,10 +24,10 @@ require 'require/logincheck.php';
     <script type="text/javascript" src="js/plugins/jquery/jquery.min.js"></script>
     <script type="text/javascript" src="js/plugins/jquery/jquery-ui.min.js"></script>
     <?php require 'js/loadcharts/reports/sickforecasting.php'?>
+    <?php require 'loadcalendar.php'?>
 
     <script src="js/moment.min.js"></script>
     <script src="js/fullcalendar.min.js"></script>
-
         <script type="text/javascript">
         $(document).ready(function() {
             $("select").change(function() {
@@ -54,7 +54,7 @@ require 'require/logincheck.php';
         });
 
     </script>
-    <script src="functions/loadcalendar.js"></script>
+<!--    <script src="functions/loadcalendar.js"></script>-->
 </head>
 
 <body>

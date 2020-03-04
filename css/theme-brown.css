@@ -15,6 +15,10 @@
 @import "animate/animate.min.css";
 
 
+::-webkit-scrollbar {
+  width: 4px;
+}
+
 /* PREDEFINED CLASSES */
 .clearfix {
   zoom: 1;

@@ -29,6 +29,7 @@
             margin: auto;
         }
 
+        
     </style>
 </head>
 
@@ -123,12 +124,12 @@
                 <br>
                 <div id="error"></div>
                 <div id="success"></div>
-                <div id="uname_response" style="font-weight: 100;"></div>
+                <div id="uname_response"></div>
                 <input type="text" placeholder="Username" id="username" name="username" required />
                 <input type="password" placeholder="Password" name="password" id="password" required />
                 <span toggle="#password" class="fa fa-eye field-icon toggle-password"></span>
                 <br>
-                <button type="submit" id="login" name="login">Sign in</button>
+                <button type="submit" id="login" name="login" onclick="document.body.style.cursor='progress'; return true;">Sign in</button>
             </form>
         </div>
         <div class="overlay-container">
@@ -183,6 +184,13 @@
         });
 
     </script>
+    <script type="text/javascript">
+    // Set the cursor ASAP to "Wait"
+    document.body.style.cursor='progress';
+
+    // When the window has finished loading, set it back to default...
+    window.onload=function(){document.body.style.cursor='default';}
+</script>
 </body>
 
 </html>

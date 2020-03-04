@@ -524,13 +524,28 @@ temporary rendered events).
 --------------------------------------------------------------------------------------------------*/
 
 .fc-event {
-	position: relative; /* for resize handle and other inner positioning */
-	display: block; /* make the <a> tag block */
+/*	position: relative; */
+	/* for resize handle and other inner positioning */
+/*	display: block; */
+	/* make the <a> tag block */
+/*
 	font-size: .85em;
 	line-height: 1.3;
-	border-radius: 3px;
-	border: 1px solid #3a87ad; /* default BORDER color */
-	font-weight: normal; /* undo jqui's ui-widget-header bold */
+*/
+/*	border-radius: 3px;*/
+/*	border: 1px solid #3a87ad; */
+	/* default BORDER color */
+/*	font-weight: normal;*/
+	/* undo jqui's ui-widget-header bold */
+	
+	position: relative;
+    display: block;
+    font-size: .85em;
+    line-height: 1.3;
+    border-radius: 3px;
+    border: 1px solid rgba(58, 135, 173, 0) !important;
+    background-color: #3a87ad;
+    font-weight: 400;
 }
 
 .fc-event,
