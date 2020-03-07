@@ -17,6 +17,7 @@ var patientsData = {
 		indexLabel: "{label} {y}",
 		dataPoints: [
 			{ name: "Patient", color: "#E7823A", y: <?php echo $total['total']?> },
+			{ name: "Infant Patient", color: "#546BC1", y: <?php echo $total2['total']?> },
 			{ name: "Infant Patient", color: "#546BC1", y: <?php echo $total2['total']?> }
 		]
 	}],
