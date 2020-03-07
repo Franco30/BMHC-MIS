@@ -200,6 +200,14 @@
         }
 
     </script>
+
+    <script>
+    $('#login').click(function() {
+    $('#login-form').css({
+        'opacity': '0.5'
+    });
+});
+    </script>
 </body>
 
 </html>
