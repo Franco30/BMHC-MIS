@@ -28,15 +28,28 @@ else
 <script>
   $(document).ready(function() {
     var calendar = $('#calendar').fullCalendar({
-      header: {
-        left: 'prev,next today',
-        center: 'title',
-        right: 'month,agendaWeek,agendaDay'
-      },
-      defaultDate: new Date(),
-      editable: true,
-      eventLimit: true, // allow "more" link when too many events
-      events: <?php echo json_encode($myArray); ?>
+        header: {
+          left: 'prev,next today',
+          center: 'title',
+          right: 'month,agendaWeek,agendaDay'
+        },
+        eventClick: function(calEvent) {
+    const patientName = calEvent.title;
+    // console.log(patientName)
+    // alert('Patient Name: ' + calEvent.title);
+    window.open("http://localhost/bmhc-mis/viewpatientCalendar.php?patientName="+patientName, "_blank");
+
+    // change the border color just for fun
+    $(this).css('border-color', 'red');
+
+  },
+        defaultDate: new Date(),
+        editable: true,
+        eventLimit: true, // allow "more" link when too many events
+        events: <?php echo json_encode($myArray); ?>
     });
+
+
+  
   });
 </script>

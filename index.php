@@ -122,15 +122,16 @@
         <div class="form-container sign-in-container">
             <div class="login-form">
                 <form method="POST" id="login-form">
-                    <div class="image-container">
+                    <div id="success"></div>
+                    <div class="image-container" style="margin-top: -150px;">
                         <img src="login3/bmhclogo.png" alt="" width="120">
                     </div> <br>
                     <h1 style="color:#000000">BMHC-MIS</h1>
                     <br>
-                    <div id="error"></div>
-                    <div id="success"></div>
-                    <div id="uname_response"></div>
+<!--                    form-group has-error-->
                     <input type="text" placeholder="Username" id="username" name="username" required />
+                    <div id="uname_response" style="text-align: left;"></div>
+                    <div id="error" style="text-align: left;"></div>
                     <input type="password" placeholder="Password" name="password" id="password" required />
                     <span toggle="#password" class="fa fa-eye field-icon toggle-password"></span>
                     <br>
@@ -199,6 +200,14 @@
             document.body.style.cursor = 'default';
         }
 
+    </script>
+
+    <script>
+    $('#login').click(function() {
+    $('#login-form').css({
+        'opacity': '0.5'
+    });
+});
     </script>
 </body>
 
