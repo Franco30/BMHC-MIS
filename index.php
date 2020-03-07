@@ -29,7 +29,6 @@
             margin: auto;
         }
 
-        
     </style>
 </head>
 
@@ -38,7 +37,7 @@
         <div class="form-container sign-up-container">
             <form action="#">
                 <h1 style="color:#000000">THREE-EYED RAVENS</h1>
-<!--
+                <!--
                 <div class="social-container">
                     <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
                     <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
@@ -110,27 +109,34 @@
                         <!-- END CONTACT ITEM -->
                     </div>
                 </div>
-                        <hr style="margin:-24px 0 5px 0;"><hr>
-                        <span style="color: #000000;"><center><strong>University of Negros Occidental Recoletos</strong></center></span>
-                        <span style="color: #000000;"><center><strong>Department of Information Technology © 2020</strong></center></span>
+                <hr style="margin:-24px 0 5px 0;">
+                <hr>
+                <span style="color: #000000;">
+                    <center><strong>University of Negros Occidental Recoletos</strong></center>
+                </span>
+                <span style="color: #000000;">
+                    <center><strong>Department of Information Technology © 2020</strong></center>
+                </span>
             </form>
         </div>
         <div class="form-container sign-in-container">
-            <form method="POST" id="login-form">
-                <div class="image-container">
-                    <img src="login3/bmhclogo.png" alt="" width="120">
-                </div> <br>
-                <h1 style="color:#000000">BMHC-MIS</h1>
-                <br>
-                <div id="error"></div>
-                <div id="success"></div>
-                <div id="uname_response"></div>
-                <input type="text" placeholder="Username" id="username" name="username" required />
-                <input type="password" placeholder="Password" name="password" id="password" required />
-                <span toggle="#password" class="fa fa-eye field-icon toggle-password"></span>
-                <br>
-                <button type="submit" id="login" name="login" onclick="document.body.style.cursor='progress'; return true;">Sign in</button>
-            </form>
+            <div class="login-form">
+                <form method="POST" id="login-form">
+                    <div class="image-container">
+                        <img src="login3/bmhclogo.png" alt="" width="120">
+                    </div> <br>
+                    <h1 style="color:#000000">BMHC-MIS</h1>
+                    <br>
+                    <div id="error"></div>
+                    <div id="success"></div>
+                    <div id="uname_response"></div>
+                    <input type="text" placeholder="Username" id="username" name="username" required />
+                    <input type="password" placeholder="Password" name="password" id="password" required />
+                    <span toggle="#password" class="fa fa-eye field-icon toggle-password"></span>
+                    <br>
+                    <button type="submit" id="login" name="login" onclick="document.body.style.cursor='progress'; return true;">Sign in</button>
+                </form>
+            </div>
         </div>
         <div class="overlay-container">
             <div class="overlay">
@@ -192,6 +198,7 @@
         window.onload = function() {
             document.body.style.cursor = 'default';
         }
+
     </script>
 </body>
 
