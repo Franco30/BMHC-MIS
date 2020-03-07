@@ -69,7 +69,8 @@ $a11 = $a11->fetch_array();
 
 $a12 = $conn->query("select count(*) as total from `consultation`  WHERE `complaints` REGEXP 'Allergy' && `month` ='Dec' && `year` = '$year'") or die(mysqli_error());
 $a12 = $a12->fetch_array();
-
+$totala = $conn->query("SELECT COUNT(*) as total FROM `consultation` WHERE `complaints` REGEXP 'Allergy' && `year` = '$year'") or die(mysqli_error());
+$totala = $totala->fetch_array();
 
 $b1 = $conn->query("select count(*) as total from `consultation`  WHERE `complaints` REGEXP 'Colds and Flu' && `month` ='Jan' && `year` = '$year'") or die(mysqli_error());
 $b1 = $b1->fetch_array();
@@ -106,7 +107,8 @@ $b11 = $b11->fetch_array();
 
 $b12 = $conn->query("select count(*) as total from `consultation`  WHERE `complaints` REGEXP 'Colds and Flu' && `month` ='Dec' && `year` = '$year'") or die(mysqli_error());
 $b12 = $b12->fetch_array();
-
+$totalb = $conn->query("SELECT COUNT(*) as total FROM `consultation` WHERE `complaints` REGEXP 'Colds and Flu' && `year` = '$year'") or die(mysqli_error());
+$totalb = $totalb->fetch_array();
 
 $c1 = $conn->query("select count(*) as total from `consultation` WHERE `complaints` REGEXP 'Conjunctivitis' && `month` ='Jan' && `year` = '$year'") or die(mysqli_error());
 $c1 = $c1->fetch_array();
@@ -143,7 +145,8 @@ $c11 = $c11->fetch_array();
 
 $c12 = $conn->query("select count(*) as total from `consultation` WHERE `complaints` REGEXP 'Conjunctivitis' && `month` ='Dec' && `year` = '$year'") or die(mysqli_error());
 $c12 = $c12->fetch_array();
-
+$totalc = $conn->query("SELECT COUNT(*) as total FROM `consultation` WHERE `complaints` REGEXP 'Conjunctivitis' && `year` = '$year'") or die(mysqli_error());
+$totalc = $totalc->fetch_array();
 
 $d1 = $conn->query("select count(*) as total from `consultation` WHERE `complaints` REGEXP 'Diarrhea' && `month` ='Jan' && `year` = '$year'") or die(mysqli_error());
 $d1 = $d1->fetch_array();
@@ -180,7 +183,8 @@ $d11 = $d11->fetch_array();
 
 $d12 = $conn->query("select count(*) as total from `consultation` WHERE `complaints` REGEXP 'Diarrhea' && `month` ='Dec' && `year` = '$year'") or die(mysqli_error());
 $d12 = $d12->fetch_array();
-
+$totald = $conn->query("SELECT COUNT(*) as total FROM `consultation` WHERE `complaints` REGEXP 'Diarrhea' && `year` = '$year'") or die(mysqli_error());
+$totald = $totald->fetch_array();
 
 $e1 = $conn->query("select count(*) as total from `consultation` WHERE `complaints` REGEXP 'Fever' && `month` ='Jan' && `year` = '$year'") or die(mysqli_error());
 $e1 = $e1->fetch_array();
@@ -217,7 +221,8 @@ $e11 = $e11->fetch_array();
 
 $e12 = $conn->query("select count(*) as total from `consultation` WHERE `complaints` REGEXP 'Fever' && `month` ='Dec' && `year` = '$year'") or die(mysqli_error());
 $e12 = $e12->fetch_array();
-
+$totale = $conn->query("SELECT COUNT(*) as total FROM `consultation` WHERE `complaints` REGEXP 'Fever' && `year` = '$year'") or die(mysqli_error());
+$totale = $totale->fetch_array();
 
 $f1 = $conn->query("select count(*) as total from `consultation` WHERE `complaints` REGEXP 'Headache' && `month` ='Jan' && `year` = '$year'") or die(mysqli_error());
 $headache1 = $f1->fetch_array();
@@ -254,7 +259,8 @@ $headache11 = $f11->fetch_array();
 
 $f12 = $conn->query("select count(*) as total from `consultation` WHERE `complaints` REGEXP 'Headache' && `month` ='Dec' && `year` = '$year'") or die(mysqli_error());
 $headache12 = $f12->fetch_array();
-
+$totalf = $conn->query("SELECT COUNT(*) as total FROM `consultation` WHERE `complaints` REGEXP 'Headache' && `year` = '$year'") or die(mysqli_error());
+$totalf = $totalf->fetch_array();
 
 $g1 = $conn->query("select count(*) as total from `consultation` WHERE `complaints` REGEXP 'Stomach Ache' && `month` ='Jan' && `year` = '$year'") or die(mysqli_error());
 $g1 = $g1->fetch_array();
@@ -291,7 +297,8 @@ $g11 = $g11->fetch_array();
 
 $g12 = $conn->query("select count(*) as total from `consultation` WHERE `complaints` REGEXP 'Stomach Ache' && `month` ='Dec' && `year` = '$year'") or die(mysqli_error());
 $g12 = $g12->fetch_array();
-
+$totalg = $conn->query("SELECT COUNT(*) as total FROM `consultation` WHERE `complaints` REGEXP 'Stomach Ache' && `year` = '$year'") or die(mysqli_error());
+$totalg = $totalg->fetch_array();
 
 $h1 = $conn->query("select count(*) as total from `consultation` WHERE `complaints` REGEXP 'Others' && `month` ='Jan' && `year` = '$year'") or die(mysqli_error());
 $h1 = $h1->fetch_array();
@@ -328,6 +335,10 @@ $h11 = $h11->fetch_array();
 
 $h12 = $conn->query("select count(*) as total from `consultation` WHERE `complaints` REGEXP 'Others' && `month` ='Dec' && `year` = '$year'") or die(mysqli_error());
 $h12 = $h12->fetch_array();
+$totalh = $conn->query("SELECT COUNT(*) as total FROM `consultation` WHERE `complaints` REGEXP 'Others' && `year` = '$year'") or die(mysqli_error());
+$totalh = $totalh->fetch_array();
+
+$grandtotal = $totala['total'] + $totalb['total'] + $totalc['total'] + $totald['total'] + $totale['total'] + $totalf['total'] + $totalg['total'] + $totalh['total'];
 
 $res = $conn->query("SELECT * FROM `consultation` GROUP BY year") or die(mysqli_error());
 $data_points = array();
