@@ -3,6 +3,11 @@
     box-sizing: border-box;
 }
 
+label {
+    color: #d93025 !important;
+    font-weight: 100 !important;
+}
+
 .login-form {
     width: 510px;
     margin: 30px auto;

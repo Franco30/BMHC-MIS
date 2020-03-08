@@ -129,9 +129,9 @@
                     <h1 style="color:#000000">BMHC-MIS</h1>
                     <br>
 <!--                    form-group has-error-->
-                    <input type="text" placeholder="Username" id="username" name="username" required />
-                    <div id="uname_response" style="text-align: left;"></div>
                     <div id="error" style="text-align: left;"></div>
+                    <div id="uname_response" style="text-align: left;"></div>
+                    <input type="text" placeholder="Username" id="username" name="username" required />
                     <input type="password" placeholder="Password" name="password" id="password" required />
                     <span toggle="#password" class="fa fa-eye field-icon toggle-password"></span>
                     <br>
@@ -202,6 +202,7 @@
 
     </script>
 
+<!--
     <script>
     $('#login').click(function() {
     $('#login-form').css({
@@ -209,6 +210,7 @@
     });
 });
     </script>
+-->
 </body>
 
 </html>

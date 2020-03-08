@@ -20,10 +20,32 @@ require 'require/logincheck.php';
     <link rel="stylesheet" type="text/css" id="theme" href="css/theme-brown.css" />
     <link rel="stylesheet" type="text/css" href="assets3/vendor/font-awesome/css/font-awesome.min.css" />
     <!-- EOF CSS INCLUDE -->
-    <script src="js/jquery.canvasjs.min.js"></script>
     <script type="text/javascript" src="js/plugins/jquery/jquery.min.js"></script>
+    <script src="js/jquery.canvasjs.min.js"></script>
     <script type="text/javascript" src="js/plugins/jquery/jquery-ui.min.js"></script>
-    <?php require 'js/loadcharts/reports/sickforecasting.php'?>
+    <?php require 'js/loadcharts/reports/drilldown2.php'?>
+    <style>
+        #backButton {
+/*
+            border-radius: 4px;
+            padding: 6px;
+            border: none;
+            font-size: 16px;
+            background-color: #2eacd1;
+            color: white;
+*/
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+
+        .invisible {
+            display: none;
+        }
+
+    </style>
+    <?php //require 'js/loadcharts/reports/sickforecasting.php'?>
     <?php require 'loadcalendar.php'?>
 
     <script src="js/moment.min.js"></script>
@@ -275,21 +297,29 @@ require 'require/logincheck.php';
                                             </div>
                                         </div>
                                     </div>
-                                                                    <div class="btn-group pull-right" style="margin-right: 10px;">
+                                <div class="btn-group pull-right" style="margin-right: 10px;">
                                     <div class="pull-left">
+<!--
                                         <select class="form-control select" data-style="btn-primary" data-live-search="true" id="select-report" name="filterbutton">
                                             <option disabled="disabled">Select Chart Type</option>
                                             <option value="colmonth">Column Chart</option>
                                             <option value="linemonth">Line Chart</option>
                                             <option value="stackmonth">Stack Column Chart</option>
                                         </select>
+-->
                                     </div>
                                 </div>
                                 </div>
                                 <div class="panel-body">
+                                <div id="chartContainer" style="width: 100%; height: 310px"></div>
+                                <div class="pull-left">
+                                    <button class="btn btn-info invisible" id="backButton" style="margin: -51px;margin-right: 0px;">Back</button>
+                                </div>
+<!--
                                     <div id="chartContainer1" class="colmonth reporttype" style="width: 100%; height: 300px;"></div>
                                     <div id="chartContainer2" class="linemonth reporttype" style="width: 100%; height: 300px;"></div>
                                     <div id="chartContainer3" class="stackmonth reporttype" style="width: 100%; height: 300px;"></div>
+-->
                                 </div>
                             </div>
                         </div>

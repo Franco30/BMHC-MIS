@@ -2,28 +2,34 @@
 <script type="text/javascript">
 $(document).ready(function(){
 var totalPatients = <?php echo $grandtotal ?>;
-var patientsData = {
-	"Patient and Infant Patient": [{
-		click: patientsChartDrilldownHandler,
+var sickData = {
+	"Sickness Monthly Count": [{
+		click: sickChartDrilldownHandler,
 		cursor: "pointer",
 		explodeOnClick: false,
 		innerRadius: "75%",
 		legendMarkerType: "square",
-		name: "Patient and Infant Patient",
+		name: "Sickness Monthly Count",
 		radius: "100%",
 		showInLegend: true,
 		startAngle: 90,
 		type: "doughnut",
 		indexLabel: "{label} {y}",
 		dataPoints: [
-			{ name: "Patient", color: "#E7823A", y: <?php echo $totala['total']?> },
-			{ name: "Infant Patient", color: "#546BC1", y: <?php echo $totalb['total']?> },
-			{ name: "Infant Patient", color: "#546BC1", y: <?php echo $totalc['total']?> }
+			{ name: "Allergy", color: "#f6e58d", y: <?php echo $totala['total']?> },
+			{ name: "Colds and Flu", color: "#ffbe76", y: <?php echo $totalb['total']?> },
+			{ name: "Conjunctivitis", color: "#ff7979", y: <?php echo $totalc['total']?> },
+			{ name: "Diarrhea", color: "#eb4d4b", y: <?php echo $totald['total']?> },
+			{ name: "Fever", color: "#7ed6df", y: <?php echo $totale['total']?> },
+			{ name: "Headache", color: "#22a6b3", y: <?php echo $totalf['total']?> },
+			{ name: "Stomach Ache", color: "#6ab04c", y: <?php echo $totalg['total']?> },
+			{ name: "Others", color: "#ff7979", y: <?php echo $totalh['total']?> },
+
 		]
 	}],
-	"Patient": [{
-		color: "#E7823A",
-		name: "Patient",
+	"Allergy": [{
+		color: "#f6e58d",
+		name: "Allergy",
 		showInLegend: true, 
         legendText: "Number of Patient",
 		type: "column",
@@ -43,11 +49,11 @@ var patientsData = {
 			 { label: "December", y: <?php echo $a12['total']?> }
 		]
 	}],
-	"Infant Patient": [{
-		color: "#546BC1",
-		name: "Infant Patient",
+	"Colds and Flu": [{
+		color: "#ffbe76",
+		name: "Colds and Flu",
 		showInLegend: true,
-		legendText: "Number of Infant Patient",
+		legendText: "Number of Patient",
 		type: "column",
 		indexLabel: "{y}",
 		dataPoints: [
@@ -64,16 +70,148 @@ var patientsData = {
 			{ label: "November", y: <?php echo $b11['total']?> },
 			{ label: "December", y: <?php echo $b12['total']?> }
 		]
-	}]
+	}],
+	"Conjunctivitis": [{
+		color: "#ff7979",
+		name: "Conjunctivitis",
+		showInLegend: true,
+		legendText: "Number of Patient",
+		type: "column",
+		indexLabel: "{y}",
+		dataPoints: [
+			{ label: "January", y: <?php echo $c1['total']?> },
+			{ label: "February", y: <?php echo $c2['total']?> },
+			{ label: "March", y: <?php echo $c3['total']?> },
+			{ label: "April", y: <?php echo $c4['total']?> },
+			{ label: "May", y: <?php echo $c5['total']?> },
+			{ label: "June", y: <?php echo $c6['total']?> },
+			{ label: "July", y: <?php echo $c7['total']?> },
+			{ label: "August", y: <?php echo $c8['total']?> },
+			{ label: "September", y: <?php echo $c9['total']?> },
+			{ label: "October", y: <?php echo $c10['total']?> },
+			{ label: "November", y: <?php echo $c11['total']?> },
+			{ label: "December", y: <?php echo $c12['total']?> }
+		]
+	}],
+	"Diarrhea": [{
+		color: "#eb4d4b",
+		name: "Diarrhea",
+		showInLegend: true,
+		legendText: "Number of Patient",
+		type: "column",
+		indexLabel: "{y}",
+		dataPoints: [
+			{ label: "January", y: <?php echo $d1['total']?> },
+			{ label: "February", y: <?php echo $d2['total']?> },
+			{ label: "March", y: <?php echo $d3['total']?> },
+			{ label: "April", y: <?php echo $d4['total']?> },
+			{ label: "May", y: <?php echo $d5['total']?> },
+			{ label: "June", y: <?php echo $d6['total']?> },
+			{ label: "July", y: <?php echo $d7['total']?> },
+			{ label: "August", y: <?php echo $d8['total']?> },
+			{ label: "September", y: <?php echo $d9['total']?> },
+			{ label: "October", y: <?php echo $d10['total']?> },
+			{ label: "November", y: <?php echo $d11['total']?> },
+			{ label: "December", y: <?php echo $d12['total']?> }
+		]
+	}],
+	"Fever": [{
+		color: "#7ed6df",
+		name: "Fever",
+		showInLegend: true,
+		legendText: "Number of Patient",
+		type: "column",
+		indexLabel: "{y}",
+		dataPoints: [
+			{ label: "January", y: <?php echo $e1['total']?> },
+			{ label: "February", y: <?php echo $e2['total']?> },
+			{ label: "March", y: <?php echo $e3['total']?> },
+			{ label: "April", y: <?php echo $e4['total']?> },
+			{ label: "May", y: <?php echo $e5['total']?> },
+			{ label: "June", y: <?php echo $e6['total']?> },
+			{ label: "July", y: <?php echo $e7['total']?> },
+			{ label: "August", y: <?php echo $e8['total']?> },
+			{ label: "September", y: <?php echo $e9['total']?> },
+			{ label: "October", y: <?php echo $e10['total']?> },
+			{ label: "November", y: <?php echo $e11['total']?> },
+			{ label: "December", y: <?php echo $e12['total']?> }
+		]
+	}],
+	"Headache": [{
+		color: "#22a6b3",
+		name: "Headache",
+		showInLegend: true,
+		legendText: "Number of Patient",
+		type: "column",
+		indexLabel: "{y}",
+		dataPoints: [
+			{ label: "January", y: <?php echo $headache1['total']?> },
+			{ label: "February", y: <?php echo $headache2['total']?> },
+			{ label: "March", y: <?php echo $headache3['total']?> },
+			{ label: "April", y: <?php echo $headache4['total']?> },
+			{ label: "May", y: <?php echo $headache5['total']?> },
+			{ label: "June", y: <?php echo $headache6['total']?> },
+			{ label: "July", y: <?php echo $headache7['total']?> },
+			{ label: "August", y: <?php echo $headache8['total']?> },
+			{ label: "September", y: <?php echo $headache9['total']?> },
+			{ label: "October", y: <?php echo $headache10['total']?> },
+			{ label: "November", y: <?php echo $headache11['total']?> },
+			{ label: "December", y: <?php echo $headache12['total']?> }
+		]
+	}],
+	"Stomach Ache": [{
+		color: "#6ab04c",
+		name: "Stomach Ache",
+		showInLegend: true,
+		legendText: "Number of Patient",
+		type: "column",
+		indexLabel: "{y}",
+		dataPoints: [
+			{ label: "January", y: <?php echo $g1['total']?> },
+			{ label: "February", y: <?php echo $g2['total']?> },
+			{ label: "March", y: <?php echo $g3['total']?> },
+			{ label: "April", y: <?php echo $g4['total']?> },
+			{ label: "May", y: <?php echo $g5['total']?> },
+			{ label: "June", y: <?php echo $g6['total']?> },
+			{ label: "July", y: <?php echo $g7['total']?> },
+			{ label: "August", y: <?php echo $g8['total']?> },
+			{ label: "September", y: <?php echo $g9['total']?> },
+			{ label: "October", y: <?php echo $g10['total']?> },
+			{ label: "November", y: <?php echo $g11['total']?> },
+			{ label: "December", y: <?php echo $g12['total']?> }
+		]
+	}],
+	"Others": [{
+		color: "#ff7979",
+		name: "Others",
+		showInLegend: true,
+		legendText: "Number of Patient",
+		type: "column",
+		indexLabel: "{y}",
+		dataPoints: [
+			{ label: "January", y: <?php echo $h1['total']?> },
+			{ label: "February", y: <?php echo $h2['total']?> },
+			{ label: "March", y: <?php echo $h3['total']?> },
+			{ label: "April", y: <?php echo $h4['total']?> },
+			{ label: "May", y: <?php echo $h5['total']?> },
+			{ label: "June", y: <?php echo $h6['total']?> },
+			{ label: "July", y: <?php echo $h7['total']?> },
+			{ label: "August", y: <?php echo $h8['total']?> },
+			{ label: "September", y: <?php echo $h9['total']?> },
+			{ label: "October", y: <?php echo $h10['total']?> },
+			{ label: "November", y: <?php echo $h11['total']?> },
+			{ label: "December", y: <?php echo $h12['total']?> }
+		]
+	}],
 };
 
-var patientandinfantpatientOptions = {
+var sicknessforecastingOptions = {
 	animationEnabled: true,
 	exportFileName: "Monthly Count - BMHC", 
 	exportEnabled: true,
 	theme: "light2",
 	title: {
-		text: "Patient and Infant Patient <?php echo $year?>",
+		text: "Sickness Monthly Count <?php echo $year?>",
 	},
 	subtitles: [{
 		text: "Click on Any Segment to Drilldown",
@@ -142,13 +280,13 @@ var patientsDrilldownedChartOptions = {
 	data: []
 };
 
-var chart = new CanvasJS.Chart("chartContainer", patientandinfantpatientOptions);
-chart.options.data = patientsData["Patient and Infant Patient"];
+var chart = new CanvasJS.Chart("chartContainer", sicknessforecastingOptions);
+chart.options.data = sickData["Sickness Monthly Count"];
 chart.render();
 
-function patientsChartDrilldownHandler(e) {
+function sickChartDrilldownHandler(e) {
 	chart = new CanvasJS.Chart("chartContainer", patientsDrilldownedChartOptions);
-	chart.options.data = patientsData[e.dataPoint.name];
+	chart.options.data = sickData[e.dataPoint.name];
 	chart.options.title = { text: e.dataPoint.name }
 	chart.render();
 	$("#backButton").toggleClass("invisible");
@@ -156,8 +294,8 @@ function patientsChartDrilldownHandler(e) {
 
 $("#backButton").click(function() { 
 	$(this).toggleClass("invisible");
-	chart = new CanvasJS.Chart("chartContainer", patientandinfantpatientOptions);
-	chart.options.data = patientsData["Patient and Infant Patient"];
+	chart = new CanvasJS.Chart("chartContainer", sicknessforecastingOptions);
+	chart.options.data = sickData["Sickness Monthly Count"];
 	chart.render();
 });
 
