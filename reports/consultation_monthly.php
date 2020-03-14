@@ -1,4 +1,4 @@
-<div class="monthly barmonth splinemonth4 piemonth dougnutmonth reporttype" style="display: none;">
+<div class="tmonthly reporttype" style="display: none;">
     <label class="text text-danger ">Per Month</label>
     <table id="consultationmonthlytable" class="table table-bordered table-condensed nowrap" width="100%">
         <thead>
@@ -35,3 +35,4 @@
     </table>
     <?php require 'require/footerreport.php'?>
 </div>
+

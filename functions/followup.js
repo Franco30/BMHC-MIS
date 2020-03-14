@@ -136,6 +136,11 @@ $(document).ready(function () {
             $patient2 = $('#patient2').val();
             $follow_up_date_time = $('#follow_up_date_time').val();
             $remarks3 = $('#remarks3').val();
+            
+            function random() {
+            colors = ['#ca1c1c','#ffbe76','#ff7979','#eb4d4b','#f0870f','#22a6b3','#6ab04c','red']
+            return colors[Math.floor(Math.random() * colors.length)];
+            }       
 
             if (confirm('Are you sure you want to add this new follow-up date?')) {
                 $.ajax({
@@ -147,6 +152,7 @@ $(document).ready(function () {
                         patient2: $patient2,
                         follow_up_date_time: $follow_up_date_time,
                         remarks3: $remarks3,
+                        color: random(),
                         add: 1,
                     },
                     success: function () {

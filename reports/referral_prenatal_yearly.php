@@ -1,4 +1,4 @@
-<div class="yearly baryear splineyear pieyear dougnutyear reporttype" style="display: none;">
+<div class="1yearly reporttype" style="display: none;">
     <label class="text text-danger ">Per Year</label>
     <table id="referraltable" class="table table-bordered table-condensed nowrap" width="100%">
         <thead>

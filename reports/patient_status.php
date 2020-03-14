@@ -1,4 +1,4 @@
-<div class="drilldown reporttype" style="display: none;">
+<div class="1drilldown reporttype" style="display: none;">
 	<?php
 require 'require/config.php';
 $query1 = $conn->query("select count(*) as total from `patient` where patient.status = 'Active' && patient.year = '$year'") or die(mysqli_error());

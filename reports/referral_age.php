@@ -1,4 +1,4 @@
-<div class="stackedareamonth3 colmonth3 splinemonth3 colpatientage reporttype" style="display: none;">
+<div class="tcolpatientage reporttype" style="display: none;">
 <hr>
 	<div class="table-responsive">
 		<table class="table table-condensed">

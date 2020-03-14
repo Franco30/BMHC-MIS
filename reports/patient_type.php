@@ -1,4 +1,4 @@
-<div class="stackedareamonth stackedcolmonth splinemonth colpatienttype reporttype" style="display: none;">
+<div class="1colpatienttype reporttype" style="display: none;">
 <?php 
 require 'require/config.php';
 $query1 = $conn->query("select count(*) as total from `patient` where patient.age <= 15 && patient.year = '$year'") or die(mysqli_error());

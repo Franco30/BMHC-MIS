@@ -1,4 +1,4 @@
-<div class="colpatientpurok barpurok splinepurok stackedareapurok reporttype" style="display: none;">
+<div class="1colpatientpurok reporttype" style="display: none;">
     <label class="text text-danger ">By Purok</label>
     <table id="patient_childmonthlytable" class="table table-bordered table-condensed nowrap" width="100%">
         <thead>

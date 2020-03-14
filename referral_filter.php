@@ -115,9 +115,20 @@
                                     </div>
                                 </div>
                                 <div class="col-md-1"></div>
+                                
                                 <div class="col-md-2">
                                     <div class="form-group">
-                                        <select class="form-control select" data-style="btn-primary" id="select-report" name="filterbutton">
+                                        <select class="form-control select" data-style="btn-primary" id="select-report" name="filterbutton" style="display:none">
+                                            <option value="monthly" selected="selected" disabled="disabled">Select Report</option>
+                                            <option value="monthly">Graphical</option>
+                                            <option value="tmonthly">Tabular</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-2 graphical monthly barmonth splinemonth4 piemonth dougnutmonth quarterly barquarter splinequarter piequarter dougnutquarter yearly baryear splineyear pieyear dougnutyear stackedareamonth stackedcolmonth splinemonth colpatienttype stackedareamonth2 stackedcolmonth2 splinemonth2 colpatientgender stackedareamonth3 colmonth3 splinemonth3 colpatientage reporttype">
+                                    <div class="form-group">
+                                        <select class="form-control select" data-style="btn-primary" id="select-report" name="filterbutton" style="display:none">
                                             <option value="monthly" selected="selected" disabled="disabled">Select Report</option>
                                             <option value="monthly">Monthly</option>
                                             <option value="quarterly">Quarterly</option>
@@ -128,6 +139,21 @@
                                         </select>
                                     </div>
                                 </div>
+                                <!--Tabular-->
+                                <div class="col-md-2 tabular tmonthly tquarterly tyearly tcolpatienttype tcolpatientgender tcolpatientage reporttype">
+                                    <div class="form-group">
+                                        <select class="form-control select" data-style="btn-primary" id="select-report" name="filterbutton" style="display:none">
+                                            <option value="tmonthly" selected="selected" disabled="disabled">Select Report</option>
+                                            <option value="tmonthly">Monthly</option>
+                                            <option value="tquarterly">Quarterly</option>
+                                            <option value="tyearly">Yearly</option>
+                                            <option value="tcolpatienttype">Patient Type</option>
+                                            <option value="tcolpatientgender">Patient Gender</option>
+                                            <option value="tcolpatientage">Patient Age</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
                                 <div class="col-md-2">
                                     <!--Month Report Type-->
                                     <div class="form-group monthly barmonth splinemonth4 piemonth dougnutmonth reporttype">
@@ -267,6 +293,27 @@
                                         <?php require 'reports/referral_type.php'?>
                                         <?php require 'reports/referral_gender.php'?>
                                         <?php require 'reports/referral_age.php'?>
+                                        
+                                        <div class="graphical monthly barmonth splinemonth4 piemonth dougnutmonth quarterly barquarter splinequarter piequarter dougnutquarter yearly baryear splineyear pieyear dougnutyear stackedareamonth stackedcolmonth splinemonth colpatienttype stackedareamonth2 stackedcolmonth2 splinemonth2 colpatientgender stackedareamonth3 colmonth3 splinemonth3 colpatientage reporttype">
+                                        <?php
+                                        require 'require/config.php';
+                                        $year = date('Y');
+                                        if(isset($_GET['year']))
+                                        {
+                                            $year=$_GET['year'];
+                                        }
+                                        $query = $conn->query("SELECT * FROM `users` WHERE `user_id` = $_SESSION[user_id]") or die(mysqli_error());
+                                        $find = $query->fetch_array();
+                                        $query = $conn->query("SELECT count(*) as total FROM `referral` where `year` = '$year'") or die(mysqli_error());
+                                        $fetch = $query->fetch_array();
+                                        ?>
+                                        <hr>
+                                        <h4>Total Referral for the Year <?php echo $year. ' : <strong> ' .$fetch['total'].' Patients</strong>'?></h4> <hr>
+                                        <small>Approved By:</small>
+                                        <br><br>
+                                        <h3><?php echo $find['fullname']?></h3>
+                                        <small><?php echo $find['position']?></small>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

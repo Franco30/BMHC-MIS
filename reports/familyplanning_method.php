@@ -1,4 +1,4 @@
-<div class="stackedareamonth3 stackedcolumn3 splinemonth3 colpatientmethod reporttype" style="display: none;">
+<div class="tcolpatientmethod reporttype" style="display: none;">
 	<?php
 require 'require/config.php';
 $query1 = $conn->query("select count(*) as total from `patient`, `family_planning` where family_planning.patient_id = patient.patient_id && family_planning.method_accepted REGEXP 'COC' && family_planning.year = '$year'") or die(mysqli_error());

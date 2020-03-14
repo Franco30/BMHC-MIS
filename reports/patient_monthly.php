@@ -1,4 +1,4 @@
-<div class="monthly barmonth splinemonth4 piemonth dougnutmonth reporttype" style="display: none;">
+<div class="1monthly reporttype" style="display: none;">
     <label class="text text-danger ">Per Month</label>
     <table id="patientmonthlytable" class="table table-bordered table-condensed nowrap" width="100%">
         <thead>

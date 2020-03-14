@@ -133,9 +133,20 @@
                                     </div>
                                 </div>
                                 <div class="col-md-1"></div>
+                                
                                 <div class="col-md-2">
                                     <div class="form-group">
                                         <select class="form-control select" data-style="btn-primary" id="select-report" name="filterbutton">
+                                            <option value="monthly" selected="selected" disabled="disabled">Select Report</option>
+                                            <option value="monthly">Graphical</option>
+                                            <option value="1monthly">Tabular</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-2 graphical monthly barmonth splinemonth4 piemonth dougnutmonth quarterly barquarter splinequarter piequarter dougnutquarter yearly baryear splineyear pieyear dougnutyear  stackedareamonth stackedcolmonth splinemonth colpatienttype stackedareamonth2 stackedcolmonth2 splinemonth2 colpatientgender stackedareamonth3 colmonth3 splinemonth3 colpatientage colpatientpurok barpurok splinepurok stackedareapurok drilldown reporttype">
+                                    <div class="form-group">
+                                        <select class="form-control select" data-style="btn-primary" id="select-report" name="filterbutton" style="display:none">
                                             <option value="monthly" selected="selected" disabled="disabled">Select Report</option>
                                             <option value="monthly">Monthly</option>
                                             <option value="quarterly">Quarterly</option>
@@ -148,6 +159,24 @@
                                         </select>
                                     </div>
                                 </div>
+                                
+                                <!--Tabular-->
+                                <div class="col-md-2 tabular 1monthly 1quarterly 1yearly 1colpatienttype 1colpatientgender 1colpatientage 1colpatientpurok 1drilldown reporttype">
+                                    <div class="form-group">
+                                        <select class="form-control select" data-style="btn-primary" id="select-report" name="filterbutton" style="display:none">
+                                            <option value="1monthly" selected="selected" disabled="disabled">Select Report</option>
+                                            <option value="1monthly">Monthly</option>
+                                            <option value="1quarterly">Quarterly</option>
+                                            <option value="1yearly">Yearly</option>
+                                            <option value="1colpatienttype">Patient Type</option>
+                                            <option value="1colpatientgender">Patient Gender</option>
+                                            <option value="1colpatientage">Patient Age</option>
+                                            <option value="1colpatientpurok">Patient Purok</option>
+                                            <option value="1drilldown">Patient Status</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
                                 <div class="col-md-2">
                                     <!--Month Report Type-->
                                     <div class="form-group monthly barmonth splinemonth4 piemonth dougnutmonth reporttype">
@@ -308,6 +337,26 @@
                                         <?php require 'reports/patient_age.php'?>
                                         <?php require 'reports/patient_purok.php'?>
                                         <?php require 'reports/patient_status.php'?>
+                                        <div class="graphical monthly barmonth splinemonth4 piemonth dougnutmonth quarterly barquarter splinequarter piequarter dougnutquarter yearly baryear splineyear pieyear dougnutyear  stackedareamonth stackedcolmonth splinemonth colpatienttype stackedareamonth2 stackedcolmonth2 splinemonth2 colpatientgender stackedareamonth3 colmonth3 splinemonth3 colpatientage colpatientpurok barpurok splinepurok stackedareapurok drilldown reporttype">
+                                            	<?php
+                                        require 'require/config.php';
+                                        $year = date('Y');
+                                        if(isset($_GET['year']))
+                                        {
+                                            $year=$_GET['year'];
+                                        }
+                                        $query = $conn->query("SELECT * FROM `users` WHERE `user_id` = $_SESSION[user_id]") or die(mysqli_error());
+                                        $find = $query->fetch_array();
+                                        $query = $conn->query("SELECT count(*) as total FROM `patient` where `year` = '$year'") or die(mysqli_error());
+                                        $fetch = $query->fetch_array();
+                                        ?>
+                                        <hr>
+                                        <h4>Total Patient for the Year <?php echo $year. ' : <strong> ' .$fetch['total'].' Patients</strong>'?></h4> <hr>
+                                        <small>Approved By:</small>
+                                        <br><br>
+                                        <h3><?php echo $find['fullname']?></h3>
+                                        <small><?php echo $find['position']?></small>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

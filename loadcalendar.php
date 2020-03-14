@@ -24,6 +24,7 @@ else
 {
     echo "0 results";
 }
+
 ?>
 <script>
   $(document).ready(function() {
@@ -34,10 +35,11 @@ else
           right: 'month,agendaWeek,agendaDay'
         },
         eventClick: function(calEvent) {
-    const patientName = calEvent.title;
+    const patientname = calEvent.title;
     // console.log(patientName)
     // alert('Patient Name: ' + calEvent.title);
-    window.open("http://localhost/bmhc-mis/viewpatientCalendar.php?patientName="+patientName, "_blank");
+//    window.open("viewpatientCalendar?patientName="+patientname, "_blank");
+      window.open("prenatal", "_blank");
 
     // change the border color just for fun
     $(this).css('border-color', 'red');

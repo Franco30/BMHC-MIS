@@ -1,4 +1,4 @@
-<div class="stackedareamonth stackedcolmonth splinemonth colpatienttype reporttype" style="display: none;">
+<div class="tcolpatienttype reporttype" style="display: none;">
 <?php 
 require 'require/config.php';
 $query1 = $conn->query("select count(*) as total from `referral` where referral.age <= 15 && referral.year = '$year'") or die(mysqli_error());

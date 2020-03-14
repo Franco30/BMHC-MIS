@@ -117,7 +117,18 @@
                                 <div class="col-md-1"></div>
                                 <div class="col-md-2">
                                     <div class="form-group">
-                                        <select class="form-control select" data-style="btn-primary" id="select-report" name="filterbutton">
+                                        <select class="form-control select" data-style="btn-primary" id="select-report" name="filterbutton" style="display: none;">
+                                            <option value="graphical" selected="selected" disabled="disabled">Select Report Type</option>
+                                            <option value="monthly">Graphical</option>
+                                            <option value="tmonthly">Tabular</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                                <!--Graphical-->
+                                <div class="col-md-2 graphical monthly quarterly yearly colpatienttype colpatientgender colpatientage colpatientpurok barmonth splinemonth4 piemonth dougnutmonth barquarter splinequarter piequarter dougnutquarter baryear splineyear pieyear dougnutyear stackedareamonth stackedcolmonth splinemonth stackedareamonth2 stackedcolmonth2 splinemonth2 colpatientgender stackedareamonth3 colmonth3 splinemonth3 colpatientage colpatientpurok barpurok splinepurok stackedareapurok reporttype">
+                                    <div class="form-group">
+                                        <select class="form-control select" data-style="btn-primary" id="select-report" style="display: none;" name="filterbutton">
                                             <option value="monthly" selected="selected" disabled="disabled">Select Report</option>
                                             <option value="monthly">Monthly</option>
                                             <option value="quarterly">Quarterly</option>
@@ -129,18 +140,24 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-md-2">
+                                <!--Tabular-->
+                                <div class="col-md-2 tabular tmonthly tquarterly tyearly tcolpatienttype tcolpatientgender tcolpatientage tcolpatientpurok reporttype">
                                     <div class="form-group">
-                                        <select class="form-control select" data-style="btn-primary" id="select-report" name="filterbutton">
-                                            <option value="monthly" selected="selected" disabled="disabled">Select Report Type</option>
-                                            <option value="graphical">Graphical</option>
-                                            <option value="tabular">Tabular</option>
+                                        <select class="form-control select" data-style="btn-primary" id="select-report" style="display: none;" name="filterbutton">
+                                            <option value="tmonthly" selected="selected" disabled="disabled">Select Report</option>
+                                            <option value="tmonthly">Monthly</option>
+                                            <option value="tquarterly">Quarterly</option>
+                                            <option value="tyearly">Yearly</option>
+                                            <option value="tcolpatienttype">Patient Type</option>
+                                            <option value="tcolpatientgender">Patient Gender</option>
+                                            <option value="tcolpatientage">Patient Age</option>
+                                            <option value="tcolpatientpurok">Patient Purok</option>
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-md-2">
+                                <div class="col-md-2">  
                                     <!--Month Report Type-->
-                                    <div class="form-group monthly barmonth splinemonth4 piemonth dougnutmonth reporttype">
+                                    <div class="form-group graphical monthly barmonth splinemonth4 piemonth dougnutmonth reporttype">
                                         <select class="form-control select" data-style="btn-primary" name="filterbutton" style="display: none;">
                                             <option value="monthly" selected="selected" disabled="disabled">Select Chart</option>
                                             <option value="monthly">Column Chart</option>
@@ -253,6 +270,8 @@
                                         <div id="chartContainer1.2" class="splinemonth4 reporttype" style="width: 100%; height: 300px"></div>
                                         <div id="chartContainer1.3" class="piemonth reporttype" style="width: 100%; height: 300px"></div>
                                         <div id="chartContainer1.4" class="dougnutmonth reporttype" style="width: 100%; height: 300px"></div>
+                                        
+                                        
                                         <!--Quarterly Report Type-->
                                         <div id="chartContainer2" class="quarterly reporttype" style="width: 100%; height: 300px"></div>
                                         <div id="chartContainer2.1" class="barquarter reporttype" style="width: 100%; height: 300px"></div>
@@ -293,6 +312,10 @@
                                         <?php require 'reports/consultation_gender.php'?>
                                         <?php require 'reports/consultation_age.php'?>
                                         <?php require 'reports/consultation_purok.php'?>
+                                        <div class="graphical monthly quarterly yearly colpatienttype colpatientgender colpatientage colpatientpurok barmonth splinemonth4 piemonth dougnutmonth barquarter splinequarter piequarter dougnutquarter baryear splineyear pieyear dougnutyear stackedareamonth stackedcolmonth splinemonth stackedareamonth2 stackedcolmonth2 splinemonth2 colpatientgender stackedareamonth3 colmonth3 splinemonth3 colpatientage colpatientpurok barpurok splinepurok stackedareapurok reporttype">
+                                        <?php require 'require/footerreport.php'; ?>
+                                        </div>
+                                        
                                     </div>
                                 </div>
                             </div>

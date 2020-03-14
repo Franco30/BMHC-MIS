@@ -115,7 +115,18 @@
                                     </div>
                                 </div>
                                 <div class="col-md-1"></div>
+                                
                                 <div class="col-md-2">
+                                    <div class="form-group">
+                                        <select class="form-control select" data-style="btn-primary" id="select-report" name="filterbutton">
+                                            <option value="monthly" selected="selected" disabled="disabled">Select Report</option>
+                                            <option value="monthly">Graphical</option>
+                                            <option value="tmonthly">Tabular</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-2 graphical monthly quarterly yearly colpatientmethod colpatientpurok barmonth splinemonth4 piemonth dougnutmonth barquarter splinequarter piequarter dougnutquarter baryear splineyear pieyear dougnutyear stackedareamonth3 stackedcolumn3 splinemonth3 barpurok splinepurok stackedareapurok reporttype">
                                     <div class="form-group">
                                         <select class="form-control select" data-style="btn-primary" id="select-report" name="filterbutton">
                                             <option value="monthly" selected="selected" disabled="disabled">Select Report</option>
@@ -127,6 +138,20 @@
                                         </select>
                                     </div>
                                 </div>
+                                <!--Tabular-->
+                                <div class="col-md-2 tabular tmonthly tquarterly tyearly tcolpatientmethod tcolpatientpurok reporttype">
+                                    <div class="form-group">
+                                        <select class="form-control select" data-style="btn-primary" id="select-report" name="filterbutton">
+                                            <option value="tmonthly" selected="selected" disabled="disabled">Select Report</option>
+                                            <option value="tmonthly">Monthly</option>
+                                            <option value="tquarterly">Quarterly</option>
+                                            <option value="tyearly">Yearly</option>
+                                            <option value="tcolpatientmethod">Patient Method</option>
+                                            <option value="tcolpatientpurok">Patient Purok</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
                                 <div class="col-md-2">
                                     <!--Month Report Type-->
                                     <div class="form-group monthly barmonth splinemonth4 piemonth dougnutmonth reporttype">
@@ -250,6 +275,27 @@
                                         <?php require 'reports/familyplanning_yearly.php'?>
                                         <?php require 'reports/familyplanning_method.php'?>
                                         <?php require 'reports/familyplanning_purok.php'?>
+                                        
+                                        <div class="graphical monthly quarterly yearly colpatientmethod colpatientpurok barmonth splinemonth4 piemonth dougnutmonth barquarter splinequarter piequarter dougnutquarter baryear splineyear pieyear dougnutyear stackedareamonth3 stackedcolumn3 splinemonth3 barpurok splinepurok stackedareapurok reporttype">
+                                                                                <?php
+                                        require 'require/config.php';
+                                        $year = date('Y');
+                                        if(isset($_GET['year']))
+                                        {
+                                            $year=$_GET['year'];
+                                        }
+                                        $query = $conn->query("SELECT * FROM `users` WHERE `user_id` = $_SESSION[user_id]") or die(mysqli_error());
+                                        $find = $query->fetch_array();
+                                        $query = $conn->query("SELECT count(*) as total FROM `family_planning` where `year` = '$year'") or die(mysqli_error());
+                                        $fetch = $query->fetch_array();
+                                        ?>
+                                        <hr>
+                                        <h4>Total Family Planning for the Year <?php echo $year. ' : <strong> ' .$fetch['total'].' Patients</strong>'?></h4> <hr>
+                                        <small>Approved By:</small>
+                                        <br><br>
+                                        <h3><?php echo $find['fullname']?></h3>
+                                        <small><?php echo $find['position']?></small>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

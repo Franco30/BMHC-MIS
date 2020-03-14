@@ -1,4 +1,4 @@
-<div class="colpatientpurok barpurok splinepurok stackedareapurok reporttype" style="display: none;">
+<div class="tcolpatientpurok reporttype" style="display: none;">
     <label class="text text-danger ">By Purok</label>
     <table id="consultationmonthlytable" class="table table-bordered table-condensed nowrap" width="100%">
         <thead>
@@ -35,3 +35,4 @@
     </table>
     <?php require 'require/footerreport.php'?>
 </div>
+
