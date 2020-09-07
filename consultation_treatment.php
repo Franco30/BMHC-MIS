@@ -63,6 +63,7 @@
                             </div>
                             <div class="panel-body">
                                 <?php require 'tables/consultation_treatment_table.php'?>
+<!--                                <div id="prescriptionTable"></div>-->
                             </div>
                         </div>
                     </div>

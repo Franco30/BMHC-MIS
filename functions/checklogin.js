@@ -1,6 +1,6 @@
 $(document).ready(function () {
     //check username duplicates
-    $("#username").keyup(function () {
+    $("#username").blur(function () {
         var username = $("#username").val().trim();
         if (username != '') {
             $("#uname_response").show();

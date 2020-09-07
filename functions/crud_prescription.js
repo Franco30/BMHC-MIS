@@ -114,7 +114,7 @@ $(document).ready(function () {
 
 function showPrescription() {
     $.ajax({
-        url: 'tables/prescriptiontable.php',
+        url: 'tables/consultation_treatment_table.php',
         type: 'POST',
         async: false,
         data: {

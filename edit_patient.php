@@ -17,6 +17,7 @@
     <!-- CSS INCLUDE -->
     <link rel="stylesheet" type="text/css" id="theme" href="css/theme-brown.css" />
     <link rel="stylesheet" type="text/css" href="assets3/vendor/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="js/sweetalertjs/sweetalert2.min.css" /> 
     <link href="assets3/css/invoice-print.min.css" rel="stylesheet" />
     <style type="text/css">
         @media print {
@@ -208,7 +209,8 @@
                             <div class="panel-footer">
                                 <div class="btn-group pull-right">
                                     <div class="pull-left">
-                                        <button class="btn btn-success" data-toggle="modal" data-target="#edit_patient">Save</button>
+<!--                                        <button class="btn btn-success" data-toggle="modal" data-target="#edit_patient">Save</button>-->
+                                        <button type="button" class="updatepatient btn btn-success" value="<?php echo $fetch['patient_id']; ?>">Save</button>
                                         <button type="button" class="btn btn-danger" onclick="goBack()">Cancel</button>
                                     </div>
                                 </div>
@@ -224,7 +226,7 @@
     </div>
     <!-- END PAGE CONTAINER -->
     <!-- START PRELOADS -->
-    <?php require 'modals/editpatient.php'; ?>
+    <?php //require 'modals/editpatient.php'; ?>
     <audio id="audio-alert" src="audio/alert.mp3" preload="auto"></audio>
     <audio id="audio-fail" src="audio/fail.mp3" preload="auto"></audio>
     <!-- END PRELOADS -->
@@ -245,6 +247,7 @@
     <script type="text/javascript" src="js/plugins/scrolltotop/scrolltopcontrol.js"></script>
     <script type="text/javascript" src="js/plugins/datatables/jquery.dataTables.min.js"></script>
     <script type='text/javascript' src='js/plugins/maskedinput/jquery.maskedinput.min.js'></script>
+    <script type='text/javascript' src='js/sweetalertjs/sweetalert2.min.js'></script>
     <!-- END THIS PAGE PLUGINS-->
     <!-- START TEMPLATE -->
     <script type="text/javascript" src="js/settings.js"></script>

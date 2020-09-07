@@ -53,7 +53,6 @@ $(document).ready(function () {
                         add: 1,
                     },
                     success: function () {
-
                         $('#alert').slideDown();
                         $('#alerttext').text('Patient Added Successfully!');
                         setTimeout(function () {

@@ -20,6 +20,15 @@ $(document).ready(function () {
         $emergency_no = $('#emergency_no' + $patient_id).val();
         $status = $('#status' + $patient_id).val();
         //        if (confirm('Are you sure you want to update this patient?')) {
+        Swal.fire({
+        title: 'Are you sure you want to update this patient?',
+        icon: 'info',
+        showCancelButton: true,
+        confirmButtonColor: '#95b75d',
+        cancelButtonColor: '#E04B4A',
+        confirmButtonText: 'Yes'
+        }).then((result) => {
+        if (result.value) {
         $.ajax({
             type: "POST",
             url: "action/editpatient.php",
@@ -46,15 +55,21 @@ $(document).ready(function () {
                 edit: 1,
             },
             success: function () {
-                $('#edit_patient' + $patient_id).modal('hide');
-                $('#alert').slideDown();
-                $('#alerttext').text('Successfully updated Patient Profile');
-                setTimeout(function () {
-                    $('#alert').fadeOut('slow');
-                }, 1000);
-                setTimeout(function () {
-                    $('#edit_patient').modal('hide');
-                }, 2000);
+                Swal.fire({
+                title: 'Successfully updated Patient Profile',
+                icon: 'success',
+                confirmButtonColor: '#95b75d',
+                confirmButtonText: 'Yes'
+                })
+//                $('#edit_patient' + $patient_id).modal('hide');
+//                $('#alert').slideDown();
+//                $('#alerttext').text('Successfully updated Patient Profile');
+//                setTimeout(function () {
+//                    $('#alert').fadeOut('slow');
+//                }, 1000);
+//                setTimeout(function () {
+//                    $('#edit_patient').modal('hide');
+//                }, 2000);
                 setTimeout(function () {
                     window.location.href = 'master_file_patient';
                 }, 2500);
@@ -67,6 +82,8 @@ $(document).ready(function () {
                 showPMF();
             }
         });
+                            }
+            });
         //        }
         //                $('form').trigger('reset');
     });
