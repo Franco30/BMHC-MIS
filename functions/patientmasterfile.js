@@ -59,7 +59,7 @@ $(document).ready(function () {
                 title: 'Successfully updated Patient Profile',
                 icon: 'success',
                 confirmButtonColor: '#95b75d',
-                confirmButtonText: 'Yes'
+                confirmButtonText: 'Ok'
                 })
 //                $('#edit_patient' + $patient_id).modal('hide');
 //                $('#alert').slideDown();

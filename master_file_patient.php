@@ -18,6 +18,7 @@
     <link rel="stylesheet" type="text/css" id="theme" href="css/theme-brown.css" />
     <link rel="stylesheet" type="text/css" href="assets3/vendor/font-awesome/css/font-awesome.min.css" />
     <link href="assets3/css/invoice-print.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="js/sweetalertjs/sweetalert2.min.css" />
     <style type="text/css">
         @media print {
             @page {
@@ -146,6 +147,7 @@
     <script type="text/javascript" src="js/plugins/scrolltotop/scrolltopcontrol.js"></script>
     <script type="text/javascript" src="js/plugins/datatables/jquery.dataTables.min.js"></script>
     <script type='text/javascript' src='js/plugins/maskedinput/jquery.maskedinput.min.js'></script>
+    <script type='text/javascript' src='js/sweetalertjs/sweetalert2.min.js'></script>
     <!-- END THIS PAGE PLUGINS-->
     <!-- START TEMPLATE -->
     <script type="text/javascript" src="js/settings.js"></script>

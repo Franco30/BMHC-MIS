@@ -24,7 +24,16 @@ $(document).ready(function () {
         $birth_register_date = $('#birth_register_date' + $child_id).val();
         $purok2 = $('#purok2' + $child_id).val();
         $street_address2 = $('#street_address2' + $child_id).val();
-        if (confirm('Are you sure you want to update this patient?')) {
+//        if (confirm('Are you sure you want to update this patient?')) {
+        Swal.fire({
+        title: 'Are you sure you want to update this patient?',
+        icon: 'info',
+        showCancelButton: true,
+        confirmButtonColor: '#95b75d',
+        cancelButtonColor: '#E04B4A',
+        confirmButtonText: 'Yes'
+        }).then((result) => {
+        if (result.value) {
             $.ajax({
                 type: "POST",
                 url: "action/editchildpatient.php",
@@ -48,12 +57,18 @@ $(document).ready(function () {
                     edit: 1,
                 },
                 success: function () {
+                    Swal.fire({
+                    title: 'Successfully updated Patient Profile',
+                    icon: 'success',
+                    confirmButtonColor: '#95b75d',
+                    confirmButtonText: 'Ok'
+                    })
                     $('#edit_child_patient' + $child_id).modal('hide');
-                    $('#alert').slideDown();
-                    $('#alerttext').text('Successfully updated Patient');
-                    setTimeout(function () {
-                        $('#alert').fadeOut('slow');
-                    }, 1500);
+//                    $('#alert').slideDown();
+//                    $('#alerttext').text('Successfully updated Patient');
+//                    setTimeout(function () {
+//                        $('#alert').fadeOut('slow');
+//                    }, 1500);
                     $(document).ajaxComplete(function () {
                         $(document).find('.select').selectpicker();
                     });
@@ -63,7 +78,9 @@ $(document).ready(function () {
                     showCPMF();
                 }
             });
-        }
+                                        }
+            });
+//        }
     });
 });
 
