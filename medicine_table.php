@@ -1,4 +1,8 @@
-<?php require_once 'require/logincheck.php'?>
+<?php 
+require_once 'require/logincheck.php';
+require 'model/model.medicine.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,6 +21,7 @@
     <!-- CSS INCLUDE -->
     <link rel="stylesheet" type="text/css" id="theme" href="css/theme-brown.css" />
     <link rel="stylesheet" type="text/css" href="assets3/vendor/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="js/sweetalertjs/sweetalert2.min.css" />
     <!-- EOF CSS INCLUDE -->
 </head>
 
@@ -56,7 +61,9 @@
                             </div>
 <!--                            <div class="panel-body list-group list-group-contacts scroll" style="height:450px">-->
                                 <div class="panel-body">
-                                    <div id="medicineTable"></div>
+                                    <div id="medicineTable">
+                                    <h4 class="text-center" style="color:#1caf9a;">Loading...</h4>
+                                    </div>
                                 </div>
 <!--                            </div>-->
                         </div>
@@ -70,6 +77,7 @@
     </div>
     <!-- END PAGE CONTAINER -->
     <?php require 'modals/new_medicine.php'?>
+    <?php //require 'modals/editmedicine.php'?>
     <!-- START PRELOADS -->
     <audio id="audio-alert" src="audio/alert.mp3" preload="auto"></audio>
     <audio id="audio-fail" src="audio/fail.mp3" preload="auto"></audio>
@@ -84,11 +92,13 @@
 
     <!-- START THIS PAGE PLUGINS-->
     <script type="text/javascript" src="functions/crudmedicine.js"></script>
+    <script type="text/javascript" src="functions/mvc.medicine.js"></script>
     <script type='text/javascript' src='js/plugins/bootstrap/bootstrap-select.js'></script>
     <script type="text/javascript" src="js/plugins/datatables/jquery.dataTables.min.js"></script>
     <script type='text/javascript' src='js/plugins/icheck/icheck.min.js'></script>
     <script type="text/javascript" src="js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
     <script type="text/javascript" src="js/plugins/scrolltotop/scrolltopcontrol.js"></script>
+    <script type="text/javascript" src="js/sweetalertjs/sweetalert2.min.js"></script>
     <!-- END THIS PAGE PLUGINS-->
 
     <!-- START TEMPLATE -->

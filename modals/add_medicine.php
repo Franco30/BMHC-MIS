@@ -11,27 +11,24 @@
                 <h4 class="modal-title" id="defModalHead"><strong>New Medicine</strong></h4>
             </div>
             <div class="modal-body">
-                <form id="medicine" action="" method="post">
+                <form id="medicine">
                     <fieldset>
                         <div class="form-group">
+                            <label>Medicine Name</label>
+                            <input type="text" class="form-control" id="medicine_name" required />
+                        </div>
+                        <div class="form-group">
                             <label>Medicine Type</label>
-                            <select class="form-control select" name="medicine_type" id="medicine_type" required>
+                            <select class="form-control select" id="medicine_type" required>
                                 <option>Choose</option>
                                 <option value="Tablet">Tablet</option>
                                 <option value="Capsule">Capsule</option>
                                 <option value="Syrup">Syrup</option>
                             </select>
                         </div>
-                        
-                        <div class="form-group" id="medname">
-                            <label>Medicine Name</label>
-                            <div class="invalid-feedback" id="medicine_name_response" style="text-align: left;"></div>
-                            <input type="text" class="form-control" name="medicine_name" id="medicine_name" required />
-                        </div>
-                        
                         <div class="form-group">
                             <label>Medicine Category</label>
-                            <select class="form-control select" data-live-search="true" name="medicine_category" required>
+                            <select class="form-control select" data-live-search="true" id="medicine_category" required>
                                 <option>Choose</option>
                                 <option value="Analgesic">Analgesic</option>
                                 <option value="Anti-TB Drugs">Anti-TB Drugs</option>
@@ -47,8 +44,7 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <!--                <button type="button" id="addnew" class="btn btn-info">Save</button>-->
-                <input type="submit" name="insert" id="insert" value="Save" class="btn btn-info">
+                <button type="button" id="addnew" class="btn btn-info">Save</button>
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
             </div>
         </div>
