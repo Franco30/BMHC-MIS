@@ -45,57 +45,74 @@ $(document).ready(function () {
             $quantity = $('#quantity').val();
             $received = $('#received').val();
 
-            if (confirm('Are you sure you want to dispense this medicines?')) {
-                $.ajax({
-                    type: "POST",
-                    url: "action/dispensedmedicine.php",
-                    cache: false,
-                    async: false,
-                    data: {
-                        purpose: $purpose,
-                        medicine_name: $medicine_name,
-                        quantity: $quantity,
-                        received: $received,
-                        add: 1,
-                    },
-                    success: function (quantity) {
-                        if (quantity == 'not ok') {
-                            $('#modallabel').slideDown();
-                            $('#checkfield').html('<span class="fa fa-exclamation-circle"></span> Not enough medicine to dispense');
-                            setTimeout(function () {
-                                $('#modallabel').fadeOut('slow');
-                            }, 3500);
-                        } else {
-                            $('#dispensed').modal('hide');
-                            $('#alert').slideDown();
-                            $('#alerttext').html('<span class="fa fa-check"></span> Successfully dispensed medicine!');
-                            setTimeout(function () {
-                                $('#alert').fadeOut('slow');
-                            }, 1500);
-                            $("#medicine_name").val('default');
-                            $('#medicine_name').selectpicker('refresh');
-                            $("#purpose").val('default');
-                            $('#purpose').selectpicker('refresh');
-                            $("#received").val('default');
-                            $('#received').selectpicker('refresh');
-                            showDispensedMedicine();
-                            showMedicine();
-                            setTimeout(function () {
-                                window.location.href = 'medication_dispensation';
-                            }, 1500);
+            //            if (confirm('Are you sure you want to dispense this medicines?')) {
+            Swal.fire({
+                title: 'Are you sure you want to dispense this medicines?',
+                icon: 'info',
+                showCancelButton: true,
+                confirmButtonColor: '#95b75d',
+                cancelButtonColor: '#E04B4A',
+                confirmButtonText: 'Yes'
+            }).then((result) => {
+                if (result.value) {
+                    $.ajax({
+                        type: "POST",
+                        url: "action/dispensedmedicine.php",
+                        cache: false,
+                        async: false,
+                        data: {
+                            purpose: $purpose,
+                            medicine_name: $medicine_name,
+                            quantity: $quantity,
+                            received: $received,
+                            add: 1,
+                        },
+                        success: function (quantity) {
+                            if (quantity == 'not ok') {
+                                $('#modallabel').slideDown();
+                                $('#checkfield').html('<span class="fa fa-exclamation-circle"></span> Not enough medicine to dispense');
+                                setTimeout(function () {
+                                    $('#modallabel').fadeOut('slow');
+                                }, 3500);
+                            } else {
+                                $('#dispensed').modal('hide');
+                                //                            $('#alert').slideDown();
+                                //                            $('#alerttext').html('<span class="fa fa-check"></span> Successfully dispensed medicine!');
+                                //                            setTimeout(function () {
+                                //                                $('#alert').fadeOut('slow');
+                                Swal.fire({
+                                    position: 'center',
+                                    icon: 'success',
+                                    title: 'Successfully dispensed medicine!',
+                                    showConfirmButton: false,
+                                    timer: 1500
+                                })
+                                $("#medicine_name").val('default');
+                                $('#medicine_name').selectpicker('refresh');
+                                $("#purpose").val('default');
+                                $('#purpose').selectpicker('refresh');
+                                $("#received").val('default');
+                                $('#received').selectpicker('refresh');
+                                showDispensedMedicine();
+                                showMedicine();
+                                setTimeout(function () {
+                                    window.location.href = 'medication_dispensation';
+                                }, 1500);
+                            }
                         }
-                    }
 
-                });
-            }
-        $('#purpose').selectpicker('refresh');
-        $('#medicine_name').selectpicker('refresh');
-        $('#received').selectpicker('refresh');
-        $('form').trigger('reset');
+                    });
+
+                }
+            });
+            $('#purpose').selectpicker('refresh');
+            $('#medicine_name').selectpicker('refresh');
+            $('#received').selectpicker('refresh');
+            $('form').trigger('reset');
         }
 
     });
-    
+
     $(document).on('click', '#cancel', function () {
         $('#purpose').selectpicker('refresh');
         $("#medicine_name").selectpicker('refresh');

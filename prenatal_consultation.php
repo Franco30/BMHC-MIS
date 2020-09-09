@@ -12,6 +12,7 @@
     <link rel="icon" href="assets/images/bmhc.png" type="image/x-icon" />
     <link rel="stylesheet" type="text/css" id="theme" href="css/theme-brown.css" />
     <link rel="stylesheet" type="text/css" href="assets3/vendor/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="js/sweetalertjs/sweetalert2.min.css" />
 
 <!--
     <script src="js/tinymce.min.js" referrerpolicy="origin"></script>
@@ -230,6 +231,7 @@ $fetch2 = $query2->fetch_array();
     <script type="text/javascript" src="js/plugins/bootstrap/bootstrap-select.js"></script>
     <script type="text/javascript" src="js/plugins/smartwizard/jquery.smartWizard-2.0.min.js"></script>
     <script type='text/javascript' src='js/plugins/maskedinput/jquery.maskedinput.min.js'></script>
+    <script type='text/javascript' src='js/sweetalertjs/sweetalert2.min.js'></script>
 
     <script type="text/javascript" src="js/settings.js"></script>
     <script type="text/javascript" src="js/plugins.js"></script>

@@ -25,41 +25,59 @@ $(document).ready(function () {
             $plan_of_action = $('#plan_of_action').val();
             $remarks = $('#remarks').val();
 
-            if (confirm('Are you sure you want to add this patient?')) {
-                $.ajax({
-                    type: "POST",
-                    url: "action/addimmunizationconsultation.php",
-                    cache: false,
-                    async: false,
-                    data: {
-                        child_id: $child_id,
-                        immunization_id: $immunization_id,
-                        nutritional_status: $nutritional_status,
-                        medical_history: $medical_history,
-                        date: $date,
-                        temp: $temp,
-                        rr: $rr,
-                        bp: $bp,
-                        weight: $weight,
-                        complaints: $complaints,
-                        diagnosis: $diagnosis,
-                        plan_of_action: $plan_of_action,
-                        remarks: $remarks,
-                        add: 1,
-                    },
-                    success: function () {
+            //            if (confirm('Are you sure you want to add this patient?')) {
+            Swal.fire({
+                title: 'Are you sure you want to add this consultation?',
+                icon: 'info',
+                showCancelButton: true,
+                confirmButtonColor: '#95b75d',
+                cancelButtonColor: '#E04B4A',
+                confirmButtonText: 'Yes'
+            }).then((result) => {
+                if (result.value) {
+                    $.ajax({
+                        type: "POST",
+                        url: "action/addimmunizationconsultation.php",
+                        cache: false,
+                        async: false,
+                        data: {
+                            child_id: $child_id,
+                            immunization_id: $immunization_id,
+                            nutritional_status: $nutritional_status,
+                            medical_history: $medical_history,
+                            date: $date,
+                            temp: $temp,
+                            rr: $rr,
+                            bp: $bp,
+                            weight: $weight,
+                            complaints: $complaints,
+                            diagnosis: $diagnosis,
+                            plan_of_action: $plan_of_action,
+                            remarks: $remarks,
+                            add: 1,
+                        },
+                        success: function () {
                             $('#add_consultation').modal('hide');
-                            $('#alert').slideDown();
-                            $('#alerttext').text('Consultation Added Successfully!');
-                            setTimeout(function () {
-                                $('#alert').fadeOut('slow');
-                            }, 1500);
+//                            $('#alert').slideDown();
+//                            $('#alerttext').text('Consultation Added Successfully!');
+//                            setTimeout(function () {
+//                                $('#alert').fadeOut('slow');
+//                            }, 1500);
+                            Swal.fire({
+                              position: 'center',
+                              icon: 'success',
+                              title: 'Consultation Added Successfully!',
+                              showConfirmButton: false,
+                              timer: 1500
+                            })
                             setTimeout(function () {
                                 window.location.href = 'immunization_consultation?child_id=' + $child_id + '&&immunization_id=' + $immunization_id;
                             }, 2500);
-                    }
-                });
-            }
+                        }
+                    });
+
+                }
+            });
             $('form').trigger('reset');
         }
 

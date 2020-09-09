@@ -17,6 +17,7 @@
     <!-- CSS INCLUDE -->
     <link rel="stylesheet" type="text/css" id="theme" href="css/theme-brown.css" />
     <link rel="stylesheet" type="text/css" href="assets3/vendor/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="js/sweetalertjs/sweetalert2.min.css" />
     <!-- EOF CSS INCLUDE -->
 </head>
 
@@ -90,6 +91,7 @@
     <script type='text/javascript' src='js/plugins/icheck/icheck.min.js'></script>
     <script type="text/javascript" src="js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
     <script type="text/javascript" src="js/plugins/scrolltotop/scrolltopcontrol.js"></script>
+    <script type='text/javascript' src='js/sweetalertjs/sweetalert2.min.js'></script>
     <!-- END THIS PAGE PLUGINS-->
 
     <!-- START TEMPLATE -->

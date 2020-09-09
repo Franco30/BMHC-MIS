@@ -17,6 +17,7 @@
 
     <link rel="stylesheet" type="text/css" href="assets3/vendor/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="assets2/plugins/bootstrap-eonasdan-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
+    <link rel="stylesheet" type="text/css" href="js/sweetalertjs/sweetalert2.min.css" />
 </head>
 
 <body>
@@ -597,6 +598,7 @@
     <script type="text/javascript" src="js/plugins/bootstrap/bootstrap-select.js"></script>
     <script type="text/javascript" src="js/plugins/smartwizard/jquery.smartWizard-2.0.min.js"></script>
     <script type='text/javascript' src='js/plugins/maskedinput/jquery.maskedinput.min.js'></script>
+    <script type='text/javascript' src='js/sweetalertjs/sweetalert2.min.js'></script>
 
     <script type="text/javascript" src="js/settings.js"></script>
     <script type="text/javascript" src="js/plugins.js"></script>

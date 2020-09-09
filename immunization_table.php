@@ -15,7 +15,7 @@
 
     <link rel="stylesheet" type="text/css" id="theme" href="css/theme-brown.css" />
     <link rel="stylesheet" type="text/css" href="assets3/vendor/font-awesome/css/font-awesome.min.css" />
-
+    <link rel="stylesheet" type="text/css" href="js/sweetalertjs/sweetalert2.min.css" />
 </head>
 
 <body>
@@ -80,6 +80,7 @@
     <script type="text/javascript" src="js/plugins/bootstrap/bootstrap-datepicker.js"></script>
     <script type="text/javascript" src="js/plugins/bootstrap/bootstrap-timepicker.min.js"></script>
     <script type="text/javascript" src="js/plugins/bootstrap/bootstrap-select.js"></script>
+    <script type='text/javascript' src='js/sweetalertjs/sweetalert2.min.js'></script>
 
     <script type="text/javascript" src="js/settings.js"></script>
     <script type="text/javascript" src="js/plugins.js"></script>

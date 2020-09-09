@@ -16,34 +16,52 @@ $(document).ready(function () {
             var mf = ($('input:radio[name=mf]:checked').val() || "");
             var bff = ($('input:radio[name=bff]:checked').val() || "");
 
-            if (confirm('Are you sure you want to add this patient?')) {
-                $.ajax({
-                    type: "POST",
-                    url: "action/addfeeding.php",
-                    cache: false,
-                    async: false,
-                    data: {
-                        immunization_id: $immunization_id2,
-                        child_id: $child_id2,
-                        ebf: ebf,
-                        mf: mf,
-                        bff: bff,
-                        date: $tof_date,
-                        add: 1,
-                    },
-                    success: function (response) {
-                        $('#add_feeding').modal('hide');
-                        $('#alert').slideDown();
-                        $('#alerttext').text('Type of Feeding Added Successfully!');
-                        setTimeout(function () {
-                            $('#alert').fadeOut('slow');
-                        }, 1500);
-                        setTimeout(function () {
-                            window.location.href = 'immunization_treatment?child_id=' + $child_id2 + '&&immunization_id=' + $immunization_id2;
-                        }, 2500);
-                    }
-                });
-            }
+            //            if (confirm('Are you sure you want to add this patient?')) {
+            Swal.fire({
+                title: 'Are you sure you want to add this treatment?',
+                icon: 'info',
+                showCancelButton: true,
+                confirmButtonColor: '#95b75d',
+                cancelButtonColor: '#E04B4A',
+                confirmButtonText: 'Yes'
+            }).then((result) => {
+                if (result.value) {
+                    $.ajax({
+                        type: "POST",
+                        url: "action/addfeeding.php",
+                        cache: false,
+                        async: false,
+                        data: {
+                            immunization_id: $immunization_id2,
+                            child_id: $child_id2,
+                            ebf: ebf,
+                            mf: mf,
+                            bff: bff,
+                            date: $tof_date,
+                            add: 1,
+                        },
+                        success: function (response) {
+                            $('#add_feeding').modal('hide');
+                            Swal.fire({
+                                position: 'center',
+                                icon: 'success',
+                                title: 'Type of Feeding Added Successfully!',
+                                showConfirmButton: false,
+                                timer: 1500
+                            })
+                            //                        $('#alert').slideDown();
+                            //                        $('#alerttext').text('Type of Feeding Added Successfully!');
+                            //                        setTimeout(function () {
+                            //                            $('#alert').fadeOut('slow');
+                            //                        }, 1500);
+                            setTimeout(function () {
+                                window.location.href = 'immunization_treatment?child_id=' + $child_id2 + '&&immunization_id=' + $immunization_id2;
+                            }, 2500);
+                        }
+                    });
+
+                }
+            });
             $('form').trigger('reset');
         }
     });

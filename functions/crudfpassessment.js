@@ -126,7 +126,7 @@ $(document).ready(function () {
             $('#adnexa option:selected').each(function (i) {
                 adnexa[i] = $(this).val();
             });
-        
+
             //Risk for Violence
             var risks = [];
             $('#risks option:selected').each(function (i) {
@@ -135,85 +135,103 @@ $(document).ready(function () {
             $referredrisks = $('#referredrisks').val();
             $risksothers = $('#risksothers').val();
 
-            if (confirm('Are you sure you want to add this patient?')) {
-                $.ajax({
-                    type: "POST",
-                    url: "action/addfpassessment.php",
-                    cache: false,
-                    async: false,
-                    data: {
-                        patient_id: $patient_id,
-                        family_planning_id: $family_planning_id,
+            //            if (confirm('Are you sure you want to add this patient?')) {
+            Swal.fire({
+                title: 'Are you sure you want to add this patient?',
+                icon: 'info',
+                showCancelButton: true,
+                confirmButtonColor: '#95b75d',
+                cancelButtonColor: '#E04B4A',
+                confirmButtonText: 'Yes'
+            }).then((result) => {
+                if (result.value) {
+                    $.ajax({
+                        type: "POST",
+                        url: "action/addfpassessment.php",
+                        cache: false,
+                        async: false,
+                        data: {
+                            patient_id: $patient_id,
+                            family_planning_id: $family_planning_id,
 
-                        //Medical History
-                        heent: heent,
-                        chestheart: chestheart,
-                        abdomen: abdomen,
-                        genital: genital,
-                        extremities: extremities,
-                        history: history,
-                        skin: $skin,
+                            //Medical History
+                            heent: heent,
+                            chestheart: chestheart,
+                            abdomen: abdomen,
+                            genital: genital,
+                            extremities: extremities,
+                            history: history,
+                            skin: $skin,
 
-                        //STI Risk
-                        stirisk: $stirisk,
-                        forwomen: forwomen,
-                        formen: formen,
+                            //STI Risk
+                            stirisk: $stirisk,
+                            forwomen: forwomen,
+                            formen: formen,
 
-                        //Obstetrical History
-                        dateoflastdelivery: $dateoflastdelivery,
-                        typeoflastdelivery: $typeoflastdelivery,
-                        pregnancies: $pregnancies,
-                        fullterm: $fullterm,
-                        premature: $premature,
-                        abortions: $abortions,
-                        livingchildren: $livingchildren,
-                        pastmenstrualperiod: $pastmenstrualperiod,
-                        lastmenstrualperiod: $lastmenstrualperiod,
-                        history2: history2,
-                        dcmenstrualbleeding: $dcmenstrualbleeding,
+                            //Obstetrical History
+                            dateoflastdelivery: $dateoflastdelivery,
+                            typeoflastdelivery: $typeoflastdelivery,
+                            pregnancies: $pregnancies,
+                            fullterm: $fullterm,
+                            premature: $premature,
+                            abortions: $abortions,
+                            livingchildren: $livingchildren,
+                            pastmenstrualperiod: $pastmenstrualperiod,
+                            lastmenstrualperiod: $lastmenstrualperiod,
+                            history2: history2,
+                            dcmenstrualbleeding: $dcmenstrualbleeding,
 
-                        //Physical Examination
-                        bp: $bp,
-                        weight: $weight,
-                        height: $height,
-                        pr: $pr,
-                        conjuntiva: conjuntiva,
-                        neck: neck,
-                        breast: breast,
-                        thorax: thorax,
-                        abdomen2: abdomen2,
-                        extremities2: extremities2,
+                            //Physical Examination
+                            bp: $bp,
+                            weight: $weight,
+                            height: $height,
+                            pr: $pr,
+                            conjuntiva: conjuntiva,
+                            neck: neck,
+                            breast: breast,
+                            thorax: thorax,
+                            abdomen2: abdomen2,
+                            extremities2: extremities2,
 
-                        //Pelvic Examination
-                        perineum: perineum,
-                        vagina: vagina,
-                        cervix: cervix,
-                        consistency: consistency,
-                        position: position,
-                        size: size,
-                        mass: $mass,
-                        uterinedepth: $uterinedepth,
-                        adnexa: adnexa,
-                        
-                        //Risk for Violence
-                        risks: risks,
-                        referredrisks: $referredrisks,
-                        risksothers: $risksothers,
-                        add: 1
-                    },
-                    success: function () {
-                        $('form').trigger('reset');
-                        $('#alert').slideDown();
-                        $('#alerttext').text('Patient Added Successfully!');
-                        setTimeout(function () {
-                            $('#alert').fadeOut('slow');
-                        }, 1500);
-                        setTimeout(function () {
-                            window.location.href = 'patient_familyplanning?patient_id=' + $patient_id;
-                        }, 2500);
-                    }
-                });
-            }
+                            //Pelvic Examination
+                            perineum: perineum,
+                            vagina: vagina,
+                            cervix: cervix,
+                            consistency: consistency,
+                            position: position,
+                            size: size,
+                            mass: $mass,
+                            uterinedepth: $uterinedepth,
+                            adnexa: adnexa,
+
+                            //Risk for Violence
+                            risks: risks,
+                            referredrisks: $referredrisks,
+                            risksothers: $risksothers,
+                            add: 1
+                        },
+                        success: function () {
+                            $('form').trigger('reset');
+                            //                        $('#alert').slideDown();
+                            //                        $('#alerttext').text('Patient Added Successfully!');
+                            //                        setTimeout(function () {
+                            //                            $('#alert').fadeOut('slow');
+                            //                        }, 1500);
+                            Swal.fire({
+                                position: 'center',
+                                icon: 'success',
+                                title: 'Patient Added Successfully!',
+                                showConfirmButton: false,
+                                timer: 2000
+                            })
+                            setTimeout(function () {
+                                window.location.href = 'patient_familyplanning?patient_id=' + $patient_id;
+                            }, 2500);
+                        }
+                    });
+
+                }
+            });
         }
 
     });

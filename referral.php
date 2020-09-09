@@ -17,6 +17,7 @@
     <!-- CSS INCLUDE -->
     <link rel="stylesheet" type="text/css" id="theme" href="css/theme-brown.css" />
     <link rel="stylesheet" type="text/css" href="assets3/vendor/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="js/sweetalertjs/sweetalert2.min.css" />
     <!-- EOF CSS INCLUDE -->
 </head>
 
@@ -126,6 +127,7 @@
     <!-- END THIS PAGE PLUGINS-->
     <script type="text/javascript" src="js/plugins/datatables/jquery.dataTables.min.js"></script>
     <script type='text/javascript' src='js/plugins/maskedinput/jquery.maskedinput.min.js'></script>
+    <script type='text/javascript' src='js/sweetalertjs/sweetalert2.min.js'></script>
     <!-- START TEMPLATE -->
     <script type="text/javascript" src="js/settings.js"></script>
     <script type="text/javascript" src="js/plugins.js"></script>

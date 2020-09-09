@@ -70,33 +70,52 @@ $(document).ready(function () {
             $username = $('#username').val();
             $password = $('#password').val();
 
-            if (confirm('Are you sure you want to add this user?')) {
-                $.ajax({
-                    type: "POST",
-                    url: "action/adduseraccount.php",
-                    cache: false,
-                    async: false,
-                    data: {
-                        fullname: $fullname,
-                        license: $license,
-                        position: $position,
-                        username: $username,
-                        password: $password,
-                        add: 1,
-                    },
-                    success: function () {
-                        $('#newuser').modal('hide');
-                        $('#alert').slideDown();
-                        $('#alerttext').html('<span class="fa fa-check"></span> New User Added Successfully!');
-                        setTimeout(function () {
-                            $('#alert').fadeOut('slow');
-                        }, 1500);
-                        showUserAccount();
-                        notificationNewUser();
-                        notificationBadgeUser();
-                    }
-                });
-            }
+            //            if (confirm('Are you sure you want to add this user?')) {
+            Swal.fire({
+                title: 'Are you sure you want to add this user?',
+                icon: 'info',
+                showCancelButton: true,
+                confirmButtonColor: '#95b75d',
+                cancelButtonColor: '#E04B4A',
+                confirmButtonText: 'Yes'
+            }).then((result) => {
+                if (result.value) {
+                    $.ajax({
+                        type: "POST",
+                        url: "action/adduseraccount.php",
+                        cache: false,
+                        async: false,
+                        data: {
+                            fullname: $fullname,
+                            license: $license,
+                            position: $position,
+                            username: $username,
+                            password: $password,
+                            add: 1,
+                        },
+                        success: function () {
+                            $('#newuser').modal('hide');
+                            //                        $('#alert').slideDown();
+                            //                        $('#alerttext').html('<span class="fa fa-check"></span> New User Added Successfully!');
+                            //                        setTimeout(function () {
+                            //                            $('#alert').fadeOut('slow');
+                            //                        }, 1500);
+
+                            Swal.fire({
+                                position: 'center',
+                                icon: 'success',
+                                title: 'New User Added Successfully!',
+                                showConfirmButton: false,
+                                timer: 1500
+                            })
+                            showUserAccount();
+                            notificationNewUser();
+                            notificationBadgeUser();
+                        }
+                    });
+
+                }
+            });
             $('form').trigger('reset');
         }
 

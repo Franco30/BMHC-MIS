@@ -28,45 +28,62 @@ $(document).ready(function () {
             $contact_person = $('#contact_person').val();
             $emergency_no = $('#emergency_no').val();
 
-            if (confirm('Are you sure you want to add this new patient?')) {
-                $.ajax({
-                    type: "POST",
-                    url: "action/addpatient.php",
-                    cache: false,
-                    async: false,
-                    data: {
-                        patient_name: $patient_name,
-                        birthdate: $birthdate,
-                        age: $age,
-                        gender: $gender,
-                        civilstatus: $civilstatus,
-                        streetaddress: $streetaddress,
-                        purok: $purok,
-                        height: $height,
-                        weight: $weight,
-                        contact_no: $contact_no,
-                        region_province: $region_province,
-                        occupation: $occupation,
-                        philhealth_no: $philhealth_no,
-                        contact_person: $contact_person,
-                        emergency_no: $emergency_no,
-                        add: 1,
-                    },
-                    success: function () {
+            //            if (confirm('Are you sure you want to add this new patient?')) {
+            Swal.fire({
+                title: 'Are you sure you want to add this new patient?',
+                icon: 'info',
+                showCancelButton: true,
+                confirmButtonColor: '#95b75d',
+                cancelButtonColor: '#E04B4A',
+                confirmButtonText: 'Yes'
+            }).then((result) => {
+                if (result.value) {
+                    $.ajax({
+                        type: "POST",
+                        url: "action/addpatient.php",
+                        cache: false,
+                        async: false,
+                        data: {
+                            patient_name: $patient_name,
+                            birthdate: $birthdate,
+                            age: $age,
+                            gender: $gender,
+                            civilstatus: $civilstatus,
+                            streetaddress: $streetaddress,
+                            purok: $purok,
+                            height: $height,
+                            weight: $weight,
+                            contact_no: $contact_no,
+                            region_province: $region_province,
+                            occupation: $occupation,
+                            philhealth_no: $philhealth_no,
+                            contact_person: $contact_person,
+                            emergency_no: $emergency_no,
+                            add: 1,
+                        },
+                        success: function () {
+                            Swal.fire({
+                                position: 'center',
+                                icon: 'success',
+                                title: 'Patient Added Successfully!',
+                                showConfirmButton: false,
+                                timer: 1500
+                            })
+                            //                        $('#alert').slideDown();
+                            //                        $('#alerttext').text('Patient Added Successfully!');
+                            //                        setTimeout(function () {
+                            //                            $('#alert').fadeOut('slow');
+                            //                        }, 1500);
+                            $('#new_patient').modal('hide');
+                            showPatient();
+                            setTimeout(function () {
+                                window.location.href = 'consultation';
+                            }, 2500);
+                        }
+                    });
 
-                        $('#alert').slideDown();
-                        $('#alerttext').text('Patient Added Successfully!');
-                        setTimeout(function () {
-                            $('#alert').fadeOut('slow');
-                        }, 1500);
-                        $('#new_patient').modal('hide');
-                        showPatient();
-                        setTimeout(function () {
-                            window.location.href = 'consultation';
-                        }, 2500);
-                    }
-                });
-            }
+                }
+            });
             $('form').trigger('reset');
         }
 

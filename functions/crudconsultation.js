@@ -1,6 +1,6 @@
 $(document).ready(function () {
     showPatientConsultation();
-//    || $('#pefindings').val() == "" || $('#diagnosis').val() == "" || $('#labrequest').val() == ""
+    //    || $('#pefindings').val() == "" || $('#diagnosis').val() == "" || $('#labrequest').val() == ""
     $(document).on('click', '#addnew', function () {
         if ($('#date_today').val() == "" || $('#weight').val() == "" || $('#bp').val() == "" || $('#temp').val() == "" || $('#headfamily').val() == "" || $('#rr').val() == "" || $('#pr').val() == "" || $('#complaints').val() == "") {
             $('#alert2').slideDown();
@@ -26,56 +26,74 @@ $(document).ready(function () {
             $gender = $('#gender').val();
             $age = $('#age').val();
 
-           var complaints = [];
+            var complaints = [];
 
-           $('#complaints option:selected').each(function (i) {
-               complaints[i] = $(this).val();
-           });
+            $('#complaints option:selected').each(function (i) {
+                complaints[i] = $(this).val();
+            });
 
-            if (confirm('Are you sure you want to add this patient?')) {
-                $.ajax({
-                    type: "POST",
-                    url: "action/addconsultation.php",
-                    cache: false,
-                    async: false,
-                    data: {
-                        patient_id: $patient_id,
-                        date_today: $date_today,
-                        weight: $weight,
-                        height: $height,
-                        bp: $bp,
-                        temp: $temp,
-                        headfamily: $headfamily,
-                        rr: $rr,
-                        pr: $pr,
-                        complaints: complaints,
-                        complaints_description: $complaints_description,
-                        pefindings: $pefindings,
-                        diagnosis: $diagnosis,
-                        labrequest: $labrequest,
-                        purok: $purok,
-                        gender: $gender,
-                        age: $age,
-                        add: 1,
-                    },
-                    success: function () {
+            //            if (confirm('Are you sure you want to add this patient?')) {
+            Swal.fire({
+                title: 'Are you sure you want to add this patient?',
+                icon: 'info',
+                showCancelButton: true,
+                confirmButtonColor: '#95b75d',
+                cancelButtonColor: '#E04B4A',
+                confirmButtonText: 'Yes'
+            }).then((result) => {
+                if (result.value) {
 
-                        $('#alert').slideDown();
-                        $('#alerttext').text('Patient Consultation Added Successfully!');
-                        setTimeout(function () {
-                            $('#alert').fadeOut('slow');
-                        }, 1500);
-                        setTimeout(function () {
-                            window.location.href = 'consultation';
-                        }, 2500);
-                    }
-                });
-            }
+                    $.ajax({
+                        type: "POST",
+                        url: "action/addconsultation.php",
+                        cache: false,
+                        async: false,
+                        data: {
+                            patient_id: $patient_id,
+                            date_today: $date_today,
+                            weight: $weight,
+                            height: $height,
+                            bp: $bp,
+                            temp: $temp,
+                            headfamily: $headfamily,
+                            rr: $rr,
+                            pr: $pr,
+                            complaints: complaints,
+                            complaints_description: $complaints_description,
+                            pefindings: $pefindings,
+                            diagnosis: $diagnosis,
+                            labrequest: $labrequest,
+                            purok: $purok,
+                            gender: $gender,
+                            age: $age,
+                            add: 1,
+                        },
+                        success: function () {
+                            Swal.fire({
+                                position: 'center',
+                                icon: 'success',
+                                title: 'Patient Consultation Added Successfully!',
+                                showConfirmButton: false,
+                                timer: 1500
+                            })
+                            //                        $('#alert').slideDown();
+                            //                        $('#alerttext').text('Patient Consultation Added Successfully!');
+                            //                        setTimeout(function () {
+                            //                            $('#alert').fadeOut('slow');
+                            //                        }, 1500);
+                            setTimeout(function () {
+                                window.location.href = 'consultation';
+                            }, 2500);
+                        }
+                    });
+
+                }
+            });
             $('form').trigger('reset');
         }
 
     });
-    
+
     $(document).on('click', '.updateconsultation', function () {
         $patient_id = $('#patient_id').val();
         $consultation_id = $(this).val();
@@ -91,47 +109,65 @@ $(document).ready(function () {
         $pefindings = $('#pefindings' + $consultation_id).val();
         $diagnosis = $('#diagnosis' + $consultation_id).val();
         $labrequest = $('#labrequest' + $consultation_id).val();
-           var complaints = [];
+        var complaints = [];
 
-           $('#complaints option:selected').each(function (i) {
-               complaints[i] = $(this).val();
-           });
+        $('#complaints option:selected').each(function (i) {
+            complaints[i] = $(this).val();
+        });
 
-        if (confirm('Are you sure you want to edit this Consultation?')) {
-            $.ajax({
-                type: "POST",
-                url: "action/editconsultation.php",
-                cache: false,
-                async: false,
-                data: {
-                    consultation_id: $consultation_id,
-                    date_today: $date_today,
-                    weight: $weight,
-                    height: $height,
-                    bp: $bp,
-                    temp: $temp,
-                    headfamily: $headfamily,
-                    rr: $rr,
-                    pr: $pr,
-                    complaints: complaints,
-                    complaints_description: $complaints_description,
-                    pefindings: $pefindings,
-                    diagnosis: $diagnosis,
-                    labrequest: $labrequest,
-                    edit: 1,
-                },
-                success: function () {
-                    $('#alert').slideDown();
-                    $('#alerttext').text('Successfully updated Consultation Form');
-                    setTimeout(function () {
-                        $('#alert').fadeOut('slow');
-                    }, 1500);
-                    setTimeout(function () {
-                        window.location.href = 'patient_consultation?patient_id=' + $patient_id;
-                    }, 2500);
-                }
-            });
-        }
+        //        if (confirm('Are you sure you want to edit this Consultation?')) {
+        Swal.fire({
+            title: 'Are you sure you want to edit this Consultation?',
+            icon: 'info',
+            showCancelButton: true,
+            confirmButtonColor: '#95b75d',
+            cancelButtonColor: '#E04B4A',
+            confirmButtonText: 'Yes'
+        }).then((result) => {
+            if (result.value) {
+                $.ajax({
+                    type: "POST",
+                    url: "action/editconsultation.php",
+                    cache: false,
+                    async: false,
+                    data: {
+                        consultation_id: $consultation_id,
+                        date_today: $date_today,
+                        weight: $weight,
+                        height: $height,
+                        bp: $bp,
+                        temp: $temp,
+                        headfamily: $headfamily,
+                        rr: $rr,
+                        pr: $pr,
+                        complaints: complaints,
+                        complaints_description: $complaints_description,
+                        pefindings: $pefindings,
+                        diagnosis: $diagnosis,
+                        labrequest: $labrequest,
+                        edit: 1,
+                    },
+                    success: function () {
+                        //                    $('#alert').slideDown();
+                        //                    $('#alerttext').text('Successfully updated Consultation Form');
+                        //                    setTimeout(function () {
+                        //                        $('#alert').fadeOut('slow');
+                        //                    }, 1500);
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: 'Successfully updated Consultation Form',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                        setTimeout(function () {
+                            window.location.href = 'patient_consultation?patient_id=' + $patient_id;
+                        }, 2500);
+                    }
+                });
+
+            }
+        });
     });
 });
 

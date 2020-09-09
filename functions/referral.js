@@ -25,48 +25,66 @@ $(document).ready(function () {
             $referred_by = $('#referred_by').val();
             //            $designation = $('#designation').val();
 
-            if (confirm('Are you sure you want to add this new Referral?')) {
-                $.ajax({
-                    type: "POST",
-                    url: "action/add_referral.php",
-                    cache: false,
-                    async: false,
-                    data: {
-                        date: $date,
-                        patient_name: $patient_name,
-                        registered: $registered,
-                        gender: $gender,
-                        weight: $weight,
-                        bp: $bp,
-                        temp: $temp,
-                        age: $age,
-                        complaints: $complaints,
-                        from: $from,
-                        to: $to,
-                        origin: $origin,
-                        destination: $destination,
-                        referred_by: $referred_by,
-                        //                        designation: $designation,
-                        add: 1,
-                    },
-                    success: function () {
-                        $('#addreferral').modal('hide');
-                        $('#alert').slideDown();
-                        $('#alerttext').html('<span class="fa fa-check"></span> Successfully added new Referral!');
-                        setTimeout(function () {
-                            $('#alert').fadeOut('slow');
-                        }, 1500);
-                        $(document).ajaxComplete(function () {
-                            $(document).find('.select').selectpicker();
-                        });
-                        $(document).ajaxComplete(function () {
-                            $(document).find('.datepicker').datepicker();
-                        });
-                        showPatient();
-                    }
+            //            if (confirm('Are you sure you want to add this new Referral?')) {
+            Swal.fire({
+                title: 'Are you sure you want to add this new Referral?',
+                icon: 'info',
+                showCancelButton: true,
+                confirmButtonColor: '#95b75d',
+                cancelButtonColor: '#E04B4A',
+                confirmButtonText: 'Yes'
+            }).then((result) => {
+                if (result.value) {
+                    $.ajax({
+                        type: "POST",
+                        url: "action/add_referral.php",
+                        cache: false,
+                        async: false,
+                        data: {
+                            date: $date,
+                            patient_name: $patient_name,
+                            registered: $registered,
+                            gender: $gender,
+                            weight: $weight,
+                            bp: $bp,
+                            temp: $temp,
+                            age: $age,
+                            complaints: $complaints,
+                            from: $from,
+                            to: $to,
+                            origin: $origin,
+                            destination: $destination,
+                            referred_by: $referred_by,
+                            //                        designation: $designation,
+                            add: 1,
+                        },
+                        success: function () {
+                            $('#addreferral').modal('hide');
+                            //                        $('#alert').slideDown();
+                            //                        $('#alerttext').html('<span class="fa fa-check"></span> Successfully added new Referral!');
+                            //                        setTimeout(function () {
+                            //                            $('#alert').fadeOut('slow');
+                            //                        }, 1500);
+                            Swal.fire({
+                                position: 'center',
+                                icon: 'success',
+                                title: 'Successfully added new Referral!',
+                                showConfirmButton: false,
+                                timer: 1500
+                            })
+                            $(document).ajaxComplete(function () {
+                                $(document).find('.select').selectpicker();
+                            });
+                            $(document).ajaxComplete(function () {
+                                $(document).find('.datepicker').datepicker();
+                            });
+                            showPatient();
+                        }
 
-                });
-            }
+                    });
+
+                }
+            });
             $('form').trigger('reset');
         }
 
@@ -95,48 +113,66 @@ $(document).ready(function () {
         $destination = $('#destination' + $referral_id).val();
         $referred_by = $('#referred_by' + $referral_id).val();
 
-        if (confirm('Are you sure you want to edit this Referral Form?')) {
-            $.ajax({
-                type: "POST",
-                url: "action/editreferral.php",
-                cache: false,
-                async: false,
-                data: {
-                    referral_id: $referral_id,
-                    date: $date,
-                    patient_name: $patient_name,
-                    gender: $gender,
-                    weight: $weight,
-                    bp: $bp,
-                    temp: $temp,
-                    age: $age,
-                    complaints: $complaints,
-                    to: $to,
-                    destination: $destination,
-                    referred_by: $referred_by,
-                    edit: 1,
-                },
-                success: function () {
-                    console.log($referred_by);
-                    $('#alert').slideDown();
-                    $('#alerttext').text('Successfully updated Referral Record');
-                    setTimeout(function () {
-                        $('#alert').fadeOut('slow');
-                    }, 1500);
-                    $(document).ajaxComplete(function () {
-                        $(document).find('.select').selectpicker();
-                    });
-                    $(document).ajaxComplete(function () {
-                        $(document).find('.datepicker').datepicker();
-                    });
-                    $(document).ajaxComplete(function () {
-                        $(document).find('.mask_bp').mask('999/99');
-                        $(document).find('.mask_temp').mask('99.9');
-                    });
-                    showPatient();
-                }
-            });
-        }
+        //        if (confirm('Are you sure you want to edit this Referral Form?')) {
+        Swal.fire({
+            title: 'Are you sure you want to edit this Referral Form?',
+            icon: 'info',
+            showCancelButton: true,
+            confirmButtonColor: '#95b75d',
+            cancelButtonColor: '#E04B4A',
+            confirmButtonText: 'Yes'
+        }).then((result) => {
+            if (result.value) {
+                $.ajax({
+                    type: "POST",
+                    url: "action/editreferral.php",
+                    cache: false,
+                    async: false,
+                    data: {
+                        referral_id: $referral_id,
+                        date: $date,
+                        patient_name: $patient_name,
+                        gender: $gender,
+                        weight: $weight,
+                        bp: $bp,
+                        temp: $temp,
+                        age: $age,
+                        complaints: $complaints,
+                        to: $to,
+                        destination: $destination,
+                        referred_by: $referred_by,
+                        edit: 1,
+                    },
+                    success: function () {
+                        console.log($referred_by);
+                        //                    $('#alert').slideDown();
+                        //                    $('#alerttext').text('Successfully updated Referral Record');
+                        //                    setTimeout(function () {
+                        //                        $('#alert').fadeOut('slow');
+                        //                    }, 1500);
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: 'Successfully updated Referral Record!',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                        $(document).ajaxComplete(function () {
+                            $(document).find('.select').selectpicker();
+                        });
+                        $(document).ajaxComplete(function () {
+                            $(document).find('.datepicker').datepicker();
+                        });
+                        $(document).ajaxComplete(function () {
+                            $(document).find('.mask_bp').mask('999/99');
+                            $(document).find('.mask_temp').mask('99.9');
+                        });
+                        showPatient();
+                    }
+                });
+
+            }
+        });
     });
 });
 

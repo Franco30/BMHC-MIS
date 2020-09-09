@@ -19,6 +19,7 @@
     <link rel="stylesheet" type="text/css" href="assets3/vendor/font-awesome/css/font-awesome.min.css" />
     <!-- EOF CSS INCLUDE -->
     <link rel="stylesheet" type="text/css" href="assets2/plugins/bootstrap-eonasdan-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
+    <link rel="stylesheet" type="text/css" href="js/sweetalertjs/sweetalert2.min.css" />
 </head>
 
 <body>
@@ -138,6 +139,7 @@
     <script type="text/javascript" src="js/plugins/scrolltotop/scrolltopcontrol.js"></script>
     <script type="text/javascript" src="js/plugins/datatables/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="js/plugins/tagsinput/jquery.tagsinput.min.js"></script>
+    <script type='text/javascript' src='js/sweetalertjs/sweetalert2.min.js'></script>
     <!-- END THIS PAGE PLUGINS-->
     <!-- START TEMPLATE -->
     <script type="text/javascript" src="js/settings.js"></script>

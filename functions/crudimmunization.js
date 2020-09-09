@@ -2,10 +2,10 @@ $(document).ready(function () {
     showPatient();
 
     //check availability of patient name
-//$('#phonenumber').val() == "" ||
+    //$('#phonenumber').val() == "" ||
     //add patient ajax
     $(document).on('click', '#addnew', function () {
-        if ($('#philhealth').val() == "" || $('#birthtime').val() == "" || $('#birthweight').val() == "" ||  $('#gravida').val() == "" || $('#para').val() == "" || $('#abortion').val() == "" || $('#mage').val() == "" || $('#fage').val() == "" || $('#placeprenatal').val() == "" || $('#placedelivery').val() == "" || $('#typedelivery').val() == "") {
+        if ($('#philhealth').val() == "" || $('#birthtime').val() == "" || $('#birthweight').val() == "" || $('#gravida').val() == "" || $('#para').val() == "" || $('#abortion').val() == "" || $('#mage').val() == "" || $('#fage').val() == "" || $('#placeprenatal').val() == "" || $('#placedelivery').val() == "" || $('#typedelivery').val() == "") {
 
             $('#alert2').slideDown();
             $('#alerttext2').html('<span class="fa fa-exclamation-circle"></span> All fields are required!');
@@ -16,10 +16,10 @@ $(document).ready(function () {
         } else {
 
             $child_id = $('#child_id').val();
-            
+
             $purok = $('#purok').val();
             $gender = $('#gender').val();
-            
+
             $philhealth = $('#philhealth').val();
             $birthtime = $('#birthtime').val();
             $birthweight = $('#birthweight').val();
@@ -33,48 +33,65 @@ $(document).ready(function () {
             $placedelivery = $('#placedelivery').val();
             $typedelivery = $('#typedelivery').val();
 
-            if (confirm('Are you sure you want to add this patient?')) {
-                $.ajax({
-                    type: "POST",
-                    url: "action/addimmunization.php",
-                    cache: false,
-                    async: false,
-                    data: {
-                        child_id: $child_id,
-                        purok: $purok,
-                        gender: $gender,
-                        philhealth: $philhealth,
-                        birthtime: $birthtime,
-                        birthweight: $birthweight,
-                        phonenumber: $phonenumber,
-                        gravida: $gravida,
-                        para: $para,
-                        abortion: $abortion,
-                        mage: $mage,
-                        fage: $fage,
-                        placeprenatal: $placeprenatal,
-                        placedelivery: $placedelivery,
-                        typedelivery: $typedelivery,
-                        add: 1,
-                    },
-                    success: function () {
+            //            if (confirm('Are you sure you want to add this patient?')) {
+            Swal.fire({
+                title: 'Are you sure you want to add this new patient?',
+                icon: 'info',
+                showCancelButton: true,
+                confirmButtonColor: '#95b75d',
+                cancelButtonColor: '#E04B4A',
+                confirmButtonText: 'Yes'
+            }).then((result) => {
+                if (result.value) {
+                    $.ajax({
+                        type: "POST",
+                        url: "action/addimmunization.php",
+                        cache: false,
+                        async: false,
+                        data: {
+                            child_id: $child_id,
+                            purok: $purok,
+                            gender: $gender,
+                            philhealth: $philhealth,
+                            birthtime: $birthtime,
+                            birthweight: $birthweight,
+                            phonenumber: $phonenumber,
+                            gravida: $gravida,
+                            para: $para,
+                            abortion: $abortion,
+                            mage: $mage,
+                            fage: $fage,
+                            placeprenatal: $placeprenatal,
+                            placedelivery: $placedelivery,
+                            typedelivery: $typedelivery,
+                            add: 1,
+                        },
+                        success: function () {
+                            Swal.fire({
+                                position: 'center',
+                                icon: 'success',
+                                title: 'Patient Added Successfully!',
+                                showConfirmButton: false,
+                                timer: 1500
+                            })
+                            //                        $('#alert').slideDown();
+                            //                        $('#alerttext').text('Patient Added Successfully!');
+                            //                        setTimeout(function () {
+                            //                            $('#alert').fadeOut('slow');
+                            //                        }, 1500);
+                            setTimeout(function () {
+                                window.location.href = 'immunization_table';
+                            }, 2500);
+                        }
+                    });
 
-                        $('#alert').slideDown();
-                        $('#alerttext').text('Patient Added Successfully!');
-                        setTimeout(function () {
-                            $('#alert').fadeOut('slow');
-                        }, 1500);
-                        setTimeout(function () {
-                            window.location.href = 'immunization_table';
-                        }, 2500);
-                    }
-                });
-            }
+                }
+            });
             $('form').trigger('reset');
         }
 
     });
-    
+
     $(document).on('click', '.updateimmunization', function () {
         $immunization_id = $(this).val();
         $philhealth = $('#philhealth' + $immunization_id).val();
@@ -90,7 +107,16 @@ $(document).ready(function () {
         $placedelivery = $('#placedelivery' + $immunization_id).val();
         $typedelivery = $('#typedelivery' + $immunization_id).val();
 
-        if (confirm('Are you sure you want to edit this Immunization Form?')) {
+//        if (confirm('Are you sure you want to edit this Immunization Form?')) {
+                    Swal.fire({
+                title: 'Are you sure you want to edit this Immunization Form?',
+                icon: 'info',
+                showCancelButton: true,
+                confirmButtonColor: '#95b75d',
+                cancelButtonColor: '#E04B4A',
+                confirmButtonText: 'Yes'
+            }).then((result) => {
+                if (result.value) {
             $.ajax({
                 type: "POST",
                 url: "action/editimmunization.php",
@@ -113,17 +139,26 @@ $(document).ready(function () {
                     edit: 1,
                 },
                 success: function () {
-                    $('#alert').slideDown();
-                    $('#alerttext').text('Successfully updated Immunization Form');
-                    setTimeout(function () {
-                        $('#alert').fadeOut('slow');
-                    }, 1500);
+                            Swal.fire({
+                              position: 'center',
+                              icon: 'success',
+                              title: 'Successfully updated Immunization Form',
+                              showConfirmButton: false,
+                              timer: 1500
+                            })
+//                    $('#alert').slideDown();
+//                    $('#alerttext').text('Successfully updated Immunization Form');
+//                    setTimeout(function () {
+//                        $('#alert').fadeOut('slow');
+//                    }, 1500);
                     setTimeout(function () {
                         window.location.href = 'immunization_table';
                     }, 2500);
                 }
             });
+        
         }
+                    });
     });
 });
 

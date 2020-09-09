@@ -28,7 +28,16 @@ $(document).ready(function () {
             $purok2 = $('#purok2').val();
             $street_address2 = $('#street_address2').val();
 
-            if (confirm('Are you sure you want to add this new patient?')) {
+//            if (confirm('Are you sure you want to add this new patient?')) {
+        Swal.fire({
+                title: 'Are you sure you want to add this new patient?',
+                icon: 'info',
+                showCancelButton: true,
+                confirmButtonColor: '#95b75d',
+                cancelButtonColor: '#E04B4A',
+                confirmButtonText: 'Yes'
+            }).then((result) => {
+            if (result.value) {
                 $.ajax({
                     type: "POST",
                     url: "action/addchildpatient.php",
@@ -53,16 +62,25 @@ $(document).ready(function () {
                         add: 1,
                     },
                     success: function () {
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: 'Patient Added Successfully!',
+                            showConfirmButton: false,
+                            timer: 2000
+                        })
                         $('#new_child_patient').modal('hide');
-                        $('#alert').slideDown();
-                        $('#alerttext').text('Patient Added Successfully!');
+//                        $('#alert').slideDown();
+//                        $('#alerttext').text('Patient Added Successfully!');
                         setTimeout(function () {
                             $('#alert').fadeOut('slow');
                         }, 1500);
                         showCPatient();
                     }
                 });
-            }
+            
+                            }
+            });
             $('form').trigger('reset');
         }
 

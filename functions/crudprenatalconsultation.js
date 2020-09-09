@@ -1,40 +1,49 @@
 $(document).ready(function () {
     showPatient();
     $(document).on('click', '#addnew', function () {
-//        if ($('#date').val() == "" || $('#doctors_order_advice').val() == "" || $('#presentation').val() == "" || $('#complaints').val() == "" || $('#lmp').val() == "" || $('#edc').val() == "" || $('#gravida').val() == "" || $('#para').val() == "" || $('#ft').val() == "" || $('#pt').val() == "" || $('#a').val() == "" || $('#lb').val() == "" || $('#fh').val() == "" || $('#fhb').val() == "" || $('#bp').val() == "" || $('#temp').val() == "" || $('#weight').val() == "" || $('#height').val() == "" || $('#aog').val() == "") {
-//            
-//            $('#alert2').slideDown();
-//            $('#alerttext2').html('<span class="fa fa-exclamation-circle"></span> All fields are required!');
-//            setTimeout(function () {
-//                $('#alert2').fadeOut('slow');
-//            }, 3500);
-//            
-//        } else {
-            $patient_id = $('#patient_id').val();
-            $prenatal_id = $('#prenatal_id').val();
-            $date = $('#date').val();
-            $doctors_order_advice = $('#doctors_order_advice').val();
-            $presentation = $('#presentation').val();
-            $complaints = $('#complaints').val();
-            $lmp = $('#lmp').val();
-            $edc = $('#edc').val();
-            $gravida = $('#gravida').val();
-            $para = $('#para').val();
-            $ft = $('#ft').val();
-            $pt = $('#pt').val();
-            $a = $('#a').val();
-            $lb = $('#lb').val();
-            $fh = $('#fh').val();
-            $fhb = $('#fhb').val();
-            $bp = $('#bp').val();
-            $temp = $('#temp').val();
-            $weight = $('#weight').val();
-            $height = $('#height').val();
-            $aog = $('#aog').val();
-            
-//            var content = tinymce.get("doctors_order_advice").getContent();
+        //        if ($('#date').val() == "" || $('#doctors_order_advice').val() == "" || $('#presentation').val() == "" || $('#complaints').val() == "" || $('#lmp').val() == "" || $('#edc').val() == "" || $('#gravida').val() == "" || $('#para').val() == "" || $('#ft').val() == "" || $('#pt').val() == "" || $('#a').val() == "" || $('#lb').val() == "" || $('#fh').val() == "" || $('#fhb').val() == "" || $('#bp').val() == "" || $('#temp').val() == "" || $('#weight').val() == "" || $('#height').val() == "" || $('#aog').val() == "") {
+        //            
+        //            $('#alert2').slideDown();
+        //            $('#alerttext2').html('<span class="fa fa-exclamation-circle"></span> All fields are required!');
+        //            setTimeout(function () {
+        //                $('#alert2').fadeOut('slow');
+        //            }, 3500);
+        //            
+        //        } else {
+        $patient_id = $('#patient_id').val();
+        $prenatal_id = $('#prenatal_id').val();
+        $date = $('#date').val();
+        $doctors_order_advice = $('#doctors_order_advice').val();
+        $presentation = $('#presentation').val();
+        $complaints = $('#complaints').val();
+        $lmp = $('#lmp').val();
+        $edc = $('#edc').val();
+        $gravida = $('#gravida').val();
+        $para = $('#para').val();
+        $ft = $('#ft').val();
+        $pt = $('#pt').val();
+        $a = $('#a').val();
+        $lb = $('#lb').val();
+        $fh = $('#fh').val();
+        $fhb = $('#fhb').val();
+        $bp = $('#bp').val();
+        $temp = $('#temp').val();
+        $weight = $('#weight').val();
+        $height = $('#height').val();
+        $aog = $('#aog').val();
 
-            if (confirm('Are you sure you want to add this Prenatal Consultation?')) {
+        //            var content = tinymce.get("doctors_order_advice").getContent();
+
+        //            if (confirm('Are you sure you want to add this Prenatal Consultation?')) {
+        Swal.fire({
+            title: 'Are you sure you want to add this Prenatal Consultation?',
+            icon: 'info',
+            showCancelButton: true,
+            confirmButtonColor: '#95b75d',
+            cancelButtonColor: '#E04B4A',
+            confirmButtonText: 'Yes'
+        }).then((result) => {
+            if (result.value) {
                 $.ajax({
                     type: "POST",
                     url: "action/addprenatalconsultation.php",
@@ -65,19 +74,28 @@ $(document).ready(function () {
                         add: 1,
                     },
                     success: function () {
-                        $('#alert').slideDown();
-                        $('#alerttext').text('Prenatal Consultation Added Successfully!');
-                        setTimeout(function () {
-                            $('#alert').fadeOut('slow');
-                        }, 1500);
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: 'Prenatal Consultation Added Successfully!',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                        //                        $('#alert').slideDown();
+                        //                        $('#alerttext').text('Prenatal Consultation Added Successfully!');
+                        //                        setTimeout(function () {
+                        //                            $('#alert').fadeOut('slow');
+                        //                        }, 1500);
                         setTimeout(function () {
                             window.location.href = 'prenatal_record?patient_id=' + $patient_id + '&&prenatal_id=' + $prenatal_id;
                         }, 2500);
                         $('form').trigger('reset');
                     }
                 });
+
             }
-//        }
+        });
+        //        }
 
     });
 });

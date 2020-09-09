@@ -29,8 +29,8 @@ $(document).ready(function () {
             $("#ttype_response").hide();
         }
     });
-    
-// || $('#treatment_age').val() == "" || $('#treatment_weight').val() == "" || $('#treatment_height').val() == ""
+
+    // || $('#treatment_age').val() == "" || $('#treatment_weight').val() == "" || $('#treatment_height').val() == ""
     //add patient ajax
     $(document).on('click', '#addnew', function () {
         if ($('#treatment_type').val() == "" || $('#treatment_date').val() == "") {
@@ -53,45 +53,63 @@ $(document).ready(function () {
             $treatment_temp = $('#treatment_temp').val();
             $treatment_remarks = $('#treatment_remarks').val();
 
-            if (confirm('Are you sure you want to add this patient?')) {
-                $.ajax({
-                    type: "POST",
-                    url: "action/addtreatment.php",
-                    cache: false,
-                    async: false,
-                    data: {
-                        child_id: $child_id,
-                        immunization_id: $immunization_id,
-                        treatment_type: $treatment_type,
-                        treatment_date: $treatment_date,
-                        treatment_age: $treatment_age,
-                        treatment_weight: $treatment_weight,
-                        treatment_height: $treatment_height,
-                        treatment_temp: $treatment_temp,
-                        treatment_remarks: $treatment_remarks,
-                        add: 1,
-                    },
-                    success: function (response) {
-                        if (response == '1') {
-                            $('#modallabel').slideDown();
-                            $('#checkfield').html('<span class="fa fa-exclamation-circle"></span> Treatment Type is already exist!');
-                            setTimeout(function () {
-                                $('#modallabel').fadeOut('slow');
-                            }, 3500);
-                        } else {
-                            $('#add_treatment').modal('hide');
-                            $('#alert').slideDown();
-                            $('#alerttext').text('Treatment Added Successfully!');
-                            setTimeout(function () {
-                                $('#alert').fadeOut('slow');
-                            }, 1500);
-                            setTimeout(function () {
-                                window.location.href = 'immunization_treatment?child_id=' + $child_id + '&&immunization_id=' + $immunization_id;
-                            }, 2500);
+            //            if (confirm('Are you sure you want to add this patient?')) {
+            Swal.fire({
+                title: 'Are you sure you want to add this treatment?',
+                icon: 'info',
+                showCancelButton: true,
+                confirmButtonColor: '#95b75d',
+                cancelButtonColor: '#E04B4A',
+                confirmButtonText: 'Yes'
+            }).then((result) => {
+                if (result.value) {
+                    $.ajax({
+                        type: "POST",
+                        url: "action/addtreatment.php",
+                        cache: false,
+                        async: false,
+                        data: {
+                            child_id: $child_id,
+                            immunization_id: $immunization_id,
+                            treatment_type: $treatment_type,
+                            treatment_date: $treatment_date,
+                            treatment_age: $treatment_age,
+                            treatment_weight: $treatment_weight,
+                            treatment_height: $treatment_height,
+                            treatment_temp: $treatment_temp,
+                            treatment_remarks: $treatment_remarks,
+                            add: 1,
+                        },
+                        success: function (response) {
+                            if (response == '1') {
+                                $('#modallabel').slideDown();
+                                $('#checkfield').html('<span class="fa fa-exclamation-circle"></span> Treatment Type is already exist!');
+                                setTimeout(function () {
+                                    $('#modallabel').fadeOut('slow');
+                                }, 3500);
+                            } else {
+                                $('#add_treatment').modal('hide');
+                                //                                $('#alert').slideDown();
+                                //                                $('#alerttext').text('Treatment Added Successfully!');
+                                //                                setTimeout(function () {
+                                //                                    $('#alert').fadeOut('slow');
+                                //                                }, 1500);
+                                Swal.fire({
+                                    position: 'center',
+                                    icon: 'success',
+                                    title: 'Treatment Added Successfully!',
+                                    showConfirmButton: false,
+                                    timer: 1500
+                                })
+                                setTimeout(function () {
+                                    window.location.href = 'immunization_treatment?child_id=' + $child_id + '&&immunization_id=' + $immunization_id;
+                                }, 2500);
+                            }
                         }
-                    }
-                });
-            }
+                    });
+
+                }
+            });
             $('form').trigger('reset');
         }
 

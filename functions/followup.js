@@ -18,43 +18,61 @@ $(document).ready(function () {
             $provider = $('#provider').val();
             $next_service_date = $('#next_service_date').val();
 
-            if (confirm('Are you sure you want to add this new follow-up date?')) {
-                $.ajax({
-                    type: "POST",
-                    url: "action/add_fp_follow_up.php",
-                    cache: false,
-                    async: false,
-                    data: {
-                        patient: $patient,
-                        date_given: $date_given,
-                        method: $method,
-                        units: $units,
-                        remarks2: $remarks2,
-                        provider: $provider,
-                        next_service_date: $next_service_date,
-                        add: 1,
-                    },
-                    success: function () {
-                        $('#fp_follow_up').modal('hide');
-                        $('#alert').slideDown();
-                        $('#alerttext').html('<span class="fa fa-check"></span> Successfully added new Follow-up date!');
-                        setTimeout(function () {
-                            $('#alert').fadeOut('slow');
-                        }, 1500);
-                        $(document).ajaxComplete(function () {
-                            $(document).find('.select').selectpicker();
-                        });
-                        $(document).ajaxComplete(function () {
-                            $(document).find('.datepicker').datepicker({
-                                format: 'yyyy-mm-dd',
-                                language: 'en'
+            //            if (confirm('Are you sure you want to add this new follow-up date?')) {
+            Swal.fire({
+                title: 'Are you sure you want to add this new follow-up date?',
+                icon: 'info',
+                showCancelButton: true,
+                confirmButtonColor: '#95b75d',
+                cancelButtonColor: '#E04B4A',
+                confirmButtonText: 'Yes'
+            }).then((result) => {
+                if (result.value) {
+                    $.ajax({
+                        type: "POST",
+                        url: "action/add_fp_follow_up.php",
+                        cache: false,
+                        async: false,
+                        data: {
+                            patient: $patient,
+                            date_given: $date_given,
+                            method: $method,
+                            units: $units,
+                            remarks2: $remarks2,
+                            provider: $provider,
+                            next_service_date: $next_service_date,
+                            add: 1,
+                        },
+                        success: function () {
+                            $('#fp_follow_up').modal('hide');
+                            //                        $('#alert').slideDown();
+                            //                        $('#alerttext').html('<span class="fa fa-check"></span> Successfully added new Follow-up date!');
+                            //                        setTimeout(function () {
+                            //                            $('#alert').fadeOut('slow');
+                            //                        }, 1500);
+                            Swal.fire({
+                                position: 'center',
+                                icon: 'success',
+                                title: 'Successfully added new Follow-up date!',
+                                showConfirmButton: false,
+                                timer: 1500
+                            })
+                            $(document).ajaxComplete(function () {
+                                $(document).find('.select').selectpicker();
                             });
-                        });
-                        show_follow_up_familyplanning();
-                    }
+                            $(document).ajaxComplete(function () {
+                                $(document).find('.datepicker').datepicker({
+                                    format: 'yyyy-mm-dd',
+                                    language: 'en'
+                                });
+                            });
+                            show_follow_up_familyplanning();
+                        }
 
-                });
-            }
+                    });
+
+                }
+            });
             $('form').trigger('reset');
             $('#patient').selectpicker('refresh');
             $('#method').selectpicker('refresh');
@@ -80,44 +98,62 @@ $(document).ready(function () {
         $provider = $('#provider' + $fp_follow_up_id).val();
         $next_service_date = $('#next_service_date' + $fp_follow_up_id).val();
         $status = $('#status' + $fp_follow_up_id).val();
-        if (confirm('Are you sure you want to edit this follow-up?')) {
-            $.ajax({
-                type: "POST",
-                url: "action/editfpfollowup.php",
-                cache: false,
-                async: false,
-                data: {
-                    fp_follow_up_id: $fp_follow_up_id,
-                    patient: $patient,
-                    date_given: $date_given,
-                    method: $method,
-                    units: $units,
-                    remarks2: $remarks2,
-                    provider: $provider,
-                    next_service_date: $next_service_date,
-                    status: $status,
-                    edit: 1,
-                },
-                success: function () {
-                    $('#alert').slideDown();
-                    $('#alerttext').text('Successfully updated Follow-up Schedule!');
-                    setTimeout(function () {
-                        $('#alert').fadeOut('slow');
-                    }, 1500);
+        //        if (confirm('Are you sure you want to edit this follow-up?')) {
+        Swal.fire({
+            title: 'Are you sure you want to edit this follow-up?',
+            icon: 'info',
+            showCancelButton: true,
+            confirmButtonColor: '#95b75d',
+            cancelButtonColor: '#E04B4A',
+            confirmButtonText: 'Yes'
+        }).then((result) => {
+            if (result.value) {
+                $.ajax({
+                    type: "POST",
+                    url: "action/editfpfollowup.php",
+                    cache: false,
+                    async: false,
+                    data: {
+                        fp_follow_up_id: $fp_follow_up_id,
+                        patient: $patient,
+                        date_given: $date_given,
+                        method: $method,
+                        units: $units,
+                        remarks2: $remarks2,
+                        provider: $provider,
+                        next_service_date: $next_service_date,
+                        status: $status,
+                        edit: 1,
+                    },
+                    success: function () {
+                        //                    $('#alert').slideDown();
+                        //                    $('#alerttext').text('Successfully updated Follow-up Schedule!');
+                        //                    setTimeout(function () {
+                        //                        $('#alert').fadeOut('slow');
+                        //                    }, 1500);
 
-                    $(document).ajaxComplete(function () {
-                        $(document).find('.select').selectpicker();
-                    });
-                    $(document).ajaxComplete(function () {
-                        $(document).find('.datepicker').datepicker({
-                            format: 'yyyy-mm-dd',
-                            language: 'en'
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: 'Successfully updated Follow-up Schedule!',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                        $(document).ajaxComplete(function () {
+                            $(document).find('.select').selectpicker();
                         });
-                    });
-                    show_follow_up_familyplanning();
-                }
-            });
-        }
+                        $(document).ajaxComplete(function () {
+                            $(document).find('.datepicker').datepicker({
+                                format: 'yyyy-mm-dd',
+                                language: 'en'
+                            });
+                        });
+                        show_follow_up_familyplanning();
+                    }
+                });
+
+            }
+        });
     });
 
     $(document).on('click', '#cancel22', function () {
@@ -136,43 +172,62 @@ $(document).ready(function () {
             $patient2 = $('#patient2').val();
             $follow_up_date_time = $('#follow_up_date_time').val();
             $remarks3 = $('#remarks3').val();
-            
+
             function random() {
-            colors = ['#ca1c1c','#ffbe76','#ff7979','#eb4d4b','#f0870f','#22a6b3','#6ab04c','red']
-            return colors[Math.floor(Math.random() * colors.length)];
-            }       
-
-            if (confirm('Are you sure you want to add this new follow-up date?')) {
-                $.ajax({
-                    type: "POST",
-                    url: "action/add_p_follow_up.php",
-                    cache: false,
-                    async: false,
-                    data: {
-                        patient2: $patient2,
-                        follow_up_date_time: $follow_up_date_time,
-                        remarks3: $remarks3,
-                        color: random(),
-                        add: 1,
-                    },
-                    success: function () {
-                        $('#p_follow_up').modal('hide');
-                        $('#alert').slideDown();
-                        $('#alerttext').html('<span class="fa fa-check"></span> Successfully added new Follow-up date!');
-                        setTimeout(function () {
-                            $('#alert').fadeOut('slow');
-                        }, 1500);
-                        $(document).ajaxComplete(function () {
-                            $(document).find('.select').selectpicker();
-                        });
-                        $(document).ajaxComplete(function () {
-                            $(document).find(".datetimepicker2").datetimepicker();
-                        });
-                        show_follow_up_prenatal();
-                    }
-
-                });
+                colors = ['#ca1c1c', '#ffbe76', '#ff7979', '#eb4d4b', '#f0870f', '#22a6b3', '#6ab04c', 'red']
+                return colors[Math.floor(Math.random() * colors.length)];
             }
+
+            //            if (confirm('Are you sure you want to add this new follow-up date?')) {
+            Swal.fire({
+                title: 'Are you sure you want to add this new follow-up date?',
+                icon: 'info',
+                showCancelButton: true,
+                confirmButtonColor: '#95b75d',
+                cancelButtonColor: '#E04B4A',
+                confirmButtonText: 'Yes'
+            }).then((result) => {
+                if (result.value) {
+                    $.ajax({
+                        type: "POST",
+                        url: "action/add_p_follow_up.php",
+                        cache: false,
+                        async: false,
+                        data: {
+                            patient2: $patient2,
+                            follow_up_date_time: $follow_up_date_time,
+                            remarks3: $remarks3,
+                            color: random(),
+                            add: 1,
+                        },
+                        success: function () {
+                            $('#p_follow_up').modal('hide');
+                            //                        $('#alert').slideDown();
+                            //                        $('#alerttext').html('<span class="fa fa-check"></span> Successfully added new Follow-up date!');
+                            //                        setTimeout(function () {
+                            //                            $('#alert').fadeOut('slow');
+                            //                        }, 1500);
+
+                            Swal.fire({
+                                position: 'center',
+                                icon: 'success',
+                                title: 'Successfully added new Follow-up date!',
+                                showConfirmButton: false,
+                                timer: 1500
+                            })
+                            $(document).ajaxComplete(function () {
+                                $(document).find('.select').selectpicker();
+                            });
+                            $(document).ajaxComplete(function () {
+                                $(document).find(".datetimepicker2").datetimepicker();
+                            });
+                            show_follow_up_prenatal();
+                        }
+
+                    });
+
+                }
+            });
             $('form').trigger('reset');
         }
 
@@ -184,37 +239,54 @@ $(document).ready(function () {
         $follow_up_date_time2 = $('#follow_up_date_time2' + $follow_up_id).val();
         $remarks = $('#remarks' + $follow_up_id).val();
         $status2 = $('#status2' + $follow_up_id).val();
-        if (confirm('Are you sure you want to edit this follow-up?')) {
-            $.ajax({
-                type: "POST",
-                url: "action/editprenatalfollowup.php",
-                cache: false,
-                async: false,
-                data: {
-                    follow_up_id: $follow_up_id,
-                    patient2: $patient2,
-                    follow_up_date_time2: $follow_up_date_time2,
-                    remarks: $remarks,
-                    status2: $status2,
-                    edit: 1,
-                },
-                success: function () {
-                    $('#alert').slideDown();
-                    $('#alerttext').text('Successfully updated Follow-up Schedule!');
-                    setTimeout(function () {
-                        $('#alert').fadeOut('slow');
-                    }, 1500);
+        //        if (confirm('Are you sure you want to edit this follow-up?')) {
+        Swal.fire({
+            title: 'Are you sure you want to edit this follow-up?',
+            icon: 'info',
+            showCancelButton: true,
+            confirmButtonColor: '#95b75d',
+            cancelButtonColor: '#E04B4A',
+            confirmButtonText: 'Yes'
+        }).then((result) => {
+            if (result.value) {
+                $.ajax({
+                    type: "POST",
+                    url: "action/editprenatalfollowup.php",
+                    cache: false,
+                    async: false,
+                    data: {
+                        follow_up_id: $follow_up_id,
+                        patient2: $patient2,
+                        follow_up_date_time2: $follow_up_date_time2,
+                        remarks: $remarks,
+                        status2: $status2,
+                        edit: 1,
+                    },
+                    success: function () {
+                        //                    $('#alert').slideDown();
+                        //                    $('#alerttext').text('Successfully updated Follow-up Schedule!');
+                        //                    setTimeout(function () {
+                        //                        $('#alert').fadeOut('slow');
+                        //                    }, 1500);
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: 'Successfully updated Follow-up Schedule!',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                        $(document).ajaxComplete(function () {
+                            $(document).find('.select').selectpicker();
+                        });
+                        $(document).ajaxComplete(function () {
+                            $(document).find(".datetimepicker2").datetimepicker();
+                        });
+                        show_follow_up_prenatal();
+                    }
+                });
 
-                    $(document).ajaxComplete(function () {
-                        $(document).find('.select').selectpicker();
-                    });
-                    $(document).ajaxComplete(function () {
-                        $(document).find(".datetimepicker2").datetimepicker();
-                    });
-                    show_follow_up_prenatal();
-                }
-            });
-        }
+            }
+        });
     });
 });
 

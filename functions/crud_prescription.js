@@ -23,48 +23,66 @@ $(document).ready(function () {
             var sixpm = ($('input:radio[name=6pm]:checked').val() || "");
             var eightpm = ($('input:radio[name=8pm]:checked').val() || "");
 
-            if (confirm('Are you sure you want to add this Prescription?')) {
-                $.ajax({
-                    type: "POST",
-                    url: "action/addprescription.php",
-                    cache: false,
-                    async: false,
-                    data: {
-                        consultation_id: $consultation_id,
-                        medname: $medname,
-                        patient_id: $patient_id,
-                        //                        medicine_category: $medicine_category,
-                        medname: $medname,
-                        sixam: sixam,
-                        eightam: eightam,
-                        twelvenoon: twelvenoon,
-                        twopm: twopm,
-                        fourpm: fourpm,
-                        sixpm: sixpm,
-                        eightpm: eightpm,
-                        qty: $qty,
-                        recommendation: $recommendation,
-                        add: 1,
-                    },
-                    success: function () {
-                        $('#add_prescription').modal('hide');
-                        $('#alert').slideDown();
-                        $('#alerttext').html('<span class="fa fa-check"></span> Successfully added Prescription!');
-                        setTimeout(function () {
-                            $('#alert').fadeOut('slow');
-                        }, 1500);
-                        setTimeout(function () {
+            //            if (confirm('Are you sure you want to add this Prescription?')) {
+            Swal.fire({
+                title: 'Are you sure you want to add this Prescription?',
+                icon: 'info',
+                showCancelButton: true,
+                confirmButtonColor: '#95b75d',
+                cancelButtonColor: '#E04B4A',
+                confirmButtonText: 'Yes'
+            }).then((result) => {
+                if (result.value) {
+                    $.ajax({
+                        type: "POST",
+                        url: "action/addprescription.php",
+                        cache: false,
+                        async: false,
+                        data: {
+                            consultation_id: $consultation_id,
+                            medname: $medname,
+                            patient_id: $patient_id,
+                            //                        medicine_category: $medicine_category,
+                            medname: $medname,
+                            sixam: sixam,
+                            eightam: eightam,
+                            twelvenoon: twelvenoon,
+                            twopm: twopm,
+                            fourpm: fourpm,
+                            sixpm: sixpm,
+                            eightpm: eightpm,
+                            qty: $qty,
+                            recommendation: $recommendation,
+                            add: 1,
+                        },
+                        success: function () {
+                            $('#add_prescription').modal('hide');
+                            //                        $('#alert').slideDown();
+                            //                        $('#alerttext').html('<span class="fa fa-check"></span> Successfully added Prescription!');
+                            //                        setTimeout(function () {
+                            //                            $('#alert').fadeOut('slow');
+                            //                        }, 1500);
+                            Swal.fire({
+                                position: 'center',
+                                icon: 'success',
+                                title: 'Successfully added Prescription!',
+                                showConfirmButton: false,
+                                timer: 1500
+                            })
+                            setTimeout(function () {
                                 window.location.href = 'consultation_treatment?patient_id=' + $patient_id + '&&consultation_id=' + $consultation_id;
-                        }, 1500);
-                        showPrescription();
-                    }
+                            }, 1500);
+                            showPrescription();
+                        }
 
-                });
-                $("#medname").val('default');
-                $('#medname').selectpicker('refresh');
-                $('input[type="radio"]').prop('checked', false);
-                $('form').trigger('reset');
-            }
+                    });
+                    $("#medname").val('default');
+                    $('#medname').selectpicker('refresh');
+                    $('input[type="radio"]').prop('checked', false);
+                    $('form').trigger('reset');
+
+                }
+            });
             //            $("#medicine_category").val('default');
             //            $('#medicine_category').selectpicker('refresh');
         }
@@ -82,33 +100,50 @@ $(document).ready(function () {
         $medicine_name = $('#medicine_name' + $medicine_id).val();
         $medicine_type = $('#medicine_type' + $medicine_id).val();
         $medicine_category = $('#medicine_category' + $medicine_id).val();
-        if (confirm('Are you sure you want to edit this medicine?')) {
-            $.ajax({
-                type: "POST",
-                url: "action/editmedicine.php",
-                cache: false,
-                async: false,
-                data: {
-                    medicine_id: $medicine_id,
-                    medicine_name: $medicine_name,
-                    medicine_type: $medicine_type,
-                    medicine_category: $medicine_category,
-                    edit: 1,
-                },
-                success: function () {
-                    $('#alert').slideDown();
-                    $('#alerttext').text('Successfully updated medicine!');
-                    setTimeout(function () {
-                        $('#alert').fadeOut('slow');
-                    }, 1500);
+        //        if (confirm('Are you sure you want to edit this medicine?')) {
+        Swal.fire({
+            title: 'Are you sure you want to edit this medicine?',
+            icon: 'info',
+            showCancelButton: true,
+            confirmButtonColor: '#95b75d',
+            cancelButtonColor: '#E04B4A',
+            confirmButtonText: 'Yes'
+        }).then((result) => {
+            if (result.value) {
+                $.ajax({
+                    type: "POST",
+                    url: "action/editmedicine.php",
+                    cache: false,
+                    async: false,
+                    data: {
+                        medicine_id: $medicine_id,
+                        medicine_name: $medicine_name,
+                        medicine_type: $medicine_type,
+                        medicine_category: $medicine_category,
+                        edit: 1,
+                    },
+                    success: function () {
+                        //                    $('#alert').slideDown();
+                        //                    $('#alerttext').text('Successfully updated medicine!');
+                        //                    setTimeout(function () {
+                        //                        $('#alert').fadeOut('slow');
+                        //                    }, 1500);
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: 'Successfully updated medicine!',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                        $(document).ajaxComplete(function () {
+                            $(document).find('.select').selectpicker();
+                        });
+                        showMedicine();
+                    }
+                });
 
-                    $(document).ajaxComplete(function () {
-                        $(document).find('.select').selectpicker();
-                    });
-                    showMedicine();
-                }
-            });
-        }
+            }
+        });
     });
 });
 

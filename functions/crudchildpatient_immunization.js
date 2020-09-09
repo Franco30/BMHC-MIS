@@ -28,44 +28,62 @@ $(document).ready(function () {
             $purok2 = $('#purok2').val();
             $street_address2 = $('#street_address2').val();
 
-            if (confirm('Are you sure you want to add this new patient?')) {
-                $.ajax({
-                    type: "POST",
-                    url: "action/addchildpatient.php",
-                    cache: false,
-                    async: false,
-                    data: {
-                        child_name: $child_name,
-                        gender2: $gender2,
-                        mother_name: $mother_name,
-                        mother_education: $mother_education,
-                        mother_occupation: $mother_occupation,
-                        father_name: $father_name,
-                        father_education: $father_education,
-                        father_occupation: $father_occupation,
-                        date_first_seen: $date_first_seen,
-                        birthdate2: $birthdate2,
-                        birth_weight: $birth_weight,
-                        place_of_delivery: $place_of_delivery,
-                        birth_register_date: $birth_register_date,
-                        purok2: $purok2,
-                        street_address2: $street_address2,
-                        add: 1,
-                    },
-                    success: function () {
-                        $('#new_child_patient').modal('hide');
-                        $('#alert').slideDown();
-                        $('#alerttext').text('Patient Added Successfully!');
-                        setTimeout(function () {
-                            $('#alert').fadeOut('slow');
-                        }, 1500);
-                        showCPatient();
-                        setTimeout(function () {
-                            window.location.href = 'immunization_table';
-                        }, 2500);
-                    }
-                });
-            }
+            //            if (confirm('Are you sure you want to add this new patient?')) {
+            Swal.fire({
+                title: 'Are you sure you want to add this new patient?',
+                icon: 'info',
+                showCancelButton: true,
+                confirmButtonColor: '#95b75d',
+                cancelButtonColor: '#E04B4A',
+                confirmButtonText: 'Yes'
+            }).then((result) => {
+                if (result.value) {
+                    $.ajax({
+                        type: "POST",
+                        url: "action/addchildpatient.php",
+                        cache: false,
+                        async: false,
+                        data: {
+                            child_name: $child_name,
+                            gender2: $gender2,
+                            mother_name: $mother_name,
+                            mother_education: $mother_education,
+                            mother_occupation: $mother_occupation,
+                            father_name: $father_name,
+                            father_education: $father_education,
+                            father_occupation: $father_occupation,
+                            date_first_seen: $date_first_seen,
+                            birthdate2: $birthdate2,
+                            birth_weight: $birth_weight,
+                            place_of_delivery: $place_of_delivery,
+                            birth_register_date: $birth_register_date,
+                            purok2: $purok2,
+                            street_address2: $street_address2,
+                            add: 1,
+                        },
+                        success: function () {
+                            $('#new_child_patient').modal('hide');
+                            //                        $('#alert').slideDown();
+                            //                        $('#alerttext').text('Patient Added Successfully!');
+                            //                        setTimeout(function () {
+                            //                            $('#alert').fadeOut('slow');
+                            //                        }, 1500);
+                            Swal.fire({
+                                position: 'center',
+                                icon: 'success',
+                                title: 'Patient Added Successfully!',
+                                showConfirmButton: false,
+                                timer: 1500
+                            })
+                            showCPatient();
+                            setTimeout(function () {
+                                window.location.href = 'immunization_table';
+                            }, 2500);
+                        }
+                    });
+
+                }
+            });
             $('form').trigger('reset');
         }
 
