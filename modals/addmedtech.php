@@ -16,7 +16,7 @@
                     <fieldset>
                         <div class="form-group">
                             <label>Name</label>
-                            <input type="text" class="form-control" id="mname" name="mname" placeholder="Enter Medtech Name" required />
+                            <input type="text" class="form-control" id="mname" placeholder="Enter Medtech Name" required />
                         </div>
                         <div class="form-group">
                             <label>FB Account</label>

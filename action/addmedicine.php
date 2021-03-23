@@ -29,8 +29,13 @@ if(isset($_POST['add'])){
     if($check > 0 && $check2 > 0){
         echo "Medicine already exist!";
     }else{
+        
+    $stmt = $conn->prepare("INSERT INTO `medicine` (medicine_name, medicine_type, medicine_category, running_balance, date_time_call) VALUES (?, ?, ?, ?, ?)") or die(mysqli_error());
+    $stmt->bind_param("sssis", $medicine_name, $medicine_type, $medicine_category, '', $date_time);
+    $stmt->execute();
 
-    $conn->query("INSERT INTO `medicine` VALUES('', '$medicine_name', '$medicine_type', '$medicine_category', '', '$date_time')") or die(mysqli_error());
+//    $conn->query("INSERT INTO `medicine` VALUES('', '$medicine_name', '$medicine_type', '$medicine_category', '', '$date_time')") or die(mysqli_error());
+        
     $conn->query("INSERT INTO `users_activity_log` VALUES('', '$user_id', '$remarks','$date_time')") or die(mysqli_error());
     $conn->close();
 }

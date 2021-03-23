@@ -16,7 +16,7 @@
                     <fieldset>
                         <div class="form-group">
                             <label>Name</label>
-                            <input type="text" value="<?php echo $fetch['chicksname']; ?>" id="mname<?php echo $fetch['chicks_id']; ?>" class="form-control" placeholder="Enter Medtech Name" required />
+                            <input type="text" value="<?php echo $fetch['mname']; ?>" id="mname<?php echo $fetch['chicks_id']; ?>" class="form-control" placeholder="Enter Medtech Name" required />
                         </div>
                         <div class="form-group">
                             <label>FB Account</label>
@@ -24,11 +24,11 @@
                         </div>
                         <div class="form-group">
                             <label>Instagram Account</label>
-                            <input type="text" value="<?php echo $fetch['instagram']; ?>" id="ig<?php echo $fetch['chicks_id']; ?>" class="form-control" placeholder="Paste Instagram Account" required />
+                            <input type="text" value="<?php echo $fetch['ig']; ?>" id="ig<?php echo $fetch['chicks_id']; ?>" class="form-control" placeholder="Paste Instagram Account" required />
                         </div>
                         <div class="form-group">
                             <label>Beauty Percentage</label>
-                            <input type="number" value="<?php echo $fetch['beautypercentage']; ?>" id="bp<?php echo $fetch['chicks_id']; ?>" class="form-control" placeholder="Enter Beauty Percentage" required />
+                            <input type="number" value="<?php echo $fetch['bp']; ?>" id="bp<?php echo $fetch['chicks_id']; ?>" class="form-control" placeholder="Enter Beauty Percentage" required />
                         </div>
                     </fieldset>
                 </form>

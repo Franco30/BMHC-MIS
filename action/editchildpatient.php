@@ -29,7 +29,13 @@ if(isset($_POST['edit'])){
     $remarks = "Edited $child_name Child Patient Profile";
 
     require '../require/config.php';
-    $conn->query("UPDATE `patient_child` SET `child_name` = '$child_name', `gender` = '$gender2', `mother_name` = '$mother_name', `mother_education` = '$mother_education', `mother_occupation` = '$mother_occupation', `father_name` = '$father_name', `father_education` = '$father_education', `father_occupation` = '$father_occupation', `date_first_seen` = '$date_first_seen', `birthdate` = '$birthdate2', `birth_weight` = '$birth_weight', `place_of_delivery` = '$place_of_delivery', `birth_register_date` = '$birth_register_date', `purok` = '$purok2', `street_address` = '$street_address2' WHERE `child_id` = '$child_id'") or die(mysqli_error());
+    
+    $stmt = $conn->prepare("UPDATE `patient_child` SET `child_name` = ?, `gender` = ?, `mother_name` = ?, `mother_education` = ?,  `mother_occupation` = ?, `father_name` = ?, `father_education` = ?, `father_occupation` = ?, `date_first_seen` = ?, `birthdate` = ?, `birth_weight` = ?, `place_of_delivery` = ?, `birth_register_date` = ?, `purok` = ?, `street_address` = ? WHERE `child_id` = ?") or die(mysqli_error());
+    $stmt->bind_param("sssssssssssssssi", $child_name, $gender2, $mother_name, $mother_education, $mother_occupation, $father_name, $father_education, $father_occupation, $date_first_seen, $birthdate2, $birth_weight, $place_of_delivery, $birth_register_date, $purok2, $street_address2, $child_id);
+    $stmt->execute();
+    
+//    $conn->query("UPDATE `patient_child` SET `child_name` = '$child_name', `gender` = '$gender2', `mother_name` = '$mother_name', `mother_education` = '$mother_education', `mother_occupation` = '$mother_occupation', `father_name` = '$father_name', `father_education` = '$father_education', `father_occupation` = '$father_occupation', `date_first_seen` = '$date_first_seen', `birthdate` = '$birthdate2', `birth_weight` = '$birth_weight', `place_of_delivery` = '$place_of_delivery', `birth_register_date` = '$birth_register_date', `purok` = '$purok2', `street_address` = '$street_address2' WHERE `child_id` = '$child_id'") or die(mysqli_error());
+    
     $conn->query("INSERT INTO `users_activity_log` VALUES('', '$user_id', '$remarks','$date_time')") or die(mysqli_error());
 }
 ?>

@@ -28,9 +28,18 @@ if(isset($_POST['add'])){
     $date_time=date("F j, Y - g:i a");
     $today = date("Y-m-d"); 
     $remarks = "Registered $child_name as new Child Patient";
+    
+    $finaladdress = "$street_address2, Mansilingan";
+    $status = "Registered";
 
     require '../require/config.php';
-    $conn->query("INSERT INTO `patient_child` VALUES('', '$child_name', '$gender2', '$mother_name', '$mother_education', '$mother_occupation', '$father_name', '$father_education', '$father_occupation', '$date_first_seen', '$birthdate2', '$birth_weight', '$place_of_delivery', '$birth_register_date', '$purok2', '$street_address2, Mansilingan', 'Registered', '$month', '$year', '$today')") or die(mysqli_error());
+    
+    $stmt = $conn->prepare("INSERT INTO `patient_child` (child_name, gender, mother_name, mother_education, mother_occupation, father_name, father_education, father_occupation, date_first_seen, birthdate, birth_weight, place_of_delivery, birth_register_date, purok, street_address, status, month, year, date) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)") or die(mysqli_error());
+    $stmt->bind_param("sssssssssssssssssss", $child_name, $gender2, $mother_name, $mother_education, $mother_occupation, $father_name, $father_education, $father_occupation, $date_first_seen, $birthdate2, $birth_weight, $place_of_delivery, $birth_register_date, $purok2, $finaladdress, $status, $month, $year, $today);
+    $stmt->execute();
+    
+//    $conn->query("INSERT INTO `patient_child` VALUES('', '$child_name', '$gender2', '$mother_name', '$mother_education', '$mother_occupation', '$father_name', '$father_education', '$father_occupation', '$date_first_seen', '$birthdate2', '$birth_weight', '$place_of_delivery', '$birth_register_date', '$purok2', '$street_address2, Mansilingan', 'Registered', '$month', '$year', '$today')") or die(mysqli_error());
+    
     $conn->query("INSERT INTO `users_activity_log` VALUES('', '$user_id', '$remarks','$date_time')") or die(mysqli_error());
 }
 ?>

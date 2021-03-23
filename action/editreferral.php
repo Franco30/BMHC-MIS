@@ -25,7 +25,13 @@ if(isset($_POST['edit'])){
     $remarks = "Edited $patient_name Referral Record";
     
     require '../require/config.php';
-    $conn->query("UPDATE `referral` SET `referral_date` = '$date', `to_hospital` = '$to', `destination_address` = '$destination', `patient_name` = '$patient_name', `weight` = '$weight', `bp` = '$bp', `temp` = '$temp', `age` = '$age', `complaints` = '$complaints', `referred_by` = '$referred_by', `gender` = '$gender' WHERE `referral`.`referral_id` = '$referral_id'") or die(mysqli_error());
+    
+    $stmt = $conn->prepare("UPDATE `referral` SET `referral_date` = ?, `to_hospital` = ?, `destination_address` = ?, `patient_name` = ?, `weight` = ?, `bp` = ?, `temp` = ?, `age` = ?, `complaints` = ?, `referred_by` = ?, `gender` = ? WHERE `referral`.`referral_id` = ?") or die(mysqli_error());
+    $stmt->bind_param("sssssssssssi", $date, $to, $destination, $patient_name, $weight, $bp, $temp, $age, $complaints, $referred_by, $gender, $referral_id);
+    $stmt->execute();
+    
+//    $conn->query("UPDATE `referral` SET `referral_date` = '$date', `to_hospital` = '$to', `destination_address` = '$destination', `patient_name` = '$patient_name', `weight` = '$weight', `bp` = '$bp', `temp` = '$temp', `age` = '$age', `complaints` = '$complaints', `referred_by` = '$referred_by', `gender` = '$gender' WHERE `referral`.`referral_id` = '$referral_id'") or die(mysqli_error());
+    
     $conn->query("INSERT INTO `users_activity_log` VALUES('', '$user_id', '$remarks','$date_time')") or die(mysqli_error());
     }
 ?>

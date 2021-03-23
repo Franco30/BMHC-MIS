@@ -9,6 +9,32 @@ label {
     font-weight: 100 !important;
 }
 
+.profile-image img {
+    display: inline;
+    max-width: 100%;
+}
+
+.andrew {
+    height: 157px;
+    border-radius: 20px;
+    border: none;
+    background-color: #e9eae7;
+}
+
+.jp {
+    height: 157px;
+    border-radius: 20px;
+    border: none;
+    background-color: #e6e8e6;
+}
+
+.jf {
+    height: 157px;
+    border-radius: 20px;
+    border: none;
+    background-color: #ecedea;
+}
+
 .login-form {
     width: 510px;
     margin: 30px auto;
@@ -100,7 +126,7 @@ label {
 
 .field-icon {
     float: right;
-    margin-right: -420px;
+    margin-right: -394px;
     margin-top: -37px;
     position: relative;
     z-index: 2;
@@ -191,6 +217,7 @@ input {
     padding: 12px 15px;
     margin: 8px 0;
     width: 100%;
+    outline: none;
 }
 
 .container {
@@ -371,17 +398,31 @@ footer a {
     /*    width: 579px;*/
 }
 
-@media only screen and (max-width: 414px) {
+@media only screen and (max-width: 768px) {
+
+    .login-form {
+        width: 100%;
+        position: relative;
+    }
 
     .login-form form {
-        background: #fbfbfb;
-        border-radius: 5px;
-        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+        background: none;
+        border-radius: 0px;
+        box-shadow: none;
         margin-bottom: 10px;
         padding: 30px;
         position: relative;
     }
 
+    .field-icon {
+        display: none;
+    }
+
+    .profile-image img {
+        display: inline;
+        max-width: 100%;
+    }
+
     .form-container {
         transition: none;
     }
@@ -410,13 +451,34 @@ footer a {
     button {
         padding: 12px 12px;
         min-width: 150px;
-        width: 80%;
+        width: 100%;
     }
-
-
 }
 
-@media only screen and (max-width: 599px) {
+
+@media only screen and (max-width: 1024px) {
+    .login-form {
+        width: 100%;
+        position: relative;
+    }
+
+    .login-form form {
+        background: none;
+        border-radius: 0px;
+        box-shadow: none;
+        margin-bottom: 10px;
+        padding: 30px;
+        position: relative;
+    }
+
+    .field-icon {
+        display: none;
+    }
+
+    .profile-image img {
+        display: inline;
+        max-width: 100%;
+    }
 
     .form-container {
         transition: none;
@@ -447,33 +509,5 @@ footer a {
         padding: 12px 12px;
         min-width: 150px;
         width: 100%;
-    }
-
-}
-
-
-/* for big resolutions */
-
-@media only screen and (min-width: 600px) {}
-
-@media only screen and (max-width: 900px) {
-    form {
-        padding: 20px;
-    }
-
-    .overlay-panel {
-        padding: 20px
-    }
-
-    .alert.alert-danger {
-        background: #fcd0cd;
-        color: #7a221b;
-        width: 460px;
-    }
-
-    .alert.alert-green {
-        background: #c9e7ca;
-        color: #265828;
-        width: 460px;
     }
 }

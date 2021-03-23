@@ -9,7 +9,11 @@ if(isset($_POST['edit'])){
     $medicine_category = $conn -> real_escape_string($_POST['medicine_category']);
 
     require '../require/config.php';
+    
+    $stmt = $conn->prepare("UPDATE `medicine` SET `medicine_name` = ?, `medicine_type` = ?, `medicine_category` = ? WHERE `medicine_id` = ?") or die(mysqli_error());
+    $stmt->bind_param("sssi", $medicine_name, $medicine_type, $medicine_category, $medicine_id);
+    $stmt->execute();
 
-    $conn->query("UPDATE `medicine` SET `medicine_name` = '$medicine_name', `medicine_type` = '$medicine_type', `medicine_category` = '$medicine_category' WHERE `medicine_id` = '$medicine_id'") or die(mysqli_error());
+//    $conn->query("UPDATE `medicine` SET `medicine_name` = '$medicine_name', `medicine_type` = '$medicine_type', `medicine_category` = '$medicine_category' WHERE `medicine_id` = '$medicine_id'") or die(mysqli_error());
 }
 ?>

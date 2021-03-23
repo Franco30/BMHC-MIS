@@ -29,7 +29,13 @@ if(isset($_POST['edit'])){
     $remarks = "Edited $patient_name Patient Profile";
 
     require '../require/config.php';
-    $conn->query("UPDATE `patient` SET `patient_name` = '$patient_name', `civil_status` = '$civilstatus', `birthdate` = '$birthdate', `age` = '$age', `gender` = '$gender', `purok` = '$purok', `street_address` = '$streetaddress', `height` = '$height', `weight` = '$weight', `contact_no` = '$contact_no', `region_province` = '$region_province', `occupation` = '$occupation', `philhealth_no` = '$philhealth_no', `contact_person` = '$contact_person', `emergency_no` = '$emergency_no', `status` = '$status' WHERE `patient_id` = '$patient_id'") or die(mysqli_error());
+    
+    $stmt = $conn->prepare("UPDATE `patient` SET `patient_name` = ?, `civil_status` = ?, `age` = ?, `gender` = ?, `street_address` = ?, `purok` = ?, `birthdate` = ?, `height` = ?, `weight` = ?, `contact_no` = ?, `region_province` = ?, `occupation` = ?, `philhealth_no` = ?, `contact_person` = ?, `emergency_no` = ?, `status` = ? WHERE `patient_id` = ?") or die(mysqli_error());
+    $stmt->bind_param("ssissssiisssssssi", $patient_name, $civilstatus, $age, $gender, $streetaddress, $purok, $birthdate, $height, $weight, $contact_no, $region_province, $occupation, $philhealth_no, $contact_person, $emergency_no, $status, $patient_id);
+    $stmt->execute();
+    
+//    $conn->query("UPDATE `patient` SET `patient_name` = '$patient_name', `civil_status` = '$civilstatus', `birthdate` = '$birthdate', `age` = '$age', `gender` = '$gender', `purok` = '$purok', `street_address` = '$streetaddress', `height` = '$height', `weight` = '$weight', `contact_no` = '$contact_no', `region_province` = '$region_province', `occupation` = '$occupation', `philhealth_no` = '$philhealth_no', `contact_person` = '$contact_person', `emergency_no` = '$emergency_no', `status` = '$status' WHERE `patient_id` = '$patient_id'") or die(mysqli_error());
+    
     $conn->query("INSERT INTO `users_activity_log` VALUES('', '$user_id', '$remarks','$date_time')") or die(mysqli_error());
 }
 ?>

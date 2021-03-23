@@ -34,11 +34,16 @@ if(isset($_POST['add'])){
     $user_id=$_SESSION['user_id'];
     date_default_timezone_set('Asia/Manila');
     $date_time=date("F j, Y - g:i a");
-
+    $status = "1";
+    $login = "";
 
     require '../require/config.php';
+    
+    $stmt = $conn->prepare("INSERT INTO `users` (fullname, license, position, username, password, status, login, date_created, time_created) VALUES (?,?,?,?,?,?,?,?,?)") or die(mysqli_error());
+    $stmt->bind_param("sssssssss", $fullname, $license, $position, $username, $hashed_password, $status, $login, $date, $time);
+    $stmt->execute();
 
-    $conn->query("INSERT INTO `users` VALUES('', '$fullname', '$license', '$position', '$username', '$hashed_password', '1', '', '$date', '$time')") or die(mysqli_error());
+//    $conn->query("INSERT INTO `users` VALUES('', '$fullname', '$license', '$position', '$username', '$hashed_password', '1', '', '$date', '$time')") or die(mysqli_error());
 
     $conn->query("INSERT INTO `users_activity_log` VALUES('', '$user_id', 'Added $fullname as New User','$date_time')") or die(mysqli_error());
     $conn->close();

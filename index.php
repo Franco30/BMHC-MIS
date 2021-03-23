@@ -50,7 +50,7 @@
                         <!-- CONTACT ITEM -->
                         <div class="panel panel-default" style="border-radius: 20px;">
                             <div class="panel-body profile">
-                                <div class="profile-image" style="height: 157px;border-radius: 20px;border: none;">
+                                <div class="profile-image andrew">
                                     <img src="assets/images/users/ANDREW.png" alt="Daniel Andrew Go" />
                                 </div>
                                 <div class="profile-data">
@@ -69,9 +69,9 @@
 
                     <div class="col-md-4">
                         <!-- CONTACT ITEM -->
-                        <div class="panel panel-default" style="border-radius: 20px;">
+                        <div class="panel panel-default jfpanel" style="border-radius: 20px;">
                             <div class="panel-body profile">
-                                <div class="profile-image" style="height: 157px;border-radius: 20px;border: none;">
+                                <div class="profile-image jf">
                                     <img src="assets/images/users/FRANCO.png" alt="Jesse Franco Latosa" />
                                 </div>
                                 <div class="profile-data">
@@ -92,7 +92,7 @@
                         <!-- CONTACT ITEM -->
                         <div class="panel panel-default" style="border-radius: 20px;">
                             <div class="panel-body profile">
-                                <div class="profile-image" style="height: 157px;border-radius: 20px;border: none;">
+                                <div class="profile-image jp">
                                     <img src="assets/images/users/JP.png" alt="John Phillip Dela Cruz" />
                                 </div>
                                 <div class="profile-data">

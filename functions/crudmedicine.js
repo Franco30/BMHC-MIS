@@ -86,7 +86,7 @@ $(document).ready(function () {
 //                        $('#alert').fadeOut('slow');
 //                    }, 1500);
                     Swal.fire({
-                    title: 'Successfully updated Patient Profile',
+                    title: 'Successfully updated Medicine',
                     icon: 'success',
                     confirmButtonColor: '#95b75d',
                     confirmButtonText: 'Ok'

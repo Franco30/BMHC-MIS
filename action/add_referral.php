@@ -28,8 +28,16 @@ if(isset($_POST['add'])){
     
     $remarks = "Added a New Individual Referral Record";
     
+    $registeredunregistered = "$patient_name$registered";
+    
     require '../require/config.php';
-    $conn->query("INSERT INTO `referral` VALUES ('', '$date', '$from', '$to', '$origin', '$destination', '$patient_name$registered', '$weight', '$bp', '$temp', '$age', '$complaints', '$referred_by', '$gender', '$month', '$year', '$date_time')") or die(mysqli_error());
+    
+    $stmt = $conn->prepare("INSERT INTO `referral` (referral_date, from_clinic, to_hospital, origin_address, destination_address, patient_name, weight, bp, temp, age, complaints, referred_by, gender, month, year, date_time) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)") or die(mysqli_error());
+    $stmt->bind_param("ssssssssssssssss", $date, $from, $to, $origin, $destination, $registeredunregistered, $weight, $bp, $temp, $age, $complaints, $referred_by, $gender, $month, $year, $date_time);
+    $stmt->execute();
+    
+//    $conn->query("INSERT INTO `referral` VALUES ('', '$date', '$from', '$to', '$origin', '$destination', '$patient_name', '$registered', '$weight', '$bp', '$temp', '$age', '$complaints', '$referred_by', '$gender', '$month', '$year', '$date_time')") or die(mysqli_error());
+    
     $conn->query("INSERT INTO `users_activity_log` VALUES('', '$user_id', '$remarks','$date_time')") or die(mysqli_error());
     }
 ?>

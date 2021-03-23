@@ -70,7 +70,7 @@ function showMedicine() {
                         success: function (response) {
                             console.log(response);
                             Swal.fire({
-                            title: 'Successfully updated Patient Profile',
+                            title: 'Successfully added Medicine',
                             icon: 'success',
                             confirmButtonColor: '#95b75d',
                             confirmButtonText: 'Ok'

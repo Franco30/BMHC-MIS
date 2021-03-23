@@ -91,6 +91,7 @@ $(document).ready(function () {
                             //                                language: 'en'
                             //                            });
                             //                        });
+                            $('form').trigger('reset');
                             showPP();
                         }
 
