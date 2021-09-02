@@ -6,7 +6,7 @@
     <!-- META SECTION -->
     <title>BMHC-MIS</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="theme-color" content="#E91E63" />
+    <meta name="theme-color" content="#E91E63" />
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -86,31 +86,27 @@
                     </div>
                     <div class="col-md-2">
                         <select id="pyear" class="validate[required] select" data-style="btn-primary" data-live-search="true">
-            <option value="<?php 
-                           if(isset($_GET['year'])){
-                               $value=$_GET['year']; 
+            <option value="<?php
+                           if (isset($_GET['year'])) {
+                               $value=$_GET['year'];
                                echo $value;
-                           }
-                           else{
+                           } else {
                                echo date('Y');
                            }
                            ?>">
-                <?php 
-                if(isset($_GET['year']))
-                {
-                    $value=$_GET['year']; 
+                <?php
+                if (isset($_GET['year'])) {
+                    $value=$_GET['year'];
                     echo $value;
-                }
-                else
-                {
+                } else {
                     echo date('Y');
                 }
                 ?>
             </option>
-            <?php 
+            <?php
             $earliest_year = 1950;
             foreach (range(date('Y'), $earliest_year) as $x) {
-            ?>
+                ?>
             <option value="<?php echo $x ?>"><?php echo $x ?></option>
             <?php
             }
@@ -350,8 +346,8 @@
                                                                 <tbody id="load_data">
                                                                     <?php
                                         $query = $conn->query("SELECT * FROM `consultation`, `patient` WHERE `patient`.`patient_id` = `consultation`.`patient_id` order by `consultation_id` DESC LIMIT 16") or die(mysqli_error());
-                                        while($fetch = $query->fetch_array()){
-                                    ?>
+                                        while ($fetch = $query->fetch_array()) {
+                                            ?>
                                                                     <tr>
                                                                         <td><strong><center><?php echo $fetch['consultation_id']?></center></strong></td>
                                                                         <td><strong><?php echo $fetch['patient_name']?></strong></td>
@@ -373,8 +369,7 @@
                 <?php
                 require 'require/config.php';
                 $year = date('Y');
-                if(isset($_GET['year']))
-                {
+                if (isset($_GET['year'])) {
                     $year=$_GET['year'];
                 }
                 $query = $conn->query("SELECT * FROM `users` WHERE `user_id` = $_SESSION[user_id]") or die(mysqli_error());

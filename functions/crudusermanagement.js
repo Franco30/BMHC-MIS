@@ -170,6 +170,7 @@ $(document).ready(function () {
     });
 
 });
+
 $(document).ready(function () {
 
     $('#btn_deactivate').click(function () {

@@ -66,7 +66,7 @@
                                     <div class="form-group row m-b-15">
                                         <label class="col-md-2 col-form-label">Username</label>
                                         <div class="col-md-8">
-                                            <input type="text" id="username" class="form-control" value="<?php echo $f['username']?>" placeholder="Enter Userame" />
+                                            <input type="text" id="username" class="form-control" value="<?php echo $f['username']?>" placeholder="Enter Username" />
                                         </div>
                                     </div>
                                     <div class="form-group row m-b-15">
