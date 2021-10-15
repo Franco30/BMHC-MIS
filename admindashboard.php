@@ -290,6 +290,12 @@ require 'require/logincheck.php';
 
                         </div>
 
+                        <div class="bingwidget" data-type="covid19" data-market="en-us" data-language="en-us" data-app="bingwidget"></div>
+
+                        <script src="//www.bing.com/widget/bootstrap.answer.js" async=""></script>
+
+
+
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="panel panel-primary">
@@ -335,8 +341,7 @@ require 'require/logincheck.php';
                                             <option value="colmonth">Column Chart</option>
                                             <option value="linemonth">Line Chart</option>
                                             <option value="stackmonth">Stack Column Chart</option>
-                                        </select>
--->
+                                        </select>-->
                                             </div>
                                         </div>
                                     </div>
@@ -348,8 +353,7 @@ require 'require/logincheck.php';
                                         <!--
                                     <div id="chartContainer1" class="colmonth reporttype" style="width: 100%; height: 300px;"></div>
                                     <div id="chartContainer2" class="linemonth reporttype" style="width: 100%; height: 300px;"></div>
-                                    <div id="chartContainer3" class="stackmonth reporttype" style="width: 100%; height: 300px;"></div>
--->
+                                    <div id="chartContainer3" class="stackmonth reporttype" style="width: 100%; height: 300px;"></div>-->
                                     </div>
                                 </div>
                             </div>
