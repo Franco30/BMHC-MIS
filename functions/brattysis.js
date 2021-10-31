@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    showBrattysis();
     $(document).on('click', '#addnew', function () {
         if ($('#name').val() == "" || $('#gender').val() == "" || $('#birthdate').val() == "") {
             $('#modallabel').slideDown();
@@ -32,9 +33,10 @@ $(document).ready(function () {
                         setTimeout(function () {
                             $('#alert').fadeOut('slow');
                         }, 1500);
-                        setTimeout(function () {
-                                window.location.href = 'patient_overview_child?child_id=' + $child_id;
-                        }, 1500);
+                        showBrattysis();
+                        // setTimeout(function () {
+                        //     window.location.href = 'patient_overview_child?child_id=' + $child_id;
+                        // }, 1500);
                     }
 
                 });
@@ -42,6 +44,7 @@ $(document).ready(function () {
                 $('#gender').selectpicker('refresh');
                 $('form').trigger('reset');
             }
+
         }
 
     });
@@ -53,3 +56,24 @@ $(document).ready(function () {
     });
 
 });
+
+function showBrattysis() {
+    $child_id = $('#child_id').val();
+    $.ajax({
+        url: 'tables/brattysis.php',
+        type: 'POST',
+        async: false,
+        data: {
+            child_id: $child_id,
+            show: 1
+        },
+        success: function (response) {
+            $('#brattysisTable').html(response);
+            var table = $('#brattysistable').DataTable({
+                "aaSorting": [
+                    [2, 'desc']
+                ]
+            });
+        }
+    });
+}

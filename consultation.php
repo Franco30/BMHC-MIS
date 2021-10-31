@@ -1,4 +1,4 @@
-<?php require_once 'require/logincheck.php'?>
+<?php require 'require/logincheck.php';?>
 <!DOCTYPE html>
 <html lang="en">
 

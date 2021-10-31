@@ -1,5 +1,8 @@
 <?php
-require 'require/config.php';
+require '../require/config.php';
+if(isset($_POST['show']) && isset($_POST['c_id']) && isset($_POST['p_id'])){
+    $p = $_POST['p_id'];
+    $c = $_POST['c_id'];
 ?>
 <div class="table-responsive">
 <table id="prescriptiontable" class="table datatable">
@@ -20,7 +23,7 @@ require 'require/config.php';
         </thead>
             <tbody>
                 <?php
-$query = $conn->query("SELECT * FROM `consultation_prescription` WHERE `patient_id` = '$_GET[patient_id]' && `consultation_id` = '$_GET[consultation_id]'") or die(mysqli_error());
+$query = $conn->query("SELECT * FROM `consultation_prescription` WHERE `patient_id` = '$p' && `consultation_id` = '$c'") or die(mysqli_error());
 while($fetch = $query->fetch_array()){
 ?>
                 <tr>
@@ -51,3 +54,6 @@ while($fetch = $query->fetch_array()){
             </tbody>
             </table>
             </div>
+            <?php
+}
+?>

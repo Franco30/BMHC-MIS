@@ -69,9 +69,9 @@ $(document).ready(function () {
                                 showConfirmButton: false,
                                 timer: 1500
                             })
-                            setTimeout(function () {
-                                window.location.href = 'consultation_treatment?patient_id=' + $patient_id + '&&consultation_id=' + $consultation_id;
-                            }, 1500);
+                            // setTimeout(function () {
+                            //     window.location.href = 'consultation_treatment?patient_id=' + $patient_id + '&&consultation_id=' + $consultation_id;
+                            // }, 1500);
                             showPrescription();
                         }
 
@@ -148,14 +148,19 @@ $(document).ready(function () {
 });
 
 function showPrescription() {
+    $consultation_id = $('#consultation_id').val();
+    $patient_id = $('#patient_id').val();
     $.ajax({
         url: 'tables/consultation_treatment_table.php',
         type: 'POST',
         async: false,
         data: {
+            c_id: $consultation_id,
+            p_id: $patient_id,
             show: 1
         },
         success: function (response) {
+            console.log($consultation_id, $patient_id);
             $('#prescriptionTable').html(response);
             var table = $('#prescriptiontable').DataTable();
         }

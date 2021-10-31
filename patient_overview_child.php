@@ -169,7 +169,8 @@
 													</div>
 												</div>
 												<div class="panel-body">
-												<div class="table-responsive">
+												<div id="brattysisTable"></div>
+												<!-- <div class="table-responsive">
 													<table class="table table-bordered">
 														<thead>
 															<tr class="warning">
@@ -180,21 +181,21 @@
 														</thead>
 														<tbody>
 															<?php
-															$query = $conn->query("SELECT * FROM `brothers_and_sisters` WHERE `child_id` = '$_GET[child_id]'") or die(mysqli_error());
-															while($fetch = $query->fetch_array()){
+															//$query = $conn->query("SELECT * FROM `brothers_and_sisters` WHERE `child_id` = '$_GET[child_id]'") or die(mysqli_error());
+															//while($fetch = $query->fetch_array()){
 															?>
 															<tr>
-																<td><center><?php echo $fetch['fullname']?></center></td>
-																<td><center><?php echo $fetch['gender']?></center></td>
-																<td><center><?php echo $fetch['birthdate']?></center></td>
+																<td><center><?php //echo $fetch['fullname']?></center></td>
+																<td><center><?php //echo $fetch['gender']?></center></td>
+																<td><center><?php //echo $fetch['birthdate']?></center></td>
 															</tr>
 															<?php
-															}
-															$conn->close();
+															//}
+															//$conn->close();
 															?>
 														</tbody>
 													</table>
-												</div>
+												</div> -->
 												</div>
 												</div>
 											</div>

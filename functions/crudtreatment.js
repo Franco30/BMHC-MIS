@@ -1,5 +1,5 @@
 $(document).ready(function () {
-
+    showTreatmentTable();
     $("#treatment_type").change(function () {
         var treatment_type = $("#treatment_type").val().trim();
         var child_id = $("#child_id").val().trim();
@@ -101,9 +101,10 @@ $(document).ready(function () {
                                     showConfirmButton: false,
                                     timer: 1500
                                 })
-                                setTimeout(function () {
-                                    window.location.href = 'immunization_treatment?child_id=' + $child_id + '&&immunization_id=' + $immunization_id;
-                                }, 2500);
+                                // setTimeout(function () {
+                                //     window.location.href = 'immunization_treatment?child_id=' + $child_id + '&&immunization_id=' + $immunization_id;
+                                // }, 2500);
+                                showTreatmentTable();
                             }
                         }
                     });
@@ -121,17 +122,21 @@ $(document).ready(function () {
     });
 });
 
-function showPatient() {
+function showTreatmentTable() {
+    $child_id = $('#child_id').val();
+    $immunization_id = $('#immunization_id').val();
     $.ajax({
-        url: 'tables/immunization_patient_table.php',
+        url: 'tables/immunization_treatment.php',
         type: 'POST',
         async: false,
         data: {
+            c: $child_id,
+            i: $immunization_id,
             show: 1
         },
         success: function (response) {
-            $('#immunizationpatientTable').html(response);
-            var table = $('#immunizationpatienttable').DataTable();
+            $('#immunizationtreatmentTable').html(response);
+            var table = $('#immunizationtreatment').DataTable();
         }
     });
 }
